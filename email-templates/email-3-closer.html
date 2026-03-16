@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Last note — {{BUSINESS_NAME}} website</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: #f5f5f5; color: #1a1a1a; -webkit-font-smoothing: antialiased; }
+    .wrapper { max-width: 600px; margin: 0 auto; padding: 32px 16px; }
+    .card { background: #ffffff; border-radius: 8px; border: 1px solid #e8e8e8; overflow: hidden; }
+    .card-body { padding: 36px 40px; }
+    .salutation { font-size: 16px; font-weight: 600; margin-bottom: 20px; }
+    .body-text { font-size: 15px; line-height: 1.7; color: #333; margin-bottom: 18px; }
+    .final-offer { background: #fff8ee; border: 1px solid #ffd980; border-radius: 6px; padding: 22px 24px; margin: 24px 0; }
+    .final-offer h3 { font-size: 16px; font-weight: 700; color: #8a5c00; margin-bottom: 10px; }
+    .final-offer ul { padding-left: 20px; font-size: 14px; color: #5a3e00; line-height: 1.9; }
+    .cta-section { text-align: center; padding: 24px 0 8px; }
+    .btn { display: inline-block; background: #2e7dbd; color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 700; padding: 14px 32px; border-radius: 6px; letter-spacing: 0.02em; }
+    .divider { height: 1px; background: #f0f0f0; margin: 28px 0; }
+    .signature { font-size: 14px; color: #555; line-height: 1.8; }
+    .signature strong { color: #1a1a1a; }
+    .card-footer { background: #f9f9f9; border-top: 1px solid #f0f0f0; padding: 20px 40px; }
+    .footer-text { font-size: 12px; color: #999; line-height: 1.6; }
+    @media (max-width: 480px) { .card-body, .card-footer { padding-left: 24px; padding-right: 24px; } }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <div class="card-body">
+        <p class="salutation">Hi {{FIRST_NAME}},</p>
+
+        <p class="body-text">
+          Last note from me on this — I promised myself I wouldn't send more than three.
+        </p>
+
+        <p class="body-text">
+          The demo site I built for {{BUSINESS_NAME}} is still live at the link below. After today
+          I'll stop following up, but I wanted to leave the door open clearly in case the timing was
+          just never right.
+        </p>
+
+        <div class="final-offer">
+          <h3>Here's what you'd be getting:</h3>
+          <ul>
+            <li>A custom website built specifically for {{BUSINESS_NAME}}</li>
+            <li>Optimized for Google search — title tags, schema, fast load speed</li>
+            <li>Looks great on phones (most of your visitors are on mobile)</li>
+            <li>Hosted on Vercel — blazing fast, free SSL, 99.9% uptime</li>
+            <li>Transferred to your domain within a week of saying yes</li>
+          </ul>
+        </div>
+
+        <p class="body-text">
+          The flat fee is <strong>{{PRICE}}</strong>, paid once. No monthly platform fees, no gotchas.
+          The demo you've already seen is exactly what you'd get.
+        </p>
+
+        <div class="cta-section">
+          <a href="{{DEMO_LINK}}" class="btn">→ One Last Look at the Demo</a>
+        </div>
+
+        <p class="body-text" style="margin-top: 20px; font-size: 14px; color: #666;">
+          Replying to this email is the fastest way to reach me. Happy to answer any questions —
+          or just say "not interested" and I'll leave you alone.
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="signature">
+          <strong>{{YOUR_NAME}}</strong><br />
+          {{YOUR_PHONE}}<br />
+          <a href="mailto:{{YOUR_EMAIL}}" style="color: #2e7dbd;">{{YOUR_EMAIL}}</a>
+        </div>
+      </div>
+      <div class="card-footer">
+        <p class="footer-text">
+          This is my final follow-up. You won't hear from me again unless you reach out.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
