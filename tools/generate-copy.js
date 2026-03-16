@@ -76,6 +76,37 @@ function extractBusinessInfo(researchMd) {
   return info;
 }
 
+// ─── Writing rules sourced from waypoint-core-system/docs/VOICE_GUIDE.md ────
+const WRITING_RULES = `
+You are writing website copy for LOCAL business owners — real people, not corporations.
+The copy must sound like this specific business owner wrote it, not a marketing agency.
+
+FORBIDDEN WORDS AND PHRASES — never use any of these:
+- leverage (as a verb), delve, dive deep, dive into
+- cutting edge, game changer, game-changing, next-level
+- seamless, synergy, paradigm, tapestry, realm, foster, catalyst
+- navigate/navigating, testament, optimize, scale
+- passionate, excited, thrilled, pleased to announce, proud to offer
+- holistic approach, best-in-class, world-class
+- "we are committed to", "dedicated to", "we pride ourselves"
+- "contact us today", "don't hesitate to", "we look forward to"
+- "your satisfaction is our priority", "quality you can trust"
+- "serving the [City] community", "proud to serve"
+- "With [X] years of experience" as an opener
+- Excessive exclamation points
+- Empty superlatives (best, finest, premier, top-rated) without proof
+
+WRITING RULES:
+- Short sentences: 8–14 words preferred. Vary rhythm.
+- Short paragraphs: 2–3 sentences max
+- Active voice only
+- Lead with the customer's reality, not the business's credentials
+- Specific beats vague: name actual services, actual locations, actual differentiators
+- One clear CTA at a time — never two equal-weight actions
+- Reading level: 7th grade or lower (not because the audience is unsophisticated — because clear writing moves faster)
+- Sound like a person, not a brand
+`;
+
 async function generateCopy() {
   const researchPath = join(PROSPECT_DIR, 'research.md');
   if (!existsSync(researchPath)) {
@@ -141,6 +172,7 @@ Generate the following. Respond ONLY with valid JSON, no markdown, no explanatio
   const message = await client.messages.create({
     model: 'claude-opus-4-5',
     max_tokens: 1024,
+    system: WRITING_RULES,
     messages: [{ role: 'user', content: prompt }],
   });
 
