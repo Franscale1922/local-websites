@@ -21,12 +21,21 @@ description: Full website launch process — from prospect identification throug
 ## Phase 1 — Discovery
 
 // turbo
-5. Scrape existing site: `node tools/scrape-existing-site.js --slug [slug] --url https://theirsite.com`
+5. Run forensic digital audit: `node tools/digital-audit.js --slug [slug] --business "Name" --city "City"`
+   - Searches for articles, social media, owner identity, press mentions, personality signals
+   - Output: `prospects/[slug]/digital-audit.json` and `prospects/[slug]/owner-intel.md`
+
+6. **[HUMAN STEP]** Read `owner-intel.md`. Do you have a picture of the owner as a real person?
+   - If social profiles found: spend 3 min scrolling their last 10–15 posts — note hobbies, pets, family, tone
+   - If owner name not found: check [biz.sosmt.gov](https://biz.sosmt.gov) (Montana SOS business registry)
 
 // turbo
-6. Pull Google reviews: `node tools/scrape-reviews.js --slug [slug] --place-id "ChIJXXXX"`
+7. Scrape existing site: `node tools/scrape-existing-site.js --slug [slug] --url https://theirsite.com`
 
-7. **[HUMAN STEP]** Read `existing-copy.txt` and `google-reviews.json`. Fill in `research.md` with website audit score and key differentiator.
+// turbo
+8. Pull Google reviews: `node tools/scrape-reviews.js --slug [slug] --place-id "ChIJXXXX"`
+
+9. **[HUMAN STEP]** Read `existing-copy.txt` and `google-reviews.json`. Fill in `research.md` with website audit score and key differentiator.
 
 ---
 
@@ -106,9 +115,22 @@ description: Full website launch process — from prospect identification throug
 
 ## Phase 7 — Client Converts (They Said Yes)
 
-### 7a — Domain & Hosting Setup
+### 7a — Choose the Delivery Pathway
 
-31. **[HUMAN STEP]** Get client's domain login (GoDaddy / Namecheap / etc.)
+31. **[HUMAN STEP]** Ask the client: *"Do you have someone who manages your website?"*
+    - **Pathway A — Self-managed or you host (retainer):** Continue to 7b
+    - **Pathway B — Hand-off to their existing developer:**
+      ```bash
+      # For Vercel/Netlify-capable developers (most):
+      node tools/package-site.js --slug [slug] --mode zip
+
+      # For cPanel/FTP/shared hosting:
+      node tools/package-site.js --slug [slug] --mode static
+      ```
+      Send `prospects/[slug]/deliverable/` folder to their team. You're done with technical work.
+      Skip to Phase 10 (handoff doc).
+
+### 7b — Domain Setup (Pathway A only)
 32. In Vercel: Project → Settings → Domains → Add domain
 33. In client's domain registrar — add DNS records shown by Vercel:
     - `A` record: `@ → 76.76.21.21`

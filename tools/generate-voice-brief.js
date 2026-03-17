@@ -58,6 +58,16 @@ function loadExistingCopy() {
   return readFileSync(path, 'utf8').slice(0, 2000);
 }
 
+function loadDigitalAudit() {
+  const path = join(PROSPECT_DIR, 'digital-audit.json');
+  if (!existsSync(path)) return null;
+  try {
+    return JSON.parse(readFileSync(path, 'utf8'));
+  } catch {
+    return null;
+  }
+}
+
 function loadResearch() {
   const path = join(PROSPECT_DIR, 'research.md');
   if (!existsSync(path)) return null;
@@ -67,9 +77,10 @@ function loadResearch() {
 async function generateVoiceBrief() {
   console.log(`\n🎙️  Generating Voice Brief for: ${SLUG}\n`);
 
-  const reviews = loadReviews();
+  const reviews     = loadReviews();
   const existingCopy = loadExistingCopy();
-  const research = loadResearch();
+  const research    = loadResearch();
+  const audit       = loadDigitalAudit();
 
   if (!reviews && !existingCopy) {
     console.error('No google-reviews.json or existing-copy.txt found. Run scrape-reviews.js first, or create existing-copy.txt manually.');
@@ -90,10 +101,58 @@ async function generateVoiceBrief() {
   }
 
   if (research) {
-    // Extract key differentiator sections from research.md
     const diffMatch = research.match(/\*\*Key differentiator:\*\*\s*(.+)/);
     if (diffMatch) contextParts.push(`KEY DIFFERENTIATOR (from research): ${diffMatch[1]}`);
   }
+
+  // ─── Inject digital audit intelligence ───────────────────────────────────
+  if (audit?.intelligence) {
+    const intel = audit.intelligence;
+    const auditParts = [];
+
+    if (intel.ownerNameConfirmed) {
+      auditParts.push(`OWNER NAME: ${intel.ownerNameConfirmed}`);
+    }
+    if (intel.ownerBackground) {
+      auditParts.push(`OWNER BACKGROUND: ${intel.ownerBackground}`);
+    }
+    if (intel.ownerPersonalInterests?.length) {
+      auditParts.push(`OWNER PERSONAL INTERESTS: ${intel.ownerPersonalInterests.join(', ')}\n(These can subtly inform website imagery choices, copy hooks, and personalization)`);
+    }
+    if (intel.ownerCommunicationStyle) {
+      auditParts.push(`OWNER COMMUNICATION STYLE: ${intel.ownerCommunicationStyle}`);
+    }
+    if (intel.ownerPersonalitySignals?.length) {
+      auditParts.push(`OWNER PERSONALITY SIGNALS:\n${intel.ownerPersonalitySignals.map(s => `- ${s}`).join('\n')}`);
+    }
+    if (intel.businessHistory) {
+      auditParts.push(`BUSINESS HISTORY: ${intel.businessHistory}`);
+    }
+    if (intel.localStanding) {
+      auditParts.push(`LOCAL STANDING: ${intel.localStanding}`);
+    }
+    if (intel.brandPersonalityClues?.length) {
+      auditParts.push(`BRAND PERSONALITY CLUES (from forensic web research):\n${intel.brandPersonalityClues.map(c => `- ${c}`).join('\n')}`);
+    }
+    if (intel.websitePersonalizationHooks?.length) {
+      auditParts.push(`PERSONALIZATION HOOKS (elements that will resonate with the owner):\n${intel.websitePersonalizationHooks.map(h => `- ${h}`).join('\n')}`);
+    }
+    if (intel.socialPresence) {
+      const sp = intel.socialPresence;
+      auditParts.push(`SOCIAL PRESENCE: ${sp.overallStrength} | Primary: ${sp.primaryChannel} | Themes: ${sp.contentThemes?.join(', ')}`);
+    }
+    if (intel.pressMentions?.length) {
+      auditParts.push(`PRESS MENTIONS:\n${intel.pressMentions.map(p => `- "${p.headline}" (${p.source}): ${p.summary}`).join('\n')}`);
+    }
+
+    if (auditParts.length > 0) {
+      contextParts.push(`FORENSIC DIGITAL AUDIT FINDINGS:\n${auditParts.join('\n\n')}`);
+      console.log(`   ✓ Digital audit data loaded (owner: ${intel.ownerNameConfirmed || 'unknown'}, confidence: ${(audit.intelligence?.researchConfidence || 0) * 100}%)`);
+    }
+  } else {
+    console.log('   ℹ️  No digital-audit.json found. Run digital-audit.js first for richer voice briefs.');
+  }
+
 
   const context = contextParts.join('\n\n---\n\n');
 

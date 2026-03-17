@@ -26,27 +26,63 @@
 
 ## Phase 1 — Discovery & Research
 
-> Gather all available intelligence about the business before writing a word.
+> Gather all available intelligence about the business before writing a word. The forensic digital audit runs first — it feeds into everything downstream.
 
-- [ ] **Scrape existing site** — extract all readable content from their current website
+### 1.1 — Forensic Digital Audit
 
+- [ ] **Run the digital audit** — searches the web for articles, social media, owner information, press mentions, and personality signals:
+
+  ```bash
+  node tools/digital-audit.js --slug [slug] --business "Business Name" --city "City"
+  # If you already know the owner's name:
+  node tools/digital-audit.js --slug [slug] --business "Business Name" --city "City" --owner "Owner Name"
+  ```
+
+  **What it finds:**
+  - Owner name (from articles, About pages, state business records, local press)
+  - Owner personal interests (outdoor photos? dogs? family business signals?)
+  - Facebook, Instagram, Yelp, TripAdvisor profiles
+  - Local news mentions, chamber of commerce features, awards
+  - Owner communication style (formal vs. casual, how they respond to reviews)
+  - Brand personality clues — real, specific details that will make the demo feel personal
+  - Website personalization hooks — things to include that will resonate when the owner sees their demo
+
+  **Outputs:**
+  - `prospects/[slug]/digital-audit.json` — structured intelligence data
+  - `prospects/[slug]/owner-intel.md` — human-readable profile
+  - Updates `research.md` with social links, owner name, personality clues
+
+- [ ] **Read `owner-intel.md`** — spend 3 minutes with this before proceeding. This is the research that makes the demo feel personal.
+
+- [ ] **State business registry search (manual)** — if owner name not found:
+  - Montana: [biz.sosmt.gov](https://biz.sosmt.gov) → search business name → registered agent or owner often listed
+  - Takes 2 minutes and often reveals the owner's full name
+
+- [ ] **Check social media manually** if digital audit found profiles:
+  - Look at their last 10–15 posts — what do they post about besides work?
+  - Any personal photos, outdoor shots, pets, family events? Note these.
+  - How do they write? Formal sentences or casual/friendly? Emojis?
+  - How do they respond to reviews?
+
+### 1.2 — Technical Content Scraping
+
+- [ ] **Scrape existing site:**
   ```bash
   node tools/scrape-existing-site.js --slug [slug] --url https://theirsite.com
   ```
   Output: `prospects/[slug]/existing-copy.txt`
 
-- [ ] **Pull Google reviews** — fetch business details + top reviews via Places API
-
+- [ ] **Pull Google reviews:**
   ```bash
   node tools/scrape-reviews.js --slug [slug] --place-id "ChIJXXXXXXXXXXXX"
   ```
-  How to find Place ID: search on [Google Maps](https://maps.google.com) → extract from URL, or use [Place ID Finder](https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder)
+  Find Place ID: [Place ID Finder](https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder)
 
   Output: `prospects/[slug]/google-reviews.json`
 
-- [ ] **Fill in `research.md`** — complete the business overview, website audit score, and key differentiator based on what you found
+- [ ] **Fill in `research.md`** — complete the business overview and website audit score
 
-**Quality gate:** Do you understand this business well enough to write like them? If not, spend 5 more minutes on their Google listing, Facebook, and any press coverage.
+**Quality gate:** Can you picture the owner as a real person? Do you have at least one personal detail about them beyond just their business? If not, spend 5 more minutes on their social profiles before proceeding.
 
 ---
 
@@ -246,9 +282,42 @@ For the demo, no environment variables are needed — it's static Next.js.
 
 ## Phase 7 — Client Sold. Time to Transfer.
 
-> They said yes. Now make it real.
+> They said yes. First decision: how are we delivering this?
 
-### 7.1 — Domain Setup
+### 7.0 — Choose the Delivery Pathway
+
+**Ask the client one question:** *"Do you have someone who manages your website currently?"*
+
+| Pathway | Situation | What you do |
+|---|---|---|
+| **A — Self-managed** | Client has no web team, wants to manage it themselves | Walk them through Vercel + domain setup (Phases 7.1–7.3 below) |
+| **B — Hand-off to their developer** | They have a web agency or freelancer already | Package the site and send it to their team |
+| **C — Vercel retainer** | Client wants zero involvement, you stay on as host | Keep site on your Vercel, bill $X/month for hosting + minor updates |
+
+**For Pathway B (developer hand-off):**
+```bash
+# Package as Next.js source (recommended — works on Vercel, Netlify, Railway):
+node tools/package-site.js --slug [slug] --mode zip
+
+# Package as static HTML (for Bluehost, cPanel, SiteGround, FTP-only hosts):
+node tools/package-site.js --slug [slug] --mode static
+```
+This creates `prospects/[slug]/deliverable/` containing:
+- The site zip file
+- `DEVELOPER-HANDOFF.md` — everything their web team needs to deploy it
+- `CLIENT-INSTRUCTIONS.md` — the non-technical version for the owner
+
+Send the deliverable folder via Dropbox, Google Drive, or email. You're done.
+
+**For Pathway C (retainer):**
+- Keep the Vercel project in your account
+- Add the client's custom domain to the Vercel project
+- Set a recurring invoice (Stripe, Wave, or just invoice) for monthly hosting fee
+- Note in `research.md`: Delivery pathway = Vercel retainer, monthly fee = $X
+
+---
+
+### 7.1 — Domain Setup (Pathways A and C only)
 
 - [ ] **Get their domain login credentials** (GoDaddy, Namecheap, Squarespace, etc.)
 - [ ] **Add custom domain in Vercel:**
@@ -398,13 +467,18 @@ Prepare a simple one-page handoff for the client containing:
 
 ```bash
 # Full pipeline, in order:
+node tools/digital-audit.js --slug [slug] --business "Name" --city "City"  # forensic research
 node tools/scrape-existing-site.js --slug [slug] --url https://theirsite.com
 node tools/scrape-reviews.js --slug [slug] --place-id "ChIJXXXX"
-node tools/generate-voice-brief.js --slug [slug]
+node tools/generate-voice-brief.js --slug [slug]        # now fed by digital-audit.json
 node tools/generate-copy.js --slug [slug]
 node tools/apply-copy.js --slug [slug] --template [template]
-cd prospects/[slug]/site && npm install && npm run dev   # preview
-node tools/deploy-demo.js --slug [slug]                  # go live
+cd prospects/[slug]/site && npm install && npm run dev   # preview locally
+node tools/deploy-demo.js --slug [slug]                  # deploy demo
+
+# After sale — package for delivery:
+node tools/package-site.js --slug [slug] --mode zip      # hand-off to developer
+node tools/package-site.js --slug [slug] --mode static   # FTP/cPanel hosts
 ```
 
 ---
