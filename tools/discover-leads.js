@@ -82,23 +82,88 @@ const CHAIN_BLOCKLIST = [
   'great clips', 'supercuts', 'sport clips',
 ];
 
-// ─── Google Places API calls ──────────────────────────────────────────────────
+// ─── Google Places API (New) calls ───────────────────────────────────────────
 
 const delay = ms => new Promise(r => setTimeout(r, ms));
 
+const NEARBY_URL    = 'https://places.googleapis.com/v1/places:searchNearby';
+const DETAILS_BASE  = 'https://places.googleapis.com/v1/places';
+
 async function nearbySearch(lat, lng, radius, type, pageToken = null) {
-  let url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=${radius}&type=${type}&key=${API_KEY}`;
-  if (pageToken) url += `&pagetoken=${pageToken}`;
-  const resp = await fetch(url);
-  return resp.json();
+  const body = {
+    includedTypes: [type],
+    maxResultCount: 20,
+    locationRestriction: {
+      circle: {
+        center: { latitude: lat, longitude: lng },
+        radius: parseFloat(radius),
+      },
+    },
+  };
+  if (pageToken) body.pageToken = pageToken;
+
+  const resp = await fetch(NEARBY_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Goog-Api-Key': API_KEY,
+      'X-Goog-FieldMask': 'places.id,places.displayName,places.rating,places.userRatingCount,places.businessStatus,places.types,nextPageToken',
+    },
+    body: JSON.stringify(body),
+  });
+
+  const data = await resp.json();
+
+  if (data.error) {
+    console.error(`\n   ❌ API Error [${data.error.status}]: ${data.error.message}`);
+    return { results: [] };
+  }
+
+  // Normalize to the shape the rest of the script expects
+  return {
+    results: (data.places || []).map(p => ({
+      place_id: p.id,
+      name:     p.displayName?.text || '',
+      rating:               p.rating,
+      user_ratings_total:   p.userRatingCount,
+      business_status:      p.businessStatus,
+      types:                p.types || [],
+    })),
+    next_page_token: data.nextPageToken || null,
+  };
 }
 
 async function getPlaceDetails(placeId) {
-  const fields = 'name,formatted_address,formatted_phone_number,website,rating,user_ratings_total,types,business_status,url';
-  const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=${fields}&key=${API_KEY}`;
-  const resp = await fetch(url);
+  // New API path: places/{id}
+  const id  = placeId.startsWith('places/') ? placeId : `places/${placeId}`;
+  const url = `${DETAILS_BASE}/${id.replace('places/', '')}`;
+
+  const resp = await fetch(url, {
+    headers: {
+      'X-Goog-Api-Key': API_KEY,
+      'X-Goog-FieldMask': 'displayName,formattedAddress,nationalPhoneNumber,websiteUri,rating,userRatingCount,types,businessStatus,googleMapsUri',
+    },
+  });
+
   const data = await resp.json();
-  return data.result;
+
+  if (data.error) {
+    console.error(`\n   ❌ Place Details Error: ${data.error.message}`);
+    return null;
+  }
+
+  // Normalize to old response shape
+  return {
+    name:                     data.displayName?.text,
+    formatted_address:        data.formattedAddress,
+    formatted_phone_number:   data.nationalPhoneNumber,
+    website:                  data.websiteUri,
+    rating:                   data.rating,
+    user_ratings_total:       data.userRatingCount,
+    types:                    data.types,
+    business_status:          data.businessStatus,
+    url:                      data.googleMapsUri,
+  };
 }
 
 // ─── Filtering logic ──────────────────────────────────────────────────────────
