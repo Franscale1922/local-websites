@@ -60,7 +60,7 @@ const DEFAULT_RADIUS = 50000; // 50km ≈ 45-minute drive radius
 
 // All target categories mapped to Google Places types
 const CATEGORY_MAP = {
-  restaurant:           ['restaurant', 'cafe', 'bakery', 'bar', 'meal_takeaway', 'food'],
+  restaurant:           ['restaurant', 'cafe', 'bakery', 'bar', 'meal_takeaway', 'brunch_restaurant'],
   lodging:              ['lodging', 'campground', 'rv_park'],
   'professional-services': ['dentist', 'doctor', 'lawyer', 'insurance_agency', 'accountant', 'physiotherapist', 'veterinary_care'],
   'retail-boutique':    ['clothing_store', 'jewelry_store', 'book_store', 'gift_shop', 'florist', 'home_goods_store', 'furniture_store', 'pet_store'],
