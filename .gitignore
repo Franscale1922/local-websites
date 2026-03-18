@@ -34,3 +34,12 @@ npm-debug.log*
 # Cache
 .cache/
 /tmp/
+
+# Leads data — stays local, contains business info
+# Commit selectively if you want a shared lead database
+leads/*.json
+
+# Prospects — built sites and research; commit research.md + voice-brief.json but not site/ directories
+prospects/*/site/node_modules/
+prospects/*/site/.next/
+prospects/*/deliverable/*.zip
