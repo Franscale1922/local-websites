@@ -170,6 +170,76 @@ async function getPlaceDetails(placeId) {
 }
 
 
+// ─── Email scraping ──────────────────────────────────────────────────────────
+
+// Domains/patterns that appear in HTML but are not real contact emails
+const EMAIL_BLOCKLIST = [
+  'example.com', 'domain.com', 'yourdomain', 'sentry.io', 'wix.com',
+  'squarespace.com', 'jquery', 'schema.org', '@2x', '.png', '.jpg', '.svg',
+];
+
+function extractEmail(html) {
+  if (!html) return null;
+
+  // Prefer mailto: links — most likely to be intentional contact emails
+  const mailtoMatches = [...html.matchAll(/mailto:([a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,})/gi)];
+  for (const m of mailtoMatches) {
+    const email = m[1].toLowerCase();
+    if (!EMAIL_BLOCKLIST.some(b => email.includes(b))) return m[1];
+  }
+
+  // Fall back to generic email regex in page text
+  const genericMatches = [...html.matchAll(/\b([a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,})\b/g)];
+  for (const m of genericMatches) {
+    const email = m[1].toLowerCase();
+    if (!EMAIL_BLOCKLIST.some(b => email.includes(b))) return m[1];
+  }
+
+  return null;
+}
+
+async function fetchPage(url) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 5000);
+  try {
+    const resp = await fetch(url, {
+      signal: controller.signal,
+      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; LeadResearch/1.0)' },
+    });
+    clearTimeout(timeout);
+    if (!resp.ok) return null;
+    return await resp.text();
+  } catch {
+    clearTimeout(timeout);
+    return null;
+  }
+}
+
+async function scrapeEmail(websiteUrl) {
+  if (!websiteUrl) return null;
+  try {
+    const base = new URL(websiteUrl);
+
+    // 1. Try homepage
+    const homeHtml = await fetchPage(websiteUrl);
+    const homeEmail = extractEmail(homeHtml);
+    if (homeEmail) return homeEmail;
+
+    // 2. Try /contact page
+    const contactUrl = new URL('/contact', base).href;
+    const contactHtml = await fetchPage(contactUrl);
+    const contactEmail = extractEmail(contactHtml);
+    if (contactEmail) return contactEmail;
+
+    // 3. Try /contact-us
+    const contactUsUrl = new URL('/contact-us', base).href;
+    const contactUsHtml = await fetchPage(contactUsUrl);
+    return extractEmail(contactUsHtml);
+  } catch {
+    return null;
+  }
+}
+
 // ─── Filtering logic ──────────────────────────────────────────────────────────
 
 function isChain(name) {
@@ -256,12 +326,16 @@ async function discoverCategory(categoryName, placeTypes, lat, lng, radius) {
 
     const website = details?.website || null;
 
+    // Scrape contact email from their website (homepage → /contact → /contact-us)
+    const email = await scrapeEmail(website);
+
     // Build the lead object
     const lead = {
       placeId,
       name: details?.name || place.name,
       address: details?.formatted_address || '',
       phone: details?.formatted_phone_number || null,
+      email: email || null,
       website: website || null,
       websiteStatus: !website ? 'NO_WEBSITE' : (websiteIsWorthBuilding(website) ? 'WORTH_AUDITING' : 'SKIP'),
       googleUrl: details?.url || null,
@@ -277,7 +351,9 @@ async function discoverCategory(categoryName, placeTypes, lat, lng, radius) {
 
     leads.push(lead);
     fetched++;
-    process.stdout.write(website ? `✓ ${website.replace(/^https?:\/\//, '').slice(0, 35)}\n` : '— no website\n');
+    const siteDisplay = website ? `✓ ${website.replace(/^https?:\/\//, '').slice(0, 28)}` : '— no website          ';
+    const emailDisplay = email ? ` 📧 ${email}` : '';
+    process.stdout.write(`${siteDisplay}${emailDisplay}\n`);
   }
 
   console.log(`   Fetched details: ${fetched} | Skipped: ${skipped}`);
