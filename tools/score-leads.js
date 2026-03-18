@@ -37,14 +37,25 @@ function getArg(flag) {
 // Philosophy: we score OPPORTUNITY — how bad is their site AND how good is their business?
 // Bad site + good business = highest priority. Perfect site = skip.
 
-// Category LTV weights — higher spend businesses = higher priority
+// Category LTV weights — based on research: low complexity + high ticket + local decision maker = top priority
 const CATEGORY_WEIGHTS = {
-  'professional-services': 25,  // dental/medical/legal = high ticket
-  'lodging':               22,  // hotels/lodges = ongoing web presence matters
-  'outdoor-adventure':     20,  // guides = seasonal urgency
-  'restaurant':            18,  // volume businesses
-  'retail-boutique':       16,
-  'auto-services':         15,
+  // TIER 1 — Ideal: simple info site, high-ticket jobs, sole owner decides (score 26-30)
+  'home-services':         30,  // HVAC, plumbing, electrical, roofing — emergency + high ticket
+  'trades-construction':   28,  // general contractors, excavation, masonry, fencing
+  'outdoor-guides':        27,  // fishing/hunting guides — Flathead Valley goldmine
+  'professional-services': 26,  // dentists, lawyers, CPAs, insurance, vets
+  'landscaping':           25,  // landscaping, lawn care, tree service, pressure washing
+  'wellness':              24,  // chiropractors, massage therapists, physical therapy
+
+  // TIER 2 — Good fit, slightly more complexity
+  'auto-services':         18,  // auto repair, body shops — simple but commodity
+  'specialty-trades':      17,  // painters, flooring, window/door, cabinet makers
+
+  // TIER 3 — Discoverable but often too complex to sell easily
+  'lodging':               12,  // often wants real booking engine
+  'outdoor-adventure':     10,  // tourist attractions — mixed complexity
+  'restaurant':            8,   // avoid: menus, ordering systems, food photos
+  'retail-boutique':       6,   // avoid: e-commerce expected
 };
 
 function scoreWebsiteNeed({ auditScore, noWebsiteFlag }) {

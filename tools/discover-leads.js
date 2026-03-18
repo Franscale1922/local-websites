@@ -58,13 +58,95 @@ const DEFAULT_LAT = 48.4105;
 const DEFAULT_LNG = -114.3352;
 const DEFAULT_RADIUS = 50000; // 50km ≈ 45-minute drive radius
 
-// All target categories mapped to Google Places types
+// All target categories mapped to Google Places (New) types
+// Tier 1 — High value: low complexity, high ticket, local owner decides
+// Tier 2 — Medium value: good fit but slightly more complexity
+// Tier 3 — Low priority: kept for market awareness, not primary targets
 const CATEGORY_MAP = {
+
+  // ── TIER 1: IDEAL TARGETS ──────────────────────────────────────────────────
+
+  'home-services': [              // Emergency + high ticket. Mobile-first, click-to-call.
+    'plumber',
+    'electrician',
+    'hvac_contractor',
+    'roofing_contractor',
+    'pest_control',
+    'garage_door',
+    'locksmith',
+  ],
+
+  'trades-construction': [        // Project-based, visual portfolios, sole owner.
+    'general_contractor',
+    'construction_company',
+    'excavating_contractor',
+    'masonry_contractor',
+    'fence_contractor',
+    'concrete_contractor',
+    'well_drilling_contractor',
+  ],
+
+  'outdoor-guides': [             // Flathead Valley goldmine. Premium day rates, clients research hard.
+    'guide_service',
+    'hunting_area',
+    'fishing_store',
+    'outdoor_sports_store',
+    'canoe_kayak_rental',
+    'boat_rental',
+  ],
+
+  'professional-services': [      // High LTV. Simple credibility site. No booking needed.
+    'dentist',
+    'lawyer',
+    'insurance_agency',
+    'accountant',
+    'physiotherapist',
+    'veterinary_care',
+    'surveyor',
+  ],
+
+  'landscaping': [                // Seasonal + visual. Before/after galleries.
+    'landscaping_service',
+    'lawn_care_service',
+    'tree_service',
+    'pressure_washing',
+    'snow_removal',
+    'gardener',
+  ],
+
+  'wellness': [                   // Solo operators. Referral + search hybrid.
+    'chiropractor',
+    'massage_therapist',
+    'massage',
+    'spa',
+    'physical_therapist',
+  ],
+
+  // ── TIER 2: GOOD FIT ───────────────────────────────────────────────────────
+
+  'auto-services': [
+    'car_repair',
+    'auto_body_shop',
+    'car_dealer',
+    'car_wash',
+    'auto_parts_store',
+  ],
+
+  'specialty-trades': [           // Painters, flooring, windows — visual + high ticket.
+    'painter',
+    'flooring_contractor',
+    'flooring_store',
+    'window_installation_service',
+    'cabinet_maker',
+    'handyman',
+    'upholstery_shop',
+  ],
+
+  // ── TIER 3: MARKET AWARENESS (low priority build targets) ──────────────────
+
   restaurant:           ['restaurant', 'cafe', 'bakery', 'bar', 'meal_takeaway', 'brunch_restaurant'],
   lodging:              ['lodging', 'campground', 'rv_park'],
-  'professional-services': ['dentist', 'doctor', 'lawyer', 'insurance_agency', 'accountant', 'physiotherapist', 'veterinary_care'],
   'retail-boutique':    ['clothing_store', 'jewelry_store', 'book_store', 'gift_shop', 'florist', 'home_goods_store', 'furniture_store', 'pet_store'],
-  'auto-services':      ['car_repair', 'car_dealer', 'car_wash', 'auto_parts_store'],
   'outdoor-adventure':  ['tourist_attraction', 'travel_agency', 'park', 'rv_park', 'campground'],
 };
 
