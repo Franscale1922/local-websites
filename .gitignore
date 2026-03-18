@@ -14,6 +14,10 @@ dist/
 .env.*.local
 *.env
 
+# Service account credentials — NEVER commit these
+credentials/
+*.json.key
+
 # Vercel
 .vercel
 
