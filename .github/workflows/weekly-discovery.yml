@@ -1,0 +1,85 @@
+name: Weekly Lead Discovery Sweep
+
+on:
+  schedule:
+    # Every Monday at 6:00 AM Mountain Time (12:00 UTC)
+    - cron: '0 12 * * 1'
+  workflow_dispatch:
+    # Also allows manual trigger from GitHub Actions tab
+    inputs:
+      categories:
+        description: 'Categories to discover (comma-separated, or "all")'
+        required: false
+        default: 'all'
+      radius:
+        description: 'Search radius in meters'
+        required: false
+        default: '50000'
+
+jobs:
+  discover:
+    name: Discover & Score Leads
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run lead discovery
+        env:
+          GOOGLE_PLACES_API_KEY:        ${{ secrets.GOOGLE_PLACES_API_KEY }}
+          GOOGLE_PAGESPEED_API_KEY:     ${{ secrets.GOOGLE_PAGESPEED_API_KEY }}
+          BRAVE_SEARCH_API_KEY:         ${{ secrets.BRAVE_SEARCH_API_KEY }}
+          ANTHROPIC_API_KEY:            ${{ secrets.ANTHROPIC_API_KEY }}
+          GOOGLE_SHEET_ID:              ${{ secrets.GOOGLE_SHEET_ID }}
+          GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
+          GOOGLE_SERVICE_ACCOUNT_KEY:   /tmp/service-account.json
+        run: |
+          # Write service account key from secret to temp file
+          echo '${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}' > /tmp/service-account.json
+
+          CATS="${{ github.event.inputs.categories || 'all' }}"
+          RADIUS="${{ github.event.inputs.radius || '50000' }}"
+
+          if [ "$CATS" = "all" ]; then
+            node tools/discover-leads.js --all --radius $RADIUS
+          else
+            node tools/discover-leads.js --category "$CATS" --radius $RADIUS
+          fi
+
+      - name: Audit discovered URLs
+        env:
+          GOOGLE_PAGESPEED_API_KEY: ${{ secrets.GOOGLE_PAGESPEED_API_KEY }}
+        run: node tools/audit-urls.js --all
+
+      - name: Score all leads
+        run: node tools/score-leads.js --all
+
+      - name: Export to Google Sheet
+        env:
+          GOOGLE_SHEET_ID:              ${{ secrets.GOOGLE_SHEET_ID }}
+          GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
+          GOOGLE_SERVICE_ACCOUNT_KEY:   /tmp/service-account.json
+        run: |
+          echo '${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}' > /tmp/service-account.json
+          node tools/export-leads.js
+
+      - name: Commit updated leads files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add leads/
+          git diff --staged --quiet || git commit -m "Weekly discovery sweep — $(date '+%Y-%m-%d')"
+          git push
+
+      - name: Print summary
+        run: node tools/score-leads.js --queue

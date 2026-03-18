@@ -1,166 +1,171 @@
-# Tools — Usage Guide
+# Tools Reference
 
-All scripts in this directory are ES module Node.js scripts. Run from the project root.
+All pipeline scripts live here. Run from the project root.
 
-## Prerequisites
+---
 
-Create a `.env` file by copying `.env.example`:
+## Discovery Pipeline
+
+### `discover-leads.js` — Find businesses via Google Places API
 ```bash
-cp .env.example .env
-# Then fill in your API keys
+node tools/discover-leads.js --all --radius 50000
+node tools/discover-leads.js --category restaurant
+npm run discover                  # shortcut (all categories)
+npm run discover:restaurant       # single category
 ```
+Output: `leads/discovered-[date]-[category].json`
 
-Load env vars before running scripts:
+### `audit-urls.js` — Score each website (PageSpeed + SSL + age)
 ```bash
-export $(cat .env | grep -v '#' | xargs)
-# or use: node --env-file=.env tools/[script].js
+node tools/audit-urls.js --all
+node tools/audit-urls.js --file leads/discovered-*.json
+node tools/audit-urls.js --url https://somesite.com
+npm run audit
+```
+Output: enriches same leads JSON with `auditScore` (0–100)
+
+### `score-leads.js` — Final lead scoring + suppression
+```bash
+node tools/score-leads.js --all
+node tools/score-leads.js --queue              # print build queue
+npm run score
+npm run queue
+```
+Output: enriches leads JSON with `leadScore`, prints ranked table
+
+### `export-leads.js` — Sync to Google Sheet CRM
+```bash
+node tools/export-leads.js
+npm run export
+```
+Output: "Build Queue" and "Raw Leads" tabs in the Google Sheet
+
+### `npm run sweep` — Runs all four steps in sequence
+```bash
+npm run sweep
 ```
 
 ---
 
-## The Pipeline (in order)
+## Prospect Pipeline (per-slug)
 
-```
-1. scrape-existing-site.js   → Extract content from their old website
-2. scrape-reviews.js         → Pull Google reviews via Places API
-3. generate-voice-brief.js   → AI builds Voice Brief from reviews + copy
-4. generate-copy.js          → AI generates full site copy from Voice Brief
-5. apply-copy.js             → Patches copy into the right template
-6. [manual QA]               → Review at localhost:3000, adjust as needed (~15 min)
-7. deploy-demo.js            → Pushes to Vercel, captures live URL
-```
-
----
-
-## Individual Scripts
-
-### `audit-urls.js`
-Batch-checks a list of URLs for SSL, PageSpeed, and last redesign date.
-
+### `digital-audit.js` — Forensic web research
 ```bash
-node tools/audit-urls.js
-# Edit the URLS array at the top of the file before running
+node tools/digital-audit.js --slug [slug] --business "Name" --city "City"
+npm run digital-audit -- --slug [slug] --business "Name" --city "City"
 ```
+Output: `prospects/[slug]/digital-audit.json`, `owner-intel.md`
 
----
-
-### `score-leads.js`
-Calculates lead scores from a list of business data objects and outputs a ranked list.
-
-```bash
-node tools/score-leads.js
-# Edit the LEADS array at the top of the file
-```
-
----
-
-### `scrape-existing-site.js`
-Extracts readable text from a prospect's existing website using Jina.ai reader.
-
+### `scrape-existing-site.js` — Extract existing website copy
 ```bash
 node tools/scrape-existing-site.js --slug [slug] --url https://theirsite.com
+npm run scrape -- --slug [slug] --url https://theirsite.com
 ```
-
 Output: `prospects/[slug]/existing-copy.txt`
 
----
-
-### `scrape-reviews.js`
-Fetches Google Places reviews and business details for a prospect.
-
+### `scrape-reviews.js` — Pull Google reviews
 ```bash
-node tools/scrape-reviews.js --slug [slug] --place-id "ChIJXXXXXXXXXXXX"
+node tools/scrape-reviews.js --slug [slug] --place-id "ChIJXXXXX"
+npm run reviews -- --slug [slug] --place-id "ChIJXXXXX"
 ```
-
-How to find a Place ID:
-1. Search on [Google Maps](https://maps.google.com)
-2. Copy the URL — or use the [Place ID Finder](https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder)
-
-Requires: `GOOGLE_PLACES_API_KEY`
 Output: `prospects/[slug]/google-reviews.json`
 
----
-
-### `generate-voice-brief.js`
-Feeds reviews + existing copy into Claude and returns a Voice Brief JSON.
-
+### `generate-voice-brief.js` — AI brand voice analysis
 ```bash
 node tools/generate-voice-brief.js --slug [slug]
+npm run voice -- --slug [slug]
 ```
+Output: `prospects/[slug]/voice-brief.json`, updates `research.md`
 
-Requires: `ANTHROPIC_API_KEY`, `prospects/[slug]/google-reviews.json`
-Output: `prospects/[slug]/voice-brief.json` + updates `research.md`
-
----
-
-### `generate-copy.js`
-Generates all website copy (headlines, sub-copy, about, CTAs, SEO meta) using the Voice Brief.
-
+### `generate-copy.js` — AI website copy generation
 ```bash
 node tools/generate-copy.js --slug [slug]
+npm run copy -- --slug [slug]
 ```
-
-Requires: `ANTHROPIC_API_KEY`, Voice Brief section in `prospects/[slug]/research.md`
 Output: `prospects/[slug]/generated-copy.json`
 
----
-
-### `apply-copy.js`
-Copies the correct template into `prospects/[slug]/site/` and patches the SITE config with generated copy.
-
+### `apply-copy.js` — Merge copy into template
 ```bash
 node tools/apply-copy.js --slug [slug] --template restaurant
+npm run apply -- --slug [slug] --template restaurant
 ```
+Templates: `restaurant`, `lodging`, `professional-services`, `retail-boutique`, `auto-services`, `outdoor-adventure`
+Output: `prospects/[slug]/site/` — complete Next.js project
 
-Available templates: `outdoor-adventure`, `restaurant`, `lodging`, `professional-services`, `retail-boutique`, `auto-services`
-
-Then preview:
-```bash
-cd prospects/[slug]/site && npm install && npm run dev
-```
-
----
-
-### `deploy-demo.js`
-Deploys the site to Vercel and saves the URL back to `research.md`.
-
+### `deploy-demo.js` — Deploy to Vercel
 ```bash
 node tools/deploy-demo.js --slug [slug]
+npm run deploy -- --slug [slug]
 ```
+Output: live URL written to `prospects/[slug]/research.md`
 
-Requires: `VERCEL_TOKEN`, Vercel CLI installed (`npm i -g vercel`)
+### `run-pipeline.js` — Run all steps for a slug in order
+```bash
+node tools/run-pipeline.js --slug [slug]
+node tools/run-pipeline.js --slug [slug] --from voice   # resume from step
+node tools/run-pipeline.js --slug [slug] --dry-run      # preview only
+npm run pipeline -- --slug [slug]
+```
+Steps: digital-audit → scrape → reviews → voice → copy → apply → deploy → crm
 
 ---
 
-### `scaffold-template.sh`
-Creates a new template folder with base config files.
+## Outreach & CRM
 
+### `send-email.js` — Send outreach email
 ```bash
-chmod +x tools/scaffold-template.sh
-./tools/scaffold-template.sh my-new-template
+node tools/send-email.js --slug [slug] --email 1
+node tools/send-email.js --slug [slug] --email 2 --dry-run
+npm run email:send -- --slug [slug] --email 1
+```
+
+### `update-crm.js` — Update lead status in Google Sheet
+```bash
+node tools/update-crm.js --slug [slug] --status EMAILED_1
+node tools/update-crm.js --slug [slug] --status HOT --note "Replied asking for price"
+node tools/update-crm.js --slug [slug] --demo "https://demo.vercel.app"
+npm run crm:update -- --slug [slug] --status EMAILED_1
+```
+Valid statuses: `DISCOVERED` → `AUDITED` → `SCORED` → `EMAILED_1` → `EMAILED_2` → `EMAILED_3` → `REPLIED` → `HOT` → `CONVERTED` → `NOT_INTERESTED` → `SUPPRESSED`
+
+---
+
+## Delivery
+
+### `package-site.js` — Package site for client delivery
+```bash
+node tools/package-site.js --slug [slug] --mode zip       # Next.js source
+node tools/package-site.js --slug [slug] --mode static    # static HTML/CSS
+node tools/package-site.js --slug [slug] --mode vercel-link
+npm run package -- --slug [slug] --mode zip
+```
+Output: `prospects/[slug]/deliverable/` with handoff docs
+
+---
+
+## Dashboard
+
+### `check-status.js` — Prospect pipeline dashboard
+```bash
+node tools/check-status.js
+node tools/check-status.js --setup    # validate env vars
+npm run status
 ```
 
 ---
 
-## Full Pipeline Example
+## Required Environment Variables
 
-```bash
-# 1. Set env vars
-export $(cat .env | grep -v '#' | xargs)
+| Variable | Used by |
+|---|---|
+| `ANTHROPIC_API_KEY` | generate-copy, generate-voice-brief, digital-audit |
+| `GOOGLE_PLACES_API_KEY` | discover-leads, scrape-reviews |
+| `GOOGLE_PAGESPEED_API_KEY` | audit-urls |
+| `BRAVE_SEARCH_API_KEY` | digital-audit |
+| `VERCEL_TOKEN` | deploy-demo |
+| `RESEND_API_KEY` | send-email |
+| `GOOGLE_SHEET_ID` | export-leads, update-crm |
+| `GOOGLE_SERVICE_ACCOUNT_KEY` | export-leads, update-crm |
+| `GOOGLE_SERVICE_ACCOUNT_EMAIL` | export-leads, update-crm |
 
-# 2. Create the prospect folder (done once)
-mkdir -p prospects/big-sky-brewery
-
-# 3. Run the pipeline
-node tools/scrape-existing-site.js --slug big-sky-brewery --url https://bigskybrewing.com
-node tools/scrape-reviews.js --slug big-sky-brewery --place-id "ChIJXXXXXXXXXXXX"
-node tools/generate-voice-brief.js --slug big-sky-brewery
-node tools/generate-copy.js --slug big-sky-brewery
-node tools/apply-copy.js --slug big-sky-brewery --template restaurant
-
-# 4. Review at localhost:3000
-cd prospects/big-sky-brewery/site && npm install && npm run dev
-
-# 5. Deploy when ready
-node tools/deploy-demo.js --slug big-sky-brewery
-```
+See `SETUP.md` for step-by-step instructions to acquire each key.
