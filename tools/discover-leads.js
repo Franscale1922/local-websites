@@ -69,10 +69,10 @@ const CATEGORY_MAP = {
   'home-services': [              // Emergency + high ticket. Mobile-first, click-to-call.
     'plumber',
     'electrician',
-    'hvac_contractor',
+    'heating_contractor',         // HVAC/heating — valid in new API (not hvac_contractor)
     'roofing_contractor',
-    'pest_control',
-    'garage_door',
+    'pest_control_service',       // valid in new API (not pest_control)
+    'garage_door_supplier',       // valid in new API (not garage_door)
     'locksmith',
   ],
 
