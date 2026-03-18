@@ -107,7 +107,9 @@ async function nearbySearch(lat, lng, radius, type, pageToken = null) {
     headers: {
       'Content-Type': 'application/json',
       'X-Goog-Api-Key': API_KEY,
-      'X-Goog-FieldMask': 'places.id,places.displayName,places.rating,places.userRatingCount,places.businessStatus,places.types,nextPageToken',
+      // nextPageToken is auto-returned — do NOT include in FieldMask
+      // places.name is the resource name (places/ChIJ...) used for detail calls
+      'X-Goog-FieldMask': 'places.name,places.displayName,places.rating,places.userRatingCount,places.businessStatus,places.types',
     },
     body: JSON.stringify(body),
   });
@@ -122,7 +124,7 @@ async function nearbySearch(lat, lng, radius, type, pageToken = null) {
   // Normalize to the shape the rest of the script expects
   return {
     results: (data.places || []).map(p => ({
-      place_id: p.id,
+      place_id: p.name,   // resource name (places/ChIJ...) — used in detail URL
       name:     p.displayName?.text || '',
       rating:               p.rating,
       user_ratings_total:   p.userRatingCount,
@@ -133,10 +135,12 @@ async function nearbySearch(lat, lng, radius, type, pageToken = null) {
   };
 }
 
+
 async function getPlaceDetails(placeId) {
-  // New API path: places/{id}
-  const id  = placeId.startsWith('places/') ? placeId : `places/${placeId}`;
-  const url = `${DETAILS_BASE}/${id.replace('places/', '')}`;
+  // placeId is already the full resource name: "places/ChIJ..."
+  // Strip the "places/" prefix to build the URL correctly
+  const rawId = placeId.startsWith('places/') ? placeId.slice('places/'.length) : placeId;
+  const url = `${DETAILS_BASE}/${rawId}`;
 
   const resp = await fetch(url, {
     headers: {
@@ -152,7 +156,6 @@ async function getPlaceDetails(placeId) {
     return null;
   }
 
-  // Normalize to old response shape
   return {
     name:                     data.displayName?.text,
     formatted_address:        data.formattedAddress,
@@ -165,6 +168,7 @@ async function getPlaceDetails(placeId) {
     url:                      data.googleMapsUri,
   };
 }
+
 
 // ─── Filtering logic ──────────────────────────────────────────────────────────
 
