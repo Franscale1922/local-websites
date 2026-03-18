@@ -4,44 +4,45 @@
   "description": "Waypoint Local — automated website prospecting and build pipeline",
   "type": "module",
   "scripts": {
-    "setup": "node tools/check-status.js --setup",
+    "setup":   "node --import=./tools/_load-env.js tools/check-status.js --setup",
+    "status":  "node --import=./tools/_load-env.js tools/check-status.js",
 
-    "discover": "node tools/discover-leads.js --all --radius 50000",
-    "discover:restaurant": "node tools/discover-leads.js --category restaurant --radius 50000",
-    "discover:lodging": "node tools/discover-leads.js --category lodging --radius 50000",
-    "discover:professional": "node tools/discover-leads.js --category professional-services --radius 50000",
-    "discover:retail": "node tools/discover-leads.js --category retail-boutique --radius 50000",
-    "discover:auto": "node tools/discover-leads.js --category auto-services --radius 50000",
-    "discover:outdoor": "node tools/discover-leads.js --category outdoor-adventure --radius 50000",
+    "discover":              "node --import=./tools/_load-env.js tools/discover-leads.js --all --radius 50000",
+    "discover:restaurant":   "node --import=./tools/_load-env.js tools/discover-leads.js --category restaurant --radius 50000",
+    "discover:lodging":      "node --import=./tools/_load-env.js tools/discover-leads.js --category lodging --radius 50000",
+    "discover:professional": "node --import=./tools/_load-env.js tools/discover-leads.js --category professional-services --radius 50000",
+    "discover:retail":       "node --import=./tools/_load-env.js tools/discover-leads.js --category retail-boutique --radius 50000",
+    "discover:auto":         "node --import=./tools/_load-env.js tools/discover-leads.js --category auto-services --radius 50000",
+    "discover:outdoor":      "node --import=./tools/_load-env.js tools/discover-leads.js --category outdoor-adventure --radius 50000",
 
-    "audit": "node tools/audit-urls.js --all",
-    "audit:url": "node tools/audit-urls.js --url",
+    "audit":     "node --import=./tools/_load-env.js tools/audit-urls.js --all",
+    "audit:url": "node --import=./tools/_load-env.js tools/audit-urls.js --url",
 
-    "score": "node tools/score-leads.js --all",
-    "queue": "node tools/score-leads.js --queue",
+    "score": "node --import=./tools/_load-env.js tools/score-leads.js --all",
+    "queue": "node --import=./tools/_load-env.js tools/score-leads.js --queue",
 
-    "export": "node tools/export-leads.js",
-    "status": "node tools/check-status.js",
+    "export": "node --import=./tools/_load-env.js tools/export-leads.js",
 
     "sweep": "npm run discover && npm run audit && npm run score && npm run export",
 
-    "digital-audit": "node tools/digital-audit.js",
-    "scrape": "node tools/scrape-existing-site.js",
-    "reviews": "node tools/scrape-reviews.js",
-    "voice": "node tools/generate-voice-brief.js",
-    "copy": "node tools/generate-copy.js",
-    "apply": "node tools/apply-copy.js",
-    "deploy": "node tools/deploy-demo.js",
-    "package": "node tools/package-site.js",
-    "pipeline": "node tools/run-pipeline.js",
+    "digital-audit": "node --import=./tools/_load-env.js tools/digital-audit.js",
+    "scrape":        "node --import=./tools/_load-env.js tools/scrape-existing-site.js",
+    "reviews":       "node --import=./tools/_load-env.js tools/scrape-reviews.js",
+    "voice":         "node --import=./tools/_load-env.js tools/generate-voice-brief.js",
+    "copy":          "node --import=./tools/_load-env.js tools/generate-copy.js",
+    "apply":         "node --import=./tools/_load-env.js tools/apply-copy.js",
+    "deploy":        "node --import=./tools/_load-env.js tools/deploy-demo.js",
+    "package":       "node --import=./tools/_load-env.js tools/package-site.js",
+    "pipeline":      "node --import=./tools/_load-env.js tools/run-pipeline.js",
 
-    "email:send": "node tools/send-email.js",
-    "crm:update": "node tools/update-crm.js",
+    "email:send": "node --import=./tools/_load-env.js tools/send-email.js",
+    "crm:update": "node --import=./tools/_load-env.js tools/update-crm.js",
 
     "push": "bash push.sh"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.52.0",
+    "dotenv": "^16.0.0",
     "googleapis": "^144.0.0"
   },
   "engines": {
