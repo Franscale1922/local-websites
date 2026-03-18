@@ -174,8 +174,16 @@ async function getPlaceDetails(placeId) {
 
 // Domains/patterns that appear in HTML but are not real contact emails
 const EMAIL_BLOCKLIST = [
-  'example.com', 'domain.com', 'yourdomain', 'sentry.io', 'wix.com',
-  'squarespace.com', 'jquery', 'schema.org', '@2x', '.png', '.jpg', '.svg',
+  // Placeholder / template emails
+  'example.com', 'domain.com', 'yourdomain', 'mystore.com',
+  // Error reporting / platform internals
+  'sentry.io', 'sentry-next', 'wixpress.com',
+  // Website builder support addresses
+  'wix.com', 'squarespace.com', 'webador.com', 'godaddy.com', 'weebly.com',
+  // Corporate chain contacts (not local)
+  'inspirebrands.com',
+  // Code / asset false positives
+  'jquery', 'schema.org', '@2x', '.png', '.jpg', '.svg',
 ];
 
 function extractEmail(html) {
