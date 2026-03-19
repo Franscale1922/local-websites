@@ -588,7 +588,7 @@ export default function Home() {
       <section className="section section--dark" id="contact" style={{ background: '#F7F8FA' }}>
         <div className="container">
           <span className="eyebrow">{SITE.contactLabel}</span>
-          <h2 style={{ marginBottom: '40px' }}>{SITE.contactHeading}</h2>
+          <h2 style={{ marginBottom: '40px', color: 'var(--color-primary)' }}>{SITE.contactHeading}</h2>
           <div className="contact-grid">
             <div className="contact-info">
               <h3>Reach Us Directly</h3>

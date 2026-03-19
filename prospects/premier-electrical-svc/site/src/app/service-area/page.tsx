@@ -56,7 +56,6 @@ const COUNTIES = [
 export default function ServiceAreaPage() {
   return (
     <main>
-      <div className="demo-banner">🔍 Demo site — built for Premier Electrical Services. Not the live site.</div>
       <nav className="nav nav--scrolled">
         <a href="/" className="nav-logo"><div className="nav-logo-icon">⚡</div>Premier Electrical Services</a>
         <ul className="nav-links">
