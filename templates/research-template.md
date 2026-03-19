@@ -51,6 +51,64 @@ What stood out about this business? Why did you flag it as a prospect?
 
 ---
 
+## Existing Site Architecture
+
+<!-- REQUIRED — determines whether demo must be multi-page -->
+
+- **Current site type:** Single-page | Multi-page | No website
+- **Number of pages:** X
+- **Pages present:** Home | About | Services | Contact | Other: ____
+- **Demo architecture required:** Multi-page (default) | Single-page (only if existing site is single-page)
+
+---
+
+## LLM Research Results
+
+<!-- Phase 1.5 — Paste each model's full response below. Do not skip. -->
+<!-- Prompt template: .agent/llm-research-prompt.md -->
+
+### ChatGPT Response
+(pending)
+
+### Claude Response
+(pending)
+
+### Perplexity Response
+(pending)
+
+### Gemini Response
+(pending)
+
+---
+
+## LLM Research Synthesis
+
+<!-- Agent completes this after reading all 4 responses — required before Phase 2 -->
+
+### Must-Have Sections (consensus)
+-
+
+### Design Patterns to Replicate
+-
+
+### Industry-Specific Trust Signals
+-
+
+### Competitor Weaknesses to Exploit
+-
+
+### Confirmed Page Structure
+- /
+- /services
+- /services/[slug]
+- /about
+- /service-area
+- /contact
+- /faq
+- [add others flagged by research]
+
+---
+
 ## Digital Audit (auto-generated)
 <!-- Populated by: node tools/digital-audit.js --slug [slug] --business "Name" --city "City" -->
 
