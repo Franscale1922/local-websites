@@ -24,10 +24,10 @@ const SITE = {
   ],
 
   trustItems: [
-    { icon: '🏆', label: '3× Best of the Best', sub: 'Skagit Valley — 2023 · 2024 · 2025' },
-    { icon: '🏅', label: 'A+ BBB Rating', sub: 'Licensed, Bonded & Insured' },
-    { icon: '⚡', label: '60 Yrs Combined Experience', sub: 'Residential & Commercial' },
-    { icon: '💬', label: 'Free Estimates', sub: 'On most projects — no surprises' },
+    { label: '3× Best of the Best', sub: 'Skagit Valley — 2023 · 2024 · 2025' },
+    { label: 'A+ BBB Rating', sub: 'Licensed, Bonded & Insured' },
+    { label: '60 Yrs Combined Experience', sub: 'Residential & Commercial' },
+    { label: 'Free Estimates', sub: 'On most projects — no surprises' },
   ],
 
   servicesTitle: 'What We Do',
@@ -35,49 +35,41 @@ const SITE = {
   servicesSub: 'From panel upgrades to historic home rewires to EV chargers — specialty work is our thing.',
   services: [
     {
-      icon: '🏠',
       title: 'Residential Wiring',
       desc: 'New construction, remodels, complete rewires, rough-in, and trim-out. We\'ve built them and rewired them — we know how they\'re supposed to work.',
       href: '/services/service-calls',
     },
     {
-      icon: '⚡',
       title: 'Panel Upgrades',
       desc: 'Undersized panel? Old fuse box? We upgrade panels and subpanels so your home can handle what modern life demands. All work is inspector-approved.',
       href: '/services/panel-upgrades',
     },
     {
-      icon: '🏚️',
       title: 'Historic & Older Homes',
       desc: 'Knob-and-tube, cloth wiring, fuse boxes — we specialize in complex, older, and historic properties that other electricians pass on. We know what we\'re looking at.',
       href: '/services/historic-home-rewiring',
     },
     {
-      icon: '🚗',
       title: 'EV Charging Stations',
       desc: 'Tesla Wall Connector, JuiceBox, and more. We install Level 2 home chargers the right way — permitted, clean, and code-compliant.',
       href: '/services/ev-charging',
     },
     {
-      icon: '🔌',
       title: 'Generator Installation',
       desc: 'Temporary or permanent whole-home generators. When the power goes out in the Pacific Northwest, you\'ll be glad you planned ahead.',
       href: '/services/generator-installation',
     },
     {
-      icon: '🏢',
       title: 'Commercial Work',
       desc: 'Restaurants, offices, daycares, retail spaces. Fire suppression wiring, exterior security lighting, and complete commercial electrical systems.',
       href: '/services/commercial-wiring',
     },
     {
-      icon: '🔍',
       title: 'Service Calls & Troubleshooting',
       desc: 'Tripped breakers, mystery outages, questionable work left by a previous contractor. We diagnose it, we fix it, we explain what happened.',
       href: '/services/service-calls',
     },
     {
-      icon: '💡',
       title: 'Lighting & Outbuildings',
       desc: 'Indoor, outdoor, security, and accent lighting. Plus wiring for detached garages, shops, ADUs, and sheds. Hot tub and spa wiring too.',
       href: '/services/lighting-upgrades',
@@ -90,19 +82,16 @@ const SITE = {
   processSteps: [
     {
       num: '01',
-      icon: '📞',
       title: 'Call or Submit a Request',
       desc: 'Reach out by phone or the form below. We respond same day on most requests. If it\'s urgent, call — we pick up.',
     },
     {
       num: '02',
-      icon: '📋',
       title: 'Get a Free Estimate',
       desc: 'We come out, look at the job, and give you a clear quote — before any work starts. No vague ranges. No hidden line items. What we quote is what you pay.',
     },
     {
       num: '03',
-      icon: '✅',
       title: 'We Do the Work Right',
       desc: 'Our team shows up on time and does the job to code. Every project is inspector-approved. We don\'t leave until it\'s done right.',
     },
@@ -218,9 +207,9 @@ const SITE = {
     },
   ],
   reviewPlatforms: [
-    { label: 'Google', icon: '⭐', href: 'https://www.google.com/search?q=Premier+Electrical+Services+Mount+Vernon+WA' },
-    { label: 'Facebook', icon: '👍', href: 'https://www.facebook.com' },
-    { label: 'BBB', icon: '🏅', href: 'https://www.bbb.org' },
+    { label: 'Google', href: 'https://www.google.com/search?q=Premier+Electrical+Services+Mount+Vernon+WA' },
+    { label: 'Facebook', href: 'https://www.facebook.com' },
+    { label: 'BBB', href: 'https://www.bbb.org' },
   ],
 
   ctaTitle: 'Ready to Get It Done Right?',
@@ -272,10 +261,6 @@ export default function Home() {
 
   return (
     <>
-      {/* DEMO BANNER */}
-      <div className="demo-banner">
-        🔍 Demo site — built for Premier Electrical Services. Not the live site.
-      </div>
 
       {/* MOBILE STICKY BAR */}
       <div className="mobile-sticky-bar">
@@ -289,10 +274,10 @@ export default function Home() {
 
       {/* NAV */}
       <nav className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
-        <div className="nav-logo">
-          <div className="nav-logo-icon">⚡</div>
-          {SITE.name}
-        </div>
+        <a href="/" className="nav-logo">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.svg" alt="Premier Electrical Services" className="nav-logo-img" />
+        </a>
         <ul className="nav-links">
           {SITE.navLinks.map(l => (
             <li key={l.label}><a href={l.href}>{l.label}</a></li>
@@ -310,7 +295,10 @@ export default function Home() {
         <img src={SITE.heroImage} alt="Electrician working on electrical panel" className="hero-bg" />
         <div className="hero-overlay" />
         <div className="hero-content">
-          <div className="hero-badge">⚡ 3-Time Best of the Best — Skagit Valley · A+ BBB Rating</div>
+          <div className="hero-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623" style={{display:'inline',verticalAlign:'middle',marginRight:'6px'}}><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            3-Time Best of the Best — Skagit Valley · A+ BBB Rating
+          </div>
           <h1>
             {SITE.heroH1Part1} <span>{SITE.heroH1Accent}</span>
           </h1>
@@ -342,9 +330,14 @@ export default function Home() {
 
       {/* TRUST STRIP */}
       <div className="trust-strip">
-        {SITE.trustItems.map(t => (
+        {[
+          { svg: <svg key="trophy" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9H4a2 2 0 01-2-2V5h4"/><path d="M18 9h2a2 2 0 002-2V5h-4"/><path d="M6 5h12v6a6 6 0 01-12 0V5z"/><path d="M12 17v4"/><path d="M8 21h8"/></svg>, label: '3× Best of the Best', sub: 'Skagit Valley — 2023 · 2024 · 2025' },
+          { svg: <svg key="bbb" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/></svg>, label: 'A+ BBB Rating', sub: 'Licensed, Bonded & Insured' },
+          { svg: <svg key="exp" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>, label: '60 Yrs Combined Experience', sub: 'Residential & Commercial' },
+          { svg: <svg key="est" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>, label: 'Free Estimates', sub: 'On most projects — no surprises' },
+        ].map(t => (
           <div key={t.label} className="trust-strip-item">
-            <div className="trust-strip-icon">{t.icon}</div>
+            <div className="trust-strip-icon">{t.svg}</div>
             <div className="trust-strip-text">
               <span>{t.label}</span>
               {t.sub}
@@ -362,9 +355,18 @@ export default function Home() {
             {SITE.servicesSub}
           </p>
           <div className="services-grid services-grid--4col">
-            {SITE.services.map(s => (
+            {[
+              { title: 'Residential Wiring', desc: SITE.services[0].desc, href: SITE.services[0].href, svg: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> },
+              { title: 'Panel Upgrades', desc: SITE.services[1].desc, href: SITE.services[1].href, svg: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="8" y1="7" x2="8" y2="17"/><line x1="12" y1="7" x2="12" y2="17"/><line x1="16" y1="7" x2="16" y2="17"/><line x1="2" y1="12" x2="22" y2="12"/></svg> },
+              { title: 'Historic & Older Homes', desc: SITE.services[2].desc, href: SITE.services[2].href, svg: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 12a3 3 0 106 0"/><line x1="12" y1="9" x2="12" y2="12"/></svg> },
+              { title: 'EV Charging Stations', desc: SITE.services[3].desc, href: SITE.services[3].href, svg: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="16" height="10" rx="2"/><path d="M22 11v2"/><path d="M18 9v6"/><path d="M6 11h4"/><path d="M13 2L7 13h5l-1 9 7-13h-5l1-7z"/></svg> },
+              { title: 'Generator Installation', desc: SITE.services[4].desc, href: SITE.services[4].href, svg: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="10" rx="2"/><path d="M6 7V5"/><path d="M18 7V5"/><path d="M9 11h6"/><path d="M12 11v4"/></svg> },
+              { title: 'Commercial Work', desc: SITE.services[5].desc, href: SITE.services[5].href, svg: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="2" y1="9" x2="22" y2="9"/><line x1="2" y1="15" x2="22" y2="15"/><line x1="9" y1="9" x2="9" y2="22"/><line x1="15" y1="9" x2="15" y2="22"/></svg> },
+              { title: 'Service Calls & Troubleshooting', desc: SITE.services[6].desc, href: SITE.services[6].href, svg: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="11"/><line x1="11" y1="14" x2="11.01" y2="14"/></svg> },
+              { title: 'Lighting & Outbuildings', desc: SITE.services[7].desc, href: SITE.services[7].href, svg: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="10" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="16" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="2" y1="10" x2="4" y2="10"/><line x1="20" y1="10" x2="22" y2="10"/><line x1="4.22" y1="15.78" x2="5.64" y2="14.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg> },
+            ].map(s => (
               <div key={s.title} className="service-card">
-                <div className="service-icon">{s.icon}</div>
+                <div className="service-icon">{s.svg}</div>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
                 <a href={s.href} className="service-link">Learn more →</a>
@@ -384,11 +386,15 @@ export default function Home() {
           <h2 style={{ color: '#fff', marginBottom: '10px' }}>{SITE.processHeading}</h2>
           <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '1rem', marginBottom: 0 }}>{SITE.processSub}</p>
           <div className="process-grid">
-            {SITE.processSteps.map((step, i) => (
+            {[
+              { ...SITE.processSteps[0], svg: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.03z"/></svg> },
+              { ...SITE.processSteps[1], svg: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg> },
+              { ...SITE.processSteps[2], svg: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg> },
+            ].map((step, i) => (
               <div key={step.num} className="process-step">
                 {i < SITE.processSteps.length - 1 && <div className="process-connector" />}
                 <div className="process-icon-wrap">
-                  <div className="process-icon">{step.icon}</div>
+                  <div className="process-icon">{step.svg}</div>
                 </div>
                 <div className="process-num">{step.num}</div>
                 <h3 className="process-title">{step.title}</h3>
@@ -519,7 +525,7 @@ export default function Home() {
             <div className="review-platforms-links">
               {SITE.reviewPlatforms.map(p => (
                 <a key={p.label} href={p.href} target="_blank" rel="noopener noreferrer" className="review-platform-btn">
-                  {p.icon} Leave a {p.label} Review
+                  Leave a {p.label} Review
                 </a>
               ))}
             </div>
@@ -587,7 +593,7 @@ export default function Home() {
             <div className="contact-info">
               <h3>Reach Us Directly</h3>
               <div className="contact-detail">
-                <div className="contact-detail-icon">📞</div>
+                <div className="contact-detail-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.03z"/></svg></div>
                 <div className="contact-detail-text">
                   <div className="contact-detail-label">Phone</div>
                   <div className="contact-detail-value">
@@ -596,14 +602,14 @@ export default function Home() {
                 </div>
               </div>
               <div className="contact-detail">
-                <div className="contact-detail-icon">📍</div>
+                <div className="contact-detail-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
                 <div className="contact-detail-text">
                   <div className="contact-detail-label">Mailing Address</div>
                   <div className="contact-detail-value">{SITE.address}</div>
                 </div>
               </div>
               <div className="contact-detail">
-                <div className="contact-detail-icon">🗺️</div>
+                <div className="contact-detail-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg></div>
                 <div className="contact-detail-text">
                   <div className="contact-detail-label">Service Area</div>
                   <div className="contact-detail-value">Bellingham to Seattle — Skagit, Whatcom, San Juan, Island, King & Snohomish Counties</div>
@@ -617,7 +623,7 @@ export default function Home() {
             <div className="contact-form">
               {formSubmitted ? (
                 <div style={{ textAlign: 'center', padding: '40px 0' }}>
-                  <div style={{ fontSize: '3rem', marginBottom: '16px' }}>⚡</div>
+                  <div style={{ marginBottom: '16px' }}><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
                   <h3 style={{ marginBottom: '10px', color: 'var(--color-primary)' }}>Got it — thanks.</h3>
                   <p style={{ color: '#4a5568', fontSize: '0.9rem' }}>
                     We&apos;ll be in touch shortly. You can also call us directly at{' '}
@@ -672,8 +678,8 @@ export default function Home() {
         <div className="footer-inner">
           <div className="footer-brand">
             <div className="footer-brand-logo">
-              <div className="footer-brand-icon">⚡</div>
-              <div className="footer-brand-name">{SITE.name}</div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.svg" alt="Premier Electrical Services" className="footer-logo-img" />
             </div>
             <p className="footer-tagline">{SITE.footerTagline}</p>
             <p className="footer-license">Lic. {SITE.license} · A+ BBB Rating</p>
