@@ -26,7 +26,13 @@ export default function LightingUpgradesPage() {
       <section className="page-hero">
         <div className="container">
           <a href="/services" className="breadcrumb">← All Services</a>
-          <div className="page-hero-icon">💡</div>
+          <div className="page-hero-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <line x1="9" y1="18" x2="15" y2="18"/>
+              <line x1="10" y1="22" x2="14" y2="22"/>
+              <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>
+            </svg>
+          </div>
           <h1>Lighting, Outbuildings & Specialty Wiring — We Handle It All.</h1>
           <p className="page-hero-sub">
             Detached garages. Shops. Barns. ADUs. Hot tubs. Landscape lighting. Security lighting. If it needs power and it&apos;s on your property, we can wire it — correctly, with permits when required, and code-compliant every time.

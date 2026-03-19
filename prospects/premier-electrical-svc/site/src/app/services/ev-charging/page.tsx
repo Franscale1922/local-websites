@@ -29,7 +29,14 @@ export default function EVChargingPage() {
       <section className="page-hero">
         <div className="container">
           <a href="/services" className="breadcrumb">← All Services</a>
-          <div className="page-hero-icon">🚗</div>
+          <div className="page-hero-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <rect x="2" y="7" width="16" height="14" rx="2"/>
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M18 12h2a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/>
+              <line x1="10" y1="11" x2="8" y2="17"/>
+              <line x1="14" y1="11" x2="12" y2="17"/>
+            </svg>
+          </div>
           <h1>EV Charging Station Installation — Permitted, Clean, Ready to Charge.</h1>
           <p className="page-hero-sub">
             Washington ranks among the top EV markets in the country. We install Level 2 home charging stations across Skagit, Whatcom, Snohomish, and King counties — the right way, the first time.

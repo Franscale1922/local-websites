@@ -29,7 +29,11 @@ export default function WhatcomCountyPage() {
       <section className="page-hero">
         <div className="container">
           <a href="/service-area" className="breadcrumb">← All Service Areas</a>
-          <div className="page-hero-icon">⚡</div>
+          <div className="page-hero-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
           <h1>Electrical Contractors Serving Whatcom County, WA</h1>
           <p className="page-hero-sub">
             Licensed, bonded, A+ BBB — serving Bellingham, Ferndale, Lynden, Blaine, and all of Whatcom County. Panel upgrades, EV chargers, historic home rewiring, and more.

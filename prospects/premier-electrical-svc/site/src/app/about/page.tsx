@@ -28,7 +28,11 @@ export default function AboutPage() {
 
       <section className="page-hero">
         <div className="container">
-          <div className="page-hero-icon">🏆</div>
+          <div className="page-hero-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M8 21h8M12 21v-4M7 4H4a1 1 0 0 0-1 1v2a4 4 0 0 0 4 4h1M17 4h3a1 1 0 0 1 1 1v2a4 4 0 0 1-4 4h-1M7 4h10v7a5 5 0 0 1-10 0V4z"/>
+            </svg>
+          </div>
           <h1>The Electricians Skagit Valley Keeps Calling Back.</h1>
           <p className="page-hero-sub">
             Three-time Best of the Best. A+ BBB. Nearly 60 years of combined experience. Based in Mount Vernon — and proud of it.

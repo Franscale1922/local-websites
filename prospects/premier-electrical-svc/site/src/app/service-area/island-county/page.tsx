@@ -29,7 +29,11 @@ export default function IslandCountyPage() {
       <section className="page-hero">
         <div className="container">
           <a href="/service-area" className="breadcrumb">← All Service Areas</a>
-          <div className="page-hero-icon">🏝️</div>
+          <div className="page-hero-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/>
+            </svg>
+          </div>
           <h1>Electrical Contractors Serving Whidbey &amp; Camano Island</h1>
           <p className="page-hero-sub">
             Oak Harbor, Camano Island, Coupeville, Langley, Freeland. We serve Island County homeowners and businesses — licensed, bonded, A+ BBB.

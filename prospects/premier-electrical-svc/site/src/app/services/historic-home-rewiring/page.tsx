@@ -26,7 +26,14 @@ export default function HistoricHomeRewiringPage() {
       <section className="page-hero">
         <div className="container">
           <a href="/services" className="breadcrumb">← All Services</a>
-          <div className="page-hero-icon">🏚️</div>
+          <div className="page-hero-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+              <line x1="9" y1="9" x2="9.01" y2="9"/>
+              <line x1="15" y1="9" x2="15.01" y2="9"/>
+            </svg>
+          </div>
           <h1>Historic & Older Home Rewiring — The Work Other Electricians Pass On.</h1>
           <p className="page-hero-sub">
             Knob-and-tube wiring. Cloth-insulated wires. Aluminum branch circuits. Fuse boxes from 1952. We specialize in the complex, older, and historic properties that most electricians decline. With nearly 60 years of combined experience, we&apos;ve seen all of it.

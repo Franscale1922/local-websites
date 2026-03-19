@@ -30,7 +30,11 @@ export default function PanelUpgradesPage() {
       <section className="page-hero">
         <div className="container">
           <a href="/services" className="breadcrumb">← All Services</a>
-          <div className="page-hero-icon">⚡</div>
+          <div className="page-hero-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
           <h1>Electrical Panel Upgrades — Done Right the First Time.</h1>
           <p className="page-hero-sub">
             Tripped breakers, flickering lights, or a fuse box that hasn&apos;t been touched since 1978. We upgrade residential and commercial panels across Skagit, Whatcom, and surrounding counties.

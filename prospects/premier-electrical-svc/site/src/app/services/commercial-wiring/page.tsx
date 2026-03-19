@@ -26,7 +26,16 @@ export default function CommercialWiringPage() {
       <section className="page-hero">
         <div className="container">
           <a href="/services" className="breadcrumb">← All Services</a>
-          <div className="page-hero-icon">🏢</div>
+          <div className="page-hero-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <rect x="2" y="7" width="20" height="14" rx="2"/>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+              <line x1="6" y1="12" x2="6.01" y2="12"/>
+              <line x1="18" y1="12" x2="18.01" y2="12"/>
+              <line x1="6" y1="16" x2="6.01" y2="16"/>
+              <line x1="18" y1="16" x2="18.01" y2="16"/>
+            </svg>
+          </div>
           <h1>Commercial Electrical Services — Code-Compliant, Done on Schedule.</h1>
           <p className="page-hero-sub">
             Restaurants, daycares, retail buildouts, offices, and multi-tenant commercial spaces. We&apos;ve wired them all across Skagit, Whatcom, and Snohomish counties. Licensed commercial work — not residential thinking applied to commercial problems.
