@@ -7,24 +7,24 @@
     "setup":   "node --import=./tools/_load-env.js tools/check-status.js --setup",
     "status":  "node --import=./tools/_load-env.js tools/check-status.js",
 
-    "discover":                   "node --import=./tools/_load-env.js tools/discover-leads.js --all --radius 50000 && npm run export",
+    "discover":                   "node --import=./tools/_load-env.js tools/discover-leads.js --all --radius 50000 && npm run score && npm run export",
 
     "discover:tier1":             "npm run discover:home-services && npm run discover:trades && npm run discover:guides && npm run discover:professional && npm run discover:landscaping && npm run discover:wellness",
 
-    "discover:home-services":     "node --import=./tools/_load-env.js tools/discover-leads.js --category home-services --radius 50000 && npm run export",
-    "discover:trades":            "node --import=./tools/_load-env.js tools/discover-leads.js --category trades-construction --radius 50000 && npm run export",
-    "discover:guides":            "node --import=./tools/_load-env.js tools/discover-leads.js --category outdoor-guides --radius 50000 && npm run export",
-    "discover:professional":      "node --import=./tools/_load-env.js tools/discover-leads.js --category professional-services --radius 50000 && npm run export",
-    "discover:landscaping":       "node --import=./tools/_load-env.js tools/discover-leads.js --category landscaping --radius 50000 && npm run export",
-    "discover:wellness":          "node --import=./tools/_load-env.js tools/discover-leads.js --category wellness --radius 50000 && npm run export",
+    "discover:home-services":     "node --import=./tools/_load-env.js tools/discover-leads.js --category home-services --radius 50000 && npm run score && npm run export",
+    "discover:trades":            "node --import=./tools/_load-env.js tools/discover-leads.js --category trades-construction --radius 50000 && npm run score && npm run export",
+    "discover:guides":            "node --import=./tools/_load-env.js tools/discover-leads.js --category outdoor-guides --radius 50000 && npm run score && npm run export",
+    "discover:professional":      "node --import=./tools/_load-env.js tools/discover-leads.js --category professional-services --radius 50000 && npm run score && npm run export",
+    "discover:landscaping":       "node --import=./tools/_load-env.js tools/discover-leads.js --category landscaping --radius 50000 && npm run score && npm run export",
+    "discover:wellness":          "node --import=./tools/_load-env.js tools/discover-leads.js --category wellness --radius 50000 && npm run score && npm run export",
 
-    "discover:auto":              "node --import=./tools/_load-env.js tools/discover-leads.js --category auto-services --radius 50000 && npm run export",
-    "discover:specialty":         "node --import=./tools/_load-env.js tools/discover-leads.js --category specialty-trades --radius 50000 && npm run export",
+    "discover:auto":              "node --import=./tools/_load-env.js tools/discover-leads.js --category auto-services --radius 50000 && npm run score && npm run export",
+    "discover:specialty":         "node --import=./tools/_load-env.js tools/discover-leads.js --category specialty-trades --radius 50000 && npm run score && npm run export",
 
-    "discover:restaurant":        "node --import=./tools/_load-env.js tools/discover-leads.js --category restaurant --radius 50000 && npm run export",
-    "discover:lodging":           "node --import=./tools/_load-env.js tools/discover-leads.js --category lodging --radius 50000 && npm run export",
-    "discover:retail":            "node --import=./tools/_load-env.js tools/discover-leads.js --category retail-boutique --radius 50000 && npm run export",
-    "discover:outdoor":           "node --import=./tools/_load-env.js tools/discover-leads.js --category outdoor-adventure --radius 50000 && npm run export",
+    "discover:restaurant":        "node --import=./tools/_load-env.js tools/discover-leads.js --category restaurant --radius 50000 && npm run score && npm run export",
+    "discover:lodging":           "node --import=./tools/_load-env.js tools/discover-leads.js --category lodging --radius 50000 && npm run score && npm run export",
+    "discover:retail":            "node --import=./tools/_load-env.js tools/discover-leads.js --category retail-boutique --radius 50000 && npm run score && npm run export",
+    "discover:outdoor":           "node --import=./tools/_load-env.js tools/discover-leads.js --category outdoor-adventure --radius 50000 && npm run score && npm run export",
 
     "audit":     "node --import=./tools/_load-env.js tools/audit-urls.js --all",
     "audit:url": "node --import=./tools/_load-env.js tools/audit-urls.js --url",

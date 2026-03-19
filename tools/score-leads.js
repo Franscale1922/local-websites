@@ -58,11 +58,11 @@ const CATEGORY_WEIGHTS = {
   'retail-boutique':       6,   // avoid: e-commerce expected
 };
 
-function scoreWebsiteNeed({ auditScore, noWebsiteFlag }) {
-  // Audit score is already 0–100 (higher = worse site)
-  // We weight this at 50% of the lead score
-  if (noWebsiteFlag) return 50; // max — no website at all
-  return Math.round((auditScore || 0) * 0.5);
+function scoreWebsiteNeed(lead) {
+  // Support both the legacy noWebsiteFlag and the websiteStatus field from discover-leads.js
+  const noSite = lead.noWebsiteFlag || lead.websiteStatus === 'NO_WEBSITE';
+  if (noSite) return 50; // max — no website at all
+  return Math.round((lead.auditScore || 0) * 0.5);
 }
 
 function scoreBusinessQuality({ rating, reviewCount, category }) {
@@ -88,10 +88,14 @@ function scoreBusinessQuality({ rating, reviewCount, category }) {
 }
 
 function calculateLeadScore(lead) {
-  if (!lead.auditScore && !lead.noWebsiteFlag) return null; // not yet audited
+  // Score any lead that has basic business data (rating + reviewCount).
+  // If not yet audited, websiteNeed defaults to 0 (will improve after audit).
+  // This means scored leads will appear in the Sheet immediately after discovery.
+  const hasBusinessData = (lead.rating || lead.reviewCount);
+  if (!hasBusinessData) return null;
 
-  const websiteNeed    = scoreWebsiteNeed(lead);         // 0–50
-  const businessQuality = Math.min(50, scoreBusinessQuality(lead)); // 0–50
+  const websiteNeed     = scoreWebsiteNeed(lead);                         // 0–50
+  const businessQuality = Math.min(50, scoreBusinessQuality(lead));       // 0–50
 
   return Math.min(100, websiteNeed + businessQuality);
 }
@@ -112,8 +116,9 @@ function shouldSuppress(lead) {
   if (lead.status === 'EMAILED_1' || lead.status === 'CONVERTED' || lead.status === 'NOT_INTERESTED') {
     return `Already in outreach (${lead.status})`;
   }
-  // Great site — no point
-  if (lead.auditScore !== null && lead.auditScore < 25 && !lead.noWebsiteFlag) {
+  // Great site — no point (only suppress post-audit)
+  const noSite = lead.noWebsiteFlag || lead.websiteStatus === 'NO_WEBSITE';
+  if (lead.auditScore !== null && lead.auditScore < 25 && !noSite) {
     return 'Site quality too high (score < 25)';
   }
   // Too few reviews (not established)
