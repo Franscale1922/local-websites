@@ -112,9 +112,9 @@ export default function ServiceAreaPage() {
                       {c.cities.join(' · ')}
                     </p>
                     {c.href !== '/service-area' ? (
-                      <a href={c.href} className="service-link">View {c.name} →</a>
+                      <a href={c.href} className="btn btn-primary" style={{ marginTop: '8px', fontSize: '0.85rem', padding: '8px 18px' }}>View {c.name}</a>
                     ) : (
-                      <a href="/contact" className="service-link">Get a Quote →</a>
+                      <a href="/contact" className="btn btn-primary" style={{ marginTop: '8px', fontSize: '0.85rem', padding: '8px 18px' }}>Get a Quote</a>
                     )}
                   </div>
                 ))}

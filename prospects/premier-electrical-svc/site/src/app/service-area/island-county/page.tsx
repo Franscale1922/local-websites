@@ -26,24 +26,32 @@ export default function IslandCountyPage() {
         <a href={PHONE_TEL} className="btn btn-ghost-gold nav-mobile-cta" style={{ fontSize: '0.82rem', padding: '8px 16px' }}>Call Now</a>
       </nav>
 
-      <section className="page-hero">
-        <div className="container">
+      <section className="county-hero">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className="county-hero-bg"
+          src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=1800&q=85"
+          alt="Pacific Northwest coastline and forested shores representing Island County, Washington"
+          loading="eager"
+        />
+        <div className="county-hero-overlay" />
+        <div className="county-hero-content">
           <a href="/service-area" className="breadcrumb">← All Service Areas</a>
-          <div className="page-hero-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/>
-            </svg>
+          <div className="county-hero-eyebrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Island County, WA
           </div>
           <h1>Electrical Contractors Serving Whidbey &amp; Camano Island</h1>
-          <p className="page-hero-sub">
+          <p className="county-hero-sub">
             Oak Harbor, Camano Island, Coupeville, Langley, Freeland. We serve Island County homeowners and businesses — licensed, bonded, A+ BBB.
           </p>
-          <div className="page-hero-ctas">
+          <div className="county-hero-ctas">
             <a href="/contact" className="btn btn-primary">Get a Free Estimate</a>
             <a href={PHONE_TEL} className="btn btn-ghost-light">Call {PHONE}</a>
           </div>
         </div>
       </section>
+
 
       <section className="section">
         <div className="container">
@@ -69,6 +77,27 @@ export default function IslandCountyPage() {
                 Get a Free Estimate
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--tinted">
+        <div className="container">
+          <span className="eyebrow">Island County Specialties</span>
+          <h2>Services Most Requested on Whidbey &amp; Camano</h2>
+          <div className="why-grid" style={{ marginTop: '40px' }}>
+            {[
+              { icon: '🔌', title: 'Generator Hookups', desc: 'Island properties lose power more often than mainland ones — and if you\'re on a well, that means no water too. A properly installed transfer switch protects your home and keeps your well pump running when the grid goes down.' },
+              { icon: '🏚️', title: 'Historic Home Rewiring', desc: 'Whidbey Island has a high density of pre-1960 homes, many with original wiring systems. Coupeville, Langley, and South Whidbey properties frequently need full or partial rewires. This is work we do often and do well.' },
+              { icon: '⚡', title: 'Panel Upgrades', desc: 'Older Island County homes regularly need panel upgrades — both to accommodate modern loads and because original panels are no longer insurable. We handle permits and utility coordination with PUD 1 of Island County.' },
+              { icon: '🚗', title: 'EV Charging', desc: 'Ferry commuters and Whidbey Island residents are adopting EVs at a high rate. We install Level 2 home chargers throughout Island County — permitted, inspected, and installed correctly the first time.' },
+            ].map(w => (
+              <div key={w.title} className="why-card">
+                <div className="why-number">{w.icon}</div>
+                <h3>{w.title}</h3>
+                <p>{w.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

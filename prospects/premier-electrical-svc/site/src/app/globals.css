@@ -987,3 +987,89 @@ p { max-width: 68ch; }
   .services-page-hero { height: 320px; }
   .service-page-photo { height: 300px; }
 }
+
+/* ============================================================
+   COUNTY HERO — full-bleed regional photo with gradient overlay
+   ============================================================ */
+
+.county-hero {
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  margin-top: 72px; /* nav offset */
+}
+.county-hero-bg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+  z-index: 0;
+}
+.county-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(6, 15, 28, 0.88) 0%,
+    rgba(6, 15, 28, 0.55) 55%,
+    rgba(6, 15, 28, 0.25) 100%
+  );
+  z-index: 1;
+}
+.county-hero-content {
+  position: relative; z-index: 2;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px 60px;
+  color: #fff;
+  text-align: left;
+}
+.county-hero-content .breadcrumb {
+  color: rgba(255,255,255,0.62);
+  margin-bottom: 12px;
+}
+.county-hero-content .breadcrumb:hover { color: var(--color-accent); }
+.county-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+}
+.county-hero-content h1 {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  color: #fff;
+  line-height: 1.1;
+  margin: 0 0 18px;
+  max-width: 820px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.35);
+}
+.county-hero-sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.82);
+  max-width: 600px;
+  line-height: 1.65;
+  margin-bottom: 32px;
+}
+.county-hero-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .county-hero { min-height: 400px; }
+}
+@media (max-width: 600px) {
+  .county-hero { min-height: 340px; }
+  .county-hero-content { padding: 0 20px 48px; }
+  .county-hero-ctas { flex-direction: column; }
+  .county-hero-ctas .btn { justify-content: center; }
+}
+

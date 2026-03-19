@@ -26,26 +26,32 @@ export default function SanJuanCountyPage() {
         <a href={PHONE_TEL} className="btn btn-ghost-gold nav-mobile-cta" style={{ fontSize: '0.82rem', padding: '8px 16px' }}>Call Now</a>
       </nav>
 
-      <section className="page-hero">
-        <div className="container">
+      <section className="county-hero">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className="county-hero-bg"
+          src="https://images.unsplash.com/photo-1500581276021-a4bbcd0050c5?w=1800&q=85"
+          alt="Pacific Northwest island waters and evergreen shores representing San Juan County, Washington"
+          loading="eager"
+        />
+        <div className="county-hero-overlay" />
+        <div className="county-hero-content">
           <a href="/service-area" className="breadcrumb">← All Service Areas</a>
-          <div className="page-hero-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <circle cx="12" cy="5" r="3"/>
-              <line x1="12" y1="22" x2="12" y2="8"/>
-              <path d="M5 12H2a10 10 0 0 0 20 0h-3"/>
-            </svg>
+          <div className="county-hero-eyebrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            San Juan County, WA
           </div>
           <h1>Electricians Serving San Juan County &amp; the Islands</h1>
-          <p className="page-hero-sub">
+          <p className="county-hero-sub">
             Friday Harbor, Eastsound, Roche Harbor, Lopez Village. We serve San Juan County properties — by appointment for island projects.
           </p>
-          <div className="page-hero-ctas">
+          <div className="county-hero-ctas">
             <a href="/contact" className="btn btn-primary">Get a Free Estimate</a>
             <a href={PHONE_TEL} className="btn btn-ghost-light">Call {PHONE}</a>
           </div>
         </div>
       </section>
+
 
       <section className="section">
         <div className="container">
@@ -87,6 +93,27 @@ export default function SanJuanCountyPage() {
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--tinted">
+        <div className="container">
+          <span className="eyebrow">San Juan County Specialties</span>
+          <h2>Services Most Requested in the San Juan Islands</h2>
+          <div className="why-grid" style={{ marginTop: '40px' }}>
+            {[
+              { icon: '🔌', title: 'Generator Installations', desc: 'Island properties lose power during Pacific storms — and there\'s no quick utility fix when you\'re on San Juan, Orcas, or Lopez. A standby or portable generator with a proper transfer switch is the most impactful upgrade for island homeowners.' },
+              { icon: '🏚️', title: 'Older Home Rewiring', desc: 'Many Friday Harbor, Eastsound, and Lopez Village homes were built in an era of much lower electrical demand. We handle full and partial rewires on older island properties, including homes with knob-and-tube and early aluminum branch wiring.' },
+              { icon: '⚡', title: 'Panel Upgrades', desc: 'San Juan Island properties often have undersized panels — 60A or 100A panels that can\'t support modern loads, EV chargers, or heat pumps. We coordinate with the utility, pull permits, and handle the full upgrade.' },
+              { icon: '🚗', title: 'EV Charging', desc: 'As ferry travel makes EVs more appealing for island residents, Level 2 home charging becomes a practical necessity. We install EV chargers throughout the San Juans — scheduled by appointment for island visits.' },
+            ].map(w => (
+              <div key={w.title} className="why-card">
+                <div className="why-number">{w.icon}</div>
+                <h3>{w.title}</h3>
+                <p>{w.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

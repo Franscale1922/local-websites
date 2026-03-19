@@ -26,24 +26,32 @@ export default function WhatcomCountyPage() {
         <a href={PHONE_TEL} className="btn btn-ghost-gold nav-mobile-cta" style={{ fontSize: '0.82rem', padding: '8px 16px' }}>Call Now</a>
       </nav>
 
-      <section className="page-hero">
-        <div className="container">
+      <section className="county-hero">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className="county-hero-bg"
+          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1800&q=85"
+          alt="Mountain and water vista representing Whatcom County, Washington"
+          loading="eager"
+        />
+        <div className="county-hero-overlay" />
+        <div className="county-hero-content">
           <a href="/service-area" className="breadcrumb">← All Service Areas</a>
-          <div className="page-hero-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-            </svg>
+          <div className="county-hero-eyebrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Whatcom County, WA
           </div>
           <h1>Electrical Contractors Serving Whatcom County, WA</h1>
-          <p className="page-hero-sub">
+          <p className="county-hero-sub">
             Licensed, bonded, A+ BBB — serving Bellingham, Ferndale, Lynden, Blaine, and all of Whatcom County. Panel upgrades, EV chargers, historic home rewiring, and more.
           </p>
-          <div className="page-hero-ctas">
+          <div className="county-hero-ctas">
             <a href="/contact" className="btn btn-primary">Get a Free Estimate</a>
             <a href={PHONE_TEL} className="btn btn-ghost-light">Call {PHONE}</a>
           </div>
         </div>
       </section>
+
 
       <section className="section">
         <div className="container">
@@ -69,6 +77,27 @@ export default function WhatcomCountyPage() {
                 Get a Free Estimate
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--tinted">
+        <div className="container">
+          <span className="eyebrow">Whatcom County Specialties</span>
+          <h2>Services Most Requested in Whatcom County</h2>
+          <div className="why-grid" style={{ marginTop: '40px' }}>
+            {[
+              { icon: '🏚️', title: 'Historic Home Rewiring', desc: 'Bellingham\'s Fairhaven, Columbia, and Sunnyland neighborhoods have a significant concentration of pre-1950 homes — many with original knob-and-tube or cloth-insulated wiring. We specialize in exactly this work.' },
+              { icon: '⚡', title: 'Panel Upgrades', desc: 'From Bellingham\'s older neighborhoods to newer Ferndale and Lynden developments, we handle panel upgrades of every size — including the utility coordination and permit that comes with it.' },
+              { icon: '🚗', title: 'EV Charging', desc: 'Whatcom County\'s proximity to the border and its university population drives high EV adoption. We\'ve installed Level 2 chargers throughout Bellingham and Ferndale, properly permitted every time.' },
+              { icon: '🔌', title: 'Generator Hookups', desc: 'Properties in Lynden, Birch Bay, and rural Whatcom County see regular outages. A whole-home transfer switch means your generator does its job safely — and your utility doesn\'t get back-fed.' },
+            ].map(w => (
+              <div key={w.title} className="why-card">
+                <div className="why-number">{w.icon}</div>
+                <h3>{w.title}</h3>
+                <p>{w.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
