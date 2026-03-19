@@ -41,7 +41,7 @@ export default function AboutPage() {
           <div className="about-grid">
             <div className="about-img-wrap">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="Premier Electrical team at work" />
+              <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80" alt="Premier Electrical Services licensed electrician" />
               <div className="award-badge">
                 <div className="award-badge-year">2023 · 2024 · 2025</div>
                 <div className="award-badge-title">Best of the Best</div>
@@ -85,14 +85,14 @@ export default function AboutPage() {
 
       <section className="section section--navy">
         <div className="container">
-          <span className="eyebrow">Our Values</span>
-          <h2 style={{ color: '#fff', marginBottom: '10px' }}>Three Things We Don&apos;t Compromise On.</h2>
-          <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '1rem', marginBottom: 0 }}>These aren&apos;t slogans. They&apos;re the reason we&apos;ve won Best of the Best three years in a row.</p>
+          <span className="eyebrow">Our Story</span>
+          <h2 style={{ color: '#fff', marginBottom: '10px' }}>Built on Decades of Hands-On Experience.</h2>
+          <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '1rem', marginBottom: 0 }}>We didn&apos;t get here by doing easy jobs. We got here by doing the ones others turned down.</p>
           <div className="why-grid" style={{ marginTop: '48px' }}>
             {[
-              { num: '01', title: 'We Show Up.', desc: 'Scheduled appointment means we\'re there. No three-hour windows, no last-minute cancellations, no ghosting. Our schedule is our word.' },
-              { num: '02', title: 'No Surprise Invoices.', desc: 'Free estimates on most projects. We tell you what it costs before we start — not after. What we quote is what you pay.' },
-              { num: '03', title: 'Safety Is Non-Negotiable.', desc: 'We\'re not cutting corners behind your walls. Every job is done to code, every time. Every project is inspector-approved.' },
+              { num: '60+', title: 'Years of Combined Experience.', desc: 'Our team has worked on homes from the 1920s to new construction — everything from knob-and-tube replacement in historic Anacortes craftsmans to full commercial buildouts in Burlington.' },
+              { num: '3×', title: 'Best of the Best — Three Years Running.', desc: 'We\'ve won Skagit Valley\'s Best of the Best award in 2023, 2024, and 2025. That doesn\'t come from marketing. It comes from customers who called us back and told their neighbors.' },
+              { num: 'A+', title: 'Better Business Bureau Rated.', desc: 'Our A+ BBB rating reflects the way we handle every job — from estimate to inspection. We\'re fully licensed (Lic. PREMIES821LL), bonded, and insured in Washington State.' },
             ].map(w => (
               <div key={w.num} className="why-card" style={{ '--why-bg': 'rgba(255,255,255,0.07)' } as React.CSSProperties}>
                 <div className="why-number" style={{ color: 'var(--color-accent)' }}>{w.num}</div>
