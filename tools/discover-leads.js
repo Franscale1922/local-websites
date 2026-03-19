@@ -142,6 +142,56 @@ const CATEGORY_MAP = {
 };
 
 
+// For categories where no Places API type exists, use keyword text search instead.
+// Results are deduplicated into the same Map as nearby search results.
+const TEXT_SEARCH_MAP = {
+  'home-services': [
+    'HVAC contractor',
+    'heating and cooling contractor',
+    'air conditioning repair',
+    'pest control',
+    'garage door repair',
+    'garage door installation',
+  ],
+  'trades-construction': [
+    'general contractor',
+    'custom home builder',
+    'remodeling contractor',
+    'excavation contractor',
+    'masonry contractor',
+    'fence contractor',
+    'fence installation',
+    'concrete contractor',
+    'well drilling',
+  ],
+  'landscaping': [
+    'landscaping company',
+    'lawn care service',
+    'tree service',
+    'tree removal',
+    'pressure washing',
+    'snow removal service',
+    'sprinkler installation',
+  ],
+  'specialty-trades': [
+    'flooring contractor',
+    'flooring installation',
+    'cabinet maker',
+    'custom cabinets',
+    'handyman service',
+    'window replacement',
+    'door installation',
+  ],
+  'outdoor-guides': [
+    'fishing guide',
+    'hunting guide',
+    'hunting outfitter',
+    'float trip guide',
+    'kayak tour',
+    'whitewater guide',
+  ],
+};
+
 // Known national/regional chains to suppress (partial name match, case-insensitive)
 const CHAIN_BLOCKLIST = [
   'mcdonald', 'subway', 'wendy', 'burger king', 'taco bell', 'pizza hut',
@@ -161,7 +211,11 @@ const CHAIN_BLOCKLIST = [
 const delay = ms => new Promise(r => setTimeout(r, ms));
 
 const NEARBY_URL    = 'https://places.googleapis.com/v1/places:searchNearby';
+const TEXT_SEARCH_URL = 'https://places.googleapis.com/v1/places:searchText';
 const DETAILS_BASE  = 'https://places.googleapis.com/v1/places';
+
+// Shared field mask for both Nearby and Text Search
+const PLACE_FIELD_MASK = 'places.name,places.displayName,places.rating,places.userRatingCount,places.businessStatus,places.types';
 
 async function nearbySearch(lat, lng, radius, type, pageToken = null) {
   const body = {
@@ -181,9 +235,7 @@ async function nearbySearch(lat, lng, radius, type, pageToken = null) {
     headers: {
       'Content-Type': 'application/json',
       'X-Goog-Api-Key': API_KEY,
-      // nextPageToken is auto-returned — do NOT include in FieldMask
-      // places.name is the resource name (places/ChIJ...) used for detail calls
-      'X-Goog-FieldMask': 'places.name,places.displayName,places.rating,places.userRatingCount,places.businessStatus,places.types',
+      'X-Goog-FieldMask': PLACE_FIELD_MASK,
     },
     body: JSON.stringify(body),
   });
@@ -195,10 +247,9 @@ async function nearbySearch(lat, lng, radius, type, pageToken = null) {
     return { results: [] };
   }
 
-  // Normalize to the shape the rest of the script expects
   return {
     results: (data.places || []).map(p => ({
-      place_id: p.name,   // resource name (places/ChIJ...) — used in detail URL
+      place_id: p.name,
       name:     p.displayName?.text || '',
       rating:               p.rating,
       user_ratings_total:   p.userRatingCount,
@@ -206,6 +257,48 @@ async function nearbySearch(lat, lng, radius, type, pageToken = null) {
       types:                p.types || [],
     })),
     next_page_token: data.nextPageToken || null,
+  };
+}
+
+async function textSearch(query, lat, lng, radius) {
+  const body = {
+    textQuery: query,
+    maxResultCount: 20,
+    locationRestriction: {
+      circle: {
+        center: { latitude: lat, longitude: lng },
+        radius: parseFloat(radius),
+      },
+    },
+  };
+
+  const resp = await fetch(TEXT_SEARCH_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Goog-Api-Key': API_KEY,
+      'X-Goog-FieldMask': PLACE_FIELD_MASK,
+    },
+    body: JSON.stringify(body),
+  });
+
+  const data = await resp.json();
+
+  if (data.error) {
+    console.error(`\n   ❌ Text Search Error [${data.error.status}]: ${data.error.message}`);
+    return { results: [] };
+  }
+
+  // Same normalization as nearbySearch so the rest of the pipeline is identical
+  return {
+    results: (data.places || []).map(p => ({
+      place_id: p.name,
+      name:     p.displayName?.text || '',
+      rating:               p.rating,
+      user_ratings_total:   p.userRatingCount,
+      business_status:      p.businessStatus,
+      types:                p.types || [],
+    })),
   };
 }
 
@@ -363,7 +456,7 @@ async function discoverCategory(categoryName, placeTypes, lat, lng, radius) {
   
   const allPlaces = new Map(); // placeId → basic place data
   
-  // Search each place type for this category
+  // ── Phase 1: Nearby Search by place type ─────────────────────────────────
   for (const placeType of placeTypes) {
     process.stdout.write(`   [type: ${placeType}] `);
     let data = await nearbySearch(lat, lng, radius, placeType);
@@ -385,6 +478,25 @@ async function discoverCategory(categoryName, placeTypes, lat, lng, radius) {
     }
     console.log('');
     await delay(200);
+  }
+
+  // ── Phase 2: Text Search for contractor/trade keywords (no API type exists) ─
+  const textQueries = TEXT_SEARCH_MAP[categoryName] || [];
+  if (textQueries.length > 0) {
+    console.log(`   [text search: ${textQueries.length} keyword queries]`);
+  }
+  for (const query of textQueries) {
+    process.stdout.write(`   [search] "${query}" `);
+    const data = await textSearch(query, lat, lng, radius);
+    let newCount = 0;
+    for (const place of data.results) {
+      if (!allPlaces.has(place.place_id)) {
+        allPlaces.set(place.place_id, place);
+        newCount++;
+      }
+    }
+    process.stdout.write(`${data.results.length} found, ${newCount} new\n`);
+    await delay(300);
   }
 
   console.log(`   Total unique places found: ${allPlaces.size}`);
