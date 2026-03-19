@@ -650,3 +650,198 @@ p { max-width: 68ch; }
   .faq-trigger { font-size: 0.88rem; padding: 16px 18px; }
   .process-desc { max-width: 100%; }
 }
+
+/* ============================================================
+   MULTI-PAGE INNER-PAGE COMPONENTS
+   ============================================================ */
+
+/* PAGE HERO — used on all inner pages (no full bg image) */
+.page-hero {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #0a2a6e 100%);
+  padding: 100px 0 70px;
+  text-align: center;
+  color: #fff;
+}
+.page-hero .container { max-width: 780px; }
+.page-hero-icon { font-size: 3rem; margin-bottom: 16px; }
+.page-hero h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: #fff;
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+.page-hero-sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.78);
+  margin-bottom: 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.page-hero-ctas {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* BREADCRUMB */
+.breadcrumb {
+  display: inline-block;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  letter-spacing: 0.03em;
+  transition: color var(--transition-fast);
+}
+.breadcrumb:hover { color: var(--color-accent); }
+
+/* ACTIVE NAV LINK */
+.nav-link--active {
+  color: var(--color-accent) !important;
+  font-weight: 700;
+}
+
+/* SERVICE DETAIL GRID — 2-col layout for service pages */
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 56px;
+  align-items: start;
+}
+
+.service-detail-body .service-intro {
+  font-size: 1.02rem;
+  color: #374151;
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+/* INCLUDED / WHAT'S INCLUDED LIST */
+.service-detail-included {
+  background: var(--color-tinted);
+  border-radius: 16px;
+  padding: 32px;
+  border: 1px solid var(--color-border);
+  position: sticky;
+  top: 90px;
+}
+.service-detail-included h3 {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--color-accent);
+  display: inline-block;
+}
+.included-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 4px;
+}
+.included-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 0.9rem;
+  color: #374151;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  line-height: 1.4;
+}
+.included-list li:last-child { border-bottom: none; }
+.included-check {
+  color: var(--color-accent);
+  font-weight: 800;
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* STATIC FAQ (no JS accordion — for server components) */
+.faq-item-static {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.faq-item-static:last-child { border-bottom: none; }
+.faq-q-static {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+.faq-a-static {
+  font-size: 0.93rem;
+  color: #4a5568;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* SERVICES GRID — 3-col for services overview page */
+.services-grid--3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+/* SERVICE CARD — full clickable link variant */
+.service-card--link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.service-card--link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+.service-card--link h3 { color: var(--color-primary); }
+
+/* BTN SECONDARY */
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: 12px 26px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-secondary:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* SECTION — NAVY */
+.section--navy {
+  background: var(--color-primary);
+  padding: var(--section-padding);
+}
+.section--navy .eyebrow { color: var(--color-accent); }
+.section--navy .why-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.section--navy .why-card h3 { color: #fff; }
+.section--navy .why-card p { color: rgba(255,255,255,0.7); }
+
+/* RESPONSIVE — inner pages */
+@media (max-width: 1024px) {
+  .service-detail-grid { grid-template-columns: 1fr; }
+  .service-detail-included { position: static; }
+  .services-grid--3col { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .page-hero { padding: 80px 20px 50px; }
+  .services-grid--3col { grid-template-columns: 1fr; }
+  .page-hero-ctas { flex-direction: column; align-items: center; }
+}

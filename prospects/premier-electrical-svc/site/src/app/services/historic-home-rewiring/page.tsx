@@ -1,0 +1,163 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Historic & Older Home Rewiring | Premier Electrical Services — Skagit County, WA',
+  description: 'Knob-and-tube wiring, aluminum wiring, fuse box replacement for historic and older homes in Skagit, Whatcom, and Island counties. Specialists — not generalists. Call (360) 421-5230.',
+};
+
+const PHONE = '(360) 421-5230';
+const PHONE_TEL = 'tel:+13604215230';
+
+export default function HistoricHomeRewiringPage() {
+  return (
+    <main>
+      <div className="demo-banner">🔍 Demo site — built for Premier Electrical Services. Not the live site.</div>
+      <nav className="nav nav--scrolled">
+        <a href="/" className="nav-logo"><div className="nav-logo-icon">⚡</div>Premier Electrical Services</a>
+        <ul className="nav-links">
+          <li><a href="/services" className="nav-link--active">Services</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/service-area">Service Area</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/contact" className="nav-cta">Get a Free Estimate</a></li>
+        </ul>
+        <a href={PHONE_TEL} className="btn btn-ghost-gold nav-mobile-cta" style={{ fontSize: '0.82rem', padding: '8px 16px' }}>Call Now</a>
+      </nav>
+
+      <section className="page-hero">
+        <div className="container">
+          <a href="/services" className="breadcrumb">← All Services</a>
+          <div className="page-hero-icon">🏚️</div>
+          <h1>Historic & Older Home Rewiring — The Work Other Electricians Pass On.</h1>
+          <p className="page-hero-sub">
+            Knob-and-tube wiring. Cloth-insulated wires. Aluminum branch circuits. Fuse boxes from 1952. We specialize in the complex, older, and historic properties that most electricians decline. With nearly 60 years of combined experience, we&apos;ve seen all of it.
+          </p>
+          <div className="page-hero-ctas">
+            <a href="/contact" className="btn btn-primary">Get a Free Estimate</a>
+            <a href={PHONE_TEL} className="btn btn-ghost-light">Call {PHONE}</a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="service-detail-grid">
+            <div className="service-detail-body">
+              <span className="eyebrow">The Service</span>
+              <h2>Old Wiring Isn&apos;t Just Inconvenient. It&apos;s a Fire Risk.</h2>
+              <p className="service-intro">
+                Northwest Washington has tens of thousands of homes built before 1960 — in Anacortes, Bellingham, Sedro-Woolley, Mount Vernon, and throughout the islands. Many of them still have original knob-and-tube wiring, aluminum branch circuits, or outdated cloth-covered wires that were never designed for modern electrical loads.
+              </p>
+              <p className="service-intro">
+                Knob-and-tube wiring isn&apos;t inherently dangerous when left alone — but the moment someone runs new circuits over it, insulates over it, or starts adding modern appliances, the risk rises sharply. Aluminum wiring from the 1960s and &apos;70s is a known fire hazard when connected to devices rated only for copper. We know how each of these systems behaves, what to look for, and how to bring them safely into the modern era.
+              </p>
+              <p className="service-intro">
+                We work on lathe-and-plaster walls, original hardwood floors, and tight crawlspaces. We&apos;re not guessing — we&apos;ve done this work hundreds of times on homes that look just like yours.
+              </p>
+            </div>
+            <div className="service-detail-included">
+              <h3>What We Handle</h3>
+              <ul className="included-list">
+                {[
+                  'Full and partial home rewires',
+                  'Knob-and-tube replacement',
+                  'Aluminum branch circuit remediation (pigtailing)',
+                  'Cloth-wiring evaluation and replacement',
+                  'Fuse box to modern breaker panel upgrades',
+                  'Work in lathe/plaster, original hardwood, tight crawlspaces',
+                  'Historic district code compliance coordination',
+                  'Permit pulled, inspector-approved, A+ BBB',
+                ].map(b => (
+                  <li key={b}><span className="included-check">✓</span>{b}</li>
+                ))}
+              </ul>
+              <a href="/contact" className="btn btn-primary" style={{ marginTop: '24px', width: '100%', textAlign: 'center', display: 'block' }}>
+                Schedule an Assessment
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--tinted">
+        <div className="container">
+          <span className="eyebrow">Why It Matters</span>
+          <h2>The Real Risks of Outdated Wiring</h2>
+          <div className="why-grid" style={{ marginTop: '40px' }}>
+            {[
+              { icon: '🔥', title: 'Fire Risk', desc: 'Knob-and-tube wiring covered by insulation and aluminum wiring with loose connections are among the leading causes of residential electrical fires.' },
+              { icon: '🏦', title: 'Insurance Problems', desc: 'Many home insurers won\'t cover or will charge significantly higher premiums on homes with original knob-and-tube or known aluminum wiring issues.' },
+              { icon: '🏷️', title: 'Resale Issues', desc: 'Home inspectors flag old wiring systems. Buyers ask for repairs or credits. A rewire before sale protects your equity.' },
+              { icon: '🔌', title: 'Can\'t Support Modern Loads', desc: 'Pre-1960 wiring wasn\'t designed for EV chargers, heat pumps, or even a modern kitchen. Adding circuits on old systems is dangerous without upgrading.' },
+            ].map(w => (
+              <div key={w.title} className="why-card">
+                <div className="why-number">{w.icon}</div>
+                <h3>{w.title}</h3>
+                <p>{w.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <span className="eyebrow">Frequently Asked</span>
+          <h2>Historic Home Wiring Questions</h2>
+          <div className="faq-list" style={{ marginTop: '36px', maxWidth: '780px' }}>
+            {[
+              { q: 'Is knob-and-tube wiring always dangerous?', a: 'Not inherently — undisturbed knob-and-tube in good condition can be low-risk. The problems come when insulation is added over it (trapping heat), when it\'s been added to by subsequent owners, or when modern loads are run through it. Let us assess yours specifically.' },
+              { q: 'Will you damage my original plaster walls?', a: 'We work in historic homes regularly and take wall damage seriously. We use low-impact fishing techniques and strategic access points. We can\'t promise zero impact on older homes, but we keep it minimal and tell you upfront what to expect.' },
+              { q: 'How long does a full rewire take?', a: 'A full residential rewire typically takes 3–7 days depending on home size and accessibility. We keep power to parts of the house during work where possible.' },
+              { q: 'What is aluminum wiring remediation?', a: 'Many homes from the 1960s–70s have aluminum wiring for branch circuits. Aluminum expands and contracts differently than copper, causing loose connections and fire risk. The standard fix is "pigtailing" — connecting aluminum to short copper leads with rated AlumiConn connectors at every device and outlet. We do this correctly and documentably.' },
+            ].map(f => (
+              <div key={f.q} className="faq-item-static">
+                <h3 className="faq-q-static">{f.q}</h3>
+                <p className="faq-a-static">{f.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="cta-strip">
+        <div className="cta-strip-inner">
+          <div className="cta-strip-text">
+            <h2>Have an Older Home? Let&apos;s Take a Look.</h2>
+            <p>Free assessment. We&apos;ll tell you exactly what you have, what the risks are, and what it would cost to fix it.</p>
+          </div>
+          <div className="cta-strip-actions">
+            <a href="/contact" className="btn btn-primary">Get a Free Estimate</a>
+            <a href={PHONE_TEL} className="btn btn-ghost-light">Call {PHONE}</a>
+          </div>
+        </div>
+      </div>
+
+      <footer className="footer">
+        <div className="footer-inner">
+          <div className="footer-brand">
+            <div className="footer-brand-logo"><div className="footer-brand-icon">⚡</div><div className="footer-brand-name">Premier Electrical Services</div></div>
+            <p className="footer-tagline">Licensed, bonded electricians serving Skagit, Whatcom, San Juan, Island, King, and Snohomish counties. A+ BBB Rating. Lic. PREMIES821LL.</p>
+          </div>
+          <div className="footer-col"><h4>Services</h4><ul>
+            <li><a href="/services/panel-upgrades">Panel Upgrades</a></li>
+            <li><a href="/services/ev-charging">EV Charging</a></li>
+            <li><a href="/services/generator-installation">Generators</a></li>
+            <li><a href="/services/historic-home-rewiring">Historic Home Rewiring</a></li>
+            <li><a href="/services/commercial-wiring">Commercial Wiring</a></li>
+          </ul></div>
+          <div className="footer-col"><h4>Contact</h4><ul>
+            <li><a href={PHONE_TEL}>{PHONE}</a></li>
+            <li><a href="/contact">Free Estimate</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/faq">FAQ</a></li>
+          </ul></div>
+        </div>
+        <div className="footer-bottom">
+          <span>© {new Date().getFullYear()} Premier Electrical Services · All rights reserved</span>
+          <span><a href={PHONE_TEL}>{PHONE}</a> · Lic. PREMIES821LL</span>
+        </div>
+      </footer>
+    </main>
+  );
+}

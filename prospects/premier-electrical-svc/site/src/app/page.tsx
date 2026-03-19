@@ -17,10 +17,10 @@ const SITE = {
   heroCTA2: 'Call (360) 421-5230',
 
   navLinks: [
-    { label: 'Services', href: '#services' },
-    { label: 'Process', href: '#process' },
-    { label: 'About', href: '#about' },
-    { label: 'FAQ', href: '#faq' },
+    { label: 'Services', href: '/services' },
+    { label: 'About', href: '/about' },
+    { label: 'Service Area', href: '/service-area' },
+    { label: 'FAQ', href: '/faq' },
   ],
 
   trustItems: [
@@ -38,49 +38,49 @@ const SITE = {
       icon: '🏠',
       title: 'Residential Wiring',
       desc: 'New construction, remodels, complete rewires, rough-in, and trim-out. We\'ve built them and rewired them — we know how they\'re supposed to work.',
-      link: 'Get an estimate',
+      href: '/services/service-calls',
     },
     {
       icon: '⚡',
       title: 'Panel Upgrades',
       desc: 'Undersized panel? Old fuse box? We upgrade panels and subpanels so your home can handle what modern life demands. All work is inspector-approved.',
-      link: 'Get an estimate',
+      href: '/services/panel-upgrades',
     },
     {
       icon: '🏚️',
       title: 'Historic & Older Homes',
       desc: 'Knob-and-tube, cloth wiring, fuse boxes — we specialize in complex, older, and historic properties that other electricians pass on. We know what we\'re looking at.',
-      link: 'Get an estimate',
+      href: '/services/historic-home-rewiring',
     },
     {
       icon: '🚗',
       title: 'EV Charging Stations',
       desc: 'Tesla Wall Connector, JuiceBox, and more. We install Level 2 home chargers the right way — permitted, clean, and code-compliant.',
-      link: 'Get an estimate',
+      href: '/services/ev-charging',
     },
     {
       icon: '🔌',
       title: 'Generator Installation',
       desc: 'Temporary or permanent whole-home generators. When the power goes out in the Pacific Northwest, you\'ll be glad you planned ahead.',
-      link: 'Get an estimate',
+      href: '/services/generator-installation',
     },
     {
       icon: '🏢',
       title: 'Commercial Work',
       desc: 'Restaurants, offices, daycares, retail spaces. Fire suppression wiring, exterior security lighting, and complete commercial electrical systems.',
-      link: 'Get an estimate',
+      href: '/services/commercial-wiring',
     },
     {
       icon: '🔍',
       title: 'Service Calls & Troubleshooting',
       desc: 'Tripped breakers, mystery outages, questionable work left by a previous contractor. We diagnose it, we fix it, we explain what happened.',
-      link: 'Get an estimate',
+      href: '/services/service-calls',
     },
     {
       icon: '💡',
       title: 'Lighting & Outbuildings',
       desc: 'Indoor, outdoor, security, and accent lighting. Plus wiring for detached garages, shops, ADUs, and sheds. Hot tub and spa wiring too.',
-      link: 'Get an estimate',
+      href: '/services/lighting-upgrades',
     },
   ],
 
@@ -282,7 +282,7 @@ export default function Home() {
         <a href={SITE.phoneTel} className="mobile-sticky-call">
           📞 Call (360) 421-5230
         </a>
-        <a href="#contact" className="mobile-sticky-estimate">
+        <a href="/contact" className="mobile-sticky-estimate">
           Free Estimate →
         </a>
       </div>
@@ -297,7 +297,7 @@ export default function Home() {
           {SITE.navLinks.map(l => (
             <li key={l.label}><a href={l.href}>{l.label}</a></li>
           ))}
-          <li><a href="#contact" className="nav-cta">Get a Free Estimate</a></li>
+          <li><a href="/contact" className="nav-cta">Get a Free Estimate</a></li>
         </ul>
         <a href={SITE.phoneTel} className="btn btn-ghost-gold nav-mobile-cta" style={{ fontSize: '0.82rem', padding: '8px 16px' }}>
           Call Now
@@ -367,9 +367,12 @@ export default function Home() {
                 <div className="service-icon">{s.icon}</div>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
-                <a href="#contact" className="service-link">{s.link} →</a>
+                <a href={s.href} className="service-link">Learn more →</a>
               </div>
             ))}
+          </div>
+          <div style={{ textAlign: 'center', marginTop: '32px' }}>
+            <a href="/services" className="btn btn-secondary">See All Services →</a>
           </div>
         </div>
       </section>
@@ -394,7 +397,7 @@ export default function Home() {
             ))}
           </div>
           <div style={{ textAlign: 'center', marginTop: '48px' }}>
-            <a href="#contact" className="btn btn-primary">{SITE.heroCTA1}</a>
+            <a href="/contact" className="btn btn-primary">{SITE.heroCTA1}</a>
           </div>
         </div>
       </section>
@@ -451,7 +454,8 @@ export default function Home() {
                   <span key={c} className="credential-badge">{c}</span>
                 ))}
               </div>
-              <a href="#contact" className="btn btn-primary">{SITE.heroCTA1} →</a>
+              <a href="/about" className="btn btn-secondary" style={{ marginRight: '12px' }}>Read Our Story →</a>
+              <a href="/contact" className="btn btn-primary">{SITE.heroCTA1} →</a>
             </div>
           </div>
         </div>
@@ -471,6 +475,7 @@ export default function Home() {
                   {county}
                 </div>
               ))}
+              <a href="/service-area" className="btn btn-secondary" style={{ marginTop: '24px', display: 'inline-block' }}>View Full Service Area →</a>
             </div>
             <div className="area-map">
               <iframe
@@ -552,11 +557,9 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <div style={{ marginTop: '40px', textAlign: 'left' }}>
-            <p style={{ color: '#4a5568', fontSize: '0.9rem', marginBottom: '16px' }}>
-              Don&apos;t see your question here?
-            </p>
+          <div style={{ marginTop: '40px', textAlign: 'left', display: 'flex', gap: '14px', flexWrap: 'wrap', alignItems: 'center' }}>
             <a href={SITE.phoneTel} className="btn btn-primary">Call Us — We Pick Up</a>
+            <a href="/faq" className="btn btn-secondary">See All FAQs →</a>
           </div>
         </div>
       </section>
@@ -569,7 +572,7 @@ export default function Home() {
             <p>{SITE.ctaSub}</p>
           </div>
           <div className="cta-strip-actions">
-            <a href="#contact" className="btn btn-primary">{SITE.ctaBtn1}</a>
+            <a href="/contact" className="btn btn-primary">{SITE.ctaBtn1}</a>
             <a href={SITE.phoneTel} className="btn btn-ghost-light">{SITE.ctaBtn2}</a>
           </div>
         </div>
@@ -678,27 +681,32 @@ export default function Home() {
           <div className="footer-col">
             <h4>Services</h4>
             <ul>
-              <li><a href="#services">Residential Wiring</a></li>
-              <li><a href="#services">Panel Upgrades</a></li>
-              <li><a href="#services">Historic Homes</a></li>
-              <li><a href="#services">EV Charging</a></li>
-              <li><a href="#services">Generators</a></li>
-              <li><a href="#services">Commercial Work</a></li>
+              <li><a href="/services/panel-upgrades">Panel Upgrades</a></li>
+              <li><a href="/services/ev-charging">EV Charging</a></li>
+              <li><a href="/services/generator-installation">Generators</a></li>
+              <li><a href="/services/historic-home-rewiring">Historic Home Rewiring</a></li>
+              <li><a href="/services/commercial-wiring">Commercial Wiring</a></li>
+              <li><a href="/services/lighting-upgrades">Lighting & Outbuildings</a></li>
+              <li><a href="/services/service-calls">Service Calls</a></li>
             </ul>
           </div>
           <div className="footer-col">
             <h4>Service Area</h4>
             <ul>
-              {SITE.counties.map(c => <li key={c}>{c}</li>)}
+              <li><a href="/service-area/skagit-county">Skagit County</a></li>
+              <li><a href="/service-area/whatcom-county">Whatcom County</a></li>
+              <li><a href="/service-area/island-county">Island County</a></li>
+              <li><a href="/service-area/san-juan-county">San Juan County</a></li>
+              <li><a href="/service-area">King & Snohomish</a></li>
             </ul>
           </div>
           <div className="footer-col">
-            <h4>Contact</h4>
+            <h4>Quick Links</h4>
             <ul>
               <li><a href={SITE.phoneTel}>{SITE.phone}</a></li>
-              <li>Mount Vernon, WA</li>
-              <li><a href="#contact">Free Estimate</a></li>
-              <li><a href="#faq">FAQ</a></li>
+              <li><a href="/contact">Free Estimate</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/faq">FAQ</a></li>
             </ul>
           </div>
         </div>
