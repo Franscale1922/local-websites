@@ -9,20 +9,72 @@ const PHONE = '(360) 421-5230';
 const PHONE_TEL = 'tel:+13604215230';
 
 const SERVICES = [
-  { icon: '⚡', title: 'Panel Upgrades', href: '/services/panel-upgrades', desc: 'Fuse boxes, 100A → 200A upgrades, subpanels. All permitted and inspector-approved.' },
-  { icon: '🚗', title: 'EV Charging Stations', href: '/services/ev-charging', desc: 'Level 2 home chargers — Tesla Wall Connector, JuiceBox, ChargePoint. Permitted install, clean finish.' },
-  { icon: '🔌', title: 'Generator Installation', href: '/services/generator-installation', desc: 'Standby and portable generator hookups with proper transfer switches. Built for PNW outage season.' },
-  { icon: '🏚️', title: 'Historic & Older Home Rewiring', href: '/services/historic-home-rewiring', desc: 'Knob-and-tube, aluminum wiring, cloth-covered wire. The work other electricians decline. Our specialty.' },
-  { icon: '🏢', title: 'Commercial Wiring', href: '/services/commercial-wiring', desc: 'Tenant improvements, restaurants, retail, offices, and new commercial construction. Coordinated with your GC.' },
-  { icon: '💡', title: 'Lighting & Outbuildings', href: '/services/lighting-upgrades', desc: 'Indoor & outdoor lighting, landscape lighting, detached garages, barns, shops, ADUs, hot tub wiring.' },
-  { icon: '🔍', title: 'Repairs & Service Calls', href: '/services/service-calls', desc: 'Tripped breakers, mystery outages, suspect prior work. We diagnose it, fix it, explain it — same day on most calls.' },
+  {
+    title: 'Panel Upgrades',
+    href: '/services/panel-upgrades',
+    desc: "Fuse boxes, 100A \u2192 200A upgrades, subpanels. All permitted and inspector-approved. We coordinate with your utility so you're not left figuring it out.",
+    img: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=900&q=80',
+    tag: 'Most Requested',
+  },
+  {
+    title: 'EV Charging Stations',
+    href: '/services/ev-charging',
+    desc: "Level 2 home chargers \u2014 Tesla Wall Connector, JuiceBox, ChargePoint. Permitted install, clean finish. We'll assess your panel before we ever pick up a drill.",
+    img: 'https://images.unsplash.com/photo-1647166545719-2e82fdec7b06?w=900&q=80',
+    tag: 'Fast Growing',
+  },
+  {
+    title: 'Generator Installation',
+    href: '/services/generator-installation',
+    desc: 'Standby and portable generator hookups with proper transfer switches. Built for PNW outage season. Permanent Generac installs or temporary hookups.',
+    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80',
+    tag: null,
+  },
+  {
+    title: 'Historic & Older Home Rewiring',
+    href: '/services/historic-home-rewiring',
+    desc: 'Knob-and-tube, aluminum wiring, cloth-covered wire. The work other electricians decline — our specialty. We know older homes, and we know how to bring them up to code safely.',
+    img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=900&q=80',
+    tag: 'Our Specialty',
+  },
+  {
+    title: 'Commercial Wiring',
+    href: '/services/commercial-wiring',
+    desc: 'Tenant improvements, restaurants, retail, offices, and new commercial construction. Coordinated with your GC — we keep the project on schedule.',
+    img: 'https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=900&q=80',
+    tag: null,
+  },
+  {
+    title: 'Lighting & Outbuildings',
+    href: '/services/lighting-upgrades',
+    desc: 'Indoor & outdoor lighting, landscape lighting, detached garages, barns, shops, ADUs, hot tub wiring. If it needs power, we run it.',
+    img: 'https://images.unsplash.com/photo-1524484485831-a92ffc0de03f?w=900&q=80',
+    tag: null,
+  },
+  {
+    title: 'Repairs & Service Calls',
+    href: '/services/service-calls',
+    desc: 'Tripped breakers, mystery outages, suspect prior work. We diagnose it, fix it, explain it — same day on most calls. No runaround, no vague estimates.',
+    img: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&q=80',
+    tag: 'Same-Day Available',
+  },
+  {
+    title: 'Residential Wiring',
+    href: '/services/service-calls',
+    desc: 'New construction, remodels, complete rewires, rough-in, and trim-out. Nearly 60 years of combined experience means we\'ve built them and rewired them — we know how they\'re supposed to work.',
+    img: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80',
+    tag: null,
+  },
 ];
 
 export default function ServicesPage() {
   return (
     <main>
       <nav className="nav nav--scrolled">
-        <a href="/" className="nav-logo"><div className="nav-logo-icon">⚡</div>Premier Electrical Services</a>
+        <a href="/" className="nav-logo">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.svg" alt="Premier Electrical Services" className="nav-logo-img" />
+        </a>
         <ul className="nav-links">
           <li><a href="/services" className="nav-link--active">Services</a></li>
           <li><a href="/about">About</a></li>
@@ -33,49 +85,65 @@ export default function ServicesPage() {
         <a href={PHONE_TEL} className="btn btn-ghost-gold nav-mobile-cta" style={{ fontSize: '0.82rem', padding: '8px 16px' }}>Call Now</a>
       </nav>
 
-      <section className="page-hero">
-        <div className="container">
-          <div className="page-hero-icon">⚡</div>
+      {/* PAGE HERO — full bleed with electrician photo */}
+      <section className="services-page-hero">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1800&q=85"
+          alt="Electrician working on electrical panel"
+          className="services-page-hero-bg"
+        />
+        <div className="services-page-hero-overlay" />
+        <div className="services-page-hero-content">
+          <span className="eyebrow" style={{ color: 'var(--color-accent)' }}>What We Do</span>
           <h1>Electrical Services Across the Greater Puget Sound</h1>
-          <p className="page-hero-sub">
-            From panel upgrades to historic home rewires to EV chargers — specialty work is our thing. Nearly 60 years of combined experience. Three-time Best of the Best. A+ BBB.
+          <p>
+            From panel upgrades to historic home rewires to EV chargers — specialty work is our thing.
+            Nearly 60 years of combined experience. Three-time Best of the Best. A+ BBB.
           </p>
-          <div className="page-hero-ctas">
+          <div className="page-hero-ctas" style={{ marginTop: '32px' }}>
             <a href="/contact" className="btn btn-primary">Get a Free Estimate</a>
             <a href={PHONE_TEL} className="btn btn-ghost-light">Call {PHONE}</a>
           </div>
         </div>
       </section>
 
-      <section className="section">
+      {/* SERVICES — image card grid */}
+      <section className="section" style={{ paddingTop: '80px' }}>
         <div className="container">
-          <span className="eyebrow">What We Do</span>
-          <h2>We Handle the Jobs Others Skip.</h2>
-          <p style={{ color: '#4a5568', marginBottom: '48px', fontSize: '1rem' }}>
-            Every service includes a free estimate, permitted work where required, and inspector-approved completion. We don&apos;t cut corners behind your walls.
+          <p style={{ color: '#4a5568', marginBottom: '56px', fontSize: '1rem', maxWidth: '60ch' }}>
+            Every service includes a free estimate, permitted work where required, and inspector-approved completion.
+            We don&apos;t cut corners behind your walls.
           </p>
-          <div className="services-grid services-grid--3col">
+          <div className="svc-img-grid">
             {SERVICES.map(s => (
-              <a href={s.href} key={s.title} className="service-card service-card--link">
-                <div className="service-icon">{s.icon}</div>
-                <h3>{s.title}</h3>
-                <p>{s.desc}</p>
-                <span className="service-link">Learn more →</span>
+              <a href={s.href} key={s.title} className="svc-img-card">
+                <div className="svc-img-card-photo">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={s.img} alt={s.title} loading="lazy" />
+                  {s.tag && <span className="svc-img-tag">{s.tag}</span>}
+                </div>
+                <div className="svc-img-card-body">
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
+                  <span className="service-link">Learn more →</span>
+                </div>
               </a>
             ))}
           </div>
         </div>
       </section>
 
+      {/* TRUST STRIP */}
       <div className="trust-strip">
         {[
-          { icon: '🏆', label: '3× Best of the Best', sub: 'Skagit Valley — 2023 · 2024 · 2025' },
-          { icon: '🏅', label: 'A+ BBB Rating', sub: 'Licensed, Bonded & Insured' },
-          { icon: '⚡', label: '60 Yrs Combined Experience', sub: 'Residential & Commercial' },
-          { icon: '💬', label: 'Free Estimates', sub: 'On most projects — no surprises' },
+          { label: '3× Best of the Best', sub: 'Skagit Valley — 2023 · 2024 · 2025', svg: <svg key="t" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9H4a2 2 0 01-2-2V5h4"/><path d="M18 9h2a2 2 0 002-2V5h-4"/><path d="M6 5h12v6a6 6 0 01-12 0V5z"/><path d="M12 17v4"/><path d="M8 21h8"/></svg> },
+          { label: 'A+ BBB Rating', sub: 'Licensed, Bonded & Insured', svg: <svg key="b" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/></svg> },
+          { label: '60 Yrs Combined Experience', sub: 'Residential & Commercial', svg: <svg key="e" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> },
+          { label: 'Free Estimates', sub: 'On most projects — no surprises', svg: <svg key="f" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg> },
         ].map(t => (
           <div key={t.label} className="trust-strip-item">
-            <div className="trust-strip-icon">{t.icon}</div>
+            <div className="trust-strip-icon">{t.svg}</div>
             <div className="trust-strip-text"><span>{t.label}</span>{t.sub}</div>
           </div>
         ))}
@@ -97,7 +165,10 @@ export default function ServicesPage() {
       <footer className="footer">
         <div className="footer-inner">
           <div className="footer-brand">
-            <div className="footer-brand-logo"><div className="footer-brand-icon">⚡</div><div className="footer-brand-name">Premier Electrical Services</div></div>
+            <div className="footer-brand-logo">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.svg" alt="Premier Electrical Services" className="footer-logo-img" />
+            </div>
             <p className="footer-tagline">Licensed, bonded electricians serving Skagit, Whatcom, San Juan, Island, King, and Snohomish counties. A+ BBB Rating. Lic. PREMIES821LL.</p>
           </div>
           <div className="footer-col"><h4>Services</h4><ul>

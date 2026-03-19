@@ -12,7 +12,7 @@ export default function HistoricHomeRewiringPage() {
   return (
     <main>
       <nav className="nav nav--scrolled">
-        <a href="/" className="nav-logo"><div className="nav-logo-icon">⚡</div>Premier Electrical Services</a>
+        <a href="/" className="nav-logo"><img src="/logo.svg" alt="Premier Electrical Services" className="nav-logo-img" /></a>
         <ul className="nav-links">
           <li><a href="/services" className="nav-link--active">Services</a></li>
           <li><a href="/about">About</a></li>
@@ -38,6 +38,14 @@ export default function HistoricHomeRewiringPage() {
         </div>
       </section>
 
+      <div className="service-page-photo">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=85"
+          alt="Electrician inspecting old knob-and-tube wiring in walls"
+          loading="eager"
+        />
+      </div>
       <section className="section">
         <div className="container">
           <div className="service-detail-grid">
@@ -135,7 +143,7 @@ export default function HistoricHomeRewiringPage() {
       <footer className="footer">
         <div className="footer-inner">
           <div className="footer-brand">
-            <div className="footer-brand-logo"><div className="footer-brand-icon">⚡</div><div className="footer-brand-name">Premier Electrical Services</div></div>
+            <div className="footer-brand-logo"><img src="/logo.svg" alt="Premier Electrical Services" className="footer-logo-img" /></div>
             <p className="footer-tagline">Licensed, bonded electricians serving Skagit, Whatcom, San Juan, Island, King, and Snohomish counties. A+ BBB Rating. Lic. PREMIES821LL.</p>
           </div>
           <div className="footer-col"><h4>Services</h4><ul>
