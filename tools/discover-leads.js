@@ -58,97 +58,89 @@ const DEFAULT_LAT = 48.4105;
 const DEFAULT_LNG = -114.3352;
 const DEFAULT_RADIUS = 50000; // 50km ≈ 45-minute drive radius
 
-// All target categories mapped to Google Places (New) types
-// Tier 1 — High value: low complexity, high ticket, local owner decides
-// Tier 2 — Medium value: good fit but slightly more complexity
-// Tier 3 — Low priority: kept for market awareness, not primary targets
+// All target categories mapped to Google Places (New) Table A types ONLY.
+// Source: https://developers.google.com/maps/documentation/places/web-service/place-types
+// NOTE: Most contractor/trade types (hvac_contractor, landscaping_service, etc.)
+//       do NOT exist in the new API. Those businesses are captured via broader types
+//       or through the Text Search fallback (future enhancement).
 const CATEGORY_MAP = {
 
   // ── TIER 1: IDEAL TARGETS ──────────────────────────────────────────────────
 
-  'home-services': [              // Emergency + high ticket. Mobile-first, click-to-call.
+  'home-services': [              // Confirmed valid Table A types
     'plumber',
     'electrician',
-    'heating_contractor',         // HVAC/heating — valid in new API (not hvac_contractor)
     'roofing_contractor',
-    'pest_control_service',       // valid in new API (not pest_control)
-    'garage_door_supplier',       // valid in new API (not garage_door)
     'locksmith',
+    // Note: hvac_contractor, pest_control, garage_door → NOT in Places API (New)
   ],
 
-  'trades-construction': [        // Project-based, visual portfolios, sole owner.
-    'general_contractor',
-    'construction_company',
-    'excavating_contractor',
-    'masonry_contractor',
-    'fence_contractor',
-    'concrete_contractor',
-    'well_drilling_contractor',
+  'trades-construction': [        // Most trade types don't exist — using closest proxies
+    'moving_company',             // valid; high local trust, simple site
+    'storage',                    // valid; local businesses, simple sites
+    'building_materials_store',   // valid; catches lumber yards + supply houses
+    'hardware_store',             // valid; local hardware/supply shops
   ],
 
-  'outdoor-guides': [             // Flathead Valley goldmine. Premium day rates, clients research hard.
-    'guide_service',
-    'hunting_area',
-    'fishing_store',
-    'outdoor_sports_store',
-    'canoe_kayak_rental',
-    'boat_rental',
+  'outdoor-guides': [             // Flathead Valley goldmine — all confirmed valid
+    'fishing_charter',
+    'fishing_pond',
+    'hiking_area',
+    'marina',
+    'adventure_sports_center',
+    'ski_resort',
+    'sports_activity_location',
+    'sports_coaching',
   ],
 
-  'professional-services': [      // High LTV. Simple credibility site. No booking needed.
+  'professional-services': [      // All confirmed valid Table A types
     'dentist',
+    'dental_clinic',
     'lawyer',
     'insurance_agency',
-    'accountant',
+    'accounting',                 // valid (NOT 'accountant')
     'physiotherapist',
     'veterinary_care',
-    'surveyor',
+    'consultant',
   ],
 
-  'landscaping': [                // Seasonal + visual. Before/after galleries.
-    'landscaping_service',
-    'lawn_care_service',
-    'tree_service',
-    'pressure_washing',
-    'snow_removal',
-    'gardener',
+  'landscaping': [                // landscaping_service, lawn_care, tree_service → NOT valid
+    'garden_center',              // valid; catches nurseries + landscaping referrals
+    // Note: actual landscapers/tree services require Text Search to find
   ],
 
-  'wellness': [                   // Solo operators. Referral + search hybrid.
+  'wellness': [                   // All confirmed valid
     'chiropractor',
-    'massage_therapist',
     'massage',
+    'massage_spa',
     'spa',
-    'physical_therapist',
+    'wellness_center',
+    'yoga_studio',
   ],
 
   // ── TIER 2: GOOD FIT ───────────────────────────────────────────────────────
 
   'auto-services': [
     'car_repair',
-    'auto_body_shop',
-    'car_dealer',
     'car_wash',
+    'car_dealer',
     'auto_parts_store',
+    'tire_shop',                  // added — valid, high local ownership
   ],
 
-  'specialty-trades': [           // Painters, flooring, windows — visual + high ticket.
+  'specialty-trades': [           // painter valid; flooring/cabinet/handyman → NOT valid
     'painter',
-    'flooring_contractor',
-    'flooring_store',
-    'window_installation_service',
-    'cabinet_maker',
-    'handyman',
-    'upholstery_shop',
+    'home_improvement_store',     // proxy for remodel/trade referrals
   ],
 
-  // ── TIER 3: MARKET AWARENESS (low priority build targets) ──────────────────
+  // ── TIER 3: MARKET AWARENESS ───────────────────────────────────────────────
 
   restaurant:           ['restaurant', 'cafe', 'bakery', 'bar', 'meal_takeaway', 'brunch_restaurant'],
-  lodging:              ['lodging', 'campground', 'rv_park'],
+  lodging:              ['lodging', 'bed_and_breakfast', 'campground', 'rv_park', 'guest_house', 'motel'],
   'retail-boutique':    ['clothing_store', 'jewelry_store', 'book_store', 'gift_shop', 'florist', 'home_goods_store', 'furniture_store', 'pet_store'],
-  'outdoor-adventure':  ['tourist_attraction', 'travel_agency', 'park', 'rv_park', 'campground'],
+  'outdoor-adventure':  ['tourist_attraction', 'travel_agency', 'national_park', 'hiking_area', 'adventure_sports_center'],
 };
+
 
 // Known national/regional chains to suppress (partial name match, case-insensitive)
 const CHAIN_BLOCKLIST = [
