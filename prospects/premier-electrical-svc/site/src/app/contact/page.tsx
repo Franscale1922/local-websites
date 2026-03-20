@@ -39,17 +39,27 @@ export default function ContactPage() {
         <a href={PHONE_TEL} className="btn btn-ghost-gold nav-mobile-cta" style={{ fontSize: '0.82rem', padding: '8px 16px' }}>Call Now</a>
       </nav>
 
-      <section className="page-hero">
-        <div className="container">
-          <div className="page-hero-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.89 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-            </svg>
+      <section className="county-hero">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className="county-hero-bg"
+          src="/images/hero-contact.jpg"
+          alt="Premier Electrical Services owner at work van in Pacific Northwest neighborhood"
+          loading="eager"
+        />
+        <div className="county-hero-overlay" />
+        <div className="county-hero-content">
+          <div className="county-hero-eyebrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.03z"/></svg>
+            Free Estimates · Same-Day Response
           </div>
           <h1>Get a Free Estimate</h1>
-          <p className="page-hero-sub">
+          <p className="county-hero-sub">
             Tell us what you need. We respond same day on most requests. If it&apos;s urgent, call — we pick up.
           </p>
+          <div className="county-hero-ctas">
+            <a href={PHONE_TEL} className="btn btn-primary">Call {PHONE}</a>
+          </div>
         </div>
       </section>
 
@@ -59,28 +69,28 @@ export default function ContactPage() {
             <div className="contact-info">
               <h2 style={{ marginBottom: '32px' }}>Reach Us Directly</h2>
               <div className="contact-detail">
-                <div className="contact-detail-icon">📞</div>
+                <div className="contact-detail-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.03z"/></svg></div>
                 <div className="contact-detail-text">
                   <div className="contact-detail-label">Phone</div>
                   <div className="contact-detail-value"><a href={PHONE_TEL}>{PHONE}</a></div>
                 </div>
               </div>
               <div className="contact-detail">
-                <div className="contact-detail-icon">📍</div>
+                <div className="contact-detail-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
                 <div className="contact-detail-text">
                   <div className="contact-detail-label">Mailing Address</div>
                   <div className="contact-detail-value">1500 East College Way Ste A PMB 291<br />Mount Vernon, WA 98273</div>
                 </div>
               </div>
               <div className="contact-detail">
-                <div className="contact-detail-icon">🗺️</div>
+                <div className="contact-detail-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg></div>
                 <div className="contact-detail-text">
                   <div className="contact-detail-label">Service Area</div>
                   <div className="contact-detail-value">Skagit · Whatcom · San Juan · Island · King · Snohomish Counties</div>
                 </div>
               </div>
               <div className="contact-detail">
-                <div className="contact-detail-icon">⏱</div>
+                <div className="contact-detail-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
                 <div className="contact-detail-text">
                   <div className="contact-detail-label">Response Time</div>
                   <div className="contact-detail-value">Same day on most requests. Urgent? Call directly.</div>

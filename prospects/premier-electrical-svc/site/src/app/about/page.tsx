@@ -26,17 +26,28 @@ export default function AboutPage() {
         <a href={PHONE_TEL} className="btn btn-ghost-gold nav-mobile-cta" style={{ fontSize: '0.82rem', padding: '8px 16px' }}>Call Now</a>
       </nav>
 
-      <section className="page-hero">
-        <div className="container">
-          <div className="page-hero-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M8 21h8M12 21v-4M7 4H4a1 1 0 0 0-1 1v2a4 4 0 0 0 4 4h1M17 4h3a1 1 0 0 1 1 1v2a4 4 0 0 1-4 4h-1M7 4h10v7a5 5 0 0 1-10 0V4z"/>
-            </svg>
+      <section className="county-hero">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className="county-hero-bg"
+          src="/images/hero-about-portrait.jpg"
+          alt="Premier Electrical Services owner on job site"
+          loading="eager"
+        />
+        <div className="county-hero-overlay" />
+        <div className="county-hero-content">
+          <div className="county-hero-eyebrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M6 9H4a2 2 0 01-2-2V5h4"/><path d="M18 9h2a2 2 0 002-2V5h-4"/><path d="M6 5h12v6a6 6 0 01-12 0V5z"/><path d="M12 17v4"/><path d="M8 21h8"/></svg>
+            3× Best of the Best · Skagit Valley
           </div>
           <h1>The Electricians Skagit Valley Keeps Calling Back.</h1>
-          <p className="page-hero-sub">
+          <p className="county-hero-sub">
             Three-time Best of the Best. A+ BBB. Nearly 60 years of combined experience. Based in Mount Vernon — and proud of it.
           </p>
+          <div className="county-hero-ctas">
+            <a href="/contact" className="btn btn-primary">Get a Free Estimate</a>
+            <a href={PHONE_TEL} className="btn btn-ghost-light">Call {PHONE}</a>
+          </div>
         </div>
       </section>
 

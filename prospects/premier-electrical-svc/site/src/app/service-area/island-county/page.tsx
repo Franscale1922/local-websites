@@ -30,8 +30,8 @@ export default function IslandCountyPage() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           className="county-hero-bg"
-          src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=1800&q=85"
-          alt="Pacific Northwest coastline and forested shores representing Island County, Washington"
+          src="/images/hero-island.jpg"
+          alt="Deception Pass Bridge spanning the gorge between Whidbey Island and the mainland"
           loading="eager"
         />
         <div className="county-hero-overlay" />

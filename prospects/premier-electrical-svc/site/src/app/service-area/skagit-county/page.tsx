@@ -30,8 +30,8 @@ export default function SkagitCountyPage() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           className="county-hero-bg"
-          src="https://images.unsplash.com/photo-1523821741446-edb2b68bb7a0?w=1800&q=85"
-          alt="Skagit Valley tulip fields in bloom"
+          src="/images/hero-skagit.jpg"
+          alt="Skagit Valley tulip fields in bloom with the North Cascades in the background"
           loading="eager"
         />
         <div className="county-hero-overlay" />

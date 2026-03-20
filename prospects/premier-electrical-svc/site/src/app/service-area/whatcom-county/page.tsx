@@ -30,8 +30,8 @@ export default function WhatcomCountyPage() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           className="county-hero-bg"
-          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1800&q=85"
-          alt="Mountain and water vista representing Whatcom County, Washington"
+          src="/images/hero-whatcom.jpg"
+          alt="Bellingham Bay waterfront at golden hour with mountains behind"
           loading="eager"
         />
         <div className="county-hero-overlay" />

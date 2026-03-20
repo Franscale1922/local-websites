@@ -9,7 +9,7 @@ const SITE = {
   address: '1500 East College Way Ste A PMB 291, Mount Vernon, WA 98273',
   license: 'PREMIES821LL',
 
-  heroImage: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1800&q=85',
+  heroImage: '/images/hero-homepage.jpg',
   heroH1Part1: 'The Electricians Skagit Valley',
   heroH1Accent: 'Keeps Calling Back.',
   heroSub: 'Nearly 60 years of combined experience. Three Best of the Best awards. One straightforward promise: we do the job right the first time.',
@@ -122,7 +122,7 @@ const SITE = {
   aboutP1: 'Premier Electrical Services has earned the "Best of the Best" award in Skagit Valley three years running — 2023, 2024, and 2025. We also carry an A+ rating with the Better Business Bureau. That\'s not marketing. That\'s customers and inspectors saying the work holds up.',
   aboutP2: 'Our team has nearly 60 years of combined electrical experience. We specialize in work that other electricians decline — complex properties, historic homes, older wiring systems. If the job is unusual, we\'ve probably seen it.',
   aboutP3: '100% recommended on Facebook. Not because we asked people to leave reviews — because we did the work right.',
-  aboutImage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80',
+  aboutImage: '/images/hero-about.jpg',
   aboutStats: [
     { num: '60+', label: 'Years Combined Experience' },
     { num: '3×', label: 'Best of the Best Award' },

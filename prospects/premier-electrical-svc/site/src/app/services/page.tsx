@@ -89,8 +89,8 @@ export default function ServicesPage() {
       <section className="services-page-hero">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1800&q=85"
-          alt="Electrician working on electrical panel"
+          src="/images/hero-services.jpg"
+          alt="Premier Electrical Services electrician working on panel"
           className="services-page-hero-bg"
         />
         <div className="services-page-hero-overlay" />

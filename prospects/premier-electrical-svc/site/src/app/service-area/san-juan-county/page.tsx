@@ -30,8 +30,8 @@ export default function SanJuanCountyPage() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           className="county-hero-bg"
-          src="https://images.unsplash.com/photo-1500581276021-a4bbcd0050c5?w=1800&q=85"
-          alt="Pacific Northwest island waters and evergreen shores representing San Juan County, Washington"
+          src="/images/hero-san-juan.jpg"
+          alt="Friday Harbor marina on San Juan Island with colorful boats and evergreen hills"
           loading="eager"
         />
         <div className="county-hero-overlay" />
