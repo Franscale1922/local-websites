@@ -208,8 +208,8 @@ const SITE = {
   ],
   reviewPlatforms: [
     { label: 'Google', href: 'https://www.google.com/search?q=Premier+Electrical+Services+Mount+Vernon+WA' },
-    { label: 'Facebook', href: 'https://www.facebook.com' },
-    { label: 'BBB', href: 'https://www.bbb.org' },
+    { label: 'Facebook', href: 'https://www.facebook.com/premierelectricalsvc' },
+    { label: 'BBB', href: 'https://www.bbb.org/us/wa/mount-vernon/profile/electrical-contractors/premier-electrical-services-inc-1296-1000135427' },
   ],
 
   ctaTitle: 'Ready to Get It Done Right?',
