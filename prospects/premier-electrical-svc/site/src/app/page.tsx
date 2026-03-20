@@ -265,10 +265,12 @@ export default function Home() {
       {/* MOBILE STICKY BAR */}
       <div className="mobile-sticky-bar">
         <a href={SITE.phoneTel} className="mobile-sticky-call">
-          📞 Call (360) 421-5230
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.03z"/></svg>
+          Call (360) 421-5230
         </a>
         <a href="/contact" className="mobile-sticky-estimate">
-          Free Estimate →
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          Free Estimate
         </a>
       </div>
 
@@ -297,13 +299,13 @@ export default function Home() {
         <div className="hero-content">
           <div className="hero-badge">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623" style={{display:'inline',verticalAlign:'middle',marginRight:'6px'}}><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            3-Time Best of the Best — Skagit Valley · A+ BBB Rating
+            3× Best of the Best · A+ BBB
           </div>
           <h1>
             {SITE.heroH1Part1} <span>{SITE.heroH1Accent}</span>
           </h1>
           <p className="hero-sub">{SITE.heroSub}</p>
-          <div className="hero-ctas">
+          <div className="hero-ctas hero-ctas--mobile-stack">
             <a href="#contact" className="btn btn-primary">{SITE.heroCTA1}</a>
             <a href={SITE.phoneTel} className="btn btn-ghost-light">{SITE.heroCTA2}</a>
           </div>

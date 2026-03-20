@@ -453,8 +453,11 @@ p { max-width: 68ch; }
 
 @media (max-width: 480px) {
   .hero-ctas { flex-direction: column; }
-  .hero-ctas .btn { text-align: center; justify-content: center; }
+  .hero-ctas .btn { text-align: center; justify-content: center; width: 100%; }
   .about-img-wrap img { height: 320px; }
+  /* sticky bar gap for SVG icons */
+  .mobile-sticky-call,
+  .mobile-sticky-estimate { gap: 8px; }
 }
 
 /* ============================================================
