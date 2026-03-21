@@ -39,7 +39,7 @@ export default function LightingUpgradesPage() {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             Lighting &amp; Outbuildings · Indoor, Outdoor &amp; Specialty
           </div>
-          <h1>Lighting, Outbuildings &amp; Specialty Wiring — We Handle It All.</h1>
+          <h1>Lighting, Outbuildings and Specialty Wiring. If It Needs Power, We Run It.</h1>
           <p className="county-hero-sub">
             Detached garages. Shops. Barns. ADUs. Hot tubs. Landscape lighting. Security lighting. If it needs power and it&apos;s on your property, we can wire it — correctly, with permits when required, and code-compliant every time.
           </p>

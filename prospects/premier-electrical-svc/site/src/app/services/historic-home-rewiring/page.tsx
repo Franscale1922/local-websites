@@ -39,7 +39,7 @@ export default function HistoricHomeRewiringPage() {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             Historic &amp; Older Homes · Specialists, Not Generalists
           </div>
-          <h1>Historic &amp; Older Home Rewiring — The Work Other Electricians Pass On.</h1>
+          <h1>Historic &amp; Older Home Rewiring. The Work Other Electricians Pass On.</h1>
           <p className="county-hero-sub">
             Knob-and-tube wiring. Cloth-insulated wires. Aluminum branch circuits. Fuse boxes from 1952. We specialize in the complex, older, and historic properties that most electricians decline. With nearly 60 years of combined experience, we&apos;ve seen all of it.
           </p>

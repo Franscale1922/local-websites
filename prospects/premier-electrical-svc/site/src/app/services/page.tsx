@@ -19,7 +19,7 @@ const SERVICES = [
   {
     title: 'EV Charging Stations',
     href: '/services/ev-charging',
-    desc: "Level 2 home chargers \u2014 Tesla Wall Connector, JuiceBox, ChargePoint. Permitted install, clean finish. We'll assess your panel before we ever pick up a drill.",
+    desc: "Level 2 home chargers: Tesla Wall Connector, JuiceBox, ChargePoint. Permitted install, clean finish. We'll assess your panel before we ever pick up a drill.",
     img: '/images/svc-ev-charging.jpg',
     tag: 'Fast Growing',
   },

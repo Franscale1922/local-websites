@@ -86,9 +86,9 @@ export default function ServiceAreaPage() {
         <div className="county-hero-content">
           <div className="county-hero-eyebrow">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Bellingham to Seattle &mdash; Six Counties Covered
+            Bellingham to Seattle, Six Counties Covered
           </div>
-          <h1>We Come to You — Wherever You Are in Western Washington.</h1>
+          <h1>We Come to You. Wherever You Are in Western Washington.</h1>
           <p className="county-hero-sub">
             Based in Mount Vernon. Serving Skagit, Whatcom, San Juan, Island, Snohomish, and King counties. Residential and commercial. Licensed, bonded, A+ BBB.
           </p>

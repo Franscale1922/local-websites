@@ -39,7 +39,7 @@ export default function CommercialWiringPage() {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             Commercial Electrical · Skagit, Whatcom &amp; Snohomish
           </div>
-          <h1>Commercial Electrical Services — Code-Compliant, Done on Schedule.</h1>
+          <h1>Commercial Electrical Services. Code-Compliant and Done on Schedule.</h1>
           <p className="county-hero-sub">
             Restaurants, daycares, retail buildouts, offices, and multi-tenant commercial spaces. We&apos;ve wired them all across Skagit, Whatcom, and Snohomish counties. Licensed commercial work — not residential thinking applied to commercial problems.
           </p>

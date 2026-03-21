@@ -39,7 +39,7 @@ export default function ServiceCallsPage() {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             Service Calls &amp; Repairs · Same-Day Response
           </div>
-          <h1>Electrical Repairs &amp; Service Calls — We Diagnose It, We Fix It, We Explain It.</h1>
+          <h1>Electrical Repairs &amp; Service Calls. We Find the Problem, Fix It, and Tell You What Happened.</h1>
           <p className="county-hero-sub">
             Tripped breakers that won&apos;t reset. Outlets that stopped working. Lights that flicker. Questionable work left behind by a previous contractor. We troubleshoot the problem and fix it — same day on most service calls.
           </p>

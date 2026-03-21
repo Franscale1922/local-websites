@@ -42,7 +42,7 @@ export default function ResidentialWiringPage() {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             Residential Wiring · New Construction &amp; Rewires
           </div>
-          <h1>Residential Electrical Wiring — Built Right, From the Ground Up.</h1>
+          <h1>Residential Electrical Wiring. Built Right, From the Ground Up.</h1>
           <p className="county-hero-sub">
             New construction, remodels, complete rewires, rough-in, and trim-out. Nearly 60 years of combined experience means we&apos;ve built them and rewired them — we know how they&apos;re supposed to work.
           </p>
@@ -58,7 +58,7 @@ export default function ResidentialWiringPage() {
           <div className="service-detail-grid">
             <div className="service-detail-body">
               <span className="eyebrow">The Service</span>
-              <h2>From Rough-In to Trim-Out — We Do It All.</h2>
+              <h2>From Rough-In to Trim-Out. We Do It All.</h2>
               <p className="service-intro">
                 Residential wiring covers the full lifecycle of a home&apos;s electrical system. Whether you&apos;re building new, adding square footage, or gutting a home to the studs and starting over, we handle the entire electrical scope — new service entrance, panel, all branch circuits, outlets, switches, fixtures, and the final inspection.
               </p>

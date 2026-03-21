@@ -42,7 +42,7 @@ export default function GeneratorInstallationPage() {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             Generator Installation · Skagit Valley &amp; Puget Sound
           </div>
-          <h1>Whole-Home Generator Installation — Because the Power Goes Out Here.</h1>
+          <h1>Whole-Home Generator Installation. Because the Power Goes Out Here.</h1>
           <p className="county-hero-sub">
             Winter storms, grid failures, fallen trees. In Western Washington, power outages aren&apos;t rare — they&apos;re a seasonal reality. A properly installed standby or portable generator means your home keeps running when the neighborhood goes dark.
           </p>

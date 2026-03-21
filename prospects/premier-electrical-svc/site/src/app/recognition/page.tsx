@@ -21,7 +21,7 @@ const AWARDS = [
     alt: '2024 Best of the Best Skagit Valley Winner',
     title: 'Best of the Best — 2024 Winner',
     sub: 'Skagit Publishing · goskagit.com',
-    body: 'Three years of winning. The community has consistently put us at the top when it counts.',
+    body: 'Three wins in a row. When the community keeps voting the same way, that tells you something.',
   },
   {
     img: '/images/real-award-2023-winner.png',
@@ -35,7 +35,7 @@ const AWARDS = [
     alt: '2022 Best of the Best Skagit Valley Finalist',
     title: 'Best of the Best — 2022 Finalist',
     sub: 'Skagit Publishing · goskagit.com',
-    body: 'Recognized as a top finalist in 2022 — the year we were first nominated. A strong debut in Skagit Valley\'s official community choice awards.',
+    body: 'Our first year as a finalist, and it turned out to be the start of a streak. Real customers casting real votes. Not a paid placement.',
   },
   {
     img: '/images/real-award-2021-winner.jpg',
@@ -49,7 +49,7 @@ const AWARDS = [
     alt: "Skagit's Best Finalist 2021 — goskagit.com",
     title: "Skagit's Best Finalist — 2021",
     sub: 'GoSkagit.com Community Award',
-    body: 'Named a Skagit\'s Best Finalist in 2021 — a separate recognition from goSkagit.com, validating our reputation across the Skagit community from multiple award bodies.',
+    body: "Named a Skagit's Best Finalist in 2021 by goSkagit.com, separate from the Best of the Best awards. Two different award bodies, one consistent result.",
   },
   {
     img: '/images/real-award-expertise-bellingham.png',

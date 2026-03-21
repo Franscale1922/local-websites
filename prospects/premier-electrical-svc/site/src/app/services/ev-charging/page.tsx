@@ -42,7 +42,7 @@ export default function EVChargingPage() {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             EV Charging · Permitted &amp; Code-Compliant
           </div>
-          <h1>EV Charging Station Installation — Permitted, Clean, Ready to Charge.</h1>
+          <h1>EV Charging Station Installation. Permitted, Clean, and Ready to Charge.</h1>
           <p className="county-hero-sub">
             Washington ranks among the top EV markets in the country. We install Level 2 home charging stations across Skagit, Whatcom, Snohomish, and King counties — the right way, the first time.
           </p>
