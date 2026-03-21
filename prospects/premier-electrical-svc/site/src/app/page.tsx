@@ -19,6 +19,7 @@ const SITE = {
   navLinks: [
     { label: 'Services', href: '/services' },
     { label: 'About', href: '/about' },
+    { label: 'Recognition', href: '/recognition' },
     { label: 'Service Area', href: '/service-area' },
     { label: 'FAQ', href: '/faq' },
   ],

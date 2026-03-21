@@ -19,6 +19,7 @@ export default function AboutPage() {
         <ul className="nav-links">
           <li><a href="/services">Services</a></li>
           <li><a href="/about" className="nav-link--active">About</a></li>
+          <li><a href="/recognition">Recognition</a></li>
           <li><a href="/service-area">Service Area</a></li>
           <li><a href="/faq">FAQ</a></li>
           <li><a href="/contact" className="nav-cta">Get a Free Estimate</a></li>
