@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import FAQAccordion from '../../components/FAQAccordion';
 
 export const metadata: Metadata = {
   title: 'Lighting & Outbuilding Wiring | Premier Electrical Services — Skagit County, WA',
@@ -23,35 +24,32 @@ export default function LightingUpgradesPage() {
         <a href={PHONE_TEL} className="btn btn-ghost-gold nav-mobile-cta" style={{ fontSize: '0.82rem', padding: '8px 16px' }}>Call Now</a>
       </nav>
 
-      <section className="page-hero">
-        <div className="container">
+      <section className="county-hero">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className="county-hero-bg"
+          src="/images/svc-lighting.jpg"
+          alt="Modern interior lighting installation in home"
+          loading="eager"
+        />
+        <div className="county-hero-overlay" />
+        <div className="county-hero-content">
           <a href="/services" className="breadcrumb">← All Services</a>
-          <div className="page-hero-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <line x1="9" y1="18" x2="15" y2="18"/>
-              <line x1="10" y1="22" x2="14" y2="22"/>
-              <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>
-            </svg>
+          <div className="county-hero-eyebrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Lighting &amp; Outbuildings · Indoor, Outdoor &amp; Specialty
           </div>
-          <h1>Lighting, Outbuildings & Specialty Wiring — We Handle It All.</h1>
-          <p className="page-hero-sub">
+          <h1>Lighting, Outbuildings &amp; Specialty Wiring — We Handle It All.</h1>
+          <p className="county-hero-sub">
             Detached garages. Shops. Barns. ADUs. Hot tubs. Landscape lighting. Security lighting. If it needs power and it&apos;s on your property, we can wire it — correctly, with permits when required, and code-compliant every time.
           </p>
-          <div className="page-hero-ctas">
+          <div className="county-hero-ctas">
             <a href="/contact" className="btn btn-primary">Get a Free Estimate</a>
             <a href={PHONE_TEL} className="btn btn-ghost-light">Call {PHONE}</a>
           </div>
         </div>
       </section>
 
-      <div className="service-page-photo">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="https://images.unsplash.com/photo-1524484485831-a92ffc0de03f?w=1600&q=85"
-          alt="Modern interior lighting installation in home"
-          loading="eager"
-        />
-      </div>
       <section className="section">
         <div className="container">
           <div className="service-detail-grid">
@@ -88,6 +86,44 @@ export default function LightingUpgradesPage() {
                 Schedule This Service
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--tinted">
+        <div className="container">
+          <span className="eyebrow">Why It Matters</span>
+          <h2>Six Ways Good Electrical Work Transforms a Property</h2>
+          <div className="why-grid" style={{ marginTop: '40px' }}>
+            {[
+              { icon: '💡', title: 'Lighting Changes Everything', desc: 'The right lighting makes a home feel bigger, safer, and more livable. Recessed cans, dimmers, and under-cabinet LED aren\'t luxuries — they change how you experience your own space.' },
+              { icon: '🔐', title: 'Security You Can Count On', desc: 'Motion-triggered exterior lighting and properly wired security cameras are proven deterrents. We wire your exterior so your lighting actually works when it\'s needed.' },
+              { icon: '🏡', title: 'Outbuildings Add Real Value', desc: 'A properly wired shop, barn, or garage makes your property more functional and more valuable. Without power, those buildings underperform. With it, they become assets.' },
+              { icon: '🛁', title: 'Hot Tubs Done Right', desc: 'A hot tub on a DIY or undersized circuit is a fire hazard and an insurance problem. A properly permitted 240V GFCI circuit done by a licensed electrician is the only safe way to do it.' },
+              { icon: '🌿', title: 'Landscape Lighting Extends Your Outdoor Space', desc: 'Well-designed outdoor lighting extends the usable hours of your yard and patio. Low-voltage landscape systems, line-voltage accents, and path lights — we do all of it cleanly.' },
+              { icon: '🏗️', title: 'ADU & Accessory Structures', desc: 'Adding a guest house, ADU, or accessory structure? It needs its own electrical service fed correctly from the main panel. We do this regularly across Skagit and Whatcom counties.' },
+            ].map(w => (
+              <div key={w.title} className="why-card">
+                <div className="why-number">{w.icon}</div>
+                <h3>{w.title}</h3>
+                <p>{w.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--tinted">
+        <div className="container">
+          <span className="eyebrow">Frequently Asked</span>
+          <h2>Lighting &amp; Outbuilding Questions</h2>
+          <div style={{ marginTop: '36px', maxWidth: '780px' }}>
+            <FAQAccordion faqs={[
+              { q: 'Can you wire a detached garage or shop from my main panel?', a: 'Yes. We run a subpanel feed from your main panel to the outbuilding, install a properly-sized subpanel inside, and wire it for whatever you need — outlets, lighting, 240V tools. A permit is required for this work and we handle it.' },
+              { q: 'Do I need a permit for a hot tub or spa?', a: 'Yes — hot tub wiring always requires a permit in Washington State. The circuit must be GFCI-protected at the panel, with proper disconnect placement and bonding. We do this by the book, which matters for both safety and your homeowner\'s insurance.' },
+              { q: 'What kind of outdoor lighting can you install?', a: 'We install landscape lighting low-voltage systems, line-voltage path and accent lighting, exterior security lighting with motion sensors, and dusk-to-dawn exterior fixtures. We can also wire for outdoor outlets, exterior fans, and porch fixtures.' },
+              { q: 'Can you wire a barn or agricultural outbuilding?', a: 'Yes. We\'ve wired barns, shops, greenhouses, and agricultural buildings across Skagit and Whatcom counties. This often involves running overhead or underground service from the main panel to a subpanel in the building, then wiring for lighting, outlets, and any 240V equipment.' },
+            ]} />
           </div>
         </div>
       </section>

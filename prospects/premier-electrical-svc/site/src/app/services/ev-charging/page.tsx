@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import FAQAccordion from '../../components/FAQAccordion';
 
 export const metadata: Metadata = {
   title: 'EV Charging Station Installation | Premier Electrical Services — Skagit & Puget Sound, WA',
@@ -26,36 +27,32 @@ export default function EVChargingPage() {
         <a href={PHONE_TEL} className="btn btn-ghost-gold nav-mobile-cta" style={{ fontSize: '0.82rem', padding: '8px 16px' }}>Call Now</a>
       </nav>
 
-      <section className="page-hero">
-        <div className="container">
+      <section className="county-hero">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className="county-hero-bg"
+          src="/images/svc-ev-charging.jpg"
+          alt="EV charging station installed in residential garage"
+          loading="eager"
+        />
+        <div className="county-hero-overlay" />
+        <div className="county-hero-content">
           <a href="/services" className="breadcrumb">← All Services</a>
-          <div className="page-hero-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <rect x="2" y="7" width="16" height="14" rx="2"/>
-              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M18 12h2a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/>
-              <line x1="10" y1="11" x2="8" y2="17"/>
-              <line x1="14" y1="11" x2="12" y2="17"/>
-            </svg>
+          <div className="county-hero-eyebrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            EV Charging · Permitted &amp; Code-Compliant
           </div>
           <h1>EV Charging Station Installation — Permitted, Clean, Ready to Charge.</h1>
-          <p className="page-hero-sub">
+          <p className="county-hero-sub">
             Washington ranks among the top EV markets in the country. We install Level 2 home charging stations across Skagit, Whatcom, Snohomish, and King counties — the right way, the first time.
           </p>
-          <div className="page-hero-ctas">
+          <div className="county-hero-ctas">
             <a href="/contact" className="btn btn-primary">Get a Free Estimate</a>
             <a href={PHONE_TEL} className="btn btn-ghost-light">Call {PHONE}</a>
           </div>
         </div>
       </section>
 
-      <div className="service-page-photo">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="https://images.unsplash.com/photo-1647166545719-2e82fdec7b06?w=1600&q=85"
-          alt="EV charging station installed in residential garage"
-          loading="eager"
-        />
-      </div>
       <section className="section">
         <div className="container">
           <div className="service-detail-grid">
@@ -118,22 +115,40 @@ export default function EVChargingPage() {
         </div>
       </section>
 
+      <section className="section section--tinted">
+        <div className="container">
+          <span className="eyebrow">Why It Matters</span>
+          <h2>Six Reasons to Make the Switch to Level 2 Charging</h2>
+          <div className="why-grid" style={{ marginTop: '40px' }}>
+            {[
+              { icon: '⚡', title: 'Speed — 6× Faster Than a Standard Outlet', desc: 'A 120V outlet adds 4–5 miles of range per hour. A Level 2 charger adds 25–30 miles per hour. You wake up to a full charge every morning instead of half a battery.' },
+              { icon: '💸', title: 'Lower Cost Per Mile', desc: 'Charging at off-peak rates overnight is dramatically cheaper than gasoline — and cheaper than Level 3 public charging. Your home charger pays for itself quickly.' },
+              { icon: '🏠', title: 'Convenience You\'ll Actually Use', desc: 'Never search for a public charger again. Plug in when you get home — like a phone — and leave every morning full. It changes how you think about owning an EV.' },
+              { icon: '📈', title: 'Home Value', desc: 'A permitted, professionally installed EV charger is a real estate asset. Buyers actively look for it, and appraisers support it. It\'s a feature, not a cost.' },
+              { icon: '🛡️', title: 'Safe, Code-Compliant Install', desc: 'DIY EV charger installs are a common cause of electrical fires. A permitted, inspector-approved installation protects your home, your car, and your insurance coverage.' },
+              { icon: '🚗', title: 'Works With Any EV or PHEV', desc: 'Whether you drive a Tesla, Rivian, Ford F-150 Lightning, or a plug-in hybrid Prius, a Level 2 charger charges them all. It\'s EV-agnostic and future-ready.' },
+            ].map(w => (
+              <div key={w.title} className="why-card">
+                <div className="why-number">{w.icon}</div>
+                <h3>{w.title}</h3>
+                <p>{w.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section">
         <div className="container">
           <span className="eyebrow">Frequently Asked</span>
           <h2>EV Charger Questions</h2>
-          <div className="faq-list" style={{ marginTop: '36px', maxWidth: '780px' }}>
-            {[
+          <div style={{ marginTop: '36px', maxWidth: '780px' }}>
+            <FAQAccordion faqs={[
               { q: 'How much does EV charger installation cost?', a: 'Most Level 2 home charger installs run $400–$1,200 for labor depending on run distance, permit requirements, and panel capacity. The charger itself costs extra depending on the brand. We give you a full cost picture before starting.' },
               { q: 'Do I need to upgrade my panel for an EV charger?', a: 'Not always. If your panel has available capacity (most 200A panels do), we can add a dedicated circuit without upgrading. If you have an older 100A panel or it\'s already near capacity, we\'ll let you know and can handle the upgrade at the same time.' },
-              { q: 'Do I need a permit for EV charger installation?', a: 'Yes — in Washington State, Level 2 charger installations require a permit. We handle that for you. It ensures the install is safe and protects your homeowner&apos;s insurance.' },
+              { q: 'Do I need a permit for EV charger installation?', a: 'Yes — in Washington State, Level 2 charger installations require a permit. We handle that for you. It ensures the install is safe and protects your homeowner\'s insurance.' },
               { q: 'How long does installation take?', a: 'Most residential installs take 2–4 hours. If a panel upgrade is needed, plan a full day.' },
-            ].map(f => (
-              <div key={f.q} className="faq-item-static">
-                <h3 className="faq-q-static">{f.q}</h3>
-                <p className="faq-a-static">{f.a}</p>
-              </div>
-            ))}
+            ]} />
           </div>
         </div>
       </section>

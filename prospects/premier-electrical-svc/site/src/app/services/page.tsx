@@ -60,7 +60,7 @@ const SERVICES = [
   },
   {
     title: 'Residential Wiring',
-    href: '/services/service-calls',
+    href: '/services/residential-wiring',
     desc: 'New construction, remodels, complete rewires, rough-in, and trim-out. Nearly 60 years of combined experience means we\'ve built them and rewired them — we know how they\'re supposed to work.',
     img: '/images/svc-residential.jpg',
     tag: null,

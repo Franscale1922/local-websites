@@ -2,17 +2,16 @@ import type { Metadata } from 'next';
 import FAQAccordion from '../../components/FAQAccordion';
 
 export const metadata: Metadata = {
-  title: 'Electrical Panel Upgrades | Premier Electrical Services — Skagit County, WA',
-  description: 'Expert electrical panel upgrades in Skagit, Whatcom, and Snohomish counties. Fuse boxes, 200-amp upgrades, subpanels. Licensed, bonded, A+ BBB. Call (360) 421-5230.',
+  title: 'Residential Electrical Wiring | Premier Electrical Services — Skagit County, WA',
+  description: 'New construction wiring, complete home rewires, remodel rough-in and trim-out across Skagit, Whatcom, Island, and San Juan counties. Nearly 60 years of combined experience. Call (360) 421-5230.',
 };
 
 const PHONE = '(360) 421-5230';
 const PHONE_TEL = 'tel:+13604215230';
 
-export default function PanelUpgradesPage() {
+export default function ResidentialWiringPage() {
   return (
     <main>
-
       <nav className="nav nav--scrolled">
         <a href="/" className="nav-logo">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -32,8 +31,8 @@ export default function PanelUpgradesPage() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           className="county-hero-bg"
-          src="/images/svc-panel.jpg"
-          alt="Electrician performing electrical panel upgrade"
+          src="/images/svc-residential.jpg"
+          alt="Electrician wiring a new residential home"
           loading="eager"
         />
         <div className="county-hero-overlay" />
@@ -41,11 +40,11 @@ export default function PanelUpgradesPage() {
           <a href="/services" className="breadcrumb">← All Services</a>
           <div className="county-hero-eyebrow">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            Panel Upgrades · Licensed &amp; Permitted
+            Residential Wiring · New Construction &amp; Rewires
           </div>
-          <h1>Electrical Panel Upgrades — Done Right the First Time.</h1>
+          <h1>Residential Electrical Wiring — Built Right, From the Ground Up.</h1>
           <p className="county-hero-sub">
-            Tripped breakers, flickering lights, or a fuse box that hasn&apos;t been touched since 1978. We upgrade residential and commercial panels across Skagit, Whatcom, and surrounding counties.
+            New construction, remodels, complete rewires, rough-in, and trim-out. Nearly 60 years of combined experience means we&apos;ve built them and rewired them — we know how they&apos;re supposed to work.
           </p>
           <div className="county-hero-ctas">
             <a href="/contact" className="btn btn-primary">Get a Free Estimate</a>
@@ -54,35 +53,34 @@ export default function PanelUpgradesPage() {
         </div>
       </section>
 
-
       <section className="section">
         <div className="container">
           <div className="service-detail-grid">
             <div className="service-detail-body">
               <span className="eyebrow">The Service</span>
-              <h2>When Your Panel Can&apos;t Keep Up, Your Home Can&apos;t Either.</h2>
+              <h2>From Rough-In to Trim-Out — We Do It All.</h2>
               <p className="service-intro">
-                Most homes built before 1990 weren&apos;t designed for the electrical load we put on them today — EV chargers, air fryers, home offices, heat pumps. An undersized or outdated panel means tripped breakers, potential fire hazards, and an inability to add circuits for new appliances or renovations.
+                Residential wiring covers the full lifecycle of a home&apos;s electrical system. Whether you&apos;re building new, adding square footage, or gutting a home to the studs and starting over, we handle the entire electrical scope — new service entrance, panel, all branch circuits, outlets, switches, fixtures, and the final inspection.
               </p>
               <p className="service-intro">
-                We upgrade electrical panels on homes and businesses throughout Skagit, Whatcom, San Juan, Island, King, and Snohomish counties. Whether you have an original fuse box, a 60-amp main that needs to become 200-amp, or you just need a subpanel added to a detached garage, we handle it. Every install is permitted and inspector-approved.
+                We serve general contractors and homeowners alike across Skagit, Whatcom, San Juan, Island, King, and Snohomish counties. We&apos;re reliable on schedule, clean in our work, and we communicate clearly with your GC if you have one. Permits are pulled before rough-in. Inspections are coordinated and passed — not just hoped for.
               </p>
               <p className="service-intro">
-                Older fuse box? That&apos;s our specialty. We see them regularly on homes in Anacortes, Sedro-Woolley, and the historic neighborhoods of Bellingham — and we know exactly how to bring them up to code safely.
+                For remodels, we&apos;re used to working in occupied homes. We minimize mess, we protect your floors and walls, and we tell you upfront what to expect when we open walls. No surprises.
               </p>
             </div>
             <div className="service-detail-included">
               <h3>What&apos;s Included</h3>
               <ul className="included-list">
                 {[
-                  '100A, 150A, or 200A main panel upgrades',
-                  'Fuse box to breaker panel conversions',
-                  'Subpanel installations for garages, shops, additions',
-                  'Tandem breaker and double-tapped breaker corrections',
-                  'AFCI and GFCI breaker installation',
-                  'Panel labeling and load calculations',
-                  'Permit pulled and inspection coordinated',
-                  'A+ BBB rated, Lic. PREMIES821LL',
+                  'New construction wiring — ground up',
+                  'Remodel and addition rough-in',
+                  'Complete home rewires',
+                  'Trim-out — outlets, switches, fixtures',
+                  'Service entrance and main panel installation',
+                  'Bathroom, kitchen, and outdoor GFCI circuits',
+                  'Low-voltage rough-in (data, coax, doorbell)',
+                  'Permit pulled, inspection coordinated, A+ BBB',
                 ].map(b => (
                   <li key={b}><span className="included-check">✓</span>{b}</li>
                 ))}
@@ -97,16 +95,16 @@ export default function PanelUpgradesPage() {
 
       <section className="section section--tinted">
         <div className="container">
-          <span className="eyebrow">Signs You Need an Upgrade</span>
-          <h2>How Do You Know It&apos;s Time?</h2>
+          <span className="eyebrow">Why It Matters</span>
+          <h2>Residential Wiring Done Right the First Time.</h2>
           <div className="why-grid" style={{ marginTop: '40px' }}>
             {[
-              { icon: '🔄', title: 'Breakers Trip Regularly', desc: 'If a breaker trips every time you run the microwave and the hair dryer at the same time, your panel is overloaded — not your appliances.' },
-              { icon: '🏚️', title: 'You Have a Fuse Box', desc: 'Fuse panels are outdated, often uninsurable, and a fire risk. Modern breakers are resettable — fuses are not. Time to upgrade.' },
-              { icon: '⚡', title: 'You\'re Adding a Major Appliance', desc: 'Adding an EV charger, hot tub, central AC, or heat pump? You likely need either a panel upgrade or subpanel to support it safely.' },
-              { icon: '🔮', title: 'Lights Flicker or Dim', desc: 'Lights dimming when large appliances start up is a sign of an inadequate supply — the panel is struggling to keep up with demand.' },
-              { icon: '🏠', title: 'Selling or Buying a Home', desc: 'Home inspectors flag undersized and outdated panels. Upgrading before listing protects your sale price and avoids last-minute repair demands from buyers.' },
-              { icon: '🛡️', title: 'You Want Peace of Mind', desc: 'An upgraded panel means modern breakers, correct wire sizing, and inspector-approved work. Less worry about what\'s behind your walls.' },
+              { icon: '🏗️', title: 'New Construction', desc: 'We work directly with your builder or GC. Rough-in is scheduled before drywall. We show up on time, work clean, and pass inspection without re-dos.' },
+              { icon: '🔧', title: 'Remodels & Additions', desc: 'Kitchen remodel? Master bath addition? Home office build-out? We integrate new circuits cleanly into your existing system and pull the required permits.' },
+              { icon: '🏠', title: 'Complete Rewires', desc: 'Sometimes the right answer is starting over. Whether it\'s aluminum wiring, knob-and-tube, or just decades of amateur work, we\'ll give you a solid electrical system from panel to outlets.' },
+              { icon: '✅', title: 'Permitted & Inspected', desc: 'Every residential wiring job we do is permitted and inspector-approved. That protects your homeowner\'s insurance, your resale value, and your family.' },
+              { icon: '📐', title: 'Built to Current Code', desc: 'Washington State adopts NEC updates regularly. We wire to the current code — not whatever the original builder used 30 years ago. Your inspector agrees.' },
+              { icon: '🤝', title: 'GC-Friendly Scheduling', desc: 'We coordinate directly with your general contractor. Clear timelines, no-surprises communication, and we don\'t create delays on your build schedule.' },
             ].map(w => (
               <div key={w.title} className="why-card">
                 <div className="why-number">{w.icon}</div>
@@ -121,24 +119,23 @@ export default function PanelUpgradesPage() {
       <section className="section">
         <div className="container">
           <span className="eyebrow">Frequently Asked</span>
-          <h2>Panel Upgrade Questions</h2>
+          <h2>Residential Wiring Questions</h2>
           <div style={{ marginTop: '36px', maxWidth: '780px' }}>
             <FAQAccordion faqs={[
-              { q: 'How much does an electrical panel upgrade cost?', a: 'Most residential panel upgrades in Washington State run between $1,500 and $4,000 depending on amperage, panel location, the need to run new service entrance cable, and whether a utility disconnect is required. We provide free, no-pressure estimates.' },
-              { q: 'Do I need a permit for a panel upgrade?', a: 'Yes. In Washington State, panel upgrades require a permit and inspection. We pull the permit, schedule the inspection, and coordinate with your utility. You\'re not left to figure that out yourself.' },
-              { q: 'How long does a panel upgrade take?', a: 'Most residential panel upgrades take one full day. Your power will be out 4–8 hours. We coordinate with PSE, PUD, or your co-op to minimize downtime.' },
-              { q: 'Will a panel upgrade let me add an EV charger?', a: 'Usually yes — that\'s one of the most common reasons people upgrade. If you\'re at 100A and want a Level 2 charger plus other modern loads, 200A is often the right move. We\'ll assess your full load and tell you exactly what you need.' },
+              { q: 'Do you work with general contractors on new construction?', a: 'Yes — frequently. We work alongside GCs on new builds across Skagit, Whatcom, and Snohomish counties. We pull the electrical permit, coordinate with the inspector, and show up on schedule for rough-in and trim-out. We communicate directly with your GC so nothing falls through the cracks.' },
+              { q: 'How much does a full home rewire cost?', a: 'Full rewires vary widely depending on home size, existing wiring type, and accessibility. A 1,500 sq ft home might run $8,000–$18,000. We give you a detailed quote before any work starts — no vague ranges, no hidden add-ons.' },
+              { q: 'Do you handle the permit for a remodel?', a: 'Yes. In Washington State, most electrical work on a remodel requires a permit. We pull it, schedule the inspection, and make sure the work passes. You don\'t have to navigate the permitting process yourself.' },
+              { q: 'Can you work in an occupied home during a remodel?', a: 'Yes. We\'re used to working in occupied homes and take extra care to minimize disruption. We cover floors, contain dust where possible, and we tell you upfront which circuits will be off and for how long.' },
             ]} />
           </div>
         </div>
       </section>
 
-
       <div className="cta-strip">
         <div className="cta-strip-inner">
           <div className="cta-strip-text">
-            <h2>Ready to Get Your Panel Sorted?</h2>
-            <p>Free estimate. We pull the permit. We handle the inspection. You just keep the lights on.</p>
+            <h2>Starting a Build or Remodel?</h2>
+            <p>Free estimate. We pull the permit. We pass the inspection. Let&apos;s talk about your project.</p>
           </div>
           <div className="cta-strip-actions">
             <a href="/contact" className="btn btn-primary">Get a Free Estimate</a>
@@ -161,8 +158,8 @@ export default function PanelUpgradesPage() {
             <li><a href="/services/ev-charging">EV Charging</a></li>
             <li><a href="/services/generator-installation">Generators</a></li>
             <li><a href="/services/historic-home-rewiring">Historic Home Rewiring</a></li>
+            <li><a href="/services/residential-wiring">Residential Wiring</a></li>
             <li><a href="/services/commercial-wiring">Commercial Wiring</a></li>
-            <li><a href="/services/lighting-upgrades">Lighting & Outbuildings</a></li>
           </ul></div>
           <div className="footer-col"><h4>Contact</h4><ul>
             <li><a href={PHONE_TEL}>{PHONE}</a></li>

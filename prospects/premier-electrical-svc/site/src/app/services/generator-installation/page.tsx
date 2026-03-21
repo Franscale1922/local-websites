@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import FAQAccordion from '../../components/FAQAccordion';
 
 export const metadata: Metadata = {
   title: 'Whole-Home Generator Installation | Premier Electrical Services — Skagit County, WA',
@@ -26,35 +27,32 @@ export default function GeneratorInstallationPage() {
         <a href={PHONE_TEL} className="btn btn-ghost-gold nav-mobile-cta" style={{ fontSize: '0.82rem', padding: '8px 16px' }}>Call Now</a>
       </nav>
 
-      <section className="page-hero">
-        <div className="container">
+      <section className="county-hero">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className="county-hero-bg"
+          src="/images/svc-generator.jpg"
+          alt="Standby generator installed at residential home"
+          loading="eager"
+        />
+        <div className="county-hero-overlay" />
+        <div className="county-hero-content">
           <a href="/services" className="breadcrumb">← All Services</a>
-          <div className="page-hero-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="8" x2="12" y2="12"/>
-              <line x1="12" y1="16" x2="12.01" y2="16"/>
-            </svg>
+          <div className="county-hero-eyebrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Generator Installation · Skagit Valley &amp; Puget Sound
           </div>
           <h1>Whole-Home Generator Installation — Because the Power Goes Out Here.</h1>
-          <p className="page-hero-sub">
+          <p className="county-hero-sub">
             Winter storms, grid failures, fallen trees. In Western Washington, power outages aren&apos;t rare — they&apos;re a seasonal reality. A properly installed standby or portable generator means your home keeps running when the neighborhood goes dark.
           </p>
-          <div className="page-hero-ctas">
+          <div className="county-hero-ctas">
             <a href="/contact" className="btn btn-primary">Get a Free Estimate</a>
             <a href={PHONE_TEL} className="btn btn-ghost-light">Call {PHONE}</a>
           </div>
         </div>
       </section>
 
-      <div className="service-page-photo">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=85"
-          alt="Standby generator installed at residential home"
-          loading="eager"
-        />
-      </div>
       <section className="section">
         <div className="container">
           <div className="service-detail-grid">
@@ -105,6 +103,8 @@ export default function GeneratorInstallationPage() {
               { icon: '💧', title: 'Well Pumps & Water', desc: 'Homes on wells lose water pressure within minutes of an outage. A generator keeps your pump — and your toilet — running.' },
               { icon: '🏥', title: 'Medical Equipment', desc: 'CPAP machines, oxygen concentrators, insulin refrigeration. A few hours without power isn\'t an inconvenience — it\'s a medical emergency.' },
               { icon: '💼', title: 'Home-Based Businesses', desc: 'If you work from home, a multi-day outage means lost revenue. A generator is the business continuity plan that actually works.' },
+              { icon: '🌡️', title: 'Heat & Comfort', desc: 'In winter, losing your furnace or heat pump for several days isn\'t just uncomfortable — for elderly residents or young children, it\'s dangerous.' },
+              { icon: '🔐', title: 'Security & Peace of Mind', desc: 'Garage doors, alarm systems, cameras, and exterior lighting all go dark during a grid outage. A generator keeps your home protected 24/7.' },
             ].map(w => (
               <div key={w.title} className="why-card">
                 <div className="why-number">{w.icon}</div>
@@ -120,18 +120,13 @@ export default function GeneratorInstallationPage() {
         <div className="container">
           <span className="eyebrow">Frequently Asked</span>
           <h2>Generator Installation Questions</h2>
-          <div className="faq-list" style={{ marginTop: '36px', maxWidth: '780px' }}>
-            {[
+          <div style={{ marginTop: '36px', maxWidth: '780px' }}>
+            <FAQAccordion faqs={[
               { q: 'What size generator do I need?', a: 'It depends on what you want to power. A few critical circuits (heat, refrigerator, lights, well pump) might need 7,500–12,000 watts. Whole-home coverage typically starts at 20KW. We do a load analysis and tell you exactly what you need — and what you don\'t.' },
               { q: 'What\'s the difference between a transfer switch and an interlock?', a: 'Both prevent backfeed to the utility grid (a safety requirement). An interlock kit is less expensive and works with your existing panel. A transfer switch is a separate subpanel that automatically switches between grid and generator. We\'ll recommend the right option for your situation.' },
               { q: 'Do I need a permit for generator installation?', a: 'Yes — in Washington State, generator hookups require an electrical permit. We handle that, schedule the inspection, and make sure everything is done by the book.' },
               { q: 'Can you connect a generator to natural gas?', a: 'Yes. If your home has natural gas service, a permanently-piped connection is the cleanest and most convenient option — no storing fuel, no refilling. We do this connection along with the electrical hookup.' },
-            ].map(f => (
-              <div key={f.q} className="faq-item-static">
-                <h3 className="faq-q-static">{f.q}</h3>
-                <p className="faq-a-static">{f.a}</p>
-              </div>
-            ))}
+            ]} />
           </div>
         </div>
       </section>

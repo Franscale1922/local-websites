@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import FAQAccordion from '../../components/FAQAccordion';
 
 export const metadata: Metadata = {
   title: 'Electrical Repairs & Service Calls | Premier Electrical Services — Skagit County, WA',
@@ -23,33 +24,32 @@ export default function ServiceCallsPage() {
         <a href={PHONE_TEL} className="btn btn-ghost-gold nav-mobile-cta" style={{ fontSize: '0.82rem', padding: '8px 16px' }}>Call Now</a>
       </nav>
 
-      <section className="page-hero">
-        <div className="container">
+      <section className="county-hero">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className="county-hero-bg"
+          src="/images/svc-service-calls.jpg"
+          alt="Electrician troubleshooting electrical fault"
+          loading="eager"
+        />
+        <div className="county-hero-overlay" />
+        <div className="county-hero-content">
           <a href="/services" className="breadcrumb">← All Services</a>
-          <div className="page-hero-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-            </svg>
+          <div className="county-hero-eyebrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Service Calls &amp; Repairs · Same-Day Response
           </div>
-          <h1>Electrical Repairs & Service Calls — We Diagnose It, We Fix It, We Explain It.</h1>
-          <p className="page-hero-sub">
+          <h1>Electrical Repairs &amp; Service Calls — We Diagnose It, We Fix It, We Explain It.</h1>
+          <p className="county-hero-sub">
             Tripped breakers that won&apos;t reset. Outlets that stopped working. Lights that flicker. Questionable work left behind by a previous contractor. We troubleshoot the problem and fix it — same day on most service calls.
           </p>
-          <div className="page-hero-ctas">
+          <div className="county-hero-ctas">
             <a href="/contact" className="btn btn-primary">Schedule a Service Call</a>
             <a href={PHONE_TEL} className="btn btn-ghost-light">Call {PHONE}</a>
           </div>
         </div>
       </section>
 
-      <div className="service-page-photo">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600&q=85"
-          alt="Electrician troubleshooting electrical fault"
-          loading="eager"
-        />
-      </div>
       <section className="section">
         <div className="container">
           <div className="service-detail-grid">
@@ -97,6 +97,8 @@ export default function ServiceCallsPage() {
               { icon: '⚡', title: 'Breaker That Won\'t Reset', desc: 'A breaker that trips immediately when you reset it means either the circuit is overloaded or there\'s a fault somewhere in the wiring. Either way, it needs diagnosis.' },
               { icon: '💡', title: 'Lights Dim When Appliances Run', desc: 'This typically means an inadequate panel, a loose neutral, or a shared circuit that\'s overloaded. Worth a call — it usually points to a fixable problem.' },
               { icon: '🌡️', title: 'Hot Outlets or Faceplates', desc: 'Outlets shouldn\'t feel warm. If they do, that\'s current leaking somewhere. Don\'t use the outlet. Get it looked at.' },
+              { icon: '💦', title: 'GFCI That Keeps Tripping', desc: 'A GFCI outlet that won\'t stay reset usually means moisture intrusion or a wiring fault downstream. Don\'t keep resetting it — find out why.' },
+              { icon: '🔍', title: 'Suspect Prior Electrical Work', desc: 'Bought a house with questionable wiring? We evaluate prior work, identify hazards, and document what needs to be fixed — no upsell, straight answers.' },
             ].map(w => (
               <div key={w.title} className="why-card">
                 <div className="why-number">{w.icon}</div>
@@ -104,6 +106,21 @@ export default function ServiceCallsPage() {
                 <p>{w.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <span className="eyebrow">Frequently Asked</span>
+          <h2>Service Call Questions</h2>
+          <div style={{ marginTop: '36px', maxWidth: '780px' }}>
+            <FAQAccordion faqs={[
+              { q: 'How quickly can you get to me?', a: 'Most service calls are scheduled same day or next day. If you\'re dealing with a safety issue — burning smell, sparking outlets, a breaker that won\'t reset — call us directly at (360) 421-5230 and we\'ll prioritize accordingly.' },
+              { q: 'What does a service call cost?', a: 'Our service calls start with a diagnostic visit. We\'ll tell you what we find and what it will cost to fix before any work begins. No surprises, no hourly billing that keeps running while you sit and wait.' },
+              { q: 'Will you touch work left behind by a previous electrician?', a: 'Yes — that\'s actually one of the most common calls we get. We assess the previous work, tell you honestly what\'s wrong (and what\'s fine), and fix what needs fixing. We don\'t throw everything out if it doesn\'t need to be replaced.' },
+              { q: 'Do you work on rental properties and investment homes?', a: 'Yes. We work with landlords, property managers, and real estate investors across Skagit and Whatcom counties. We understand the need for turnaround speed, written documentation, and communication that helps you manage from a distance.' },
+            ]} />
           </div>
         </div>
       </section>

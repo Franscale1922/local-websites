@@ -72,24 +72,33 @@ export default function ServiceAreaPage() {
         <a href={PHONE_TEL} className="btn btn-ghost-gold nav-mobile-cta" style={{ fontSize: '0.82rem', padding: '8px 16px' }}>Call Now</a>
       </nav>
 
-      <section className="page-hero">
-        <div className="container">
-          <div className="page-hero-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
+      {/* HERO — Aerial Skagit Valley at golden hour */}
+      <section className="county-hero">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className="county-hero-bg"
+          src="/images/hero-service-area.jpg"
+          alt="Aerial view of Skagit Valley farmland with Cascade Mountains at golden hour"
+          loading="eager"
+          style={{ objectPosition: 'center 35%' }}
+        />
+        <div className="county-hero-overlay" />
+        <div className="county-hero-content">
+          <div className="county-hero-eyebrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Bellingham to Seattle &mdash; Six Counties Covered
           </div>
-          <h1>Serving the Greater Puget Sound — Bellingham to Seattle.</h1>
-          <p className="page-hero-sub">
-            Based in Mount Vernon, WA. We serve residential and commercial customers across six counties — from the San Juan Islands to King County.
+          <h1>We Come to You — Wherever You Are in Western Washington.</h1>
+          <p className="county-hero-sub">
+            Based in Mount Vernon. Serving Skagit, Whatcom, San Juan, Island, Snohomish, and King counties. Residential and commercial. Licensed, bonded, A+ BBB.
           </p>
-          <div className="page-hero-ctas">
+          <div className="county-hero-ctas">
             <a href="/contact" className="btn btn-primary">Get a Free Estimate</a>
             <a href={PHONE_TEL} className="btn btn-ghost-light">Call {PHONE}</a>
           </div>
         </div>
       </section>
+
 
       <section className="section">
         <div className="container">

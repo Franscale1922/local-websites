@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import FAQAccordion from '../../components/FAQAccordion';
 
 export const metadata: Metadata = {
   title: 'Historic & Older Home Rewiring | Premier Electrical Services — Skagit County, WA',
@@ -23,36 +24,32 @@ export default function HistoricHomeRewiringPage() {
         <a href={PHONE_TEL} className="btn btn-ghost-gold nav-mobile-cta" style={{ fontSize: '0.82rem', padding: '8px 16px' }}>Call Now</a>
       </nav>
 
-      <section className="page-hero">
-        <div className="container">
+      <section className="county-hero">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className="county-hero-bg"
+          src="/images/svc-historic.jpg"
+          alt="Electrician inspecting old knob-and-tube wiring in historic home"
+          loading="eager"
+        />
+        <div className="county-hero-overlay" />
+        <div className="county-hero-content">
           <a href="/services" className="breadcrumb">← All Services</a>
-          <div className="page-hero-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-              <polyline points="9 22 9 12 15 12 15 22"/>
-              <line x1="9" y1="9" x2="9.01" y2="9"/>
-              <line x1="15" y1="9" x2="15.01" y2="9"/>
-            </svg>
+          <div className="county-hero-eyebrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Historic &amp; Older Homes · Specialists, Not Generalists
           </div>
-          <h1>Historic & Older Home Rewiring — The Work Other Electricians Pass On.</h1>
-          <p className="page-hero-sub">
+          <h1>Historic &amp; Older Home Rewiring — The Work Other Electricians Pass On.</h1>
+          <p className="county-hero-sub">
             Knob-and-tube wiring. Cloth-insulated wires. Aluminum branch circuits. Fuse boxes from 1952. We specialize in the complex, older, and historic properties that most electricians decline. With nearly 60 years of combined experience, we&apos;ve seen all of it.
           </p>
-          <div className="page-hero-ctas">
+          <div className="county-hero-ctas">
             <a href="/contact" className="btn btn-primary">Get a Free Estimate</a>
             <a href={PHONE_TEL} className="btn btn-ghost-light">Call {PHONE}</a>
           </div>
         </div>
       </section>
 
-      <div className="service-page-photo">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=85"
-          alt="Electrician inspecting old knob-and-tube wiring in walls"
-          loading="eager"
-        />
-      </div>
       <section className="section">
         <div className="container">
           <div className="service-detail-grid">
@@ -103,6 +100,8 @@ export default function HistoricHomeRewiringPage() {
               { icon: '🏦', title: 'Insurance Problems', desc: 'Many home insurers won\'t cover or will charge significantly higher premiums on homes with original knob-and-tube or known aluminum wiring issues.' },
               { icon: '🏷️', title: 'Resale Issues', desc: 'Home inspectors flag old wiring systems. Buyers ask for repairs or credits. A rewire before sale protects your equity.' },
               { icon: '🔌', title: 'Can\'t Support Modern Loads', desc: 'Pre-1960 wiring wasn\'t designed for EV chargers, heat pumps, or even a modern kitchen. Adding circuits on old systems is dangerous without upgrading.' },
+              { icon: '📜', title: 'Code Non-Compliance', desc: 'Older wiring systems often don\'t meet current NEC requirements or Washington State amendments. Remodels and additions can trigger a required upgrade.' },
+              { icon: '🔎', title: 'Unknown Prior Work', desc: 'Decades of add-ons, DIY work, and unlicensed modifications create hazards that are invisible until they\'re not. We find what others miss.' },
             ].map(w => (
               <div key={w.title} className="why-card">
                 <div className="why-number">{w.icon}</div>
@@ -118,18 +117,13 @@ export default function HistoricHomeRewiringPage() {
         <div className="container">
           <span className="eyebrow">Frequently Asked</span>
           <h2>Historic Home Wiring Questions</h2>
-          <div className="faq-list" style={{ marginTop: '36px', maxWidth: '780px' }}>
-            {[
+          <div style={{ marginTop: '36px', maxWidth: '780px' }}>
+            <FAQAccordion faqs={[
               { q: 'Is knob-and-tube wiring always dangerous?', a: 'Not inherently — undisturbed knob-and-tube in good condition can be low-risk. The problems come when insulation is added over it (trapping heat), when it\'s been added to by subsequent owners, or when modern loads are run through it. Let us assess yours specifically.' },
               { q: 'Will you damage my original plaster walls?', a: 'We work in historic homes regularly and take wall damage seriously. We use low-impact fishing techniques and strategic access points. We can\'t promise zero impact on older homes, but we keep it minimal and tell you upfront what to expect.' },
               { q: 'How long does a full rewire take?', a: 'A full residential rewire typically takes 3–7 days depending on home size and accessibility. We keep power to parts of the house during work where possible.' },
               { q: 'What is aluminum wiring remediation?', a: 'Many homes from the 1960s–70s have aluminum wiring for branch circuits. Aluminum expands and contracts differently than copper, causing loose connections and fire risk. The standard fix is "pigtailing" — connecting aluminum to short copper leads with rated AlumiConn connectors at every device and outlet. We do this correctly and documentably.' },
-            ].map(f => (
-              <div key={f.q} className="faq-item-static">
-                <h3 className="faq-q-static">{f.q}</h3>
-                <p className="faq-a-static">{f.a}</p>
-              </div>
-            ))}
+            ]} />
           </div>
         </div>
       </section>

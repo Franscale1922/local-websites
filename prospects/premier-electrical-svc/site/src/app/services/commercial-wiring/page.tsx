@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import FAQAccordion from '../../components/FAQAccordion';
 
 export const metadata: Metadata = {
   title: 'Commercial Electrical Services | Premier Electrical Services — Skagit County, WA',
@@ -23,38 +24,32 @@ export default function CommercialWiringPage() {
         <a href={PHONE_TEL} className="btn btn-ghost-gold nav-mobile-cta" style={{ fontSize: '0.82rem', padding: '8px 16px' }}>Call Now</a>
       </nav>
 
-      <section className="page-hero">
-        <div className="container">
+      <section className="county-hero">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className="county-hero-bg"
+          src="/images/svc-commercial.jpg"
+          alt="Commercial electrical wiring installation"
+          loading="eager"
+        />
+        <div className="county-hero-overlay" />
+        <div className="county-hero-content">
           <a href="/services" className="breadcrumb">← All Services</a>
-          <div className="page-hero-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <rect x="2" y="7" width="20" height="14" rx="2"/>
-              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-              <line x1="6" y1="12" x2="6.01" y2="12"/>
-              <line x1="18" y1="12" x2="18.01" y2="12"/>
-              <line x1="6" y1="16" x2="6.01" y2="16"/>
-              <line x1="18" y1="16" x2="18.01" y2="16"/>
-            </svg>
+          <div className="county-hero-eyebrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Commercial Electrical · Skagit, Whatcom &amp; Snohomish
           </div>
           <h1>Commercial Electrical Services — Code-Compliant, Done on Schedule.</h1>
-          <p className="page-hero-sub">
+          <p className="county-hero-sub">
             Restaurants, daycares, retail buildouts, offices, and multi-tenant commercial spaces. We&apos;ve wired them all across Skagit, Whatcom, and Snohomish counties. Licensed commercial work — not residential thinking applied to commercial problems.
           </p>
-          <div className="page-hero-ctas">
+          <div className="county-hero-ctas">
             <a href="/contact" className="btn btn-primary">Request a Commercial Quote</a>
             <a href={PHONE_TEL} className="btn btn-ghost-light">Call {PHONE}</a>
           </div>
         </div>
       </section>
 
-      <div className="service-page-photo">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=1600&q=85"
-          alt="Commercial electrical wiring installation"
-          loading="eager"
-        />
-      </div>
       <section className="section">
         <div className="container">
           <div className="service-detail-grid">
@@ -105,6 +100,8 @@ export default function CommercialWiringPage() {
               { icon: '🏥', title: 'Daycares & Healthcare', desc: 'GFCI and AFCI requirements are more extensive in childcare and healthcare settings. We stay current on NEC and state amendments.' },
               { icon: '🏬', title: 'Retail & Storefront', desc: 'Track lighting, exterior signage, interior feature lighting, accessible outlet placement, and POS-ready circuits throughout.' },
               { icon: '🏗️', title: 'GC & Tenant Improvements', desc: 'We work cleanly alongside general contractors on TI buildouts. Coordinated scheduling, clear communication, permits in order before rough-in starts.' },
+              { icon: '🏢', title: 'Offices & Professional Spaces', desc: 'Data room power, dedicated circuits for server equipment, structured wiring rough-in, and clean lighting grids that your team actually wants to work in.' },
+              { icon: '🔒', title: 'Security & Access Systems', desc: 'Exterior camera wiring, card-reader rough-in, emergency lighting, exit sign circuits — we coordinate with your security contractor so it all lines up.' },
             ].map(w => (
               <div key={w.title} className="why-card">
                 <div className="why-number">{w.icon}</div>
@@ -112,6 +109,21 @@ export default function CommercialWiringPage() {
                 <p>{w.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <span className="eyebrow">Frequently Asked</span>
+          <h2>Commercial Electrical Questions</h2>
+          <div style={{ marginTop: '36px', maxWidth: '780px' }}>
+            <FAQAccordion faqs={[
+              { q: 'Do you work directly with general contractors?', a: 'Yes — frequently. We coordinate scheduling with your GC, pull the electrical permit before rough-in begins, and communicate proactively so we don\'t create bottlenecks on your timeline. We\'ve worked on restaurant buildouts, office TIs, retail spaces, daycares, and more.' },
+              { q: 'Do you handle commercial permits?', a: 'Yes. We pull all required electrical permits for commercial work in Skagit, Whatcom, and Snohomish counties. We schedule the inspection and ensure the work is properly documented — you don\'t have to manage that process.' },
+              { q: 'What types of commercial projects do you take on?', a: 'Tenant improvements, new construction, restaurant wiring (including hood suppression tie-ins), retail lighting, office builds, daycares, and light industrial. We work cleanly, on schedule, and alongside GCs without creating friction on the jobsite.' },
+              { q: 'Do you provide quotes for commercial work?', a: 'Yes — free estimates on commercial projects. We walk the space, understand the scope, and give you a clear number before any work starts. For GC work, we can provide bid documents as needed.' },
+            ]} />
           </div>
         </div>
       </section>

@@ -382,9 +382,11 @@ p { max-width: 68ch; }
   margin-bottom: 20px;
 }
 .contact-detail-icon {
-  width: 44px; height: 44px; background: var(--color-accent-light);
+  width: 44px; height: 44px; background: var(--color-primary);
   border-radius: var(--radius-sm); display: flex; align-items: center;
   justify-content: center; font-size: 1.2rem; flex-shrink: 0;
+  color: #fff;
+  border-left: 3px solid var(--color-accent);
 }
 .contact-detail-text { font-size: 0.88rem; color: var(--color-neutral-mid); }
 .contact-detail-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-neutral-mid); margin-bottom: 3px; }
@@ -1076,10 +1078,23 @@ p { max-width: 68ch; }
   text-align: left;
 }
 .county-hero-content .breadcrumb {
-  color: rgba(255,255,255,0.62);
-  margin-bottom: 12px;
+  display: inline-block;
+  color: rgba(255,255,255,0.75);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.22);
+  padding: 5px 14px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
 }
-.county-hero-content .breadcrumb:hover { color: var(--color-accent); }
+.county-hero-content .breadcrumb:hover {
+  background: rgba(255,255,255,0.22);
+  color: #fff;
+}
 .county-hero-eyebrow {
   display: inline-flex;
   align-items: center;
