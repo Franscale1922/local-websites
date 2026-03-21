@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Recognition | Premier Electrical Services — Awards & Accreditations',
-  description: '3-time Best of the Best winner in Skagit Valley, A+ BBB Rating, Expertise.com Top Pick in both Bellingham and Mount Vernon. See why homeowners trust Premier Electrical Services.',
+  description: '5-time Best of the Best Skagit Valley, Skagit\'s Best Finalist, Expertise.com Top Pick, and BBB Accredited A+. See why homeowners across Skagit and Whatcom counties trust Premier Electrical Services.',
 };
 
 const PHONE = '(360) 421-5230';
@@ -10,46 +10,60 @@ const PHONE_TEL = 'tel:+13604215230';
 
 const AWARDS = [
   {
-    img: '/images/award-2025.png',
-    alt: 'Best of the Best 2025 Winner — Skagit Valley',
-    title: 'Best of the Best — 2025',
-    sub: 'Skagit Valley Community Award',
-    body: 'Voted Best of the Best in Skagit Valley for 2025 — the third consecutive year. This award is chosen by community members, not a panel of judges. Real customers, real votes.',
+    img: '/images/real-award-2025-winner.jpg',
+    alt: '2025 Best of the Best Skagit Valley Winner',
+    title: 'Best of the Best — 2025 Winner',
+    sub: 'Skagit Publishing · goskagit.com',
+    body: 'The Official Community Choice Awards — voted on by Skagit Valley residents. Our most recent win and four years in the running.',
   },
   {
-    img: '/images/award-2024.png',
-    alt: 'Best of the Best 2024 Winner — Skagit Valley',
-    title: 'Best of the Best — 2024',
-    sub: 'Skagit Valley Community Award',
-    body: 'Recognized again in 2024 for the second year running. We didn\'t ask people to vote. They did it because the work held up and the experience was worth recommending.',
+    img: '/images/real-award-2024-winner.jpg',
+    alt: '2024 Best of the Best Skagit Valley Winner',
+    title: 'Best of the Best — 2024 Winner',
+    sub: 'Skagit Publishing · goskagit.com',
+    body: 'Three years of winning. The community has consistently put us at the top when it counts.',
   },
   {
-    img: '/images/award-2023.png',
-    alt: 'Best of the Best 2023 Winner — Skagit Valley',
-    title: 'Best of the Best — 2023',
-    sub: 'Skagit Valley Community Award',
-    body: 'Our first Best of the Best win in Skagit Valley. Started a streak. Three in a row says something about consistency — not just a good year.',
+    img: '/images/real-award-2023-winner.png',
+    alt: '2023 Best of the Best Skagit Valley Winner',
+    title: 'Best of the Best — 2023 Winner',
+    sub: 'Skagit Publishing · goskagit.com',
+    body: 'Two-time winner heading into 2023. Real customers casting real votes — this isn\'t a paid placement.',
   },
   {
-    img: '/images/award-bbb.png',
-    alt: 'BBB Accredited Business A+ Rating',
-    title: 'BBB Accredited — A+ Rating',
+    img: '/images/real-award-2022-finalist.png',
+    alt: '2022 Best of the Best Skagit Valley Finalist',
+    title: 'Best of the Best — 2022 Finalist',
+    sub: 'Skagit Publishing · goskagit.com',
+    body: 'Recognized as a top finalist in 2022 — the year we were first nominated. A strong debut in Skagit Valley\'s official community choice awards.',
+  },
+  {
+    img: '/images/real-award-2021-winner.jpg',
+    alt: '2021 Best of the Best Skagit Valley Winner',
+    title: 'Best of the Best — 2021 Winner',
+    sub: 'Skagit Publishing · goskagit.com',
+    body: 'Our first Best of the Best win — voted by Skagit Valley community members. Started the streak that\'s now four wins and counting.',
+  },
+  {
+    img: '/images/real-award-skagits-best-2021.png',
+    alt: "Skagit's Best Finalist 2021 — goskagit.com",
+    title: "Skagit's Best Finalist — 2021",
+    sub: 'GoSkagit.com Community Award',
+    body: 'Named a Skagit\'s Best Finalist in 2021 — a separate recognition from goSkagit.com, validating our reputation across the Skagit community from multiple award bodies.',
+  },
+  {
+    img: '/images/real-award-expertise-bellingham.png',
+    alt: 'Expertise.com Best Electricians in Bellingham 2021',
+    title: 'Best Electricians in Bellingham',
+    sub: 'Expertise.com · 2021',
+    body: 'Independently ranked among the best electricians in Bellingham — earning A+ scores for Reputation and Professionalism. Expertise evaluates dozens of criteria before selecting finalists.',
+  },
+  {
+    img: '/images/real-award-bbb.png',
+    alt: 'BBB Accredited Business',
+    title: 'BBB Accredited Business — A+ Rating',
     sub: 'Better Business Bureau · Since 2022',
-    body: 'Accredited by the Better Business Bureau with an A+ rating since 2022. The BBB evaluates complaint history, licensing, transparency, and business practices. We meet every standard.',
-  },
-  {
-    img: '/images/award-expertise-bellingham.png',
-    alt: 'Expertise.com Best Electricians in Bellingham',
-    title: 'Best Electricians — Bellingham',
-    sub: 'Expertise.com Independent Ranking',
-    body: 'Named one of the best electricians in Bellingham by Expertise.com — earning A+ scores for both Reputation and Professionalism. Expertise evaluates dozens of criteria before making their selection.',
-  },
-  {
-    img: '/images/award-expertise-mountvernon.png',
-    alt: 'Expertise.com Best Electricians in Mount Vernon',
-    title: 'Best Electricians — Mount Vernon',
-    sub: 'Expertise.com Independent Ranking',
-    body: 'Also ranked among the best electricians in our home city of Mount Vernon. Independent validation from an organization that scores electricians across experience, reviews, and licensing.',
+    body: 'Accredited by the Better Business Bureau with an A+ rating since 2022. The BBB evaluates complaint history, licensing, transparency, and business standards. We meet every one.',
   },
 ];
 
@@ -104,32 +118,32 @@ export default function RecognitionPage() {
           {/* Section intro */}
           <div style={{ textAlign: 'center', marginBottom: '52px' }}>
             <span className="eyebrow">Our Track Record</span>
-            <h2 style={{ marginTop: '8px' }}>Six Independent Recognitions</h2>
+            <h2 style={{ marginTop: '8px' }}>Eight Independent Recognitions</h2>
             <p style={{ color: 'var(--color-neutral-mid)', maxWidth: '560px', margin: '12px auto 0', fontSize: '1rem', lineHeight: 1.7 }}>
               Each recognition below is independently awarded — not purchased, not self-reported. Community votes, accreditation bodies, and ranking organizations.
             </p>
           </div>
 
-          {/* Award grid — 3 columns on desktop */}
+          {/* Award grid — 4 columns on desktop */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '32px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',
+            gap: '28px',
           }}>
             {AWARDS.map((award) => (
               <div key={award.title} style={{
                 background: 'var(--color-surface)',
                 border: '1.5px solid var(--color-border)',
                 borderRadius: 'var(--radius-md)',
-                padding: '36px 28px 32px',
+                padding: '28px 22px 26px',
                 boxShadow: '0 4px 18px rgba(13, 31, 60, 0.08), 0 1px 4px rgba(13, 31, 60, 0.04)',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 textAlign: 'center',
               }}>
-                {/* Badge image */}
-                <div style={{ width: '148px', height: '148px', marginBottom: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                {/* Real badge image */}
+                <div style={{ width: '140px', height: '160px', marginBottom: '18px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={award.img}
@@ -140,18 +154,18 @@ export default function RecognitionPage() {
 
                 {/* Sub label */}
                 <div style={{
-                  fontSize: '0.72rem', fontWeight: 700,
-                  letterSpacing: '0.09em', textTransform: 'uppercase',
-                  color: 'var(--color-accent)', marginBottom: '8px',
+                  fontSize: '0.7rem', fontWeight: 700,
+                  letterSpacing: '0.08em', textTransform: 'uppercase',
+                  color: 'var(--color-accent)', marginBottom: '6px',
                 }}>
                   {award.sub}
                 </div>
 
                 {/* Title */}
                 <h3 style={{
-                  fontSize: '1.15rem', fontWeight: 800,
-                  color: 'var(--color-primary)', marginBottom: '14px',
-                  lineHeight: 1.2,
+                  fontSize: '1rem', fontWeight: 800,
+                  color: 'var(--color-primary)', marginBottom: '10px',
+                  lineHeight: 1.25,
                 }}>
                   {award.title}
                 </h3>
@@ -159,7 +173,7 @@ export default function RecognitionPage() {
                 {/* Body */}
                 <p style={{
                   color: 'var(--color-neutral-mid)',
-                  lineHeight: 1.7, fontSize: '0.9rem', margin: 0,
+                  lineHeight: 1.65, fontSize: '0.87rem', margin: 0,
                 }}>
                   {award.body}
                 </p>

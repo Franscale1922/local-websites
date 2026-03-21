@@ -329,6 +329,34 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        {/* AWARD FAN — bottom-right, desktop only */}
+        <div className="hero-award-fan">
+          <div className="hero-award-fan-cards">
+            {/* 2023 — back */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/real-award-2023-winner.png"
+              alt="2023 Best of the Best Skagit Valley Winner"
+              className="fan-card fan-card--back"
+            />
+            {/* 2024 — middle */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/real-award-2024-winner.jpg"
+              alt="2024 Best of the Best Skagit Valley Winner"
+              className="fan-card fan-card--mid"
+            />
+            {/* 2025 — front */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/real-award-2025-winner.jpg"
+              alt="2025 Best of the Best Skagit Valley Winner"
+              className="fan-card fan-card--front"
+            />
+          </div>
+          <div className="hero-award-fan-label">3× Best of the Best · 2023–2025</div>
+        </div>
       </section>
 
       {/* TRUST STRIP */}
