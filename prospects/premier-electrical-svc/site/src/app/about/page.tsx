@@ -56,7 +56,7 @@ export default function AboutPage() {
           <div className="about-grid">
             <div className="about-img-wrap">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80" alt="Premier Electrical Services licensed electrician" />
+              <img src="/images/about-work.jpg" alt="Premier Electrical Services licensed electrician" />
               <div className="award-badge">
                 <div className="award-badge-year">2023 · 2024 · 2025</div>
                 <div className="award-badge-title">Best of the Best</div>
