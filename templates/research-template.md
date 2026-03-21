@@ -62,10 +62,65 @@ What stood out about this business? Why did you flag it as a prospect?
 
 ---
 
+## Site Inventory
+
+<!-- Completed by agent during Phase 1 of launch-site.md. Browse the existing site manually. -->
+<!-- This feeds directly into build-plan.md. Do not skip. -->
+
+### Page Inventory
+
+| URL / Route | Page Title / H1 | Notes |
+|---|---|---|
+| / | | |
+| | | |
+| | | |
+
+### Navigation Structure
+
+<!-- List top-level nav items and any dropdowns -->
+- 
+- 
+
+### CTAs & Forms
+
+<!-- Every button, link, or form that asks the visitor to take an action -->
+| CTA Text | Where it appears | Action (phone / form / booking / link) | URL/number |
+|---|---|---|---|
+| | | | |
+
+### Third-Party Integrations
+
+<!-- Booking systems, payment links, maps embeds, live chat, review badges, etc. -->
+| Integration | Type | Where on site | Embed code / URL / ID |
+|---|---|---|---|
+| | | | |
+
+### Social Profiles Linked on Site
+
+- **Facebook:** (found | not found) — URL:
+- **Instagram:** (found | not found) — URL:
+- **Yelp:** (found | not found) — URL:
+- **Google Business:** (found | not found) — URL:
+- **BBB:** (found | not found) — URL:
+- **Other:**
+
+### Brand Elements Observed
+
+- **Primary color (hex):** (use browser color picker on their logo/header)
+- **Secondary/accent color (hex):**
+- **Fonts in use:** (check browser DevTools — Fonts tab)
+- **Logo:** (have it | not accessible | embedded as image only)
+- **Existing trust badges:** (BBB | awards | certifications | none)
+
+
+---
+
 ## LLM Research Results
 
 <!-- Phase 1.5 — Paste each model's full response below. Do not skip. -->
 <!-- Prompt template: .agent/llm-research-prompt.md -->
+<!-- Output file: prospects/[slug]/llm-research.md -->
+
 
 ### ChatGPT Response
 (pending)
@@ -83,7 +138,8 @@ What stood out about this business? Why did you flag it as a prospect?
 
 ## LLM Research Synthesis
 
-<!-- Agent completes this after reading all 4 responses — required before Phase 2 -->
+<!-- Agent completes this after reading all 4 responses — required before Phase 1.75 (Build Plan) -->
+
 
 ### Must-Have Sections (consensus)
 -
