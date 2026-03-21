@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Recognition | Premier Electrical Services — Awards & Accreditations',
-  description: '3-time Best of the Best winner in Skagit Valley, A+ BBB Rating, Expertise.com Top Pick. See why homeowners across Skagit and Whatcom counties trust Premier Electrical Services.',
+  description: '3-time Best of the Best winner in Skagit Valley, A+ BBB Rating, Expertise.com Top Pick in both Bellingham and Mount Vernon. See why homeowners trust Premier Electrical Services.',
 };
 
 const PHONE = '(360) 421-5230';
@@ -10,49 +10,51 @@ const PHONE_TEL = 'tel:+13604215230';
 
 const AWARDS = [
   {
-    year: '2023 · 2024 · 2025',
-    title: 'Best of the Best — 3 Years Running',
-    body: 'Voted Best of the Best in Skagit Valley three consecutive years. This award is decided by the community — real customers, real votes. Three years in a row says something.',
-    icon: (
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/>
-      </svg>
-    ),
+    img: '/images/award-2025.png',
+    alt: 'Best of the Best 2025 Winner — Skagit Valley',
+    title: 'Best of the Best — 2025',
+    sub: 'Skagit Valley Community Award',
+    body: 'Voted Best of the Best in Skagit Valley for 2025 — the third consecutive year. This award is chosen by community members, not a panel of judges. Real customers, real votes.',
   },
   {
-    year: 'Skagit County',
-    title: 'Voted 1 of 3 Best Electricians',
-    body: "Independently ranked among the top three electricians in Skagit County. Not a paid listing — a competitive selection based on reputation, reviews, and quality of work.",
-    icon: (
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
-      </svg>
-    ),
+    img: '/images/award-2024.png',
+    alt: 'Best of the Best 2024 Winner — Skagit Valley',
+    title: 'Best of the Best — 2024',
+    sub: 'Skagit Valley Community Award',
+    body: 'Recognized again in 2024 for the second year running. We didn\'t ask people to vote. They did it because the work held up and the experience was worth recommending.',
   },
   {
-    year: 'Since 2022',
+    img: '/images/award-2023.png',
+    alt: 'Best of the Best 2023 Winner — Skagit Valley',
+    title: 'Best of the Best — 2023',
+    sub: 'Skagit Valley Community Award',
+    body: 'Our first Best of the Best win in Skagit Valley. Started a streak. Three in a row says something about consistency — not just a good year.',
+  },
+  {
+    img: '/images/award-bbb.png',
+    alt: 'BBB Accredited Business A+ Rating',
     title: 'BBB Accredited — A+ Rating',
-    body: 'Accredited by the Better Business Bureau with an A+ rating since 2022. The BBB evaluates complaint history, transparency, licensing, and business practices. We meet every standard.',
-    icon: (
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>
-      </svg>
-    ),
+    sub: 'Better Business Bureau · Since 2022',
+    body: 'Accredited by the Better Business Bureau with an A+ rating since 2022. The BBB evaluates complaint history, licensing, transparency, and business practices. We meet every standard.',
   },
   {
-    year: 'Bellingham & Mount Vernon',
-    title: 'Expertise.com Top Pick',
-    body: "Named one of Expertise.com's Best Electricians in both Bellingham and Mount Vernon — earning A+ scores for Reputation and Professionalism. Expertise evaluates electricians across dozens of criteria before making their selection.",
-    icon: (
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/>
-      </svg>
-    ),
+    img: '/images/award-expertise-bellingham.png',
+    alt: 'Expertise.com Best Electricians in Bellingham',
+    title: 'Best Electricians — Bellingham',
+    sub: 'Expertise.com Independent Ranking',
+    body: 'Named one of the best electricians in Bellingham by Expertise.com — earning A+ scores for both Reputation and Professionalism. Expertise evaluates dozens of criteria before making their selection.',
+  },
+  {
+    img: '/images/award-expertise-mountvernon.png',
+    alt: 'Expertise.com Best Electricians in Mount Vernon',
+    title: 'Best Electricians — Mount Vernon',
+    sub: 'Expertise.com Independent Ranking',
+    body: 'Also ranked among the best electricians in our home city of Mount Vernon. Independent validation from an organization that scores electricians across experience, reviews, and licensing.',
   },
 ];
 
 const CREDENTIALS = [
-  'Licensed Electrician — Lic. PREMIES821LL',
+  'Licensed — Lic. PREMIES821LL',
   'Bonded & Insured in Washington State',
   '100% Recommended on Facebook',
   'Nearly 60 Years Combined Experience',
@@ -88,7 +90,7 @@ export default function RecognitionPage() {
           </div>
           <h1>Recognized by the Community We Serve</h1>
           <p className="page-hero-sub">
-            We don&apos;t chase awards. These came from customers voting, agencies vetting, and inspectors signing off. Three years in a row.
+            We don&apos;t chase awards. These came from customers voting, agencies vetting, and inspectors signing off. Six individual recognitions — and counting.
           </p>
           <div className="page-hero-ctas">
             <a href={PHONE_TEL} className="btn btn-primary">Call {PHONE}</a>
@@ -97,38 +99,79 @@ export default function RecognitionPage() {
         </div>
       </section>
 
-      {/* AWARDS GRID */}
+      {/* AWARD CARDS */}
       <section className="section">
-        <div className="container" style={{ maxWidth: '900px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: '28px' }}>
+        <div className="container" style={{ maxWidth: '1080px' }}>
+
+          {/* Section intro */}
+          <div style={{ textAlign: 'center', marginBottom: '52px' }}>
+            <span className="eyebrow">Our Track Record</span>
+            <h2 style={{ marginTop: '8px' }}>Six Independent Recognitions</h2>
+            <p style={{ color: 'var(--color-neutral-mid)', maxWidth: '560px', margin: '12px auto 0', fontSize: '1rem', lineHeight: 1.7 }}>
+              Each recognition below is independently awarded — not purchased, not self-reported. Community votes, accreditation bodies, and ranking organizations.
+            </p>
+          </div>
+
+          {/* Award grid — 3 columns on desktop */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '32px',
+          }}>
             {AWARDS.map((award) => (
               <div key={award.title} style={{
                 background: 'var(--color-surface)',
                 border: '1.5px solid var(--color-border)',
                 borderRadius: 'var(--radius-md)',
-                padding: '36px 32px',
+                padding: '36px 28px 32px',
                 boxShadow: '0 4px 18px rgba(13, 31, 60, 0.08), 0 1px 4px rgba(13, 31, 60, 0.04)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                textAlign: 'center',
               }}>
+                {/* Badge image */}
+                <div style={{ width: '148px', height: '148px', marginBottom: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={award.img}
+                    alt={award.alt}
+                    style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                  />
+                </div>
+
+                {/* Sub label */}
                 <div style={{
-                  width: '64px', height: '64px', borderRadius: '14px',
-                  background: 'var(--color-tinted)', display: 'flex',
-                  alignItems: 'center', justifyContent: 'center',
-                  color: 'var(--color-accent)', marginBottom: '20px',
+                  fontSize: '0.72rem', fontWeight: 700,
+                  letterSpacing: '0.09em', textTransform: 'uppercase',
+                  color: 'var(--color-accent)', marginBottom: '8px',
                 }}>
-                  {award.icon}
+                  {award.sub}
                 </div>
-                <div style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--color-accent)', marginBottom: '8px' }}>
-                  {award.year}
-                </div>
-                <h2 style={{ fontSize: '1.25rem', marginBottom: '12px', color: 'var(--color-primary)' }}>{award.title}</h2>
-                <p style={{ color: 'var(--color-neutral-mid)', lineHeight: 1.7, margin: 0 }}>{award.body}</p>
+
+                {/* Title */}
+                <h3 style={{
+                  fontSize: '1.15rem', fontWeight: 800,
+                  color: 'var(--color-primary)', marginBottom: '14px',
+                  lineHeight: 1.2,
+                }}>
+                  {award.title}
+                </h3>
+
+                {/* Body */}
+                <p style={{
+                  color: 'var(--color-neutral-mid)',
+                  lineHeight: 1.7, fontSize: '0.9rem', margin: 0,
+                }}>
+                  {award.body}
+                </p>
               </div>
             ))}
           </div>
 
           {/* CREDENTIALS STRIP */}
           <div style={{
-            marginTop: '56px',
+            marginTop: '64px',
             background: 'var(--color-primary)',
             borderRadius: 'var(--radius-md)',
             padding: '36px 40px',
@@ -146,7 +189,12 @@ export default function RecognitionPage() {
           </div>
 
           {/* CTA */}
-          <div style={{ background: 'var(--color-tinted)', borderRadius: '12px', padding: '40px', textAlign: 'center', marginTop: '40px', border: '1.5px solid var(--color-border)', boxShadow: '0 4px 18px rgba(13, 31, 60, 0.08), 0 1px 4px rgba(13, 31, 60, 0.04)' }}>
+          <div style={{
+            background: 'var(--color-tinted)', borderRadius: '12px',
+            padding: '40px', textAlign: 'center', marginTop: '40px',
+            border: '1.5px solid var(--color-border)',
+            boxShadow: '0 4px 18px rgba(13, 31, 60, 0.08), 0 1px 4px rgba(13, 31, 60, 0.04)',
+          }}>
             <h2 style={{ marginBottom: '10px' }}>Ready to Work With an Award-Winning Team?</h2>
             <p style={{ color: 'var(--color-neutral-mid)', marginBottom: '28px', fontSize: '1rem' }}>
               Call us or request a free estimate. We respond same day on most requests.
