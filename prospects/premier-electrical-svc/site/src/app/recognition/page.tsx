@@ -80,19 +80,17 @@ export default function RecognitionPage() {
         <a href={PHONE_TEL} className="btn btn-ghost-gold nav-mobile-cta" style={{ fontSize: '0.82rem', padding: '8px 16px' }}>Call Now</a>
       </nav>
 
-      {/* HERO */}
-      <section className="page-hero">
-        <div className="container">
-          <div className="page-hero-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/>
-            </svg>
-          </div>
+      {/* HERO — team photo */}
+      <section className="services-page-hero">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/images/hero-recognition.jpg" alt="Premier Electrical Services team in front of branded truck" className="services-page-hero-bg" />
+        <div className="services-page-hero-overlay" />
+        <div className="services-page-hero-content">
           <h1>Recognized by the Community We Serve</h1>
-          <p className="page-hero-sub">
-            We don&apos;t chase awards. These came from customers voting, agencies vetting, and inspectors signing off. Six individual recognitions — and counting.
+          <p style={{ maxWidth: '560px', marginBottom: '28px', color: 'rgba(255,255,255,0.88)' }}>
+            We don&apos;t chase awards. These came from customers voting, agencies vetting, and inspectors signing off.
           </p>
-          <div className="page-hero-ctas">
+          <div className="hero-ctas">
             <a href={PHONE_TEL} className="btn btn-primary">Call {PHONE}</a>
             <a href="/contact" className="btn btn-ghost-light">Get a Free Estimate</a>
           </div>
