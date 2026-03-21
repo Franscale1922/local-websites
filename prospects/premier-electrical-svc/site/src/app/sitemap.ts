@@ -1,26 +1,29 @@
 import { MetadataRoute } from 'next';
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://premierelectricalsvc.com';
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://premier-electrical-demo.vercel.app';
   const now = new Date();
 
   return [
-    { url: `${base}/`, lastModified: now, changeFrequency: 'monthly', priority: 1 },
-    { url: `${base}/services`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${base}/services/panel-upgrades`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/services/ev-charging`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/services/generator-installation`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/services/historic-home-rewiring`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${base}/services/commercial-wiring`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/services/lighting-upgrades`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/services/service-calls`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/service-area`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/service-area/skagit-county`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${base}/service-area/whatcom-county`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/service-area/island-county`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/service-area/san-juan-county`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/faq`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${SITE_URL}/`, lastModified: now, changeFrequency: 'monthly', priority: 1 },
+    { url: `${SITE_URL}/services`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${SITE_URL}/services/panel-upgrades`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${SITE_URL}/services/ev-charging`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${SITE_URL}/services/generator-installation`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${SITE_URL}/services/historic-home-rewiring`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${SITE_URL}/services/commercial-wiring`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${SITE_URL}/services/lighting-upgrades`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${SITE_URL}/services/service-calls`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${SITE_URL}/services/residential-wiring`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${SITE_URL}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${SITE_URL}/recognition`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${SITE_URL}/service-area`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${SITE_URL}/service-area/skagit-county`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${SITE_URL}/service-area/whatcom-county`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${SITE_URL}/service-area/island-county`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${SITE_URL}/service-area/san-juan-county`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${SITE_URL}/faq`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${SITE_URL}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
   ];
 }

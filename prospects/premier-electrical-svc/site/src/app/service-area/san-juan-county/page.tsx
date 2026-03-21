@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import SiteFooter from '../../components/SiteFooter';
 
 export const metadata: Metadata = {
   title: 'Electrician in San Juan County, WA | Premier Electrical Services',
@@ -131,33 +132,7 @@ export default function SanJuanCountyPage() {
         </div>
       </div>
 
-      <footer className="footer">
-        <div className="footer-inner">
-          <div className="footer-brand">
-            <div className="footer-brand-logo">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.svg" alt="Premier Electrical Services" className="footer-logo-img" />
-            </div>
-            <p className="footer-tagline">A+ BBB Rating. Lic. PREMIES821LL. Serving the greater Puget Sound region.</p>
-          </div>
-          <div className="footer-col"><h4>Services</h4><ul>
-            <li><a href="/services/panel-upgrades">Panel Upgrades</a></li>
-            <li><a href="/services/generator-installation">Generator Hookups</a></li>
-            <li><a href="/services/historic-home-rewiring">Older Home Rewiring</a></li>
-            <li><a href="/services/ev-charging">EV Charging</a></li>
-          </ul></div>
-          <div className="footer-col"><h4>Service Areas</h4><ul>
-            <li><a href="/service-area/skagit-county">Skagit County</a></li>
-            <li><a href="/service-area/whatcom-county">Whatcom County</a></li>
-            <li><a href="/service-area/island-county">Island County</a></li>
-            <li><a href="/service-area/san-juan-county">San Juan County</a></li>
-          </ul></div>
-        </div>
-        <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Premier Electrical Services</span>
-          <span><a href={PHONE_TEL}>{PHONE}</a> · Lic. PREMIES821LL</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

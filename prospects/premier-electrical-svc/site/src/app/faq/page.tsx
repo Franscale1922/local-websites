@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import FAQAccordion from '../components/FAQAccordion';
+import SiteFooter from '../components/SiteFooter';
 
 export const metadata: Metadata = {
   title: 'FAQ | Premier Electrical Services — Skagit & Puget Sound, WA',
   description: 'Answers to common questions about electrical panel upgrades, EV charger installation, generators, historic home rewiring, and service in Skagit, Whatcom, and surrounding counties.',
+  alternates: { canonical: '/faq' },
+  openGraph: { images: [{ url: '/images/hero-faq.jpg', width: 1200, height: 630, alt: 'Premier Electrical Services FAQ' }] },
 };
 
 const PHONE = '(360) 421-5230';
@@ -162,6 +165,21 @@ const FAQ_CATEGORIES = [
   },
 ];
 
+const FAQ_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQ_CATEGORIES.flatMap(cat =>
+    cat.questions.map(item => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    }))
+  ),
+};
+
 export default function FAQPage() {
   return (
     <main>
@@ -180,6 +198,8 @@ export default function FAQPage() {
         </ul>
         <a href={PHONE_TEL} className="btn btn-ghost-gold nav-mobile-cta" style={{ fontSize: '0.82rem', padding: '8px 16px' }}>Call Now</a>
       </nav>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }} />
 
       <section className="services-page-hero">
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -221,32 +241,7 @@ export default function FAQPage() {
         </div>
       </section>
 
-      <footer className="footer">
-        <div className="footer-inner">
-          <div className="footer-brand">
-            <div className="footer-brand-logo">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.svg" alt="Premier Electrical Services" className="footer-logo-img" />
-            </div>
-            <p className="footer-tagline">Licensed, bonded electricians serving Skagit, Whatcom, San Juan, Island, King, and Snohomish counties. A+ BBB Rating. Lic. PREMIES821LL.</p>
-          </div>
-          <div className="footer-col"><h4>Services</h4><ul>
-            <li><a href="/services/panel-upgrades">Panel Upgrades</a></li>
-            <li><a href="/services/ev-charging">EV Charging</a></li>
-            <li><a href="/services/generator-installation">Generators</a></li>
-            <li><a href="/services/historic-home-rewiring">Historic Home Rewiring</a></li>
-          </ul></div>
-          <div className="footer-col"><h4>Contact</h4><ul>
-            <li><a href={PHONE_TEL}>{PHONE}</a></li>
-            <li><a href="/contact">Free Estimate</a></li>
-            <li><a href="/about">About Us</a></li>
-          </ul></div>
-        </div>
-        <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Premier Electrical Services</span>
-          <span><a href={PHONE_TEL}>{PHONE}</a> · Lic. PREMIES821LL</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

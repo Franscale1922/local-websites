@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import FAQAccordion from '../../components/FAQAccordion';
+import SiteFooter from '../../components/SiteFooter';
 
 export const metadata: Metadata = {
   title: 'Residential Electrical Wiring | Premier Electrical Services — Skagit County, WA',
   description: 'New construction wiring, complete home rewires, remodel rough-in and trim-out across Skagit, Whatcom, Island, and San Juan counties. Nearly 60 years of combined experience. Call (360) 421-5230.',
+  alternates: { canonical: '/services/residential-wiring' },
+  openGraph: { images: [{ url: '/images/svc-residential.jpg', width: 1200, height: 630, alt: 'Residential electrical wiring by Premier Electrical Services' }] },
 };
 
 const PHONE = '(360) 421-5230';
@@ -12,6 +15,26 @@ const PHONE_TEL = 'tel:+13604215230';
 export default function ResidentialWiringPage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'Do you work with general contractors on new construction?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — frequently. We work alongside GCs on new builds across Skagit, Whatcom, and Snohomish counties. We pull the electrical permit, coordinate with the inspector, and show up on schedule for rough-in and trim-out. We communicate directly with your GC so nothing falls through the cracks.' } },
+          { '@type': 'Question', name: 'How much does a full home rewire cost?', acceptedAnswer: { '@type': 'Answer', text: 'Full rewires vary widely depending on home size, existing wiring type, and accessibility. A 1,500 sq ft home might run $8,000–$18,000. We give you a detailed quote before any work starts — no vague ranges, no hidden add-ons.' } },
+          { '@type': 'Question', name: 'Do you handle the permit for a remodel?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. In Washington State, most electrical work on a remodel requires a permit. We pull it, schedule the inspection, and make sure the work passes. You do not have to navigate the permitting process yourself.' } },
+          { '@type': 'Question', name: 'Can you work in an occupied home during a remodel?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We are used to working in occupied homes and take extra care to minimize disruption. We cover floors, contain dust where possible, and we tell you upfront which circuits will be off and for how long.' } },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: '/' },
+          { '@type': 'ListItem', position: 2, name: 'Services', item: '/services' },
+          { '@type': 'ListItem', position: 3, name: 'Residential Wiring', item: '/services/residential-wiring' },
+        ],
+      }) }} />
+
       <nav className="nav nav--scrolled">
         <a href="/" className="nav-logo">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -144,35 +167,7 @@ export default function ResidentialWiringPage() {
         </div>
       </div>
 
-      <footer className="footer">
-        <div className="footer-inner">
-          <div className="footer-brand">
-            <div className="footer-brand-logo">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.svg" alt="Premier Electrical Services" className="footer-logo-img" />
-            </div>
-            <p className="footer-tagline">Licensed, bonded electricians serving Skagit, Whatcom, San Juan, Island, King, and Snohomish counties. A+ BBB Rating. Lic. PREMIES821LL.</p>
-          </div>
-          <div className="footer-col"><h4>Services</h4><ul>
-            <li><a href="/services/panel-upgrades">Panel Upgrades</a></li>
-            <li><a href="/services/ev-charging">EV Charging</a></li>
-            <li><a href="/services/generator-installation">Generators</a></li>
-            <li><a href="/services/historic-home-rewiring">Historic Home Rewiring</a></li>
-            <li><a href="/services/residential-wiring">Residential Wiring</a></li>
-            <li><a href="/services/commercial-wiring">Commercial Wiring</a></li>
-          </ul></div>
-          <div className="footer-col"><h4>Contact</h4><ul>
-            <li><a href={PHONE_TEL}>{PHONE}</a></li>
-            <li><a href="/contact">Free Estimate</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/faq">FAQ</a></li>
-          </ul></div>
-        </div>
-        <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Premier Electrical Services · All rights reserved</span>
-          <span><a href={PHONE_TEL}>{PHONE}</a> · Lic. PREMIES821LL</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

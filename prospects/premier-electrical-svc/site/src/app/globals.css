@@ -439,6 +439,18 @@ p { max-width: 68ch; }
 }
 .footer-brand-name { font-size: 1.05rem; font-weight: 800; color: #fff; }
 .footer-tagline { font-size: 0.83rem; max-width: 30ch; line-height: 1.6; margin-bottom: 16px; }
+.footer-socials { display: flex; gap: 10px; align-items: center; margin-top: 4px; }
+.footer-social-link {
+  display: flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 8px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.55);
+  transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+.footer-social-link:hover {
+  background: var(--color-accent); color: var(--color-primary);
+  transform: translateY(-2px);
+}
 .footer-license { font-size: 0.75rem; color: rgba(255,255,255,0.38); }
 .footer-col h4 { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.9); margin-bottom: 16px; }
 .footer-col ul { list-style: none; }

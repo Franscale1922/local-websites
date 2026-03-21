@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import FAQAccordion from '../../components/FAQAccordion';
+import SiteFooter from '../../components/SiteFooter';
 
 export const metadata: Metadata = {
   title: 'Electrical Repairs & Service Calls | Premier Electrical Services — Skagit County, WA',
   description: 'Electrical troubleshooting, repairs, and service calls across Skagit, Whatcom, Island, and San Juan counties. Tripped breakers, mystery outages, suspect work. Call (360) 421-5230.',
+  alternates: { canonical: '/services/service-calls' },
+  openGraph: { images: [{ url: '/images/svc-service-calls.jpg', width: 1200, height: 630, alt: 'Electrical repair and service call by Premier Electrical Services' }] },
 };
 
 const PHONE = '(360) 421-5230';
@@ -12,6 +15,26 @@ const PHONE_TEL = 'tel:+13604215230';
 export default function ServiceCallsPage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'How quickly can you get to me for a service call?', acceptedAnswer: { '@type': 'Answer', text: 'Most service calls are scheduled same day or next day. If you\'re dealing with a safety issue — burning smell, sparking outlets, a breaker that won\'t reset — call us directly at (360) 421-5230 and we\'ll prioritize accordingly.' } },
+          { '@type': 'Question', name: 'What does a service call cost?', acceptedAnswer: { '@type': 'Answer', text: 'Our service calls start with a diagnostic visit. We\'ll tell you what we find and what it will cost to fix before any work begins. No surprises, no hourly billing that keeps running while you sit and wait.' } },
+          { '@type': 'Question', name: 'Will you touch work left behind by a previous electrician?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — that\'s actually one of the most common calls we get. We assess the previous work, tell you honestly what\'s wrong (and what\'s fine), and fix what needs fixing. We don\'t throw everything out if it doesn\'t need to be replaced.' } },
+          { '@type': 'Question', name: 'Do you work on rental properties and investment homes?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We work with landlords, property managers, and real estate investors across Skagit and Whatcom counties. We understand the need for turnaround speed, written documentation, and communication that helps you manage from a distance.' } },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: '/' },
+          { '@type': 'ListItem', position: 2, name: 'Services', item: '/services' },
+          { '@type': 'ListItem', position: 3, name: 'Service Calls & Repairs', item: '/services/service-calls' },
+        ],
+      }) }} />
+
       <nav className="nav nav--scrolled">
         <a href="/" className="nav-logo"><img src="/logo.svg" alt="Premier Electrical Services" className="nav-logo-img" /></a>
         <ul className="nav-links">
@@ -138,29 +161,7 @@ export default function ServiceCallsPage() {
         </div>
       </div>
 
-      <footer className="footer">
-        <div className="footer-inner">
-          <div className="footer-brand">
-            <div className="footer-brand-logo"><img src="/logo.svg" alt="Premier Electrical Services" className="footer-logo-img" /></div>
-            <p className="footer-tagline">Licensed, bonded electricians. A+ BBB Rating. Lic. PREMIES821LL.</p>
-          </div>
-          <div className="footer-col"><h4>Services</h4><ul>
-            <li><a href="/services/service-calls">Service Calls</a></li>
-            <li><a href="/services/panel-upgrades">Panel Upgrades</a></li>
-            <li><a href="/services/ev-charging">EV Charging</a></li>
-            <li><a href="/services/historic-home-rewiring">Historic Home Rewiring</a></li>
-          </ul></div>
-          <div className="footer-col"><h4>Contact</h4><ul>
-            <li><a href={PHONE_TEL}>{PHONE}</a></li>
-            <li><a href="/contact">Free Estimate</a></li>
-            <li><a href="/faq">FAQ</a></li>
-          </ul></div>
-        </div>
-        <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Premier Electrical Services</span>
-          <span><a href={PHONE_TEL}>{PHONE}</a> · Lic. PREMIES821LL</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

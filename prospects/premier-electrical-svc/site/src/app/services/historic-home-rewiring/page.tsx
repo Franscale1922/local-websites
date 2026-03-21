@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import FAQAccordion from '../../components/FAQAccordion';
+import SiteFooter from '../../components/SiteFooter';
 
 export const metadata: Metadata = {
   title: 'Historic & Older Home Rewiring | Premier Electrical Services — Skagit County, WA',
   description: 'Knob-and-tube wiring, aluminum wiring, fuse box replacement for historic and older homes in Skagit, Whatcom, and Island counties. Specialists — not generalists. Call (360) 421-5230.',
+  alternates: { canonical: '/services/historic-home-rewiring' },
+  openGraph: { images: [{ url: '/images/svc-historic.jpg', width: 1200, height: 630, alt: 'Historic home rewiring by Premier Electrical Services' }] },
 };
 
 const PHONE = '(360) 421-5230';
@@ -12,6 +15,26 @@ const PHONE_TEL = 'tel:+13604215230';
 export default function HistoricHomeRewiringPage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'Is knob-and-tube wiring always dangerous?', acceptedAnswer: { '@type': 'Answer', text: 'Not inherently — undisturbed knob-and-tube in good condition can be low-risk. The problems come when insulation is added over it (trapping heat), when it has been added to by subsequent owners, or when modern loads are run through it. Let us assess yours specifically.' } },
+          { '@type': 'Question', name: 'Will you damage my original plaster walls during a rewire?', acceptedAnswer: { '@type': 'Answer', text: 'We work in historic homes regularly and take wall damage seriously. We use low-impact fishing techniques and strategic access points. We cannot promise zero impact on older homes, but we keep it minimal and tell you upfront what to expect.' } },
+          { '@type': 'Question', name: 'How long does a full home rewire take?', acceptedAnswer: { '@type': 'Answer', text: 'A full residential rewire typically takes 3–7 days depending on home size and accessibility. We keep power to parts of the house during work where possible.' } },
+          { '@type': 'Question', name: 'What is aluminum wiring remediation?', acceptedAnswer: { '@type': 'Answer', text: 'Many homes from the 1960s–70s have aluminum wiring for branch circuits. Aluminum expands and contracts differently than copper, causing loose connections and fire risk. The standard fix is pigtailing — connecting aluminum to short copper leads with rated AlumiConn connectors at every device and outlet. We do this correctly and documentably.' } },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: '/' },
+          { '@type': 'ListItem', position: 2, name: 'Services', item: '/services' },
+          { '@type': 'ListItem', position: 3, name: 'Historic Home Rewiring', item: '/services/historic-home-rewiring' },
+        ],
+      }) }} />
+
       <nav className="nav nav--scrolled">
         <a href="/" className="nav-logo"><img src="/logo.svg" alt="Premier Electrical Services" className="nav-logo-img" /></a>
         <ul className="nav-links">
@@ -141,31 +164,7 @@ export default function HistoricHomeRewiringPage() {
         </div>
       </div>
 
-      <footer className="footer">
-        <div className="footer-inner">
-          <div className="footer-brand">
-            <div className="footer-brand-logo"><img src="/logo.svg" alt="Premier Electrical Services" className="footer-logo-img" /></div>
-            <p className="footer-tagline">Licensed, bonded electricians serving Skagit, Whatcom, San Juan, Island, King, and Snohomish counties. A+ BBB Rating. Lic. PREMIES821LL.</p>
-          </div>
-          <div className="footer-col"><h4>Services</h4><ul>
-            <li><a href="/services/panel-upgrades">Panel Upgrades</a></li>
-            <li><a href="/services/ev-charging">EV Charging</a></li>
-            <li><a href="/services/generator-installation">Generators</a></li>
-            <li><a href="/services/historic-home-rewiring">Historic Home Rewiring</a></li>
-            <li><a href="/services/commercial-wiring">Commercial Wiring</a></li>
-          </ul></div>
-          <div className="footer-col"><h4>Contact</h4><ul>
-            <li><a href={PHONE_TEL}>{PHONE}</a></li>
-            <li><a href="/contact">Free Estimate</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/faq">FAQ</a></li>
-          </ul></div>
-        </div>
-        <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Premier Electrical Services · All rights reserved</span>
-          <span><a href={PHONE_TEL}>{PHONE}</a> · Lic. PREMIES821LL</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

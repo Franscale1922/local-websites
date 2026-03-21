@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
+import SiteFooter from './components/SiteFooter';
 
 const SITE = {
   name: 'Premier Electrical Services',
@@ -38,7 +39,7 @@ const SITE = {
     {
       title: 'Residential Wiring',
       desc: 'New construction, remodels, complete rewires, rough-in, and trim-out. We\'ve built them and rewired them — we know how they\'re supposed to work.',
-      href: '/services/service-calls',
+      href: '/services/residential-wiring',
     },
     {
       title: 'Panel Upgrades',
@@ -262,6 +263,15 @@ export default function Home() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: SITE.faqs.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: { '@type': 'Answer', text: faq.a },
+        })),
+      }) }} />
 
       {/* MOBILE STICKY BAR */}
       <div className="mobile-sticky-bar">
@@ -705,55 +715,7 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="footer">
-        <div className="footer-inner">
-          <div className="footer-brand">
-            <div className="footer-brand-logo">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.svg" alt="Premier Electrical Services" className="footer-logo-img" />
-            </div>
-            <p className="footer-tagline">{SITE.footerTagline}</p>
-            <p className="footer-license">Lic. {SITE.license} · A+ BBB Rating</p>
-          </div>
-          <div className="footer-col">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="/services/panel-upgrades">Panel Upgrades</a></li>
-              <li><a href="/services/ev-charging">EV Charging</a></li>
-              <li><a href="/services/generator-installation">Generators</a></li>
-              <li><a href="/services/historic-home-rewiring">Historic Home Rewiring</a></li>
-              <li><a href="/services/commercial-wiring">Commercial Wiring</a></li>
-              <li><a href="/services/lighting-upgrades">Lighting & Outbuildings</a></li>
-              <li><a href="/services/service-calls">Service Calls</a></li>
-            </ul>
-          </div>
-          <div className="footer-col">
-            <h4>Service Area</h4>
-            <ul>
-              <li><a href="/service-area/skagit-county">Skagit County</a></li>
-              <li><a href="/service-area/whatcom-county">Whatcom County</a></li>
-              <li><a href="/service-area/island-county">Island County</a></li>
-              <li><a href="/service-area/san-juan-county">San Juan County</a></li>
-              <li><a href="/service-area">King & Snohomish</a></li>
-            </ul>
-          </div>
-          <div className="footer-col">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href={SITE.phoneTel}>{SITE.phone}</a></li>
-              <li><a href="/contact">Free Estimate</a></li>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/faq">FAQ</a></li>
-            </ul>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <span>© {SITE.year} {SITE.name} · All rights reserved</span>
-          <span>
-            <a href={SITE.phoneTel}>{SITE.phone}</a> · Lic. {SITE.license}
-          </span>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }

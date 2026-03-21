@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import FAQAccordion from '../../components/FAQAccordion';
+import SiteFooter from '../../components/SiteFooter';
 
 export const metadata: Metadata = {
   title: 'Electrical Panel Upgrades | Premier Electrical Services — Skagit County, WA',
   description: 'Expert electrical panel upgrades in Skagit, Whatcom, and Snohomish counties. Fuse boxes, 200-amp upgrades, subpanels. Licensed, bonded, A+ BBB. Call (360) 421-5230.',
+  alternates: { canonical: '/services/panel-upgrades' },
+  openGraph: { images: [{ url: '/images/svc-panel.jpg', width: 1200, height: 630, alt: 'Electrical panel upgrade by Premier Electrical Services' }] },
 };
 
 const PHONE = '(360) 421-5230';
@@ -12,6 +15,25 @@ const PHONE_TEL = 'tel:+13604215230';
 export default function PanelUpgradesPage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'How much does an electrical panel upgrade cost?', acceptedAnswer: { '@type': 'Answer', text: 'Most residential panel upgrades in Washington State run between $1,500 and $4,000 depending on amperage, panel location, the need to run new service entrance cable, and whether a utility disconnect is required. We provide free, no-pressure estimates.' } },
+          { '@type': 'Question', name: 'Do I need a permit for a panel upgrade?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. In Washington State, panel upgrades require a permit and inspection. We pull the permit, schedule the inspection, and coordinate with your utility. You\'re not left to figure that out yourself.' } },
+          { '@type': 'Question', name: 'How long does a panel upgrade take?', acceptedAnswer: { '@type': 'Answer', text: 'Most residential panel upgrades take one full day. Your power will be out 4–8 hours. We coordinate with PSE, PUD, or your co-op to minimize downtime.' } },
+          { '@type': 'Question', name: 'Will a panel upgrade let me add an EV charger?', acceptedAnswer: { '@type': 'Answer', text: 'Usually yes — that\'s one of the most common reasons people upgrade. If you\'re at 100A and want a Level 2 charger plus other modern loads, 200A is often the right move. We\'ll assess your full load and tell you exactly what you need.' } },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: '/' },
+          { '@type': 'ListItem', position: 2, name: 'Services', item: '/services' },
+          { '@type': 'ListItem', position: 3, name: 'Panel Upgrades', item: '/services/panel-upgrades' },
+        ],
+      }) }} />
 
       <nav className="nav nav--scrolled">
         <a href="/" className="nav-logo">
@@ -147,35 +169,7 @@ export default function PanelUpgradesPage() {
         </div>
       </div>
 
-      <footer className="footer">
-        <div className="footer-inner">
-          <div className="footer-brand">
-            <div className="footer-brand-logo">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.svg" alt="Premier Electrical Services" className="footer-logo-img" />
-            </div>
-            <p className="footer-tagline">Licensed, bonded electricians serving Skagit, Whatcom, San Juan, Island, King, and Snohomish counties. A+ BBB Rating. Lic. PREMIES821LL.</p>
-          </div>
-          <div className="footer-col"><h4>Services</h4><ul>
-            <li><a href="/services/panel-upgrades">Panel Upgrades</a></li>
-            <li><a href="/services/ev-charging">EV Charging</a></li>
-            <li><a href="/services/generator-installation">Generators</a></li>
-            <li><a href="/services/historic-home-rewiring">Historic Home Rewiring</a></li>
-            <li><a href="/services/commercial-wiring">Commercial Wiring</a></li>
-            <li><a href="/services/lighting-upgrades">Lighting & Outbuildings</a></li>
-          </ul></div>
-          <div className="footer-col"><h4>Contact</h4><ul>
-            <li><a href={PHONE_TEL}>{PHONE}</a></li>
-            <li><a href="/contact">Free Estimate</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/faq">FAQ</a></li>
-          </ul></div>
-        </div>
-        <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Premier Electrical Services · All rights reserved</span>
-          <span><a href={PHONE_TEL}>{PHONE}</a> · Lic. PREMIES821LL</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import FAQAccordion from '../../components/FAQAccordion';
+import SiteFooter from '../../components/SiteFooter';
 
 export const metadata: Metadata = {
   title: 'Whole-Home Generator Installation | Premier Electrical Services — Skagit County, WA',
   description: 'Standby generator installation for homes and businesses in Skagit, Whatcom, Island, and San Juan counties. Pacific Northwest power outage specialists. Call (360) 421-5230.',
+  alternates: { canonical: '/services/generator-installation' },
+  openGraph: { images: [{ url: '/images/svc-generator.jpg', width: 1200, height: 630, alt: 'Whole-home generator installation by Premier Electrical Services' }] },
 };
 
 const PHONE = '(360) 421-5230';
@@ -12,6 +15,26 @@ const PHONE_TEL = 'tel:+13604215230';
 export default function GeneratorInstallationPage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'What size generator do I need?', acceptedAnswer: { '@type': 'Answer', text: 'It depends on what you want to power. A few critical circuits (heat, refrigerator, lights, well pump) might need 7,500–12,000 watts. Whole-home coverage typically starts at 20KW. We do a load analysis and tell you exactly what you need — and what you don\'t.' } },
+          { '@type': 'Question', name: 'What is the difference between a transfer switch and an interlock?', acceptedAnswer: { '@type': 'Answer', text: 'Both prevent backfeed to the utility grid (a safety requirement). An interlock kit is less expensive and works with your existing panel. A transfer switch is a separate subpanel that automatically switches between grid and generator. We\'ll recommend the right option for your situation.' } },
+          { '@type': 'Question', name: 'Do I need a permit for generator installation?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — in Washington State, generator hookups require an electrical permit. We handle that, schedule the inspection, and make sure everything is done by the book.' } },
+          { '@type': 'Question', name: 'Can you connect a generator to natural gas?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. If your home has natural gas service, a permanently-piped connection is the cleanest and most convenient option — no storing fuel, no refilling. We do this connection along with the electrical hookup.' } },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: '/' },
+          { '@type': 'ListItem', position: 2, name: 'Services', item: '/services' },
+          { '@type': 'ListItem', position: 3, name: 'Generator Installation', item: '/services/generator-installation' },
+        ],
+      }) }} />
+
       <nav className="nav nav--scrolled">
         <a href="/" className="nav-logo">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -144,32 +167,7 @@ export default function GeneratorInstallationPage() {
         </div>
       </div>
 
-      <footer className="footer">
-        <div className="footer-inner">
-          <div className="footer-brand">
-            <div className="footer-brand-logo">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.svg" alt="Premier Electrical Services" className="footer-logo-img" />
-            </div>
-            <p className="footer-tagline">Licensed, bonded electricians serving Skagit, Whatcom, San Juan, Island, King, and Snohomish counties. A+ BBB Rating. Lic. PREMIES821LL.</p>
-          </div>
-          <div className="footer-col"><h4>Services</h4><ul>
-            <li><a href="/services/panel-upgrades">Panel Upgrades</a></li>
-            <li><a href="/services/ev-charging">EV Charging</a></li>
-            <li><a href="/services/generator-installation">Generators</a></li>
-            <li><a href="/services/historic-home-rewiring">Historic Home Rewiring</a></li>
-          </ul></div>
-          <div className="footer-col"><h4>Contact</h4><ul>
-            <li><a href={PHONE_TEL}>{PHONE}</a></li>
-            <li><a href="/contact">Free Estimate</a></li>
-            <li><a href="/faq">FAQ</a></li>
-          </ul></div>
-        </div>
-        <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Premier Electrical Services</span>
-          <span><a href={PHONE_TEL}>{PHONE}</a> · Lic. PREMIES821LL</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

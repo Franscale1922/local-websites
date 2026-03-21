@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import FAQAccordion from '../../components/FAQAccordion';
+import SiteFooter from '../../components/SiteFooter';
 
 export const metadata: Metadata = {
   title: 'Commercial Electrical Services | Premier Electrical Services — Skagit County, WA',
   description: 'Commercial wiring, tenant improvements, code compliance, and commercial electrical systems in Skagit, Whatcom, Snohomish, and King counties. Licensed commercial electricians. Call (360) 421-5230.',
+  alternates: { canonical: '/services/commercial-wiring' },
+  openGraph: { images: [{ url: '/images/svc-commercial.jpg', width: 1200, height: 630, alt: 'Commercial electrical wiring by Premier Electrical Services' }] },
 };
 
 const PHONE = '(360) 421-5230';
@@ -12,6 +15,26 @@ const PHONE_TEL = 'tel:+13604215230';
 export default function CommercialWiringPage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'Do you work directly with general contractors?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — frequently. We coordinate scheduling with your GC, pull the electrical permit before rough-in begins, and communicate proactively so we do not create bottlenecks on your timeline. We\'ve worked on restaurant buildouts, office TIs, retail spaces, daycares, and more.' } },
+          { '@type': 'Question', name: 'Do you handle commercial permits?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We pull all required electrical permits for commercial work in Skagit, Whatcom, and Snohomish counties. We schedule the inspection and ensure the work is properly documented — you do not have to manage that process.' } },
+          { '@type': 'Question', name: 'What types of commercial projects do you take on?', acceptedAnswer: { '@type': 'Answer', text: 'Tenant improvements, new construction, restaurant wiring (including hood suppression tie-ins), retail lighting, office builds, daycares, and light industrial. We work cleanly, on schedule, and alongside GCs without creating friction on the jobsite.' } },
+          { '@type': 'Question', name: 'Do you provide quotes for commercial work?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — free estimates on commercial projects. We walk the space, understand the scope, and give you a clear number before any work starts. For GC work, we can provide bid documents as needed.' } },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: '/' },
+          { '@type': 'ListItem', position: 2, name: 'Services', item: '/services' },
+          { '@type': 'ListItem', position: 3, name: 'Commercial Wiring', item: '/services/commercial-wiring' },
+        ],
+      }) }} />
+
       <nav className="nav nav--scrolled">
         <a href="/" className="nav-logo"><img src="/logo.svg" alt="Premier Electrical Services" className="nav-logo-img" /></a>
         <ul className="nav-links">
@@ -141,29 +164,7 @@ export default function CommercialWiringPage() {
         </div>
       </div>
 
-      <footer className="footer">
-        <div className="footer-inner">
-          <div className="footer-brand">
-            <div className="footer-brand-logo"><img src="/logo.svg" alt="Premier Electrical Services" className="footer-logo-img" /></div>
-            <p className="footer-tagline">Licensed, bonded electricians serving Skagit, Whatcom, San Juan, Island, King, and Snohomish counties. A+ BBB Rating. Lic. PREMIES821LL.</p>
-          </div>
-          <div className="footer-col"><h4>Services</h4><ul>
-            <li><a href="/services/panel-upgrades">Panel Upgrades</a></li>
-            <li><a href="/services/commercial-wiring">Commercial Wiring</a></li>
-            <li><a href="/services/ev-charging">EV Charging</a></li>
-            <li><a href="/services/historic-home-rewiring">Historic Home Rewiring</a></li>
-          </ul></div>
-          <div className="footer-col"><h4>Contact</h4><ul>
-            <li><a href={PHONE_TEL}>{PHONE}</a></li>
-            <li><a href="/contact">Free Estimate</a></li>
-            <li><a href="/faq">FAQ</a></li>
-          </ul></div>
-        </div>
-        <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Premier Electrical Services</span>
-          <span><a href={PHONE_TEL}>{PHONE}</a> · Lic. PREMIES821LL</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

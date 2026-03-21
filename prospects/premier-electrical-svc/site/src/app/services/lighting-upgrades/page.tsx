@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import FAQAccordion from '../../components/FAQAccordion';
+import SiteFooter from '../../components/SiteFooter';
 
 export const metadata: Metadata = {
   title: 'Lighting & Outbuilding Wiring | Premier Electrical Services — Skagit County, WA',
   description: 'Indoor and outdoor lighting, landscape lighting, detached garages, shops, ADUs, barns, and hot tub wiring in Skagit and surrounding counties. Call (360) 421-5230.',
+  alternates: { canonical: '/services/lighting-upgrades' },
+  openGraph: { images: [{ url: '/images/svc-lighting.jpg', width: 1200, height: 630, alt: 'Lighting and outbuilding wiring by Premier Electrical Services' }] },
 };
 
 const PHONE = '(360) 421-5230';
@@ -12,6 +15,26 @@ const PHONE_TEL = 'tel:+13604215230';
 export default function LightingUpgradesPage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'Can you wire a detached garage or shop from my main panel?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We run a subpanel feed from your main panel to the outbuilding, install a properly-sized subpanel inside, and wire it for whatever you need — outlets, lighting, 240V tools. A permit is required for this work and we handle it.' } },
+          { '@type': 'Question', name: 'Do I need a permit for a hot tub or spa?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — hot tub wiring always requires a permit in Washington State. The circuit must be GFCI-protected at the panel, with proper disconnect placement and bonding. We do this by the book, which matters for both safety and your homeowner\'s insurance.' } },
+          { '@type': 'Question', name: 'What kind of outdoor lighting can you install?', acceptedAnswer: { '@type': 'Answer', text: 'We install landscape lighting low-voltage systems, line-voltage path and accent lighting, exterior security lighting with motion sensors, and dusk-to-dawn exterior fixtures. We can also wire for outdoor outlets, exterior fans, and porch fixtures.' } },
+          { '@type': 'Question', name: 'Can you wire a barn or agricultural outbuilding?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We\'ve wired barns, shops, greenhouses, and agricultural buildings across Skagit and Whatcom counties. This often involves running overhead or underground service from the main panel to a subpanel in the building, then wiring for lighting, outlets, and any 240V equipment.' } },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: '/' },
+          { '@type': 'ListItem', position: 2, name: 'Services', item: '/services' },
+          { '@type': 'ListItem', position: 3, name: 'Lighting & Outbuildings', item: '/services/lighting-upgrades' },
+        ],
+      }) }} />
+
       <nav className="nav nav--scrolled">
         <a href="/" className="nav-logo"><img src="/logo.svg" alt="Premier Electrical Services" className="nav-logo-img" /></a>
         <ul className="nav-links">
@@ -141,29 +164,7 @@ export default function LightingUpgradesPage() {
         </div>
       </div>
 
-      <footer className="footer">
-        <div className="footer-inner">
-          <div className="footer-brand">
-            <div className="footer-brand-logo"><img src="/logo.svg" alt="Premier Electrical Services" className="footer-logo-img" /></div>
-            <p className="footer-tagline">Licensed, bonded electricians. A+ BBB Rating. Lic. PREMIES821LL.</p>
-          </div>
-          <div className="footer-col"><h4>Services</h4><ul>
-            <li><a href="/services/lighting-upgrades">Lighting & Outbuildings</a></li>
-            <li><a href="/services/panel-upgrades">Panel Upgrades</a></li>
-            <li><a href="/services/ev-charging">EV Charging</a></li>
-            <li><a href="/services/historic-home-rewiring">Historic Home Rewiring</a></li>
-          </ul></div>
-          <div className="footer-col"><h4>Contact</h4><ul>
-            <li><a href={PHONE_TEL}>{PHONE}</a></li>
-            <li><a href="/contact">Free Estimate</a></li>
-            <li><a href="/faq">FAQ</a></li>
-          </ul></div>
-        </div>
-        <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Premier Electrical Services</span>
-          <span><a href={PHONE_TEL}>{PHONE}</a> · Lic. PREMIES821LL</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

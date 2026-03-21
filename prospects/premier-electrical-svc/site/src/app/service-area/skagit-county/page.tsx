@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
+import SiteFooter from '../../components/SiteFooter';
 
 export const metadata: Metadata = {
   title: 'Electrician in Skagit County, WA | Premier Electrical Services',
   description: 'Licensed electricians serving Mount Vernon, Burlington, Anacortes, Sedro-Woolley, La Conner, and all of Skagit County. Panel upgrades, EV charging, historic home rewiring. Call (360) 421-5230.',
+  alternates: { canonical: '/service-area/skagit-county' },
+  openGraph: { images: [{ url: '/images/hero-skagit.jpg', width: 1200, height: 630, alt: 'Skagit Valley tulip fields — Premier Electrical Services home county' }] },
 };
 
 const PHONE = '(360) 421-5230';
@@ -11,6 +14,16 @@ const PHONE_TEL = 'tel:+13604215230';
 export default function SkagitCountyPage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: '/' },
+          { '@type': 'ListItem', position: 2, name: 'Service Area', item: '/service-area' },
+          { '@type': 'ListItem', position: 3, name: 'Skagit County', item: '/service-area/skagit-county' },
+        ],
+      }) }} />
+
       <nav className="nav nav--scrolled">
         <a href="/" className="nav-logo">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -145,33 +158,7 @@ export default function SkagitCountyPage() {
         </div>
       </div>
 
-      <footer className="footer">
-        <div className="footer-inner">
-          <div className="footer-brand">
-            <div className="footer-brand-logo">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.svg" alt="Premier Electrical Services" className="footer-logo-img" />
-            </div>
-            <p className="footer-tagline">Licensed, bonded electricians serving Skagit, Whatcom, San Juan, Island, King, and Snohomish counties. A+ BBB Rating. Lic. PREMIES821LL.</p>
-          </div>
-          <div className="footer-col"><h4>Services</h4><ul>
-            <li><a href="/services/panel-upgrades">Panel Upgrades</a></li>
-            <li><a href="/services/ev-charging">EV Charging</a></li>
-            <li><a href="/services/generator-installation">Generators</a></li>
-            <li><a href="/services/historic-home-rewiring">Historic Home Rewiring</a></li>
-          </ul></div>
-          <div className="footer-col"><h4>Service Areas</h4><ul>
-            <li><a href="/service-area/skagit-county">Skagit County</a></li>
-            <li><a href="/service-area/whatcom-county">Whatcom County</a></li>
-            <li><a href="/service-area/island-county">Island County</a></li>
-            <li><a href="/service-area/san-juan-county">San Juan County</a></li>
-          </ul></div>
-        </div>
-        <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Premier Electrical Services</span>
-          <span><a href={PHONE_TEL}>{PHONE}</a> · Lic. PREMIES821LL</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

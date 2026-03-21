@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import FAQAccordion from '../../components/FAQAccordion';
+import SiteFooter from '../../components/SiteFooter';
 
 export const metadata: Metadata = {
   title: 'EV Charging Station Installation | Premier Electrical Services — Skagit & Puget Sound, WA',
   description: 'Level 2 EV charger installation in Skagit, Whatcom, Snohomish, and King counties. Tesla Wall Connector, JuiceBox, ChargePoint. Permitted & code-compliant. Call (360) 421-5230.',
+  alternates: { canonical: '/services/ev-charging' },
+  openGraph: { images: [{ url: '/images/svc-ev-charging.jpg', width: 1200, height: 630, alt: 'EV charging station installation by Premier Electrical Services' }] },
 };
 
 const PHONE = '(360) 421-5230';
@@ -12,6 +15,37 @@ const PHONE_TEL = 'tel:+13604215230';
 export default function EVChargingPage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'How much does EV charger installation cost?', acceptedAnswer: { '@type': 'Answer', text: 'Most Level 2 home charger installs run $400–$1,200 for labor depending on run distance, permit requirements, and panel capacity. The charger itself costs extra depending on the brand. We give you a full cost picture before starting.' } },
+          { '@type': 'Question', name: 'Do I need to upgrade my panel for an EV charger?', acceptedAnswer: { '@type': 'Answer', text: 'Not always. If your panel has available capacity (most 200A panels do), we can add a dedicated circuit without upgrading. If you have an older 100A panel or it\'s already near capacity, we\'ll let you know and can handle the upgrade at the same time.' } },
+          { '@type': 'Question', name: 'Do I need a permit for EV charger installation?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — in Washington State, Level 2 charger installations require a permit. We handle that for you. It ensures the install is safe and protects your homeowner\'s insurance.' } },
+          { '@type': 'Question', name: 'How long does EV charger installation take?', acceptedAnswer: { '@type': 'Answer', text: 'Most residential installs take 2–4 hours. If a panel upgrade is needed, plan a full day.' } },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: 'How to Get an EV Charger Installed at Home',
+        description: 'Premier Electrical Services installs Level 2 EV chargers in Skagit, Whatcom, Snohomish, and King counties.',
+        step: [
+          { '@type': 'HowToStep', position: 1, name: 'Call or Submit a Request', text: 'Tell us your EV make, garage setup, and whether you already have a charger in mind. We respond same day.' },
+          { '@type': 'HowToStep', position: 2, name: 'Free On-Site Assessment', text: 'We look at your panel, the run distance to your garage or parking spot, and give you a clear quote. No vague ranges.' },
+          { '@type': 'HowToStep', position: 3, name: 'Install, Permit & Inspect', text: 'We install the charger, pull the permit, and coordinate the inspection. Done in a day on most homes.' },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: '/' },
+          { '@type': 'ListItem', position: 2, name: 'Services', item: '/services' },
+          { '@type': 'ListItem', position: 3, name: 'EV Charging', item: '/services/ev-charging' },
+        ],
+      }) }} />
+
       <nav className="nav nav--scrolled">
         <a href="/" className="nav-logo">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -166,34 +200,7 @@ export default function EVChargingPage() {
         </div>
       </div>
 
-      <footer className="footer">
-        <div className="footer-inner">
-          <div className="footer-brand">
-            <div className="footer-brand-logo">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.svg" alt="Premier Electrical Services" className="footer-logo-img" />
-            </div>
-            <p className="footer-tagline">Licensed, bonded electricians serving Skagit, Whatcom, San Juan, Island, King, and Snohomish counties. A+ BBB Rating. Lic. PREMIES821LL.</p>
-          </div>
-          <div className="footer-col"><h4>Services</h4><ul>
-            <li><a href="/services/panel-upgrades">Panel Upgrades</a></li>
-            <li><a href="/services/ev-charging">EV Charging</a></li>
-            <li><a href="/services/generator-installation">Generators</a></li>
-            <li><a href="/services/historic-home-rewiring">Historic Home Rewiring</a></li>
-            <li><a href="/services/commercial-wiring">Commercial Wiring</a></li>
-          </ul></div>
-          <div className="footer-col"><h4>Contact</h4><ul>
-            <li><a href={PHONE_TEL}>{PHONE}</a></li>
-            <li><a href="/contact">Free Estimate</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/faq">FAQ</a></li>
-          </ul></div>
-        </div>
-        <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Premier Electrical Services · All rights reserved</span>
-          <span><a href={PHONE_TEL}>{PHONE}</a> · Lic. PREMIES821LL</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }
