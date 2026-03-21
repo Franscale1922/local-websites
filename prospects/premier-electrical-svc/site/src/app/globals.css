@@ -889,7 +889,7 @@ p { max-width: 68ch; }
 }
 .services-page-hero-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(8,18,36,0.92) 30%, rgba(8,18,36,0.45) 100%);
+  background: linear-gradient(to top, rgba(8,18,36,0.95) 25%, rgba(8,18,36,0.60) 65%, rgba(8,18,36,0.35) 100%);
   z-index: 1;
 }
 .services-page-hero-content {
@@ -902,6 +902,7 @@ p { max-width: 68ch; }
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
   color: #fff; margin: 14px 0 16px;
   max-width: 700px; line-height: 1.1;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.4);
 }
 .services-page-hero-content p {
   font-size: 1.05rem; color: rgba(255,255,255,0.78);

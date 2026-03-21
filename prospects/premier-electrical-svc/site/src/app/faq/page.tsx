@@ -73,11 +73,11 @@ export default function FAQPage() {
 
       <section className="services-page-hero">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/hero-faq.jpg" alt="Electrician explaining wiring to a homeowner" className="hero-bg" />
-        <div className="hero-overlay" />
+        <img src="/images/hero-faq.jpg" alt="Electrician explaining wiring to a homeowner" className="services-page-hero-bg" />
+        <div className="services-page-hero-overlay" />
         <div className="services-page-hero-content">
           <h1>Your Questions, Straight Answers</h1>
-          <p className="hero-sub" style={{ maxWidth: '560px', margin: '12px auto 28px' }}>
+          <p style={{ maxWidth: '560px', marginBottom: '28px', color: 'rgba(255,255,255,0.88)' }}>
             No runaround. No vague estimates. If your question isn&apos;t here, call us — we pick up.
           </p>
           <div className="hero-ctas">
