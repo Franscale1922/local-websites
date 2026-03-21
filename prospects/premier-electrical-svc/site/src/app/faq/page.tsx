@@ -71,19 +71,16 @@ export default function FAQPage() {
         <a href={PHONE_TEL} className="btn btn-ghost-gold nav-mobile-cta" style={{ fontSize: '0.82rem', padding: '8px 16px' }}>Call Now</a>
       </nav>
 
-      <section className="page-hero">
-        <div className="container">
-          <div className="page-hero-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/>
-            </svg>
-          </div>
-          <h1>Frequently Asked Questions</h1>
-          <p className="page-hero-sub">
-            Straight answers. No runaround. If your question isn&apos;t here, call us — we pick up.
+      <section className="services-page-hero">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/images/hero-faq.jpg" alt="Electrician explaining wiring to a homeowner" className="hero-bg" />
+        <div className="hero-overlay" />
+        <div className="services-page-hero-content">
+          <h1>Your Questions, Straight Answers</h1>
+          <p className="hero-sub" style={{ maxWidth: '560px', margin: '12px auto 28px' }}>
+            No runaround. No vague estimates. If your question isn&apos;t here, call us — we pick up.
           </p>
-          <div className="page-hero-ctas">
+          <div className="hero-ctas">
             <a href={PHONE_TEL} className="btn btn-primary">Call {PHONE}</a>
             <a href="/contact" className="btn btn-ghost-light">Get a Free Estimate</a>
           </div>
