@@ -145,7 +145,7 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <div className="eyebrow">Product Lines</div>
-            <h2>Built for the Application,<br />Not the Catalog</h2>
+            <h2>Built for the Application<br />Not the Catalog</h2>
             <p>Our vane air motors run where electric motors can&apos;t — in hazardous atmospheres, extreme temperatures, and continuous-duty environments. Every unit is configurable for your exact requirement.</p>
           </div>
           <div className="products-grid">
