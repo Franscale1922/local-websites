@@ -429,6 +429,7 @@ p { max-width: 68ch; }
   justify-content: center; margin-bottom: 24px;
   color: var(--color-accent-dark);
   overflow: visible;
+  pointer-events: none;  /* Icon never blocks clicks on the card beneath it */
   transition: color var(--transition-fast), transform var(--transition-fast);
 }
 .service-icon svg {
@@ -438,6 +439,7 @@ p { max-width: 68ch; }
   color: var(--color-accent);
   transform: scale(1.08);
 }
+
 
 .service-card h3 { font-size: 1.05rem; margin-bottom: 10px; color: var(--color-primary); }
 .service-card p { font-size: 0.875rem; color: var(--color-neutral-mid); line-height: 1.6; }
