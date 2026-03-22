@@ -397,14 +397,147 @@ export default function Home() {
           </p>
           <div className="services-grid services-grid--4col">
             {[
-              { title: 'Residential Wiring', desc: SITE.services[0].desc, href: SITE.services[0].href, svg: <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> },
-              { title: 'Panel Upgrades', desc: SITE.services[1].desc, href: SITE.services[1].href, svg: <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="3"/><line x1="7" y1="6" x2="7" y2="18"/><line x1="12" y1="6" x2="12" y2="18"/><line x1="17" y1="6" x2="17" y2="18"/><line x1="2" y1="11" x2="22" y2="11"/><circle cx="7" cy="8" r="1" fill="currentColor"/><circle cx="12" cy="14" r="1" fill="currentColor"/><circle cx="17" cy="8" r="1" fill="currentColor"/></svg> },
-              { title: 'Historic & Older Homes', desc: SITE.services[2].desc, href: SITE.services[2].href, svg: <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><circle cx="12" cy="13" r="3"/><path d="M12 10v-2"/><line x1="9" y1="22" x2="9" y2="16"/><line x1="15" y1="22" x2="15" y2="16"/></svg> },
-              { title: 'EV Charging Stations', desc: SITE.services[3].desc, href: SITE.services[3].href, svg: <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="6" width="15" height="13" rx="2"/><path d="M16 10h2a2 2 0 012 2v3a2 2 0 01-2 2h-2"/><path d="M5 6V4"/><path d="M9 6V4"/><path d="M11 13l-3 5h4l-3 5"/></svg> },
-              { title: 'Generator Installation', desc: SITE.services[4].desc, href: SITE.services[4].href, svg: <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="7" width="22" height="11" rx="2"/><path d="M5 7V5a1 1 0 011-1h3a1 1 0 011 1v2"/><path d="M19 7V5a1 1 0 00-1-1h-3a1 1 0 00-1 1v2"/><circle cx="12" cy="12" r="2" fill="currentColor"/><path d="M12 10v-3"/><path d="M12 14v3"/></svg> },
-              { title: 'Commercial Work', desc: SITE.services[5].desc, href: SITE.services[5].href, svg: <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="9" x2="22" y2="9"/><line x1="2" y1="15" x2="22" y2="15"/><line x1="8" y1="9" x2="8" y2="21"/><line x1="16" y1="9" x2="16" y2="21"/><circle cx="5" cy="6" r="1" fill="currentColor"/><circle cx="9" cy="6" r="1" fill="currentColor"/></svg> },
-              { title: 'Service Calls & Troubleshooting', desc: SITE.services[6].desc, href: SITE.services[6].href, svg: <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="12"/><circle cx="11" cy="15" r="0.5" fill="currentColor" stroke="none"/></svg> },
-              { title: 'Lighting & Outbuildings', desc: SITE.services[7].desc, href: SITE.services[7].href, svg: <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0018 8 6 6 0 006 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 018.91 14"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="19.78" y1="4.22" x2="18.36" y2="5.64"/></svg> },
+              { title: 'Residential Wiring', desc: SITE.services[0].desc, href: SITE.services[0].href, svg: (
+                <svg width="64" height="64" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* House body filled */}
+                  <path d="M8 22L24 8L40 22V42H30V30H18V42H8V22Z" fill="currentColor" fillOpacity="0.15" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round"/>
+                  {/* Door */}
+                  <rect x="18" y="30" width="12" height="12" rx="1" fill="currentColor" fillOpacity="0.25" stroke="currentColor" strokeWidth="2.2"/>
+                  {/* Rooftop peak */}
+                  <path d="M4 24L24 6L44 24" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  {/* Electrical bolt on house */}
+                  <path d="M26 16L22 22H26L22 28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" strokeOpacity="0.8"/>
+                </svg>
+              )},
+              { title: 'Panel Upgrades', desc: SITE.services[1].desc, href: SITE.services[1].href, svg: (
+                <svg width="64" height="64" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* Panel box */}
+                  <rect x="7" y="4" width="34" height="40" rx="3" fill="currentColor" fillOpacity="0.12" stroke="currentColor" strokeWidth="2.5"/>
+                  {/* Center seam */}
+                  <line x1="24" y1="4" x2="24" y2="44" stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.4"/>
+                  {/* Breakers left */}
+                  <rect x="10" y="12" width="11" height="5" rx="1.5" fill="currentColor" fillOpacity="0.6"/>
+                  <rect x="10" y="20" width="11" height="5" rx="1.5" fill="currentColor" fillOpacity="0.4"/>
+                  <rect x="10" y="28" width="11" height="5" rx="1.5" fill="currentColor" fillOpacity="0.6"/>
+                  <rect x="10" y="36" width="11" height="5" rx="1.5" fill="currentColor" fillOpacity="0.3"/>
+                  {/* Breakers right */}
+                  <rect x="27" y="12" width="11" height="5" rx="1.5" fill="currentColor" fillOpacity="0.4"/>
+                  <rect x="27" y="20" width="11" height="5" rx="1.5" fill="currentColor" fillOpacity="0.6"/>
+                  <rect x="27" y="28" width="11" height="5" rx="1.5" fill="currentColor" fillOpacity="0.3"/>
+                  <rect x="27" y="36" width="11" height="5" rx="1.5" fill="currentColor" fillOpacity="0.5"/>
+                  {/* Main breaker */}
+                  <rect x="10" y="6" width="28" height="4" rx="1" fill="currentColor" fillOpacity="0.5" stroke="currentColor" strokeWidth="1"/>
+                </svg>
+              )},
+              { title: 'Historic & Older Homes', desc: SITE.services[2].desc, href: SITE.services[2].href, svg: (
+                <svg width="64" height="64" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* Victorian-style house with attic */}
+                  <path d="M6 48V26L14 16V8H20V12L24 8L28 12V8H34V16L42 26V48H6Z" fill="currentColor" fillOpacity="0.12" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round"/>
+                  {/* Attic window */}
+                  <path d="M20 8L24 4L28 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <rect x="21" y="8" width="6" height="5" rx="1" fill="currentColor" fillOpacity="0.35"/>
+                  {/* Door */}
+                  <rect x="19" y="36" width="10" height="12" rx="1" fill="currentColor" fillOpacity="0.25" stroke="currentColor" strokeWidth="1.8"/>
+                  {/* Windows */}
+                  <rect x="9" y="30" width="8" height="7" rx="1" fill="currentColor" fillOpacity="0.3" stroke="currentColor" strokeWidth="1.5"/>
+                  <rect x="31" y="30" width="8" height="7" rx="1" fill="currentColor" fillOpacity="0.3" stroke="currentColor" strokeWidth="1.5"/>
+                  {/* Warning bolt — old wiring */}
+                  <path d="M25 32L23 36H25L23 40" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeOpacity="0.7"/>
+                </svg>
+              )},
+              { title: 'EV Charging Stations', desc: SITE.services[3].desc, href: SITE.services[3].href, svg: (
+                <svg width="64" height="64" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* Car body */}
+                  <path d="M6 30L10 20H38L42 30V38H6V30Z" fill="currentColor" fillOpacity="0.15" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round"/>
+                  {/* Windshield */}
+                  <path d="M12 20L14 12H34L36 20" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
+                  {/* Wheels */}
+                  <circle cx="14" cy="38" r="5" fill="currentColor" fillOpacity="0.25" stroke="currentColor" strokeWidth="2.2"/>
+                  <circle cx="34" cy="38" r="5" fill="currentColor" fillOpacity="0.25" stroke="currentColor" strokeWidth="2.2"/>
+                  <circle cx="14" cy="38" r="2" fill="currentColor"/>
+                  <circle cx="34" cy="38" r="2" fill="currentColor"/>
+                  {/* Charge plug */}
+                  <path d="M38 22L44 22" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+                  <path d="M44 19V25" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+                  {/* Bolt */}
+                  <path d="M22 24L19 30H23L20 36" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              )},
+              { title: 'Generator Installation', desc: SITE.services[4].desc, href: SITE.services[4].href, svg: (
+                <svg width="64" height="64" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* Generator body */}
+                  <rect x="4" y="16" width="40" height="24" rx="3" fill="currentColor" fillOpacity="0.12" stroke="currentColor" strokeWidth="2.5"/>
+                  {/* Engine rotor */}
+                  <circle cx="16" cy="28" r="8" fill="currentColor" fillOpacity="0.18" stroke="currentColor" strokeWidth="2.2"/>
+                  <circle cx="16" cy="28" r="3" fill="currentColor" fillOpacity="0.5"/>
+                  {/* Output terminals */}
+                  <rect x="28" y="22" width="12" height="6" rx="1.5" fill="currentColor" fillOpacity="0.3" stroke="currentColor" strokeWidth="1.5"/>
+                  <rect x="28" y="31" width="12" height="6" rx="1.5" fill="currentColor" fillOpacity="0.3" stroke="currentColor" strokeWidth="1.5"/>
+                  {/* Bolt symbol on terminal */}
+                  <path d="M33 23.5L31.5 26.5H33.5L32 29.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                  {/* Exhaust stack */}
+                  <rect x="18" y="10" width="6" height="8" rx="1" fill="currentColor" fillOpacity="0.25" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M18 8C18 8 21 6 24 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+                  {/* Legs */}
+                  <line x1="10" y1="40" x2="10" y2="44" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+                  <line x1="38" y1="40" x2="38" y2="44" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+                </svg>
+              )},
+              { title: 'Commercial Work', desc: SITE.services[5].desc, href: SITE.services[5].href, svg: (
+                <svg width="64" height="64" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* Building facade */}
+                  <rect x="4" y="10" width="40" height="36" rx="2" fill="currentColor" fillOpacity="0.12" stroke="currentColor" strokeWidth="2.5"/>
+                  {/* Roofline detail */}
+                  <rect x="4" y="10" width="40" height="7" rx="2" fill="currentColor" fillOpacity="0.2"/>
+                  {/* Windows grid row 1 */}
+                  <rect x="9" y="21" width="8" height="7" rx="1" fill="currentColor" fillOpacity="0.4"/>
+                  <rect x="20" y="21" width="8" height="7" rx="1" fill="currentColor" fillOpacity="0.25"/>
+                  <rect x="31" y="21" width="8" height="7" rx="1" fill="currentColor" fillOpacity="0.4"/>
+                  {/* Windows grid row 2 */}
+                  <rect x="9" y="31" width="8" height="7" rx="1" fill="currentColor" fillOpacity="0.25"/>
+                  <rect x="31" y="31" width="8" height="7" rx="1" fill="currentColor" fillOpacity="0.3"/>
+                  {/* Door */}
+                  <rect x="20" y="33" width="8" height="13" rx="1" fill="currentColor" fillOpacity="0.3" stroke="currentColor" strokeWidth="1.5"/>
+                  {/* Electrical conduit line */}
+                  <path d="M24 4V10" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+                  <circle cx="24" cy="4" r="2" fill="currentColor"/>
+                </svg>
+              )},
+              { title: 'Service Calls & Troubleshooting', desc: SITE.services[6].desc, href: SITE.services[6].href, svg: (
+                <svg width="64" height="64" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* Wrench */}
+                  <path d="M36 8C32 8 29 11 29 15C29 16.2 29.3 17.4 30 18.4L12 36.4C11 35.7 9.8 35.4 8.6 35.4C4.6 35.4 1.6 38.4 1.6 42.4C1.6 46.4 4.6 49.4 8.6 49.4C12.6 49.4 15.6 46.4 15.6 42.4C15.6 41.2 15.3 40 14.6 39L32.6 21C33.6 21.7 34.8 22 36 22C40 22 43 19 43 15C43 14.1 42.8 13.2 42.5 12.4L38 16.9L33.1 12L37.6 7.5C37 7.5 36.5 8 36 8Z" fill="none"/>
+                  {/* Cleaner wrench */}
+                  <path d="M38 6C33.6 6 30 9.6 30 14C30 15.5 30.4 16.9 31.2 18.1L14 35.2C12.8 34.4 11.4 34 10 34C5.6 34 2 37.6 2 42C2 46.4 5.6 50 10 50" fill="none"/>
+                  {/* Magnifying glass */}
+                  <circle cx="20" cy="20" r="12" fill="currentColor" fillOpacity="0.15" stroke="currentColor" strokeWidth="2.5"/>
+                  <circle cx="20" cy="20" r="7" fill="currentColor" fillOpacity="0.12" stroke="currentColor" strokeWidth="2"/>
+                  <line x1="29" y1="29" x2="40" y2="40" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
+                  {/* Exclamation in circle */}
+                  <line x1="20" y1="16" x2="20" y2="22" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  <circle cx="20" cy="25" r="1.2" fill="currentColor"/>
+                  {/* Spark marks */}
+                  <path d="M10 10L8 8M10 8L8 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeOpacity="0.6"/>
+                  <path d="M32 10L30 8M32 8L30 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeOpacity="0.6"/>
+                </svg>
+              )},
+              { title: 'Lighting & Outbuildings', desc: SITE.services[7].desc, href: SITE.services[7].href, svg: (
+                <svg width="64" height="64" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* Bulb globe */}
+                  <path d="M24 4C16.3 4 10 10.3 10 18C10 22.8 12.4 27.1 16 29.7V36H32V29.7C35.6 27.1 38 22.8 38 18C38 10.3 31.7 4 24 4Z" fill="currentColor" fillOpacity="0.18" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round"/>
+                  {/* Base rings */}
+                  <rect x="16" y="36" width="16" height="4" rx="2" fill="currentColor" fillOpacity="0.35" stroke="currentColor" strokeWidth="1.8"/>
+                  <rect x="18" y="40" width="12" height="4" rx="2" fill="currentColor" fillOpacity="0.25" stroke="currentColor" strokeWidth="1.8"/>
+                  {/* Filament glow lines */}
+                  <path d="M18 20L20 17L22 20L24 16L26 20L28 17L30 20" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  {/* Rays */}
+                  <line x1="24" y1="1" x2="24" y2="3.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeOpacity="0.6"/>
+                  <line x1="7" y1="7" x2="9" y2="9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeOpacity="0.6"/>
+                  <line x1="41" y1="7" x2="39" y2="9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeOpacity="0.6"/>
+                  <line x1="4" y1="18" x2="7" y2="18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeOpacity="0.6"/>
+                  <line x1="44" y1="18" x2="41" y2="18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeOpacity="0.6"/>
+                </svg>
+              )},
             ].map(s => (
               <a key={s.title} href={s.href} className="service-card">
                 <div className="service-icon">{s.svg}</div>
