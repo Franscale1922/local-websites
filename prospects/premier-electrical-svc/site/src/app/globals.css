@@ -239,10 +239,12 @@ p { max-width: 68ch; }
 /* SERVICES GRID */
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 56px; }
 .service-card {
+  display: block;
   padding: 36px 28px; background: var(--color-surface);
   border: 2px solid var(--color-border); border-radius: var(--radius-md);
   box-shadow: 0 4px 18px rgba(13, 31, 60, 0.08), 0 1px 4px rgba(13, 31, 60, 0.04);
-  transition: all var(--transition-mid); cursor: default;
+  transition: all var(--transition-mid); cursor: pointer;
+  text-decoration: none; color: inherit;
 }
 .service-card:hover {
   border-color: var(--color-accent);

@@ -406,12 +406,12 @@ export default function Home() {
               { title: 'Service Calls & Troubleshooting', desc: SITE.services[6].desc, href: SITE.services[6].href, svg: <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="12"/><circle cx="11" cy="15" r="0.5" fill="currentColor" stroke="none"/></svg> },
               { title: 'Lighting & Outbuildings', desc: SITE.services[7].desc, href: SITE.services[7].href, svg: <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0018 8 6 6 0 006 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 018.91 14"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="19.78" y1="4.22" x2="18.36" y2="5.64"/></svg> },
             ].map(s => (
-              <div key={s.title} className="service-card">
+              <a key={s.title} href={s.href} className="service-card">
                 <div className="service-icon">{s.svg}</div>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
-                <a href={s.href} className="service-link">Learn more →</a>
-              </div>
+                <span className="service-link">Learn more →</span>
+              </a>
             ))}
           </div>
           <div style={{ textAlign: 'center', marginTop: '32px' }}>

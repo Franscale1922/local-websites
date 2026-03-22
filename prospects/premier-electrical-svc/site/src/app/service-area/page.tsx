@@ -111,25 +111,31 @@ export default function ServiceAreaPage() {
               <h2 style={{ marginBottom: '36px' }}>Find Your Area</h2>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
                 {COUNTIES.map(c => (
-                  <div key={c.name} style={{
+                  <a key={c.name} href={c.href !== '/service-area' ? c.href : '/contact'} style={{
                     background: '#fff',
                     borderRadius: '12px',
                     padding: '24px',
                     boxShadow: '0 2px 12px rgba(0,0,0,0.07)',
                     border: '1px solid rgba(0,0,0,0.06)',
-                  }}>
+                    display: 'block',
+                    textDecoration: 'none',
+                    color: 'inherit',
+                    cursor: 'pointer',
+                    transition: 'box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease',
+                  }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 6px 24px rgba(245,166,35,0.25)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(245,166,35,0.5)'; (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(-3px)'; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 2px 12px rgba(0,0,0,0.07)'; (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(0,0,0,0.06)'; (e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(0)'; }}
+                  >
                     <div style={{ fontSize: '2rem', marginBottom: '8px' }}>{c.icon}</div>
                     <h3 style={{ marginBottom: '4px' }}>{c.name}</h3>
                     <p style={{ fontSize: '0.8rem', color: 'var(--color-accent)', fontWeight: 600, marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{c.note}</p>
                     <p style={{ fontSize: '0.88rem', color: '#4a5568', lineHeight: 1.7, marginBottom: '16px' }}>
                       {c.cities.join(' · ')}
                     </p>
-                    {c.href !== '/service-area' ? (
-                      <a href={c.href} className="btn btn-primary" style={{ marginTop: '8px', fontSize: '0.85rem', padding: '8px 18px' }}>View {c.name}</a>
-                    ) : (
-                      <a href="/contact" className="btn btn-primary" style={{ marginTop: '8px', fontSize: '0.85rem', padding: '8px 18px' }}>Get a Quote</a>
-                    )}
-                  </div>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.85rem', fontWeight: 700, color: 'var(--color-accent)', marginTop: '8px' }}>
+                      {c.href !== '/service-area' ? `View ${c.name} →` : 'Get a Quote →'}
+                    </span>
+                  </a>
                 ))}
               </div>
             </div>
