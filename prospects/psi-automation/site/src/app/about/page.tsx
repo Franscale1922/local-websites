@@ -78,16 +78,18 @@ export default function AboutPage() {
             <div className="eyebrow">Our Philosophy</div>
             <h2>Why Engineers Come to PSI Automation</h2>
           </div>
-          <div style={{display:'grid', gridTemplateColumns:'repeat(3, 1fr)', gap:'24px'}}>
+          <div className="why-grid">
             {[
-              { icon:'🔧', title:'Field-Serviceable by Design', desc:"Every PSI motor can be serviced in the field without returning to the factory. Our maintenance manual trains your technicians to rebuild in hours, not weeks. This is not an accident — it's a design requirement." },
-              { icon:'⚙️', title:'No Minimum Order', desc:'We manufacture custom configurations for single-unit quantities. This eliminates the single most common obstacle for engineers who know exactly what they need but can&apos;t justify 100-unit tooling runs.' },
-              { icon:'📞', title:'Engineers Answer the Phone', desc:"When you call PSI Automation, you speak with an engineer who works on motors daily. Not a sales coordinator. Not a routing system. A person who can answer your technical question right now." },
+              { icon:'/icons/icon-field-serviceable.png', alt:'Field serviceable motor', title:'Field-Serviceable by Design', desc:"Every PSI motor can be serviced in the field without returning to the factory. Our maintenance manual trains your technicians to rebuild in hours, not weeks. This is not an accident — it's a design requirement." },
+              { icon:'/icons/icon-no-minimum.png', alt:'No minimum order custom motor', title:'No Minimum Order', desc:'We manufacture custom configurations for single-unit quantities. This eliminates the single most common obstacle for engineers who know exactly what they need but can\'t justify 100-unit tooling runs.' },
+              { icon:'/icons/icon-engineer-phone.png', alt:'Engineer answering the phone', title:'Engineers Answer the Phone', desc:"When you call PSI Automation, you speak with an engineer who works on motors daily. Not a sales coordinator. Not a routing system. A person who can answer your technical question right now." },
             ].map(v => (
-              <div key={v.title} style={{padding:'32px', background:'white', borderRadius:'var(--radius-md)', border:'1.5px solid var(--border)'}}>
-                <div style={{fontSize:'1.6rem', marginBottom:'16px'}}>{v.icon}</div>
-                <h3 style={{color:'var(--navy)', fontSize:'1.05rem', marginBottom:'12px'}}>{v.title}</h3>
-                <p style={{fontSize:'0.86rem', color:'var(--steel)', lineHeight:1.65, maxWidth:'none'}}>{v.desc}</p>
+              <div key={v.title} className="why-card">
+                <div className="why-card-icon">
+                  <img src={v.icon} alt={v.alt} className="why-card-icon-img" />
+                </div>
+                <h3>{v.title}</h3>
+                <p>{v.desc}</p>
               </div>
             ))}
           </div>

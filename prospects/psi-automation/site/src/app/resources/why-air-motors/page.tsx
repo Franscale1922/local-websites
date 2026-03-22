@@ -28,7 +28,7 @@ export default function WhyAirMotorsPage() {
 
           {[
             {
-              icon: '🔥',
+              icon: '/icons/icon-overheating.png', alt: 'Electric motor overheating',
               title: '1. Stall Behavior — Air Motors Win Definitively',
               body: `When an electric motor stalls, current spikes. The winding temperature rises rapidly. If the motor isn't protected, it burns. Even with thermal protection, a stalled electric motor represents a potential failure event requiring external intervention.
 
@@ -37,7 +37,7 @@ When a vane air motor stalls, it simply stops rotating — pressure equalizes ac
 This makes air motors the correct choice for any application where jamming or stall events are a regular occurrence: conveyors, mixing equipment, positioning systems, and actuators.`
             },
             {
-              icon: '💥',
+              icon: '/icons/icon-explosion-proof.png', alt: 'ATEX explosion-proof',
               title: '2. Explosion-Proof Classification — No Special Enclosure Required',
               body: `Electric motors used in classified hazardous locations (Class I, II, or III; Division 1 or 2) require expensive explosion-proof enclosures, sealed conduit, and certified wiring practices. An EX-rated electric motor can cost 3–5× its standard equivalent.
 
@@ -46,7 +46,7 @@ Vane air motors have no electrical components — there's nothing to spark. They
 PSI's motors can be operated in environments where an electric motor would require a $4,000 enclosure for a $800 motor.`
             },
             {
-              icon: '⚖️',
+              icon: '/icons/icon-power-to-weight.png', alt: 'Power to weight ratio',
               title: '3. Power-to-Weight Ratio — Critical in Mobile and Aerospace Applications',
               body: `A 5 HP electric motor typically weighs 35–55 lbs including its motor frame. A PSI vane air motor producing equivalent power weighs significantly less — often 60–75% of the electric equivalent. 
 
@@ -55,14 +55,14 @@ In aerospace applications, this weight difference directly impacts fuel consumpt
 The gap widens with increasing HP. Large electric motors become impractical for mobile applications; large air motors do not grow in weight proportionally.`
             },
             {
-              icon: '🌡️',
+              icon: '/icons/icon-extreme-temp.png', alt: 'Extreme temperature range',
               title: '4. Temperature Extremes — Air Motors Operate Where Electric Fails',
               body: `Electric motors have temperature limitations on both ends. Cold temperatures stiffen lubricants and degrade insulation flexibility. High temperatures degrade winding insulation regardless of load — an electric motor sitting in a 250°F environment will have reduced insulation life even at no load.
 
 PSI's vane air motors operate reliably from -40°F to +250°F in standard configuration, with high-temperature options available beyond that range. The cooling action of expanding compressed air creates additional thermal management — the motor actually runs cooler under load as air expansion absorbs heat.`
             },
             {
-              icon: '🔧',
+              icon: '/icons/icon-field-serviceable.png', alt: 'Field serviceable motor',
               title: '5. Field Serviceability — Reduce Total Cost of Ownership',
               body: `Electric motor failure typically means: remove motor, ship to a repair shop, wait 2–6 weeks, reinstall. For critical production equipment, this translates directly to lost production time.
 
@@ -72,7 +72,7 @@ The parts cost for a vane replacement is a fraction of motor replacement cost. O
             },
           ].map(section => (
             <div key={section.title} style={{marginBottom:'64px'}}>
-              <div style={{fontSize:'2rem', marginBottom:'16px'}}>{section.icon}</div>
+              <div style={{width:'80px',height:'80px',background:'white',borderRadius:'14px',display:'flex',alignItems:'center',justifyContent:'center',marginBottom:'20px',boxShadow:'0 4px 16px rgba(0,0,0,0.12)',border:'1.5px solid var(--border)'}}><img src={section.icon} alt={section.alt} style={{width:'68px',height:'68px',objectFit:'contain'}} /></div>
               <h2 style={{fontSize:'1.4rem', marginBottom:'20px', color:'var(--navy)'}}>{section.title}</h2>
               {section.body.split('\n\n').map((para, i) => (
                 <p key={i} style={{marginBottom:'16px', color:'var(--steel)', fontSize:'1rem', lineHeight:1.75, maxWidth:'none'}}>{para}</p>

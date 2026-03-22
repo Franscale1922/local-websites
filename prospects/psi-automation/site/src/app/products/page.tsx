@@ -55,7 +55,8 @@ export default function ProductsPage() {
                 desc: 'Bi-directional vane air motors. Face-mount design. Available in CDVB4 (3.5" dia) and CDV06 (6" dia) frames. From 1/4 HP at 6,200 RPM to high-torque configurations.',
                 count: counts.cdv,
                 badge: 'series-badge--cdv',
-                icon: '⚙️',
+                icon: '/icons/icon-cdv-series.png',
+                alt: 'CDV series bidirectional vane air motor',
               },
               {
                 series: 'DV',
@@ -63,7 +64,8 @@ export default function ProductsPage() {
                 desc: 'High-output unidirectional vane motors. 4", 6", 10", 20", 32", 42", and 62" frame sizes. Torque from 3 to 40,000 ft-lb at 30–90 PSI. Where maximum power matters.',
                 count: counts.dv,
                 badge: 'series-badge--dv',
-                icon: '🔩',
+                icon: '/icons/icon-dv-series.png',
+                alt: 'DV series high-output vane air motor',
               },
               {
                 series: 'DVA',
@@ -71,7 +73,8 @@ export default function ProductsPage() {
                 desc: 'Dual-speed vane motors with torque amplifier. Selectable low/high HP mode. Ideal for applications requiring variable speed without external control hardware.',
                 count: counts.dva,
                 badge: 'series-badge--dva',
-                icon: '🎛️',
+                icon: '/icons/icon-dva-series.png',
+                alt: 'DVA series dual-speed vane air motor',
               },
             ].map(s => (
               <div
@@ -81,7 +84,9 @@ export default function ProductsPage() {
                 onClick={() => setSeries(s.series as SeriesFilter)}
               >
                 <div style={{display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:'20px'}}>
-                  <div className="product-card-icon">{s.icon}</div>
+                  <div className="product-card-icon">
+                    <img src={s.icon} alt={s.alt} className="product-card-icon-img" />
+                  </div>
                   <span className={`series-badge ${s.badge}`}>{s.count} Models</span>
                 </div>
                 <h3>{s.name}</h3>

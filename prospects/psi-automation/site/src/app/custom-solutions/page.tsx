@@ -35,12 +35,12 @@ function RFQForm() {
 }
 
 const CUSTOM_CAPABILITIES = [
-  { icon: '⚙️', title: 'Modified Shaft Configurations', desc: 'Non-standard shaft diameters, lengths, keyways, splines, and thread forms. If you can draw it, we can manufacture it.' },
-  { icon: '🔩', title: 'Custom Mounting Flanges', desc: 'SAE, metric, and proprietary bolt patterns. We match your existing hardware footprint — no adapter plates required.' },
-  { icon: '🎚️', title: 'Modified Gear Ratios', desc: 'Need 1,200 RPM instead of 6,200? We offer integrated gearbox options to hit your exact output speed without sacrificing torque.' },
-  { icon: '🌡️', title: 'Extreme Temperature Options', desc: 'Standard motors operate from -40°F to +250°F. We offer high-temperature vane materials and seal compounds for even more demanding applications.' },
-  { icon: '💧', title: 'Oil-Free / Clean Environments', desc: 'Semiconductor, food processing, and clean-room compatible configurations. No lubricant injection to your air supply.' },
-  { icon: '⚡', title: 'High-Cycle / Continuous Duty', desc: 'Motors designed specifically for millions of cycles or 24/7 continuous operation. Different vane materials and bearing specifications.' },
+  { icon: '/icons/icon-shaft-config.png', alt: 'Custom shaft configurations', title: 'Modified Shaft Configurations', desc: 'Non-standard shaft diameters, lengths, keyways, splines, and thread forms. If you can draw it, we can manufacture it.' },
+  { icon: '/icons/icon-mounting-flange.png', alt: 'Custom mounting flanges', title: 'Custom Mounting Flanges', desc: 'SAE, metric, and proprietary bolt patterns. We match your existing hardware footprint — no adapter plates required.' },
+  { icon: '/icons/icon-gear-ratio.png', alt: 'Modified gear ratios', title: 'Modified Gear Ratios', desc: 'Need 1,200 RPM instead of 6,200? We offer integrated gearbox options to hit your exact output speed without sacrificing torque.' },
+  { icon: '/icons/icon-extreme-temp.png', alt: 'Extreme temperature options', title: 'Extreme Temperature Options', desc: 'Standard motors operate from -40°F to +250°F. We offer high-temperature vane materials and seal compounds for even more demanding applications.' },
+  { icon: '/icons/icon-oil-free.png', alt: 'Oil-free clean environment motor', title: 'Oil-Free / Clean Environments', desc: 'Semiconductor, food processing, and clean-room compatible configurations. No lubricant injection to your air supply.' },
+  { icon: '/icons/icon-high-cycle.png', alt: 'High-cycle continuous duty motor', title: 'High-Cycle / Continuous Duty', desc: 'Motors designed specifically for millions of cycles or 24/7 continuous operation. Different vane materials and bearing specifications.' },
 ];
 
 export default function CustomSolutionsPage() {
@@ -71,12 +71,14 @@ export default function CustomSolutionsPage() {
             <h2>What We Can Modify or Build from Scratch</h2>
             <p>These are the most common custom requests — but if you don&apos;t see your requirement here, ask. We engineer from specification, not from existing tooling constraints.</p>
           </div>
-          <div style={{display:'grid', gridTemplateColumns:'repeat(3, 1fr)', gap:'24px'}}>
+          <div className="why-grid">
             {CUSTOM_CAPABILITIES.map(c => (
-              <div key={c.title} style={{padding:'28px', border:'1.5px solid var(--border)', borderRadius:'var(--radius-md)'}}>
-                <div style={{fontSize:'1.4rem', marginBottom:'14px'}}>{c.icon}</div>
-                <h3 style={{color:'var(--navy)', fontSize:'1rem', marginBottom:'10px'}}>{c.title}</h3>
-                <p style={{fontSize:'0.86rem', color:'var(--steel)', lineHeight:1.6, maxWidth:'none'}}>{c.desc}</p>
+              <div key={c.title} className="why-card">
+                <div className="why-card-icon">
+                  <img src={c.icon} alt={c.alt} className="why-card-icon-img" />
+                </div>
+                <h3>{c.title}</h3>
+                <p>{c.desc}</p>
               </div>
             ))}
           </div>
