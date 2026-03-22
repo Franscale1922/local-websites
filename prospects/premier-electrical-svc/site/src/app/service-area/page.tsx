@@ -1,13 +1,7 @@
-import type { Metadata } from 'next';
+'use client';
 import SiteFooter from '../components/SiteFooter';
 import SiteNav from '../components/SiteNav';
 
-export const metadata: Metadata = {
-  title: 'Service Area | Premier Electrical Services — Skagit to Seattle, WA',
-  description: 'Premier Electrical Services serves Skagit, Whatcom, San Juan, Island, King, and Snohomish counties. Based in Mount Vernon, WA. Licensed, bonded, A+ BBB.',
-  alternates: { canonical: '/service-area' },
-  openGraph: { images: [{ url: '/images/hero-service-area.jpg', width: 1200, height: 630, alt: 'Premier Electrical Services coverage area from Bellingham to Seattle' }] },
-};
 
 const PHONE = '(360) 421-5230';
 const PHONE_TEL = 'tel:+13604215230';

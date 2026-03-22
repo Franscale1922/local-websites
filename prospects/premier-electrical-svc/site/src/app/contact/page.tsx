@@ -1,11 +1,7 @@
-import type { Metadata } from 'next';
+'use client';
+import { useState } from 'react';
 import SiteFooter from '../components/SiteFooter';
 import SiteNav from '../components/SiteNav';
-
-export const metadata: Metadata = {
-  title: 'Contact & Free Estimate | Premier Electrical Services — Mount Vernon, WA',
-  description: 'Get a free electrical estimate in Skagit, Whatcom, Island, San Juan, King, or Snohomish County. Call (360) 421-5230 or submit a request. Same-day response on most requests.',
-};
 
 const PHONE = '(360) 421-5230';
 const PHONE_TEL = 'tel:+13604215230';
@@ -24,6 +20,13 @@ const SERVICE_TYPES = [
 ];
 
 export default function ContactPage() {
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setFormSubmitted(true);
+  }
+
   return (
     <main>
       <SiteNav alwaysScrolled />
@@ -104,40 +107,57 @@ export default function ContactPage() {
             </div>
 
             <div className="contact-form">
-              <h2 style={{ marginBottom: '6px' }}>Submit a Request</h2>
-              <p className="contact-form-sub" style={{ marginBottom: '28px' }}>Tell us what you need. We&apos;ll get back to you fast — usually same day.</p>
-              <form>
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="contact-name">Full Name</label>
-                    <input id="contact-name" type="text" placeholder="Jane Smith" required />
+              {formSubmitted ? (
+                <div style={{ textAlign: 'center', padding: '60px 0' }}>
+                  <div style={{ marginBottom: '16px' }}>
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
                   </div>
-                  <div className="form-group">
-                    <label htmlFor="contact-phone">Phone Number</label>
-                    <input id="contact-phone" type="tel" placeholder="(360) 555-0100" required />
-                  </div>
+                  <h3 style={{ marginBottom: '10px', color: 'var(--color-primary)' }}>Got it — thanks.</h3>
+                  <p style={{ color: '#4a5568', fontSize: '0.9rem' }}>
+                    We&apos;ll be in touch shortly. You can also call us directly at{' '}
+                    <a href={PHONE_TEL} style={{ color: 'var(--color-accent)', fontWeight: 700 }}>{PHONE}</a>.
+                  </p>
                 </div>
-                <div className="form-group">
-                  <label htmlFor="contact-email">Email Address</label>
-                  <input id="contact-email" type="email" placeholder="you@example.com" />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="contact-service">What do you need?</label>
-                  <select id="contact-service" required>
-                    <option value="">Select a service type...</option>
-                    {SERVICE_TYPES.map(s => (
-                      <option key={s} value={s}>{s}</option>
-                    ))}
-                  </select>
-                </div>
-                <div className="form-group">
-                  <label htmlFor="contact-message">Tell us more (optional)</label>
-                  <textarea id="contact-message" placeholder="Brief description of your project or issue..." />
-                </div>
-                <button type="submit" className="btn btn-primary form-submit">
-                  Send My Request →
-                </button>
-              </form>
+              ) : (
+                <>
+                  <h2 style={{ marginBottom: '6px' }}>Submit a Request</h2>
+                  <p className="contact-form-sub" style={{ marginBottom: '28px' }}>Tell us what you need. We&apos;ll get back to you fast — usually same day.</p>
+                  <form onSubmit={handleSubmit}>
+                    <div className="form-row">
+                      <div className="form-group">
+                        <label htmlFor="contact-name">Full Name</label>
+                        <input id="contact-name" type="text" placeholder="Jane Smith" required />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="contact-phone">Phone Number</label>
+                        <input id="contact-phone" type="tel" placeholder="(360) 555-0100" required />
+                      </div>
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="contact-email">Email Address</label>
+                      <input id="contact-email" type="email" placeholder="you@example.com" />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="contact-service">What do you need?</label>
+                      <select id="contact-service" required>
+                        <option value="">Select a service type...</option>
+                        {SERVICE_TYPES.map(s => (
+                          <option key={s} value={s}>{s}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="contact-message">Tell us more (optional)</label>
+                      <textarea id="contact-message" placeholder="Brief description of your project or issue..." />
+                    </div>
+                    <button type="submit" className="btn btn-primary form-submit">
+                      Send My Request →
+                    </button>
+                  </form>
+                </>
+              )}
             </div>
           </div>
         </div>

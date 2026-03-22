@@ -4,7 +4,7 @@ import SiteNav from '../components/SiteNav';
 
 export const metadata: Metadata = {
   title: 'Recognition | Premier Electrical Services — Awards & Accreditations',
-  description: '5-time Best of the Best Skagit Valley, Skagit\'s Best Finalist, Expertise.com Top Pick, and BBB Accredited A+. See why homeowners across Skagit and Whatcom counties trust Premier Electrical Services.',
+  description: 'Four-time Best of the Best Skagit Valley winner, Skagit\'s Best Finalist, Expertise.com Top Pick, and BBB Accredited A+. See why homeowners across Skagit and Whatcom counties trust Premier Electrical Services.',
 };
 
 const PHONE = '(360) 421-5230';

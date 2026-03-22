@@ -94,6 +94,7 @@ export default function SiteFooter({
           <li><a href={PHONE_TEL}>{PHONE}</a></li>
           <li><a href="/contact">Free Estimate</a></li>
           <li><a href="/about">About Us</a></li>
+          <li><a href="/recognition">Recognition</a></li>
           <li><a href="/faq">FAQ</a></li>
           <li><a href="/service-area">Service Area</a></li>
         </ul></div>
