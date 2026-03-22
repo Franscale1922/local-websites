@@ -106,15 +106,17 @@ export default function Home() {
       </section>
 
       {/* ── AUDIENCE ICONS ── */}
-      <div className="audience-grid">
-        {INDUSTRIES.map(ind => (
-          <Link key={ind.label} href={ind.href} className="audience-item">
-            <div className="audience-icon-wrap">
-              <img src={ind.icon} alt={ind.alt} className="audience-icon-img" />
-            </div>
-            <div className="audience-label">{ind.label}</div>
-          </Link>
-        ))}
+      <div className="audience-section">
+        <div className="audience-grid">
+          {INDUSTRIES.map(ind => (
+            <Link key={ind.label} href={ind.href} className="audience-item">
+              <div className="audience-icon-wrap">
+                <img src={ind.icon} alt={ind.alt} className="audience-icon-img" />
+              </div>
+              <div className="audience-label">{ind.label}</div>
+            </Link>
+          ))}
+        </div>
       </div>
 
       {/* ── TRUST STRIP ── */}

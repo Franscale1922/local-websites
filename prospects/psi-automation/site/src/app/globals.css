@@ -619,55 +619,84 @@ p  { max-width: 70ch; line-height: 1.7; }
 }
 
 /* ── AUDIENCE ICONS ──────────────────────────────────────── */
+/* ── INDUSTRY AUDIENCE GRID ─────────────────────────────── */
+.audience-section {
+  padding: 56px max(5vw, 40px) 64px;
+  background: #f4f4f4;
+}
 .audience-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 1px;
-  background: var(--border);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .audience-item {
   background: white;
+  border: 2.5px solid rgba(140,21,21,0.15);
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 36px 20px;
+  padding: 28px 16px 26px;
   cursor: pointer;
-  transition: all var(--t-mid);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   color: var(--text-primary);
+  box-shadow: 0 2px 14px rgba(0,0,0,0.06);
 }
-.audience-item:hover { background: var(--crimson); }
+.audience-item:hover {
+  background: var(--crimson);
+  border-color: var(--crimson);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 48px rgba(140,21,21,0.35);
+}
 
+/* White icon frame — sits inside the colored card */
 .audience-icon-wrap {
-  /* No container — icon floats freely, slightly oversized */
+  width: 130px; height: 130px;         /* Large bold frame */
+  background: white;
+  border: 2.5px solid rgba(140,21,21,0.12);
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 14px;
-  transition: transform var(--t-mid);
-}
-.audience-icon-img {
-  width: 100px; height: 100px;       /* Oversized — fills the space boldly */
-  object-fit: contain;
-  transition: transform var(--t-mid);
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.12));
-}
-.audience-item:hover .audience-icon-img {
-  transform: scale(1.12) translateY(-4px);
+  margin-bottom: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07), inset 0 1px 0 rgba(255,255,255,0.8);
+  overflow: hidden;
 }
 .audience-item:hover .audience-icon-wrap {
-  transform: none; /* handled by img */
+  background: rgba(255,255,255,0.97);  /* Stays white inside — pops on crimson */
+  border-color: rgba(255,255,255,0.6);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2), 0 0 0 4px rgba(255,255,255,0.25);
+  transform: scale(1.04);
 }
 
+/* Icon image — large, fills the white frame */
+.audience-icon-img {
+  width: 112px; height: 112px;         /* Slightly oversized to feel robust */
+  object-fit: contain;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  mix-blend-mode: multiply;
+}
+.audience-item:hover .audience-icon-img {
+  transform: scale(1.08);
+  mix-blend-mode: normal;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+}
+
+/* Label */
 .audience-label {
-  font-size: 0.85rem;
-  font-weight: 800;
+  font-size: 0.82rem;
+  font-weight: 900;
   color: var(--crimson);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  transition: color var(--t-mid);
+  letter-spacing: 0.12em;
+  transition: color 0.25s ease;
 }
-.audience-item:hover .audience-label { color: white; }
+.audience-item:hover .audience-label { color: rgba(255,255,255,0.95); }
+
 
 /* ── PRODUCT CARDS ───────────────────────────────────────── */
 .products-grid {
