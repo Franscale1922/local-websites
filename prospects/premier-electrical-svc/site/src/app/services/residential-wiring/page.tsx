@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import FAQAccordion from '../../components/FAQAccordion';
 import SiteFooter from '../../components/SiteFooter';
+import SiteNav from '../../components/SiteNav';
 
 export const metadata: Metadata = {
   title: 'Residential Electrical Wiring | Premier Electrical Services — Skagit County, WA',
@@ -34,21 +35,7 @@ export default function ResidentialWiringPage() {
           { '@type': 'ListItem', position: 3, name: 'Residential Wiring', item: '/services/residential-wiring' },
         ],
       }) }} />
-
-      <nav className="nav nav--scrolled">
-        <a href="/" className="nav-logo">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.svg" alt="Premier Electrical Services" className="nav-logo-img" />
-        </a>
-        <ul className="nav-links">
-          <li><a href="/services" className="nav-link--active">Services</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/service-area">Service Area</a></li>
-          <li><a href="/faq">FAQ</a></li>
-          <li><a href="/contact" className="nav-cta">Get a Free Estimate</a></li>
-        </ul>
-        <a href={PHONE_TEL} className="btn btn-ghost-gold nav-mobile-cta" style={{ fontSize: '0.82rem', padding: '8px 16px' }}>Call Now</a>
-      </nav>
+      <SiteNav alwaysScrolled activePath="/services" />
 
       <section className="county-hero">
         {/* eslint-disable-next-line @next/next/no-img-element */}

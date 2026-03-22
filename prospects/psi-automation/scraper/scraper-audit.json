@@ -1,0 +1,1107 @@
+{
+  "generatedAt": "2026-03-21T21:47:21.628Z",
+  "totalMotors": 81,
+  "schematicsDownloaded": 81,
+  "schematicsMissing": [],
+  "incompleteDataCount": 28,
+  "incompleteData": [
+    {
+      "model": "DV6-857",
+      "missing": [
+        "psi60.maxSpeed"
+      ]
+    },
+    {
+      "model": "DV6-118",
+      "missing": [
+        "psi60.maxSpeed"
+      ]
+    },
+    {
+      "model": "DV20-F",
+      "missing": [
+        "psi60.maxSpeed"
+      ]
+    },
+    {
+      "model": "DV20-H",
+      "missing": [
+        "psi60.maxSpeed"
+      ]
+    },
+    {
+      "model": "DV20-350",
+      "missing": [
+        "psi60.maxSpeed"
+      ]
+    },
+    {
+      "model": "DV20-545",
+      "missing": [
+        "psi60.maxSpeed"
+      ]
+    },
+    {
+      "model": "DV20-857",
+      "missing": [
+        "psi60.maxSpeed"
+      ]
+    },
+    {
+      "model": "DV20-118",
+      "missing": [
+        "psi60.maxSpeed"
+      ]
+    },
+    {
+      "model": "DV20-191",
+      "missing": [
+        "psi60.maxSpeed"
+      ]
+    },
+    {
+      "model": "DV32-FL",
+      "missing": [
+        "psi30.stall",
+        "psi30.starting"
+      ]
+    },
+    {
+      "model": "DV32-FR",
+      "missing": [
+        "psi30.stall",
+        "psi30.starting"
+      ]
+    },
+    {
+      "model": "DV32-HL",
+      "missing": [
+        "psi30.stall",
+        "psi30.starting"
+      ]
+    },
+    {
+      "model": "DV32-HR",
+      "missing": [
+        "psi30.stall",
+        "psi30.starting"
+      ]
+    },
+    {
+      "model": "DV32-350R",
+      "missing": [
+        "psi30.stall",
+        "psi30.starting"
+      ]
+    },
+    {
+      "model": "DV32-350L",
+      "missing": [
+        "psi30.stall",
+        "psi30.starting"
+      ]
+    },
+    {
+      "model": "DV32-545L",
+      "missing": [
+        "psi30.stall",
+        "psi30.starting"
+      ]
+    },
+    {
+      "model": "DV32-545R",
+      "missing": [
+        "psi30.stall",
+        "psi30.starting"
+      ]
+    },
+    {
+      "model": "DV42-227",
+      "missing": [
+        "psi60.maxSpeed"
+      ]
+    },
+    {
+      "model": "DV42-350",
+      "missing": [
+        "psi60.maxSpeed"
+      ]
+    },
+    {
+      "model": "DV62-350R",
+      "missing": [
+        "psi30.stall",
+        "psi30.starting"
+      ]
+    },
+    {
+      "model": "DV62-350L",
+      "missing": [
+        "psi30.stall",
+        "psi30.starting"
+      ]
+    },
+    {
+      "model": "DVA-008",
+      "missing": [
+        "psi60.maxSpeed"
+      ]
+    },
+    {
+      "model": "DVA-012",
+      "missing": [
+        "psi60.maxSpeed"
+      ]
+    },
+    {
+      "model": "DVA-W",
+      "missing": [
+        "psi60.maxSpeed"
+      ]
+    },
+    {
+      "model": "DVA-026",
+      "missing": [
+        "psi60.maxSpeed"
+      ]
+    },
+    {
+      "model": "DVA-V2",
+      "missing": [
+        "psi60.maxSpeed"
+      ]
+    },
+    {
+      "model": "DVA-U",
+      "missing": [
+        "psi60.maxSpeed"
+      ]
+    },
+    {
+      "model": "DVA-079",
+      "missing": [
+        "psi60.maxSpeed"
+      ]
+    }
+  ],
+  "motors": [
+    {
+      "model": "CDVB4-001",
+      "series": "CDV",
+      "hp": 0.43,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/cdvb4-001-schematic.jpg",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "CDVB4-002",
+      "series": "CDV",
+      "hp": 0.42,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/cdvb4-002-schematic.jpg",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "CDVB4-003",
+      "series": "CDV",
+      "hp": 0.42,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/cdvb4-003-schematic.jpg",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "CDVB4-006",
+      "series": "CDV",
+      "hp": 0.42,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/cdvb4-006-schematic.jpg",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "CDVB4-009",
+      "series": "CDV",
+      "hp": 0.4,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/cdvb4-009-schematic.jpg",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "CDVB4-012",
+      "series": "CDV",
+      "hp": 0.4,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/cdvb4-012-schematic.jpg",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "CDVB4-016",
+      "series": "CDV",
+      "hp": 0.4,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/cdvb4-016-schematic.jpg",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "CDVB4-023",
+      "series": "CDV",
+      "hp": 0.4,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/cdvb4-023-schematic.jpg",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "CDVB4-041",
+      "series": "CDV",
+      "hp": 0.39,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/cdvb4-041-schematic.jpg",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "CDVB4-057",
+      "series": "CDV",
+      "hp": 0.39,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/cdvb4-057-schematic.jpg",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "CDVB4-077",
+      "series": "CDV",
+      "hp": 0.39,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/cdvb4-077-schematic.jpg",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "CDV06-001",
+      "series": "CDV",
+      "hp": 0.6,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/cdv06-001-schematic.jpg",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "CDV06-002",
+      "series": "CDV",
+      "hp": 0.57,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/cdv06-002-schematic.jpg",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "CDV06-003",
+      "series": "CDV",
+      "hp": 0.57,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/cdv06-003-schematic.jpg",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "CDV06-006",
+      "series": "CDV",
+      "hp": 0.57,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/cdv06-006-schematic.jpg",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "CDV06-009",
+      "series": "CDV",
+      "hp": 0.55,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/cdv06-009-schematic.jpg",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "CDV06-012",
+      "series": "CDV",
+      "hp": 0.55,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/cdv06-012-schematic.jpg",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "CDV06-016",
+      "series": "CDV",
+      "hp": 0.55,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/cdv06-016-schematic.jpg",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "CDV06-023",
+      "series": "CDV",
+      "hp": 0.55,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/cdv06-023-schematic.jpg",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "CDV06-041",
+      "series": "CDV",
+      "hp": 0.53,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/cdv06-041-schematic.jpg",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "CDV06-057",
+      "series": "CDV",
+      "hp": 0.53,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/cdv06-057-schematic.jpg",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "CDV06-077",
+      "series": "CDV",
+      "hp": 0.53,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/cdv06-077-schematic.jpg",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV4-003",
+      "series": "DV",
+      "hp": 4,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv4-003-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV4-008",
+      "series": "DV",
+      "hp": 4,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv4-008-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV4-011",
+      "series": "DV",
+      "hp": 4,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv4-011-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV4-018",
+      "series": "DV",
+      "hp": 4,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv4-018-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV4-026",
+      "series": "DV",
+      "hp": 4,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv4-026-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV4-190",
+      "series": "DV",
+      "hp": 4,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv4-190-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV6-F",
+      "series": "DV",
+      "hp": 6,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv6-f-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV6-H",
+      "series": "DV",
+      "hp": 6,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv6-h-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV6-K",
+      "series": "DV",
+      "hp": 6,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv6-k-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV6-857",
+      "series": "DV",
+      "hp": 6,
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv6-857-schematic.gif",
+      "missingFields": [
+        "psi60.maxSpeed"
+      ],
+      "error": null
+    },
+    {
+      "model": "DV6-118",
+      "series": "DV",
+      "hp": 6,
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv6-118-schematic.gif",
+      "missingFields": [
+        "psi60.maxSpeed"
+      ],
+      "error": null
+    },
+    {
+      "model": "DV6-191",
+      "series": "DV",
+      "hp": 6,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv6-191-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV6-336",
+      "series": "DV",
+      "hp": 6,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv6-336-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV6-429",
+      "series": "DV",
+      "hp": 6,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv6-429-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV10-F",
+      "series": "DV",
+      "hp": 10,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv10-f-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV10-H",
+      "series": "DV",
+      "hp": 10,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv10-h-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV10-K",
+      "series": "DV",
+      "hp": 10,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv10-k-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV10-857",
+      "series": "DV",
+      "hp": 10,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv10-857-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV10-118",
+      "series": "DV",
+      "hp": 10,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv10-118-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV10-191",
+      "series": "DV",
+      "hp": 10,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv10-191-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV10-336",
+      "series": "DV",
+      "hp": 10,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv10-336-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV10-429",
+      "series": "DV",
+      "hp": 10,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv10-429-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV10-KA42",
+      "series": "DV",
+      "hp": 10,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv10-ka42-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV10-118B26",
+      "series": "DV",
+      "hp": 10,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv10-118b26-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV10-118D125",
+      "series": "DV",
+      "hp": 10,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv10-118d125-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV20-F",
+      "series": "DV",
+      "hp": 20,
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv20-f-schematic.gif",
+      "missingFields": [
+        "psi60.maxSpeed"
+      ],
+      "error": null
+    },
+    {
+      "model": "DV20-H",
+      "series": "DV",
+      "hp": 20,
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv20-h-schematic.gif",
+      "missingFields": [
+        "psi60.maxSpeed"
+      ],
+      "error": null
+    },
+    {
+      "model": "DV20-350",
+      "series": "DV",
+      "hp": 20,
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv20-350-schematic.gif",
+      "missingFields": [
+        "psi60.maxSpeed"
+      ],
+      "error": null
+    },
+    {
+      "model": "DV20-545",
+      "series": "DV",
+      "hp": 20,
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv20-545-schematic.gif",
+      "missingFields": [
+        "psi60.maxSpeed"
+      ],
+      "error": null
+    },
+    {
+      "model": "DV20-857",
+      "series": "DV",
+      "hp": 20,
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv20-857-schematic.gif",
+      "missingFields": [
+        "psi60.maxSpeed"
+      ],
+      "error": null
+    },
+    {
+      "model": "DV20-118",
+      "series": "DV",
+      "hp": 20,
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv20-118-schematic.gif",
+      "missingFields": [
+        "psi60.maxSpeed"
+      ],
+      "error": null
+    },
+    {
+      "model": "DV20-191",
+      "series": "DV",
+      "hp": 20,
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv20-191-schematic.gif",
+      "missingFields": [
+        "psi60.maxSpeed"
+      ],
+      "error": null
+    },
+    {
+      "model": "DV20-118C26",
+      "series": "DV",
+      "hp": 20,
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv20-118c26-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DV32-FL",
+      "series": "DV",
+      "hp": 32,
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv32-fl-schematic.gif",
+      "missingFields": [
+        "psi30.stall",
+        "psi30.starting"
+      ],
+      "error": null
+    },
+    {
+      "model": "DV32-FR",
+      "series": "DV",
+      "hp": 32,
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv32-fr-schematic.gif",
+      "missingFields": [
+        "psi30.stall",
+        "psi30.starting"
+      ],
+      "error": null
+    },
+    {
+      "model": "DV32-HL",
+      "series": "DV",
+      "hp": 32,
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv32-hl-schematic.gif",
+      "missingFields": [
+        "psi30.stall",
+        "psi30.starting"
+      ],
+      "error": null
+    },
+    {
+      "model": "DV32-HR",
+      "series": "DV",
+      "hp": 32,
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv32-hr-schematic.gif",
+      "missingFields": [
+        "psi30.stall",
+        "psi30.starting"
+      ],
+      "error": null
+    },
+    {
+      "model": "DV32-350R",
+      "series": "DV",
+      "hp": 32,
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv32-350r-schematic.gif",
+      "missingFields": [
+        "psi30.stall",
+        "psi30.starting"
+      ],
+      "error": null
+    },
+    {
+      "model": "DV32-350L",
+      "series": "DV",
+      "hp": 32,
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv32-350l-schematic.gif",
+      "missingFields": [
+        "psi30.stall",
+        "psi30.starting"
+      ],
+      "error": null
+    },
+    {
+      "model": "DV32-545L",
+      "series": "DV",
+      "hp": 32,
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv32-545l-schematic.gif",
+      "missingFields": [
+        "psi30.stall",
+        "psi30.starting"
+      ],
+      "error": null
+    },
+    {
+      "model": "DV32-545R",
+      "series": "DV",
+      "hp": 32,
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv32-545r-schematic.gif",
+      "missingFields": [
+        "psi30.stall",
+        "psi30.starting"
+      ],
+      "error": null
+    },
+    {
+      "model": "DV42-227",
+      "series": "DV",
+      "hp": 42,
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv42-227-schematic.gif",
+      "missingFields": [
+        "psi60.maxSpeed"
+      ],
+      "error": null
+    },
+    {
+      "model": "DV42-350",
+      "series": "DV",
+      "hp": 42,
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv42-350-schematic.gif",
+      "missingFields": [
+        "psi60.maxSpeed"
+      ],
+      "error": null
+    },
+    {
+      "model": "DV62-350R",
+      "series": "DV",
+      "hp": 62,
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv62-350r-schematic.gif",
+      "missingFields": [
+        "psi30.stall",
+        "psi30.starting"
+      ],
+      "error": null
+    },
+    {
+      "model": "DV62-350L",
+      "series": "DV",
+      "hp": 62,
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dv62-350l-schematic.gif",
+      "missingFields": [
+        "psi30.stall",
+        "psi30.starting"
+      ],
+      "error": null
+    },
+    {
+      "model": "DVAR-T2",
+      "series": "DVA",
+      "hp": {
+        "low": 0.25,
+        "high": null
+      },
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dvar-t2-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DVAR-994",
+      "series": "DVA",
+      "hp": {
+        "low": 0.25,
+        "high": null
+      },
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dvar-994-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DVA-003",
+      "series": "DVA",
+      "hp": {
+        "low": 0.75,
+        "high": 2
+      },
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dva-003-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DVA-004",
+      "series": "DVA",
+      "hp": {
+        "low": 0.75,
+        "high": 2
+      },
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dva-004-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DVA-008",
+      "series": "DVA",
+      "hp": {
+        "low": 0.75,
+        "high": 2
+      },
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dva-008-schematic.gif",
+      "missingFields": [
+        "psi60.maxSpeed"
+      ],
+      "error": null
+    },
+    {
+      "model": "DVA-012",
+      "series": "DVA",
+      "hp": {
+        "low": 0.75,
+        "high": 2
+      },
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dva-012-schematic.gif",
+      "missingFields": [
+        "psi60.maxSpeed"
+      ],
+      "error": null
+    },
+    {
+      "model": "DVA-W",
+      "series": "DVA",
+      "hp": {
+        "low": 0.75,
+        "high": 2
+      },
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dva-w-schematic.gif",
+      "missingFields": [
+        "psi60.maxSpeed"
+      ],
+      "error": null
+    },
+    {
+      "model": "DVA-026",
+      "series": "DVA",
+      "hp": {
+        "low": 0.75,
+        "high": 2
+      },
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dva-026-schematic.gif",
+      "missingFields": [
+        "psi60.maxSpeed"
+      ],
+      "error": null
+    },
+    {
+      "model": "DVA-V2",
+      "series": "DVA",
+      "hp": {
+        "low": 0.75,
+        "high": 2
+      },
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dva-v2-schematic.gif",
+      "missingFields": [
+        "psi60.maxSpeed"
+      ],
+      "error": null
+    },
+    {
+      "model": "DVA-U",
+      "series": "DVA",
+      "hp": {
+        "low": 0.75,
+        "high": 2
+      },
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dva-u-schematic.gif",
+      "missingFields": [
+        "psi60.maxSpeed"
+      ],
+      "error": null
+    },
+    {
+      "model": "DVA-079",
+      "series": "DVA",
+      "hp": {
+        "low": 0.75,
+        "high": null
+      },
+      "dataComplete": false,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dva-079-schematic.gif",
+      "missingFields": [
+        "psi60.maxSpeed"
+      ],
+      "error": null
+    },
+    {
+      "model": "DVA-207",
+      "series": "DVA",
+      "hp": {
+        "low": 0.75,
+        "high": 2
+      },
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dva-207-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DVA-322",
+      "series": "DVA",
+      "hp": {
+        "low": 0.75,
+        "high": 2
+      },
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dva-322-schematic.gif",
+      "missingFields": [],
+      "error": null
+    },
+    {
+      "model": "DVA-640",
+      "series": "DVA",
+      "hp": {
+        "low": 0.75,
+        "high": null
+      },
+      "dataComplete": true,
+      "schematicFound": true,
+      "schematicPath": "/motors/schematics/dva-640-schematic.gif",
+      "missingFields": [],
+      "error": null
+    }
+  ]
+}

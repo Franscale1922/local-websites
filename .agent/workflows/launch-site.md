@@ -44,6 +44,40 @@ This file covers **Stage 1 only.** When the client converts, switch to the `/cli
 
    Add more pages as the industry warrants (e.g. `/gallery`, `/projects`, `/blog`).
 
+4. **🎨 BRAND COLORS ARE NON-NEGOTIABLE — USE THE CLIENT'S COLORS, ALWAYS.**
+   The client has an emotional connection to their existing brand. A site that looks like a completely different company reduces conversion. Before writing a single CSS variable:
+   - Screenshot their existing website, logo, social media, or any public-facing asset
+   - Extract the actual hex colors (primary, secondary, accent) — use a color picker if needed
+   - Use those exact colors as your design system base
+   - **Never invent a palette.** Generic navy + orange, navy + yellow, blue + white are not brand colors — they are defaults. Defaulting is not acceptable.
+   - If the client has NO existing brand whatsoever (no site, no logo, no social): note this explicitly, then choose colors based on industry feel AND document your reasoning in `build-plan.md` for human review.
+
+5. **🔢 STATISTICS MUST BE LARGE, COLORFUL, AND IMPRESSIVE — NO EXCEPTIONS.**
+   Callout stats (years in business, units sold, HP range, locations, etc.) are among the highest-converting elements on any B2B or service page. They must be designed to stop the eye:
+   - **Number size:** minimum `3.5rem`, ideally `4–5rem` or larger. Never smaller.
+   - **Number color:** use the primary brand accent color — never white-on-dark or grey-on-white
+   - **Labels:** `0.75rem+`, uppercase, high contrast — never muted or faded
+   - **Never blend in.** If the stat could be missed on a quick scroll, it is wrong. Make it impossible to ignore.
+
+6. **🎯 ICONS MUST BE SIZED AND STYLED TO HAVE VISUAL WEIGHT — NO TINY EMOJI.**
+   Icons that are undersized or unstyled read as clipart and undermine credibility. Every icon used on the site must follow these rules:
+   - **Container minimum size:** 72px × 72px for standalone icons (audience, category, feature). 56px for card/inline use.
+   - **Icon size inside container:** minimum 2rem for standalone, 1.8rem for card use
+   - **Container treatment:** must use a colored background — brand-tinted (e.g. `rgba(primary, 0.10)`), solid brand color, or gradient. A plain grey/white background is not acceptable.
+   - **Hover state:** icons must respond to hover — scale transform, color fill, or shadow glow minimum
+   - **Color on hover:** the container should fill with the brand primary color on hover, icon becomes white
+
+7. **🤖 GENERATE CUSTOM AI ILLUSTRATIONS — NEVER USE EMOJI AS ICONS.**
+   Emoji render as generic OS-level clipart and immediately signal a low-effort, template-built site. They destroy credibility with B2B clients. Every icon on the site must be a custom AI-generated illustration:
+   - **Use the `generate_image` tool** to create all section icons before building any page that contains icon sets
+   - **Style prompt formula:** `"A custom flat cartoon illustration of [SUBJECT], clean modern bold graphic style, [PRIMARY COLOR] and [SECONDARY COLOR] color palette, [INDUSTRY] feel, white background, square format, centered composition, no text, high quality vector-style illustration"`
+   - Generate icons in parallel (all in one batch) — do not generate one at a time
+   - Copy generated PNGs to `public/icons/` in the site directory
+   - Reference via `<img src="/icons/[name].png" />` — never render emoji strings directly in JSX
+   - Each icon must have descriptive `alt` text for accessibility
+   - Minimum image resolution: 512×512 (the generator default is sufficient)
+   - Icons should all share a consistent style and color palette — generate all icons in a single session so they feel like a cohesive set
+
 ---
 
 ## Phase 0 — Qualify the Prospect
@@ -172,6 +206,15 @@ This phase runs before any design or copy work. Its output shapes the architectu
 18. Select template (restaurant / lodging / professional-services / retail-boutique / auto-services / outdoor-adventure)
 
 19. **Confirm page architecture** against the standard page set in Hard Rules above. Add any industry-specific pages flagged in LLM Research Synthesis.
+
+19a. **🎨 SET BRAND COLORS BEFORE ANY CSS — HARD STOP.**
+    Before touching `globals.css` or any design file:
+    - Pull up the client's existing website screenshot (captured in Phase 1, Step 9)
+    - Identify: primary color (dominant nav/header), secondary color (accent/CTA), background treatment
+    - Convert to hex. If the existing site has no clear palette, check their logo, Google Business profile cover photo, or social media header
+    - Open `globals.css` and set `--color-primary`, `--color-secondary`, `--color-accent` to the extracted values
+    - Document the color decisions in `build-plan.md` under `## Brand Direction`
+    - ⛔ Do not proceed to any page builds until this is locked in
 
 // turbo
 20. Apply copy: `node tools/apply-copy.js --slug [slug] --template [template]`

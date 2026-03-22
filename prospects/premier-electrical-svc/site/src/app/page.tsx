@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import SiteFooter from './components/SiteFooter';
+import SiteNav from './components/SiteNav';
 
 const SITE = {
   name: 'Premier Electrical Services',
@@ -242,15 +243,8 @@ const SITE = {
 };
 
 export default function Home() {
-  const [scrolled, setScrolled] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-  useEffect(() => {
-    const h = () => setScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', h, { passive: true });
-    return () => window.removeEventListener('scroll', h);
-  }, []);
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -286,21 +280,7 @@ export default function Home() {
       </div>
 
       {/* NAV */}
-      <nav className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
-        <a href="/" className="nav-logo">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.svg" alt="Premier Electrical Services" className="nav-logo-img" />
-        </a>
-        <ul className="nav-links">
-          {SITE.navLinks.map(l => (
-            <li key={l.label}><a href={l.href}>{l.label}</a></li>
-          ))}
-          <li><a href="/contact" className="nav-cta">Get a Free Estimate</a></li>
-        </ul>
-        <a href={SITE.phoneTel} className="btn btn-ghost-gold nav-mobile-cta" style={{ fontSize: '0.82rem', padding: '8px 16px' }}>
-          Call Now
-        </a>
-      </nav>
+      <SiteNav />
 
       {/* HERO */}
       <section className="hero" id="home">

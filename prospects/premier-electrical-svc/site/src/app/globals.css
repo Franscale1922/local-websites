@@ -129,10 +129,177 @@ p { max-width: 68ch; }
 }
 .nav-cta:hover { background: var(--color-accent-dark) !important; color: var(--color-primary) !important; }
 
-/* NAV MOBILE TOGGLE */
+/* NAV MOBILE CTA (call now) */
 .nav-mobile-cta {
   display: none;
 }
+
+/* ============================================================
+   HAMBURGER BUTTON
+   ============================================================ */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 22px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 201;
+  flex-shrink: 0;
+}
+.hamburger-bar {
+  display: block;
+  width: 100%;
+  height: 2.5px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+  transform-origin: center;
+}
+/* Animate to X when open */
+.hamburger--open .hamburger-bar:nth-child(1) {
+  transform: translateY(9.75px) rotate(45deg);
+}
+.hamburger--open .hamburger-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger--open .hamburger-bar:nth-child(3) {
+  transform: translateY(-9.75px) rotate(-45deg);
+}
+
+/* ============================================================
+   MOBILE MENU OVERLAY
+   ============================================================ */
+.mobile-menu {
+  display: none; /* Only shown on mobile via media query */
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+}
+.mobile-menu--open {
+  pointer-events: all;
+}
+
+/* Backdrop */
+.mobile-menu-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 15, 28, 0.6);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.mobile-menu--open .mobile-menu-backdrop {
+  opacity: 1;
+}
+
+/* Slide-in Panel */
+.mobile-menu-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(88vw, 360px);
+  background: var(--color-primary);
+  border-left: 1px solid rgba(245,166,35,0.15);
+  display: flex;
+  flex-direction: column;
+  padding: 0 28px 32px;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -12px 0 48px rgba(0,0,0,0.5);
+}
+.mobile-menu--open .mobile-menu-panel {
+  transform: translateX(0);
+}
+
+/* Close button inside panel */
+.mobile-menu-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.08);
+  border: none;
+  border-radius: 8px;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.mobile-menu-close:hover {
+  background: rgba(245,166,35,0.2);
+  color: var(--color-accent);
+}
+
+/* Logo area inside panel */
+.mobile-menu-logo {
+  padding: 24px 0 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 24px;
+}
+
+/* Nav links */
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+.mobile-menu-link {
+  display: block;
+  padding: 14px 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  letter-spacing: -0.01em;
+  transition: color var(--transition-fast), padding-left var(--transition-fast);
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.25s ease, transform 0.25s ease, color 0.15s ease, padding-left 0.15s ease;
+}
+.mobile-menu--open .mobile-menu-link {
+  opacity: 1;
+  transform: translateX(0);
+}
+.mobile-menu-link:hover {
+  color: var(--color-accent);
+  padding-left: 6px;
+}
+.mobile-menu-link--active {
+  color: var(--color-accent) !important;
+}
+
+/* CTAs at bottom of panel */
+.mobile-menu-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Footer inside panel */
+.mobile-menu-footer {
+  margin-top: 24px;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.7;
+  text-align: center;
+}
+
 
 /* HERO */
 .hero {
@@ -502,6 +669,8 @@ p { max-width: 68ch; }
   .nav { padding: 0 20px; }
   .nav-links { display: none; }
   .nav-mobile-cta { display: flex; }
+  .hamburger { display: flex; }
+  .mobile-menu { display: block; }
   .hero h1 { font-size: clamp(2rem, 7vw, 2.8rem); }
   .hero-trust { gap: 24px; }
   .hero-award-fan { display: none; }

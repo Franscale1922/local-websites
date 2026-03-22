@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import SiteFooter from '../components/SiteFooter';
+import SiteNav from '../components/SiteNav';
 
 export const metadata: Metadata = {
   title: 'All Electrical Services | Premier Electrical Services — Skagit & Puget Sound, WA',
@@ -71,21 +72,7 @@ const SERVICES = [
 export default function ServicesPage() {
   return (
     <main>
-      <nav className="nav nav--scrolled">
-        <a href="/" className="nav-logo">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.svg" alt="Premier Electrical Services" className="nav-logo-img" />
-        </a>
-        <ul className="nav-links">
-          <li><a href="/services" className="nav-link--active">Services</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/recognition">Recognition</a></li>
-          <li><a href="/service-area">Service Area</a></li>
-          <li><a href="/faq">FAQ</a></li>
-          <li><a href="/contact" className="nav-cta">Get a Free Estimate</a></li>
-        </ul>
-        <a href={PHONE_TEL} className="btn btn-ghost-gold nav-mobile-cta" style={{ fontSize: '0.82rem', padding: '8px 16px' }}>Call Now</a>
-      </nav>
+      <SiteNav alwaysScrolled activePath="/services" />
 
       {/* PAGE HERO — full bleed with electrician photo */}
       <section className="services-page-hero">

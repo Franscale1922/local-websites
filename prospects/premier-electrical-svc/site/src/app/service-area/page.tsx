@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import SiteFooter from '../components/SiteFooter';
+import SiteNav from '../components/SiteNav';
 
 export const metadata: Metadata = {
   title: 'Service Area | Premier Electrical Services — Skagit to Seattle, WA',
@@ -59,21 +60,7 @@ const COUNTIES = [
 export default function ServiceAreaPage() {
   return (
     <main>
-      <nav className="nav nav--scrolled">
-        <a href="/" className="nav-logo">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.svg" alt="Premier Electrical Services" className="nav-logo-img" />
-        </a>
-        <ul className="nav-links">
-          <li><a href="/services">Services</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/recognition">Recognition</a></li>
-          <li><a href="/service-area" className="nav-link--active">Service Area</a></li>
-          <li><a href="/faq">FAQ</a></li>
-          <li><a href="/contact" className="nav-cta">Get a Free Estimate</a></li>
-        </ul>
-        <a href={PHONE_TEL} className="btn btn-ghost-gold nav-mobile-cta" style={{ fontSize: '0.82rem', padding: '8px 16px' }}>Call Now</a>
-      </nav>
+      <SiteNav alwaysScrolled activePath="/service-area" />
 
       {/* HERO — Aerial Skagit Valley at golden hour */}
       <section className="county-hero">
