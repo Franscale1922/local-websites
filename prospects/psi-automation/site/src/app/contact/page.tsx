@@ -72,21 +72,30 @@ export default function ContactPage() {
               <div className="eyebrow">Direct Contact</div>
               <h2 style={{fontSize:'1.6rem', marginBottom:'28px'}}>Reach Our Engineers</h2>
 
-              {[
-                { icon:'📞', label:'Toll Free Phone', value:'800-392-3602', sub:'Mon–Fri 8am–5pm PT', href:'tel:8003923602' },
-                { icon:'✉️', label:'Email', value:'sales@psiautomation.com', sub:'Typical response: same business day', href:'mailto:sales@psiautomation.com' },
-                { icon:'📍', label:'Location', value:'3717 Omni Park Taxiway', sub:'Sandpoint, ID 83864 · Mailing: PO Box 1487', href:'https://maps.google.com/?q=Sandpoint+ID+83864' },
-              ].map(c => (
-                <a key={c.label} href={c.href} target={c.icon === '📍' ? '_blank' : undefined} rel="noopener noreferrer"
-                  style={{display:'flex', gap:'16px', padding:'20px 0', borderBottom:'1px solid var(--border)', textDecoration:'none', transition:'all 0.15s'}}>
-                  <div style={{fontSize:'1.4rem', flexShrink:0, marginTop:'2px'}}>{c.icon}</div>
-                  <div>
-                    <div style={{fontSize:'0.72rem', fontWeight:700, textTransform:'uppercase', letterSpacing:'0.1em', color:'var(--steel)', marginBottom:'4px'}}>{c.label}</div>
-                    <div style={{fontWeight:700, color:'var(--navy)', fontSize:'1rem'}}>{c.value}</div>
-                    <div style={{fontSize:'0.8rem', color:'var(--steel-light)', marginTop:'2px'}}>{c.sub}</div>
-                  </div>
-                </a>
-              ))}
+              <div style={{display:'flex', flexDirection:'column', gap:'4px'}}>
+                {[
+                  { icon:'/icons/icon-engineer-phone.png', alt:'Call PSI Automation', label:'Toll Free Phone', value:'800-392-3602', sub:'Mon–Fri 8am–5pm PT', href:'tel:8003923602' },
+                  { icon:'/icons/icon-no-minimum.png', alt:'Email PSI Automation', label:'Email', value:'sales@psiautomation.com', sub:'Typical response: same business day', href:'mailto:sales@psiautomation.com' },
+                  { icon:'/icons/icon-field-serviceable.png', alt:'PSI Automation location', label:'Location', value:'3717 Omni Park Taxiway', sub:'Sandpoint, ID 83864 · Mailing: PO Box 1487', href:'https://maps.google.com/?q=Sandpoint+ID+83864' },
+                ].map(c => (
+                  <a key={c.label} href={c.href} target={c.label === 'Location' ? '_blank' : undefined} rel="noopener noreferrer"
+                    style={{display:'flex', alignItems:'center', gap:'16px', padding:'16px', borderRadius:'12px', background:'var(--bg-light)', textDecoration:'none', transition:'all 0.2s', border:'1.5px solid var(--border)'}}
+                    onMouseEnter={e => (e.currentTarget.style.background='white')}
+                    onMouseLeave={e => (e.currentTarget.style.background='var(--bg-light)')}
+                  >
+                    <div style={{width:'56px', height:'56px', background:'var(--crimson)', borderRadius:'12px', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0}}>
+                      <div style={{width:'40px', height:'40px', background:'white', borderRadius:'8px', display:'flex', alignItems:'center', justifyContent:'center'}}>
+                        <img src={c.icon} alt={c.alt} style={{width:'34px', height:'34px', objectFit:'contain'}} />
+                      </div>
+                    </div>
+                    <div>
+                      <div style={{fontSize:'0.72rem', fontWeight:700, textTransform:'uppercase', letterSpacing:'0.1em', color:'var(--steel)', marginBottom:'4px'}}>{c.label}</div>
+                      <div style={{fontWeight:700, color:'var(--navy)', fontSize:'0.95rem'}}>{c.value}</div>
+                      <div style={{fontSize:'0.78rem', color:'var(--steel-light)', marginTop:'2px'}}>{c.sub}</div>
+                    </div>
+                  </a>
+                ))}
+              </div>
 
               <div style={{marginTop:'32px', background:'var(--bg-light)', borderRadius:'var(--radius-md)', padding:'24px'}}>
                 <h4 style={{color:'var(--navy)', marginBottom:'12px'}}>What to Have Ready</h4>

@@ -8,11 +8,11 @@ export const metadata = {
 };
 
 const INDUSTRIES = [
-  { slug:'aerospace', icon:'✈️', title:'Aerospace', desc:'Power-to-weight critical applications. Ground support equipment, fuel system testing, actuation.', detail:'Where every pound of motor weight is weight not carried by the aircraft.' },
-  { slug:'automotive', icon:'🏭', title:'Automotive', desc:'High-cycle continuous operation. Assembly line tooling, testing rigs, fixture actuation.', detail:'No thermal overload failures on the line. Air motors restart instantly.' },
-  { slug:'chemical', icon:'⚗️', title:'Chemical', desc:'Explosion-proof operation without EX enclosures. Mixing, agitation, pump drives.', detail:'No sparks, no special enclosures required in classified atmospheres.' },
-  { slug:'mining', icon:'⛏️', title:'Mining', desc:'Field-serviceable in remote locations. Drill drives, conveyor power, extraction.', detail:'Rebuilt underground without returning to the factory or a shop.' },
-  { slug:'petroleum', icon:'🛢️', title:'Petroleum', desc:'Up to 70 HP for drilling and extraction. Safe in gas-rich environments.', detail:'Our DV62 series handles 70 HP — the most demanding extraction applications.' },
+  { slug:'aerospace', icon:'/icons/icon-aerospace.png', alt:'Aerospace jet illustration', title:'Aerospace', desc:'Power-to-weight critical applications. Ground support equipment, fuel system testing, actuation.', detail:'Where every pound of motor weight is weight not carried by the aircraft.' },
+  { slug:'automotive', icon:'/icons/icon-automotive.png', alt:'Automotive manufacturing illustration', title:'Automotive', desc:'High-cycle continuous operation. Assembly line tooling, testing rigs, fixture actuation.', detail:'No thermal overload failures on the line. Air motors restart instantly.' },
+  { slug:'chemical', icon:'/icons/icon-chemical.png', alt:'Chemical processing plant illustration', title:'Chemical', desc:'Explosion-proof operation without EX enclosures. Mixing, agitation, pump drives.', detail:'No sparks, no special enclosures required in classified atmospheres.' },
+  { slug:'mining', icon:'/icons/icon-mining.png', alt:'Mining tunnel boring machine illustration', title:'Mining', desc:'Field-serviceable in remote locations. Drill drives, conveyor power, extraction.', detail:'Rebuilt underground without returning to the factory or a shop.' },
+  { slug:'petroleum', icon:'/icons/icon-petroleum.png', alt:'Oil pump jack illustration', title:'Petroleum', desc:'Up to 70 HP for drilling and extraction. Safe in gas-rich environments.', detail:'Our DV62 series handles 70 HP — the most demanding extraction applications.' },
 ];
 
 export default function ApplicationsPage() {
@@ -31,18 +31,18 @@ export default function ApplicationsPage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--navy">
         <div className="container">
-          <div style={{display:'grid', gridTemplateColumns:'repeat(2, 1fr)', gap:'24px'}}>
+          <div className="audience-grid">
             {INDUSTRIES.map(ind => (
-              <Link key={ind.slug} href={`/applications/${ind.slug}`} className="product-card">
-                <div style={{display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:'20px'}}>
-                  <div className="product-card-icon">{ind.icon}</div>
+              <Link key={ind.slug} href={`/applications/${ind.slug}`} className="audience-card">
+                <div className="audience-icon-wrap">
+                  <img src={ind.icon} alt={ind.alt} className="audience-icon-img" />
                 </div>
                 <h3>{ind.title}</h3>
-                <p style={{marginBottom:'10px'}}>{ind.desc}</p>
-                <p style={{fontSize:'0.84rem', color:'var(--orange)', fontStyle:'italic', fontWeight:600}}>{ind.detail}</p>
-                <div className="product-card-arrow">View Applications →</div>
+                <p>{ind.desc}</p>
+                <p style={{fontSize:'0.82rem', color:'rgba(255,255,255,0.6)', fontStyle:'italic', marginTop:'8px'}}>{ind.detail}</p>
+                <div style={{marginTop:'16px', fontSize:'0.82rem', fontWeight:700, color:'rgba(255,255,255,0.55)', letterSpacing:'0.04em'}}>View Applications →</div>
               </Link>
             ))}
           </div>
