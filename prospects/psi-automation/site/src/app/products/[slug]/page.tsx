@@ -18,7 +18,7 @@ export default function MotorDetailPage({ params }: Props) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
   const hp = getHPDisplay(motor.hp);
-  const drawing = motor.schematicImage || DEMO_DRAWING;
+  const drawing = DEMO_DRAWING;
 
   const psiRows = [
     { psi: 80, data: motor.torque.psi80 },
