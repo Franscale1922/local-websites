@@ -1,36 +1,31 @@
+'use client';
+import { useState } from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
 import { motors, getMotorBySlug, getHPDisplay } from '../../../data/motors';
 
+// Shared engineering drawing used for all motors (demo)
+const DEMO_DRAWING = '/motor-drawing.png';
+
 interface Props { params: { slug: string } }
-
-export function generateStaticParams() {
-  return motors.map(m => ({ slug: m.slug }));
-}
-
-export function generateMetadata({ params }: Props) {
-  const motor = getMotorBySlug(params.slug);
-  if (!motor) return { title: 'Motor Not Found' };
-  return {
-    title: `${motor.model} — ${getHPDisplay(motor.hp)} Vane Air Motor | PSI Automation`,
-    description: `Full specs for the PSI Automation ${motor.model}: ${getHPDisplay(motor.hp)}, stall torque ${motor.torque.psi80.stall} lbf·ft @ 80 PSI. Download schematic.`,
-  };
-}
 
 export default function MotorDetailPage({ params }: Props) {
   const motor = getMotorBySlug(params.slug);
   if (!motor) notFound();
 
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+
   const hp = getHPDisplay(motor.hp);
+  const drawing = motor.schematicImage || DEMO_DRAWING;
+
   const psiRows = [
     { psi: 80, data: motor.torque.psi80 },
     { psi: 60, data: motor.torque.psi60 },
     { psi: 30, data: motor.torque.psi30 },
   ];
 
-  // Find adjacent motors for prev/next navigation
   const allSeries = motors.filter(m => m.series === motor.series);
   const currentIdx = allSeries.findIndex(m => m.slug === motor.slug);
   const prevMotor = currentIdx > 0 ? allSeries[currentIdx - 1] : null;
@@ -40,6 +35,85 @@ export default function MotorDetailPage({ params }: Props) {
     <>
       <Nav />
 
+      {/* ── LIGHTBOX MODAL ── */}
+      {lightboxOpen && (
+        <div
+          onClick={() => setLightboxOpen(false)}
+          style={{
+            position: 'fixed', inset: 0, zIndex: 9999,
+            background: 'rgba(10,15,30,0.88)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            backdropFilter: 'blur(6px)',
+            cursor: 'zoom-out',
+          }}
+        >
+          <div
+            onClick={e => e.stopPropagation()}
+            style={{
+              position: 'relative',
+              width: 'min(67vw, 1000px)',
+              background: 'white',
+              borderRadius: '16px',
+              overflow: 'hidden',
+              boxShadow: '0 32px 80px rgba(0,0,0,0.6)',
+            }}
+          >
+            {/* Header bar */}
+            <div style={{
+              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+              padding: '14px 20px',
+              borderBottom: '1px solid #e5e7eb',
+              background: '#f9fafb',
+            }}>
+              <div>
+                <span style={{ fontWeight: 700, color: '#1a1a2e', fontSize: '0.95rem' }}>
+                  {motor.model} — Engineering Drawing
+                </span>
+                <span style={{ marginLeft: '12px', fontSize: '0.78rem', color: '#6b7280' }}>
+                  For illustration purposes — demo schematic
+                </span>
+              </div>
+              <button
+                onClick={() => setLightboxOpen(false)}
+                style={{
+                  background: 'none', border: 'none', cursor: 'pointer',
+                  fontSize: '1.4rem', color: '#6b7280', lineHeight: 1,
+                  padding: '4px 8px', borderRadius: '6px',
+                }}
+                aria-label="Close drawing"
+              >
+                ×
+              </button>
+            </div>
+            <img
+              src={drawing}
+              alt={`${motor.model} engineering drawing`}
+              style={{ width: '100%', display: 'block', objectFit: 'contain', maxHeight: '75vh' }}
+            />
+            {/* Footer bar */}
+            <div style={{
+              padding: '12px 20px',
+              borderTop: '1px solid #e5e7eb',
+              background: '#f9fafb',
+              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+            }}>
+              <span style={{ fontSize: '0.8rem', color: '#6b7280' }}>
+                Click outside or press <kbd style={{ background: '#e5e7eb', borderRadius: '4px', padding: '1px 5px', fontSize: '0.75rem' }}>Esc</kbd> to close
+              </span>
+              <a
+                href={drawing}
+                download={`${motor.model}-drawing.png`}
+                style={{ fontSize: '0.82rem', color: 'var(--crimson)', fontWeight: 600, textDecoration: 'none' }}
+                onClick={e => e.stopPropagation()}
+              >
+                Download ↓
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ── PAGE HERO ── */}
       <section className="page-hero">
         <div className="container">
           <Link href="/products" className="breadcrumb">← Products <span>/ {motor.series} Series / {motor.model}</span></Link>
@@ -54,12 +128,12 @@ export default function MotorDetailPage({ params }: Props) {
             {hp} rated output · {motor.airConsumption} air consumption · {motor.weight} · {motor.mounting}
           </p>
           <div className="page-hero-ctas">
-            {motor.schematicImage && (
-              <a href={motor.schematicImage} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">Download Schematic ↓</a>
-            )}
-            {motor.cadUrl && (
-              <a href={motor.cadUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ghost" style={{marginLeft:'12px'}}>3D CAD File ↓</a>
-            )}
+            <button
+              onClick={() => setLightboxOpen(true)}
+              className="btn btn-ghost"
+            >
+              View Engineering Drawing ⤢
+            </button>
             <Link href="/contact" className="btn btn-primary" style={{marginLeft:'12px'}}>Request This Motor →</Link>
           </div>
         </div>
@@ -67,12 +141,12 @@ export default function MotorDetailPage({ params }: Props) {
 
       <section className="section">
         <div className="container">
-          <div style={{display:'grid', gridTemplateColumns:'1fr 280px', gap:'48px', alignItems:'start'}}>
+          <div style={{display:'grid', gridTemplateColumns:'1fr 300px', gap:'48px', alignItems:'start'}}>
 
-            {/* Torque spec table */}
+            {/* Left: specs */}
             <div>
               <div className="eyebrow">Performance Data</div>
-              <h2 style={{marginBottom:'32px'}}>Torque & Speed Specifications</h2>
+              <h2 style={{marginBottom:'32px'}}>Torque &amp; Speed Specifications</h2>
 
               <div className="spec-table-wrap">
                 <table className="spec-table">
@@ -129,16 +203,66 @@ export default function MotorDetailPage({ params }: Props) {
               </div>
             </div>
 
-            {/* Sidebar */}
+            {/* Right sidebar */}
             <div style={{display:'flex', flexDirection:'column', gap:'24px'}}>
-              {/* Schematic */}
-              {motor.schematicImage && (
-                <div className="schematic-wrap">
-                  <img src={motor.schematicImage} alt={`${motor.model} schematic`} style={{maxHeight:'220px', objectFit:'contain'}} />
-                </div>
-              )}
 
-              {/* Quick stats */}
+              {/* Engineering drawing card */}
+              <div
+                onClick={() => setLightboxOpen(true)}
+                style={{
+                  background: 'white',
+                  border: '1.5px solid var(--border)',
+                  borderRadius: '14px',
+                  overflow: 'hidden',
+                  cursor: 'zoom-in',
+                  transition: 'box-shadow 0.25s, transform 0.25s',
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = '0 12px 40px rgba(0,0,0,0.18)';
+                  (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-3px)';
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = '0 4px 16px rgba(0,0,0,0.08)';
+                  (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)';
+                }}
+              >
+                <div style={{
+                  padding: '10px 14px',
+                  borderBottom: '1px solid var(--border)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                  background: '#f9fafb',
+                }}>
+                  <span style={{fontSize:'0.75rem', fontWeight:700, color:'var(--steel)', textTransform:'uppercase', letterSpacing:'0.08em'}}>
+                    Engineering Drawing
+                  </span>
+                  <span style={{fontSize:'0.72rem', color:'var(--crimson)', fontWeight:600}}>Click to expand ⤢</span>
+                </div>
+                <img
+                  src={drawing}
+                  alt={`${motor.model} engineering drawing`}
+                  style={{
+                    width: '100%',
+                    height: '220px',
+                    objectFit: 'contain',
+                    padding: '12px',
+                    display: 'block',
+                    background: 'white',
+                  }}
+                />
+                <div style={{
+                  padding: '8px 14px',
+                  borderTop: '1px solid var(--border)',
+                  background: '#f9fafb',
+                  fontSize: '0.72rem',
+                  color: '#9ca3af',
+                  textAlign: 'center',
+                }}>
+                  Dimensional reference — for demo purposes
+                </div>
+              </div>
+
+              {/* Key specs */}
               <div style={{background:'var(--bg-light)', borderRadius:'var(--radius-md)', padding:'24px'}}>
                 <h4 style={{color:'var(--navy)', marginBottom:'16px', fontSize:'0.9rem', textTransform:'uppercase', letterSpacing:'0.08em'}}>Key Specs</h4>
                 {[
