@@ -7,7 +7,8 @@ const SITE = {
   name: 'Premier Electrical Services',
   phone: '(360) 421-5230',
   phoneTel: 'tel:+13604215230',
-  email: 'info@premierelectricalsvc.com',
+  email: 'premier@premierelectricalsvc.com',
+  emailHref: 'mailto:premier@premierelectricalsvc.com',
   address: '1500 East College Way Ste A PMB 291, Mount Vernon, WA 98273',
   license: 'PREMIES821LL',
 
@@ -210,7 +211,7 @@ const SITE = {
     },
   ],
   reviewPlatforms: [
-    { label: 'Google', href: 'https://www.google.com/search?q=Premier+Electrical+Services+Mount+Vernon+WA' },
+    { label: 'Google', href: 'https://www.google.com/maps/place/Premier+Electrical+Services/@48.3888966,-121.9890434,9z/data=!3m1!4b1!4m6!3m5!1s0x54856df0b900833b:0x675197f557d3ebf1!8m2!3d48.3888966!4d-121.9890434!16s%2Fg%2F11jrrkz30s?entry=ttu&g_ep=EgoyMDI2MDMxOC4xIKXMDSoASAFQAw%3D%3D' },
     { label: 'Facebook', href: 'https://www.facebook.com/premierelectricalsvc' },
     { label: 'BBB', href: 'https://www.bbb.org/us/wa/mount-vernon/profile/electrical-contractors/premier-electrical-services-inc-1296-1000135427' },
   ],
@@ -769,8 +770,15 @@ export default function Home() {
                   <div className="contact-detail-value">Bellingham to Seattle — Skagit, Whatcom, San Juan, Island, King & Snohomish Counties</div>
                 </div>
               </div>
+              <div className="contact-detail">
+                <div className="contact-detail-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                <div className="contact-detail-text">
+                  <div className="contact-detail-label">Email</div>
+                  <div className="contact-detail-value"><a href={SITE.emailHref}>{SITE.email}</a></div>
+                </div>
+              </div>
               <div className="license-badge">
-                <span className="check">✓</span> Lic. {SITE.license} — Licensed, Bonded & Insured · A+ BBB
+                <span className="check">✓</span> Lic. {SITE.license} — Licensed, Bonded &amp; Insured · A+ BBB
               </div>
             </div>
 

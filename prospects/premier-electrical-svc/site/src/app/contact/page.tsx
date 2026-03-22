@@ -5,6 +5,8 @@ import SiteNav from '../components/SiteNav';
 
 const PHONE = '(360) 421-5230';
 const PHONE_TEL = 'tel:+13604215230';
+const EMAIL = 'premier@premierelectricalsvc.com';
+const EMAIL_HREF = 'mailto:premier@premierelectricalsvc.com';
 const SERVICE_TYPES = [
   'Panel Upgrade',
   'EV Charging Station',
@@ -86,6 +88,13 @@ export default function ContactPage() {
                 <div className="contact-detail-text">
                   <div className="contact-detail-label">Response Time</div>
                   <div className="contact-detail-value">Same day on most requests. Urgent? Call directly.</div>
+                </div>
+              </div>
+              <div className="contact-detail">
+                <div className="contact-detail-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                <div className="contact-detail-text">
+                  <div className="contact-detail-label">Email</div>
+                  <div className="contact-detail-value"><a href={EMAIL_HREF}>{EMAIL}</a></div>
                 </div>
               </div>
               <div className="license-badge" style={{ marginTop: '24px' }}>

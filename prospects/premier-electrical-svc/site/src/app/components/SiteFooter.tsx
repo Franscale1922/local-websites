@@ -44,7 +44,6 @@ const SOCIALS = [
 
 interface SiteFooterProps {
   serviceLinks?: { href: string; label: string }[];
-  areaLinks?: { href: string; label: string }[];
   tagline?: string;
 }
 

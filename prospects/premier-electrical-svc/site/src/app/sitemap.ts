@@ -23,6 +23,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/service-area/whatcom-county`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${SITE_URL}/service-area/island-county`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${SITE_URL}/service-area/san-juan-county`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${SITE_URL}/service-area/snohomish-county`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${SITE_URL}/service-area/king-county`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${SITE_URL}/faq`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${SITE_URL}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
   ];

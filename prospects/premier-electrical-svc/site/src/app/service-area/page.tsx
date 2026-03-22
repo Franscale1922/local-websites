@@ -37,14 +37,14 @@ const COUNTIES = [
   },
   {
     name: 'Snohomish County',
-    href: '/service-area',
+    href: '/service-area/snohomish-county',
     cities: ['Everett', 'Marysville', 'Arlington', 'Stanwood', 'Monroe', 'Mukilteo'],
     note: 'Extended service area.',
     icon: '🔌',
   },
   {
     name: 'King County',
-    href: '/service-area',
+    href: '/service-area/king-county',
     cities: ['Seattle', 'Kirkland', 'Redmond', 'Bothell', 'Kenmore'],
     note: 'Extended service area — select projects.',
     icon: '🌆',
