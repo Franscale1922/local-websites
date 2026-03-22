@@ -632,8 +632,8 @@ p  { max-width: 70ch; line-height: 1.7; }
   margin: 0 auto;
 }
 .audience-item {
-  background: white;
-  border: 2.5px solid rgba(140,21,21,0.15);
+  background: #B82A2A;               /* Lighter crimson — dark enough for white text */
+  border: none;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -642,59 +642,55 @@ p  { max-width: 70ch; line-height: 1.7; }
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
-  color: var(--text-primary);
-  box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+  color: white;
+  box-shadow: 0 4px 18px rgba(140,21,21,0.25);
 }
 .audience-item:hover {
-  background: var(--crimson);
-  border-color: var(--crimson);
+  background: var(--crimson);        /* Full brand crimson on hover */
   transform: translateY(-8px);
-  box-shadow: 0 20px 48px rgba(140,21,21,0.35);
+  box-shadow: 0 20px 52px rgba(140,21,21,0.45);
 }
 
 /* White icon frame — sits inside the colored card */
 .audience-icon-wrap {
-  width: 130px; height: 130px;         /* Large bold frame */
+  width: 134px; height: 134px;
   background: white;
-  border: 2.5px solid rgba(140,21,21,0.12);
-  border-radius: 18px;
+  border: none;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.07), inset 0 1px 0 rgba(255,255,255,0.8);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
   overflow: hidden;
 }
 .audience-item:hover .audience-icon-wrap {
-  background: rgba(255,255,255,0.97);  /* Stays white inside — pops on crimson */
-  border-color: rgba(255,255,255,0.6);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2), 0 0 0 4px rgba(255,255,255,0.25);
-  transform: scale(1.04);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.28), 0 0 0 3px rgba(255,255,255,0.35);
+  transform: scale(1.04) translateY(-2px);
 }
 
-/* Icon image — large, fills the white frame */
+/* Icon image — mix-blend-mode:multiply eliminates grey checkerboard on white frame */
 .audience-icon-img {
-  width: 120px; height: 120px;         /* Fills 130px frame, slightly oversized */
+  width: 122px; height: 122px;
   object-fit: contain;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background-color: white;             /* Kills checkerboard on transparent PNGs */
+  mix-blend-mode: multiply;          /* Grey checkerboard → blends away on white */
 }
 .audience-item:hover .audience-icon-img {
   transform: scale(1.08);
-  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+  mix-blend-mode: multiply;
 }
 
-/* Label */
+/* Label — white always on the colored card */
 .audience-label {
   font-size: 0.82rem;
   font-weight: 900;
-  color: var(--crimson);
+  color: white;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  transition: color 0.25s ease;
 }
-.audience-item:hover .audience-label { color: rgba(255,255,255,0.95); }
+
 
 
 /* ── PRODUCT CARDS ───────────────────────────────────────── */
