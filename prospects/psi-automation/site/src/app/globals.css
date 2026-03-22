@@ -639,28 +639,26 @@ p  { max-width: 70ch; line-height: 1.7; }
 .audience-item:hover { background: var(--crimson); }
 
 .audience-icon-wrap {
-  width: 80px; height: 80px;
-  background: rgba(140,21,21,0.08);  /* Tinted brand crimson bg */
-  border: 2px solid rgba(140,21,21,0.15);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
-  margin-bottom: 16px;
-  transition: all var(--t-mid);
-  box-shadow: 0 4px 12px rgba(140,21,21,0.08);
-}
-.audience-icon-img {
-  width: 54px; height: 54px;
-  object-fit: contain;
+  /* No container — icon floats freely, slightly oversized */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
   transition: transform var(--t-mid);
 }
-.audience-item:hover .audience-icon-img { transform: scale(1.1); }
-.audience-item:hover .audience-icon-wrap {
-  background: var(--crimson);
-  border-color: var(--crimson);
-  box-shadow: 0 6px 20px rgba(140,21,21,0.35);
-  transform: scale(1.08);
+.audience-icon-img {
+  width: 100px; height: 100px;       /* Oversized — fills the space boldly */
+  object-fit: contain;
+  transition: transform var(--t-mid);
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.12));
 }
+.audience-item:hover .audience-icon-img {
+  transform: scale(1.12) translateY(-4px);
+}
+.audience-item:hover .audience-icon-wrap {
+  transform: none; /* handled by img */
+}
+
 .audience-label {
   font-size: 0.85rem;
   font-weight: 800;
@@ -693,26 +691,21 @@ p  { max-width: 70ch; line-height: 1.7; }
   transform: translateY(-4px);
 }
 .product-card-icon {
-  width: 72px; height: 72px;
-  background: rgba(140,21,21,0.06);
-  border: 1.5px solid rgba(140,21,21,0.10);
-  border-radius: var(--radius-md);
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
-  margin-bottom: 24px;
-  transition: all var(--t-mid);
+  /* No container styling — icon floats on card, slightly oversized */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 .product-card-icon-img {
-  width: 54px; height: 54px;
+  width: 88px; height: 88px;         /* Bold, slightly oversized */
   object-fit: contain;
   transition: transform var(--t-mid);
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.12));
 }
-.product-card:hover .product-card-icon {
-  background: rgba(140,21,21,0.12);
-  border-color: rgba(140,21,21,0.25);
-  box-shadow: 0 4px 16px rgba(140,21,21,0.15);
+.product-card:hover .product-card-icon-img {
+  transform: scale(1.1) translateY(-3px);
 }
-.product-card:hover .product-card-icon-img { transform: scale(1.08); }
 .product-card h3 { font-size: 1.05rem; color: var(--navy); margin-bottom: 10px; }
 .product-card p { font-size: 0.88rem; color: var(--steel); line-height: 1.6; max-width: none; }
 .product-card-arrow {
@@ -782,20 +775,18 @@ p  { max-width: 70ch; line-height: 1.7; }
   padding: 24px 20px;
 }
 .application-card-icon {
-  width: 64px; height: 64px;
-  margin-bottom: 14px;
-  background: rgba(255,255,255,0.1);
-  border-radius: var(--radius-md);
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
+  /* No box — icon floats on dark card backdrop */
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
 }
 .application-card-icon-img {
-  width: 52px; height: 52px;
+  width: 72px; height: 72px;        /* Bold, slightly oversized */
   object-fit: contain;
-  filter: brightness(1.1) saturate(1.2);
+  filter: brightness(1.15) drop-shadow(0 3px 8px rgba(0,0,0,0.25));
   transition: transform var(--t-mid);
 }
-.application-card:hover .application-card-icon-img { transform: scale(1.1); }
+.application-card:hover .application-card-icon-img { transform: scale(1.1) translateY(-3px); }
 .application-card h3 { color: white; font-size: 1rem; margin-bottom: 8px; }
 .application-card p {
   font-size: 0.78rem;
