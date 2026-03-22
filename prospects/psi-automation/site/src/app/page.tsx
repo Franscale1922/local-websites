@@ -59,9 +59,9 @@ const PILLARS = [
 ];
 
 const WHY_AIR = [
-  { icon: '🔥', title: 'Zero Overheating Risk', desc: "Electric motors fail when overloaded or stalled — they overheat and burn out. Air motors stall safely and restart immediately. No thermal protection, no VFDs, no downtime." },
-  { icon: '💥', title: 'Inherently Explosion-Proof', desc: 'No electrical sparks — air motors are intrinsically safe for use in classified hazardous locations (chemical, petroleum, mining) without special expensive enclosures.' },
-  { icon: '⚖️', title: 'Higher Power-to-Weight', desc: 'Air motors produce more torque per pound than equivalent electric motors. In aerospace and mobile equipment, every pound matters.' },
+  { icon: '/icons/icon-overheating.png', alt: 'Electric motor overheating vs safe air motor', title: 'Zero Overheating Risk', desc: "Electric motors fail when overloaded or stalled — they overheat and burn out. Air motors stall safely and restart immediately. No thermal protection, no VFDs, no downtime." },
+  { icon: '/icons/icon-explosion-proof.png', alt: 'ATEX explosion-proof certification', title: 'Inherently Explosion-Proof', desc: 'No electrical sparks — air motors are intrinsically safe for use in classified hazardous locations (chemical, petroleum, mining) without special expensive enclosures.' },
+  { icon: '/icons/icon-power-to-weight.png', alt: 'Air motor vs electric motor power to weight comparison', title: 'Higher Power-to-Weight', desc: 'Air motors produce more torque per pound than equivalent electric motors. In aerospace and mobile equipment, every pound matters.' },
 ];
 
 export default function Home() {
@@ -196,7 +196,9 @@ export default function Home() {
           <div className="why-grid">
             {WHY_AIR.map(w => (
               <div key={w.title} className="why-card">
-                <div className="why-card-icon">{w.icon}</div>
+                <div className="why-card-icon">
+                  <img src={w.icon} alt={w.alt} className="why-card-icon-img" />
+                </div>
                 <h3>{w.title}</h3>
                 <p>{w.desc}</p>
               </div>
