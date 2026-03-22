@@ -899,11 +899,22 @@ p  { max-width: 70ch; line-height: 1.7; }
   box-shadow: 0 16px 48px rgba(140,21,21,0.4);
 }
 .why-card-icon {
-  font-size: 1.5rem;
-  margin-bottom: 16px;
+  width: 72px; height: 72px;
+  background: white;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.why-card h3 { color: white; font-size: 1rem; margin-bottom: 10px; }
-.why-card p { font-size: 0.88rem; color: rgba(255,255,255,0.82); line-height: 1.6; max-width: none; }
+.why-card:hover .why-card-icon {
+  transform: scale(1.06) translateY(-2px);
+}
+.why-card h3 { color: white; font-size: 1rem; font-weight: 800; margin-bottom: 10px; }
+.why-card p { font-size: 0.88rem; color: rgba(255,255,255,0.85); line-height: 1.6; max-width: none; }
 
 /* ── PAGE HERO (inner pages) ─────────────────────────────── */
 .page-hero {

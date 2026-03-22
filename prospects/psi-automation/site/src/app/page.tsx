@@ -163,22 +163,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── INDUSTRY APPLICATIONS GRID ── */}
-      <section className="applications-grid">
-        {INDUSTRIES.map(ind => (
-          <Link key={ind.label} href={ind.href} className="application-card">
-            <div className="application-card-bg" />
-            <div className="application-card-body">
-              <div className="application-card-icon">
-                <img src={ind.icon} alt={ind.alt} className="application-card-icon-img" />
-              </div>
-              <h3>{ind.label}</h3>
-              <p>{ind.desc}</p>
-              <div className="application-card-cta">View Applications →</div>
-            </div>
-          </Link>
-        ))}
-      </section>
 
       {/* ── SIZE YOUR MOTOR CTA BLOCK ── */}
       <section className="section section--tinted">
