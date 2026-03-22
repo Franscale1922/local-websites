@@ -272,6 +272,170 @@ p  { max-width: 70ch; line-height: 1.7; }
   gap: 20px;
 }
 
+/* ── HAMBURGER BUTTON (PSI) ───────────────────────────────── */
+.psi-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  flex-shrink: 0;
+}
+.psi-hamburger-bar {
+  display: block;
+  width: 100%;
+  height: 2.5px;
+  background: var(--crimson);    /* PSI brand crimson — visible on white nav */
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+  transform-origin: center;
+}
+/* Animate to X when open */
+.psi-hamburger--open .psi-hamburger-bar:nth-child(1) {
+  transform: translateY(8.75px) rotate(45deg);
+}
+.psi-hamburger--open .psi-hamburger-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.psi-hamburger--open .psi-hamburger-bar:nth-child(3) {
+  transform: translateY(-8.75px) rotate(-45deg);
+}
+
+/* ── MOBILE MENU (PSI) ────────────────────────────────────── */
+.psi-mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+}
+.psi-mobile-menu--open {
+  pointer-events: all;
+}
+
+.psi-mobile-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.psi-mobile-menu--open .psi-mobile-backdrop {
+  opacity: 1;
+}
+
+.psi-mobile-panel {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: min(88vw, 360px);
+  background: var(--crimson);        /* PSI brand crimson panel */
+  border-left: 1px solid var(--crimson-dark);
+  display: flex;
+  flex-direction: column;
+  padding: 0 28px 32px;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -12px 0 48px rgba(0,0,0,0.35);
+}
+.psi-mobile-menu--open .psi-mobile-panel {
+  transform: translateX(0);
+}
+
+.psi-mobile-close {
+  position: absolute;
+  top: 20px; right: 20px;
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.12);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: rgba(255,255,255,0.75);
+  cursor: pointer;
+  transition: background var(--t-fast), color var(--t-fast);
+}
+.psi-mobile-close:hover {
+  background: rgba(255,255,255,0.22);
+  color: white;
+}
+
+.psi-mobile-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 0 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  margin-bottom: 20px;
+}
+
+.psi-mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+.psi-mobile-link {
+  display: block;
+  padding: 14px 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: rgba(255,255,255,0.88);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  letter-spacing: -0.02em;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.25s ease, transform 0.25s ease, color 0.15s ease, padding-left 0.15s ease;
+}
+.psi-mobile-menu--open .psi-mobile-link {
+  opacity: 1;
+  transform: translateX(0);
+}
+.psi-mobile-link:hover {
+  color: white;
+  padding-left: 6px;
+}
+.psi-mobile-link--active {
+  color: white !important;
+  opacity: 1 !important;
+  border-left: 3px solid rgba(255,255,255,0.6);
+  padding-left: 10px;
+}
+
+.psi-mobile-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.psi-mobile-footer {
+  margin-top: 24px;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* Show hamburger + mobile menu at mobile breakpoints */
+@media (max-width: 900px) {
+  .psi-hamburger { display: flex; }
+  .psi-mobile-menu { display: block; }
+  .nav-links { display: none; }
+  .nav-right { display: none; }
+  .nav { padding: 0 20px; }
+}
+
+
 /* ── HERO ─────────────────────────────────────────────────── */
 .hero {
   position: relative;
