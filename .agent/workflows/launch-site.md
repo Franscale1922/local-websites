@@ -78,6 +78,25 @@ This file covers **Stage 1 only.** When the client converts, switch to the `/cli
    - Minimum image resolution: 512×512 (the generator default is sufficient)
    - Icons should all share a consistent style and color palette — generate all icons in a single session so they feel like a cohesive set
 
+8. **📱 EVERY SITE MUST HAVE A MOBILE HAMBURGER MENU — NO EXCEPTIONS.**
+   Mobile traffic is the majority for most local service businesses. A nav that hides links with `display: none` and only shows a "Call Now" button is not acceptable.
+
+   **Required architecture (reference: `SiteNav.tsx` in Premier Electrical):**
+   - Create a reusable `src/app/components/SiteNav.tsx` component (client component)
+   - Use `useState(false)` for `menuOpen` — single boolean controls everything
+   - **Hamburger button:** 3 `<span>` bars that animate to an X using CSS transforms (`rotate(45deg)`, `opacity: 0`, `rotate(-45deg)`) — never use a text character or emoji
+   - **Panel:** fixed `width: min(88vw, 360px)`, slides in from the RIGHT using `transform: translateX(100%)` → `translateX(0)`
+   - **Backdrop:** semi-transparent dark overlay that covers the rest of the screen, clickable to close
+   - **Body scroll lock:** `document.body.style.overflow = 'hidden'` when open, restore on close
+   - **ESC key close:** `keydown` listener for `Escape`
+   - **Inside panel:** logo, bold stacked nav links (~1.5rem), CTA buttons (full width), license/credentials footer
+   - **Stagger animation:** each link gets a `transitionDelay` of `i * 50ms` for a cascade effect
+   - **`alwaysScrolled` prop:** inner pages pass `alwaysScrolled` to keep the nav always solid; the homepage does not
+   - **`activePath` prop:** string (e.g. `"/services"`) highlights the current section link in accent color
+   - Import `SiteNav` on every single page — never write inline nav blocks
+
+   Never use `display: none` on nav links as the only mobile pattern. `SiteNav` is the standard.
+
 ---
 
 ## Phase 0 — Qualify the Prospect
@@ -246,6 +265,8 @@ This phase runs before any design or copy work. Its output shapes the architectu
 
 25. Desktop QA — check full-width layout on all pages
 26. Mobile QA — Chrome DevTools → 375px, confirm nothing broken on all pages
+    - **Hamburger menu check:** open the mobile nav, confirm all links work, menu closes on link tap, backdrop closes menu, ESC key closes menu
+    - Confirm sticky CTA bar (if present) does not overlap the hamburger button
 27. Run Lighthouse:
     ```bash
     npm run build && npm run start  # then run Lighthouse in Chrome DevTools
