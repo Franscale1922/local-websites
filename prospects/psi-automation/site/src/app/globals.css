@@ -675,14 +675,13 @@ p  { max-width: 70ch; line-height: 1.7; }
 
 /* Icon image — large, fills the white frame */
 .audience-icon-img {
-  width: 112px; height: 112px;         /* Slightly oversized to feel robust */
+  width: 120px; height: 120px;         /* Fills 130px frame, slightly oversized */
   object-fit: contain;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  mix-blend-mode: multiply;
+  background-color: white;             /* Kills checkerboard on transparent PNGs */
 }
 .audience-item:hover .audience-icon-img {
   transform: scale(1.08);
-  mix-blend-mode: normal;
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
 }
 
