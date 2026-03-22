@@ -393,13 +393,15 @@ p { max-width: 68ch; }
   flex: 1; min-width: 180px;
 }
 .trust-strip-item:last-child { border-right: none; }
+/* Trust strip icons — transparent, icon fills the space */
 .trust-strip-icon {
   width: 48px; height: 48px; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
-  background: rgba(245,166,35,0.12);
-  border-radius: 50%;
+  background: transparent;
   color: var(--color-accent);
+  overflow: visible;
 }
+
 .trust-strip-text { font-size: 0.82rem; font-weight: 700; color: rgba(255,255,255,0.9); line-height: 1.35; }
 .trust-strip-text span { display: block; color: var(--color-accent); font-weight: 800; font-size: 0.88rem; }
 
@@ -417,23 +419,26 @@ p { max-width: 68ch; }
   border-color: var(--color-accent);
   box-shadow: var(--shadow-gold); transform: translateY(-5px);
 }
+/* Service card icon — transparent container, icon slightly overfills */
 .service-icon {
   width: 96px; height: 96px;
-  background: linear-gradient(135deg, var(--color-accent-light) 0%, rgba(245,166,35,0.06) 100%);
-  border-radius: var(--radius-md);
+  background: transparent;
+  border: none;
+  box-shadow: none;
   display: flex; align-items: center;
   justify-content: center; margin-bottom: 24px;
-  transition: background var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
   color: var(--color-accent-dark);
-  border: 1.5px solid rgba(245,166,35,0.25);
-  box-shadow: 0 2px 10px rgba(245,166,35,0.10);
+  overflow: visible;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+.service-icon svg {
+  width: 88px; height: 88px;   /* overfill: 92% of container */
 }
 .service-card:hover .service-icon {
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
-  color: var(--color-primary);
-  border-color: var(--color-accent);
-  box-shadow: 0 4px 20px rgba(245,166,35,0.35);
+  color: var(--color-accent);
+  transform: scale(1.08);
 }
+
 .service-card h3 { font-size: 1.05rem; margin-bottom: 10px; color: var(--color-primary); }
 .service-card p { font-size: 0.875rem; color: var(--color-neutral-mid); line-height: 1.6; }
 .service-card .service-link {
@@ -559,13 +564,16 @@ p { max-width: 68ch; }
   display: flex; align-items: flex-start; gap: 14px;
   margin-bottom: 20px;
 }
+/* Contact detail icon — structural spacer, transparent body */
 .contact-detail-icon {
-  width: 44px; height: 44px; background: var(--color-primary);
-  border-radius: var(--radius-sm); display: flex; align-items: center;
-  justify-content: center; font-size: 1.2rem; flex-shrink: 0;
-  color: #fff;
-  border-left: 3px solid var(--color-accent);
+  width: 44px; height: 44px;
+  background: transparent;
+  display: flex; align-items: center;
+  justify-content: center; font-size: 1.5rem; flex-shrink: 0;
+  color: var(--color-accent);
+  overflow: visible;
 }
+
 .contact-detail-text { font-size: 0.88rem; color: var(--color-neutral-mid); }
 .contact-detail-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-neutral-mid); margin-bottom: 3px; }
 .contact-detail-value { font-size: 0.95rem; color: var(--color-primary); font-weight: 600; }
@@ -728,20 +736,26 @@ p { max-width: 68ch; }
   opacity: 0.4;
   z-index: 1;
 }
+/* Process step icon — transparent circle, icon overfills */
 .process-icon-wrap {
   width: 88px; height: 88px;
-  background: rgba(245,166,35,0.12);
-  border: 2px solid rgba(245,166,35,0.3);
+  background: transparent;
+  border: none;
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 20px;
   position: relative; z-index: 2;
   color: var(--color-accent);
-  transition: background var(--transition-fast);
+  overflow: visible;
+  transition: transform var(--transition-fast);
+}
+.process-icon-wrap svg {
+  width: 80px; height: 80px;   /* overfill: 91% of container */
 }
 .process-step:hover .process-icon-wrap {
-  background: rgba(245,166,35,0.22);
+  transform: scale(1.10);
 }
+
 .process-num {
   font-size: 0.65rem;
   font-weight: 800;
