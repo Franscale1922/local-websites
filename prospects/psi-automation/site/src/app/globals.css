@@ -582,7 +582,7 @@ p  { max-width: 70ch; line-height: 1.7; }
 
 /* ── TRUST STRIP ─────────────────────────────────────────── */
 .trust-strip {
-  background: var(--navy);
+  background: #355284;               /* Steel blue — PSI nav/header blue */
   padding: 20px 0;
   overflow: hidden;
 }
