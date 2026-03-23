@@ -1,7 +1,32 @@
 # Build Plan: Franchise Marketing Systems (FMS Franchise)
 ## Stage 1 — Demo Site Blueprint
 
-> **Agent:** This document is generated based on Phase 1 research (site inventory, company data, LLM research prompt). Present to user for approval BEFORE writing any code. Do not proceed to Phase 2 until the user explicitly approves this plan.
+> **Status: ✅ LLM Research Gate COMPLETE — All 4 responses synthesized (ChatGPT, Claude, Perplexity, Gemini). Ready to build.**
+
+---
+
+## LLM Research Synthesis — Finalized Decisions
+
+### Non-Negotiable Architecture Rules (All 4 LLMs Agreed)
+
+1. **Case studies with named outcomes replace logo carousels** — "Challenge → Approach → Quantified Result" cards required. Logos alone: not sufficient.
+2. **Stats are above fold, specific, and animated** — 900+, 11,340, 67, 234 exits. Counting animation on scroll. Not buried.
+3. **Tiered CTAs at every scroll depth** — Quiz/download (low) → Video/case study (medium) → Book consultation (high). No single-CTA approach.
+4. **Interactive tools are the biggest competitive gap** — Franchise Readiness Assessment + ROI Calculator are Stage 1 priorities. State guide can ship as table first.
+5. **Service pages: Problem → Approach → Proof → Action** — no service page is just description.
+6. **iFranchise Group is the benchmark competitor** — they rate 8/10. FMS builds to beat them, not just match.
+
+### Key Messaging Decisions (Finalized)
+- **Primary hero headline:** *"Your business model works. Now let's build the system that lets others prove it."*
+- **Fear to address #1:** "What if I lose control of my brand?"
+- **3 objections to preemptively dismantle:** (1) cost, (2) "my business is too unique," (3) "I'm not big enough yet"
+- **Tone:** Trusted advisor + expert authority. Never salesy.
+
+### Competitive White Space FMS Will Own
+- International capability (no competitor showcases 7 offices across 4 continents)
+- Outcome data in case studies (competitors show logos, never metrics)
+- Transparent cost framing ("What Franchising Costs" page — genuine market gap)
+- Full A-Z story (vs competitors who are partial — sales-only or dev-only)
 
 - **Slug:** fms-franchise
 - **Industry:** B2B Franchise Consulting / Professional Services
