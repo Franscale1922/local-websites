@@ -188,6 +188,44 @@
 
 > Run through this locally before spending any time on deployment.
 
+### 4.0 — Agent Site Audit (Required) ⚠️
+
+Before any visual or performance checks, run a full agent-driven audit. This is a mandatory step — it consistently catches bugs (empty form submission, broken routes, missing favicon, leftover template content) that human review misses.
+
+**Start the dev server:**
+```bash
+cd prospects/[slug]/site && npm run dev -- --port 3030
+```
+
+**Prompt the agent:**
+```
+Review the [Business Name] demo site running at http://localhost:3030 for errors and opportunities. This is a dev project for proposal — we don't want anything broken or to miss out on great first impressions.
+
+Check every page and audit for:
+1. Broken images or icons (404s)
+2. Form validation — can forms submit with empty required fields?
+3. Placeholder/template content left visible (look for [brackets], generic copy, example phone numbers like XXX-XXX-XXXX)
+4. Layout issues at desktop (1440px), tablet (768px), and mobile (375px)
+5. Missing favicon (404 in browser console)
+6. Hydration or console errors
+7. Any pages accessible via direct URL that contain unfinished template content (especially /services, /services/[slug], and any other leftover template routes)
+8. Navigation links that go nowhere or return 404
+9. Open Graph / social metadata gaps
+10. Quick-win opportunities: OG image, FAQ schema markup, internal nav links to good pages that exist but aren't linked
+
+Fix all bugs you find. Document everything — bugs fixed and opportunities noted.
+```
+
+**Must-pass gate before proceeding to 4.1:**
+- [ ] No forms accept empty submission on required fields
+- [ ] No placeholder text (`[Business Name]`, `XXX-XXXX`, `Lorem ipsum`) visible on any page
+- [ ] Favicon renders in browser tab (not 404)
+- [ ] No leftover template pages accessible via direct URL
+- [ ] No broken images in any section at any breakpoint
+- [ ] Zero 404s on internal nav links
+
+---
+
 ### 4.1 — Visual QA
 
 - [ ] **Desktop** — browser at full width, everything renders as intended

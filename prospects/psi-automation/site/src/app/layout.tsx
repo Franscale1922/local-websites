@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   },
   description: 'Custom-engineered pneumatic vane air motors from 1/4 to 70 HP. No minimum quantity. Field-serviceable. 35+ years manufacturing in Sandpoint, Idaho. Talk to an engineer today.',
   keywords: ['pneumatic air motors', 'vane air motors', 'custom air motors', 'industrial air motors', 'PSI Automation', 'Sandpoint Idaho'],
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+  },
   openGraph: {
     siteName: 'PSI Automation',
     type: 'website',

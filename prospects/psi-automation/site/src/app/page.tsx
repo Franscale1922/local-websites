@@ -6,7 +6,38 @@ import Footer from './components/Footer';
 
 function RFQForm({ dark = false }: { dark?: boolean }) {
   const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [values, setValues] = useState({ name: '', company: '', email: '', application: '' });
   const cls = dark ? 'contact-form-card' : 'hero-card';
+
+  const validate = () => {
+    const errs: Record<string, string> = {};
+    if (!values.name.trim()) errs.name = 'Required';
+    if (!values.email.trim()) errs.email = 'Required';
+    else if (!/^[^@]+@[^@]+\.[^@]+$/.test(values.email)) errs.email = 'Enter a valid email';
+    if (!values.application.trim()) errs.application = 'Please describe your requirement';
+    return errs;
+  };
+
+  const handleSubmit = () => {
+    const errs = validate();
+    if (Object.keys(errs).length) { setErrors(errs); return; }
+    setSubmitted(true);
+  };
+
+  const field = (key: keyof typeof values) => ({
+    value: values[key],
+    onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setValues(v => ({ ...v, [key]: e.target.value }));
+      if (errors[key]) setErrors(er => ({ ...er, [key]: '' }));
+    },
+    style: errors[key] ? { borderColor: 'var(--crimson)' } as React.CSSProperties : undefined,
+  });
+
+  const errMsg = (key: string) => errors[key] ? (
+    <span style={{ fontSize: '0.72rem', color: 'var(--crimson)', marginTop: '3px', display: 'block' }}>{errors[key]}</span>
+  ) : null;
+
   return submitted ? (
     <div className={cls}>
       <div className="rfq-success">✓ Message received — an engineer will be in touch within 1 business day.</div>
@@ -15,17 +46,29 @@ function RFQForm({ dark = false }: { dark?: boolean }) {
     <div className={cls}>
       <h3 style={dark ? {color:'white'} : {}}>Talk to an Application Engineer</h3>
       <p className="hero-card-sub" style={dark ? {color:'rgba(255,255,255,0.55)'} : {}}>Usually responds same business day.</p>
-      <div className="form-field"><label>Name</label><input type="text" placeholder="Jane Smith" /></div>
-      <div className="form-field"><label>Company</label><input type="text" placeholder="Acme Industries" /></div>
-      <div className="form-field"><label>Email</label><input type="email" placeholder="jane@company.com" /></div>
       <div className="form-field">
-        <label>Application / Requirement</label>
-        <textarea placeholder="Describe your motor requirement — HP range, environment, torque target, mounting type..." style={{minHeight:'80px'}} />
+        <label>Name *</label>
+        <input type="text" placeholder="Jane Smith" {...field('name')} />
+        {errMsg('name')}
+      </div>
+      <div className="form-field">
+        <label>Company</label>
+        <input type="text" placeholder="Acme Industries" value={values.company} onChange={e => setValues(v => ({...v, company: e.target.value}))} />
+      </div>
+      <div className="form-field">
+        <label>Email *</label>
+        <input type="email" placeholder="jane@company.com" {...field('email')} />
+        {errMsg('email')}
+      </div>
+      <div className="form-field">
+        <label>Application / Requirement *</label>
+        <textarea placeholder="Describe your motor requirement — HP range, environment, torque target, mounting type..." value={values.application} onChange={field('application').onChange} style={{minHeight:'80px', ...(errors.application ? {borderColor:'var(--crimson)'} : {})}} />
+        {errMsg('application')}
       </div>
       <button
         className="btn btn-primary"
         style={{width:'100%', justifyContent:'center'}}
-        onClick={() => setSubmitted(true)}
+        onClick={handleSubmit}
       >
         Send to Engineering Team →
       </button>

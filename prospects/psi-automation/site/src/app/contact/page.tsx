@@ -6,28 +6,60 @@ import Footer from '../components/Footer';
 
 function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState<Record<string, boolean>>({});
+
+  const validate = (form: HTMLFormElement) => {
+    const errs: Record<string, boolean> = {};
+    const name = (form.elements.namedItem('name') as HTMLInputElement)?.value.trim();
+    const email = (form.elements.namedItem('email') as HTMLInputElement)?.value.trim();
+    const req = (form.elements.namedItem('requirement') as HTMLTextAreaElement)?.value.trim();
+    if (!name) errs.name = true;
+    if (!email || !/^[^@]+@[^@]+\.[^@]+$/.test(email)) errs.email = true;
+    if (!req) errs.requirement = true;
+    return errs;
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const errs = validate(e.currentTarget);
+    if (Object.keys(errs).length) { setErrors(errs); return; }
+    setSubmitted(true);
+  };
+
+  const errStyle: React.CSSProperties = { borderColor: 'var(--crimson)' };
+  const errLabel = <span style={{ fontSize: '0.72rem', color: 'var(--crimson)', marginTop: '3px', display: 'block' }}>Required</span>;
+
   if (submitted) return (
     <div className="rfq-success" style={{padding:'48px', textAlign:'center', borderRadius:'var(--radius-md)', background:'#1a7a4a', color:'white', fontSize:'1.1rem'}}>
       ✓ Your message has been received. An engineer will respond within 1 business day.
     </div>
   );
   return (
-    <div style={{background:'white', borderRadius:'var(--radius-lg)', padding:'40px', boxShadow:'var(--shadow-md)', border:'1.5px solid var(--border)'}}>
+    <form onSubmit={handleSubmit} noValidate style={{background:'white', borderRadius:'var(--radius-lg)', padding:'40px', boxShadow:'var(--shadow-md)', border:'1.5px solid var(--border)'}}>
       <h3 style={{color:'var(--navy)', fontSize:'1.2rem', marginBottom:'4px'}}>Contact an Application Engineer</h3>
       <p style={{color:'var(--steel)', fontSize:'0.86rem', marginBottom:'28px'}}>No sales scripting. Real engineers. Usually same-day response.</p>
       <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:'16px'}}>
-        <div className="form-field"><label>Name *</label><input type="text" placeholder="Jane Smith" required /></div>
-        <div className="form-field"><label>Company</label><input type="text" placeholder="Acme Industries" /></div>
-        <div className="form-field"><label>Email *</label><input type="email" placeholder="jane@company.com" required /></div>
-        <div className="form-field"><label>Phone</label><input type="tel" placeholder="208-555-1234" /></div>
+        <div className="form-field">
+          <label>Name *</label>
+          <input name="name" type="text" placeholder="Jane Smith" style={errors.name ? errStyle : undefined} onChange={() => errors.name && setErrors(e => ({...e, name: false}))} />
+          {errors.name && errLabel}
+        </div>
+        <div className="form-field"><label>Company</label><input name="company" type="text" placeholder="Acme Industries" /></div>
+        <div className="form-field">
+          <label>Email *</label>
+          <input name="email" type="email" placeholder="jane@company.com" style={errors.email ? errStyle : undefined} onChange={() => errors.email && setErrors(e => ({...e, email: false}))} />
+          {errors.email && errLabel}
+        </div>
+        <div className="form-field"><label>Phone</label><input name="phone" type="tel" placeholder="208-555-1234" /></div>
       </div>
       <div className="form-field">
         <label>Motor / Application Requirement *</label>
-        <textarea placeholder="Describe your application: HP range, torque target, air supply pressure, environment (hazardous, temperature extremes?), mounting style, expected duty cycle, quantity..." style={{minHeight:'160px'}} required />
+        <textarea name="requirement" placeholder="Describe your application: HP range, torque target, air supply pressure, environment (hazardous, temperature extremes?), mounting style, expected duty cycle, quantity..." style={{minHeight:'160px', ...(errors.requirement ? errStyle : {})}} onChange={() => errors.requirement && setErrors(e => ({...e, requirement: false}))} />
+        {errors.requirement && errLabel}
       </div>
       <div className="form-field">
         <label>Timeline</label>
-        <select>
+        <select name="timeline">
           <option value="">Select…</option>
           <option>ASAP / Emergency</option>
           <option>Within 2 weeks</option>
@@ -36,13 +68,13 @@ function ContactForm() {
           <option>Evaluating / No immediate timeline</option>
         </select>
       </div>
-      <button className="btn btn-primary btn-lg" style={{width:'100%', justifyContent:'center', marginTop:'8px'}} onClick={() => setSubmitted(true)}>
+      <button type="submit" className="btn btn-primary btn-lg" style={{width:'100%', justifyContent:'center', marginTop:'8px'}}>
         Send to Engineering Team →
       </button>
       <p style={{color:'var(--steel-light)', fontSize:'0.75rem', textAlign:'center', marginTop:'12px'}}>
         Or call directly: <a href="tel:8003923602" style={{color:'var(--orange)', fontWeight:700}}>800-392-3602</a> (Toll Free)
       </p>
-    </div>
+    </form>
   );
 }
 

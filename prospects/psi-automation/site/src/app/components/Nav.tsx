@@ -47,15 +47,11 @@ export default function Nav() {
       <nav className={`nav${scrolled ? ' nav--scrolled' : ''}`}>
         {/* BRAND / LOGO */}
         <Link href="/" className="nav-brand">
-          <div className="nav-brand-mark">
-            <svg width="20" height="20" viewBox="0 0 24 24">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" />
-            </svg>
-          </div>
-          <div>
-            <div className="nav-brand-name">PSI Automation</div>
-            <div className="nav-brand-sub">Vane Air Motors</div>
-          </div>
+          <img
+            src="/psi-logo.png"
+            alt="PSI Automation — Vane Air Motors"
+            style={{ height: '72px', width: 'auto', display: 'block' }}
+          />
         </Link>
 
         {/* DESKTOP LINKS */}
@@ -128,15 +124,11 @@ export default function Nav() {
 
           {/* Brand inside panel */}
           <div className="psi-mobile-brand">
-            <div className="nav-brand-mark" style={{ width: '36px', height: '36px' }}>
-              <svg width="18" height="18" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" />
-              </svg>
-            </div>
-            <div>
-              <div className="nav-brand-name" style={{ color: '#fff', fontSize: '1rem' }}>PSI Automation</div>
-              <div className="nav-brand-sub">Vane Air Motors</div>
-            </div>
+            <img
+              src="/psi-logo.png"
+              alt="PSI Automation"
+              style={{ height: '44px', width: 'auto', filter: 'brightness(0) invert(1)' }}
+            />
           </div>
 
           {/* Nav Links */}

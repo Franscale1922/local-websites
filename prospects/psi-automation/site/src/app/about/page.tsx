@@ -12,6 +12,7 @@ export default function AboutPage() {
     <>
       <Nav />
 
+      {/* Hero */}
       <section className="page-hero">
         <div className="container">
           <Link href="/" className="breadcrumb">← Home <span>/ About</span></Link>
@@ -23,12 +24,14 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* History + stats — light background */}
       <section className="section">
         <div className="container">
-          <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:'80px', alignItems:'start'}}>
+          <div className="about-grid">
+            {/* Left — narrative */}
             <div>
               <div className="eyebrow">Company History</div>
-              <h2>From Diesel Starters to Custom OEM Solutions</h2>
+              <h2>From Diesel Starters to&nbsp;Custom OEM Solutions</h2>
               <p style={{marginTop:'20px', color:'var(--steel)', fontSize:'1rem', lineHeight:1.75}}>
                 PSI Automation was founded under the name Pneumatic Systems, Inc. with a singular focus: build the air motor that didn&apos;t exist yet. The first product line was diesel engine air starters for marine and industrial applications — environments that demanded reliability over everything else.
               </p>
@@ -40,38 +43,40 @@ export default function AboutPage() {
               </p>
             </div>
 
+            {/* Right — stats + location */}
             <div>
-              {/* Stats blocks */}
-              <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:'2px', background:'var(--border)', marginBottom:'2px'}}>
+              <div className="about-stats-grid">
                 {[
                   { value:'35+', label:'Years in Business' },
-                  { value:'70 HP', label:'Maximum Output Range' },
-                  { value:'0', label:'Minimum Order Quantity' },
-                  { value:'100%', label:'Field-Serviceable Design' },
+                  { value:'70 HP', label:'Maximum Output' },
+                  { value:'0', label:'Minimum Order Qty' },
+                  { value:'81', label:'Standard Configs' },
                 ].map(s => (
-                  <div key={s.label} style={{background:'white', padding:'32px 24px'}}>
-                    <div style={{fontSize:'2.2rem', fontWeight:900, color:'var(--orange)', marginBottom:'6px', fontVariantNumeric:'tabular-nums'}}>{s.value}</div>
-                    <div style={{fontSize:'0.8rem', fontWeight:700, color:'var(--steel)', textTransform:'uppercase', letterSpacing:'0.1em'}}>{s.label}</div>
+                  <div key={s.label} className="about-stat-cell">
+                    <div className="about-stat-val">{s.value}</div>
+                    <div className="about-stat-label">{s.label}</div>
                   </div>
                 ))}
               </div>
 
-              <div style={{background:'var(--bg-light)', padding:'32px', borderRadius:'0 0 var(--radius-md) var(--radius-md)'}}>
-                <h4 style={{color:'var(--navy)', marginBottom:'16px'}}>Location</h4>
-                <p style={{fontSize:'0.9rem', color:'var(--steel)', lineHeight:1.6, maxWidth:'none'}}>
+              <div className="about-location">
+                <div style={{fontSize:'0.65rem', fontWeight:700, letterSpacing:'0.12em', textTransform:'uppercase', color:'var(--crimson)', marginBottom:'10px'}}>Headquarters</div>
+                <p style={{fontSize:'0.9rem', color:'var(--steel)', lineHeight:1.7, maxWidth:'none', margin:0}}>
                   3717 Omni Park Taxiway<br/>
                   Sandpoint, ID 83864<br/>
-                  Mailing: PO Box 1487, Sandpoint, ID 83864<br/><br/>
-                  <a href="tel:8003923602" style={{color:'var(--orange)', fontWeight:700}}>800-392-3602</a> (Toll Free)<br/>
-                  <a href="mailto:sales@psiautomation.com" style={{color:'var(--navy)'}}>sales@psiautomation.com</a>
+                  <span style={{color:'var(--steel-light)', fontSize:'0.82rem'}}>Mailing: PO Box 1487, Sandpoint, ID 83864</span>
                 </p>
+                <div style={{marginTop:'16px', display:'flex', flexDirection:'column', gap:'8px'}}>
+                  <a href="tel:8003923602" style={{color:'var(--crimson)', fontWeight:700, fontSize:'1rem', textDecoration:'none'}}>800-392-3602 (Toll Free)</a>
+                  <a href="mailto:sales@psiautomation.com" style={{color:'var(--steel)', fontSize:'0.88rem', textDecoration:'none'}}>sales@psiautomation.com</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values/differentiators */}
+      {/* Philosophy — tinted background for clean white card contrast */}
       <section className="section section--tinted">
         <div className="container">
           <div className="section-head">
@@ -81,7 +86,7 @@ export default function AboutPage() {
           <div className="why-grid">
             {[
               { icon:'/icons/icon-field-serviceable.png', alt:'Field serviceable motor', title:'Field-Serviceable by Design', desc:"Every PSI motor can be serviced in the field without returning to the factory. Our maintenance manual trains your technicians to rebuild in hours, not weeks. This is not an accident — it's a design requirement." },
-              { icon:'/icons/icon-no-minimum.png', alt:'No minimum order custom motor', title:'No Minimum Order', desc:'We manufacture custom configurations for single-unit quantities. This eliminates the single most common obstacle for engineers who know exactly what they need but can\'t justify 100-unit tooling runs.' },
+              { icon:'/icons/icon-no-minimum.png', alt:'No minimum order custom motor', title:'No Minimum Order', desc:"We manufacture custom configurations for single-unit quantities. This eliminates the single most common obstacle for engineers who know exactly what they need but can't justify 100-unit tooling runs." },
               { icon:'/icons/icon-engineer-phone.png', alt:'Engineer answering the phone', title:'Engineers Answer the Phone', desc:"When you call PSI Automation, you speak with an engineer who works on motors daily. Not a sales coordinator. Not a routing system. A person who can answer your technical question right now." },
             ].map(v => (
               <div key={v.title} className="why-card">
@@ -96,7 +101,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="cta-band">
+      {/* CTA — navy instead of a second red block */}
+      <section style={{background:'var(--navy)', padding:'var(--section-pad)'}}>
         <div className="container">
           <div style={{textAlign:'center', maxWidth:'640px', margin:'0 auto'}}>
             <div className="eyebrow eyebrow--light" style={{justifyContent:'center'}}>Ready to Work With Us?</div>

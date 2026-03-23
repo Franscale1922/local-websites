@@ -6,8 +6,11 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-inner">
         <div className="footer-brand">
-          <div className="footer-brand-name">PSI Automation</div>
-          <div className="footer-brand-sub">Motion Control Technology</div>
+          <img
+            src="/psi-logo.png"
+            alt="PSI Automation"
+            style={{ height: '172px', width: 'auto', marginBottom: '16px', filter: 'brightness(0) invert(1)' }}
+          />
           <p className="footer-tagline">
             Custom vane air motors engineered for the environments where electric motors fail.
             35+ years manufacturing in Sandpoint, Idaho.

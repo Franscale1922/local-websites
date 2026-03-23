@@ -1,5 +1,5 @@
 'use client';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef } from 'react';
 import Link from 'next/link';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
@@ -10,6 +10,14 @@ type SeriesFilter = 'all' | 'CDV' | 'DV' | 'DVA';
 export default function ProductsPage() {
   const [series, setSeries] = useState<SeriesFilter>('all');
   const [search, setSearch] = useState('');
+  const motorGridRef = useRef<HTMLDivElement>(null);
+
+  const handleSeriesSelect = (s: SeriesFilter) => {
+    setSeries(s);
+    setTimeout(() => {
+      motorGridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 50);
+  };
 
   const filtered = useMemo(() => {
     return motors.filter(m => {
@@ -81,7 +89,7 @@ export default function ProductsPage() {
                 key={s.series}
                 className="product-card"
                 style={{cursor:'pointer'}}
-                onClick={() => setSeries(s.series as SeriesFilter)}
+                onClick={() => handleSeriesSelect(s.series as SeriesFilter)}
               >
                 <div style={{display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:'20px'}}>
                   <div className="product-card-icon">
@@ -99,7 +107,7 @@ export default function ProductsPage() {
       </section>
 
       {/* Filter + Motor Grid */}
-      <section className="section">
+      <section className="section" ref={motorGridRef}>
         <div className="container">
 
           {/* Filter bar */}

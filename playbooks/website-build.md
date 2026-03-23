@@ -147,7 +147,44 @@ Key differentiator to emphasize: [their main thing]
 
 ---
 
-### Step 5 — QA Checklist (30 min)
+### Step 5 — Agent Site Review (Required) ⚠️
+
+Before running the manual QA checklist, run a full agent-driven audit of the site. This catches errors a visual scan often misses and surfaces improvement opportunities.
+
+**Start the dev server first:**
+```bash
+cd prospects/[slug]/site && npm run dev -- --port 3030
+```
+
+**Then prompt the agent:**
+```
+Review the [Business Name] demo site running at http://localhost:3030 for errors and opportunities. This is a dev project for proposal — we don't want anything broken or to miss out on great first impressions.
+
+Check every page and audit for:
+1. Broken images or icons (404s)
+2. Form validation — can forms submit with empty required fields?
+3. Placeholder/template content left visible (look for [brackets], generic copy, example phone numbers)
+4. Layout issues at desktop (1440px), tablet (768px), and mobile (375px)
+5. Missing favicon (404 in browser console)
+6. Hydration or console errors
+7. Any pages accessible via direct URL that contain unfinished template content (especially /services, /services/[slug], and any other leftover template routes)
+8. Navigation links that go nowhere or return 404
+9. Open Graph / social metadata gaps
+10. Quick-win opportunities: OG image, FAQ schema markup, internal nav links to good pages that exist but aren't linked
+
+Fix all bugs you find. Document everything — bugs fixed and opportunities noted.
+```
+
+**Minimum bar before proceeding:**
+- [ ] No forms accept empty submission
+- [ ] No placeholder text visible on any page
+- [ ] Favicon renders (not 404)
+- [ ] No template/generic pages accessible via URL
+- [ ] No broken images
+
+---
+
+### Step 6 — QA Checklist (30 min)
 
 **Functionality:**
 - [ ] All links work (nav, CTAs, footer)

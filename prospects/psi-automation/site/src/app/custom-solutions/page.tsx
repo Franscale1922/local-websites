@@ -6,30 +6,79 @@ import Footer from '../components/Footer';
 
 function RFQForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState<Record<string, boolean>>({});
+  const [vals, setVals] = useState({ name: '', email: '', requirement: '' });
+
+  const validate = () => {
+    const errs: Record<string, boolean> = {};
+    if (!vals.name.trim()) errs.name = true;
+    if (!vals.email.trim() || !/^[^@]+@[^@]+\.[^@]+$/.test(vals.email)) errs.email = true;
+    if (!vals.requirement.trim()) errs.requirement = true;
+    return errs;
+  };
+
+  const handleSubmit = () => {
+    const errs = validate();
+    if (Object.keys(errs).length) { setErrors(errs); return; }
+    setSubmitted(true);
+  };
+
+  const errBorder: React.CSSProperties = { borderColor: 'var(--crimson)' };
+  const errMsg = <span style={{ fontSize: '0.72rem', color: 'var(--crimson)', marginTop: '3px', display: 'block' }}>Required</span>;
+
   if (submitted) return (
-    <div className="rfq-success">✓ Your inquiry has been received. An engineer will respond within 1 business day.</div>
+    <div style={{
+      background:'#f0fdf4', border:'1.5px solid #86efac',
+      borderRadius:'10px', padding:'28px 24px',
+      color:'#166534', fontWeight:600, fontSize:'0.9rem',
+      display:'flex', alignItems:'center', gap:'12px',
+    }}>
+      <span style={{fontSize:'1.4rem'}}>✓</span>
+      Your inquiry has been received. An engineer will respond within 1 business day.
+    </div>
   );
   return (
-    <div className="contact-form-card">
-      <p className="contact-form-title">Custom Motor Inquiry</p>
+    <div>
       {[
-        { label: 'Name', type: 'text', ph: 'Your name' },
-        { label: 'Company', type: 'text', ph: 'Company name' },
-        { label: 'Email', type: 'email', ph: 'your@email.com' },
-        { label: 'Phone', type: 'tel', ph: '(optional)' },
+        { label: 'Name *', key: 'name', type: 'text', ph: 'Your name' },
+        { label: 'Company', key: 'company', type: 'text', ph: 'Company name' },
+        { label: 'Email *', key: 'email', type: 'email', ph: 'your@email.com' },
+        { label: 'Phone', key: 'phone', type: 'tel', ph: '(optional)' },
       ].map(f => (
-        <div className="form-field" key={f.label}>
+        <div className="form-field" key={f.key}>
           <label>{f.label}</label>
-          <input type={f.type} placeholder={f.ph} />
+          <input
+            type={f.type} placeholder={f.ph}
+            style={errors[f.key] ? errBorder : undefined}
+            value={f.key === 'name' ? vals.name : f.key === 'email' ? vals.email : undefined}
+            onChange={e => {
+              if (f.key === 'name') setVals(v => ({...v, name: e.target.value}));
+              if (f.key === 'email') setVals(v => ({...v, email: e.target.value}));
+              if (errors[f.key]) setErrors(er => ({...er, [f.key]: false}));
+            }}
+          />
+          {errors[f.key] && errMsg}
         </div>
       ))}
       <div className="form-field">
-        <label>Describe Your Custom Requirement</label>
-        <textarea placeholder="HP range, torque target, operating pressure, environment (hazardous/explosive?), mounting style, shaft requirements, quantity, timeline..." style={{minHeight:'120px'}} />
+        <label>Describe Your Custom Requirement *</label>
+        <textarea
+          placeholder="HP range, torque target, operating pressure, environment (hazardous/explosive?), mounting style, shaft requirements, quantity, timeline..."
+          style={{minHeight:'110px', ...(errors.requirement ? errBorder : {})}}
+          value={vals.requirement}
+          onChange={e => {
+            setVals(v => ({...v, requirement: e.target.value}));
+            if (errors.requirement) setErrors(er => ({...er, requirement: false}));
+          }}
+        />
+        {errors.requirement && errMsg}
       </div>
-      <button className="btn btn-primary" style={{width:'100%', justifyContent:'center'}} onClick={() => setSubmitted(true)}>
+      <button className="btn btn-primary" style={{width:'100%', justifyContent:'center', marginTop:'4px'}} onClick={handleSubmit}>
         Submit Custom Inquiry →
       </button>
+      <p style={{fontSize:'0.72rem', color:'var(--steel-light)', textAlign:'center', marginTop:'12px'}}>
+        No minimum order. We build prototypes as small as one unit.
+      </p>
     </div>
   );
 }
@@ -109,22 +158,59 @@ export default function CustomSolutionsPage() {
         </div>
       </section>
 
-      {/* RFQ section */}
-      <section className="cta-band" id="rfq">
-        <div className="container">
-          <div className="cta-band-grid">
-            <div>
-              <div className="eyebrow eyebrow--light">Get Started</div>
-              <h2 style={{color:'white'}}>Submit Your Custom Motor Requirement</h2>
-              <p className="cta-band-sub">The more detail you provide, the faster we can respond with a solution.</p>
-              <div className="contact-info">
-                <div className="contact-info-item"><span className="contact-info-icon">📞</span><a href="tel:8003923602" style={{color:'white', fontWeight:700}}>800-392-3602</a></div>
-                <div className="contact-info-item"><span className="contact-info-icon">✉️</span><a href="mailto:sales@psiautomation.com" style={{color:'white'}}>sales@psiautomation.com</a></div>
-              </div>
-              <p style={{color:'rgba(255,255,255,0.45)', fontSize:'0.82rem', marginTop:'24px'}}>
-                No minimum order. We build prototypes as small as one unit.
-              </p>
+      {/* RFQ section — split panel */}
+      <section id="rfq" style={{background:'var(--crimson-dark)', padding:'0'}}>
+        <div style={{
+          maxWidth:'var(--max-width)',
+          margin:'0 auto',
+          display:'grid',
+          gridTemplateColumns:'1fr 480px',
+          minHeight:'560px',
+        }}>
+          {/* Left — copy + trust signals */}
+          <div style={{padding:'72px 56px 72px 24px', display:'flex', flexDirection:'column', justifyContent:'center', gap:'0'}}>
+            <div className="eyebrow eyebrow--light" style={{marginBottom:'20px'}}>Get Started</div>
+            <h2 style={{color:'white', marginBottom:'20px', lineHeight:'1.05'}}>Submit Your Custom Motor Requirement</h2>
+            <p style={{color:'rgba(255,255,255,0.70)', fontSize:'1rem', lineHeight:'1.65', maxWidth:'40ch', marginBottom:'40px'}}>
+              The more detail you provide, the faster we can respond with a solution — typically within 1 business day.
+            </p>
+
+            {/* Trust items */}
+            <div style={{display:'flex', flexDirection:'column', gap:'16px', marginBottom:'40px'}}>
+              {[
+                { icon:'⚡', label:'Response within 1 business day' },
+                { icon:'🔩', label:'No minimum order — prototypes welcome' },
+                { icon:'🇺🇸', label:'Engineered & manufactured in Sandpoint, ID' },
+              ].map(t => (
+                <div key={t.label} style={{display:'flex', alignItems:'center', gap:'12px'}}>
+                  <span style={{fontSize:'1.1rem'}}>{t.icon}</span>
+                  <span style={{fontSize:'0.85rem', fontWeight:600, color:'rgba(255,255,255,0.82)'}}>{t.label}</span>
+                </div>
+              ))}
             </div>
+
+            {/* Contact line */}
+            <div style={{paddingTop:'28px', borderTop:'1px solid rgba(255,255,255,0.12)', display:'flex', flexDirection:'column', gap:'10px'}}>
+              <a href="tel:8003923602" style={{display:'flex', alignItems:'center', gap:'10px', color:'white', fontWeight:700, fontSize:'1.05rem', textDecoration:'none'}}>
+                <span style={{fontSize:'1rem'}}>📞</span> 800-392-3602
+              </a>
+              <a href="mailto:sales@psiautomation.com" style={{display:'flex', alignItems:'center', gap:'10px', color:'rgba(255,255,255,0.65)', fontSize:'0.88rem', textDecoration:'none'}}>
+                <span style={{fontSize:'1rem'}}>✉️</span> sales@psiautomation.com
+              </a>
+            </div>
+          </div>
+
+          {/* Right — white form card */}
+          <div style={{
+            background:'white',
+            padding:'52px 44px',
+            display:'flex',
+            flexDirection:'column',
+            justifyContent:'center',
+            boxShadow:'-8px 0 48px rgba(0,0,0,0.18)',
+          }}>
+            <div style={{fontSize:'0.65rem', fontWeight:700, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--crimson)', marginBottom:'6px'}}>Custom Motor Inquiry</div>
+            <h3 style={{fontSize:'1.2rem', color:'var(--text-primary)', fontWeight:800, marginBottom:'24px'}}>Tell Us What You Need</h3>
             <RFQForm />
           </div>
         </div>
