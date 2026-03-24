@@ -1,0 +1,53 @@
+# Franchise Marketing Systems (FMS)
+
+> Full-service franchise consulting firm founded in 2009. Specializes in helping
+> proven SMB owners structure, launch, and sell franchises — without losing what makes
+> their business worth franchising. 979 brands franchised, 11,340 franchise units sold,
+> 234 successful exits. 67 in-house consultants across 7 global offices.
+
+## About
+
+FMS (Franchise Marketing Systems) is the only franchise consulting firm that handles
+franchise development, franchise sales, AND ongoing management support under one roof.
+Founded in 2009 and headquartered in Alpharetta, GA, with offices in Boston, Miami,
+Toronto, Vietnam, Abuja, and Barbados.
+
+Core services:
+- Franchise Development: FDD preparation, operations manuals, training programs, brand standards
+- Franchise Sales: Franchisee sourcing, qualification, pipeline management, and closing
+- Management & Support: Ongoing franchisee support, discovery days, brand standards compliance
+- Franchise Business Plan: Investor-ready business plans for emerging franchisors
+- Efficiency Audit: Pre-franchise operational audits
+- Digital Marketing: Franchise lead generation, branding, and franchisor website design
+
+Key statistics:
+- 979+ brands franchised (since 2009)
+- 11,340 franchise units sold across client portfolio
+- 234 brands that have successfully sold and exited
+- 67 in-house franchise consultants
+- 15+ years in business
+
+## Core Pages
+
+- [Homepage](https://fms-franchise.vercel.app/): Overview, process, case studies, assessment CTA
+- [How We Help / Services](https://fms-franchise.vercel.app/services): All service lines overview
+- [Franchise Development](https://fms-franchise.vercel.app/services/franchise-development): FDD, ops manuals, training
+- [Franchise Sales](https://fms-franchise.vercel.app/services/franchise-sales): Franchisee sourcing and closing
+- [Management & Support](https://fms-franchise.vercel.app/services/management-support): Ongoing franchisee support
+- [Efficiency Audit](https://fms-franchise.vercel.app/services/efficiency-audit): Pre-franchise operational audit
+- [Franchise Business Plan](https://fms-franchise.vercel.app/services/franchise-business-plan): Investor-ready plans
+- [Digital Marketing](https://fms-franchise.vercel.app/services/digital-marketing): Franchise lead gen and branding
+- [Success Stories / Case Studies](https://fms-franchise.vercel.app/case-studies): Client outcomes with metrics
+- [Client Portfolio](https://fms-franchise.vercel.app/our-clients): 979+ brand portfolio
+- [Industries We've Franchised](https://fms-franchise.vercel.app/industries): 10 industry verticals
+- [Resources / Learn](https://fms-franchise.vercel.app/learn): Education hub — what is franchising, FAQs, guides
+- [Free Feasibility Assessment](https://fms-franchise.vercel.app/feasibility-questionnaire): Franchise readiness questionnaire
+- [About FMS](https://fms-franchise.vercel.app/about): Company story, team, A-Z approach
+- [Contact](https://fms-franchise.vercel.app/contact): 7 global office locations, booking form
+
+## Contact
+
+- Phone: 800-610-0292 / 866-341-6372
+- Email: info@FranchiseMarketingSystems.com
+- HQ: 6110 McFarland Station Dr, Unit 105, Alpharetta, GA 30004
+- Free consultation: https://info.fmsfranchise.com/freeconsultation
