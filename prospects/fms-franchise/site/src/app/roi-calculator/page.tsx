@@ -148,7 +148,8 @@ export default function ROICalculatorPage() {
                   </div>
 
                   {/* Year-by-year table */}
-                  <div style={{ background: '#fff', borderRadius: '16px', overflow: 'hidden', border: '1.5px solid #e2e8f0', boxShadow: '0 2px 12px rgba(0,0,0,0.05)', marginBottom: '1.5rem' }}>
+                  <div className="roi-table-wrap" style={{ marginBottom: '1.5rem' }}>
+                  <div style={{ background: '#fff', borderRadius: '16px', overflow: 'hidden', border: '1.5px solid #e2e8f0', boxShadow: '0 2px 12px rgba(0,0,0,0.05)', minWidth: '420px' }}>
                     <div style={{ background: '#f7f9f7', padding: '1rem 1.5rem', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', fontWeight: 700, fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#718096' }}>
                       <span>Year</span>
                       <span>Franchise Fees</span>
@@ -170,6 +171,7 @@ export default function ROICalculatorPage() {
                       <span style={{ color: '#1a3d20' }}>${Math.round(cumulative5yr).toLocaleString()}</span>
                     </div>
                   </div>
+                  </div>
 
                   {/* Disclaimer */}
                   <p style={{ fontSize: '0.78rem', color: '#9ca3af', lineHeight: 1.6, marginBottom: '1.5rem' }}>
@@ -181,7 +183,7 @@ export default function ROICalculatorPage() {
                     <div style={{ background: 'linear-gradient(135deg, #1a3d20, #2a5530)', borderRadius: '16px', padding: '1.75rem', textAlign: 'center' }}>
                       <h3 style={{ color: '#fff', fontSize: '1rem', marginBottom: '0.5rem' }}>Get a Detailed FMS Projection PDF</h3>
                       <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.875rem', marginBottom: '1.25rem' }}>Our consultants will build a fully customized financial model for your specific concept — free.</p>
-                      <form onSubmit={e => { e.preventDefault(); setEmailSubmitted(true); }} style={{ display: 'flex', gap: '0.75rem' }}>
+                      <form onSubmit={e => { e.preventDefault(); setEmailSubmitted(true); }} className="form-inline-row" style={{ display: 'flex', gap: '0.75rem' }}>
                         <input type="email" required value={email} onChange={e => setEmail(e.target.value)} placeholder="Your email address" className="form-input" style={{ flex: 1, background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff' }} />
                         <button type="submit" className="btn btn-gold">Send PDF</button>
                       </form>
@@ -194,7 +196,7 @@ export default function ROICalculatorPage() {
                     </div>
                   )}
 
-                  <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1rem' }}>
+                  <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                     <a href="https://info.fmsfranchise.com/freeconsultation" target="_blank" rel="noopener noreferrer" className="btn btn-gold btn-lg" style={{ flex: 1, justifyContent: 'center' }}>Book Free Consultation</a>
                     <Link href="/franchise-readiness-assessment" className="btn btn-outline-green btn-lg" style={{ flex: 1, justifyContent: 'center' }}>Take Readiness Quiz</Link>
                   </div>

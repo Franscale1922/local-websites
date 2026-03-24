@@ -75,7 +75,7 @@ export default function FoodBeveragePage() {
           <p>Food and beverage is the most complex category to franchise correctly — and the one where brand damage is most visible when something goes wrong. Here's how FMS addresses the core challenges:</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', margin: '1.5rem 0 2.5rem' }}>
             {CHALLENGES.map(c => (
-              <div key={c.challenge} style={{ background: '#fff', borderRadius: '12px', padding: '1.5rem', border: '1.5px solid #e2e8f0'}} className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', alignItems: 'start' }}>
+              <div key={c.challenge} className="hero-grid" style={{ background: '#fff', borderRadius: '12px', padding: '1.5rem', border: '1.5px solid #e2e8f0', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', alignItems: 'start' }}>
                 <div>
                   <div style={{ fontSize: '0.72rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#718096', marginBottom: '0.35rem' }}>Challenge</div>
                   <p style={{ fontWeight: 700, fontSize: '0.9rem', color: '#1a1a1a', margin: 0, lineHeight: 1.5 }}>{c.challenge}</p>

@@ -165,7 +165,7 @@ export default function CaseStudiesPage() {
                     <h2 style={{ color: '#fff', fontSize: '1.5rem', marginBottom: '0.3rem' }}>{cs.brand}</h2>
                     <div style={{ display: 'inline-block', background: 'rgba(60,184,94,0.25)', color: '#3cb85e', fontSize: '0.75rem', fontWeight: 700, padding: '0.2rem 0.75rem', borderRadius: '999px' }}>{cs.industry}</div>
                   </div>
-                  <div style={{ display: 'flex', gap: '1.5rem' }}>
+                  <div className="case-study-metrics" style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
                     {cs.metrics.map(m => (
                       <div key={m.label} style={{ textAlign: 'center' }}>
                         <div style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.75rem', fontWeight: 900, color: '#e8b736', lineHeight: 1 }}>{m.val}</div>
@@ -176,7 +176,7 @@ export default function CaseStudiesPage() {
                 </div>
 
                 {/* Body */}
-                <div className="grid-3" style={{ padding: '2.5rem', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2rem' }}>
+                <div className="grid-3" style={{ padding: '2rem 2rem', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1.5rem' }}>
                   {[
                     { label: 'Challenge', text: cs.challenge, color: '#e53e3e' },
                     { label: 'Approach', text: cs.approach, color: '#3cb85e' },

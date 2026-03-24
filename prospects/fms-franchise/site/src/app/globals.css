@@ -486,7 +486,7 @@ p { line-height: 1.75; }
   /* ── Bottom bar (footer) flex-between → wrap ── */
   .mobile-stack { flex-direction: column !important; align-items: flex-start !important; gap: 1rem !important; }
 
-  /* ── Hero 2-col → single col ── */
+  /* ── Hero 2-col (any variant) → single col ── */
   .hero-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
 
   /* ── Trigger / Is-This-You 3-col → 1-col ── */
@@ -508,6 +508,21 @@ p { line-height: 1.75; }
 
   /* ── Footer brand column ── */
   .footer-brand { grid-column: span 1 !important; }
+
+  /* ── ROI table rows (4-col inline grid) → horizontally scrollable ── */
+  .roi-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  /* ── Any inline flex form rows → wrap ── */
+  .form-inline-row { flex-wrap: wrap !important; }
+
+  /* ── Case study grid (3-col) used inside cards → 1-col ── */
+  .case-study-metrics { grid-template-columns: 1fr !important; gap: 1rem !important; }
+
+  /* ── Clients page header flex → stack ── */
+  .clients-header-flex { flex-direction: column !important; align-items: flex-start !important; gap: 0.75rem !important; }
+
+  /* ── About page team grid → 2-col ── */
+  .about-team-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
 
 @media (max-width: 480px) {
