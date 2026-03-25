@@ -2,31 +2,61 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: {
-    default: 'PSI Automation | Custom Vane Air Motors — 1/4 to 70 HP | Sandpoint, Idaho',
-    template: '%s | PSI Automation — Vane Air Motors',
-  },
-  description: 'Custom-engineered pneumatic vane air motors from 1/4 to 70 HP. No minimum quantity. Field-serviceable. 35+ years manufacturing in Sandpoint, Idaho. Talk to an engineer today.',
-  keywords: ['pneumatic air motors', 'vane air motors', 'custom air motors', 'industrial air motors', 'PSI Automation', 'Sandpoint Idaho'],
-  icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
-  },
-  openGraph: {
-    siteName: 'PSI Automation',
-    type: 'website',
-    locale: 'en_US',
-  },
+  title: 'TEMPLATE — Replace with Business Name | City, MT',
+  description: 'PSI Automation manufactures rugged, custom air motors in Montana. 35 years of power, durability, and application engineering. Call 800-392-3602.',
+  openGraph: { type: 'website' },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-      </head>
+        <meta name="robots" content="noindex, nofollow" />
+        {/* DEMO MODE: Remove the noindex line above when site goes live */}
+      
+      {/* LocalBusiness JSON-LD Schema — update per prospect before deployment */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "BUSINESS_NAME",
+            "description": "BUSINESS_DESCRIPTION",
+            "url": "https://DOMAIN.com",
+            "telephone": "PHONE",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "STREET_ADDRESS",
+              "addressLocality": "CITY",
+              "addressRegion": "MT",
+              "postalCode": "POSTAL_CODE",
+              "addressCountry": "US"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "LAT",
+              "longitude": "LNG"
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "17:00"
+              }
+            ],
+            "image": "https://DOMAIN.com/og-image.jpg",
+            "priceRange": "72525",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "RATING",
+              "reviewCount": "REVIEW_COUNT"
+            }
+          })
+        }}
+      />
+    </head>
       <body>{children}</body>
     </html>
   );

@@ -1371,6 +1371,6 @@ p { max-width: 68ch; }
   .county-hero { min-height: 340px; }
   .county-hero-content { padding: 0 20px 48px; }
   .county-hero-ctas { flex-direction: column; }
-  .county-hero-ctas .btn { justify-content: center; }
+  .county-hero-ctas .btn { width: 100%; text-align: center; justify-content: center; }
 }
 
