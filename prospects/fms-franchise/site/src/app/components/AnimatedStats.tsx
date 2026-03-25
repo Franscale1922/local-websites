@@ -61,7 +61,7 @@ export default function AnimatedStats() {
   }, []);
 
   return (
-    <div ref={ref} className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem', textAlign: 'center' }}>
+    <div ref={ref} className="grid-4" style={{ display: 'grid', gap: '2rem', textAlign: 'center' }}>
       {STATS.map(s => <StatItem key={s.label} stat={s} triggered={triggered} />)}
     </div>
   );

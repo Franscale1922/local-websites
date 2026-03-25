@@ -50,7 +50,7 @@ export default function OurClientsPage() {
       {/* Stats */}
       <section style={{ background: '#1a3d20', padding: '3rem 0' }}>
         <div className="container">
-          <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem', textAlign: 'center' }}>
+          <div className="grid-4" style={{ display: 'grid', gap: '2rem', textAlign: 'center' }}>
             {[
               { num: '900+', label: 'Brands Franchised' },
               { num: '11,340', label: 'Franchises Sold' },
@@ -75,7 +75,7 @@ export default function OurClientsPage() {
             <div className="divider" />
             <p>Every logo in our portfolio represents a business owner who trusted FMS with something they built. Here are three with verified, quantified outcomes.</p>
           </div>
-          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem', marginTop: '3rem' }}>
+          <div className="grid-3" style={{ display: 'grid', gap: '2rem', marginTop: '3rem' }}>
             {[
               { brand: 'Foxtail Coffee', industry: 'Food & Beverage', metric: '12 locations', label: 'Signed Year 1', desc: 'Single specialty café grew to multi-unit franchise system with 98% customer satisfaction maintained across all units.' },
               { brand: 'Voda Restoration', industry: 'Home Services', metric: '8 franchisees', label: '18 Months', desc: 'Owner went from solo operator to 8-unit franchise network with fully hands-off corporate structure.' },

@@ -136,7 +136,7 @@ export default function CaseStudiesPage() {
       {/* Stats */}
       <section style={{ background: '#1a3d20', padding: '3rem 0' }}>
         <div className="container">
-          <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem', textAlign: 'center' }}>
+          <div className="grid-4" style={{ display: 'grid', gap: '2rem', textAlign: 'center' }}>
             {[
               { num: '900+', label: 'Brands Franchised' },
               { num: '11,340', label: 'Franchises Sold' },
@@ -176,7 +176,7 @@ export default function CaseStudiesPage() {
                 </div>
 
                 {/* Body */}
-                <div className="grid-3" style={{ padding: '2rem 2rem', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1.5rem' }}>
+                <div className="grid-3 case-study-metrics" style={{ padding: '2rem 2rem', display: 'grid', gap: '1.5rem' }}>
                   {[
                     { label: 'Challenge', text: cs.challenge, color: '#e53e3e' },
                     { label: 'Approach', text: cs.approach, color: '#3cb85e' },

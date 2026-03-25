@@ -34,7 +34,7 @@ export default function FranchiseYourBusinessPage() {
       {/* Why franchise now */}
       <section className="section section-alt">
         <div className="container">
-          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
+          <div className="hero-grid" style={{ display: 'grid', gap: '5rem', alignItems: 'center' }}>
             <div>
               <span className="eyebrow">The Opportunity</span>
               <h2>The Case for Franchising Your Business Right Now</h2>
@@ -49,7 +49,7 @@ export default function FranchiseYourBusinessPage() {
                 FMS has helped 900+ business owners make this transition. The process is learnable. The model is proven. The question is whether your business is ready.
               </p>
             </div>
-            <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+            <div className="grid-2" style={{ display: 'grid', gap: '1.25rem' }}>
               {[
                 { num: '$825B', label: 'US Franchise Industry GDP' },
                 { num: '8.9M', label: 'Franchise-Employed Americans' },
@@ -104,7 +104,7 @@ export default function FranchiseYourBusinessPage() {
             <div className="divider" />
             <p>Not every business is franchise-ready — and FMS will tell you honestly if yours isn't. Here's what we look for in the evaluation.</p>
           </div>
-          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', marginTop: '3rem' }}>
+          <div className="grid-3" style={{ display: 'grid', gap: '1.5rem', marginTop: '3rem' }}>
             {[
               { icon: <IconRevenue size={26} color="#3cb85e" />, title: 'Strong Unit Economics', desc: 'Your business generates enough margin (15–25%+) to support profitable franchisee operation after royalty payments, local marketing, and overhead.' },
               { icon: <IconClipboard size={26} color="#3cb85e" />, title: 'Documented Systems', desc: 'Your business can be operated by someone other than you — processes are (or can be) documented, teachable, and replicable in new markets.' },

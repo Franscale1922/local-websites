@@ -121,7 +121,7 @@ export default function SiteNav({ alwaysScrolled = false }: SiteNavProps) {
         </div>
       </div>
 
-      <nav style={{ ...navStyle, top: '30px' }}>
+      <nav role="navigation" aria-label="Main navigation" style={{ ...navStyle, top: '30px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '70px' }}>
           {/* Logo */}
           <Link href="/" style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
@@ -140,6 +140,8 @@ export default function SiteNav({ alwaysScrolled = false }: SiteNavProps) {
               >
                 <Link
                   href={item.href}
+                  aria-haspopup={item.dropdown ? 'true' : undefined}
+                  aria-expanded={item.dropdown ? openDropdown === item.label : undefined}
                   style={{
                     padding: '0.5rem 0.85rem',
                     fontSize: '0.85rem',
@@ -151,7 +153,7 @@ export default function SiteNav({ alwaysScrolled = false }: SiteNavProps) {
                   }}
                 >
                   {item.label}
-                  {item.dropdown && <span style={{ fontSize: '0.7rem', opacity: 0.7 }}>▾</span>}
+                  {item.dropdown && <span style={{ fontSize: '0.7rem', opacity: 0.7 }} aria-hidden="true">▾</span>}
                 </Link>
                 {item.dropdown && openDropdown === item.label && (
                   <div style={{
@@ -295,8 +297,9 @@ export default function SiteNav({ alwaysScrolled = false }: SiteNavProps) {
           <Link href="/contact" className="btn btn-outline-white" style={{ justifyContent: 'center', width: '100%' }}>
             Talk to a Consultant
           </Link>
-          <a href="tel:8006100292" style={{ textAlign: 'center', color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem', marginTop: '0.5rem' }}>
-            📞 800-610-0292
+          <a href="tel:8006100292" style={{ textAlign: 'center', color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem', marginTop: '0.5rem', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem' }}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.5 3.35 2 2 0 0 1 3.48 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.73a16 16 0 0 0 6 6l1.27-.62a2 2 0 0 1 2.11.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            800-610-0292
           </a>
         </div>
       </div>

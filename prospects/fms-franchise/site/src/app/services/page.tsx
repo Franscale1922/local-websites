@@ -163,7 +163,7 @@ export default function ServicesPage() {
       {/* Why full-service matters */}
       <section className="section section-dark">
         <div className="container">
-          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
+          <div className="hero-grid" style={{ display: 'grid', gap: '5rem', alignItems: 'center' }}>
             <div>
               <span className="eyebrow eyebrow-light">The FMS Difference</span>
               <h2 style={{ color: '#fff', marginBottom: '1.5rem' }}>Why Full-Service Wins</h2>
@@ -186,7 +186,7 @@ export default function ServicesPage() {
                 ))}
               </div>
             </div>
-            <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+            <div className="grid-2" style={{ display: 'grid', gap: '1.25rem' }}>
               {[
                 { num: '900+', label: 'Brands Franchised' },
                 { num: '11,340', label: 'Franchises Sold' },

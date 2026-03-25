@@ -71,7 +71,7 @@ export default function FranchiseSalesPage() {
       {/* The Problem */}
       <section className="section section-alt">
         <div className="container">
-          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
+          <div className="hero-grid" style={{ display: 'grid', gap: '5rem', alignItems: 'center' }}>
             <div>
               <span className="eyebrow">The Problem</span>
               <h2>Having an FDD Is Not the Same as Selling Franchises</h2>
@@ -113,7 +113,7 @@ export default function FranchiseSalesPage() {
             <div className="divider" />
             <p>A 6-phase pipeline management process that has produced 11,340 closed franchise agreements.</p>
           </div>
-          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem', marginTop: '3rem' }}>
+          <div className="grid-2" style={{ display: 'grid', gap: '1.5rem', marginTop: '3rem' }}>
             {SALES_PROCESS.map(step => (
               <div key={step.num} style={{ display: 'flex', gap: '1.5rem', background: '#fff', borderRadius: '16px', padding: '2rem', border: '1.5px solid #e2e8f0', boxShadow: '0 4px 20px rgba(60,184,94,0.12), 0 1px 4px rgba(60,184,94,0.08)' }}>
                 <div style={{ flexShrink: 0 }}>
@@ -134,7 +134,7 @@ export default function FranchiseSalesPage() {
       {/* Stats bar */}
       <section style={{ background: '#1a3d20', padding: '3rem 0' }}>
         <div className="container">
-          <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem', textAlign: 'center' }}>
+          <div className="grid-4" style={{ display: 'grid', gap: '2rem', textAlign: 'center' }}>
             {[
               { num: '11,340', label: 'Franchises Sold' },
               { num: '900+', label: 'Brands Supported' },
@@ -158,7 +158,7 @@ export default function FranchiseSalesPage() {
             <h2>Real Deals. Real Numbers.</h2>
             <div className="divider" />
           </div>
-          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem', marginTop: '3rem' }}>
+          <div className="grid-3" style={{ display: 'grid', gap: '2rem', marginTop: '3rem' }}>
             {PROOF.map(cs => (
               <div key={cs.brand} style={{ background: '#fff', borderRadius: '16px', boxShadow: '0 4px 20px rgba(60,184,94,0.12), 0 1px 4px rgba(60,184,94,0.08)', overflow: 'hidden', border: '1px solid #e2e8f0' }}>
                 {/* Dark hero: fixed min-height so all 3 are same height */}

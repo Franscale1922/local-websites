@@ -29,7 +29,7 @@ export default function FranchiseBusinessPlanPage() {
       {/* Problem */}
       <section className="section section-alt">
         <div className="container">
-          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
+          <div className="hero-grid" style={{ display: 'grid', gap: '5rem', alignItems: 'center' }}>
             <div>
               <span className="eyebrow">The Problem</span>
               <h2>A Weak Business Plan Kills Franchise Deals Before They Start</h2>
@@ -63,7 +63,7 @@ export default function FranchiseBusinessPlanPage() {
             <div className="divider" />
             <p>FMS has access to unit economics data from 900+ franchise systems across every major industry vertical. Your business plan is benchmarked against what actually works, not optimistic assumptions.</p>
           </div>
-          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem', marginTop: '3rem' }}>
+          <div className="grid-3" style={{ display: 'grid', gap: '2rem', marginTop: '3rem' }}>
             {[
               { title: 'Data-Driven Projections', desc: 'Your financial projections are built from comparable FMS client data — not inflated assumptions. Buyers and their advisors can verify the assumptions.' },
               { title: 'Investor-Ready Format', desc: 'Formatted for presentation to Private Equity, SBA lenders, and sophisticated franchise buyer advisors. Not a Word doc template — a professional financial model.' },

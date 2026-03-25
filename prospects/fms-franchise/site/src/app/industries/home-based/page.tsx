@@ -30,7 +30,7 @@ export default function HomeBasedPage() {
       <section className="section section-alt">
         <div className="container" style={{ maxWidth: '860px' }}>
 
-          <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem', marginBottom: '3rem' }}>
+          <div className="grid-4" style={{ display: 'grid', gap: '1rem', marginBottom: '3rem' }}>
             {[
               { num: '50+', label: 'Home-Based Brands Franchised' },
               { num: 'Lowest', label: 'Franchisee Capital Requirement' },

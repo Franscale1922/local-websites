@@ -84,7 +84,7 @@ export default function BlogPage() {
       {/* Newsletter + tools CTA */}
       <section className="section section-dark">
         <div className="container">
-          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center' }}>
+          <div className="hero-grid" style={{ display: 'grid', gap: '3rem', alignItems: 'center' }}>
             <div>
               <span className="eyebrow eyebrow-light">Stay Informed</span>
               <h2 style={{ color: '#fff', marginBottom: '1rem' }}>Get New Articles in Your Inbox</h2>

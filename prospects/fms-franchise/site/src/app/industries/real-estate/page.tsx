@@ -30,7 +30,7 @@ export default function RealEstatePage() {
       <section className="section section-alt">
         <div className="container" style={{ maxWidth: '860px' }}>
 
-          <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem', marginBottom: '3rem' }}>
+          <div className="grid-4" style={{ display: 'grid', gap: '1rem', marginBottom: '3rem' }}>
             {[
               { num: '35+', label: 'Real Estate Brands Franchised' },
               { num: '$4.4T', label: 'Annual U.S. Real Estate Sales' },
@@ -52,7 +52,7 @@ export default function RealEstatePage() {
           </div>
 
           <h2>Why Real Estate Concepts Franchise Well</h2>
-          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', margin: '1rem 0 2rem' }}>
+          <div className="hero-grid" style={{ display: 'grid', gap: '1rem', margin: '1rem 0 2rem' }}>
             {[
               { icon: <IconLightbulb size={24} color="#3cb85e" />, title: 'Knowledge-based model', body: 'Real estate concepts franchise the system, the brand, the tools, and the training — not physical inventory or facilities. This makes expansion capital requirements dramatically lower than most other categories.' },
               { icon: <IconClipboard size={24} color="#3cb85e" />, title: 'Agent recruitment as the core model', body: 'Brokerage franchises scale by recruiting and supporting licensed agents. Each agent is effectively a revenue unit. Your franchise system is a talent network model.' },

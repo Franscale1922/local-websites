@@ -35,7 +35,7 @@ export default function ContactPage() {
       {/* Contact options + form */}
       <section className="section section-alt">
         <div className="container">
-          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '4rem', alignItems: 'start' }}>
+          <div className="hero-grid" style={{ display: 'grid', gap: '4rem', alignItems: 'start' }}>
             {/* Left — contact info */}
             <div>
               <h2 style={{ marginBottom: '1.5rem' }}>Let's Talk</h2>

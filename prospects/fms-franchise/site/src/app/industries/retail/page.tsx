@@ -29,7 +29,7 @@ export default function RetailPage() {
       <section className="section section-alt">
         <div className="container" style={{ maxWidth: '860px' }}>
 
-          <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem', marginBottom: '3rem' }}>
+          <div className="grid-4" style={{ display: 'grid', gap: '1rem', marginBottom: '3rem' }}>
             {[
               { num: '95+', label: 'Retail Brands Franchised' },
               { num: '2nd', label: 'Largest FMS Category' },

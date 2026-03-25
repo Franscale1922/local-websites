@@ -62,7 +62,7 @@ export default function ManagementSupportPage() {
       {/* Problem */}
       <section className="section section-alt">
         <div className="container">
-          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
+          <div className="hero-grid" style={{ display: 'grid', gap: '5rem', alignItems: 'center' }}>
             <div>
               <span className="eyebrow">The Problem</span>
               <h2>Most Franchise Systems Stall After the First 10 Units</h2>
@@ -119,7 +119,7 @@ export default function ManagementSupportPage() {
             <h2>Six Pillars of Franchise Support</h2>
             <div className="divider" />
           </div>
-          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', marginTop: '3rem' }}>
+          <div className="grid-3" style={{ display: 'grid', gap: '1.5rem', marginTop: '3rem' }}>
             {SUPPORT_PILLARS.map((pillar, i) => (
               <div key={pillar.title} style={{ background: '#fff', borderRadius: '16px', padding: '2rem', border: '1.5px solid #e2e8f0', boxShadow: '0 4px 20px rgba(60,184,94,0.12), 0 1px 4px rgba(60,184,94,0.08)' }}>
                 <div style={{ width: '48px', height: '48px', borderRadius: '10px', background: 'linear-gradient(135deg, #1a3d20, #3cb85e)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 900, fontFamily: 'Outfit, sans-serif', fontSize: '1.1rem', marginBottom: '1rem' }}>
@@ -159,7 +159,7 @@ export default function ManagementSupportPage() {
             <h2 style={{ color: '#fff' }}>What Strong Support Systems Produce</h2>
             <div className="divider divider-gold" />
           </div>
-          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '2rem' }}>
+          <div className="grid-2" style={{ display: 'grid', gap: '2rem' }}>
             {PROOF.map(cs => (
               <div key={cs.brand} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '16px', overflow: 'hidden' }}>
                 <div style={{ padding: '1.5rem 1.75rem', borderBottom: '1px solid rgba(255,255,255,0.08)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>

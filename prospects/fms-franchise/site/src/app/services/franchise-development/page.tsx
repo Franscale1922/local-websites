@@ -71,7 +71,7 @@ export default function FranchiseDevelopmentPage() {
       {/* The Problem */}
       <section className="section section-alt">
         <div className="container">
-          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
+          <div className="hero-grid" style={{ display: 'grid', gap: '5rem', alignItems: 'center' }}>
             <div>
               <span className="eyebrow">The Problem</span>
               <h2>Most Businesses That Try to Franchise Alone Fail</h2>

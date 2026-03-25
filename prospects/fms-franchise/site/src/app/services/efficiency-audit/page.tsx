@@ -29,7 +29,7 @@ export default function EfficiencyAuditPage() {
       {/* Problem */}
       <section className="section section-alt">
         <div className="container">
-          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
+          <div className="hero-grid" style={{ display: 'grid', gap: '5rem', alignItems: 'center' }}>
             <div>
               <span className="eyebrow">The Problem</span>
               <h2>You Can't Franchise a Business That Can't Run Without You</h2>
@@ -67,7 +67,7 @@ export default function EfficiencyAuditPage() {
             <h2>A Structured 5-Area Audit Framework</h2>
             <div className="divider" />
           </div>
-          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem', marginTop: '3rem' }}>
+          <div className="grid-2" style={{ display: 'grid', gap: '1.5rem', marginTop: '3rem' }}>
             {[
               { step: '01', title: 'Operations Analysis', desc: 'We map every operational process — customer-facing and internal — and evaluate whether each one can be documented, taught, and executed consistently by a franchisee.' },
               { step: '02', title: 'Financial Structure Review', desc: 'We model your unit economics to verify that the business generates enough margin for profitable franchisee operation after royalties, local marketing, and overhead.' },

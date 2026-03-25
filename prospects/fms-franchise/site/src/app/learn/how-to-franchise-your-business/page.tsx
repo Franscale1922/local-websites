@@ -141,7 +141,7 @@ export default function HowToFranchisePage() {
           </div>
 
           <h2>The Three Paths: DIY, Hybrid, and Full-Service</h2>
-          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', margin: '1.5rem 0' }}>
+          <div className="grid-3" style={{ display: 'grid', gap: '1rem', margin: '1.5rem 0' }}>
             {[
               { path: 'DIY', cost: '$25K–$50K', time: '12–24 months', risk: 'High', note: 'Franchise attorneys only; you build all systems. High risk of FDD errors, poor operations manuals, and zero franchise sales support.' },
               { path: 'Hybrid', cost: '$50K–$100K', time: '8–18 months', risk: 'Medium', note: 'Consultant + attorney combination. Quality varies widely — this is where "template factory" firms operate.' },

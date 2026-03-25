@@ -107,7 +107,7 @@ export default function IndustriesPage() {
             <div className="divider" />
             <p>900+ brands across 10 major industry categories. Find your industry below to see which brands FMS has franchised and what made those concepts work.</p>
           </div>
-          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem', marginTop: '3rem' }}>
+          <div className="grid-2" style={{ display: 'grid', gap: '1.5rem', marginTop: '3rem' }}>
             {INDUSTRIES.map(ind => (
               <Link key={ind.slug} href={`/industries/${ind.slug}`} style={{ textDecoration: 'none' }}>
                 <div style={{ background: '#fff', borderRadius: '16px', padding: '2rem', border: '1.5px solid #e2e8f0', boxShadow: '0 2px 12px rgba(0,0,0,0.05)', display: 'flex', gap: '1.5rem', alignItems: 'flex-start', transition: 'all 0.3s', cursor: 'pointer', height: '100%' }}>

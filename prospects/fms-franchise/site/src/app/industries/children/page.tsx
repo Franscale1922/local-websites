@@ -30,7 +30,7 @@ export default function ChildrenPage() {
       <section className="section section-alt">
         <div className="container" style={{ maxWidth: '860px' }}>
 
-          <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem', marginBottom: '3rem' }}>
+          <div className="grid-4" style={{ display: 'grid', gap: '1rem', marginBottom: '3rem' }}>
             {[
               { num: '70+', label: 'Children\'s Brands Franchised' },
               { num: 'High', label: 'Customer Retention Rate' },
@@ -45,7 +45,7 @@ export default function ChildrenPage() {
           </div>
 
           <h2>Why Children's Franchises Are Exceptional Businesses</h2>
-          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', margin: '1rem 0 2rem' }}>
+          <div className="hero-grid" style={{ display: 'grid', gap: '1rem', margin: '1rem 0 2rem' }}>
             {[
               { icon: <IconHeart size={24} color="#3cb85e" />, title: 'Unmatched customer loyalty', body: "Once a child is enrolled and thriving, parents almost never switch. Children's enrichment and care franchises have some of the highest life-time-value customers in any franchise category." },
               { icon: <IconRepeat size={24} color="#3cb85e" />, title: 'Recurring revenue by design', body: "Weekly sessions, monthly memberships, semester enrollment — children's concepts naturally structure themselves for recurring revenue." },

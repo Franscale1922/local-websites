@@ -34,7 +34,7 @@ export default function BrandingMarketingPage() {
             <h2>What We Build for Franchisors</h2>
             <div className="divider" />
           </div>
-          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem', marginTop: '3rem' }}>
+          <div className="grid-2" style={{ display: 'grid', gap: '1.5rem', marginTop: '3rem' }}>
             {[
               { title: 'Brand Identity System', desc: 'Logo variations, color palette, typography, icon systems, and brand usage guidelines — built to survive franchisee reproduction across print, digital, and signage.' },
               { title: 'Franchise Brand Standards Guide', desc: 'A comprehensive 60+ page guide defining exactly how your brand should and should not be used — protecting you legally and protecting your customer experience.' },

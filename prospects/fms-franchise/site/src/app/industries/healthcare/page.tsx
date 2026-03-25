@@ -38,7 +38,7 @@ export default function HealthcarePage() {
             <p style={{ fontSize: '0.875rem', color: '#4a5568', margin: '0.5rem 0 0', lineHeight: 1.75 }}>Healthcare is one of the most heavily regulated franchise categories. FMS coordinates closely with healthcare-specialized attorneys on FDD development, HIPAA compliance language, and state-specific licensing requirements. This is not a category where generic franchise templates suffice.</p>
           </div>
 
-          <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem', marginBottom: '3rem' }}>
+          <div className="grid-4" style={{ display: 'grid', gap: '1rem', marginBottom: '3rem' }}>
             {[
               { num: '60+', label: 'Healthcare Brands Franchised' },
               { num: '$4.3T', label: 'U.S. Healthcare Spend' },

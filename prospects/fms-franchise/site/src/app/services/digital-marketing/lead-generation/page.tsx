@@ -30,7 +30,7 @@ export default function LeadGenerationPage() {
 
       <section className="section section-alt">
         <div className="container">
-          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
+          <div className="grid-3" style={{ display: 'grid', gap: '2rem' }}>
             {[
               { title: 'Franchise Portal Advertising', desc: 'Active management of your listings on Franchise Direct, Franchise Gator, Entrepreneur.com, FranchiseOpportunities.com, and 12+ other portals with category leadership bidding strategy.', icon: <IconClipboard size={28} color="#3cb85e" /> },
               { title: 'Paid Search (Google / Meta)', desc: 'Targeted campaigns reaching business owners actively searching for franchise opportunities in your industry and investment level. Full funnel from awareness to consultation booking.', icon: <IconSearch size={28} color="#3cb85e" /> },

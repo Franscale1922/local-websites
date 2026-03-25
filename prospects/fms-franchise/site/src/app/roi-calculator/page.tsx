@@ -58,7 +58,7 @@ export default function ROICalculatorPage() {
 
       <section className="section section-alt">
         <div className="container">
-          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '3rem', alignItems: 'start' }}>
+          <div className="hero-grid" style={{ display: 'grid', gap: '3rem', alignItems: 'start' }}>
             {/* Inputs panel */}
             <div style={{ background: '#fff', borderRadius: '20px', padding: '2rem', border: '1.5px solid #e2e8f0', boxShadow: '0 4px 24px rgba(0,0,0,0.06)' }}>
               <h2 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>Your Franchise Model</h2>
@@ -136,7 +136,7 @@ export default function ROICalculatorPage() {
               ) : (
                 <div>
                   {/* 5-year summary cards */}
-                  <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
+                  <div className="grid-2" style={{ display: 'grid', gap: '1rem', marginBottom: '1.5rem' }}>
                     <div style={{ background: 'linear-gradient(135deg, #1a3d20, #2a5530)', borderRadius: '16px', padding: '1.75rem', textAlign: 'center' }}>
                       <div style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.55)', marginBottom: '0.5rem' }}>5-Year Total Revenue</div>
                       <div style={{ fontFamily: 'Outfit, sans-serif', fontSize: '2.5rem', fontWeight: 900, color: '#e8b736', lineHeight: 1 }}>${(cumulative5yr / 1000000).toFixed(1)}M</div>

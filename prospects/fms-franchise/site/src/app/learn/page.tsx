@@ -38,7 +38,7 @@ export default function LearnPage() {
       {/* Quick stat */}
       <section style={{ background: '#1a3d20', padding: '2rem 0' }}>
         <div className="container">
-          <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem', textAlign: 'center' }}>
+          <div className="grid-4" style={{ display: 'grid', gap: '2rem', textAlign: 'center' }}>
             {[
               { num: '3,500+', label: 'Active Franchise Brands in the US' },
               { num: '$825B', label: 'Franchise Industry GDP' },
@@ -62,7 +62,7 @@ export default function LearnPage() {
             <h2>Franchise Education Resources</h2>
             <div className="divider" />
           </div>
-          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', marginTop: '3rem' }}>
+          <div className="grid-3" style={{ display: 'grid', gap: '1.5rem', marginTop: '3rem' }}>
             {LEARN_ARTICLES.map((article, i) => (
               <Link key={article.href} href={article.href} style={{ textDecoration: 'none' }}>
                 <div style={{ background: '#fff', borderRadius: '16px', padding: '2rem', border: '1.5px solid #e2e8f0', boxShadow: '0 2px 12px rgba(0,0,0,0.04)', height: '100%', transition: 'all 0.2s', cursor: 'pointer' }}>
@@ -85,7 +85,7 @@ export default function LearnPage() {
             <h2 style={{ color: '#fff' }}>Don't Just Read — Calculate</h2>
             <div className="divider divider-gold" />
           </div>
-          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+          <div className="hero-grid" style={{ display: 'grid', gap: '2rem' }}>
             <div style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '20px', padding: '2.5rem' }}>
               <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>📊</div>
               <h3 style={{ color: '#fff', marginBottom: '0.75rem' }}>Franchise Readiness Assessment</h3>

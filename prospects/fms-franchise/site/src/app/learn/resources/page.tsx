@@ -88,7 +88,7 @@ export default function FranchiseResourcesPage() {
             <p>The most useful starting points for business owners in the early stages of exploring franchising.</p>
           </div>
 
-          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', marginTop: '2.5rem' }}>
+          <div className="grid-3" style={{ display: 'grid', gap: '1.5rem', marginTop: '2.5rem' }}>
             {DOWNLOADABLES.map(item => (
               <div key={item.title} style={{ background: '#fff', borderRadius: '16px', padding: '2rem', border: '1.5px solid #e2e8f0', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ width: '52px', height: '52px', borderRadius: '12px', background: 'linear-gradient(135deg, #f0faf3, #e2f5e8)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>{item.icon}</div>

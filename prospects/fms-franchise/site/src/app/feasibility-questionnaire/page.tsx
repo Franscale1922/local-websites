@@ -19,7 +19,7 @@ export default function FeasibilityQuestionnairePage() {
 
       <section className="section section-alt">
         <div className="container">
-          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '4rem', alignItems: 'start' }}>
+          <div className="hero-grid" style={{ display: 'grid', gap: '4rem', alignItems: 'start' }}>
             {/* Form */}
             <div style={{ background: '#fff', borderRadius: '20px', padding: '2.5rem', boxShadow: '0 4px 32px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0' }}>
               <h2 style={{ fontSize: '1.35rem', marginBottom: '0.5rem' }}>Tell Us About Your Business</h2>
@@ -29,7 +29,7 @@ export default function FeasibilityQuestionnairePage() {
                 {/* Contact Info */}
                 <div style={{ paddingBottom: '1rem', borderBottom: '1px solid #f0f0f0' }}>
                   <div style={{ fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#3cb85e', marginBottom: '1rem' }}>Your Information</div>
-                  <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                  <div className="grid-2" style={{ display: 'grid', gap: '1rem' }}>
                     <div className="form-group">
                       <label className="form-label" htmlFor="fq-first">First Name *</label>
                       <input className="form-input" id="fq-first" name="first_name" type="text" required placeholder="First name" />
@@ -56,7 +56,7 @@ export default function FeasibilityQuestionnairePage() {
                     <label className="form-label" htmlFor="fq-biz">Business Name *</label>
                     <input className="form-input" id="fq-biz" name="business_name" type="text" required />
                   </div>
-                  <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1rem' }}>
+                  <div className="grid-2" style={{ display: 'grid', gap: '1rem', marginTop: '1rem' }}>
                     <div className="form-group">
                       <label className="form-label" htmlFor="fq-industry">Industry *</label>
                       <select className="form-input" id="fq-industry" name="industry" required>
@@ -85,7 +85,7 @@ export default function FeasibilityQuestionnairePage() {
                       </select>
                     </div>
                   </div>
-                  <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '1rem' }}>
+                  <div className="grid-2" style={{ display: 'grid', gap: '1rem', marginTop: '1rem' }}>
                     <div className="form-group">
                       <label className="form-label" htmlFor="fq-revenue">Annual Revenue</label>
                       <select className="form-input" id="fq-revenue" name="annual_revenue">

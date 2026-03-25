@@ -26,7 +26,7 @@ export default function FranchiseIndustryFactsPage() {
         <div className="container" style={{ maxWidth: '800px' }}>
 
           {/* Big stat bar */}
-          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', margin: '0 0 3rem' }}>
+          <div className="grid-3" style={{ display: 'grid', gap: '1.5rem', margin: '0 0 3rem' }}>
             {[
               { num: '$825B', label: 'Franchise Industry GDP Contribution', sub: 'U.S. franchising industry economic output' },
               { num: '8.9M', label: 'Americans Employed by Franchises', sub: 'Across all franchise categories' },
@@ -78,7 +78,7 @@ export default function FranchiseIndustryFactsPage() {
 
           <h2>Who Becomes a Franchisee?</h2>
           <p>Understanding the franchisee pool is critical for franchisors — you're designing a system for this person to operate profitably.</p>
-          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', margin: '1.5rem 0' }}>
+          <div className="hero-grid" style={{ display: 'grid', gap: '1rem', margin: '1.5rem 0' }}>
             {[
               { label: 'Average age of new franchisee', value: '38–55 years old', note: 'Gen X represents the largest buyer cohort' },
               { label: 'Married/partnered franchisees', value: '65.5%', note: 'Spouse is a co-decision-maker in most cases' },

@@ -38,7 +38,7 @@ export default function HealthBeautyPage() {
       <section className="section section-alt">
         <div className="container" style={{ maxWidth: '860px' }}>
 
-          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '3rem' }}>
+          <div className="hero-grid" style={{ display: 'grid', gap: '1.5rem', marginBottom: '3rem' }}>
             {KEY_METRICS.map(s => (
               <div key={s.label} style={{ background: '#1a3d20', borderRadius: '14px', padding: '1.5rem', textAlign: 'center' }}>
                 <div style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 900, fontSize: '2rem', color: '#e8b736' }}>{s.num}</div>

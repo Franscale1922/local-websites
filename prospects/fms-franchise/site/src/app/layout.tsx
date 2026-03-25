@@ -57,11 +57,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        <div style={{ paddingTop: '100px' }}>
-          <SiteNav />
-          <main>{children}</main>
-          <Footer />
-        </div>
+        <SiteNav />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

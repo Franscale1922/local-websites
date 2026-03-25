@@ -56,7 +56,7 @@ export default function DigitalMarketingPage() {
             <div className="divider" />
             <p>FMS handles franchise marketing from two distinct angles: marketing to attract new franchisees (B2B) and marketing to attract new customers for existing franchisees (B2C co-op).</p>
           </div>
-          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem', marginTop: '3rem' }}>
+          <div className="grid-3" style={{ display: 'grid', gap: '2rem', marginTop: '3rem' }}>
             {SUB_SERVICES.map(svc => (
               <div key={svc.title} style={{ background: '#fff', borderRadius: '16px', border: '1.5px solid #e2e8f0', boxShadow: '0 4px 20px rgba(60,184,94,0.12), 0 1px 4px rgba(60,184,94,0.08)', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ background: 'linear-gradient(135deg, #1a3d20, #2a5530)', padding: '1.75rem' }}>
@@ -83,7 +83,7 @@ export default function DigitalMarketingPage() {
       {/* Why franchise-specific */}
       <section className="section section-dark">
         <div className="container">
-          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+          <div className="hero-grid" style={{ display: 'grid', gap: '4rem', alignItems: 'center' }}>
             <div>
               <span className="eyebrow eyebrow-light">The FMS Difference</span>
               <h2 style={{ color: '#fff', marginBottom: '1.5rem' }}>Why Franchise Marketing Is Different</h2>
@@ -106,7 +106,7 @@ export default function DigitalMarketingPage() {
                 ))}
               </div>
             </div>
-            <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+            <div className="grid-2" style={{ display: 'grid', gap: '1.25rem' }}>
               {[
                 { num: '900+', label: 'Brands Marketed' },
                 { num: '67', label: 'Marketing Experts' },

@@ -37,7 +37,7 @@ export default function StateGuidelinesPage() {
           <h2>The 14 Franchise Registration States</h2>
           <p>These states require franchisors to register their FDD with the state regulatory agency before offering or selling franchises to residents of that state. The registration process involves submitting the FDD, paying a filing fee, and waiting for state approval — which can take weeks to months.</p>
 
-          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem', margin: '1.5rem 0' }}>
+          <div className="grid-2" style={{ display: 'grid', gap: '1rem', margin: '1.5rem 0' }}>
             {[
               { state: 'California', agency: 'CA Dept. of Financial Protection & Innovation', note: 'One of the most complex; annual renewal required' },
               { state: 'Hawaii', agency: 'HI Dept. of Commerce & Consumer Affairs', note: 'Registration required' },

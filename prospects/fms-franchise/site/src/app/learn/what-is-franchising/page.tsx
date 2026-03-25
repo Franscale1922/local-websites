@@ -95,7 +95,7 @@ export default function WhatIsFranchisingPage() {
           <p>This distinction matters legally: if your licensing arrangement functions like a franchise, the FTC may require you to comply with franchise regulations regardless of what you call it.</p>
 
           <h2>Types of Franchise Structures</h2>
-          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', margin: '1.5rem 0' }}>
+          <div className="hero-grid" style={{ display: 'grid', gap: '1rem', margin: '1.5rem 0' }}>
             {[
               { type: 'Single-Unit Franchise', desc: 'One franchisee opens and operates one location. Most common entry point for new franchisors.' },
               { type: 'Multi-Unit Franchise', desc: 'One franchisee commits to opening multiple locations, typically on a development schedule.' },

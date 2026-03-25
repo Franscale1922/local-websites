@@ -30,7 +30,7 @@ export default function HomeServicesPage() {
       <section className="section section-alt">
         <div className="container" style={{ maxWidth: '860px' }}>
 
-          <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem', marginBottom: '3rem' }}>
+          <div className="grid-4" style={{ display: 'grid', gap: '1rem', marginBottom: '3rem' }}>
             {[
               { num: '120+', label: 'Brands Franchised' },
               { num: '↑↑', label: 'Highest-Growth Category' },
@@ -47,7 +47,7 @@ export default function HomeServicesPage() {
           <h2>Why Home Services Is the Ideal Franchise Category</h2>
           <p>Home services franchises don't need a storefront, expensive equipment, or a prime retail location. They need a van, a trained technician, and a booking system. This low overhead per unit translates to faster franchise unit economics and lower franchisee investment requirements — which means you can attract more buyers.</p>
 
-          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', margin: '1.5rem 0 2rem' }}>
+          <div className="hero-grid" style={{ display: 'grid', gap: '1rem', margin: '1.5rem 0 2rem' }}>
             {[
               { icon: <IconHome size={24} color="#3cb85e" />, title: 'Recession-resistant demand', body: "People don't stop needing plumbing repairs, cleaning, or pest control during economic downturns. Home services has outperformed most franchise categories through every recession since 2000." },
               { icon: <IconRepeat size={24} color="#3cb85e" />, title: 'Built-in repeat business', body: 'HVAC maintenance, pest control, landscaping, cleaning — these services are scheduled on recurring cycles. Franchisees build predictable recurring revenue, not one-time jobs.' },

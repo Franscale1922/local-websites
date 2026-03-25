@@ -55,7 +55,7 @@ export default function TeamPage() {
       {/* Stats */}
       <section style={{ background: '#1a3d20', padding: '2rem 0' }}>
         <div className="container">
-          <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem', textAlign: 'center' }}>
+          <div className="grid-4" style={{ display: 'grid', gap: '2rem', textAlign: 'center' }}>
             {[
               { num: '67', label: 'In-House Professionals' },
               { num: '7', label: 'Global Offices' },
@@ -105,7 +105,7 @@ export default function TeamPage() {
             <div className="divider" />
             <p>A partial listing of the 67 franchise professionals across FMS's 7 global offices.</p>
           </div>
-          <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.25rem', marginTop: '3rem' }}>
+          <div className="grid-4" style={{ display: 'grid', gap: '1.25rem', marginTop: '3rem' }}>
             {rest.map(p => (
               <div key={p.name} className="team-card">
                 <div className="team-card-photo">

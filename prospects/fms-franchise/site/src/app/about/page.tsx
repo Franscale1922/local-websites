@@ -69,7 +69,7 @@ export default function AboutPage() {
       {/* About intro */}
       <section className="section">
         <div className="container">
-          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+          <div className="hero-grid" style={{ display: 'grid', gap: '4rem', alignItems: 'center' }}>
             <div>
               <span className="eyebrow">Our Story</span>
               <h2>A Franchise Consulting Firm That Works</h2>
