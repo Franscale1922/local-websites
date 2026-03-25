@@ -117,7 +117,7 @@ export default function AboutPage() {
           <p style={{ color: '#4a5568', maxWidth: '600px', margin: '0 auto 32px', fontSize: '1rem' }}>
             We&apos;ve built our reputation in Skagit Valley — and expanded to serve homeowners and businesses from Bellingham to Seattle. If you&apos;re in Skagit, Whatcom, San Juan, Island, King, or Snohomish County, we work in your area.
           </p>
-          <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div className="inline-ctas">
             <a href="/service-area" className="btn btn-secondary">View Service Area</a>
             <a href="/contact" className="btn btn-primary">Get a Free Estimate</a>
           </div>

@@ -495,6 +495,7 @@ p { max-width: 68ch; }
 .about-stat-num { font-size: 1.8rem; font-weight: 800; color: var(--color-primary); line-height: 1; }
 .about-stat-label { font-size: 0.78rem; color: var(--color-neutral-mid); margin-top: 4px; font-weight: 500; }
 .about-credentials { display: flex; gap: 10px; flex-wrap: wrap; margin: 24px 0 32px; }
+.about-ctas { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
 .credential-badge {
   padding: 7px 14px; background: var(--color-accent-light);
   border-radius: 100px; font-size: 0.78rem; font-weight: 700; color: var(--color-accent-dark);
@@ -702,6 +703,12 @@ p { max-width: 68ch; }
   .hero-ctas { flex-direction: column; }
   .hero-ctas .btn { text-align: center; justify-content: center; width: 100%; }
   .about-img-wrap img { height: 320px; }
+  .about-ctas { flex-direction: column; }
+  .about-ctas .btn { width: 100%; text-align: center; justify-content: center; }
+  .page-hero-ctas { flex-direction: column; }
+  .page-hero-ctas .btn { width: 100%; text-align: center; justify-content: center; }
+  .inline-ctas { flex-direction: column; }
+  .inline-ctas .btn { width: 100%; text-align: center; justify-content: center; }
   /* sticky bar gap for SVG icons */
   .mobile-sticky-call,
   .mobile-sticky-estimate { gap: 8px; }
@@ -1157,6 +1164,23 @@ p { max-width: 68ch; }
 .services-page-hero-content p {
   font-size: 1.05rem; color: rgba(255,255,255,0.78);
   max-width: 560px; line-height: 1.65;
+}
+
+/* Hero CTAs on services/page.tsx and reused across site */
+.page-hero-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Generic inline CTA pair — used in about, faq, recognition inline sections */
+.inline-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 /* IMAGE CARD GRID — services overview page */

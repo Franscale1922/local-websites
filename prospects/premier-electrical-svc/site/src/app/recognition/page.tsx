@@ -199,7 +199,7 @@ export default function RecognitionPage() {
             <p style={{ color: 'var(--color-neutral-mid)', marginBottom: '28px', fontSize: '1rem' }}>
               Call us or request a free estimate. We respond same day on most requests.
             </p>
-            <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <div className="inline-ctas">
               <a href={PHONE_TEL} className="btn btn-primary">Call {PHONE}</a>
               <a href="/contact" className="btn btn-secondary">Get a Free Estimate</a>
             </div>

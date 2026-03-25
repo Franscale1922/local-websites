@@ -220,7 +220,7 @@ export default function FAQPage() {
             <p style={{ color: '#4a5568', marginBottom: '24px', fontSize: '1rem' }}>
               Call us or send a message. We respond same day on most requests.
             </p>
-            <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <div className="inline-ctas">
               <a href={PHONE_TEL} className="btn btn-primary">Call {PHONE}</a>
               <a href="/contact" className="btn btn-secondary">Send a Message</a>
             </div>

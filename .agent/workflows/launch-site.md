@@ -7,6 +7,14 @@ description: Full website launch process — from prospect identification throug
 > **Full guide:** [`playbooks/website-launch-playbook.md`](../../playbooks/website-launch-playbook.md)
 > Run through each phase in order. **Never skip ahead. Hard gates are non-negotiable.**
 
+**Agent Skills available for this workflow:**
+| Skill | Trigger |
+|---|---|
+| [`niche-research`](../skills/niche-research/SKILL.md) | Before Phase 1.5 — competitor analysis |
+| [`clone-site`](../skills/clone-site/SKILL.md) | Phase 3 — apply config to master template |
+| [`deploy-demo`](../skills/deploy-demo/SKILL.md) | Phase 5 — Vercel deploy |
+| [`uiux-audit`](../skills/uiux-audit/SKILL.md) | Phase 4 QA — full accessibility + performance check |
+
 ---
 
 ## 📋 TWO-STAGE OVERVIEW

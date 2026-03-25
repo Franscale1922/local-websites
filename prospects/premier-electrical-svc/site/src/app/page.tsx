@@ -615,8 +615,10 @@ export default function Home() {
                   <span key={c} className="credential-badge">{c}</span>
                 ))}
               </div>
-              <a href="/about" className="btn btn-secondary" style={{ marginRight: '12px' }}>Read Our Story →</a>
-              <a href="/contact" className="btn btn-primary">{SITE.heroCTA1} →</a>
+              <div className="about-ctas">
+                <a href="/about" className="btn btn-secondary">Read Our Story →</a>
+                <a href="/contact" className="btn btn-primary">{SITE.heroCTA1} →</a>
+              </div>
             </div>
           </div>
         </div>
@@ -718,7 +720,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <div style={{ marginTop: '40px', textAlign: 'left', display: 'flex', gap: '14px', flexWrap: 'wrap', alignItems: 'center' }}>
+          <div className="inline-ctas" style={{ marginTop: '40px', justifyContent: 'flex-start' }}>
             <a href={SITE.phoneTel} className="btn btn-primary">Call Us — We Pick Up</a>
             <a href="/faq" className="btn btn-secondary">See All FAQs →</a>
           </div>

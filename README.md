@@ -19,26 +19,56 @@ This monorepo contains everything needed to run the Whitefish-area website prosp
 
 ```
 local-websites/
-├── README.md                    ← You are here
+├── README.md
 ├── playbooks/
-│   ├── lead-discovery.md        ← How to find and score prospects
-│   ├── website-build.md         ← Build workflow, QA checklist, voice brief
-│   └── outreach-campaign.md     ← Cold email sequences + personalization guide
+│   ├── agentic-pipeline.md          ← Full automation architecture
+│   ├── lead-discovery.md            ← How to find and score prospects
+│   ├── website-build.md             ← Build workflow, QA checklist, voice brief
+│   └── outreach-campaign.md         ← Cold email sequences + personalization guide
 ├── templates/
-│   ├── outdoor-adventure/       ← Tours, guides, Glacier gateway businesses
-│   ├── restaurant/              ← Food & beverage
-│   ├── lodging/                 ← Hotels, lodges, vacation rentals
-│   ├── professional-services/   ← Dental, legal, chiropractic, finance
-│   ├── retail-boutique/         ← Shops, galleries, boutiques
-│   └── auto-services/           ← Shops, dealerships
+│   ├── gemini.md                    ← Project Constitution template (copy per niche)
+│   ├── research-template.md
+│   ├── build-plan-template.md
+│   ├── client-intake-template.md
+│   ├── outdoor-adventure/
+│   ├── restaurant/
+│   ├── lodging/
+│   ├── professional-services/
+│   ├── retail-boutique/
+│   └── auto-services/
+├── .agent/
+│   ├── workflows/
+│   │   ├── launch-site.md           ← /launch-site slash command
+│   │   ├── client-intake.md         ← /client-intake slash command
+│   │   └── push.md                  ← /push slash command
+│   └── skills/
+│       ├── niche-research/          ← Competitor analysis + conversion patterns
+│       ├── clone-site/              ← Generate siteconfig.ts + apply to template
+│       ├── deploy-demo/             ← Vercel deploy + CRM update
+│       └── uiux-audit/              ← Accessibility, performance, SEO checklist
 ├── prospects/
 │   └── [business-slug]/
-│       ├── research.md          ← Lead score + website audit + voice brief
-│       ├── assets/              ← Pulled photos, logos
-│       └── site/                ← The actual Next.js demo site
+│       ├── gemini.md                ← Project Constitution (copied from templates/)
+│       ├── task_plan.md             ← Phase checklist (B.L.A.S.T. Protocol 0)
+│       ├── findings.md              ← Competitor research output
+│       ├── progress.md              ← Session log, errors, results
+│       ├── research.md              ← Lead score + website audit + voice brief
+│       ├── assets/                  ← Pulled photos, logos
+│       └── site/                    ← The actual Next.js demo site
 └── tools/
-    ├── audit-urls.js            ← Batch website quality checker
-    └── score-leads.js           ← Lead scoring calculator
+    ├── discover-leads.js
+    ├── score-leads.js
+    ├── audit-urls.js
+    ├── digital-audit.js
+    ├── scrape-existing-site.js
+    ├── scrape-reviews.js
+    ├── generate-voice-brief.js
+    ├── generate-copy.js
+    ├── apply-copy.js               ← Clone engine (reads siteconfig.ts schema)
+    ├── deploy-demo.js
+    ├── send-email.js
+    ├── update-crm.js
+    └── run-pipeline.js
 ```
 
 ---
