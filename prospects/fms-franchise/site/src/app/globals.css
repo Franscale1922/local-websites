@@ -632,3 +632,53 @@ button:focus-visible,
 .breadcrumb { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; }
 .breadcrumb a:hover { color: var(--color-gold); }
 .breadcrumb span { color: rgba(255,255,255,0.4); }
+
+/* ───────────── Mobile Sticky CTA Bar ───────────── */
+.fms-sticky-bar {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 999;
+  flex-direction: row;
+  height: 60px;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.25);
+}
+.fms-sticky-call {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--color-dark, #1a3d20);
+  color: #fff;
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.fms-sticky-call:hover { background: #0e2411; }
+.fms-sticky-consult {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--color-gold, #e8b736);
+  color: #1a3d20;
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.fms-sticky-consult:hover { background: #d4a52e; }
+
+@media (max-width: 768px) {
+  .fms-sticky-bar { display: flex; }
+  /* Prevent sticky bar from covering page content */
+  body { padding-bottom: 60px; }
+}
+
