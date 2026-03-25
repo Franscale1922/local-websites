@@ -62,7 +62,7 @@
 
 /* ── Reset ───────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
 body {
   font-family: var(--font);
   color: var(--text-primary);
@@ -1548,3 +1548,43 @@ p  { max-width: 70ch; line-height: 1.7; }
   .footer-bottom { flex-direction: column; gap: 8px; }
   .filter-bar { flex-direction: column; }
 }
+
+/* ── UI/UX PRO MAX SKILL — Accessibility & Animation ─────── */
+
+/* Scroll-reveal utility */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Focus-visible — keyboard navigation rings */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--steel-blue);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Reduced motion — WCAG AA compliance */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .psi-mobile-link {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+

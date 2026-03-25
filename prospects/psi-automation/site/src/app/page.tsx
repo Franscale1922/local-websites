@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
@@ -107,9 +107,30 @@ const WHY_AIR = [
   { icon: '/icons/icon-power-to-weight.png', alt: 'Air motor vs electric motor power to weight comparison', title: 'Higher Power-to-Weight', desc: 'Air motors produce more torque per pound than equivalent electric motors. In aerospace and mobile equipment, every pound matters.' },
 ];
 
+function useReveal() {
+  const ref = useRef<HTMLElement | null>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('revealed');
+          observer.unobserve(e.target);
+        }
+      }),
+      { threshold: 0.1 }
+    );
+    el.querySelectorAll('.reveal').forEach(t => observer.observe(t));
+    return () => observer.disconnect();
+  }, []);
+  return ref;
+}
+
 export default function Home() {
+  const revealRef = useReveal();
   return (
-    <>
+    <div ref={revealRef as React.RefObject<HTMLDivElement>}>
       <Nav />
 
       {/* ── HERO ── */}
@@ -166,11 +187,11 @@ export default function Home() {
       <div className="trust-strip">
         <div className="trust-strip-inner">
           {[
-            { icon: '🏆', text: '35+ Years Manufacturing' },
-            { icon: '⚡', text: '1/4 to 70 HP Range' },
-            { icon: '🔧', text: 'Custom — No Minimums' },
-            { icon: '🛠️', text: 'Field-Serviceable Design' },
-            { icon: '🇺🇸', text: 'Sandpoint, Idaho USA' },
+            { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>, text: '35+ Years Manufacturing' },
+            { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>, text: '1/4 to 70 HP Range' },
+            { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>, text: 'Custom — No Minimums' },
+            { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>, text: 'Field-Serviceable Design' },
+            { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>, text: 'Sandpoint, Idaho USA' },
           ].map((item, i, arr) => (
             <div key={item.text} style={{display:'flex',alignItems:'center',gap:'24px'}}>
               <div className="trust-item">
@@ -186,7 +207,7 @@ export default function Home() {
       {/* ── WHAT WE BUILD ── */}
       <section className="section">
         <div className="container">
-          <div className="section-head">
+          <div className="reveal section-head">
             <div className="eyebrow">Product Lines</div>
             <h2>Built for the Application<br />Not the Catalog</h2>
             <p>Our vane air motors run where electric motors can&apos;t — in hazardous atmospheres, extreme temperatures, and continuous-duty environments. Every unit is configurable for your exact requirement.</p>
@@ -229,7 +250,7 @@ export default function Home() {
       {/* ── WHY AIR MOTORS VS ELECTRIC ── */}
       <section className="section section--navy">
         <div className="container">
-          <div className="section-head">
+          <div className="reveal section-head">
             <div className="eyebrow eyebrow--light">Technical Advantages</div>
             <h2 style={{color:'white'}}>Why Air Motors Outperform Electric in Demanding Environments</h2>
             <p style={{color:'rgba(255,255,255,0.65)', marginTop:'16px'}}>
@@ -256,7 +277,7 @@ export default function Home() {
       {/* ── WHY PSI — 4 PILLARS ── */}
       <section className="section">
         <div className="container">
-          <div className="section-head" style={{marginBottom:'48px'}}>
+          <div className="reveal section-head" style={{marginBottom:'48px'}}>
             <div className="eyebrow">Our Differentiators</div>
             <h2>What No Other Vane Motor Manufacturer Can Say</h2>
           </div>
@@ -275,7 +296,7 @@ export default function Home() {
       {/* ── RESOURCES PREVIEW ── */}
       <section className="section section--tinted">
         <div className="container">
-          <div className="section-head">
+          <div className="reveal section-head">
             <div className="eyebrow">Technical Resources</div>
             <h2>Everything an Engineer Needs to Specify</h2>
           </div>
@@ -308,15 +329,21 @@ export default function Home() {
               </p>
               <div className="contact-info">
                 <div className="contact-info-item">
-                  <span className="contact-info-icon">📞</span>
+                  <span className="contact-info-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.03z"/></svg>
+                  </span>
                   <a href="tel:8003923602" style={{color:'white', fontWeight:700}}>800-392-3602 (Toll Free)</a>
                 </div>
                 <div className="contact-info-item">
-                  <span className="contact-info-icon">✉️</span>
+                  <span className="contact-info-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </span>
                   <a href="mailto:sales@psiautomation.com" style={{color:'white'}}>sales@psiautomation.com</a>
                 </div>
                 <div className="contact-info-item">
-                  <span className="contact-info-icon">📍</span>
+                  <span className="contact-info-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </span>
                   <span style={{color:'rgba(255,255,255,0.7)'}}>3717 Omni Park Taxiway, Sandpoint, ID 83864</span>
                 </div>
               </div>
@@ -327,6 +354,6 @@ export default function Home() {
       </section>
 
       <Footer />
-    </>
+    </div>
   );
 }

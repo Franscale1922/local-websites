@@ -44,7 +44,7 @@ export default function Nav() {
 
   return (
     <>
-      <nav className={`nav${scrolled ? ' nav--scrolled' : ''}`}>
+      <nav role="navigation" aria-label="Main navigation" className={`nav${scrolled ? ' nav--scrolled' : ''}`}>
         {/* BRAND / LOGO */}
         <Link href="/" className="nav-brand">
           <img
