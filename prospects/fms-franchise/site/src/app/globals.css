@@ -473,6 +473,10 @@ p { line-height: 1.75; }
   .page-hero { padding: 3.5rem 0 3rem; }
   .page-hero p { font-size: 1rem; }
 
+  /* ── Home hero — fix top spacing on mobile ── */
+  /* On mobile top bar collapses; nav is ~68px + 28px topbar = ~96px total */
+  .home-hero { padding-top: 130px !important; padding-bottom: 3rem !important; min-height: auto !important; }
+
   /* ── Section header ── */
   .section-header { margin-bottom: 2rem; }
 
@@ -511,9 +515,19 @@ p { line-height: 1.75; }
   .process-step { gap: 1.25rem !important; padding: 1.25rem 1.5rem !important; }
   .process-num { min-width: 44px !important; height: 44px !important; }
 
-  /* ── Stats eyebrow pill ── */
-  .stats-pill { flex-direction: column !important; align-items: flex-start !important; gap: 0.5rem !important; border-radius: 14px !important; }
-  .stats-pill-divider { display: none !important; }
+  /* ── Stats eyebrow pill → full-width horizontal bar on mobile ── */
+  .stats-pill {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+    gap: 0 !important;
+    width: 100% !important;
+    border-radius: 12px !important;
+    padding: 0.65rem 0.5rem !important;
+  }
+  .stats-pill > span { flex: 1; justify-content: center; }
+  .stats-pill-divider { display: block !important; }
 
   /* ── Review platform row ── */
   .platform-row { gap: 1.25rem !important; }
