@@ -34,27 +34,30 @@ The most common pattern: a pair of CTA buttons wrapped in `flexWrap: 'wrap'` ren
 
 Use grep/search to catch these in TSX and CSS files:
 
-**1. CSS classes used in JSX but never defined in globals.css**
-```bash
-# Find all className= values in TSX
-grep -r 'className="[^"]*"' src/ | grep -v node_modules
+**1. CSS classes used in JSX but never defined in the stylesheet**
 
-# Then grep each class name against globals.css
-grep "class-name-here" src/app/globals.css
+Don't try to diff full class lists — it's noisy. Instead, grep for the specific wrapper class names on any button pair or CTA container and verify that each one has a definition in globals.css:
+```bash
+# Find every className used on div elements wrapping buttons
+grep -rn 'className="[^"]*cta[^"]*"' src/app --include="*.tsx"
+grep -rn 'className="[^"]*hero[^"]*"' src/app --include="*.tsx"
+
+# Then verify each unique class name exists in CSS
+grep -n ".class-name-here" src/app/globals.css
 ```
-Any class used but not defined = missing styles, silent failure.
+If a class is used in JSX but returns no result in CSS → it has no styles, silent failure.
 
 **2. Bare button siblings with inline `marginRight` (no flex wrapper)**
 ```bash
-grep -r 'marginRight' src/
+grep -rn 'marginRight' src/app --include="*.tsx"
 ```
-If `marginRight` is on a `<a>` Button element (not an icon/SVG), it's probably a bare sibling that needs a flex container.
+If `marginRight` appears on an `<a className="btn">` element (not an icon/SVG), it's a bare sibling that needs a flex container.
 
 **3. Inline flex wrappers without media query overrides**
 ```bash
-grep -r "display: 'flex'" src/
+grep -rn "display: 'flex'" src/app --include="*.tsx"
 ```
-Any inline `display: 'flex'` wrapping buttons should have a corresponding `@media (max-width: 480px)` override in globals.css that forces `flex-direction: column` and `width: 100%` on children.
+Any inline `display: 'flex'` wrapping a pair of buttons should have a corresponding `@media` override in globals.css. If it's missing → the buttons rely entirely on `flexWrap: 'wrap'` which does NOT force full-width stacking.
 
 ---
 
@@ -83,29 +86,31 @@ Every multi-column grid:
 
 ---
 
-## Standard CSS Classes (Premier Electrical / All Sites Using This Pattern)
+## CSS Pattern Reference (Example from Premier Electrical Template)
 
-When fixing button layout issues, use or create these standard classes:
+> **Note:** These class names are specific to the Premier Electrical template. When auditing other sites, identify the equivalent button container classes already in use and check whether *those* have proper mobile overrides — don't assume these names will match.
+
+The correct pattern for any button pair container:
 
 ```css
-/* Reusable CTA button pair containers */
-.about-ctas    { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
-.page-hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
-.inline-ctas   { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; justify-content: center; }
+/* Desktop: side-by-side flex row */
+.your-cta-wrapper {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
 
-/* Mobile stacking — REQUIRED for all button pair containers */
+/* Mobile: MUST force column stacking — flexWrap alone is not enough */
 @media (max-width: 480px) {
-  .about-ctas,
-  .page-hero-ctas,
-  .inline-ctas { flex-direction: column; }
-
-  .about-ctas .btn,
-  .page-hero-ctas .btn,
-  .inline-ctas .btn { width: 100%; text-align: center; justify-content: center; }
+  .your-cta-wrapper { flex-direction: column; }
+  .your-cta-wrapper .btn { width: 100%; text-align: center; justify-content: center; }
 }
 ```
 
-**Never use bare inline `style={{ marginRight: '12px' }}` on sibling button elements.** Always wrap pairs in one of these container classes.
+In the Premier Electrical template specifically, the standard classes are `.about-ctas`, `.page-hero-ctas`, `.inline-ctas`, `county-hero-ctas`, and `cta-strip-actions`.
+
+**Never use bare inline `style={{ marginRight: '12px' }}` on sibling button elements.** Always wrap pairs in a named container class.
 
 ---
 
@@ -145,7 +150,9 @@ Pages to audit:
 - `/faq`
 - `/recognition`
 - `/service-area`
+- `/contact`
 - Any service sub-pages (`/services/panel-upgrades`, etc.)
+- Any county/region sub-pages (`/service-area/skagit-county`, etc.)
 
 ### Step 5 — Check at 768px (tablet breakpoint)
 Resize to 768px × 1024px. The same button pair issues can appear here if only a 480px override was added.
@@ -161,14 +168,18 @@ Confirm all fixed sections still render correctly side-by-side on desktop.
 ## Mobile Layout Audit — [Site Name] — [Date]
 
 ### Issues Found
-| Page | Section | Issue | Fix Applied |
-|------|---------|-------|-------------|
+| Page | Section | Issue | 375px | 768px | Fix Applied |
+|------|---------|-------|-------|-------|-------------|
 
-### Sections Verified (PASS)
-- Home: Hero, Services grid, About, FAQ, CTA strip...
+### Sections Verified Clean
+| Page | 375px | 768px | 1280px |
+|------|-------|-------|--------|
+| Home | PASS | PASS | PASS |
+| /services | PASS | PASS | PASS |
+| ... | | | |
 
 ### Screenshots
-[embed relevant screenshots]
+[embed screenshots of any FAIL or WARNING sections]
 ```
 
 ---
