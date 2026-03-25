@@ -87,8 +87,11 @@ export default function SiteNav({ alwaysScrolled = false }: SiteNavProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [alwaysScrolled]);
 
+  const [openMobileSection, setOpenMobileSection] = useState<string | null>(null);
+
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
+    if (!menuOpen) setOpenMobileSection(null); // reset accordion when menu closes
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
 
@@ -99,6 +102,7 @@ export default function SiteNav({ alwaysScrolled = false }: SiteNavProps) {
   }, []);
 
   useEffect(() => { setMenuOpen(false); setOpenDropdown(null); }, [pathname]);
+
 
   // Always dark bg — avoids white-on-white issues when nav is over page content
   const navStyle: React.CSSProperties = {
@@ -253,41 +257,118 @@ export default function SiteNav({ alwaysScrolled = false }: SiteNavProps) {
           <div style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', marginTop: '0.1rem' }}>Franchise Marketing Systems</div>
         </div>
 
-        {/* Mobile links */}
-        <div style={{ padding: '1rem 0', flex: 1 }}>
-          {NAV_ITEMS.map((item, i) => (
-            <div key={item.label}>
-              <Link
-                href={item.href}
-                style={{
-                  display: 'block',
-                  padding: '0.9rem 1.5rem',
-                  fontSize: '1.1rem',
-                  fontWeight: 700,
-                  color: pathname === item.href ? '#e8b736' : '#fff',
-                  fontFamily: 'Outfit, sans-serif',
-                  transition: 'color 0.2s',
-                  transitionDelay: menuOpen ? `${i * 50}ms` : '0ms',
-                }}
-              >
-                {item.label}
-              </Link>
-              {item.dropdown && (
-                <div style={{ paddingLeft: '1rem', background: 'rgba(0,0,0,0.15)' }}>
+        {/* Mobile links — accordion */}
+        <div style={{ padding: '0.5rem 0', flex: 1 }}>
+
+          {/* Home button */}
+          <Link
+            href="/"
+            onClick={() => setMenuOpen(false)}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.6rem',
+              padding: '0.9rem 1.5rem',
+              fontSize: '1rem',
+              fontWeight: 700,
+              color: pathname === '/' ? '#e8b736' : '#fff',
+              fontFamily: 'Outfit, sans-serif',
+              borderBottom: '1px solid rgba(255,255,255,0.08)',
+            }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+            Home
+          </Link>
+
+          {/* Accordion items */}
+          {NAV_ITEMS.map((item) => {
+            const isOpen = openMobileSection === item.label;
+            if (!item.dropdown) {
+              // Direct link (e.g. Blog)
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  style={{
+                    display: 'block',
+                    padding: '0.9rem 1.5rem',
+                    fontSize: '1rem',
+                    fontWeight: 700,
+                    color: pathname === item.href ? '#e8b736' : '#fff',
+                    fontFamily: 'Outfit, sans-serif',
+                    borderBottom: '1px solid rgba(255,255,255,0.08)',
+                  }}
+                >
+                  {item.label}
+                </Link>
+              );
+            }
+            return (
+              <div key={item.label} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+                {/* Heading row — tap to expand */}
+                <button
+                  onClick={() => setOpenMobileSection(isOpen ? null : item.label)}
+                  aria-expanded={isOpen}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    width: '100%',
+                    padding: '0.9rem 1.5rem',
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
+                    fontFamily: 'Outfit, sans-serif',
+                    fontSize: '1rem',
+                    fontWeight: 700,
+                    color: isOpen ? '#e8b736' : '#fff',
+                    textAlign: 'left',
+                  }}
+                >
+                  {item.label}
+                  <svg
+                    width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+                    aria-hidden="true"
+                    style={{ flexShrink: 0, transition: 'transform 0.25s', transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                  >
+                    <polyline points="6 9 12 15 18 9"/>
+                  </svg>
+                </button>
+                {/* Sub-links — slide in/out */}
+                <div style={{
+                  maxHeight: isOpen ? '600px' : '0',
+                  overflow: 'hidden',
+                  transition: 'max-height 0.3s ease',
+                  background: 'rgba(0,0,0,0.18)',
+                }}>
+                  {/* Link to the section's overview page */}
+                  <Link
+                    href={item.href}
+                    onClick={() => setMenuOpen(false)}
+                    style={{ display: 'block', padding: '0.65rem 1.5rem 0.65rem 2rem', fontSize: '0.88rem', color: '#e8b736', fontWeight: 700 }}
+                  >
+                    View All {item.label} →
+                  </Link>
                   {item.dropdown.map((sub) => (
                     <Link
                       key={sub.href}
                       href={sub.href}
-                      style={{ display: 'block', padding: '0.6rem 1.5rem', fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', fontWeight: 500 }}
+                      onClick={() => setMenuOpen(false)}
+                      style={{ display: 'block', padding: '0.65rem 1.5rem 0.65rem 2rem', fontSize: '0.88rem', color: 'rgba(255,255,255,0.75)', fontWeight: 500 }}
                     >
-                      → {sub.label}
+                      {sub.label}
                     </Link>
                   ))}
                 </div>
-              )}
-            </div>
-          ))}
+              </div>
+            );
+          })}
         </div>
+
 
         {/* Panel CTAs */}
         <div style={{ padding: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
