@@ -393,7 +393,7 @@ p  { max-width: 68ch; }
   overflow: visible; pointer-events: none;
   transition: color var(--transition-fast), transform var(--transition-fast);
 }
-.service-icon img { width: 64px; height: 64px; object-fit: contain; }
+.service-icon svg { width: 48px; height: 48px; color: var(--color-primary); transition: color var(--transition-fast), transform var(--transition-fast); }
 .service-card:hover .service-icon { color: var(--color-accent); transform: scale(1.08); }
 .service-card h3 { font-size: 1rem; margin-bottom: 10px; color: var(--color-primary); }
 .service-card p  { font-size: 0.875rem; color: var(--color-neutral-mid); line-height: 1.6; }

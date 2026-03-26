@@ -20,49 +20,49 @@ const SITE = {
       title: 'Replace Missing Teeth',
       desc: 'Dental implants that look, feel, and function like natural teeth — permanent and long-lasting.',
       href: '/services/dental-implants',
-      icon: '/icons/icon_dental_implant.png',
+      icon: <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2C9 2 7 4 7 7c0 2 1 3.5 2 4.5L8 20c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2l-1-8.5c1-1 2-2.5 2-4.5 0-3-2-5-5-5z"/></svg>,
     },
     {
       title: 'Dental Emergency? We\'re Here',
       desc: 'Same-day emergency appointments for pain, broken teeth, or sudden dental trauma. Call us.',
       href: '/services/emergency-dentistry',
-      icon: '/icons/icon_emergency_dentistry.png',
+      icon: <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>,
     },
     {
       title: 'Transform Your Smile',
       desc: 'Veneers, bonding, whitening, and complete smile makeovers tailored to you.',
       href: '/services/cosmetic-dentistry',
-      icon: '/icons/icon_cosmetic_dentistry.png',
+      icon: <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 13s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>,
     },
     {
       title: 'Nervous About Dentistry?',
       desc: 'Oral conscious sedation and nitrous oxide available for anxious patients. We go at your pace.',
       href: '/services/sedation-dentistry',
-      icon: '/icons/icon_sedation_comfort.png',
+      icon: <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>,
     },
     {
       title: 'Whiter Smile, Fast',
       desc: 'Professional in-office whitening results that over-the-counter products can\'t match.',
       href: '/services/teeth-whitening',
-      icon: '/icons/icon_teeth_whitening.png',
+      icon: <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>,
     },
     {
       title: 'Fix a Broken Tooth',
       desc: 'Crowns, bridges, and inlays to restore strength and appearance to damaged teeth.',
       href: '/services/crowns-bridges',
-      icon: '/icons/icon_crowns_bridges.png',
+      icon: <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
     },
     {
       title: 'Care for the Whole Family',
       desc: 'Cleanings, checkups, and pediatric care for every family member in one convenient location.',
       href: '/services',
-      icon: '/icons/icon_family_pediatric.png',
+      icon: <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>,
     },
     {
       title: 'TRICARE & Military Benefits',
       desc: 'Veteran-owned and operated. We accept TRICARE, ADDP, and handle the paperwork for you.',
       href: '/veterans-military',
-      icon: '/icons/icon_veteran_military.png',
+      icon: <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/><circle cx="12" cy="12" r="3"/></svg>,
     },
   ],
 
@@ -247,8 +247,7 @@ export default function Home() {
               {SITE.services.map(s => (
                 <a key={s.title} href={s.href} className="service-card">
                   <div className="service-icon">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={s.icon} alt={s.title} />
+                    {s.icon}
                   </div>
                   <h3>{s.title}</h3>
                   <p>{s.desc}</p>
