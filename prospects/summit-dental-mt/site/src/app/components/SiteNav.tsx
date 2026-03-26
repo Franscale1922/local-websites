@@ -44,10 +44,12 @@ export default function SiteNav({ activePath, alwaysScrolled = false }: SiteNavP
       <nav className={`nav ${scrolled || alwaysScrolled ? 'nav--scrolled' : ''}`}>
         {/* LOGO */}
         <a href="/" className="nav-logo">
-          <div className="nav-logo-text">
-            <span className="nav-logo-name">Summit Dental Group</span>
-            <span className="nav-logo-tagline">Kalispell, Montana</span>
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/logo.png"
+            alt="Summit Dental Group — Kalispell, Montana"
+            style={{ height: '44px', width: 'auto', display: 'block' }}
+          />
         </a>
 
         {/* DESKTOP LINKS */}

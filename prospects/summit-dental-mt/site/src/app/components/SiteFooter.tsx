@@ -42,7 +42,12 @@ export default function SiteFooter() {
       <div className="footer-inner">
         {/* Brand column */}
         <div>
-          <div className="footer-brand-name">Summit Dental Group</div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/logo.png"
+            alt="Summit Dental Group — Kalispell, Montana"
+            style={{ height: '52px', width: 'auto', display: 'block', marginBottom: '14px', filter: 'brightness(0) invert(1)' }}
+          />
           <p className="footer-tagline">
             Veteran-owned dental practice serving Kalispell and the Flathead Valley.
             Accepting TRICARE, ADDP, and most major insurance plans.

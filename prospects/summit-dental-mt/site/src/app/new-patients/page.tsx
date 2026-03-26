@@ -35,6 +35,12 @@ export default function NewPatientsPage() {
                 <p>Your first appointment typically includes a comprehensive exam, digital X-rays, a professional cleaning, and an oral cancer screening. Plan for 60–90 minutes so we&apos;re not rushed.</p>
                 <p>Dr. Vanzant will review your dental history, discuss any concerns you have, and walk you through a full treatment plan before we do anything. You won&apos;t be surprised by a treatment recommendation you weren&apos;t expecting.</p>
                 <p>If you have dental anxiety, <strong>tell us when you book.</strong> We have sedation options and a team that genuinely knows how to make nervous patients comfortable.</p>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/photo-front-desk.jpg"
+                  alt="Summit Dental Group front desk team welcoming patients in Kalispell, MT"
+                  style={{ width: '100%', borderRadius: 'var(--radius-lg)', marginTop: '28px', display: 'block', objectFit: 'cover', maxHeight: '320px' }}
+                />
               </div>
               <div>
                 <span className="eyebrow">What to Bring</span>

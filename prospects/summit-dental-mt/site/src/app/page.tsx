@@ -413,6 +413,33 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── PATIENT MOMENT PHOTO ──────────────────────────── */}
+        <div style={{ position: 'relative', overflow: 'hidden', maxHeight: '520px' }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/photo-highfive.jpg"
+            alt="Dr. Vanzant and young patient celebrating after a successful appointment at Summit Dental Group"
+            style={{ width: '100%', objectFit: 'cover', objectPosition: 'center 30%', display: 'block', maxHeight: '520px' }}
+          />
+          <div style={{
+            position: 'absolute', inset: 0,
+            background: 'linear-gradient(to right, rgba(58,80,107,0.72) 0%, transparent 55%)',
+          }}>
+            <div style={{
+              position: 'absolute', top: '50%', left: 0, transform: 'translateY(-50%)',
+              padding: '0 5% 0 7%', maxWidth: '520px',
+            }}>
+              <p style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', color: '#fff', lineHeight: 1.25, margin: '0 0 16px', fontWeight: 700 }}>
+                &ldquo;Leave with a Healthier Smile&rdquo;
+              </p>
+              <p style={{ color: 'rgba(255,255,255,0.78)', fontSize: '1rem', marginBottom: '24px' }}>
+                Every appointment ends with clear next steps, no surprises, and a team that genuinely cares about you.
+              </p>
+              <a href="/contact" className="btn btn-primary">Book Your Appointment</a>
+            </div>
+          </div>
+        </div>
+
         {/* ── ABOUT DR. VANZANT ─────────────────────────────── */}
         <section className="section" id="about">
           <div className="container">
