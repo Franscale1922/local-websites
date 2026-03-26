@@ -29,7 +29,7 @@ export default function CosmeticDentistryPage() {
           <div className="container">
             <span className="eyebrow">Cosmetic Services</span>
             <h2 style={{ marginBottom: '12px' }}>What We Offer</h2>
-            <div className="services-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', marginTop: '48px' }}>
+            <div className="services-grid" style={{ marginTop: '48px' }}>
               {[
                 { title: 'Porcelain Veneers', desc: 'Ultra-thin porcelain shells bonded to the front of your teeth. Covers chips, stains, gaps, and minor misalignment in just two visits.' },
                 { title: 'Dental Bonding', desc: 'Tooth-colored composite resin applied directly to your teeth to fix chips, cracks, gaps, or discoloration. Quick, affordable, and effective.' },

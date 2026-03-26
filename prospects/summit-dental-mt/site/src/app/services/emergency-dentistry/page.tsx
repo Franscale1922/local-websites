@@ -30,7 +30,7 @@ export default function EmergencyDentistryPage() {
             <span className="eyebrow">Common Dental Emergencies</span>
             <h2 style={{ marginBottom: '12px' }}>What We Treat: Same Day</h2>
             <p className="section-intro" style={{ marginBottom: '48px' }}>If you&apos;re experiencing any of these, call immediately. When in doubt, call anyway.</p>
-            <div className="services-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+            <div className="services-grid">
               {[
                 { title: 'Severe Tooth Pain', desc: 'Toothache that&apos;s sharp, throbbing, or constant, especially with heat sensitivity. This often indicates infection or nerve involvement.' },
                 { title: 'Cracked or Broken Tooth', desc: 'A visible crack or fracture, especially if it&apos;s causing pain when chewing or temperature sensitivity.' },

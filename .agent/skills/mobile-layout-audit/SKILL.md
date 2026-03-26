@@ -83,6 +83,25 @@ Every multi-column grid:
 - [ ] 2-col about/area grids → single column at mobile
 - [ ] 3-col review/why grids → single column at mobile
 - [ ] No horizontal scroll at any scroll position
+- [ ] **Grid orphan check:** count items — if 4 items, must use 4-col (not 3-col). If 5 items, use `auto-fit` or 2+3 split.
+
+#### Pill & Badge Visibility Checklist
+For every section containing pills, badges, credential tags, or eyebrow labels:
+- [ ] Does the pill visually appear against the section background? (squint test)
+- [ ] Is the pill background a different color/value from the section background?
+- [ ] Does the pill have both a `background` AND a `border`?
+- [ ] On dark sections: is the pill text readable (sufficient contrast)?
+- [ ] On hero/overlay sections: is the pill using an accent-tinted or semi-transparent style, not `var(--color-surface-tinted)`?
+
+**Invisible pill failure patterns to check for:**
+- `background: var(--color-surface-tinted)` inside `.section--tinted` → pill invisible
+- `background: rgba(255,255,255,0.06)` on a light page → pill invisible
+- `background: var(--color-surface)` inside a white section → pill invisible
+
+#### Heading Typography Checklist
+- [ ] No h1 or h2 has a single widow word on its last line (squint test at desktop)
+- [ ] Hero h1 and page-hero h1 use `text-wrap: balance` in CSS
+- [ ] All h1 and h2 globally use `text-wrap: balance` in globals.css
 
 ---
 
@@ -193,3 +212,8 @@ Confirm all fixed sections still render correctly side-by-side on desktop.
 | Inline `style={{ display: 'flex', flexWrap: 'wrap' }}` on button pair | Replace div with `className="inline-ctas"` |
 | Grid not collapsing to 1 col | Add `grid-template-columns: 1fr` inside `@media (max-width: 768px)` |
 | Horizontal overflow | Find element with fixed `width` or `min-width` wider than viewport, make it `max-width: 100%` |
+| Pill invisible on light section | Change pill `background` to `var(--color-accent-light)` + `border: 1px solid rgba(200,121,65,0.2)` |
+| Pill invisible on tinted section | Change pill `background` to `var(--color-surface)` (white) + `border: 1px solid var(--color-border)` |
+| Pill invisible on dark/hero section | Use `background: rgba(255,255,255,0.10)` + `border: 1px solid rgba(255,255,255,0.2)` |
+| Pill text wrapping to 2 lines inside pill | Add `white-space: nowrap` to pill class; reduce `font-size`/`padding` at `@media (max-width: 480px)` |
+| h1 or h2 with a single widow word on last line | Add `text-wrap: balance` to h1/h2 in `globals.css` |

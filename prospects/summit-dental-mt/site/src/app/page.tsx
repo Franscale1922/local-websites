@@ -288,7 +288,7 @@ export default function Home() {
             <p className="section-intro" style={{ marginBottom: '48px' }}>
               Meet the team, see our office, and hear from Dr. Vanzant himself, before you ever walk through the door.
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '24px' }}>
+            <div className="video-grid">
               {/* Main promo video */}
               <div>
                 <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--shadow-lg)' }}>

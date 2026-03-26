@@ -68,6 +68,20 @@ Test at 375px, 768px, 1280px, 1440px widths.
 - [ ] Grid layouts collapse to single column on mobile
 - [ ] Hero text is readable (not overlapping hero image text)
 - [ ] Phone number is `<a href="tel:...">` — tap-to-call
+- [ ] **Grid orphan check:** any grid with 4 items uses 4-col, not 3-col
+- [ ] **Pill text wrapping:** all badge/pill text stays on one line at 375px
+
+### Step 5b — Pill & Badge Contrast
+For every section: do a visual squint test on each pill, badge, credential tag, or eyebrow label.
+- [ ] Pill background is visibly distinct from parent section background
+- [ ] Every pill has both a `background` color AND a `border`
+- [ ] Light sections: pills use `var(--color-accent-light)` or white — never `var(--color-surface-tinted)` on tinted sections
+- [ ] Dark/hero sections: pills use `rgba(255,255,255,0.10)` style — never a light surface color
+- [ ] Pill text color has sufficient contrast against pill background
+
+### Step 5c — Heading Typography
+- [ ] No `h1` or `h2` has a single widow word alone on the last line (check at 1440px and 390px)
+- [ ] All `h1` and `h2` have `text-wrap: balance` in `globals.css`
 
 ### Step 6 — SEO & Structured Data
 - [ ] `<title>` tag: `[Business Name] | [Primary Service] | [City], MT`

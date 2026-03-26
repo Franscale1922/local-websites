@@ -37,7 +37,7 @@ export default function SmileGalleryPage() {
 
         <section className="section">
           <div className="container">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+            <div className="gallery-cases-grid">
               {CASES.map((c, i) => (
                 <div key={i} className="review-card" style={{ cursor: 'default' }}>
                   {/* Before/After placeholder */}

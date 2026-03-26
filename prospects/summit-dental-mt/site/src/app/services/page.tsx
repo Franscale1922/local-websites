@@ -94,7 +94,7 @@ export default function ServicesPage() {
         {SERVICES.map(group => (
           <section key={group.category} className="section">
             <div className="container">
-              <div className="services-grid services-grid--3col" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+              <div className="services-grid services-grid--3col">
                 {group.items.map(s => (
                   <a key={s.title} href={s.href} className="service-card">
                     <div className="service-icon">

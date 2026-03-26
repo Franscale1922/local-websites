@@ -137,7 +137,7 @@ export default function AboutPage() {
             <p className="section-intro" style={{ marginBottom: '40px' }}>
               Real Summit Dental Group patients in their own words, recorded right here in Kalispell.
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: '3fr 2fr', gap: '32px', alignItems: 'center' }}>
+            <div className="testimonial-grid">
               <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--shadow-lg)' }}>
                 <iframe
                   src="https://www.youtube.com/embed/videoseries?list=UUIdBaXNFJMeMMmhbwM08z4w&index=3&rel=0&modestbranding=1"
