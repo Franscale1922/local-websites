@@ -303,15 +303,19 @@ p  { max-width: 68ch; }
    MOBILE STICKY BAR
    ============================================================ */
 .mobile-sticky-bar {
-  position: fixed; bottom: 0; left: 0; right: 0;
-  z-index: 99;
   display: none;
-  grid-template-columns: 1fr 1fr;
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.18);
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 300;
+  flex-direction: row;
+  height: 58px;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.22);
 }
 .mobile-sticky-call, .mobile-sticky-book {
+  flex: 1;
   display: flex; align-items: center; justify-content: center; gap: 8px;
-  padding: 15px 10px; font-size: 0.85rem; font-weight: 700;
+  font-size: 0.875rem; font-weight: 700;
+  letter-spacing: 0.01em;
 }
 .mobile-sticky-call { background: var(--color-primary); color: #fff; }
 .mobile-sticky-book { background: var(--color-accent); color: #fff; }
@@ -813,7 +817,8 @@ p  { max-width: 68ch; }
   .nav-mobile-cta { display: flex; }
   .hamburger { display: flex; }
   .mobile-menu { display: block; }
-  .mobile-sticky-bar { display: grid; }
+  .mobile-sticky-bar { display: flex; }
+  body { padding-bottom: 58px; } /* prevent content hidden behind sticky bar */
   .hero h1 { font-size: clamp(2rem, 7vw, 2.8rem); }
   .hero-trust-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; width: auto; }
   .hero-trust-divider { display: none; }
