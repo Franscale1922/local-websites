@@ -3,7 +3,7 @@ import SiteNav from '../components/SiteNav';
 import SiteFooter from '../components/SiteFooter';
 
 export const metadata: Metadata = {
-  title: 'New Patient Information — Summit Dental Group Kalispell, MT',
+  title: 'New Patient Information | Summit Dental Group Kalispell, MT',
   description: 'New patient information for Summit Dental Group in Kalispell, MT. Learn what to bring, insurance accepted, what to expect, and how to book your first appointment.',
 };
 
@@ -101,7 +101,7 @@ export default function NewPatientsPage() {
               {[
                 {
                   icon: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#e8a96a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>,
-                  title: 'Welcome Gift', desc: 'Every new patient receives a welcome gift bag. A small gesture — but it tells you something about how we think about care.'
+                  title: 'Welcome Gift', desc: 'Every new patient receives a welcome gift bag. A small gesture, but it tells you something about how we think about care.'
                 },
                 {
                   icon: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#e8a96a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>,

@@ -3,7 +3,7 @@ import SiteNav from '../../components/SiteNav';
 import SiteFooter from '../../components/SiteFooter';
 
 export const metadata: Metadata = {
-  title: 'Dental Crowns & Bridges Kalispell MT — Restorative Dentistry | Summit Dental Group',
+  title: 'Dental Crowns & Bridges Kalispell MT: Restorative Dentistry | Summit Dental Group',
   description: 'Porcelain crowns and fixed bridges to restore damaged or missing teeth in Kalispell, MT. Natural-looking, durable restorations from Summit Dental Group.',
 };
 

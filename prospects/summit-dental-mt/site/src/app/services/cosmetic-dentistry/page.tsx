@@ -3,7 +3,7 @@ import SiteNav from '../../components/SiteNav';
 import SiteFooter from '../../components/SiteFooter';
 
 export const metadata: Metadata = {
-  title: 'Cosmetic Dentistry Kalispell MT — Veneers, Bonding & Smile Makeovers | Summit Dental',
+  title: 'Cosmetic Dentistry Kalispell MT: Veneers, Bonding & Smile Makeovers | Summit Dental',
   description: 'Cosmetic dentistry in Kalispell, MT: porcelain veneers, dental bonding, and complete smile makeovers. Summit Dental Group, Dr. Mark Vanzant, DMD.',
 };
 

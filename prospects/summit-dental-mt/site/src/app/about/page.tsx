@@ -3,8 +3,8 @@ import SiteNav from '../components/SiteNav';
 import SiteFooter from '../components/SiteFooter';
 
 export const metadata: Metadata = {
-  title: 'About Dr. Mark Vanzant, DMD — Veteran-Owned Dental Practice in Kalispell, MT',
-  description: 'Meet Dr. Mark Vanzant, DMD — USAF veteran, three combat deployments, and founder of Summit Dental Group in Kalispell, MT. 4.8 stars, 469 Google reviews.',
+  title: 'About Dr. Mark Vanzant, DMD: Veteran-Owned Dental Practice in Kalispell, MT',
+  description: 'Meet Dr. Mark Vanzant, DMD: USAF veteran, three combat deployments, and founder of Summit Dental Group in Kalispell, MT. 4.8 stars, 469 Google reviews.',
 };
 
 export default function AboutPage() {
@@ -30,7 +30,7 @@ export default function AboutPage() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/photo-dr-headshot-formal.jpg"
-                  alt="Dr. Mark A. Vanzant, DMD — Owner, Summit Dental Group Kalispell MT"
+                  alt="Dr. Mark A. Vanzant, DMD, Owner of Summit Dental Group Kalispell MT"
                   style={{ width: '100%', borderRadius: 'var(--radius-lg)', display: 'block', objectFit: 'cover' }}
                 />
                 <div className="about-badge">
@@ -60,7 +60,7 @@ export default function AboutPage() {
                 <div className="about-stats">
                   {[
                     { num: 'UF', label: 'University of Florida, DMD' },
-                    { num: 'USAF', label: 'Veteran — 3 Deployments' },
+                    { num: 'USAF', label: 'Veteran, 3 Deployments' },
                     { num: '4.8★', label: '469 Google Reviews' },
                     { num: 'ARNG', label: 'Montana Army National Guard' },
                   ].map(s => (
@@ -71,7 +71,7 @@ export default function AboutPage() {
                   ))}
                 </div>
                 <div className="about-credentials">
-                  {['DMD — University of Florida', 'USAF Veteran', 'Montana ARNG', 'ADA Member', 'TRICARE Provider', 'ADDP Provider'].map(c => (
+                  {['DMD, University of Florida', 'USAF Veteran', 'Montana ARNG', 'ADA Member', 'TRICARE Provider', 'ADDP Provider'].map(c => (
                     <span key={c} className="credential-badge">{c}</span>
                   ))}
                 </div>
@@ -100,7 +100,7 @@ export default function AboutPage() {
                 },
                 {
                   icon: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#e8a96a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>,
-                  title: 'Massage Chairs', desc: 'Our waiting area features massage chairs so you can relax before your appointment — not dread it.'
+                  title: 'Massage Chairs', desc: 'Our waiting area features massage chairs so you can relax before your appointment, not dread it.'
                 },
                 {
                   icon: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#e8a96a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>,
@@ -135,13 +135,13 @@ export default function AboutPage() {
             <span className="eyebrow">Patient Testimonials</span>
             <h2 style={{ marginBottom: '10px' }}>Hear It From Our Patients</h2>
             <p className="section-intro" style={{ marginBottom: '40px' }}>
-              Real Summit Dental Group patients in their own words — recorded right here in Kalispell.
+              Real Summit Dental Group patients in their own words, recorded right here in Kalispell.
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: '3fr 2fr', gap: '32px', alignItems: 'center' }}>
               <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--shadow-lg)' }}>
                 <iframe
                   src="https://www.youtube.com/embed/videoseries?list=UUIdBaXNFJMeMMmhbwM08z4w&index=3&rel=0&modestbranding=1"
-                  title="Summit Dental Group Patient Testimonials — Kalispell Montana"
+                  title="Summit Dental Group Patient Testimonials: Kalispell Montana"
                   style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -150,7 +150,7 @@ export default function AboutPage() {
               </div>
               <div>
                 <div style={{ fontSize: '2rem', color: '#f0c040', marginBottom: '12px', letterSpacing: '-1px' }}>★★★★★</div>
-                <h3 style={{ marginBottom: '12px' }}>4.8 / 5 — 469 Google Reviews</h3>
+                <h3 style={{ marginBottom: '12px' }}>4.8 / 5 | 469 Google Reviews</h3>
                 <p style={{ color: 'var(--color-neutral-mid)', marginBottom: '16px', fontSize: '0.9rem', fontStyle: 'italic', lineHeight: 1.7 }}>
                   &ldquo;Since he was in the Air Force I appreciated that he served his country. He gave us options &mdash;
                   he wasn&apos;t sure if it was going to need a root canal, and when he got in there he said &lsquo;nope,

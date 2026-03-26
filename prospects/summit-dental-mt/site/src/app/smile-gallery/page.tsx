@@ -3,14 +3,14 @@ import SiteNav from '../components/SiteNav';
 import SiteFooter from '../components/SiteFooter';
 
 export const metadata: Metadata = {
-  title: 'Before & After Smile Gallery — Summit Dental Group Kalispell MT',
-  description: 'See transformation results from Summit Dental Group in Kalispell, MT — dental implants, veneers, whitening, and smile makeovers.',
+  title: 'Before & After Smile Gallery | Summit Dental Group Kalispell MT',
+  description: 'See transformation results from Summit Dental Group in Kalispell, MT: dental implants, veneers, whitening, and smile makeovers.',
 };
 
 // Placeholder cases for the demo
 const CASES = [
   { title: 'Full Smile Makeover', service: 'Veneers + Whitening', desc: 'Complete smile transformation with porcelain veneers and professional whitening.' },
-  { title: 'Dental Implant', service: 'Implant + Crown', desc: 'Permanent replacement of a missing front tooth — indistinguishable from natural.' },
+  { title: 'Dental Implant', service: 'Implant + Crown', desc: 'Permanent replacement of a missing front tooth. Indistinguishable from natural.' },
   { title: 'Teeth Whitening', service: 'In-Office Whitening', desc: '6 shades whiter in a single in-office whitening session.' },
   { title: 'Crown Restoration', service: 'Porcelain Crown', desc: 'Cracked molar restored with a natural-looking porcelain crown.' },
   { title: 'Composite Bonding', service: 'Dental Bonding', desc: 'Chipped front teeth repaired with tooth-colored composite bonding.' },
@@ -28,7 +28,7 @@ export default function SmileGalleryPage() {
             Smile Gallery
           </span>
           <h1>Real Smiles. Real Results.</h1>
-          <p>Before and after cases from Summit Dental Group patients. See what&apos;s possible — then let&apos;s talk about your smile.</p>
+          <p>Before and after cases from Summit Dental Group patients. See what&apos;s possible, then let&apos;s talk about your smile.</p>
           <div className="page-hero-ctas">
             <a href="/contact" className="btn btn-primary">Book a Consultation</a>
             <a href="tel:+14067524545" className="btn btn-ghost-light">Call (406) 752-4545</a>
@@ -64,7 +64,7 @@ export default function SmileGalleryPage() {
               <h3 style={{ marginBottom: '12px' }}>See Actual Results at Your Consultation</h3>
               <p style={{ color: 'var(--color-neutral-mid)', marginBottom: '24px', fontSize: '0.9rem' }}>
                 Dr. Vanzant will show you case studies specific to your situation and walk you through exactly what results you can expect.
-                No pressure — just an honest look at what&apos;s possible for your smile.
+                No pressure. Just an honest look at what&apos;s possible for your smile.
               </p>
               <a href="/contact" className="btn btn-primary">Book a Free Smile Consultation</a>
             </div>

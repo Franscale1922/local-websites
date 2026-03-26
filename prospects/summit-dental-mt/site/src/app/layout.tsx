@@ -6,14 +6,14 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://summitdentalmt.com
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Summit Dental Group | Kalispell, MT — Veteran-Owned Family Dentist',
+    default: 'Summit Dental Group | Kalispell, MT: Veteran-Owned Family Dentist',
     template: '%s | Summit Dental Group',
   },
-  description: 'Veteran-owned dental practice in Kalispell, MT. Dr. Mark Vanzant, DMD — 4.8★ Google rating, 469 reviews. Accepting TRICARE, ADDP & most insurance. Same-day emergency care.',
+  description: 'Veteran-owned dental practice in Kalispell, MT. Dr. Mark Vanzant, DMD: 4.8\u2605 Google rating, 469 reviews. Accepting TRICARE, ADDP & most insurance. Same-day emergency care.',
   openGraph: {
     type: 'website',
     siteName: 'Summit Dental Group',
-    title: 'Summit Dental Group | Kalispell, MT — Veteran-Owned Family Dentist',
+    title: 'Summit Dental Group | Kalispell, MT: Veteran-Owned Family Dentist',
     description: 'Veteran-owned dental practice in Kalispell, MT. 4.8★ Google rating. TRICARE accepted. Same-day emergency care available.',
     url: '/',
   },
@@ -77,7 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="emergency-bar">
           🦷 Dental Emergency? Call us now:{' '}
           <a href="tel:+14067524545">(406) 752-4545</a>
-          &nbsp;— Same-day appointments available
+          &nbsp;. Same-day appointments available
         </div>
         {children}
       </body>

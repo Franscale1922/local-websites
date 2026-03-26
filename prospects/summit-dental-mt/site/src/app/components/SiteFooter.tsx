@@ -45,7 +45,7 @@ export default function SiteFooter() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/logo.png"
-            alt="Summit Dental Group — Kalispell, Montana"
+            alt="Summit Dental Group, Kalispell, Montana"
             style={{ height: '52px', width: 'auto', display: 'block', marginBottom: '14px', filter: 'brightness(0) invert(1)' }}
           />
           <p className="footer-tagline">

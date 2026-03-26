@@ -3,7 +3,7 @@ import SiteNav from '../../components/SiteNav';
 import SiteFooter from '../../components/SiteFooter';
 
 export const metadata: Metadata = {
-  title: 'Sedation Dentistry Kalispell MT — Anxiety-Free Dental Care | Summit Dental Group',
+  title: 'Sedation Dentistry Kalispell MT: Anxiety-Free Dental Care | Summit Dental Group',
   description: 'Oral conscious sedation and nitrous oxide for anxious dental patients in Kalispell, MT. Summit Dental Group helps fearful patients get the care they need comfortably.',
 };
 

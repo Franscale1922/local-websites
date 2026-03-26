@@ -463,7 +463,7 @@ export default function Home() {
                 <p>
                   His approach is simple: treat every patient the way he&apos;d want to be treated. That means
                   honest answers, clear explanations, and never recommending treatment you don&apos;t need.
-                  It&apos;s why his patients keep coming back — and why they send their families.
+                  It&apos;s why his patients keep coming back, and why they send their families.
                 </p>
                 <div className="about-stats">
                   {[
@@ -642,7 +642,7 @@ export default function Home() {
                 <div style={{ marginTop: '24px', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 18px rgba(58,80,107,0.12)' }}>
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2692.0!2d-114.3120!3d48.1936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x536f7c8f53a5a5a5%3A0x0!2s203+Business+Center+Loop%2C+Kalispell%2C+MT+59901!5e0!3m2!1sen!2sus!4v1710783200000!5m2!1sen!2sus"
-                    title="Summit Dental Group — 203 Business Center Loop Kalispell MT"
+                    title="Summit Dental Group: 203 Business Center Loop Kalispell MT"
                     width="100%" height="220"
                     style={{ border: 0 }}
                     allowFullScreen
@@ -658,7 +658,7 @@ export default function Home() {
                     <div style={{ marginBottom: '16px' }}>
                       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round"><polyline points="20 6 9 17 4 12"/></svg>
                     </div>
-                    <h3 style={{ marginBottom: '10px', color: 'var(--color-primary)' }}>Request Received — Thank You!</h3>
+                    <h3 style={{ marginBottom: '10px', color: 'var(--color-primary)' }}>Request Received. Thank You!</h3>
                     <p style={{ color: '#5a6473', fontSize: '0.9rem' }}>
                       Our team will call or email you within one business day to confirm your appointment.
                       For urgent needs, call us directly at{' '}

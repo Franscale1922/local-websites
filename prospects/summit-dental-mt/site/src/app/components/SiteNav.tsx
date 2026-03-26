@@ -47,7 +47,7 @@ export default function SiteNav({ activePath, alwaysScrolled = false }: SiteNavP
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/logo.png"
-            alt="Summit Dental Group — Kalispell, Montana"
+            alt="Summit Dental Group, Kalispell, Montana"
             style={{ height: '44px', width: 'auto', display: 'block' }}
           />
         </a>
@@ -132,7 +132,7 @@ export default function SiteNav({ activePath, alwaysScrolled = false }: SiteNavP
           </div>
           <div className="mobile-menu-footer">
             <div>Veteran-Owned · TRICARE Accepted</div>
-            <div>⭐ 4.8 / 5 — 469 Google Reviews</div>
+            <div>⭐ 4.8 / 5 | 469 Google Reviews</div>
             <div style={{ marginTop: '6px', opacity: 0.5, fontSize: '0.72rem' }}>203 Business Center Loop, Suite C · Kalispell, MT</div>
           </div>
         </div>

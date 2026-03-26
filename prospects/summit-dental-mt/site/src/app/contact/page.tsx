@@ -56,14 +56,14 @@ export default function ContactPage() {
                     <div className="contact-detail-value" style={{ display: 'block' }}>
                       <div>Tue – Fri: 8:00 AM – 5:00 PM</div>
                       <div style={{ fontSize: '0.85rem', color: '#5a6473', marginTop: '3px' }}>Mon / Sat / Sun: Closed</div>
-                      <div style={{ fontSize: '0.82rem', color: 'var(--color-accent)', marginTop: '6px', fontWeight: 600 }}>🦷 Dental emergencies — call anytime</div>
+                      <div style={{ fontSize: '0.82rem', color: 'var(--color-accent)', marginTop: '6px', fontWeight: 600 }}>🦷 Dental emergencies: call anytime</div>
                     </div>
                   </div>
                 </div>
                 <div style={{ marginTop: '24px', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 18px rgba(58,80,107,0.12)' }}>
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2692.0!2d-114.3120!3d48.1936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x536f7c8f53a5a5a5%3A0x0!2s203+Business+Center+Loop%2C+Kalispell%2C+MT+59901!5e0!3m2!1sen!2sus!4v1710783200000!5m2!1sen!2sus"
-                    title="Summit Dental Group — Kalispell MT"
+                    title="Summit Dental Group: Kalispell MT"
                     width="100%" height="260"
                     style={{ border: 0 }}
                     allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
@@ -75,7 +75,7 @@ export default function ContactPage() {
                 {formSubmitted ? (
                   <div style={{ textAlign: 'center', padding: '40px 0' }}>
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" style={{ margin: '0 auto 16px' }}><polyline points="20 6 9 17 4 12"/></svg>
-                    <h3 style={{ color: 'var(--color-primary)', marginBottom: '10px' }}>Request Received — Thank You!</h3>
+                    <h3 style={{ color: 'var(--color-primary)', marginBottom: '10px' }}>Request Received. Thank You!</h3>
                     <p style={{ color: '#5a6473', fontSize: '0.9rem' }}>
                       We&apos;ll call or email you within one business day. For urgent needs, call{' '}
                       <a href="tel:+14067524545" style={{ color: 'var(--color-accent)', fontWeight: 700 }}>(406) 752-4545</a>.
