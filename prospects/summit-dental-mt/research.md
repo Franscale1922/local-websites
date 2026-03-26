@@ -1,7 +1,7 @@
 # Summit Dental Group — Research
 
 **Prospect Slug:** summit-dental-mt
-**Status:** DISCOVERED
+**Status:** DEMO LIVE
 **Website:** https://www.summitdentalmt.com/
 **Personal Connection:** User's own dentist
 
@@ -197,7 +197,9 @@ Current site weaknesses vs. what a modern dental practice site should have:
 ---
 
 ## Demo URL
-> _Not yet deployed_
+https://summit-dental-mt.vercel.app
+
+**Deployed:** 2026-03-26
 
 ---
 
