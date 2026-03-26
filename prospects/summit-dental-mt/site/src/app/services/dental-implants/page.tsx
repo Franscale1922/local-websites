@@ -17,7 +17,7 @@ export default function DentalImplantsPage() {
             <span style={{ width: '24px', height: '2px', background: 'var(--color-accent)', display: 'block' }} />
             Dental Implants
           </span>
-          <h1>Permanent Tooth Replacement That Looks, Feels, and Functions Like the Real Thing</h1>
+          <h1>Dental Implants in Kalispell, MT — Permanent, Natural-Looking Tooth Replacement</h1>
           <p>Dental implants are the gold standard for replacing missing teeth, and at Summit Dental Group, we make the process straightforward.</p>
           <div className="page-hero-ctas">
             <a href="/contact" className="btn btn-primary">Book a Consultation</a>

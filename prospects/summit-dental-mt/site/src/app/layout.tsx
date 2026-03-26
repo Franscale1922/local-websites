@@ -67,6 +67,36 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "openingHours": ["Tu-Fr 08:00-17:00"],
               "priceRange": "$$",
               "medicalSpecialty": "Dentistry",
+              "areaServed": [
+                "Kalispell, MT",
+                "Whitefish, MT",
+                "Columbia Falls, MT",
+                "Bigfork, MT",
+                "Polson, MT",
+                "Ronan, MT",
+                "Flathead Valley, MT"
+              ],
+              "employee": {
+                "@type": "Person",
+                "name": "Mark A. Vanzant",
+                "honorificPrefix": "Dr.",
+                "honorificSuffix": "DMD",
+                "jobTitle": "Owner & Lead Dentist",
+                "description": "Dr. Mark Vanzant, DMD is a United States Air Force veteran with three combat deployments and an active member of the Montana Army National Guard. He is the founder and owner of Summit Dental Group in Kalispell, MT, specializing in family, cosmetic, implant, and sedation dentistry.",
+                "alumniOf": "University of Florida College of Dentistry"
+              },
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Dental Services",
+                "itemListElement": [
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dental Implants", "url": `${SITE_URL}/services/dental-implants` } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Emergency Dentistry", "url": `${SITE_URL}/services/emergency-dentistry` } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cosmetic Dentistry", "url": `${SITE_URL}/services/cosmetic-dentistry` } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sedation Dentistry", "url": `${SITE_URL}/services/sedation-dentistry` } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Teeth Whitening", "url": `${SITE_URL}/services/teeth-whitening` } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Crowns & Bridges", "url": `${SITE_URL}/services/crowns-bridges` } }
+                ]
+              },
               "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "4.8",
@@ -75,7 +105,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 "reviewCount": "469"
               },
               "sameAs": [
-                "https://www.facebook.com/summitdentalmt"
+                "https://www.facebook.com/summitdentalmt",
+                "https://www.instagram.com/summitdentalgroupmt/",
+                "https://www.youtube.com/channel/UC3VM6TKW9jtcZGuPyxv_bBw/featured",
+                "https://www.yelp.com/biz/summit-dental-group-kalispell"
               ]
             })
           }}

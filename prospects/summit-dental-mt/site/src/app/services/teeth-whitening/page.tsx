@@ -17,7 +17,7 @@ export default function TeethWhiteningPage() {
             <span style={{ width: '24px', height: '2px', background: 'var(--color-accent)', display: 'block' }} />
             Teeth Whitening
           </span>
-          <h1>A Noticeably Whiter Smile, In a Single Visit</h1>
+          <h1>Teeth Whitening in Kalispell, MT — Professional Results in One Visit</h1>
           <p>Professional in-office whitening delivers results that strips and kits simply cannot. Done safely, under supervision, in about an hour.</p>
           <div className="page-hero-ctas">
             <a href="/contact" className="btn btn-primary">Book Whitening Appointment</a>

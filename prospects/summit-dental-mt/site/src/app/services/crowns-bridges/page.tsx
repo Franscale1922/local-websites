@@ -17,7 +17,7 @@ export default function CrownsBridgesPage() {
             <span style={{ width: '24px', height: '2px', background: 'var(--color-accent)', display: 'block' }} />
             Crowns &amp; Bridges
           </span>
-          <h1>Restore Your Tooth&apos;s Strength and Appearance Without It Looking Restored</h1>
+          <h1>Dental Crowns &amp; Bridges in Kalispell, MT — Restore Strength &amp; Appearance</h1>
           <p>Modern porcelain crowns and bridges are indistinguishable from natural teeth. We design every restoration to blend seamlessly with your smile.</p>
           <div className="page-hero-ctas">
             <a href="/contact" className="btn btn-primary">Book a Consultation</a>

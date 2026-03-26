@@ -17,7 +17,7 @@ export default function SedationDentistryPage() {
             <span style={{ width: '24px', height: '2px', background: 'var(--color-accent)', display: 'block' }} />
             Sedation Dentistry
           </span>
-          <h1>Nervous About Dentistry? You Don&apos;t Have to White-Knuckle It.</h1>
+          <h1>Sedation Dentistry in Kalispell, MT — Comfortable Care for Anxious Patients</h1>
           <p>Sedation options that let you get the dental care you need: comfortably, without anxiety, at your own pace.</p>
           <div className="page-hero-ctas">
             <a href="/contact" className="btn btn-primary">Book a Sedation Appointment</a>

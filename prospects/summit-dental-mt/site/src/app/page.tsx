@@ -62,19 +62,47 @@ const SITE = {
     'United Concordia (UCCI)', 'CareCredit Financing',
   ],
 
-  // FAQ preview (top 3 only — full list on /faq)
+  // FAQ — 10 AEO-optimized Q&As (full 30-question list on /faq)
   faqs: [
     {
+      q: 'Is Summit Dental Group veteran-owned?',
+      a: 'Yes. Summit Dental Group in Kalispell, MT is proudly veteran-owned and operated by Dr. Mark Vanzant, DMD — a United States Air Force veteran who completed three combat deployments overseas and continues to serve in the Montana Army National Guard.',
+    },
+    {
       q: 'Do you accept TRICARE dental insurance?',
-      a: 'Yes. We accept TRICARE Active Duty Dental Program (ADDP) via United Concordia, TRICARE Dental Program (TDP), and other military/VA-affiliated plans. Dr. Vanzant is a veteran and prioritizes serving the military community.',
+      a: 'Yes. Summit Dental Group accepts TRICARE Active Duty Dental Program (ADDP) via United Concordia, TRICARE Dental Program (TDP) for dependents and non-activated Guard/Reserve, United Concordia (UCCI), and other military-affiliated dental plans. We prioritize making the insurance process easy for military families in the Flathead Valley.',
+    },
+    {
+      q: 'What makes Summit Dental different from other dentists in Kalispell, MT?',
+      a: 'Summit Dental Group is Kalispell\'s only veteran-owned dental practice. Dr. Vanzant brings a military ethic to every appointment: straightforward communication, honest treatment recommendations, and a commitment to earning your trust. We are a private, locally-owned practice — not a corporate DSO chain.',
+    },
+    {
+      q: 'Do you see patients from Whitefish, Columbia Falls, or Bigfork, MT?',
+      a: 'Yes. Summit Dental Group serves patients from across the Flathead Valley including Whitefish, Columbia Falls, Bigfork, Polson, Ronan, and surrounding communities. Our office is conveniently located at 203 Business Center Loop, Suite C in Kalispell, MT 59901.',
+    },
+    {
+      q: 'Are you accepting new patients?',
+      a: 'Yes, Summit Dental Group is currently accepting new patients of all ages. You can request an appointment online or call us directly at (406) 752-4545. We welcome individuals, families, and patients of all ages including children.',
+    },
+    {
+      q: 'What insurance plans do you accept in Kalispell, MT?',
+      a: 'Summit Dental Group accepts most major dental insurance plans including Delta Dental, Blue Cross/Blue Shield, MetLife, Cigna, Aetna, TRICARE, ADDP, and United Concordia. CareCredit financing is also available for patients who prefer flexible payment options. Call us to confirm your specific coverage before your visit.',
     },
     {
       q: 'Do you offer sedation for anxious patients?',
-      a: 'Yes. We offer nitrous oxide (laughing gas) and oral conscious sedation for patients who feel anxious or fearful about dental procedures. We\'ll talk through your options before any appointment.',
+      a: 'Yes. Summit Dental Group offers nitrous oxide (laughing gas) and oral conscious sedation for patients who feel anxious or fearful about dental procedures. We\'ll walk through every option before any appointment. Our team is experienced with dental anxiety and genuinely takes pride in making nervous patients comfortable.',
     },
     {
-      q: 'What should I do if I have a dental emergency?',
-      a: 'Call us immediately at (406) 752-4545. We make every effort to see emergency patients the same day. If it\'s after hours, leave a message and we\'ll call you back as soon as possible.',
+      q: 'What should I do if I have a dental emergency in Kalispell, MT?',
+      a: 'Call Summit Dental Group immediately at (406) 752-4545. We make every effort to see emergency patients the same day during office hours (Tuesday–Friday, 8:00 AM–5:00 PM). If it\'s after hours, leave a message and we\'ll return your call as quickly as possible. For life-threatening emergencies, call 911 or go to the nearest emergency room.',
+    },
+    {
+      q: 'How do I become a new patient at Summit Dental Group?',
+      a: 'Becoming a new patient at Summit Dental Group in Kalispell is simple. Call us at (406) 752-4545 or submit a request using the contact form on our website. Plan for a 60–90 minute first visit that includes a comprehensive exam, digital X-rays, a professional cleaning, and time with Dr. Vanzant to discuss your dental health.',
+    },
+    {
+      q: 'Do you offer dental financing or payment plans?',
+      a: 'Yes. Summit Dental Group accepts CareCredit, which offers flexible financing options including interest-free periods. Our team will help you understand your insurance benefits and any out-of-pocket costs before treatment begins. We never surprise patients with unexpected costs.',
     },
   ],
 };
@@ -329,6 +357,56 @@ export default function Home() {
                 <div className="vet-name">Dr. Mark Vanzant, DMD</div>
                 <div className="vet-desc">USAF Veteran · 3 Combat Deployments · Montana Army National Guard</div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── PATIENT TESTIMONIALS ──────────────────────────── */}
+        <section className="section" id="testimonials">
+          <div className="container">
+            <span className="eyebrow">What Our Patients Say</span>
+            <h2 style={{ marginBottom: '10px' }}>Real Patients. Real Results. Real Kalispell.</h2>
+            <p className="section-intro" style={{ marginBottom: '48px' }}>
+              Don&apos;t take our word for it — here&apos;s what Summit Dental patients say about their experience.
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+              {[
+                {
+                  quote: 'He wasn\'t after the money. It was like he was saying here\'s a better option for you. We\'ve known him forever. Couldn\'t ask for anybody better.',
+                  cite: '— Navy Veteran & Spouse, Kalispell MT',
+                },
+                {
+                  quote: 'This is a place where they treat patients like family. We\'re not just another appointment. He actually cares about you.',
+                  cite: '— Verified Patient, Kalispell MT',
+                },
+                {
+                  quote: 'Since he was in the Air Force I appreciated that he served his country. He gave us options — very honest. That really means a lot.',
+                  cite: '— Veteran Patient, Flathead Valley MT',
+                },
+                {
+                  quote: 'Even as someone with major dental anxiety I felt completely comfortable the entire time. The whole team was patient and kind from start to finish.',
+                  cite: '— Verified Patient, Kalispell MT',
+                },
+              ].map((t, i) => (
+                <div key={i} style={{
+                  background: 'var(--color-surface)',
+                  border: '1.5px solid var(--color-border)',
+                  borderRadius: 'var(--radius-lg)',
+                  padding: '28px 24px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '14px',
+                }}>
+                  <div style={{ fontSize: '1.1rem', color: '#f0c040', letterSpacing: '1px' }}>★★★★★</div>
+                  <p style={{ fontSize: '0.9rem', color: 'var(--color-neutral-mid)', lineHeight: 1.7, fontStyle: 'italic', margin: 0, flex: 1 }}>
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <cite style={{ fontSize: '0.78rem', color: 'var(--color-neutral-mid)', fontWeight: 600, fontStyle: 'normal' }}>{t.cite}</cite>
+                </div>
+              ))}
+            </div>
+            <div style={{ textAlign: 'center', marginTop: '36px' }}>
+              <a href="https://g.page/r/CQ2VquKyWsQsEBM/review" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">Read All 469 Google Reviews →</a>
             </div>
           </div>
         </section>

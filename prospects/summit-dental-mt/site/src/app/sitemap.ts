@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/smile-gallery', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/faq', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/contact', priority: 0.85, changeFrequency: 'monthly' as const },
+    { url: '/service-area', priority: 0.8, changeFrequency: 'monthly' as const },
   ];
 
   return routes.map(r => ({

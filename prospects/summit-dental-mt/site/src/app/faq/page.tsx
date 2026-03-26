@@ -84,8 +84,21 @@ export default function FAQPage() {
 
   const key = (cat: string, i: number) => `${cat}-${i}`;
 
+  // Flatten all FAQs for schema
+  const allFaqsFlat = FAQS.flatMap(group => group.items);
+
   return (
     <>
+      {/* FAQPage JSON-LD Schema — covers all 30 Q&As for AEO */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: allFaqsFlat.map(faq => ({
+          '@type': 'Question',
+          name: faq.q,
+          acceptedAnswer: { '@type': 'Answer', text: faq.a },
+        })),
+      }) }} />
       <SiteNav activePath="/faq" alwaysScrolled />
       <main>
         <div className="page-hero">

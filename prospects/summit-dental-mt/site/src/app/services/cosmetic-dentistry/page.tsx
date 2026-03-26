@@ -17,7 +17,7 @@ export default function CosmeticDentistryPage() {
             <span style={{ width: '24px', height: '2px', background: 'var(--color-accent)', display: 'block' }} />
             Cosmetic Dentistry
           </span>
-          <h1>The Smile You&apos;ve Always Wanted, Designed Around Your Face</h1>
+          <h1>Cosmetic Dentistry in Kalispell, MT — Veneers, Bonding &amp; Smile Makeovers</h1>
           <p>Whether you want subtle improvements or a complete transformation, Dr. Vanzant creates personalized smile makeovers that feel natural, not overdone.</p>
           <div className="page-hero-ctas">
             <a href="/contact" className="btn btn-primary">Book a Smile Consultation</a>

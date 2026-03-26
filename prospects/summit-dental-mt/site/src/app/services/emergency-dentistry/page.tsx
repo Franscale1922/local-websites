@@ -17,7 +17,7 @@ export default function EmergencyDentistryPage() {
             <span style={{ width: '24px', height: '2px', background: 'var(--color-accent)', display: 'block' }} />
             Emergency Dentistry
           </span>
-          <h1>Dental Emergency? Call Us Right Now.</h1>
+          <h1>Emergency Dentist in Kalispell, MT — Same-Day Appointments Available</h1>
           <p>We make every effort to see emergency patients the same day. Don&apos;t wait it out. Dental emergencies get worse without treatment.</p>
           <div className="page-hero-ctas">
             <a href="tel:+14067524545" className="btn btn-primary" style={{ fontSize: '1rem', padding: '16px 32px' }}>Call (406) 752-4545 Now</a>

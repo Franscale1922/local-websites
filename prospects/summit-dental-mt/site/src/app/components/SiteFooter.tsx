@@ -26,6 +26,7 @@ const FOOTER_NAV = [
       { label: 'New Patients', href: '/new-patients' },
       { label: 'Before & After Gallery', href: '/smile-gallery' },
       { label: 'FAQ', href: '/faq' },
+      { label: 'Service Area', href: '/service-area' },
       { label: 'Contact', href: '/contact' },
     ],
   },
