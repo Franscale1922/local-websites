@@ -17,7 +17,7 @@ export default function CrownsBridgesPage() {
             <span style={{ width: '24px', height: '2px', background: '#e8a96a', display: 'block' }} />
             Crowns &amp; Bridges
           </span>
-          <h1>Restore Your Tooth&apos;s Strength and Appearance — Without It Looking Restored</h1>
+          <h1>Restore Your Tooth&apos;s Strength and Appearance Without It Looking Restored</h1>
           <p>Modern porcelain crowns and bridges are indistinguishable from natural teeth. We design every restoration to blend seamlessly with your smile.</p>
           <div className="page-hero-ctas">
             <a href="/contact" className="btn btn-primary">Book a Consultation</a>
@@ -46,7 +46,7 @@ export default function CrownsBridgesPage() {
                 <span className="eyebrow">Dental Bridges</span>
                 <h2>What Is a Bridge?</h2>
                 <p>A dental bridge replaces one or more missing teeth by anchoring artificial teeth (pontics) to crowns on the adjacent natural teeth. The result is a fixed, non-removable restoration that fills the gap.</p>
-                <p>Bridges are an excellent option when an implant isn&apos;t the right fit — whether due to bone density, medical considerations, or preference. They restore your ability to chew normally and prevent neighboring teeth from shifting.</p>
+                <p>Bridges are an excellent option when an implant isn&apos;t the right fit, whether due to bone density, medical considerations, or preference. They restore your ability to chew normally and prevent neighboring teeth from shifting.</p>
                 <p>Like crowns, our bridges are crafted from porcelain for a completely natural appearance.</p>
                 <div className="inline-ctas" style={{ marginTop: '28px' }}>
                   <a href="/contact" className="btn btn-primary">Book a Crown or Bridge Consultation</a>

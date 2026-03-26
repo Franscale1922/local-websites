@@ -99,13 +99,25 @@ export default function NewPatientsPage() {
             <h2 style={{ marginBottom: '48px' }}>Why New Patients Stay With Us</h2>
             <div className="why-grid">
               {[
-                { num: '🎁', title: 'Welcome Gift', desc: 'Every new patient receives a welcome gift bag. A small gesture — but it tells you something about how we think about care.' },
-                { num: '☕', title: 'Coffee Bar', desc: 'Help yourself to a fresh cup before your appointment. The waiting area at Summit doesn\'t feel like a waiting area.' },
-                { num: '💆', title: 'Massage Chairs', desc: 'Our chairs in the waiting area are massage chairs. Your visit at Summit should feel like relief, not dread.' },
-                { num: '🛡', title: 'Honest Treatment Plans', desc: 'We only recommend what you need. You\'ll receive a clear explanation of every recommendation before any treatment begins.' },
+                {
+                  icon: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#e8a96a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>,
+                  title: 'Welcome Gift', desc: 'Every new patient receives a welcome gift bag. A small gesture — but it tells you something about how we think about care.'
+                },
+                {
+                  icon: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#e8a96a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>,
+                  title: 'Coffee Bar', desc: "Help yourself to a fresh cup before your appointment. The waiting area at Summit doesn't feel like a waiting area."
+                },
+                {
+                  icon: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#e8a96a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>,
+                  title: 'Massage Chairs', desc: 'Our chairs in the waiting area are massage chairs. Your visit at Summit should feel like relief, not dread.'
+                },
+                {
+                  icon: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#e8a96a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>,
+                  title: 'Honest Treatment Plans', desc: "We only recommend what you need. You'll receive a clear explanation of every recommendation before any treatment begins."
+                },
               ].map(w => (
                 <div key={w.title} className="why-card">
-                  <div className="why-number">{w.num}</div>
+                  <div className="why-number">{w.icon}</div>
                   <h3>{w.title}</h3>
                   <p>{w.desc}</p>
                 </div>

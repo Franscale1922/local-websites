@@ -3,7 +3,7 @@ import SiteNav from '../../components/SiteNav';
 import SiteFooter from '../../components/SiteFooter';
 
 export const metadata: Metadata = {
-  title: 'Dental Implants in Kalispell, MT — Summit Dental Group',
+  title: 'Dental Implants in Kalispell, MT | Summit Dental Group',
   description: 'Dental implants that look and feel like natural teeth. Summit Dental Group provides single implants, bridges, and full-arch restoration in Kalispell, MT. TRICARE accepted.',
 };
 
@@ -18,7 +18,7 @@ export default function DentalImplantsPage() {
             Dental Implants
           </span>
           <h1>Permanent Tooth Replacement That Looks, Feels, and Functions Like the Real Thing</h1>
-          <p>Dental implants are the gold standard for replacing missing teeth — and at Summit Dental Group, we make the process straightforward.</p>
+          <p>Dental implants are the gold standard for replacing missing teeth, and at Summit Dental Group, we make the process straightforward.</p>
           <div className="page-hero-ctas">
             <a href="/contact" className="btn btn-primary">Book a Consultation</a>
             <a href="tel:+14067524545" className="btn btn-ghost-light">Call (406) 752-4545</a>
@@ -31,9 +31,9 @@ export default function DentalImplantsPage() {
               <div>
                 <span className="eyebrow">What Are Dental Implants?</span>
                 <h2>The Closest Thing to a Natural Tooth</h2>
-                <p>A dental implant is a small titanium post that serves as an artificial tooth root. Once it fuses with your jawbone (a process called osseointegration), a lifelike porcelain crown is attached on top — creating a tooth that looks, feels, and functions exactly like a natural one.</p>
+                <p>A dental implant is a small titanium post that serves as an artificial tooth root. Once it fuses with your jawbone (a process called osseointegration), a lifelike porcelain crown is attached on top, creating a tooth that looks, feels, and functions exactly like a natural one.</p>
                 <p>Unlike dentures, implants are permanent and don&apos;t need to be removed. Unlike bridges, they don&apos;t require shaving down adjacent healthy teeth.</p>
-                <p>With proper care, a dental implant can last 20+ years — often a lifetime.</p>
+                <p>With proper care, a dental implant can last 20+ years, often a lifetime.</p>
                 <div className="inline-ctas" style={{ marginTop: '28px' }}>
                   <a href="/contact" className="btn btn-primary">Schedule an Implant Consultation</a>
                 </div>

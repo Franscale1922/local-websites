@@ -18,7 +18,7 @@ export default function SedationDentistryPage() {
             Sedation Dentistry
           </span>
           <h1>Nervous About Dentistry? You Don&apos;t Have to White-Knuckle It.</h1>
-          <p>Sedation options that let you get the dental care you need — comfortably, without anxiety, at your own pace.</p>
+          <p>Sedation options that let you get the dental care you need: comfortably, without anxiety, at your own pace.</p>
           <div className="page-hero-ctas">
             <a href="/contact" className="btn btn-primary">Book a Sedation Appointment</a>
             <a href="tel:+14067524545" className="btn btn-ghost-light">Call (406) 752-4545</a>
@@ -40,7 +40,7 @@ export default function SedationDentistryPage() {
                   <li>Have difficulty getting numb from standard local anesthesia</li>
                   <li>Are undergoing a longer or more complex procedure</li>
                 </ul>
-                <p>You&apos;re not being dramatic — and you don&apos;t have to &ldquo;tough it out.&rdquo; Let us make this comfortable.</p>
+                <p>You&apos;re not being dramatic, and you don&apos;t have to &ldquo;tough it out.&rdquo; Let us make this comfortable.</p>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 {[
@@ -60,7 +60,7 @@ export default function SedationDentistryPage() {
         <div className="cta-strip">
           <div className="cta-strip-inner">
             <div className="cta-strip-text">
-              <h2>Tell Us You&apos;re Nervous — That&apos;s What We&apos;re Here For</h2>
+              <h2>Tell Us You&apos;re Nervous. That&apos;s What We&apos;re Here For.</h2>
               <p>Mention your anxiety when you call or book online. We&apos;ll tailor your appointment from the start.</p>
             </div>
             <div className="cta-strip-actions">

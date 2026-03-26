@@ -18,7 +18,7 @@ const SITE = {
   services: [
     {
       title: 'Replace Missing Teeth',
-      desc: 'Dental implants that look, feel, and function like natural teeth — permanent and long-lasting.',
+      desc: 'Dental implants that look, feel, and function like natural teeth. Permanent and long-lasting.',
       href: '/services/dental-implants',
       icon: <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2C9 2 7 4 7 7c0 2 1 3.5 2 4.5L8 20c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2l-1-8.5c1-1 2-2.5 2-4.5 0-3-2-5-5-5z"/></svg>,
     },
@@ -70,7 +70,7 @@ const SITE = {
   reviews: [
     {
       stars: 5,
-      text: '"I have pretty bad issues with anxiety with the dentist and he is very very patient and sympathetic with that. When you walk in there\'s wonderful music playing in the background. He makes the whole experience great — they all do. The trust, the technology, the staff. It\'s a very comfortable place when you walk in the door."',
+      text: '"I have pretty bad issues with anxiety with the dentist and he is very very patient and sympathetic with that. When you walk in there\'s wonderful music playing in the background. He makes the whole experience great. They all do. The trust, the technology, the staff. It\'s a very comfortable place when you walk in the door."',
       name: 'Summit Dental Patient',
       detail: 'Kalispell, MT',
       initial: 'S',
@@ -78,7 +78,7 @@ const SITE = {
     },
     {
       stars: 5,
-      text: '"Most dentists want to give you \'oh this is what you need\' — instead he wasn\'t after the money. He was saying here\'s a better option for you. He\'s so gentle I didn\'t even have novocaine for the deep cleaning. I would recommend him because of his honesty."',
+      text: '"Most dentists want to give you \'oh this is what you need.\' But he wasn\'t after the money. He was saying here\'s a better option for you. He\'s so gentle I didn\'t even have novocaine for the deep cleaning. I would recommend him because of his honesty."',
       name: 'Navy Veteran Patient',
       detail: 'Kalispell, MT',
       initial: 'N',
@@ -86,7 +86,7 @@ const SITE = {
     },
     {
       stars: 5,
-      text: '"Everyone honestly — it seems like we\'ve known him forever. It\'s hard to find somebody like that. He\'s just a nice, honest man. Couldn\'t ask for anybody better."',
+      text: '"Everyone honestly, it seems like we\'ve known him forever. It\'s hard to find somebody like that. He\'s just a nice, honest man. Couldn\'t ask for anybody better."',
       name: 'Summit Dental Patient',
       detail: 'Flathead Valley, MT',
       initial: 'S',
@@ -222,7 +222,7 @@ export default function Home() {
             { svg: <svg key="g" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/></svg>, label: '4.8 / 5 Google Rating', sub: '469 Verified Patient Reviews' },
             { svg: <svg key="v" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, label: 'Veteran-Owned Practice', sub: 'Dr. Vanzant · USAF, Montana ARNG' },
             { svg: <svg key="t" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>, label: 'TRICARE & ADDP Accepted', sub: 'Military insurance handled for you' },
-            { svg: <svg key="e" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>, label: 'Same-Day Emergencies', sub: 'Call (406) 752-4545 — we answer' },
+            { svg: <svg key="e" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>, label: 'Same-Day Emergencies', sub: 'Call (406) 752-4545. We answer.' },
           ].map(t => (
             <div key={t.label} className="trust-strip-item">
               <div className="trust-strip-icon">{t.svg}</div>
@@ -240,8 +240,8 @@ export default function Home() {
             <span className="eyebrow">What We Do</span>
             <h2 style={{ marginBottom: '12px' }}>Full-Service Dental Care Under One Roof</h2>
             <p className="section-intro">
-              From preventive cleanings to dental implants, sedation dentistry to cosmetic smile makeovers
-              — we handle everything your family needs.
+              From preventive cleanings to dental implants, sedation dentistry to cosmetic smile makeovers.
+              We handle everything your family needs.
             </p>
             <div className="services-grid services-grid--4col">
               {SITE.services.map(s => (
@@ -272,7 +272,7 @@ export default function Home() {
           <div className="reviews-bar-quote">
             <p>
               &quot;He wasn&apos;t after the money. It was like he was saying here&apos;s a better option for you.
-              Everyone honestly — it seems like we&apos;ve known him forever. Couldn&apos;t ask for anybody better.&quot;
+              Everyone honestly, it seems like we&apos;ve known him forever. Couldn&apos;t ask for anybody better.&quot;
             </p>
             <cite>— Verified Patient, Kalispell MT &middot; YouTube Testimonial</cite>
           </div>
@@ -286,7 +286,7 @@ export default function Home() {
             <span className="eyebrow">See Summit Dental in Action</span>
             <h2 style={{ marginBottom: '10px' }}>A Real Look Inside Our Practice</h2>
             <p className="section-intro" style={{ marginBottom: '48px' }}>
-              Meet the team, see our office, and hear from Dr. Vanzant himself — before you ever walk through the door.
+              Meet the team, see our office, and hear from Dr. Vanzant himself, before you ever walk through the door.
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '24px' }}>
               {/* Main promo video */}
@@ -294,7 +294,7 @@ export default function Home() {
                 <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--shadow-lg)' }}>
                   <iframe
                     src="https://www.youtube.com/embed/Yl3P5T92_eU?rel=0&modestbranding=1"
-                    title="Summit Dental Group — Montana Dentist Office Tour"
+                    title="Summit Dental Group: Montana Dentist Office Tour"
                     style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -302,7 +302,7 @@ export default function Home() {
                   />
                 </div>
                 <p style={{ fontSize: '0.82rem', color: 'var(--color-neutral-mid)', marginTop: '10px' }}>
-                  🎬 Summit Dental Group Office Tour — see the team, the office, and our approach to patient care.
+                  🎬 Summit Dental Group Office Tour: see the team, the office, and our approach to patient care.
                 </p>
               </div>
               {/* Dr. Vanzant bio video + testimonial */}
@@ -311,14 +311,14 @@ export default function Home() {
                   <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, borderRadius: 'var(--radius-md)', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
                     <iframe
                       src="https://www.youtube.com/embed/videoseries?list=UUIdBaXNFJMeMMmhbwM08z4w&index=2&rel=0&modestbranding=1"
-                      title="Dr. Mark Vanzant DMD — Montana Dentist Bio"
+                      title="Dr. Mark Vanzant DMD: Montana Dentist Bio"
                       style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
                       allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                       loading="lazy"
                     />
                   </div>
-                  <p style={{ fontSize: '0.78rem', color: 'var(--color-neutral-mid)', marginTop: '8px' }}>Dr. Mark Vanzant, DMD — Meet Your Dentist (0:45)</p>
+                  <p style={{ fontSize: '0.78rem', color: 'var(--color-neutral-mid)', marginTop: '8px' }}>Dr. Mark Vanzant, DMD: Meet Your Dentist (0:45)</p>
                 </div>
                 <div style={{ background: 'var(--color-surface)', border: '1.5px solid var(--color-border)', borderRadius: 'var(--radius-md)', padding: '20px', flex: 1 }}>
                   <div style={{ fontSize: '1.2rem', color: '#f0c040', marginBottom: '8px' }}>★★★★★</div>
@@ -340,8 +340,8 @@ export default function Home() {
               <h2>We Know Military Insurance Can Be Complicated. We Handle It For You.</h2>
               <p>
                 Dr. Mark Vanzant is a USAF veteran with three combat deployments and continues to serve
-                in the Montana Army National Guard. He understands the unique needs — and insurance
-                complexities — of the military community.
+                in the Montana Army National Guard. He understands the unique needs and the insurance
+                complexities of the military community.
               </p>
               <div className="veterans-plans">
                 {[
@@ -388,7 +388,7 @@ export default function Home() {
                 },
                 {
                   num: '02', title: 'Come In for Your Visit',
-                  desc: 'Enjoy our comfortable office — coffee bar, massage chairs, and a team that genuinely cares.',
+                  desc: 'Enjoy our comfortable office: coffee bar, massage chairs, and a team that genuinely cares.',
                   svg: <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>,
                 },
                 {
@@ -445,7 +445,7 @@ export default function Home() {
             <div className="about-grid">
               <div className="about-img-wrap">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/photo-dr-headshot-formal.jpg" alt="Dr. Mark Vanzant, DMD — Founder, Summit Dental Group Kalispell MT" />
+                <img src="/images/photo-dr-headshot-formal.jpg" alt="Dr. Mark Vanzant, DMD, Founder of Summit Dental Group Kalispell MT" />
                 <div className="about-badge">
                   <div className="about-badge-rating">4.8</div>
                   <div className="about-badge-stars">★★★★★</div>
@@ -470,7 +470,7 @@ export default function Home() {
                     { num: '15+', label: 'Years of Experience' },
                     { num: '4.8★', label: 'Google Rating' },
                     { num: '469', label: 'Verified Reviews' },
-                    { num: 'USAF', label: 'Veteran — 3 Deployments' },
+                    { num: 'USAF', label: 'Veteran, 3 Deployments' },
                   ].map(s => (
                     <div key={s.label} className="about-stat">
                       <div className="about-stat-num">{s.num}</div>
@@ -498,7 +498,7 @@ export default function Home() {
             <span className="eyebrow">Patient Stories</span>
             <h2 style={{ marginBottom: '10px' }}>What Kalispell Patients Are Saying</h2>
             <p className="section-intro">
-              4.8 stars from 469 Google reviews — not because we ask for them, but because we earn them.
+              4.8 stars from 469 Google reviews. Not because we ask for them, but because we earn them.
             </p>
             <div className="reviews-grid">
               {SITE.reviews.map(r => (
@@ -580,7 +580,7 @@ export default function Home() {
               ))}
             </div>
             <div className="inline-ctas" style={{ marginTop: '36px' }}>
-              <a href={SITE.phoneTel} className="btn btn-primary">Call Us — We Answer</a>
+              <a href={SITE.phoneTel} className="btn btn-primary">Call Us. We Answer.</a>
               <a href="/faq" className="btn btn-secondary">See All FAQs →</a>
             </div>
           </div>
