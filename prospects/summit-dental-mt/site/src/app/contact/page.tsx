@@ -1,23 +1,21 @@
-'use client';
-import { useState } from 'react';
+import type { Metadata } from 'next';
 import SiteNav from '../components/SiteNav';
 import SiteFooter from '../components/SiteFooter';
+import ContactForm from './ContactForm';
+
+export const metadata: Metadata = {
+  title: 'Request an Appointment | Summit Dental Group Kalispell, MT',
+  description: 'Book an appointment with Summit Dental Group in Kalispell, MT. Call (406) 752-4545 or fill out our online form. TRICARE accepted. Same-day emergency care available.',
+};
 
 export default function ContactPage() {
-  const [formSubmitted, setFormSubmitted] = useState(false);
-
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setFormSubmitted(true);
-  }
-
   return (
     <>
       <SiteNav activePath="/contact" alwaysScrolled />
       <main>
         <div className="page-hero">
-          <span className="eyebrow" style={{ color: '#e8a96a', justifyContent: 'center' }}>
-            <span style={{ width: '24px', height: '2px', background: '#e8a96a', display: 'block' }} />
+          <span className="eyebrow" style={{ color: 'var(--color-accent)', justifyContent: 'center' }}>
+            <span style={{ width: '24px', height: '2px', background: 'var(--color-accent)', display: 'block' }} />
             Get in Touch
           </span>
           <h1>Request an Appointment</h1>
@@ -54,9 +52,9 @@ export default function ContactPage() {
                   <div>
                     <div className="contact-detail-label">Office Hours</div>
                     <div className="contact-detail-value" style={{ display: 'block' }}>
-                      <div>Tue – Fri: 8:00 AM – 5:00 PM</div>
+                      <div>Tue &ndash; Fri: 8:00 AM &ndash; 5:00 PM</div>
                       <div style={{ fontSize: '0.85rem', color: '#5a6473', marginTop: '3px' }}>Mon / Sat / Sun: Closed</div>
-                      <div style={{ fontSize: '0.82rem', color: 'var(--color-accent)', marginTop: '6px', fontWeight: 600 }}>🦷 Dental emergencies: call anytime</div>
+                      <div style={{ fontSize: '0.82rem', color: 'var(--color-accent)', marginTop: '6px', fontWeight: 600 }}>Dental emergencies: call anytime</div>
                     </div>
                   </div>
                 </div>
@@ -72,81 +70,7 @@ export default function ContactPage() {
               </div>
 
               <div className="contact-form">
-                {formSubmitted ? (
-                  <div style={{ textAlign: 'center', padding: '40px 0' }}>
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" style={{ margin: '0 auto 16px' }}><polyline points="20 6 9 17 4 12"/></svg>
-                    <h3 style={{ color: 'var(--color-primary)', marginBottom: '10px' }}>Request Received. Thank You!</h3>
-                    <p style={{ color: '#5a6473', fontSize: '0.9rem' }}>
-                      We&apos;ll call or email you within one business day. For urgent needs, call{' '}
-                      <a href="tel:+14067524545" style={{ color: 'var(--color-accent)', fontWeight: 700 }}>(406) 752-4545</a>.
-                    </p>
-                  </div>
-                ) : (
-                  <>
-                    <h3>Book Your Appointment</h3>
-                    <p className="contact-form-sub">We respond within one business day. For same-day needs, please call directly.</p>
-                    <form onSubmit={handleSubmit}>
-                      <div className="form-row">
-                        <div className="form-group">
-                          <label htmlFor="first_name">First Name *</label>
-                          <input id="first_name" type="text" required placeholder="Jane" />
-                        </div>
-                        <div className="form-group">
-                          <label htmlFor="last_name">Last Name *</label>
-                          <input id="last_name" type="text" required placeholder="Smith" />
-                        </div>
-                      </div>
-                      <div className="form-row">
-                        <div className="form-group">
-                          <label htmlFor="phone">Phone *</label>
-                          <input id="phone" type="tel" required placeholder="(406) 555-0100" />
-                        </div>
-                        <div className="form-group">
-                          <label htmlFor="email">Email</label>
-                          <input id="email" type="email" placeholder="jane@email.com" />
-                        </div>
-                      </div>
-                      <div className="form-group">
-                        <label htmlFor="service">Reason for Visit</label>
-                        <select id="service">
-                          <option value="">Select...</option>
-                          <option>New Patient Exam & Cleaning</option>
-                          <option>Dental Emergency</option>
-                          <option>Dental Implant Consultation</option>
-                          <option>Cosmetic / Smile Makeover</option>
-                          <option>Sedation Dentistry</option>
-                          <option>Teeth Whitening</option>
-                          <option>Crown or Bridge</option>
-                          <option>Veterans / TRICARE Inquiry</option>
-                          <option>Other</option>
-                        </select>
-                      </div>
-                      <div className="form-group">
-                        <label htmlFor="insurance">Insurance / Payment</label>
-                        <select id="insurance">
-                          <option value="">Select...</option>
-                          <option>Delta Dental</option>
-                          <option>Blue Cross / Blue Shield</option>
-                          <option>MetLife</option>
-                          <option>Cigna</option>
-                          <option>Aetna</option>
-                          <option>TRICARE / ADDP</option>
-                          <option>United Concordia</option>
-                          <option>CareCredit</option>
-                          <option>Self-Pay / No Insurance</option>
-                          <option>Other</option>
-                        </select>
-                      </div>
-                      <div className="form-group">
-                        <label htmlFor="message">Anything else we should know?</label>
-                        <textarea id="message" placeholder="Describe your situation, any dental anxiety, or questions about insurance..." />
-                      </div>
-                      <button type="submit" className="btn btn-primary form-submit">
-                        Request Appointment →
-                      </button>
-                    </form>
-                  </>
-                )}
+                <ContactForm />
               </div>
             </div>
           </div>

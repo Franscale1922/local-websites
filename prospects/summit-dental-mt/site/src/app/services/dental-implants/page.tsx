@@ -13,8 +13,8 @@ export default function DentalImplantsPage() {
       <SiteNav activePath="/services" alwaysScrolled />
       <main>
         <div className="page-hero">
-          <span className="eyebrow" style={{ color: '#e8a96a', justifyContent: 'center' }}>
-            <span style={{ width: '24px', height: '2px', background: '#e8a96a', display: 'block' }} />
+          <span className="eyebrow" style={{ color: 'var(--color-accent)', justifyContent: 'center' }}>
+            <span style={{ width: '24px', height: '2px', background: 'var(--color-accent)', display: 'block' }} />
             Dental Implants
           </span>
           <h1>Permanent Tooth Replacement That Looks, Feels, and Functions Like the Real Thing</h1>
@@ -72,7 +72,7 @@ export default function DentalImplantsPage() {
               ].map((step, i, arr) => (
                 <div key={step.num} className="process-step" style={{ background: 'transparent' }}>
                   {i < arr.length - 1 && <div className="process-connector" style={{ background: 'var(--color-accent)' }} />}
-                  <div className="process-icon-wrap" style={{ background: 'var(--color-primary)', color: '#e8a96a' }}>
+                  <div className="process-icon-wrap" style={{ background: 'var(--color-primary)', color: 'var(--color-accent)' }}>
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
                   </div>
                   <div className="process-num" style={{ color: 'var(--color-accent)' }}>{step.num}</div>
@@ -91,8 +91,8 @@ export default function DentalImplantsPage() {
               <p>Schedule an implant consultation with Dr. Vanzant. TRICARE and most insurance accepted. CareCredit financing available.</p>
             </div>
             <div className="cta-strip-actions">
-              <a href="/contact" className="btn btn-ghost-light">Book Implant Consultation</a>
-              <a href="tel:+14067524545" className="btn btn-ghost-light">Call (406) 752-4545</a>
+              <a href="/contact" className="btn btn-primary">Book Implant Consultation</a>
+              <a href="tel:+14067524545" className="btn btn-white">Call (406) 752-4545</a>
             </div>
           </div>
         </div>

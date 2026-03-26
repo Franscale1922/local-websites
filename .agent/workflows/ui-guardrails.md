@@ -163,6 +163,42 @@ Never use a 2-column grid for content-heavy cards at ≤480px.
 
 ---
 
+## 8. CTA Strip Button Hierarchy: Never Two Ghost Buttons
+
+**Problem:** When a CTA section (`.cta-strip`) has two action buttons, both default to `btn-ghost-light` (outline) — making them visually identical. There is no clear primary action, which reduces conversion rates and looks unpolished.
+
+**Common failure pattern:**
+```tsx
+{/* ❌ Wrong — both outline, no hierarchy */}
+<a href="/contact" className="btn btn-ghost-light">Book Appointment</a>
+<a href="tel:+1..." className="btn btn-ghost-light">Call Us</a>
+```
+
+**Rule:** In every `.cta-strip-actions` pair:
+- **First button** = solid white (`btn-white`) — the primary conversion action (booking, consultation, etc.)
+- **Second button** = ghost outline (`btn-ghost-light`) — secondary action (call, learn more)
+
+**Best practice — enforce in CSS globally, not per-component:**
+
+Add this to `globals.css` once, and every CTA strip across the entire site is automatically fixed without touching individual page files:
+
+```css
+/* CTA strip — first button always solid white (primary) */
+.cta-strip-actions .btn:first-child {
+  background: #fff;
+  color: var(--color-primary);
+  border-color: #fff;
+}
+.cta-strip-actions .btn:first-child:hover {
+  background: rgba(255, 255, 255, 0.90);
+  transform: translateY(-2px);
+}
+```
+
+**Mobile note:** At ≤480px, `flex-wrap: wrap` on `.cta-strip-actions` may stack buttons. Both still look correct since they retain their distinct styles.
+
+---
+
 ## Pre-Launch Checklist
 
 Before every site goes to Vercel, verify:
@@ -173,4 +209,5 @@ Before every site goes to Vercel, verify:
 - [ ] Check any grid with 2-col cards at 390px — collapses to 1-col
 - [ ] All eyebrow labels use `.eyebrow` class, not custom inline spans
 - [ ] **Scan every pill/badge — does it visually appear against its section background?** Check on light, tinted, dark, and hero sections
+- [ ] **Every `.cta-strip-actions` — does the first button appear visually dominant (solid white)?** If both buttons look identical, apply the CSS override above
 - [ ] Run the mobile-layout-audit skill before deploy

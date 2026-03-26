@@ -13,8 +13,8 @@ export default function CrownsBridgesPage() {
       <SiteNav activePath="/services" alwaysScrolled />
       <main>
         <div className="page-hero">
-          <span className="eyebrow" style={{ color: '#e8a96a', justifyContent: 'center' }}>
-            <span style={{ width: '24px', height: '2px', background: '#e8a96a', display: 'block' }} />
+          <span className="eyebrow" style={{ color: 'var(--color-accent)', justifyContent: 'center' }}>
+            <span style={{ width: '24px', height: '2px', background: 'var(--color-accent)', display: 'block' }} />
             Crowns &amp; Bridges
           </span>
           <h1>Restore Your Tooth&apos;s Strength and Appearance Without It Looking Restored</h1>
@@ -63,8 +63,8 @@ export default function CrownsBridgesPage() {
               <p>Let&apos;s talk about your options. Most crown and bridge cases can be completed in just two visits.</p>
             </div>
             <div className="cta-strip-actions">
-              <a href="/contact" className="btn btn-ghost-light">Book Consultation</a>
-              <a href="tel:+14067524545" className="btn btn-ghost-light">Call (406) 752-4545</a>
+              <a href="/contact" className="btn btn-primary">Book Consultation</a>
+              <a href="tel:+14067524545" className="btn btn-white">Call (406) 752-4545</a>
             </div>
           </div>
         </div>

@@ -67,7 +67,7 @@ export default function SiteNav({ activePath, alwaysScrolled = false }: SiteNavP
         {/* MOBILE: Call Now */}
         <a
           href={PHONE_TEL}
-          className="btn btn-ghost-light nav-mobile-cta"
+          className="btn btn-ghost-copper nav-mobile-cta"
           style={{ fontSize: '0.8rem', padding: '8px 14px' }}
         >
           Call Now

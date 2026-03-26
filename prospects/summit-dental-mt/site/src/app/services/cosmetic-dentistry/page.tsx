@@ -13,8 +13,8 @@ export default function CosmeticDentistryPage() {
       <SiteNav activePath="/services" alwaysScrolled />
       <main>
         <div className="page-hero">
-          <span className="eyebrow" style={{ color: '#e8a96a', justifyContent: 'center' }}>
-            <span style={{ width: '24px', height: '2px', background: '#e8a96a', display: 'block' }} />
+          <span className="eyebrow" style={{ color: 'var(--color-accent)', justifyContent: 'center' }}>
+            <span style={{ width: '24px', height: '2px', background: 'var(--color-accent)', display: 'block' }} />
             Cosmetic Dentistry
           </span>
           <h1>The Smile You&apos;ve Always Wanted, Designed Around Your Face</h1>
@@ -75,8 +75,8 @@ export default function CosmeticDentistryPage() {
               <p>Tell us what you&apos;d like to change. We&apos;ll build a plan that fits your goals and budget.</p>
             </div>
             <div className="cta-strip-actions">
-              <a href="/contact" className="btn btn-ghost-light">Book Consultation</a>
-              <a href="tel:+14067524545" className="btn btn-ghost-light">Call (406) 752-4545</a>
+              <a href="/contact" className="btn btn-primary">Book Consultation</a>
+              <a href="tel:+14067524545" className="btn btn-white">Call (406) 752-4545</a>
             </div>
           </div>
         </div>

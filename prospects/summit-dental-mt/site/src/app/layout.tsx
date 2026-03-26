@@ -16,11 +16,20 @@ export const metadata: Metadata = {
     title: 'Summit Dental Group | Kalispell, MT: Veteran-Owned Family Dentist',
     description: 'Veteran-owned dental practice in Kalispell, MT. 4.8★ Google rating. TRICARE accepted. Same-day emergency care available.',
     url: '/',
+    images: [
+      {
+        url: '/images/hero-homepage.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Summit Dental Group — Veteran-Owned Dental Practice in Kalispell, MT',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Summit Dental Group | Kalispell, MT',
     description: 'Veteran-owned dental practice in Kalispell, MT. 4.8★ Google rating, 469 reviews. TRICARE accepted.',
+    images: ['/images/hero-homepage.jpg'],
   },
   alternates: { canonical: '/' },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },

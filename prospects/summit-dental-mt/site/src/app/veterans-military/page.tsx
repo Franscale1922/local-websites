@@ -37,9 +37,9 @@ export default function VeteransPage() {
     <>
       <SiteNav activePath="/veterans-military" alwaysScrolled />
       <main>
-        <div className="page-hero">
-          <span className="eyebrow" style={{ color: '#e8a96a', justifyContent: 'center' }}>
-            <span style={{ width: '24px', height: '2px', background: '#e8a96a', display: 'block' }} />
+        <div className="page-hero page-hero--veterans">
+          <span className="eyebrow" style={{ color: 'var(--color-accent)', justifyContent: 'center' }}>
+            <span style={{ width: '24px', height: '2px', background: 'var(--color-accent)', display: 'block' }} />
             Veterans & Military
           </span>
           <h1>We Know Military Insurance Can Be Complicated. We Handle It For You.</h1>
@@ -124,16 +124,22 @@ export default function VeteransPage() {
             <p style={{ color: 'rgba(255,255,255,0.65)', marginBottom: 0 }}>
               Plain language. No confusing bureaucratic explanations.
             </p>
-            <div className="process-grid">
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '0',
+              maxWidth: '900px',
+              margin: '56px auto 0',
+            }}>
               {STEPS.map((step, i, arr) => (
-                <div key={step.num} className="process-step">
+                <div key={step.num} className="process-step" style={{ textAlign: 'center' }}>
                   {i < arr.length - 1 && <div className="process-connector" />}
                   <div className="process-icon-wrap">
                     <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                   </div>
                   <div className="process-num">{step.num}</div>
                   <h3 className="process-title">{step.title}</h3>
-                  <p className="process-desc">{step.desc}</p>
+                  <p className="process-desc" style={{ maxWidth: '26ch', margin: '0 auto' }}>{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -204,8 +210,8 @@ export default function VeteransPage() {
               <p>TRICARE, ADDP, and all military plans accepted. Same-day emergency appointments available. No runaround.</p>
             </div>
             <div className="cta-strip-actions">
-              <a href="/contact" className="btn btn-ghost-light">Book Appointment</a>
-              <a href="tel:+14067524545" className="btn btn-ghost-light">Call (406) 752-4545</a>
+              <a href="/contact" className="btn btn-primary">Book Appointment</a>
+              <a href="tel:+14067524545" className="btn btn-white">Call (406) 752-4545</a>
             </div>
           </div>
         </div>

@@ -13,14 +13,14 @@ export default function EmergencyDentistryPage() {
       <SiteNav activePath="/services" alwaysScrolled />
       <main>
         <div className="page-hero" style={{ background: 'linear-gradient(135deg, #2a1a1a 0%, var(--color-primary-dark) 100%)' }}>
-          <span className="eyebrow" style={{ color: '#e8a96a', justifyContent: 'center' }}>
-            <span style={{ width: '24px', height: '2px', background: '#e8a96a', display: 'block' }} />
+          <span className="eyebrow" style={{ color: 'var(--color-accent)', justifyContent: 'center' }}>
+            <span style={{ width: '24px', height: '2px', background: 'var(--color-accent)', display: 'block' }} />
             Emergency Dentistry
           </span>
           <h1>Dental Emergency? Call Us Right Now.</h1>
           <p>We make every effort to see emergency patients the same day. Don&apos;t wait it out. Dental emergencies get worse without treatment.</p>
           <div className="page-hero-ctas">
-            <a href="tel:+14067524545" className="btn btn-primary" style={{ fontSize: '1rem', padding: '16px 32px' }}>📞 Call (406) 752-4545</a>
+            <a href="tel:+14067524545" className="btn btn-primary" style={{ fontSize: '1rem', padding: '16px 32px' }}>Call (406) 752-4545 Now</a>
             <a href="/contact" className="btn btn-ghost-light">Request Online</a>
           </div>
         </div>
@@ -78,7 +78,7 @@ export default function EmergencyDentistryPage() {
               <p>Dental emergencies don&apos;t resolve on their own. Waiting only makes them worse. Call us now.</p>
             </div>
             <div className="cta-strip-actions">
-              <a href="tel:+14067524545" className="btn btn-ghost-light">Call (406) 752-4545</a>
+              <a href="tel:+14067524545" className="btn btn-primary">Call (406) 752-4545</a>
             </div>
           </div>
         </div>

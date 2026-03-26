@@ -13,8 +13,8 @@ export default function SedationDentistryPage() {
       <SiteNav activePath="/services" alwaysScrolled />
       <main>
         <div className="page-hero">
-          <span className="eyebrow" style={{ color: '#e8a96a', justifyContent: 'center' }}>
-            <span style={{ width: '24px', height: '2px', background: '#e8a96a', display: 'block' }} />
+          <span className="eyebrow" style={{ color: 'var(--color-accent)', justifyContent: 'center' }}>
+            <span style={{ width: '24px', height: '2px', background: 'var(--color-accent)', display: 'block' }} />
             Sedation Dentistry
           </span>
           <h1>Nervous About Dentistry? You Don&apos;t Have to White-Knuckle It.</h1>
@@ -64,8 +64,8 @@ export default function SedationDentistryPage() {
               <p>Mention your anxiety when you call or book online. We&apos;ll tailor your appointment from the start.</p>
             </div>
             <div className="cta-strip-actions">
-              <a href="/contact" className="btn btn-ghost-light">Book with Sedation Option</a>
-              <a href="tel:+14067524545" className="btn btn-ghost-light">Call Us</a>
+              <a href="/contact" className="btn btn-primary">Book with Sedation Option</a>
+              <a href="tel:+14067524545" className="btn btn-white">Call Us</a>
             </div>
           </div>
         </div>

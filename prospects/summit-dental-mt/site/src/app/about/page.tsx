@@ -12,9 +12,9 @@ export default function AboutPage() {
     <>
       <SiteNav activePath="/about" alwaysScrolled />
       <main>
-        <div className="page-hero">
-          <span className="eyebrow" style={{ color: '#e8a96a', justifyContent: 'center' }}>
-            <span style={{ width: '24px', height: '2px', background: '#e8a96a', display: 'block' }} />
+        <div className="page-hero page-hero--about">
+          <span className="eyebrow" style={{ color: 'var(--color-accent)', justifyContent: 'center' }}>
+            <span style={{ width: '24px', height: '2px', background: 'var(--color-accent)', display: 'block' }} />
             About Us
           </span>
           <h1>Serving Montana With the Values We Learned in Service</h1>
@@ -95,32 +95,35 @@ export default function AboutPage() {
             <div className="why-grid">
               {[
                 {
-                  icon: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#e8a96a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>,
+                  icon: '/images/icon-office-coffee.png',
                   title: 'Coffee Bar', desc: 'Start your visit with a fresh cup. We believe comfort begins the moment you walk in the door.'
                 },
                 {
-                  icon: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#e8a96a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>,
-                  title: 'Massage Chairs', desc: 'Our waiting area features massage chairs so you can relax before your appointment, not dread it.'
-                },
-                {
-                  icon: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#e8a96a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>,
-                  title: 'Welcome Gifts', desc: 'New patients receive a welcome gift bag as a small thank-you for trusting us with your smile.'
-                },
-                {
-                  icon: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#e8a96a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>,
+                  icon: '/images/icon-honest-care.png',
                   title: 'Honest Care', desc: 'We recommend only what you need. No upselling, no pressure, no vague treatment plans.'
                 },
                 {
-                  icon: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#e8a96a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>,
+                  icon: '/images/icon-family-friendly.png',
                   title: 'Family-Friendly', desc: "Kids and adults both feel at home here. We're a true family practice."
                 },
                 {
-                  icon: <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#e8a96a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>,
+                  icon: '/images/icon-sedation-dentistry.png',
                   title: 'Sedation Available', desc: 'Nitrous oxide and oral conscious sedation for patients who want a more relaxed experience.'
+                },
+                {
+                  icon: '/images/icon-dental-emergency.png',
+                  title: 'After-Hours Emergency', desc: 'Dental emergencies don\'t keep business hours. We offer after-hours emergency care when you need it most.'
+                },
+                {
+                  icon: '/images/icon-preventive-care.png',
+                  title: 'Modern Technology', desc: 'Intraoral cameras, digital imaging, and state-of-the-art equipment for precise, comfortable care.'
                 },
               ].map(w => (
                 <div key={w.title} className="why-card">
-                  <div className="why-number">{w.icon}</div>
+                  <div className="why-number">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={w.icon} alt={w.title} width={72} height={72} style={{ objectFit: 'contain' }} />
+                  </div>
                   <h3>{w.title}</h3>
                   <p>{w.desc}</p>
                 </div>
@@ -140,7 +143,7 @@ export default function AboutPage() {
             <div className="testimonial-grid">
               <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--shadow-lg)' }}>
                 <iframe
-                  src="https://www.youtube.com/embed/videoseries?list=UUIdBaXNFJMeMMmhbwM08z4w&index=3&rel=0&modestbranding=1"
+                  src="https://www.youtube.com/embed/EuS2daVnEZE?start=52&rel=0&modestbranding=1"
                   title="Summit Dental Group Patient Testimonials: Kalispell Montana"
                   style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -177,8 +180,8 @@ export default function AboutPage() {
               <p>New patients welcome. TRICARE and most insurance accepted. Same-day emergencies available.</p>
             </div>
             <div className="cta-strip-actions">
-              <a href="/contact" className="btn btn-ghost-light">Book an Appointment</a>
-              <a href="tel:+14067524545" className="btn btn-ghost-light">Call (406) 752-4545</a>
+              <a href="/contact" className="btn btn-primary">Book an Appointment</a>
+              <a href="tel:+14067524545" className="btn btn-white">Call (406) 752-4545</a>
             </div>
           </div>
         </div>
