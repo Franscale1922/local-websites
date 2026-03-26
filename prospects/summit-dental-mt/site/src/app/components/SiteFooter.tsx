@@ -25,6 +25,7 @@ const FOOTER_NAV = [
       { label: 'Veterans & Military', href: '/veterans-military' },
       { label: 'New Patients', href: '/new-patients' },
       { label: 'Before & After Gallery', href: '/smile-gallery' },
+      { label: 'Blog & Resources', href: '/blog' },
       { label: 'FAQ', href: '/faq' },
       { label: 'Service Area', href: '/service-area' },
       { label: 'Contact', href: '/contact' },

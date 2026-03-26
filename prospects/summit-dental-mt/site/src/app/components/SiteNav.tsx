@@ -6,6 +6,7 @@ const NAV_LINKS = [
   { label: 'About', href: '/about' },
   { label: 'Veterans', href: '/veterans-military' },
   { label: 'New Patients', href: '/new-patients' },
+  { label: 'Blog', href: '/blog' },
   { label: 'FAQ', href: '/faq' },
 ];
 

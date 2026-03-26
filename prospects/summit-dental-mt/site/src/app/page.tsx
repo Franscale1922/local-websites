@@ -475,6 +475,81 @@ export default function Home() {
           </div>
         </section>
 
+
+        {/* ── BLOG PREVIEW ──────────────────────────────────── */}
+        <section className="section section--tinted" id="blog-preview">
+          <div className="container">
+            <span className="eyebrow">From the Blog</span>
+            <h2 style={{ marginBottom: '10px' }}>Dental Insights for Flathead Valley Patients</h2>
+            <p className="section-intro" style={{ marginBottom: '40px' }}>
+              Straight answers from Dr. Vanzant on implants, insurance, emergencies, and everything in between.
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
+              {[
+                {
+                  href: '/blog/dental-implants-kalispell-mt',
+                  category: 'Dental Implants',
+                  readTime: '7 min read',
+                  title: 'Dental Implants in Kalispell, MT: What to Expect, What They Cost, and How to Choose',
+                  excerpt: 'A complete guide for Flathead Valley patients — from the implant process and timeline to what you\'ll actually pay and how to evaluate your provider.',
+                },
+                {
+                  href: '/blog/tricare-dental-kalispell-mt',
+                  category: 'Veterans & Military',
+                  readTime: '6 min read',
+                  title: 'TRICARE Dental in Kalispell, MT: What Veterans and Military Families Need to Know',
+                  excerpt: 'Written by a USAF veteran. Clear explanation of ADDP, TDP, and United Concordia coverage — and exactly how to use your military dental benefits at Summit Dental.',
+                },
+                {
+                  href: '/blog/emergency-dentist-kalispell',
+                  category: 'Emergency Care',
+                  readTime: '5 min read',
+                  title: 'Emergency Dentist in Kalispell, MT: What Counts as a Dental Emergency?',
+                  excerpt: 'Knowing what to do in the first 30 minutes of a dental emergency can be the difference between saving a tooth and losing one permanently. Here\'s the guide.',
+                },
+              ].map(post => (
+                <a key={post.href} href={post.href} style={{
+                  display: 'flex', flexDirection: 'column',
+                  background: 'var(--color-surface)',
+                  border: '1.5px solid var(--color-border)',
+                  borderRadius: 'var(--radius-lg)',
+                  textDecoration: 'none',
+                  overflow: 'hidden',
+                  transition: 'transform 0.18s, box-shadow 0.18s',
+                }}>
+                  <div style={{
+                    display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                    padding: '12px 18px', borderBottom: '1px solid var(--color-border)',
+                    background: 'rgba(58,80,107,0.04)',
+                  }}>
+                    <span style={{
+                      background: 'var(--color-accent)', color: '#fff',
+                      fontSize: '0.68rem', fontWeight: 700,
+                      padding: '3px 9px', borderRadius: '100px',
+                      textTransform: 'uppercase', letterSpacing: '0.04em', whiteSpace: 'nowrap',
+                    }}>{post.category}</span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--color-neutral-mid)', whiteSpace: 'nowrap' }}>{post.readTime}</span>
+                  </div>
+                  <div style={{ padding: '18px', flex: 1, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    <p style={{ margin: 0, fontWeight: 700, fontSize: '0.9rem', color: 'var(--color-text)', lineHeight: 1.4 }}>
+                      {post.title}
+                    </p>
+                    <p style={{ margin: 0, fontSize: '0.82rem', color: 'var(--color-neutral-mid)', lineHeight: 1.65, flex: 1 }}>
+                      {post.excerpt}
+                    </p>
+                    <span style={{ fontSize: '0.78rem', color: 'var(--color-accent)', fontWeight: 700, marginTop: 'auto' }}>
+                      Read Article →
+                    </span>
+                  </div>
+                </a>
+              ))}
+            </div>
+            <div style={{ textAlign: 'center', marginTop: '36px' }}>
+              <a href="/blog" className="btn btn-secondary">View All Articles →</a>
+            </div>
+          </div>
+        </section>
+
         {/* ── CTA STRIP ─────────────────────────────────────── */}
         <div className="cta-strip">
           <div className="cta-strip-inner">

@@ -19,6 +19,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/faq', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/contact', priority: 0.85, changeFrequency: 'monthly' as const },
     { url: '/service-area', priority: 0.8, changeFrequency: 'monthly' as const },
+    { url: '/blog', priority: 0.8, changeFrequency: 'weekly' as const },
+    { url: '/blog/dental-implants-kalispell-mt', priority: 0.75, changeFrequency: 'monthly' as const },
+    { url: '/blog/emergency-dentist-kalispell', priority: 0.75, changeFrequency: 'monthly' as const },
+    { url: '/blog/tricare-dental-kalispell-mt', priority: 0.75, changeFrequency: 'monthly' as const },
+    { url: '/blog/sedation-dentistry-anxiety-flathead-valley', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/blog/teeth-whitening-vs-veneers-kalispell', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/blog/dental-insurance-benefits-end-of-year-montana', priority: 0.7, changeFrequency: 'monthly' as const },
   ];
 
   return routes.map(r => ({
