@@ -26,6 +26,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/blog/sedation-dentistry-anxiety-flathead-valley', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/blog/teeth-whitening-vs-veneers-kalispell', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/blog/dental-insurance-benefits-end-of-year-montana', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/blog/fluoride-kalispell-water-dental-health', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/blog/first-dental-visit-children-kalispell', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/blog/dental-implants-vs-bridges-kalispell', priority: 0.75, changeFrequency: 'monthly' as const },
+    { url: '/blog/bad-breath-causes-treatment-kalispell', priority: 0.7, changeFrequency: 'monthly' as const },
   ];
 
   return routes.map(r => ({

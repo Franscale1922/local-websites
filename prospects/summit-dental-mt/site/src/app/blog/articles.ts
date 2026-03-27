@@ -1,5 +1,5 @@
 // ─── Summit Dental Group: Blog Articles Data ─────────────────────────────────
-// Each article is fully static. Add new articles here; pages are auto-generated.
+// All 10 articles. Add new articles here; pages are auto-generated.
 
 export type ArticleSection = {
   heading?: string;
@@ -12,8 +12,8 @@ export type Article = {
   description: string;
   category: string;
   categorySlug: string;
-  readTime: number; // minutes
-  date: string; // ISO date string
+  readTime: number;
+  date: string;
   author: string;
   authorTitle: string;
   excerpt: string;
@@ -22,11 +22,12 @@ export type Article = {
 };
 
 export const ARTICLES: Article[] = [
-  // ─── Article 1 ───────────────────────────────────────────────────────────────
+
+  // ─── 1: Dental Implants ──────────────────────────────────────────────────────
   {
     slug: 'dental-implants-kalispell-mt',
     title: 'Dental Implants in Kalispell, MT: What to Expect, What They Cost, and How to Choose the Right Dentist',
-    description: 'A complete guide to dental implants in Kalispell, Montana. Learn what implants cost, how the process works, who is a candidate, and what to look for in a Flathead Valley implant dentist.',
+    description: 'A complete guide to dental implants in Kalispell, Montana — cost, process, candidacy, and what to look for in a Flathead Valley implant dentist.',
     category: 'Dental Implants',
     categorySlug: 'implants',
     readTime: 7,
@@ -37,61 +38,60 @@ export const ARTICLES: Article[] = [
     sections: [
       {
         paragraphs: [
-          'Dental implants are the gold standard for replacing one or more missing teeth, and that\'s been true for decades. But for most patients I see here in Kalispell, the questions they walk in with aren\'t about whether implants work — they already know they do. The questions are about cost, the process, how long it takes, and whether the investment is actually worth it for their specific situation.',
-          'This article lays out honest, straightforward answers to all of those questions.',
+          'For most patients I see here in Kalispell, the questions about implants aren\'t about whether they work — patients generally know they do. The questions are about cost, the process, how long it takes, and whether the investment is worth it for their specific situation.',
+          'Below are honest answers to all of that.',
         ],
       },
       {
         heading: 'What Exactly Is a Dental Implant?',
         paragraphs: [
-          'A dental implant is a small titanium post — about the size of a wood screw — that is placed directly into the jawbone where a tooth root used to sit. Over three to four months, the bone grows around and fuses to the titanium in a process called osseointegration. Once that fusion is complete, a lifelike porcelain crown is attached to the top of the post.',
-          'The result is a tooth replacement that looks, functions, and feels virtually identical to a natural tooth. You brush it normally. You floss it normally. You eat whatever you want. No adhesives, no removal at night, no special soaks. Just a tooth.',
-          'Unlike a dental bridge — which requires grinding down the two adjacent healthy teeth to anchor it — an implant stands alone. It doesn\'t affect any surrounding teeth. And because the implant acts like a root, it stimulates the jawbone and prevents the bone loss that almost always follows tooth loss.',
+          'A dental implant is a small titanium post — roughly the size of a wood screw — placed directly into the jawbone where a tooth root used to sit. Over three to four months, the bone grows around and fuses to the titanium in a process called osseointegration. Once that fusion is complete, a lifelike porcelain crown attaches to the top of the post.',
+          'The result looks, functions, and feels virtually identical to a natural tooth. You brush it normally, floss it normally, eat whatever you want. No adhesives, no removal at night, no special soaks.',
+          'Unlike a bridge — which requires grinding down the two adjacent healthy teeth to anchor it — an implant stands alone and doesn\'t affect surrounding teeth. Because it mimics a root, it also stimulates the jawbone and prevents the bone loss that almost always follows tooth loss.',
         ],
       },
       {
-        heading: 'Who Is a Good Candidate for Dental Implants?',
+        heading: 'Who Is a Candidate?',
         paragraphs: [
-          'Most healthy adults who are missing one or more teeth are candidates for dental implants. The key physical requirement is having enough healthy jawbone to support the implant post. Patients who have had a tooth missing for several years often experience some bone loss in that area — in many cases a bone graft can restore enough volume to proceed, and we assess this at the initial consultation.',
-          'Medical conditions that significantly impair healing — uncontrolled diabetes, certain autoimmune disorders, active cancer treatment — can complicate implant success. Heavy smoking significantly increases the risk of implant failure and will come up in any honest pre-treatment conversation. We discuss all of this openly before you commit to anything.',
-          'Age matters on the lower end, not the upper end. We typically wait until a younger patient\'s jawbone has fully developed (late teens to early 20s) before placing implants. There is no upper age limit — healthy patients in their 70s and 80s receive implants successfully every day.',
+          'Most healthy adults missing one or more teeth qualify. The main physical requirement is enough healthy jawbone to support the implant post. Patients who lost teeth years ago often have some bone loss in that area — in many cases a bone graft can restore enough volume to proceed, and we assess this at the initial consultation.',
+          'Conditions that significantly impair healing — uncontrolled diabetes, certain autoimmune disorders, active cancer treatment — can complicate success. Heavy smoking raises the risk of implant failure meaningfully and will come up in any honest pre-treatment conversation. Age only matters on the lower end: we wait until the jawbone is fully developed (late teens to early twenties) before placing implants. There is no upper limit.',
         ],
       },
       {
-        heading: 'The Implant Process: Timeline and What to Expect',
+        heading: 'Timeline: What Actually Happens',
         paragraphs: [
-          'The full dental implant process typically takes three to six months from initial placement to final crown. Here\'s how it unfolds:',
-          'Consultation and imaging: We take digital X-rays and in some cases a 3D cone beam CT scan to assess bone density and plan the exact placement. This is also when we talk through your health history and any questions you have.',
-          'Implant placement: The titanium post is surgically placed into the jawbone under local anesthesia. Most patients are genuinely surprised by how manageable this procedure is. There is some soreness for a few days afterward, easily managed with over-the-counter pain relief.',
-          'Healing phase (osseointegration): Over the following three to four months, the implant fuses with the surrounding bone. During this period you\'ll have a temporary restoration so you\'re never without a tooth.',
-          'Crown placement: Once osseointegration is confirmed, your custom porcelain crown is attached. The crown is color-matched to your surrounding teeth. Most people have no idea you have an implant unless you tell them.',
+          'The full process runs three to six months from placement to final crown. Here is how it unfolds:',
+          'Consultation and imaging: Digital X-rays and, in some cases, a 3D cone beam CT scan assess bone density and plan placement precisely. We also review your health history and answer questions before anything is scheduled.',
+          'Implant placement: The titanium post is placed into the jawbone under local anesthesia. Most patients are surprised by how manageable this is. There is some soreness for a few days, handled comfortably with over-the-counter pain relief.',
+          'Healing phase: Over three to four months, the implant fuses with surrounding bone. You have a temporary restoration during this period — you are never without a tooth.',
+          'Crown placement: Once osseointegration is confirmed, your custom porcelain crown is attached, color-matched to surrounding teeth. Most people have no idea you have an implant unless you tell them.',
         ],
       },
       {
-        heading: 'What Do Dental Implants Cost in Kalispell, Montana?',
+        heading: 'What Dental Implants Cost in Kalispell',
         paragraphs: [
-          'This is the question everyone asks, and I\'ll give you the honest answer: a single dental implant in Kalispell — including the implant post, the abutment, and the crown — typically ranges from $3,500 to $5,500 depending on whether bone grafting or other preparatory work is needed.',
-          'That\'s a real investment. But consider the alternative: a dental bridge requires altering perfectly healthy adjacent teeth and typically needs replacement every 10 to 15 years. An implant, with proper care, can last 25 to 30 years — often a lifetime.',
-          'Dental insurance coverage for implants varies significantly by plan. Traditional dental insurance rarely covers the full cost, though some plans cover portions of the crown or bone grafting. At Summit Dental, we run a full insurance verification before your consultation so you know exactly what your out-of-pocket cost will be before you commit to anything. We also accept CareCredit, which offers interest-free financing periods that can make the monthly cost very manageable.',
+          'A single dental implant in Kalispell — post, abutment, and crown — typically runs $3,500 to $5,500 depending on whether bone grafting or other preparatory work is needed.',
+          'That is a real investment. Consider the comparison: a dental bridge requires permanently altering healthy adjacent teeth and typically needs replacement every 10 to 15 years. An implant, cared for properly, can last 25 to 30 years — often a lifetime.',
+          'Dental insurance rarely covers the full cost of implants, though some plans cover portions of the crown or bone grafting. At Summit Dental we run a full insurance verification before your consultation so you know your exact out-of-pocket cost before committing to anything. We also accept CareCredit, which offers interest-free financing periods.',
         ],
       },
       {
-        heading: 'How to Choose a Dental Implant Provider in Kalispell',
+        heading: 'How to Evaluate Any Implant Provider in Kalispell',
         paragraphs: [
-          'Not every general dentist places implants. Some refer to oral surgeons for the surgical phase and handle the crown themselves. Others handle the full process in-house. At Summit Dental Group, I complete the entire implant process — placement through final crown — here in our Kalispell office. That continuity of care matters. The person who knows your bone, your bite, and your specific situation is the same person placing the post and designing the crown.',
-          'When evaluating any implant provider, ask these three questions: How many implants have you personally placed? Do you handle the full process or refer for surgery? Can I see before-and-after cases similar to mine?',
-          'If you\'re in the Flathead Valley and considering dental implants, I\'d encourage you to start with a consultation. We\'ll review your imaging, walk through your options, and give you a complete cost estimate before you decide anything. No pressure, no obligation — just information.',
+          'Not every general dentist places implants. Some refer to oral surgeons for the surgical phase and handle the crown separately. At Summit Dental Group, I complete the entire process — placement through final crown — here in our Kalispell office. The person who knows your bone density, your bite, and your case is the same person placing the post and designing the crown.',
+          'When evaluating any implant provider, three questions matter most: How many implants have you personally placed? Do you handle the full process in-house, or do you refer for surgery? Can I see cases similar to mine?',
+          'If you\'re in the Flathead Valley and want straight information before making any decision, schedule a consultation. We\'ll review your imaging, go through your options, and give you a complete cost estimate. No pressure, no obligation.',
         ],
       },
     ],
     relatedSlugs: ['emergency-dentist-kalispell', 'teeth-whitening-vs-veneers-kalispell'],
   },
 
-  // ─── Article 2 ───────────────────────────────────────────────────────────────
+  // ─── 2: Emergency Dentistry ──────────────────────────────────────────────────
   {
     slug: 'emergency-dentist-kalispell',
     title: 'Emergency Dentist in Kalispell, MT: What Counts as a Dental Emergency and What to Do Right Now',
-    description: 'What counts as a dental emergency? What should you do before you can get to a Kalispell dentist? Summit Dental Group answers the most urgent questions so you can act fast.',
+    description: 'What counts as a dental emergency in Kalispell? What should you do before you reach a dentist? Summit Dental Group answers the most urgent questions so you can act quickly.',
     category: 'Emergency Care',
     categorySlug: 'emergency',
     readTime: 5,
@@ -102,263 +102,480 @@ export const ARTICLES: Article[] = [
     sections: [
       {
         paragraphs: [
-          'As a dentist in Kalispell, the calls I take most seriously are the ones that start with "I don\'t know if this is an emergency." The answer is almost always: if you\'re not sure, call. We\'d rather tell you over the phone that it can wait until tomorrow than have you suffer unnecessarily — or worse, wait when something genuinely needs same-day care.',
-          'Let me walk through what counts as a dental emergency, what you should do before you can get into the chair, and how we handle emergency cases at Summit Dental Group.',
+          'The calls I take most seriously are the ones that start with "I don\'t know if this is an emergency." The answer is almost always: if you\'re unsure, call. We\'d rather tell you over the phone that it can wait until tomorrow than have you suffer needlessly — or worse, wait when something genuinely needs same-day care.',
         ],
       },
       {
-        heading: 'What Counts as a True Dental Emergency?',
+        heading: 'What Counts as a Dental Emergency',
         paragraphs: [
-          'Severe, constant tooth pain — especially if it\'s throbbing, waking you up at night, or accompanied by sensitivity to heat — is almost always a sign of nerve involvement or infection. This needs to be evaluated promptly. Dental infections can spread and become serious quickly.',
-          'A knocked-out permanent tooth is the most time-critical dental emergency that exists. You have roughly 30 to 60 minutes to get the tooth reimplanted before the chances of saving it drop dramatically. This is the situation where you call us while you\'re in motion.',
-          'A cracked or broken tooth causing pain when biting or significant temperature sensitivity likely has a fracture that\'s affecting the nerve. If the break is jagged and cutting your cheek or tongue, that\'s urgent.',
-          'A dental abscess — characterized by swelling in the jaw, cheek, or gum; a pimple-like bump on the gum; fever; or a bad taste in your mouth — is a bacterial infection and requires prompt treatment. Dental abscesses don\'t resolve on their own.',
-          'Lost fillings or crowns that expose the underlying tooth and cause significant pain fall into the urgent category. A lost restoration without pain can usually wait until the next available appointment.',
+          'Severe, constant tooth pain — especially throbbing pain, pain that wakes you up, or sensitivity to heat — is almost always a sign of nerve involvement or infection. Both need prompt evaluation. Dental infections spread quickly and do not resolve on their own.',
+          'A knocked-out permanent tooth is the most time-sensitive situation in dentistry. You have roughly 30 to 60 minutes to get the tooth reimplanted before the chances of saving it drop sharply. Call us while you are on your way.',
+          'A cracked or broken tooth causing pain when biting or sharp temperature sensitivity likely has a fracture reaching the nerve. If the break is jagged and cutting your cheek or tongue, that is urgent.',
+          'A dental abscess — swelling in the jaw or cheek, a pimple-like bump on the gum, fever, a persistent bad taste — is a bacterial infection requiring treatment. These do not clear up on their own.',
+          'Lost fillings or crowns that expose the underlying tooth and cause significant pain are urgent. Lost restorations without pain can usually wait for the next available appointment.',
         ],
       },
       {
-        heading: 'What to Do Right Now — Before You Can Get Into the Chair',
+        heading: 'What to Do Before You Reach the Chair',
         paragraphs: [
-          'For a knocked-out tooth: Pick up the tooth by the crown — never by the root. Rinse it gently with clean water without scrubbing. If you can, gently reinsert it into the socket and bite down softly on gauze or a clean cloth to hold it. If reinsertion isn\'t possible, place the tooth in a small container of milk or keep it between your cheek and gum. Time is everything. Call (406) 752-4545 immediately.',
-          'For severe pain: Over-the-counter ibuprofen (if you have no contraindications) is more effective than acetaminophen for dental pain because it reduces inflammation. A cold pack held against the outside of your cheek can help. Do not put aspirin directly on the gum — this is a common mistake that can cause tissue burns.',
-          'For a cracked or broken tooth: Rinse your mouth gently with warm water. If there\'s bleeding, apply gentle pressure with a clean cloth. Avoid biting on anything hard on that side of your mouth. Call us.',
-          'For swelling: Apply a cold pack to the outside of your cheek in 20-minute intervals. Swelling around the jaw or face from a dental abscess can escalate quickly — if you develop difficulty swallowing or breathing, go to the emergency room immediately. This is rare, but it happens.',
+          'For a knocked-out tooth: Pick it up by the crown — never the root. Rinse it gently with clean water, no scrubbing. Reinsert it gently into the socket if you can and bite softly on gauze to hold it. If reinsertion isn\'t possible, place the tooth in a small container of milk or tuck it between your cheek and gum. Call (406) 752-4545 immediately.',
+          'For severe pain: Ibuprofen (if you have no contraindications) is more effective than acetaminophen for dental pain because it reduces inflammation. A cold pack held against the outside of your cheek helps. Do not place aspirin directly on the gum — a common mistake that causes tissue burns.',
+          'For a cracked or broken tooth: Rinse gently with warm water. Apply gentle pressure with a clean cloth if there is bleeding. Avoid biting anything hard on that side. Call us.',
+          'For swelling: Apply a cold pack to your cheek in 20-minute intervals. Swelling from a dental abscess can escalate quickly — if you develop difficulty swallowing or breathing, go to the emergency room immediately.',
         ],
       },
       {
-        heading: 'How Summit Dental Group Handles Dental Emergencies in Kalispell',
+        heading: 'How We Handle Emergencies at Summit Dental',
         paragraphs: [
-          'We make every effort to see emergency patients the same day during our office hours, Tuesday through Friday, 8:00 AM to 5:00 PM. When you call (406) 752-4545 and tell us it\'s an emergency, we will triage your situation over the phone and get you in as quickly as possible.',
-          'After hours, call the same number and leave a message. We check messages outside of office hours for urgent cases and will return your call as fast as we can. For anything life-threatening — difficulty breathing, severe uncontrolled bleeding, signs of a spreading infection — call 911 or go to Kalispell Regional Medical Center.',
-          'If you\'re a patient who experiences dental anxiety, tell us when you call. We\'ll make sure your emergency visit includes time for you to feel settled, and we can discuss sedation options for any follow-up treatment.',
+          'We make every effort to see emergency patients the same day during office hours, Tuesday through Friday, 8:00 AM to 5:00 PM. Call (406) 752-4545, tell us it\'s an emergency, and we will triage over the phone and get you in as fast as possible.',
+          'After hours, leave a message at the same number. We check messages outside of office hours for urgent situations. For anything life-threatening — difficulty breathing, severe uncontrolled bleeding, signs of spreading infection — call 911 or go to Kalispell Regional Medical Center.',
+          'If dental anxiety is a factor, mention it when you call. We will make sure your visit includes time to settle, and sedation options are available for follow-up treatment.',
         ],
       },
       {
-        heading: 'The Bottom Line',
+        heading: 'The Practical Point',
         paragraphs: [
-          'When in doubt, call. Dental problems almost always get more complicated — and more expensive — the longer they go untreated. A call to our office to describe your symptoms takes two minutes and can save you significant pain, time, and money.',
-          'Summit Dental Group is located at 203 Business Center Loop, Suite C in Kalispell, MT. We serve patients throughout the Flathead Valley including Whitefish, Columbia Falls, and Bigfork.',
+          'Dental problems get more complicated — and more expensive — the longer they go untreated. A two-minute call to describe your symptoms can save you significant pain, time, and money.',
+          'Summit Dental Group is at 203 Business Center Loop, Suite C, Kalispell, MT. We serve patients throughout the Flathead Valley.',
         ],
       },
     ],
     relatedSlugs: ['dental-implants-kalispell-mt', 'sedation-dentistry-anxiety-flathead-valley'],
   },
 
-  // ─── Article 3 ───────────────────────────────────────────────────────────────
+  // ─── 3: TRICARE ──────────────────────────────────────────────────────────────
   {
     slug: 'tricare-dental-kalispell-mt',
     title: 'TRICARE Dental Benefits in Kalispell, MT: What Veterans and Military Families Need to Know',
-    description: 'Does Summit Dental Group accept TRICARE? A complete guide to TRICARE dental benefits, what\'s covered, and how military families in the Flathead Valley can use their benefits at our Kalispell practice.',
+    description: 'Does Summit Dental Group accept TRICARE? A plain-language guide to TRICARE dental coverage, what\'s covered, and how military families in the Flathead Valley can use their benefits here.',
     category: 'Veterans & Military',
     categorySlug: 'veterans',
     readTime: 6,
     date: '2026-03-19',
     author: 'Dr. Mark Vanzant, DMD',
     authorTitle: 'Owner & Lead Dentist, Summit Dental Group · USAF Veteran',
-    excerpt: 'Military dental insurance is complicated. As a USAF veteran with three deployments and an active Montana Army National Guard member, I\'ve lived this complexity from both sides. Here\'s what Flathead Valley veterans and military families need to know about using TRICARE at Summit Dental.',
+    excerpt: 'Military dental insurance is complicated. As a USAF veteran with three deployments, I\'ve navigated this system from both sides. Here\'s what Flathead Valley veterans and military families need to know about using TRICARE at Summit Dental.',
     sections: [
       {
         paragraphs: [
-          'Military dental insurance is notoriously complicated. I know this from personal experience — I\'m a United States Air Force veteran, served three combat deployments overseas, and I continue to serve in the Montana Army National Guard. Before I was a dentist, I was a patient navigating the same system my military patients deal with today.',
-          'Summit Dental Group accepts all TRICARE dental programs. But "we accept TRICARE" is only the beginning. The details of what\'s covered, what the cost-share looks like, and which specific plan you\'re on all matter significantly. Let me break this down clearly.',
+          'Military dental insurance is complicated — and I say that having lived it. I\'m a United States Air Force veteran, three combat deployments overseas, and I continue to serve in the Montana Army National Guard. Before I was a dentist, I was the patient trying to figure out what my coverage actually covered.',
+          'Summit Dental Group accepts all TRICARE dental programs. But "we accept TRICARE" is only the start. Which specific plan you\'re on, what the cost-share looks like, and what\'s actually covered all matter significantly. Here\'s a clear breakdown.',
         ],
       },
       {
         heading: 'The TRICARE Dental Plans We Accept in Kalispell',
         paragraphs: [
-          'TRICARE Active Duty Dental Program (ADDP): This plan is for active duty service members and is administered through United Concordia. Coverage is typically very comprehensive — most preventive and basic restorative services are covered at 100%. There is typically no annual maximum.',
-          'TRICARE Dental Program (TDP): This plan covers dependents of active duty members, and National Guard and Reserve members and their families when not activated. It is also administered through United Concordia. Coverage levels vary by service type (preventive vs. restorative vs. orthodontic) and there is an annual maximum.',
-          'United Concordia (UCCI): We participate with United Concordia as a network provider, which covers both ADDP and TDP claims and generally reduces your out-of-pocket costs compared to going out of network.',
-          'Department of Defense Military Plans: Other DOD-affiliated plans may also be accepted — call us with your plan information and we\'ll verify your benefits before your appointment.',
+          'TRICARE Active Duty Dental Program (ADDP): This plan covers active duty service members and is administered through United Concordia. Most preventive and basic restorative services are covered at 100%, and there is typically no annual maximum.',
+          'TRICARE Dental Program (TDP): This plan covers dependents of active duty members, plus National Guard and Reserve members and their families when not activated. Also administered through United Concordia. Coverage levels vary by service type, and there is an annual maximum.',
+          'United Concordia (UCCI): We participate as a network provider, which covers both ADDP and TDP claims and keeps your out-of-pocket costs lower than going out of network.',
+          'Department of Defense Military Plans: Other DOD-affiliated plans may also be accepted — call us with your plan information and we will verify your benefits before your appointment.',
         ],
       },
       {
-        heading: 'What TRICARE Dental Covers (and What It Doesn\'t)',
+        heading: 'What TRICARE Dental Covers — and What It Does Not',
         paragraphs: [
-          'Under most TRICARE dental plans, preventive care — routine cleanings, X-rays, exams — is covered at 100% with no cost-share. This is true for both active duty members and dependents on TDP.',
-          'Basic restorative services (fillings, simple extractions) have a cost-share under TDP, typically 20%. Major restorative services like crowns, bridges, and root canals have a higher cost-share — often 40% to 50% — and come with an annual maximum.',
-          'Dental implants are generally not covered under TRICARE dental plans unless the tooth loss was directly service-connected. If you believe your tooth loss is service-connected, work with the VA first — there may be a separate pathway for coverage.',
-          'Cosmetic procedures — whitening, veneers for purely aesthetic reasons — are not covered under any TRICARE dental plan.',
-          'Our front desk will run a full TRICARE benefits verification for you before your appointment so there are no surprises. We do this for every military patient.',
+          'Preventive care — routine cleanings, X-rays, exams — is covered at 100% with no cost-share under most TRICARE plans, for both active duty members and TDP dependents.',
+          'Basic restorative services such as fillings and simple extractions carry a cost-share under TDP, typically 20%. Major restorative services — crowns, bridges, root canals — carry a higher cost-share, often 40% to 50%, with an annual maximum.',
+          'Dental implants are generally not covered under TRICARE dental plans unless the tooth loss was directly service-connected. If you believe that applies to your situation, work with the VA first — there may be a separate pathway for coverage.',
+          'Cosmetic procedures — whitening, veneers done purely for aesthetics — are not covered under any TRICARE plan.',
+          'Our front desk runs a full benefits verification for every military patient before the appointment so there are no surprises at checkout.',
         ],
       },
       {
-        heading: 'A Note About the Active Duty Dental Program vs. TDP',
+        heading: 'ADDP vs. TDP: Where Military Families Get Confused',
         paragraphs: [
-          'One source of significant confusion for military families is that active duty service members and their dependents are often on different dental plans. Active duty members are covered under ADDP and typically receive care through military treatment facilities (MTFs) first — civilian providers like Summit Dental are used when MTF care is unavailable. Dependents and non-activated Guard/Reserve members use TDP and can see any participating civilian dentist directly.',
-          'If you\'ve PCS\'d to the Flathead Valley area and aren\'t sure which plan applies to you or your family, call us and we\'ll help you sort it out.',
+          'Active duty service members and their dependents are often on different dental plans. Active duty members are covered under ADDP and typically receive care through military treatment facilities (MTFs) first — civilian providers like Summit Dental step in when MTF care isn\'t available. Dependents and non-activated Guard and Reserve members use TDP and can see any participating civilian dentist directly.',
+          'If you\'ve PCS\'d to the Flathead Valley and aren\'t sure which plan applies to your family, call us. We\'ll help you sort it out.',
         ],
       },
       {
-        heading: 'Why Military Families Choose Summit Dental Group',
+        heading: 'Why Military Families Choose Summit Dental',
         paragraphs: [
-          'We\'re not a franchise or corporate dental chain. We\'re a small, privately-owned, veteran-operated practice. When you call asking about your ADDP benefits, you\'re talking to a staff that handles these claims regularly — and a dentist who understands what it means to be a servicemember navigating a system that wasn\'t always designed to be simple.',
-          'If you have questions about your TRICARE dental coverage in the Kalispell area, call us at (406) 752-4545 or request a new patient appointment. We\'ll verify your benefits before you set foot in the door.',
+          'We\'re not a franchise or corporate dental chain. We\'re a small, privately-owned, veteran-operated practice. When you call asking about your ADDP benefits, you\'re talking to staff that handles these claims regularly — and a dentist who knows what it means to be a servicemember trying to navigate a system that wasn\'t built for simplicity.',
+          'Call us at (406) 752-4545 or request a new patient appointment online. We\'ll verify your benefits before you set foot in the door.',
         ],
       },
     ],
     relatedSlugs: ['dental-implants-kalispell-mt', 'dental-insurance-benefits-end-of-year-montana'],
   },
 
-  // ─── Article 4 ───────────────────────────────────────────────────────────────
+  // ─── 4: Sedation Dentistry ───────────────────────────────────────────────────
   {
     slug: 'sedation-dentistry-anxiety-flathead-valley',
     title: 'Dental Anxiety and Sedation Dentistry in the Flathead Valley: You Don\'t Have to White-Knuckle It',
-    description: 'Dental anxiety is common and completely valid. Summit Dental Group in Kalispell, MT offers nitrous oxide and oral conscious sedation. Here\'s what nervous patients need to know.',
+    description: 'Dental anxiety is real and common. Summit Dental Group in Kalispell, MT offers nitrous oxide and oral conscious sedation. Here\'s what nervous patients need to know.',
     category: 'Sedation & Comfort',
     categorySlug: 'sedation',
     readTime: 6,
     date: '2026-03-21',
     author: 'Dr. Mark Vanzant, DMD',
     authorTitle: 'Owner & Lead Dentist, Summit Dental Group',
-    excerpt: 'Somewhere between 30 and 40 million Americans avoid the dentist entirely because of fear. If you\'re one of them — or if you dread every appointment even when you show up — sedation dentistry is worth understanding. It\'s not just for phobias.',
+    excerpt: 'Somewhere between 30 and 40 million Americans avoid the dentist entirely because of fear. If you\'re one of them — or if you dread every appointment even when you do show up — sedation dentistry is worth understanding. It\'s not just for severe phobias.',
     sections: [
       {
         paragraphs: [
-          'Somewhere between 30 and 40 million Americans avoid the dentist entirely because of anxiety or fear. Some have had a difficult experience in the past. Some have a sensitive gag reflex that makes procedures unbearable. Some just find the sounds, the smells, and the lack of control deeply uncomfortable. I\'ve heard all of it — and none of it surprises me.',
-          'At Summit Dental Group, when a patient mentions anxiety when they call, we make a note and we plan the appointment differently. Slower. More check-ins. More explanation before each step. And for patients who need more support than that, we have two sedation options that genuinely change the experience.',
+          'Somewhere between 30 and 40 million Americans avoid the dentist entirely because of anxiety or fear. Some have had a bad experience in the past. Some have a sensitive gag reflex that makes procedures unbearable. Some just find the sounds, the smells, and the lack of control deeply uncomfortable. All of it is valid, and none of it is unusual.',
+          'At Summit Dental Group, when a patient mentions anxiety when they call, we plan the appointment differently. Slower pace. More check-ins. More explanation before each step. For patients who need more than that, we have two sedation options that genuinely change what the experience is like.',
         ],
       },
       {
-        heading: 'The Two Sedation Options We Offer in Kalispell',
+        heading: 'The Two Sedation Options We Offer',
         paragraphs: [
-          'Nitrous oxide (laughing gas): Nitrous is administered through a small mask placed over your nose. It takes effect within three to five minutes, producing a light, floaty sense of calm and mild euphoria. You remain completely conscious and can respond to instructions. The effects are completely reversed within minutes of removing the mask — you can drive yourself home afterward. Nitrous is appropriate for mild to moderate anxiety and for patients who want a light edge taken off without any recovery period.',
-          'Oral conscious sedation: This involves taking a prescription sedative pill approximately one hour before your appointment. By the time you sit down in the chair, you\'ll be in a deep state of relaxation — still conscious, still able to respond to your name, but significantly less aware of your surroundings and what\'s happening. Most patients remember little to nothing of the procedure. You\'ll need someone to drive you to and from your appointment and shouldn\'t operate machinery for the rest of the day. Oral sedation is appropriate for moderate to severe anxiety, complex or lengthy procedures, or patients with a very sensitive gag reflex.',
+          'Nitrous oxide: Administered through a small mask placed over your nose, nitrous takes effect within three to five minutes. It produces a light, calm feeling — you remain fully conscious and can respond to instructions the entire time. The effects clear within minutes of removing the mask, so you can drive yourself home afterward. Nitrous works well for mild to moderate anxiety and for patients who want a light edge taken off without any recovery period.',
+          'Oral conscious sedation: You take a prescription sedative pill about an hour before your appointment. By the time you sit down in the chair, you\'re deeply relaxed — conscious and able to respond to your name, but largely unaware of your surroundings. Most patients remember little to nothing of the procedure afterward. You\'ll need a driver to and from the appointment and should not operate machinery for the rest of the day. Oral sedation works well for moderate to severe anxiety, complex or lengthy procedures, or a very sensitive gag reflex.',
         ],
       },
       {
         heading: 'Is Sedation Dentistry Safe?',
         paragraphs: [
-          'Nitrous oxide and oral conscious sedation are both very well-established, extensively studied modalities that have been used safely in dental offices for decades. Neither involves general anesthesia — you are never fully unconscious.',
-          'Before recommending any sedation option, I review your complete medical history and current medications. Some medications interact with oral sedatives. Some medical conditions require modification to the sedation protocol. This review is not a formality — I\'m making a clinical decision about what\'s right for you specifically.',
-          'Patients sometimes ask whether sedation makes the dental work itself less effective or requires longer appointments. The answer is no on both counts. Sedation affects your subjective experience of the appointment, not the quality of the work.',
+          'Both nitrous oxide and oral conscious sedation are well-established options with decades of safe use in dental offices. Neither involves general anesthesia — you are never fully unconscious.',
+          'Before recommending either option, I review your complete medical history and current medications. Some medications interact with oral sedatives. Some medical conditions require adjustment to the protocol. That review is a clinical decision, not a formality.',
+          'Sedation does not affect the quality of the dental work or require longer appointments. It affects your experience of the appointment, nothing else.',
         ],
       },
       {
-        heading: 'Who Benefits Most From Sedation Dentistry?',
+        heading: 'Who Uses Sedation Most Often',
         paragraphs: [
-          'Sedation dentistry is not just for patients with severe phobias. The patients in our practice who most commonly use sedation include people who have had a negative previous dental experience, patients who have a strong gag reflex, patients who need multiple procedures completed efficiently, and patients who struggle to sit still for extended periods.',
-          'We also use nitrous oxide routinely for patients undergoing longer procedures — implant placement, multiple extractions, extensive crown work — simply because it makes the experience more comfortable regardless of anxiety level.',
+          'Sedation dentistry is not reserved for severe phobias. The patients in our practice who use it most often have had a difficult previous dental experience, have a strong gag reflex, need multiple procedures handled efficiently, or struggle to sit still for extended periods.',
+          'We also use nitrous routinely for patients undergoing longer procedures — implant placement, multiple extractions, extensive crown work — simply because it makes the appointment more manageable regardless of anxiety level.',
         ],
       },
       {
-        heading: 'How to Ask for Sedation at Your Appointment',
+        heading: 'How to Request Sedation',
         paragraphs: [
-          'When you call to schedule, mention it. Tell us: "I\'m very anxious about dental appointments and I\'d like to discuss sedation options." That\'s all it takes. We\'ll make sure your appointment time accommodates the sedation protocol, answer any questions you have in advance, and send you home with written instructions for the day of the appointment.',
-          'You shouldn\'t have to dread going to the dentist. If you do, let\'s fix that. Call us at (406) 752-4545 or request an appointment online. Summit Dental Group is located at 203 Business Center Loop, Suite C, Kalispell, MT.',
+          'When you call to schedule, say it plainly: "I\'m anxious about dental appointments and I\'d like to discuss sedation options." That\'s enough. We\'ll adjust your appointment time to accommodate the sedation protocol, answer any advance questions, and send you home with written instructions for your appointment day.',
+          'Nobody should have to dread the dentist. Call (406) 752-4545 or request an appointment online. Summit Dental Group is at 203 Business Center Loop, Suite C, Kalispell, MT.',
         ],
       },
     ],
     relatedSlugs: ['emergency-dentist-kalispell', 'dental-implants-kalispell-mt'],
   },
 
-  // ─── Article 5 ───────────────────────────────────────────────────────────────
+  // ─── 5: Whitening vs. Veneers ────────────────────────────────────────────────
   {
     slug: 'teeth-whitening-vs-veneers-kalispell',
     title: 'Teeth Whitening vs. Veneers in Kalispell, MT: Which One Is Right for You?',
-    description: 'Not sure whether you need teeth whitening or veneers? A Kalispell dentist explains the difference, who each is right for, and what to expect from each treatment option.',
+    description: 'Not sure whether you need teeth whitening or veneers? A Kalispell dentist explains the difference, who each is right for, and what to expect from both.',
     category: 'Cosmetic Dentistry',
     categorySlug: 'cosmetic',
     readTime: 5,
     date: '2026-03-24',
     author: 'Dr. Mark Vanzant, DMD',
     authorTitle: 'Owner & Lead Dentist, Summit Dental Group',
-    excerpt: 'Both teeth whitening and veneers can dramatically improve how your smile looks — but they work differently, cost differently, and solve different problems. Here\'s how to know which option makes sense for you.',
+    excerpt: 'Both whitening and veneers can dramatically improve how your smile looks — but they work differently, cost differently, and solve different problems. Here\'s how to figure out which one makes sense for you.',
     sections: [
       {
         paragraphs: [
-          'The most common question I get from patients wanting a brighter or more even smile is: "Should I do whitening, or do I need veneers?" The answer depends on what you\'re specifically trying to fix — and being clear about that distinction up front will save you time, money, and disappointment.',
-          'Here\'s the straightforward breakdown.',
+          'The most common question from patients who want a brighter or more even smile: "Should I do whitening, or do I need veneers?" The answer depends entirely on what you\'re trying to fix. Getting clear on that distinction up front saves time, money, and frustration.',
         ],
       },
       {
-        heading: 'What Teeth Whitening Actually Does',
+        heading: 'What Whitening Does',
         paragraphs: [
-          'Professional teeth whitening uses a peroxide-based gel — at a higher concentration than any over-the-counter product — to break up staining compounds inside the enamel. The result is a lighter shade of your natural tooth color, typically four to eight shades brighter in a single in-office session.',
-          'Whitening works extremely well for extrinsic staining — the kind caused by coffee, tea, red wine, tobacco, and food pigments. It is safe, effective, reversible (your teeth will gradually re-stain over time without maintenance), and relatively affordable.',
-          'Whitening does not change the shape, size, or alignment of your teeth. It doesn\'t fix chips, cracks, or gaps. And it only works on natural tooth enamel — crowns, veneers, and composite fillings will not lighten with whitening gel.',
-          'There is also a category of staining that whitening cannot address: intrinsic staining. This includes discoloration caused by certain antibiotics (particularly tetracycline taken in childhood), fluorosis (overexposure to fluoride during development), and tooth trauma. These stains are inside the tooth structure rather than on the surface, and peroxide cannot reach them effectively.',
+          'Professional teeth whitening uses a peroxide-based gel — at a higher concentration than anything sold over the counter — to break up staining compounds inside the enamel. The result is a lighter shade of your natural tooth color, typically four to eight shades brighter in a single in-office session.',
+          'Whitening works well for extrinsic staining — the kind caused by coffee, tea, red wine, tobacco, and food pigments. It is safe, effective, and reversible (your teeth will gradually re-stain over time without maintenance).',
+          'Whitening does not change the shape, size, or alignment of your teeth. It doesn\'t fix chips, cracks, or gaps. And it only works on natural tooth enamel — existing crowns, veneers, and composite fillings will not lighten.',
+          'There is one category of staining whitening cannot address: intrinsic staining. This is discoloration inside the tooth structure caused by certain antibiotics taken in childhood, fluorosis, or tooth trauma. Peroxide cannot reach these stains effectively, regardless of concentration.',
         ],
       },
       {
-        heading: 'What Veneers Actually Do',
+        heading: 'What Veneers Do',
         paragraphs: [
-          'Porcelain veneers are ultra-thin shells of dental porcelain — typically 0.3 to 0.5 millimeters thick — that are permanently bonded to the front surfaces of your teeth. They are custom-fabricated to a specific color, shape, and size that you and your dentist design together.',
-          'Veneers can address a much wider range of cosmetic concerns than whitening alone. They cover discoloration that won\'t respond to whitening. They can fix the appearance of chips, cracks, and small fractures. They can close minor gaps between teeth. They can make teeth appear more uniform in length and shape.',
-          'The trade-off is that porcelain veneers are permanent. A small amount of enamel (usually less than a millimeter) must be removed from the front of each tooth to accommodate the veneer. Once that enamel is removed, the teeth will always require some form of coverage. Veneers are also significantly more expensive than whitening — typically $1,000 to $2,000 per tooth depending on the complexity and number of teeth.',
+          'Porcelain veneers are ultra-thin shells — typically 0.3 to 0.5 millimeters thick — permanently bonded to the front surfaces of your teeth. They are custom-fabricated to a specific color, shape, and size that you and your dentist work out together.',
+          'Veneers address a wider range of concerns than whitening alone: discoloration that won\'t respond to whitening, chips, cracks, minor gaps, and teeth that don\'t look uniform in length or shape.',
+          'The trade-off is permanence. A small amount of enamel — usually less than a millimeter — must be removed from the front of each tooth to accommodate the veneer. Once that enamel is gone, the teeth will always need some form of coverage. Veneers typically run $1,000 to $2,000 per tooth.',
         ],
       },
       {
-        heading: 'Which One Is Right for You? A Simple Framework',
+        heading: 'A Simple Framework for Deciding',
         paragraphs: [
-          'You are probably a good whitening candidate if: Your teeth are otherwise healthy and shapely, and your main concern is color. Your staining is from food, beverages, or tobacco (not antibiotics or fluorosis). You\'re looking for a more affordable option with minimal commitment.',
-          'You are probably a better veneer candidate if: You have intrinsic staining that hasn\'t responded to whitening. You also want to address chips, cracks, shape, or size issues. You\'re looking for a longer-lasting, more comprehensive cosmetic result and are ready to commit.',
-          'The honest answer is that many patients benefit from whitening first, then veneers on any teeth that didn\'t respond adequately or that have structural concerns beyond color. Sometimes whitening alone is the complete solution.',
-          'At Summit Dental, I take a conservative approach to cosmetic dentistry: we start with the least invasive option that\'s likely to give you the result you want. We\'ll never push you toward a more extensive treatment if a simpler one will genuinely work.',
+          'Whitening is likely your answer if: your teeth are otherwise healthy and shapely, your main concern is color, the staining is from food or beverages, and you want a more affordable option with minimal commitment.',
+          'Veneers are likely your answer if: you have intrinsic staining that hasn\'t responded to whitening, you also want to fix chips, cracks, shape, or size issues, or you want a longer-lasting result and are ready to commit.',
+          'Many patients do whitening first, then veneers on any teeth that didn\'t respond adequately or have structural concerns beyond color. Sometimes whitening alone is the complete answer.',
+          'My approach at Summit Dental is to start with the least invasive option likely to achieve the result you want. We will not push you toward a more involved treatment when a simpler one will genuinely work.',
         ],
       },
       {
-        heading: 'Book a Cosmetic Consultation in Kalispell',
+        heading: 'Schedule a Cosmetic Consultation in Kalispell',
         paragraphs: [
-          'If you\'re not sure which direction makes sense for your smile, start with a consultation. We\'ll look at your teeth, talk through your goals, and give you an honest assessment of which treatment — or combination — will get you where you want to be. No pressure, no sales pitch.',
-          'Call Summit Dental Group at (406) 752-4545 or request an appointment online. We\'re located at 203 Business Center Loop, Suite C, Kalispell, MT 59901.',
+          'If you\'re unsure which direction makes sense, a consultation is the right starting point. We\'ll look at your teeth, talk through what you want to change, and give you an honest assessment of which treatment — or combination — gets you there.',
+          'Call Summit Dental Group at (406) 752-4545 or request an appointment online. We\'re at 203 Business Center Loop, Suite C, Kalispell, MT 59901.',
         ],
       },
     ],
     relatedSlugs: ['dental-implants-kalispell-mt', 'dental-insurance-benefits-end-of-year-montana'],
   },
 
-  // ─── Article 6 ───────────────────────────────────────────────────────────────
+  // ─── 6: Dental Insurance Year-End ───────────────────────────────────────────
   {
     slug: 'dental-insurance-benefits-end-of-year-montana',
     title: 'Don\'t Let Your Dental Benefits Expire: A Montana Patient\'s Guide to Using Insurance Before Year-End',
-    description: 'Most dental insurance plans reset on January 1. Here\'s how Montana patients can make the most of their remaining dental benefits before the year-end deadline — and what to schedule now.',
+    description: 'Most dental insurance plans reset on January 1. Here\'s how Montana patients can use what\'s left before the deadline — and what to schedule now.',
     category: 'Insurance & Payment',
     categorySlug: 'insurance',
     readTime: 5,
     date: '2026-03-26',
     author: 'Dr. Mark Vanzant, DMD',
     authorTitle: 'Owner & Lead Dentist, Summit Dental Group',
-    excerpt: 'If you have dental insurance and you haven\'t used your full annual benefits yet, you might be leaving hundreds of dollars on the table. Most plans reset on January 1 — here\'s how to make the most of what you\'ve already paid into.',
+    excerpt: 'If you have dental insurance and haven\'t used your full annual benefits yet, you may be leaving hundreds of dollars on the table. Most plans reset on January 1 — here\'s how to make the most of what you\'ve already paid into.',
     sections: [
       {
         paragraphs: [
-          'Every year, hundreds of millions of dollars in dental insurance benefits go unused simply because patients don\'t realize those benefits expire. Most dental insurance plans have an annual maximum — typically between $1,000 and $2,000 — that resets on January 1. Benefits that aren\'t used by December 31 are gone. They don\'t roll over. They don\'t accumulate.',
-          'If you\'ve been putting off a filling, a crown, or even just your second cleaning of the year, now is the time to schedule it.',
+          'Every year, hundreds of millions of dollars in unused dental benefits vanish because patients don\'t realize they expire. Most plans have an annual maximum — typically $1,000 to $2,000 — that resets on January 1. Benefits not used by December 31 are simply gone. They do not roll over.',
+          'If you\'ve been putting off a filling, a crown, or your second cleaning of the year, now is the time to schedule.',
         ],
       },
       {
-        heading: 'How Dental Insurance Benefits Work in Montana',
+        heading: 'How Dental Insurance Actually Works',
         paragraphs: [
-          'Most employer-sponsored and individually purchased dental insurance plans follow the same basic structure: an annual deductible (usually $50 to $100 that you pay before coverage kicks in), a coverage breakdown by type of service (preventive usually covered at 100%, basic restorative at 80%, major restorative at 50%), and an annual maximum (the most your insurance will pay in a calendar year).',
-          'Because preventive care — cleanings, X-rays, and exams — is covered at 100% by most plans, there\'s essentially no financial reason to skip your twice-yearly cleaning. If you\'re due for your second cleaning before the year ends, schedule it now.',
-          'For patients who have met their deductible earlier in the year, the last few months of the year are an ideal time to take care of any treatment your dentist has recommended but you\'ve been deferring. Your deductible work is done. Your annual maximum still applies. Get the filling. Get the crown.',
+          'Most employer-sponsored and individual dental plans share the same structure: an annual deductible you pay before coverage activates, a coverage split by service type (preventive at 100%, basic restorative at 80%, major restorative at 50%), and an annual maximum — the most your insurer will pay in a calendar year.',
+          'Preventive care — cleanings, X-rays, exams — is covered at 100% by most plans. There is no good financial argument for skipping your twice-yearly cleaning. If you\'re due for your second one before year-end, get it on the calendar.',
+          'For patients who met their deductible earlier in the year, the final quarter is the right time to take care of recommended treatment you\'ve been putting off. Deductible is done. Annual maximum still applies. Schedule the filling. Schedule the crown.',
         ],
       },
       {
-        heading: 'What Happens When Benefits Reset on January 1',
+        heading: 'What Happens When Benefits Reset',
         paragraphs: [
-          'When the calendar turns, your deductible resets. This means if you\'re planning treatment that crosses year-end — for example, a crown that requires two visits — it may be worth timing the first visit before year-end and the second visit after, strategically splitting the cost across two benefit years. We can help you plan this.',
-          'Some plans have a waiting period for certain services that restarts with the year. If you\'re on a newer plan, check whether you\'re past the waiting period for major work before scheduling.',
+          'When January 1 arrives, your deductible resets. If you\'re planning treatment that spans year-end — a crown requiring two visits, for example — timing the first visit before December 31 and the second after can spread the cost across two benefit years. We can help you plan this kind of sequencing.',
+          'Some plans also have waiting periods for certain services that restart with the benefit year. If you\'re on a newer plan, confirm whether you\'re past the waiting period for major work before scheduling.',
         ],
       },
       {
-        heading: 'Insurance Plans We Accept at Summit Dental Group in Kalispell',
+        heading: 'Insurance Plans We Accept in Kalispell',
         paragraphs: [
-          'Summit Dental Group accepts most major dental insurance plans. We work with Delta Dental, Blue Cross Blue Shield, MetLife, Cigna, Aetna, United Concordia, and all TRICARE programs. We also have patients who use Medicaid-funded state programs.',
-          'If you\'re not sure whether we accept your plan, call us at (406) 752-4545. We\'ll verify your benefits for free before your appointment and walk you through exactly what your plan covers and what your out-of-pocket responsibility will be. We do this for every new patient.',
+          'Summit Dental Group accepts most major dental insurance plans — Delta Dental, Blue Cross Blue Shield, MetLife, Cigna, Aetna, United Concordia, and all TRICARE programs. We also work with patients using Medicaid-funded state programs.',
+          'If you\'re unsure whether we accept your plan, call (406) 752-4545. We verify benefits for free before your appointment and walk you through exactly what your plan covers and what you\'ll owe. We do this for every new patient.',
         ],
       },
       {
         heading: 'What to Schedule Before Year-End',
         paragraphs: [
-          'If you haven\'t had your second cleaning of the year, schedule it. If your dentist has recommended a filling, crown, or other treatment that you\'ve been deferring, now is the time while your deductible is already met. If you\'ve been curious about whitening or a cosmetic consultation, check whether your plan covers any portion of the evaluation.',
-          'Appointment availability gets tight in November and December as patients rush to use their benefits. If you\'re reading this in the fall, don\'t wait. Call Summit Dental Group at (406) 752-4545 or request an appointment online. We\'ll work to get you in before your benefits reset.',
+          'Second cleaning: schedule it. Recommended filling or crown you\'ve deferred: now is the time, while your deductible is already met. Whitening or a cosmetic consultation: check whether your plan covers any portion of the evaluation.',
+          'November and December appointments go fast as patients rush to use expiring benefits. Don\'t wait. Call us at (406) 752-4545 or request an appointment online and we\'ll work to get you in before your benefits reset.',
         ],
       },
     ],
     relatedSlugs: ['tricare-dental-kalispell-mt', 'teeth-whitening-vs-veneers-kalispell'],
   },
+
+  // ─── 7: Fluoride in Kalispell ────────────────────────────────────────────────
+  {
+    slug: 'fluoride-kalispell-water-dental-health',
+    title: 'Fluoride in Kalispell\'s Water Supply: What Patients Ask Us — and What the Research Actually Says',
+    description: 'Does Kalispell\'s water supply have enough fluoride to protect your teeth? A local Kalispell dentist explains what patients need to know about fluoride, community water fluoridation, and when supplements make sense.',
+    category: 'Preventive Care',
+    categorySlug: 'preventive',
+    readTime: 5,
+    date: '2026-03-28',
+    author: 'Dr. Mark Vanzant, DMD',
+    authorTitle: 'Owner & Lead Dentist, Summit Dental Group',
+    excerpt: 'Fluoride questions come up in our office regularly — whether Kalispell\'s water is fluoridated, whether supplements help, and whether fluoride is actually safe. Here are straight answers to what we hear most.',
+    sections: [
+      {
+        paragraphs: [
+          'Fluoride questions come up consistently in our office, and I\'ve noticed the same few questions repeat across patients. Whether Kalispell\'s municipal water is fluoridated. Whether fluoride is actually necessary. Whether it\'s safe. Since these questions come up so often, it makes sense to answer them clearly in one place.',
+        ],
+      },
+      {
+        heading: 'Is Kalispell\'s Water Fluoridated?',
+        paragraphs: [
+          'Kalispell\'s municipal water supply is fluoridated at levels consistent with the U.S. Public Health Service recommendation of 0.7 milligrams per liter. If you\'re on city water within Kalispell proper, you\'re receiving an optimal level of fluoride through drinking water.',
+          'Patients in more rural parts of the Flathead Valley, or those on private well water, may not be receiving fluoride through their water supply at all. Natural fluoride levels in well water vary significantly by location and geology. If your household uses a private well and you have children under six, it\'s worth testing your water and discussing supplementation at your next appointment.',
+        ],
+      },
+      {
+        heading: 'What Fluoride Actually Does',
+        paragraphs: [
+          'Fluoride works in two ways. Systemically — through drinking water and fluoride supplements — it is incorporated into the structure of developing teeth in children, making the enamel harder and more resistant to acid attack. Topically — through fluoride toothpaste, professional fluoride treatments, and fluoridated water in contact with teeth — it remineralizes early-stage decay and strengthens enamel that\'s already formed.',
+          'This is why fluoride matters throughout life, not just during childhood. Adults benefit from topical fluoride through toothpaste and professional treatments even after their teeth are fully developed.',
+        ],
+      },
+      {
+        heading: 'The Safety Question',
+        paragraphs: [
+          'Community water fluoridation at the levels used in the United States has been studied continuously since 1945. The current consensus of the CDC, ADA, WHO, and American Academy of Pediatrics supports fluoridation at optimal levels as safe and effective for reducing tooth decay across populations.',
+          'The condition associated with excessive fluoride intake is dental fluorosis — white spots or streaks on teeth caused by fluoride overexposure during tooth development in early childhood. Mild fluorosis is cosmetic only and does not affect tooth structure or health. It occurs when children consume far more fluoride than the recommended amount, typically by swallowing large quantities of fluoride toothpaste. Standard use of fluoridated water alone does not cause fluorosis at the levels used in U.S. municipal water systems.',
+          'If you have concerns about fluoride for your children, bring them up at your next appointment. These are legitimate clinical conversations, not ones that require a one-size answer.',
+        ],
+      },
+      {
+        heading: 'When Fluoride Supplements Make Sense',
+        paragraphs: [
+          'Supplements — drops or tablets — are recommended for children aged six months to 16 years who live in areas without adequate water fluoridation and who do not have other consistent fluoride sources. The appropriate dose depends on the child\'s age and the fluoride concentration in their water source.',
+          'We\'ll look at your specific situation — water source, age of children in the household, current fluoride exposure — and give you a specific recommendation rather than a generic one.',
+          'If you have questions about fluoride for your family, call (406) 752-4545 or bring it up at your next cleaning. Summit Dental Group is at 203 Business Center Loop, Suite C, Kalispell, MT.',
+        ],
+      },
+    ],
+    relatedSlugs: ['first-dental-visit-children-kalispell', 'dental-insurance-benefits-end-of-year-montana'],
+  },
+
+  // ─── 8: Child's First Dental Visit ──────────────────────────────────────────
+  {
+    slug: 'first-dental-visit-children-kalispell',
+    title: 'Your Child\'s First Dental Visit in Kalispell: What Parents Should Know and What to Expect',
+    description: 'When should children first see a dentist? What happens at that first appointment? A Kalispell family dentist addresses the questions parents ask most.',
+    category: 'Family Dentistry',
+    categorySlug: 'family',
+    readTime: 5,
+    date: '2026-03-30',
+    author: 'Dr. Mark Vanzant, DMD',
+    authorTitle: 'Owner & Lead Dentist, Summit Dental Group',
+    excerpt: 'The American Academy of Pediatric Dentistry recommends a child\'s first dental visit by age one. Most parents come in with kids who are three or four — which is still fine, but earlier is better. Here\'s what you need to know and what you\'ll see at that first appointment.',
+    sections: [
+      {
+        paragraphs: [
+          'The American Academy of Pediatric Dentistry recommends a child\'s first dental visit by age one — or within six months of the first tooth coming in. Most parents bring their children in at three or four, which is still early enough to establish good patterns, but the earlier you start, the more we can do preventively rather than reactively.',
+          'Parents consistently ask the same questions before a child\'s first visit. Here are direct answers to the ones that come up most.',
+        ],
+      },
+      {
+        heading: 'What Happens at the First Visit',
+        paragraphs: [
+          'For very young children — one to two years old — the first visit is mostly an introduction. We look at the teeth and gums, check for signs of early decay, talk through feeding habits and cleaning routines, and answer your questions. The appointment is often done with the child sitting in your lap. The goal is not an exhaustive exam; it\'s getting the child comfortable with the environment and catching anything that warrants attention early.',
+          'For children three and older, the first visit typically includes a gentle cleaning, an exam, and X-rays if the child is cooperative and the teeth are close enough together to warrant them. We also discuss bite development, thumb sucking, and other habits that affect how the teeth come in.',
+          'The single most important thing you can do before the first visit is talk about it positively. Avoid using words like "hurt," "shot," or "drill." Children who arrive anxious often take their cue from how adults around them have framed the experience.',
+        ],
+      },
+      {
+        heading: 'Common Signs Parents Notice That Are Worth Mentioning',
+        paragraphs: [
+          'White or brown spots on baby teeth, especially near the gumline, can indicate early decay — often called early childhood caries or bottle tooth decay. Treatment at this stage is simple; left alone it can require more involved care quickly.',
+          'If your child complains of tooth pain, sensitivity to cold foods, or difficulty chewing on one side, mention it when you call to schedule. We will factor that into the appointment.',
+          'Thumb sucking and pacifier use are developmentally normal and typically not a problem until age three to four. If the habit continues beyond then, it can affect how the permanent teeth come in and is worth discussing.',
+        ],
+      },
+      {
+        heading: 'Cleaning Baby Teeth at Home',
+        paragraphs: [
+          'From the first tooth, clean it with a soft, wet cloth or an infant toothbrush. Once multiple teeth are in, use a tiny smear of fluoride toothpaste — about the size of a grain of rice — twice a day. At age three, increase to a pea-sized amount.',
+          'Flossing starts when two teeth are in contact with each other. Floss picks designed for children make this considerably easier.',
+          'Avoid putting children to bed with a bottle of milk, formula, or juice. Liquid pooling against the teeth overnight is the primary driver of early childhood cavities.',
+        ],
+      },
+      {
+        heading: 'How Often Children Should Come In',
+        paragraphs: [
+          'Every six months, same as adults. Consistent cleanings and exams catch small problems before they become bigger ones, and they establish the routine early enough that dental appointments feel routine rather than exceptional.',
+          'To schedule your child\'s first visit at Summit Dental Group in Kalispell, call (406) 752-4545 or request an appointment online. We are at 203 Business Center Loop, Suite C, Kalispell, MT 59901.',
+        ],
+      },
+    ],
+    relatedSlugs: ['fluoride-kalispell-water-dental-health', 'dental-insurance-benefits-end-of-year-montana'],
+  },
+
+  // ─── 9: Implants vs. Bridges ─────────────────────────────────────────────────
+  {
+    slug: 'dental-implants-vs-bridges-kalispell',
+    title: 'Dental Implants vs. Dental Bridges in Kalispell: Which Makes More Sense for You?',
+    description: 'Should you get a dental implant or a bridge to replace a missing tooth in Kalispell, MT? A local dentist compares both options — cost, longevity, candidacy, and when each is the right call.',
+    category: 'Dental Implants',
+    categorySlug: 'implants',
+    readTime: 6,
+    date: '2026-04-02',
+    author: 'Dr. Mark Vanzant, DMD',
+    authorTitle: 'Owner & Lead Dentist, Summit Dental Group',
+    excerpt: 'If you\'re missing a tooth, you\'ll likely be told about implants and bridges. They solve the same problem in very different ways — and the right choice depends on your jawbone health, your budget, the condition of adjacent teeth, and how long you plan to keep it. Here\'s the comparison.',
+    sections: [
+      {
+        paragraphs: [
+          'Replacing a missing tooth is not a single decision — it\'s a comparison between two fundamentally different approaches. Patients who understand both options before their consultation tend to make decisions they\'re more confident in afterward. Here is what separates implants from bridges, and when each makes sense.',
+        ],
+      },
+      {
+        heading: 'How Each Option Works',
+        paragraphs: [
+          'A dental implant replaces the missing tooth root with a titanium post surgically placed into the jawbone. After three to four months of healing, a custom porcelain crown attaches to the post. The implant is entirely independent — it doesn\'t touch adjacent teeth and functions exactly like a natural tooth root.',
+          'A dental bridge spans the gap left by the missing tooth by anchoring a false tooth (the pontic) to the two neighboring teeth on either side. Those neighboring teeth — called abutments — are filed down substantially to accept crowns that hold the bridge in place. The result is a fixed replacement that looks natural, but the structure relies on the adjacent teeth for support.',
+        ],
+      },
+      {
+        heading: 'The Key Differences',
+        paragraphs: [
+          'Jawbone health: An implant stimulates the jawbone through chewing force, preventing the bone loss that typically follows tooth loss. A bridge does not — the bone beneath the gap gradually resorbs over time, which can change the shape of the jaw and face over years.',
+          'Adjacent teeth: A bridge requires permanently altering two healthy teeth to support it. If those adjacent teeth are already crowned or have significant restorations, this matters less. But permanently modifying healthy teeth to fix a problem that didn\'t originate with them is a real trade-off.',
+          'Longevity: Implants, maintained properly, commonly last 25 years or more — often a lifetime. Bridges typically need replacement every 10 to 15 years.',
+          'Timeline: A bridge can be completed in two to three appointments over two to three weeks. An implant takes three to six months from placement to final crown due to the healing period.',
+          'Cost: A bridge typically runs $2,500 to $3,500 for a three-unit span. An implant runs $3,500 to $5,500. Over time, accounting for bridge replacement, the implant often costs less.',
+        ],
+      },
+      {
+        heading: 'When a Bridge Makes More Sense',
+        paragraphs: [
+          'A bridge is the better answer when there is insufficient jawbone volume to support an implant and bone grafting is not practical or desired. It also makes sense when the patient wants a faster resolution — a bridge can be done in weeks, not months. And when the adjacent teeth already need crowns, a bridge accomplishes two goals simultaneously.',
+          'Age is another factor: in older patients whose remaining treatment years are fewer, the lower upfront cost and shorter timeline of a bridge can make more practical sense.',
+        ],
+      },
+      {
+        heading: 'When an Implant Makes More Sense',
+        paragraphs: [
+          'An implant is the right choice for most patients who are healthy candidates — meaning adequate bone, no conditions that significantly impair healing, and non-smokers or controlled smokers. It preserves adjacent teeth, prevents bone loss, and lasts longer.',
+          'For younger patients especially, the long-term calculus heavily favors implants. A 35-year-old who gets a bridge may need to replace it two or three times over the course of their life. The same patient with an implant may never need to address that tooth again.',
+        ],
+      },
+      {
+        heading: 'Getting the Right Answer for Your Situation',
+        paragraphs: [
+          'The right choice depends on your specific jawbone volume, the condition of the adjacent teeth, your health history, your budget, and your timeline. There is no blanket answer.',
+          'At Summit Dental Group, we give you both options honestly, with clear cost estimates, before you decide anything. Call us at (406) 752-4545 or schedule a consultation online. We are at 203 Business Center Loop, Suite C, Kalispell, MT.',
+        ],
+      },
+    ],
+    relatedSlugs: ['dental-implants-kalispell-mt', 'dental-insurance-benefits-end-of-year-montana'],
+  },
+
+  // ─── 10: Bad Breath ──────────────────────────────────────────────────────────
+  {
+    slug: 'bad-breath-causes-treatment-kalispell',
+    title: 'Bad Breath: What Actually Causes It and What Actually Fixes It',
+    description: 'Persistent bad breath is usually a dental or medical issue — not a hygiene failure. A Kalispell dentist explains the real causes and what treatment actually looks like.',
+    category: 'Preventive Care',
+    categorySlug: 'preventive',
+    readTime: 5,
+    date: '2026-04-04',
+    author: 'Dr. Mark Vanzant, DMD',
+    authorTitle: 'Owner & Lead Dentist, Summit Dental Group',
+    excerpt: 'Mouthwash masks bad breath. It doesn\'t fix it. Persistent halitosis almost always has a treatable cause — and the first step is figuring out what it is. Here\'s what we look for and what actually helps.',
+    sections: [
+      {
+        paragraphs: [
+          'Mouthwash is designed to mask bad breath, not eliminate its source. If you\'re using it regularly and the problem comes back within a few hours, that\'s the product working as designed — not failing. The underlying cause is still there.',
+          'Persistent halitosis almost always has a specific, treatable origin. The first step is identifying which one.',
+        ],
+      },
+      {
+        heading: 'The Most Common Causes',
+        paragraphs: [
+          'Bacteria on the tongue: The tongue\'s surface is covered in tiny papillae — small projections that trap food particles, dead cells, and bacteria. The back third of the tongue is the most common source of bad breath and the area most people miss when brushing. Sulfur compounds produced by these bacteria are the main cause of the familiar unpleasant odor.',
+          'Gum disease: Periodontal disease creates pockets between the teeth and gums where bacteria accumulate. These pockets can harbor anaerobic bacteria that produce especially foul-smelling compounds. Bad breath that does not improve with brushing is often a sign of gum disease, and it won\'t resolve until the disease is treated.',
+          'Dry mouth: Saliva naturally cleans the mouth, diluting and washing away bacteria and food debris. Reduced saliva flow — from certain medications, medical conditions, or simply sleeping with your mouth open — allows bacteria to accumulate. Many patients notice morning breath is worse than during the day for exactly this reason.',
+          'Cavities and failing restorations: Decay and poorly fitting crowns or old fillings can trap food and bacteria in areas that are difficult to clean. Bad breath can be one of the first symptoms.',
+          'Dietary causes: Garlic, onion, and certain spices contain volatile sulfur compounds that enter the bloodstream and are exhaled through the lungs. This type of bad breath is temporary and clears once the food is fully metabolized — usually within 24 to 48 hours.',
+          'Medical causes: Chronic sinus drainage, acid reflux, kidney dysfunction, and diabetes can all produce distinctive breath odors. If we rule out dental causes and the problem persists, a conversation with your physician makes sense.',
+        ],
+      },
+      {
+        heading: 'What Actually Helps',
+        paragraphs: [
+          'Tongue scraping: A dedicated tongue scraper removes significantly more bacterial buildup from the tongue surface than a toothbrush. Use it at the back of the tongue, not just the front. This alone resolves bad breath for many patients.',
+          'Treating gum disease: If periodontal disease is present, a professional deep cleaning — scaling and root planing — removes the bacterial buildup from below the gumline. This is not something toothbrushing can reach. Regular maintenance cleanings afterward prevent it from recurring.',
+          'Staying hydrated: Increasing water intake throughout the day supports saliva production and reduces bacterial concentration in the mouth. This is especially relevant for patients taking medications that cause dry mouth.',
+          'Consistent brushing and flossing: Brushing twice daily and flossing once removes the food and bacteria that feed odor-producing microbes. Most patients who report brushing regularly still miss the back teeth and the gumline — areas a hygienist can show you during your next visit.',
+          'Treating the underlying dental issue: Cavities, old restorations, and improperly fitting crowns that trap bacteria need to be addressed directly. Cleaning around them helps but does not fully resolve the problem.',
+        ],
+      },
+      {
+        heading: 'What We Look For at Your Appointment',
+        paragraphs: [
+          'When a patient comes to our Kalispell office concerned about bad breath, we look for gum disease, cavities, plaque accumulation on the tongue, dry mouth indicators, and signs of systemic causes. We then give you specific feedback on what\'s contributing and a direct treatment recommendation.',
+          'Mouthwash is fine as part of a routine. As the sole strategy for persistent bad breath, it isn\'t enough. If this is a recurring problem for you, schedule a cleaning and mention it when you call — it takes an extra minute of conversation and significantly affects how we approach your appointment.',
+          'Call (406) 752-4545 or request an appointment online. Summit Dental Group is at 203 Business Center Loop, Suite C, Kalispell, MT 59901.',
+        ],
+      },
+    ],
+    relatedSlugs: ['first-dental-visit-children-kalispell', 'sedation-dentistry-anxiety-flathead-valley'],
+  },
+
 ];
 
 export function getArticleBySlug(slug: string): Article | undefined {
@@ -381,4 +598,6 @@ export const CATEGORIES = [
   { label: 'Sedation & Comfort', slug: 'sedation' },
   { label: 'Cosmetic Dentistry', slug: 'cosmetic' },
   { label: 'Insurance & Payment', slug: 'insurance' },
+  { label: 'Preventive Care', slug: 'preventive' },
+  { label: 'Family Dentistry', slug: 'family' },
 ];
