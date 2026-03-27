@@ -24,6 +24,10 @@ export default function EVChargingPage() {
           { '@type': 'Question', name: 'Do I need to upgrade my panel for an EV charger?', acceptedAnswer: { '@type': 'Answer', text: 'Not always. If your panel has available capacity (most 200A panels do), we can add a dedicated circuit without upgrading. If you have an older 100A panel or it\'s already near capacity, we\'ll let you know and can handle the upgrade at the same time.' } },
           { '@type': 'Question', name: 'Do I need a permit for EV charger installation?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — in Washington State, Level 2 charger installations require a permit. We handle that for you. It ensures the install is safe and protects your homeowner\'s insurance.' } },
           { '@type': 'Question', name: 'How long does EV charger installation take?', acceptedAnswer: { '@type': 'Answer', text: 'Most residential installs take 2–4 hours. If a panel upgrade is needed, plan a full day.' } },
+          { '@type': 'Question', name: 'What is the difference between Level 1 and Level 2 EV charging?', acceptedAnswer: { '@type': 'Answer', text: 'Level 1 charging uses a standard 120V household outlet and adds 3–5 miles of range per hour — useful for occasional top-offs but slow for daily drivers. Level 2 charging uses a dedicated 240V circuit and adds 20–30 miles of range per hour, fully charging most EVs overnight. Level 2 is what we install.' } },
+          { '@type': 'Question', name: 'Can I install an EV charger in an apartment or rental?', acceptedAnswer: { '@type': 'Answer', text: 'This depends on your landlord and property setup. In Washington State, landlords may be required to allow EV charger installation under certain conditions. We can assess feasibility and provide documentation for landlord approval conversations.' } },
+          { '@type': 'Question', name: 'Can you install an EV charger outdoors or in a detached garage?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — outdoor-rated Level 2 chargers are designed for this use. We install weatherproof chargers in outdoor locations and run properly protected circuits to detached garages and carports. If your detached garage doesn\'t have a subpanel feed, we can add that at the same time.' } },
+          { '@type': 'Question', name: 'Are there rebates or incentives for EV charger installation in Washington State?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Washington State Utilities and the federal government offer various incentives. Puget Sound Energy and many WA utilities offer rebates for Level 2 charger installation. The federal tax credit (Form 8911) covers 30% of the installation cost up to $1,000 for residential installs through 2032. We can provide the documentation you need to claim them.' } },
         ],
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -36,6 +40,21 @@ export default function EVChargingPage() {
           { '@type': 'HowToStep', position: 2, name: 'Free On-Site Assessment', text: 'We look at your panel, the run distance to your garage or parking spot, and give you a clear quote. No vague ranges.' },
           { '@type': 'HowToStep', position: 3, name: 'Install, Permit & Inspect', text: 'We install the charger, pull the permit, and coordinate the inspection. Done in a day on most homes.' },
         ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: 'EV Charging Station Installation',
+        description: 'Level 2 home EV charger installation in Skagit, Whatcom, Snohomish, and King counties. Tesla Wall Connector, JuiceBox, ChargePoint. Permitted, code-compliant, and panel-assessed before installation.',
+        provider: { '@type': 'ElectricalContractor', name: 'Premier Electrical Services', telephone: '+13604215230', url: 'https://premierelectricalsvc.com' },
+        areaServed: [
+          { '@type': 'AdministrativeArea', name: 'Skagit County, WA' },
+          { '@type': 'AdministrativeArea', name: 'Whatcom County, WA' },
+          { '@type': 'AdministrativeArea', name: 'Snohomish County, WA' },
+          { '@type': 'AdministrativeArea', name: 'King County, WA' },
+        ],
+        url: 'https://premierelectricalsvc.com/services/ev-charging',
+        serviceType: 'EV Charging Station Installation',
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
@@ -165,10 +184,14 @@ export default function EVChargingPage() {
           <h2>EV Charger Questions</h2>
           <div style={{ marginTop: '36px', maxWidth: '780px' }}>
             <FAQAccordion faqs={[
-              { q: 'How much does EV charger installation cost?', a: 'Most Level 2 home charger installs run $400–$1,200 for labor depending on run distance, permit requirements, and panel capacity. The charger itself costs extra depending on the brand. We give you a full cost picture before starting.' },
-              { q: 'Do I need to upgrade my panel for an EV charger?', a: 'Not always. If your panel has available capacity (most 200A panels do), we can add a dedicated circuit without upgrading. If you have an older 100A panel or it\'s already near capacity, we\'ll let you know and can handle the upgrade at the same time.' },
+              { q: 'How much does EV charger installation cost?', a: 'Most Level 2 home charger installs run $400–$1,200 for labor depending on run distance, permit requirements, and panel capacity. The charger itself costs extra. We give you a full cost picture before starting.' },
+              { q: 'Do I need to upgrade my panel for an EV charger?', a: 'Not always. If your panel has available capacity (most 200A panels do), we can add a dedicated circuit without upgrading. If you have an older 100A panel or it\'s near capacity, we\'ll let you know and can handle the upgrade at the same time.' },
               { q: 'Do I need a permit for EV charger installation?', a: 'Yes — in Washington State, Level 2 charger installations require a permit. We handle that for you. It ensures the install is safe and protects your homeowner\'s insurance.' },
-              { q: 'How long does installation take?', a: 'Most residential installs take 2–4 hours. If a panel upgrade is needed, plan a full day.' },
+              { q: 'How long does EV charger installation take?', a: 'Most residential installs take 2–4 hours. If a panel upgrade is needed, plan a full day.' },
+              { q: 'What is the difference between Level 1 and Level 2 EV charging?', a: 'Level 1 uses a standard 120V outlet and adds 3–5 miles of range per hour. Level 2 uses a dedicated 240V circuit and adds 20–30 miles per hour, fully charging most EVs overnight. Level 2 is what we install.' },
+              { q: 'Can I install an EV charger in a rental home?', a: 'This depends on your landlord and property setup. In Washington State, landlords may be required to allow EV charger installation under certain conditions. We can assess feasibility and document it for landlord approval conversations.' },
+              { q: 'Can you install an EV charger in a detached garage or outdoors?', a: 'Yes — outdoor-rated Level 2 chargers are designed for this. We install weatherproof chargers in outdoor locations and run properly protected circuits to detached garages and carports. If the garage doesn\'t have a subpanel, we can add that at the same time.' },
+              { q: 'Are there rebates for EV charger installation in Washington State?', a: 'Yes. Many WA utilities offer rebates for Level 2 charger installation, and the federal tax credit (Form 8911) covers 30% of installation cost up to $1,000 for residential installs through 2032. We provide the documentation you need to claim them.' },
             ]} />
           </div>
         </div>

@@ -24,7 +24,28 @@ export default function ResidentialWiringPage() {
           { '@type': 'Question', name: 'How much does a full home rewire cost?', acceptedAnswer: { '@type': 'Answer', text: 'Full rewires vary widely depending on home size, existing wiring type, and accessibility. A 1,500 sq ft home might run $8,000–$18,000. We give you a detailed quote before any work starts — no vague ranges, no hidden add-ons.' } },
           { '@type': 'Question', name: 'Do you handle the permit for a remodel?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. In Washington State, most electrical work on a remodel requires a permit. We pull it, schedule the inspection, and make sure the work passes. You do not have to navigate the permitting process yourself.' } },
           { '@type': 'Question', name: 'Can you work in an occupied home during a remodel?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We are used to working in occupied homes and take extra care to minimize disruption. We cover floors, contain dust where possible, and we tell you upfront which circuits will be off and for how long.' } },
+          { '@type': 'Question', name: 'How long does electrical rough-in take on new construction?', acceptedAnswer: { '@type': 'Answer', text: 'Rough-in timing depends on home size and how many electricians are on the job. A 2,000 sq ft single family home typically takes 3–5 days for rough-in. We coordinate directly with your GC to fit into the framing-to-drywall window without causing delays.' } },
+          { '@type': 'Question', name: 'What is the difference between rough-in and trim-out?', acceptedAnswer: { '@type': 'Answer', text: 'Rough-in is the first phase of residential wiring — running all the wire, boxes, and conduit before drywall goes up. Trim-out is the second phase, typically done after painting, when we install the actual devices: outlets, switches, fixtures, panel breakers, and cover plates. Both phases require inspection sign-off.' } },
+          { '@type': 'Question', name: 'Do you install smart home or low-voltage wiring during new construction?', acceptedAnswer: { '@type': 'Answer', text: 'We rough in low-voltage wiring for data, structured ethernet, coaxial cable, and doorbell systems. For full smart home automation systems, we coordinate with your AV or smart home contractor. During rough-in is the right time to discuss this — it is very difficult to add low-voltage runs after drywall.' } },
+          { '@type': 'Question', name: 'Can I add a circuit to my existing home without a full rewire?', acceptedAnswer: { '@type': 'Answer', text: 'Absolutely — adding individual circuits is one of our most common residential calls. Whether you need a dedicated 240V circuit for a hot tub, a 20A kitchen circuit, or a circuit for a new home office, we can add what you need without touching the rest of the wiring.' } },
         ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: 'Residential Electrical Wiring',
+        description: 'New home construction wiring, complete home rewires, remodel rough-in and trim-out across Skagit, Whatcom, Island, San Juan, King, and Snohomish counties. Nearly 60 years of combined experience.',
+        provider: { '@type': 'ElectricalContractor', name: 'Premier Electrical Services', telephone: '+13604215230', url: 'https://premierelectricalsvc.com' },
+        areaServed: [
+          { '@type': 'AdministrativeArea', name: 'Skagit County, WA' },
+          { '@type': 'AdministrativeArea', name: 'Whatcom County, WA' },
+          { '@type': 'AdministrativeArea', name: 'Island County, WA' },
+          { '@type': 'AdministrativeArea', name: 'San Juan County, WA' },
+          { '@type': 'AdministrativeArea', name: 'King County, WA' },
+          { '@type': 'AdministrativeArea', name: 'Snohomish County, WA' },
+        ],
+        url: 'https://premierelectricalsvc.com/services/residential-wiring',
+        serviceType: 'Residential Electrical Wiring',
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
@@ -136,6 +157,10 @@ export default function ResidentialWiringPage() {
               { q: 'How much does a full home rewire cost?', a: 'Full rewires vary widely depending on home size, existing wiring type, and accessibility. A 1,500 sq ft home might run $8,000–$18,000. We give you a detailed quote before any work starts — no vague ranges, no hidden add-ons.' },
               { q: 'Do you handle the permit for a remodel?', a: 'Yes. In Washington State, most electrical work on a remodel requires a permit. We pull it, schedule the inspection, and make sure the work passes. You don\'t have to navigate the permitting process yourself.' },
               { q: 'Can you work in an occupied home during a remodel?', a: 'Yes. We\'re used to working in occupied homes and take extra care to minimize disruption. We cover floors, contain dust where possible, and we tell you upfront which circuits will be off and for how long.' },
+              { q: 'How long does electrical rough-in take on new construction?', a: 'A 2,000 sq ft single family home typically takes 3–5 days for rough-in. We coordinate directly with your GC to fit into the framing-to-drywall window without causing delays.' },
+              { q: 'What is the difference between rough-in and trim-out?', a: 'Rough-in is running all wire, boxes, and conduit before drywall. Trim-out is the second phase — installing outlets, switches, fixtures, panel breakers, and cover plates after painting. Both phases require inspection sign-off.' },
+              { q: 'Do you install low-voltage wiring during new construction?', a: 'We rough in low-voltage for data, structured ethernet, coaxial cable, and doorbell. For full smart home automation, we coordinate with your AV contractor. Rough-in is the right time to plan this — adding low-voltage runs after drywall is difficult and expensive.' },
+              { q: 'Can I add a single circuit without a full rewire?', a: 'Absolutely — adding individual circuits is one of our most common residential calls. Whether you need a dedicated 240V circuit for a hot tub, a 20A kitchen circuit, or an outlet for a home office, we can add what you need without touching the rest of the wiring.' },
             ]} />
           </div>
         </div>

@@ -58,10 +58,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@context": "https://schema.org",
               "@type": "ElectricalContractor",
               "name": "Premier Electrical Services",
-              "description": "Licensed, bonded electricians serving Skagit, Whatcom, San Juan, Island, King, and Snohomish counties. Panel upgrades, EV charging, generators, and more.",
+              "description": "Licensed, bonded electricians serving Skagit, Whatcom, San Juan, Island, King, and Snohomish counties. Panel upgrades, EV charging, generators, historic home rewiring, and more.",
               "url": SITE_URL,
               "telephone": "+13604215230",
-              "email": "info@premierelectricalsvc.com",
+              "email": "premier@premierelectricalsvc.com",
               "image": `${SITE_URL}/images/hero-homepage.jpg`,
               "logo": `${SITE_URL}/logo.svg`,
               "address": {
@@ -77,18 +77,34 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 "latitude": 48.4202,
                 "longitude": -122.3346
               },
-              "openingHours": ["Mo-Fr 08:00-17:00"],
+              "openingHours": ["Mo-Fr 08:00-18:00"],
               "areaServed": [
                 { "@type": "AdministrativeArea", "name": "Skagit County, WA" },
                 { "@type": "AdministrativeArea", "name": "Whatcom County, WA" },
                 { "@type": "AdministrativeArea", "name": "San Juan County, WA" },
                 { "@type": "AdministrativeArea", "name": "Island County, WA" },
                 { "@type": "AdministrativeArea", "name": "King County, WA" },
-                { "@type": "AdministrativeArea", "name": "Snohomish County, WA" }
+                { "@type": "AdministrativeArea", "name": "Snohomish County, WA" },
+                { "@type": "City", "name": "Mount Vernon, WA" },
+                { "@type": "City", "name": "Burlington, WA" },
+                { "@type": "City", "name": "Anacortes, WA" },
+                { "@type": "City", "name": "Sedro-Woolley, WA" },
+                { "@type": "City", "name": "La Conner, WA" },
+                { "@type": "City", "name": "Concrete, WA" },
+                { "@type": "City", "name": "Bellingham, WA" },
+                { "@type": "City", "name": "Ferndale, WA" },
+                { "@type": "City", "name": "Lynden, WA" },
+                { "@type": "City", "name": "Oak Harbor, WA" },
+                { "@type": "City", "name": "Camano Island, WA" },
+                { "@type": "City", "name": "Stanwood, WA" },
+                { "@type": "City", "name": "Marysville, WA" },
+                { "@type": "City", "name": "Everett, WA" },
+                { "@type": "City", "name": "Kirkland, WA" }
               ],
               "priceRange": "$$",
               "hasCredential": "PREMIES821LL",
               "award": [
+                "Best of the Best — Skagit Valley 2021",
                 "Best of the Best — Skagit Valley 2023",
                 "Best of the Best — Skagit Valley 2024",
                 "Best of the Best — Skagit Valley 2025"
@@ -103,6 +119,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 "bestRating": "5",
                 "ratingCount": "47",
                 "reviewCount": "47"
+              },
+              "employee": {
+                "@type": "Person",
+                "name": "Premier Electrical Services Owner",
+                "jobTitle": "Master Electrician",
+                "hasCredential": {
+                  "@type": "EducationalOccupationalCredential",
+                  "credentialCategory": "License",
+                  "name": "Washington State Electrical Contractor License",
+                  "identifier": "PREMIES821LL",
+                  "recognizedBy": {
+                    "@type": "Organization",
+                    "name": "Washington State Department of Labor & Industries"
+                  }
+                },
+                "worksFor": { "@type": "ElectricalContractor", "name": "Premier Electrical Services" }
               }
             })
           }}

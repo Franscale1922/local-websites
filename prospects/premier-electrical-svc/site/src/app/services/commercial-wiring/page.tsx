@@ -24,7 +24,26 @@ export default function CommercialWiringPage() {
           { '@type': 'Question', name: 'Do you handle commercial permits?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We pull all required electrical permits for commercial work in Skagit, Whatcom, and Snohomish counties. We schedule the inspection and ensure the work is properly documented — you do not have to manage that process.' } },
           { '@type': 'Question', name: 'What types of commercial projects do you take on?', acceptedAnswer: { '@type': 'Answer', text: 'Tenant improvements, new construction, restaurant wiring (including hood suppression tie-ins), retail lighting, office builds, daycares, and light industrial. We work cleanly, on schedule, and alongside GCs without creating friction on the jobsite.' } },
           { '@type': 'Question', name: 'Do you provide quotes for commercial work?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — free estimates on commercial projects. We walk the space, understand the scope, and give you a clear number before any work starts. For GC work, we can provide bid documents as needed.' } },
+          { '@type': 'Question', name: 'What counties and areas do you cover for commercial work?', acceptedAnswer: { '@type': 'Answer', text: 'Our primary commercial service area is Skagit, Whatcom, and Snohomish counties, with occasional work in King County for larger projects. Within those areas, we serve businesses of all sizes from main street retail in Mount Vernon and Burlington to commercial corridors in Bellingham and Marysville.' } },
+          { '@type': 'Question', name: 'How do you handle commercial projects on a tight construction schedule?', acceptedAnswer: { '@type': 'Answer', text: 'We\'ve worked on enough TI buildouts to know that showing up late or causing delays damages the entire project. We confirm your schedule in advance, pull permits before rough-in begins, and communicate proactively with your GC about any issues. If something changes on our end, you hear from us before it becomes a problem.' } },
+          { '@type': 'Question', name: 'Do you wire fire suppression systems?', acceptedAnswer: { '@type': 'Answer', text: 'We provide the electrical tie-in for fire suppression systems in commercial kitchens and other applications. The suppression system itself is typically installed by a licensed fire suppression contractor — we coordinate with that contractor for the electrical connection, interlock wiring, and related work.' } },
+          { '@type': 'Question', name: 'Can you provide electrical bid documents for a commercial project?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — we can provide formatted bid documentation for commercial projects where that is required. If you\'re a GC putting Together a bid package or a property owner going through a formal comparison process, let us know when you request the estimate.' } },
         ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: 'Commercial Electrical Services',
+        description: 'Commercial wiring, tenant improvements, new construction, restaurant wiring, and code compliance across Skagit, Whatcom, Snohomish, and King counties. Licensed commercial electricians.',
+        provider: { '@type': 'ElectricalContractor', name: 'Premier Electrical Services', telephone: '+13604215230', url: 'https://premierelectricalsvc.com' },
+        areaServed: [
+          { '@type': 'AdministrativeArea', name: 'Skagit County, WA' },
+          { '@type': 'AdministrativeArea', name: 'Whatcom County, WA' },
+          { '@type': 'AdministrativeArea', name: 'Snohomish County, WA' },
+          { '@type': 'AdministrativeArea', name: 'King County, WA' },
+        ],
+        url: 'https://premierelectricalsvc.com/services/commercial-wiring',
+        serviceType: 'Commercial Electrical Wiring',
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
@@ -134,8 +153,12 @@ export default function CommercialWiringPage() {
             <FAQAccordion faqs={[
               { q: 'Do you work directly with general contractors?', a: 'Yes — frequently. We coordinate scheduling with your GC, pull the electrical permit before rough-in begins, and communicate proactively so we don\'t create bottlenecks on your timeline. We\'ve worked on restaurant buildouts, office TIs, retail spaces, daycares, and more.' },
               { q: 'Do you handle commercial permits?', a: 'Yes. We pull all required electrical permits for commercial work in Skagit, Whatcom, and Snohomish counties. We schedule the inspection and ensure the work is properly documented — you don\'t have to manage that process.' },
-              { q: 'What types of commercial projects do you take on?', a: 'Tenant improvements, new construction, restaurant wiring (including hood suppression tie-ins), retail lighting, office builds, daycares, and light industrial. We work cleanly, on schedule, and alongside GCs without creating friction on the jobsite.' },
+              { q: 'What types of commercial projects do you take on?', a: 'Tenant improvements, new construction, restaurant wiring (including hood suppression tie-ins), retail lighting, office builds, daycares, and light industrial. We work cleanly, on schedule, and alongside GCs without friction.' },
               { q: 'Do you provide quotes for commercial work?', a: 'Yes — free estimates on commercial projects. We walk the space, understand the scope, and give you a clear number before any work starts. For GC work, we can provide bid documents as needed.' },
+              { q: 'What counties do you cover for commercial work?', a: 'Our primary commercial service area is Skagit, Whatcom, and Snohomish counties, with occasional King County work. We serve businesses along every major corridor, from downtown Mount Vernon and Burlington to commercial areas in Bellingham and Marysville.' },
+              { q: 'How do you handle tight construction schedules?', a: 'We show up when we say we will, pull permits before rough-in begins, and communicate proactively with your GC. If something changes, you hear from us before it becomes a problem on your timeline.' },
+              { q: 'Do you wire fire suppression systems?', a: 'We provide the electrical tie-in for fire suppression systems in commercial kitchens and other applications. The suppression system itself is installed by a licensed fire suppression contractor — we coordinate the electrical connection, interlock wiring, and related work.' },
+              { q: 'Can you provide electrical bid documents?', a: 'Yes — we can provide formatted bid documentation for commercial projects where that is required. If you\'re going through a formal bid comparison process, just let us know when you request the estimate.' },
             ]} />
           </div>
         </div>

@@ -24,9 +24,42 @@ export default function PanelUpgradesPage() {
           { '@type': 'Question', name: 'Do I need a permit for a panel upgrade?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. In Washington State, panel upgrades require a permit and inspection. We pull the permit, schedule the inspection, and coordinate with your utility. You\'re not left to figure that out yourself.' } },
           { '@type': 'Question', name: 'How long does a panel upgrade take?', acceptedAnswer: { '@type': 'Answer', text: 'Most residential panel upgrades take one full day. Your power will be out 4–8 hours. We coordinate with PSE, PUD, or your co-op to minimize downtime.' } },
           { '@type': 'Question', name: 'Will a panel upgrade let me add an EV charger?', acceptedAnswer: { '@type': 'Answer', text: 'Usually yes — that\'s one of the most common reasons people upgrade. If you\'re at 100A and want a Level 2 charger plus other modern loads, 200A is often the right move. We\'ll assess your full load and tell you exactly what you need.' } },
+          { '@type': 'Question', name: 'What is the difference between 100-amp and 200-amp service?', acceptedAnswer: { '@type': 'Answer', text: '100-amp service was standard for post-war homes built in the 1950s–70s and is insufficient for modern loads including EV chargers, heat pumps, and full electric kitchens. 200-amp service is today\'s residential standard and provides sufficient capacity for virtually all household demands with room to grow.' } },
+          { '@type': 'Question', name: 'Do I need a panel upgrade to add a subpanel?', acceptedAnswer: { '@type': 'Answer', text: 'Not always — it depends on your available capacity. If your existing 200-amp panel has open breaker slots and available load, we can add a subpanel without replacing the main panel. If you\'re at 100A or your panel is full, a main panel upgrade is usually the right starting point.' } },
+          { '@type': 'Question', name: 'Can I get a panel upgrade if I rent my home?', acceptedAnswer: { '@type': 'Answer', text: 'Panel upgrades are the property owner\'s responsibility, so the property owner needs to authorize and contract the work. If you\'re a renter, the landlord must be involved. We can help facilitate conversations if needed.' } },
+          { '@type': 'Question', name: 'Will a panel upgrade increase my home value?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — typically. An updated 200-amp panel is a positive feature on home inspection reports and can help prevent buyer-side repair demands. Homes with fuel panel boxes or underpowered service frequently require negotiated credits or upgrades as a condition of sale.' } },
         ],
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: 'Electrical Panel Upgrade',
+        description: 'Licensed electrical panel upgrades in Skagit, Whatcom, San Juan, Island, King, and Snohomish counties. Fuse box replacements, 200-amp upgrades, subpanel installations. Permitted and inspector-approved.',
+        provider: { '@type': 'ElectricalContractor', name: 'Premier Electrical Services', telephone: '+13604215230', url: 'https://premierelectricalsvc.com' },
+        areaServed: [
+          { '@type': 'AdministrativeArea', 'name': 'Skagit County, WA' },
+          { '@type': 'AdministrativeArea', 'name': 'Whatcom County, WA' },
+          { '@type': 'AdministrativeArea', 'name': 'Island County, WA' },
+          { '@type': 'AdministrativeArea', 'name': 'San Juan County, WA' },
+          { '@type': 'AdministrativeArea', 'name': 'King County, WA' },
+          { '@type': 'AdministrativeArea', 'name': 'Snohomish County, WA' },
+        ],
+        url: 'https://premierelectricalsvc.com/services/panel-upgrades',
+        serviceType: 'Electrical Panel Upgrade',
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: 'How to Get an Electrical Panel Upgraded',
+        description: 'Premier Electrical Services upgrades residential and commercial electrical panels across Skagit and surrounding counties.',
+        step: [
+          { '@type': 'HowToStep', position: 1, name: 'Call or Submit a Free Estimate Request', text: 'Reach out by phone or the contact form. Tell us what you\'re experiencing — tripped breakers, a fuse box, or a new appliance you need to add. We respond same day.' },
+          { '@type': 'HowToStep', position: 2, name: 'On-Site Assessment & Quote', text: 'We visit your home, assess your current panel, and give you a clear written quote before any work starts. No vague ranges, no surprises.' },
+          { '@type': 'HowToStep', position: 3, name: 'Panel Upgrade, Permit & Inspection', text: 'We upgrade the panel, pull the permit, and coordinate the utility disconnect and inspection. Your power is out 4–8 hours. We handle everything.' },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -137,6 +170,10 @@ export default function PanelUpgradesPage() {
               { q: 'Do I need a permit for a panel upgrade?', a: 'Yes. In Washington State, panel upgrades require a permit and inspection. We pull the permit, schedule the inspection, and coordinate with your utility. You\'re not left to figure that out yourself.' },
               { q: 'How long does a panel upgrade take?', a: 'Most residential panel upgrades take one full day. Your power will be out 4–8 hours. We coordinate with PSE, PUD, or your co-op to minimize downtime.' },
               { q: 'Will a panel upgrade let me add an EV charger?', a: 'Usually yes — that\'s one of the most common reasons people upgrade. If you\'re at 100A and want a Level 2 charger plus other modern loads, 200A is often the right move. We\'ll assess your full load and tell you exactly what you need.' },
+              { q: 'What is the difference between 100-amp and 200-amp service?', a: '100-amp service was standard for post-war homes built in the 1950s–70s and is insufficient for modern loads including EV chargers, heat pumps, and full electric kitchens. 200-amp service is today\'s residential standard and provides sufficient capacity for virtually all household demands with room to grow.' },
+              { q: 'Do I need a panel upgrade to add a subpanel?', a: 'Not always — it depends on your available capacity. If your existing 200-amp panel has open breaker slots and available load, we can add a subpanel without replacing the main panel. If you\'re at 100A or your panel is full, a main panel upgrade is usually the right starting point.' },
+              { q: 'Can I get a panel upgrade if I rent my home?', a: 'Panel upgrades are the property owner\'s responsibility, so the owner must authorize the work. If you\'re a renter, the landlord must be involved. We can help facilitate those conversations.' },
+              { q: 'Will a panel upgrade increase my home value?', a: 'Yes — typically. An updated 200-amp panel is a positive feature on home inspection reports and can help prevent buyer-side repair demands. Homes with fuse boxes or underpowered service frequently require negotiated credits or upgrades as a condition of sale.' },
             ]} />
           </div>
         </div>

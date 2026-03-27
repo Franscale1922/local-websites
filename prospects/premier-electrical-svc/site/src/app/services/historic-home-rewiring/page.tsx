@@ -24,6 +24,36 @@ export default function HistoricHomeRewiringPage() {
           { '@type': 'Question', name: 'Will you damage my original plaster walls during a rewire?', acceptedAnswer: { '@type': 'Answer', text: 'We work in historic homes regularly and take wall damage seriously. We use low-impact fishing techniques and strategic access points. We cannot promise zero impact on older homes, but we keep it minimal and tell you upfront what to expect.' } },
           { '@type': 'Question', name: 'How long does a full home rewire take?', acceptedAnswer: { '@type': 'Answer', text: 'A full residential rewire typically takes 3–7 days depending on home size and accessibility. We keep power to parts of the house during work where possible.' } },
           { '@type': 'Question', name: 'What is aluminum wiring remediation?', acceptedAnswer: { '@type': 'Answer', text: 'Many homes from the 1960s–70s have aluminum wiring for branch circuits. Aluminum expands and contracts differently than copper, causing loose connections and fire risk. The standard fix is pigtailing — connecting aluminum to short copper leads with rated AlumiConn connectors at every device and outlet. We do this correctly and documentably.' } },
+          { '@type': 'Question', name: 'Can I add insulation to walls with knob-and-tube wiring?', acceptedAnswer: { '@type': 'Answer', text: 'No. This is actually a code violation in most jurisdictions — and a documented fire hazard. Knob-and-tube wiring depends on open-air cooling. Adding insulation traps heat and degrades insulation. If you\'re doing an insulation project in an older home, the wiring needs to be addressed first.' } },
+          { '@type': 'Question', name: 'How much does a full home rewire cost?', acceptedAnswer: { '@type': 'Answer', text: 'A full rewire of a 1,500 sq ft historic home typically runs $8,000–$20,000 depending on accessibility, the extent of existing wiring, and the panel condition. We give you a detailed written quote before work begins. We can also discuss phased approaches if budget is a consideration.' } },
+          { '@type': 'Question', name: 'Does my homeowner\'s insurance require me to rewire?', acceptedAnswer: { '@type': 'Answer', text: 'Many insurers refuse to cover or significantly increase premiums on homes with known knob-and-tube or aluminum wiring issues. Before canceling coverage, they may require a licensed inspection and potentially remediation. We can provide documentation of our work for your insurer.' } },
+          { '@type': 'Question', name: 'What is cloth-insulated wiring and is it dangerous?', acceptedAnswer: { '@type': 'Answer', text: 'Cloth-insulated wiring (also called cloth wiring or rubber sheathed wiring) was used from the early 1900s through the 1950s. Over time, the rubber insulation deteriorates, becomes brittle, and can crack — exposing live conductors. It\'s not an immediate fire hazard in all cases, but it should be evaluated by a licensed electrician and addressed before it fails.' } },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: 'Historic & Older Home Rewiring',
+        description: 'Knob-and-tube wiring replacement, aluminum wiring remediation, and full home rewires for historic and older homes in Skagit, Whatcom, and Island counties. Specialists in complex, older properties other electricians decline.',
+        provider: { '@type': 'ElectricalContractor', name: 'Premier Electrical Services', telephone: '+13604215230', url: 'https://premierelectricalsvc.com' },
+        areaServed: [
+          { '@type': 'AdministrativeArea', name: 'Skagit County, WA' },
+          { '@type': 'AdministrativeArea', name: 'Whatcom County, WA' },
+          { '@type': 'AdministrativeArea', name: 'Island County, WA' },
+          { '@type': 'AdministrativeArea', name: 'San Juan County, WA' },
+        ],
+        url: 'https://premierelectricalsvc.com/services/historic-home-rewiring',
+        serviceType: 'Electrical Rewiring',
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: 'How to Get Knob-and-Tube or Old Wiring Assessed and Replaced',
+        description: 'Premier Electrical Services evaluates and rewires historic and older homes in NW Washington — safely, minimally invasively, and with all required permits.',
+        step: [
+          { '@type': 'HowToStep', position: 1, name: 'Schedule a Wiring Assessment', text: 'Call or submit a request. Tell us the age of your home and what you know about the wiring. We come out and assess what you actually have — no blanket upsells.' },
+          { '@type': 'HowToStep', position: 2, name: 'Receive a Clear Written Plan', text: 'We tell you exactly what is a real hazard, what is safe to leave, and what a phased or full rewire would cost. You decide what makes sense.' },
+          { '@type': 'HowToStep', position: 3, name: 'Rewire — Permitted & Inspector-Approved', text: 'We do the work with minimal wall damage where possible, pull the permit, and coordinate the inspection. You get documented, code-compliant wiring.' },
         ],
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -136,6 +166,10 @@ export default function HistoricHomeRewiringPage() {
               { q: 'Will you damage my original plaster walls?', a: 'We work in historic homes regularly and take wall damage seriously. We use low-impact fishing techniques and strategic access points. We can\'t promise zero impact on older homes, but we keep it minimal and tell you upfront what to expect.' },
               { q: 'How long does a full rewire take?', a: 'A full residential rewire typically takes 3–7 days depending on home size and accessibility. We keep power to parts of the house during work where possible.' },
               { q: 'What is aluminum wiring remediation?', a: 'Many homes from the 1960s–70s have aluminum wiring for branch circuits. Aluminum expands and contracts differently than copper, causing loose connections and fire risk. The standard fix is "pigtailing" — connecting aluminum to short copper leads with rated AlumiConn connectors at every device and outlet. We do this correctly and documentably.' },
+              { q: 'Can I add insulation to walls with knob-and-tube wiring?', a: 'No — this is a code violation and documented fire hazard. Knob-and-tube wiring depends on open-air cooling. Adding insulation traps heat and degrades the wiring. If you\'re doing an insulation project in an older home, the wiring must be addressed first.' },
+              { q: 'How much does a full home rewire cost?', a: 'A full rewire of a 1,500 sq ft historic home typically runs $8,000–$20,000 depending on accessibility, existing wiring, and panel condition. We give you a detailed written quote before work begins and can discuss phased approaches if budget is a consideration.' },
+              { q: 'Does my homeowner\'s insurance require me to rewire?', a: 'Many insurers refuse coverage or significantly increase premiums on homes with knob-and-tube or aluminum wiring issues. Before canceling, they may require a licensed inspection and remediation. We provide documentation of all work for your insurer.' },
+              { q: 'What is cloth-insulated wiring?', a: 'Cloth-insulated wiring was used from the early 1900s through the 1950s. Over time, the rubber insulation deteriorates, becomes brittle, and can crack — exposing live conductors. It\'s not always an immediate hazard, but it should be evaluated by a licensed electrician and addressed before it fails.' },
             ]} />
           </div>
         </div>

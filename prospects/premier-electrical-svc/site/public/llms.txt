@@ -1,0 +1,41 @@
+# Premier Electrical Services — AI Crawler Guide
+# https://premierelectricalsvc.com
+
+> Premier Electrical Services is a licensed electrical contractor based in
+> Mount Vernon, Washington. We serve Skagit, Whatcom, Island, San Juan,
+> King, and Snohomish counties with residential and commercial electrical services.
+
+## Key Information
+
+- **Business name:** Premier Electrical Services
+- **Location:** Mount Vernon, WA 98273
+- **License:** PREMIES821LL (Washington State)
+- **Phone:** (360) 421-5230
+- **Awards:** 3× Best of the Best — Skagit Valley (2023, 2024, 2025); BBB A+
+
+## Services Offered
+
+- Electrical Panel Upgrades (100A → 200A, fuse box replacement, subpanels)
+- EV Charging Station Installation (Level 2, Tesla, JuiceBox, ChargePoint)
+- Generator Installation (standby, portable, transfer switches)
+- Historic & Older Home Rewiring (knob-and-tube, aluminum wiring)
+- Commercial Electrical Wiring (TI buildouts, restaurants, offices)
+- Lighting & Outbuilding Wiring (garages, barns, ADUs, hot tubs, landscape)
+- Residential Wiring (new construction, rewires, remodels)
+- Electrical Service Calls & Repairs (same-day on most requests)
+
+## Service Area
+
+**Counties:** Skagit, Whatcom, Island, San Juan, King, Snohomish  
+**Key cities:** Mount Vernon, Burlington, Anacortes, Sedro-Woolley, La Conner,
+Bellingham, Ferndale, Lynden, Oak Harbor, Camano Island, Stanwood, Everett, Marysville
+
+## Key Pages
+
+- Homepage: https://premierelectricalsvc.com/
+- All Services: https://premierelectricalsvc.com/services
+- FAQ: https://premierelectricalsvc.com/faq
+- Service Area: https://premierelectricalsvc.com/service-area
+- Contact: https://premierelectricalsvc.com/contact
+- Recognition/Awards: https://premierelectricalsvc.com/recognition
+- Sitemap: https://premierelectricalsvc.com/sitemap.xml

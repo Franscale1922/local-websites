@@ -24,6 +24,36 @@ export default function GeneratorInstallationPage() {
           { '@type': 'Question', name: 'What is the difference between a transfer switch and an interlock?', acceptedAnswer: { '@type': 'Answer', text: 'Both prevent backfeed to the utility grid (a safety requirement). An interlock kit is less expensive and works with your existing panel. A transfer switch is a separate subpanel that automatically switches between grid and generator. We\'ll recommend the right option for your situation.' } },
           { '@type': 'Question', name: 'Do I need a permit for generator installation?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — in Washington State, generator hookups require an electrical permit. We handle that, schedule the inspection, and make sure everything is done by the book.' } },
           { '@type': 'Question', name: 'Can you connect a generator to natural gas?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. If your home has natural gas service, a permanently-piped connection is the cleanest and most convenient option — no storing fuel, no refilling. We do this connection along with the electrical hookup.' } },
+          { '@type': 'Question', name: 'How much does generator installation cost?', acceptedAnswer: { '@type': 'Answer', text: 'The electrical installation for a standby generator typically runs $1,500–$4,000, depending on the panel, existing electrical capacity, the run length to the generator location, and whether gas or propane connection is needed. This doesn\'t include the cost of the generator unit itself. We provide free itemized estimates before any work starts.' } },
+          { '@type': 'Question', name: 'How long does a power outage need to be to justify a generator?', acceptedAnswer: { '@type': 'Answer', text: 'In Western Washington, outages from winter storms regularly last 2–7 days in rural Skagit and island areas. If you have a well pump, medical equipment, home-based business, or livestock that depend on power, the answer is straightforward — even one extended outage justifies the investment.' } },
+          { '@type': 'Question', name: 'Can a generator power my entire home?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — with the right-sized standby generator (typically 20KW or larger for a modern home) and a proper transfer switch, a generator can power your entire home. If you only want to cover critical circuits, a smaller unit with a manual transfer switch or interlock is a more economical option. We scope it for your specific needs.' } },
+          { '@type': 'Question', name: 'What is the difference between a standby and a portable generator?', acceptedAnswer: { '@type': 'Answer', text: 'A standby generator is permanently installed, connects to natural gas or propane, and turns on automatically within seconds of a power outage — no action required from you. A portable generator must be manually started and connected, runs on gasoline or propane, and cannot be permanently connected to your home without a proper transfer switch or interlock. Both have their place — we help you choose.' } },
+        ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: 'Generator Installation',
+        description: 'Standby and portable generator installation for homes and businesses in Skagit, Whatcom, Island, and San Juan counties. Transfer switches, load analysis, permitting, and inspection coordinated.',
+        provider: { '@type': 'ElectricalContractor', name: 'Premier Electrical Services', telephone: '+13604215230', url: 'https://premierelectricalsvc.com' },
+        areaServed: [
+          { '@type': 'AdministrativeArea', name: 'Skagit County, WA' },
+          { '@type': 'AdministrativeArea', name: 'Whatcom County, WA' },
+          { '@type': 'AdministrativeArea', name: 'Island County, WA' },
+          { '@type': 'AdministrativeArea', name: 'San Juan County, WA' },
+        ],
+        url: 'https://premierelectricalsvc.com/services/generator-installation',
+        serviceType: 'Generator Installation',
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: 'How to Get a Generator Installed for Your Home',
+        description: 'Premier Electrical Services installs standby and portable generator hookups for Pacific Northwest homeowners in Skagit and surrounding counties.',
+        step: [
+          { '@type': 'HowToStep', position: 1, name: 'Call or Submit a Request', text: 'Tell us what you want to power — critical circuits only or whole-home coverage. We respond same day.' },
+          { '@type': 'HowToStep', position: 2, name: 'Load Analysis & Free Quote', text: 'We visit your home, assess your panel, and calculate the load you need to cover. We give you a written quote before any work starts.' },
+          { '@type': 'HowToStep', position: 3, name: 'Generator Hookup, Permit & Inspection', text: 'We install the transfer switch or interlock, connect the generator, pull the permit, and coordinate the inspection. Done right and by the book.' },
         ],
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -136,6 +166,10 @@ export default function GeneratorInstallationPage() {
               { q: 'What\'s the difference between a transfer switch and an interlock?', a: 'Both prevent backfeed to the utility grid (a safety requirement). An interlock kit is less expensive and works with your existing panel. A transfer switch is a separate subpanel that automatically switches between grid and generator. We\'ll recommend the right option for your situation.' },
               { q: 'Do I need a permit for generator installation?', a: 'Yes — in Washington State, generator hookups require an electrical permit. We handle that, schedule the inspection, and make sure everything is done by the book.' },
               { q: 'Can you connect a generator to natural gas?', a: 'Yes. If your home has natural gas service, a permanently-piped connection is the cleanest and most convenient option — no storing fuel, no refilling. We do this connection along with the electrical hookup.' },
+              { q: 'How much does generator installation cost?', a: 'The electrical installation for a standby generator typically runs $1,500–$4,000, depending on panel capacity, the run length to the generator location, and gas/propane connection requirements. This doesn\'t include the cost of the generator unit itself. We provide free itemized estimates.' },
+              { q: 'How long does a power outage need to be to justify a generator?', a: 'In Western Washington, outages from winter storms regularly last 2–7 days in rural Skagit and island areas. If you have a well pump, medical equipment, a home-based business, or livestock that depend on power, even one extended outage justifies the investment.' },
+              { q: 'Can a generator power my entire home?', a: 'Yes — with the right-sized standby generator (typically 20KW+) and a proper transfer switch. If you only want critical circuits covered, a smaller unit with a manual interlock is a more economical option. We scope it for your actual needs.' },
+              { q: 'What\'s the difference between a standby and a portable generator?', a: 'A standby generator is permanently installed, connects to natural gas or propane, and turns on automatically within seconds of an outage — no action required. A portable generator must be manually started and connected, and requires a transfer switch or interlock to safely connect to your home. Both have their place — we help you choose.' },
             ]} />
           </div>
         </div>

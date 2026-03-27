@@ -24,7 +24,26 @@ export default function ServiceCallsPage() {
           { '@type': 'Question', name: 'What does a service call cost?', acceptedAnswer: { '@type': 'Answer', text: 'Our service calls start with a diagnostic visit. We\'ll tell you what we find and what it will cost to fix before any work begins. No surprises, no hourly billing that keeps running while you sit and wait.' } },
           { '@type': 'Question', name: 'Will you touch work left behind by a previous electrician?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — that\'s actually one of the most common calls we get. We assess the previous work, tell you honestly what\'s wrong (and what\'s fine), and fix what needs fixing. We don\'t throw everything out if it doesn\'t need to be replaced.' } },
           { '@type': 'Question', name: 'Do you work on rental properties and investment homes?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We work with landlords, property managers, and real estate investors across Skagit and Whatcom counties. We understand the need for turnaround speed, written documentation, and communication that helps you manage from a distance.' } },
+          { '@type': 'Question', name: 'What should I do if I smell burning from an outlet or panel?', acceptedAnswer: { '@type': 'Answer', text: 'Turn off the circuit at the breaker if you can safely do so. Do not use the outlet. If the smell is strong or persistent, or if you see scorch marks or smoke, leave the home and call 911. Then call us. Burning smells from electrical components indicate a serious issue and should never be ignored.' } },
+          { '@type': 'Question', name: 'Why does my breaker keep tripping?', acceptedAnswer: { '@type': 'Answer', text: 'A breaker that repeatedly trips is telling you something. Common causes include an overloaded circuit (too many appliances on one circuit), a short circuit (usually from a wiring fault or damaged device), or a ground fault. Some older breakers also fail progressively. We diagnose the cause and tell you exactly what needs to happen.' } },
+          { '@type': 'Question', name: 'Why won\'t my GFCI outlet reset?', acceptedAnswer: { '@type': 'Answer', text: 'A GFCI outlet that won\'t reset usually means it has tripped in response to a real fault on the circuit — or it has failed. Try pressing the reset button firmly. If it won\'t reset, check if there are other GFCI outlets on the same circuit that may have tripped first. If nothing works, the outlet or wiring needs service. Call us.' } },
+          { '@type': 'Question', name: 'Do you handle electrical work for home sales and real estate transactions?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — this is a significant part of our service call work. Home inspectors frequently flag electrical issues during the sale process. We respond quickly, provide written documentation of work performed, and coordinate with your agent or escrow timeline if needed.' } },
         ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: 'Electrical Service Calls & Repairs',
+        description: 'Electrical troubleshooting, repairs, and same-day service calls in Skagit, Whatcom, Island, and San Juan counties. Tripped breakers, mystery outages, suspect prior work, and GFCI issues diagnosed and fixed.',
+        provider: { '@type': 'ElectricalContractor', name: 'Premier Electrical Services', telephone: '+13604215230', url: 'https://premierelectricalsvc.com' },
+        areaServed: [
+          { '@type': 'AdministrativeArea', name: 'Skagit County, WA' },
+          { '@type': 'AdministrativeArea', name: 'Whatcom County, WA' },
+          { '@type': 'AdministrativeArea', name: 'Island County, WA' },
+          { '@type': 'AdministrativeArea', name: 'San Juan County, WA' },
+        ],
+        url: 'https://premierelectricalsvc.com/services/service-calls',
+        serviceType: 'Electrical Repair and Service Call',
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
@@ -129,10 +148,14 @@ export default function ServiceCallsPage() {
           <h2>Service Call Questions</h2>
           <div style={{ marginTop: '36px', maxWidth: '780px' }}>
             <FAQAccordion faqs={[
-              { q: 'How quickly can you get to me?', a: 'Most service calls are scheduled same day or next day. If you\'re dealing with a safety issue — burning smell, sparking outlets, a breaker that won\'t reset — call us directly at (360) 421-5230 and we\'ll prioritize accordingly.' },
-              { q: 'What does a service call cost?', a: 'Our service calls start with a diagnostic visit. We\'ll tell you what we find and what it will cost to fix before any work begins. No surprises, no hourly billing that keeps running while you sit and wait.' },
-              { q: 'Will you touch work left behind by a previous electrician?', a: 'Yes — that\'s actually one of the most common calls we get. We assess the previous work, tell you honestly what\'s wrong (and what\'s fine), and fix what needs fixing. We don\'t throw everything out if it doesn\'t need to be replaced.' },
-              { q: 'Do you work on rental properties and investment homes?', a: 'Yes. We work with landlords, property managers, and real estate investors across Skagit and Whatcom counties. We understand the need for turnaround speed, written documentation, and communication that helps you manage from a distance.' },
+              { q: 'How quickly can you get to me for a service call?', a: 'Most service calls are scheduled same day or next day. If you\'re dealing with a safety issue — burning smell, sparking outlets, a breaker that won\'t reset — call us directly at (360) 421-5230 and we\'ll prioritize.' },
+              { q: 'What does a service call cost?', a: 'Our service calls start with a diagnostic visit. We\'ll tell you what we find and what it will cost to fix before any work begins. No surprises, no hourly billing that keeps running while you wait.' },
+              { q: 'Will you touch work left behind by a previous electrician?', a: 'Yes — that\'s one of the most common calls we get. We assess the previous work honestly, tell you what\'s wrong and what\'s fine, and fix what needs fixing. We don\'t replace everything if it doesn\'t need it.' },
+              { q: 'Do you work on rental properties and investment homes?', a: 'Yes. We work with landlords, property managers, and investors across Skagit and Whatcom counties. We understand the need for turnaround speed, written documentation, and remote communication.' },
+              { q: 'What should I do if I smell burning from an outlet or panel?', a: 'Turn off the circuit if you can safely do so. Do not use the outlet. If the smell is strong, persistent, or accompanied by scorch marks, leave the home and call 911. Then call us. Electrical burning smells indicate a serious issue that should never be ignored.' },
+              { q: 'Why does my breaker keep tripping?', a: 'A repeatedly-tripping breaker is telling you something. Common causes: overloaded circuit (too many appliances), a short circuit (wiring fault or damaged device), or a ground fault. Some aging breakers also fail progressively. We diagnose the cause and tell you exactly what needs to happen.' },
+              { q: 'Why won\'t my GFCI outlet reset?', a: 'A GFCI outlet that won\'t reset usually means it tripped in response to a real fault on the circuit — or it has failed. Try pressing the reset button firmly. If it still won\'t reset, check if there\'s another GFCI upstream on the same circuit. If nothing works, call us.' },
+              { q: 'Do you handle electrical repairs for home sales?', a: 'Yes — home inspector findings are a significant part of our service call work. We respond quickly, provide written documentation of the work performed, and coordinate with your agent or escrow timeline as needed.' },
             ]} />
           </div>
         </div>

@@ -24,7 +24,26 @@ export default function LightingUpgradesPage() {
           { '@type': 'Question', name: 'Do I need a permit for a hot tub or spa?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — hot tub wiring always requires a permit in Washington State. The circuit must be GFCI-protected at the panel, with proper disconnect placement and bonding. We do this by the book, which matters for both safety and your homeowner\'s insurance.' } },
           { '@type': 'Question', name: 'What kind of outdoor lighting can you install?', acceptedAnswer: { '@type': 'Answer', text: 'We install landscape lighting low-voltage systems, line-voltage path and accent lighting, exterior security lighting with motion sensors, and dusk-to-dawn exterior fixtures. We can also wire for outdoor outlets, exterior fans, and porch fixtures.' } },
           { '@type': 'Question', name: 'Can you wire a barn or agricultural outbuilding?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We\'ve wired barns, shops, greenhouses, and agricultural buildings across Skagit and Whatcom counties. This often involves running overhead or underground service from the main panel to a subpanel in the building, then wiring for lighting, outlets, and any 240V equipment.' } },
+          { '@type': 'Question', name: 'How much does it cost to run power to a detached garage?', acceptedAnswer: { '@type': 'Answer', text: 'A basic subpanel feed to a detached garage 50 feet from your main panel typically runs $1,500–$3,000 depending on the service size, overhead vs. underground run, and what you want wired inside. We provide a free, itemized quote.' } },
+          { '@type': 'Question', name: 'What is the difference between low-voltage and line-voltage landscape lighting?', acceptedAnswer: { '@type': 'Answer', text: 'Low-voltage landscape lighting (typically 12V) uses a transformer and is safer to install, more energy-efficient, and typically used for path lighting, accent lighting, and uplighting. Line-voltage landscape lighting uses standard 120V and is used for brighter applications like security or area lighting. We install both systems.' } },
+          { '@type': 'Question', name: 'How do I add an outlet to my garage or patio?', acceptedAnswer: { '@type': 'Answer', text: 'Adding a circuit to an existing garage or patio is one of our most common residential service calls. We run a new circuit from your panel, install it in a weatherproof box if needed, and pull the permit if required. Most of these jobs are done in half a day.' } },
+          { '@type': 'Question', name: 'Can indoor lighting or dimmer circuits handle LED bulbs?', acceptedAnswer: { '@type': 'Answer', text: 'Not all dimmer switches are compatible with LED bulbs — older incandescent-rated dimmers can cause buzzing, flickering, and shortened bulb life with LEDs. When we install or upgrade dimmer circuits, we use LED-compatible (trailing edge) dimmers that work correctly with modern LED loads.' } },
         ],
+      }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: 'Lighting & Outbuilding Wiring',
+        description: 'Indoor and outdoor lighting, detached garage and shop wiring, barn and agricultural building electrical, ADU power, and hot tub and spa wiring in Skagit, Whatcom, Island, and San Juan counties.',
+        provider: { '@type': 'ElectricalContractor', name: 'Premier Electrical Services', telephone: '+13604215230', url: 'https://premierelectricalsvc.com' },
+        areaServed: [
+          { '@type': 'AdministrativeArea', name: 'Skagit County, WA' },
+          { '@type': 'AdministrativeArea', name: 'Whatcom County, WA' },
+          { '@type': 'AdministrativeArea', name: 'Island County, WA' },
+          { '@type': 'AdministrativeArea', name: 'San Juan County, WA' },
+        ],
+        url: 'https://premierelectricalsvc.com/services/lighting-upgrades',
+        serviceType: 'Lighting Installation and Outbuilding Wiring',
       }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
@@ -136,6 +155,10 @@ export default function LightingUpgradesPage() {
               { q: 'Do I need a permit for a hot tub or spa?', a: 'Yes — hot tub wiring always requires a permit in Washington State. The circuit must be GFCI-protected at the panel, with proper disconnect placement and bonding. We do this by the book, which matters for both safety and your homeowner\'s insurance.' },
               { q: 'What kind of outdoor lighting can you install?', a: 'We install landscape lighting low-voltage systems, line-voltage path and accent lighting, exterior security lighting with motion sensors, and dusk-to-dawn exterior fixtures. We can also wire for outdoor outlets, exterior fans, and porch fixtures.' },
               { q: 'Can you wire a barn or agricultural outbuilding?', a: 'Yes. We\'ve wired barns, shops, greenhouses, and agricultural buildings across Skagit and Whatcom counties. This often involves running overhead or underground service from the main panel to a subpanel in the building, then wiring for lighting, outlets, and any 240V equipment.' },
+              { q: 'How much does it cost to run power to a detached garage?', a: 'A basic subpanel feed to a detached garage 50 feet from your main panel typically runs $1,500–$3,000 depending on service size, overhead vs. underground run, and what you want wired inside. We provide a free, itemized quote.' },
+              { q: 'What is the difference between low-voltage and line-voltage landscape lighting?', a: 'Low-voltage landscape lighting (typically 12V) is safer, energy-efficient, and used for path, accent, and uplighting. Line-voltage landscape lighting (120V) is brighter and used for security and area lighting. We install both systems.' },
+              { q: 'How do I add an outlet to my garage or patio?', a: 'Adding a circuit to an existing garage or patio is one of our most common calls. We run a new circuit from your panel, install a weatherproof box if needed, and pull the permit if required. Most of these jobs are done in half a day.' },
+              { q: 'Can indoor dimmer circuits handle LED bulbs?', a: 'Not all dimmers are compatible with LED bulbs — older incandescent-rated dimmers can cause buzzing, flickering, and shortened bulb life with LEDs. When we upgrade dimmer circuits, we use LED-compatible (trailing edge) dimmers that work correctly with modern LED loads.' },
             ]} />
           </div>
         </div>

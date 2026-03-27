@@ -63,9 +63,23 @@ const SERVICES = [
   {
     title: 'Residential Wiring',
     href: '/services/residential-wiring',
-    desc: 'New construction, remodels, complete rewires, rough-in, and trim-out. Nearly 60 years of combined experience means we\'ve built them and rewired them — we know how they\'re supposed to work.',
+    desc: "New construction, remodels, complete rewires, rough-in, and trim-out. Nearly 60 years of combined experience means we've built them and rewired them — we know how they're supposed to work.",
     img: '/images/svc-residential.jpg',
     tag: null,
+  },
+  {
+    title: 'Hot Tub & Spa Wiring',
+    href: '/services/hot-tub-spa-wiring',
+    desc: 'Dedicated 240V GFCI circuit, proper disconnect placement, and bonding — every time. Hot tub wiring requires a permit in WA State. We do it right and document it for your insurance.',
+    img: '/images/svc-lighting.jpg',
+    tag: null,
+  },
+  {
+    title: 'Outbuilding & ADU Wiring',
+    href: '/services/outbuilding-adu-wiring',
+    desc: 'Subpanel feeds to detached garages, shops, barns, ADUs, and agricultural buildings — overhead or underground. We size it for what you actually need, with room to grow.',
+    img: '/images/svc-lighting.jpg',
+    tag: 'Rural Specialty',
   },
 ];
 
