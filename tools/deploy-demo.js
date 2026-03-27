@@ -103,7 +103,7 @@ async function run() {
 
   const deployId = deploy.id;
   console.log(`  Deploy ID: ${deployId}`);
-  console.log(`  Building`, { end: '' });
+  process.stdout.write('  Building');
 
   // Wait for build
   const ready = await waitForReady(deployId);
