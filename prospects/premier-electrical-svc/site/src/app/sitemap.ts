@@ -35,5 +35,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/service-area/oak-harbor`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${SITE_URL}/faq`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${SITE_URL}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${SITE_URL}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${SITE_URL}/blog/panel-upgrade-signs`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${SITE_URL}/blog/ev-charger-cost-guide`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${SITE_URL}/blog/knob-and-tube-wiring`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${SITE_URL}/blog/generator-sizing-guide`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
   ];
 }
