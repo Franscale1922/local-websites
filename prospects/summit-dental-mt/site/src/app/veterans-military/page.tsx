@@ -3,32 +3,26 @@ import SiteNav from '../components/SiteNav';
 import SiteFooter from '../components/SiteFooter';
 
 export const metadata: Metadata = {
-  title: 'Veterans & Military Dentistry: TRICARE Accepted | Summit Dental Group Kalispell MT',
-  description: 'Summit Dental Group accepts TRICARE, ADDP, and military dental plans. Veteran-owned practice: Dr. Vanzant, USAF, 3 combat deployments. Serving Kalispell, MT.',
+  title: 'Veteran-Owned Dental Practice in Kalispell, MT | Summit Dental Group',
+  description: 'Summit Dental Group is Kalispell\'s only veteran-owned dental practice. Dr. Mark Vanzant, DMD: USAF veteran, 3 combat deployments, Montana Army National Guard. Honest dentistry for every patient.',
 };
 
-const PLANS = [
-  { name: 'TRICARE Active Duty Dental Program (ADDP)', note: 'Via United Concordia, for active duty service members' },
-  { name: 'TRICARE Dental Program (TDP)', note: 'For dependents and non-activated Guard/Reserve' },
-  { name: 'United Concordia (UCCI)', note: 'Full network provider' },
-  { name: 'Dept. of Defense Military Plans', note: 'All major military-affiliated dental plans' },
-];
-
-const STEPS = [
+const VALUES = [
   {
-    num: '01',
-    title: 'Confirm Your Eligibility',
-    desc: 'Verify your TRICARE dental eligibility at tricare.mil or call United Concordia. Key factors: 50-mile remote rule or DTF-referral status.',
+    title: 'Straight Talk, No Upselling',
+    desc: 'Dr. Vanzant recommends treatment you actually need — and tells you clearly when something can wait. No alarm, no pressure, no manufactured urgency.',
   },
   {
-    num: '02',
-    title: 'Get Your ACN (if applicable)',
-    desc: 'Some TRICARE plans require an Approval/Confirmation Number from United Concordia before treatment. We\'ll help you through this if needed.',
+    title: 'Private Practice, Not a Chain',
+    desc: 'Summit Dental is independently owned. There is no corporate quota to hit, no production-per-chair metric. The only measure is whether the patient left better than they arrived.',
   },
   {
-    num: '03',
-    title: 'Book Your Appointment',
-    desc: 'Call us at (406) 752-4545 or request online. Bring your military ID and insurance card. We handle all the paperwork from there.',
+    title: 'Respect for Your Time',
+    desc: 'Appointments run on schedule. We explain what we are doing before we do it. If something unexpected comes up, we tell you and make a plan before proceeding.',
+  },
+  {
+    title: 'Same Provider Throughout',
+    desc: 'Dr. Vanzant handles your care directly — from consultation through treatment. The person who examines you, explains your options, and does the work is the same person every time.',
   },
 ];
 
@@ -37,15 +31,16 @@ export default function VeteransPage() {
     <>
       <SiteNav activePath="/veterans-military" alwaysScrolled />
       <main>
+        {/* Hero */}
         <div className="page-hero page-hero--veterans">
           <span className="eyebrow" style={{ color: 'var(--color-accent)', justifyContent: 'center' }}>
             <span style={{ width: '24px', height: '2px', background: 'var(--color-accent)', display: 'block' }} />
-            Veterans & Military
+            Veteran-Owned Practice
           </span>
-          <h1>We Know Military Insurance Can Be Complicated. We Handle It For You.</h1>
+          <h1>Dentistry Built on the Same Values Dr. Vanzant Learned in Uniform</h1>
           <p>
-            Dr. Vanzant is a USAF veteran with three combat deployments. He understands both the
-            dentistry and the insurance landscape, so you don&apos;t have to.
+            Honesty. Directness. Respect for the person in front of you. Dr. Vanzant brought those
+            values from the Air Force into practice — and they show up in every patient interaction.
           </p>
           <div className="page-hero-ctas">
             <a href="/contact" className="btn btn-primary">Book Your Appointment</a>
@@ -53,7 +48,7 @@ export default function VeteransPage() {
           </div>
         </div>
 
-        {/* Dr. Vanzant Veteran Story */}
+        {/* Dr. Vanzant Story */}
         <section className="veterans-section">
           <div className="veterans-inner">
             <div>
@@ -65,9 +60,9 @@ export default function VeteransPage() {
                 serves in the Montana Army National Guard.
               </p>
               <p>
-                He built Summit Dental Group with veterans in mind, a practice where military patients are
-                not an afterthought but a priority. He accepts every major military dental plan and his team
-                is trained to navigate the specifics of TRICARE billing.
+                He did not build Summit Dental Group to be a military-themed practice. He built it to be
+                a good practice — one where patients get an honest assessment, a clear explanation, and
+                treatment they can trust. The veteran background is context, not a marketing hook.
               </p>
               <p>
                 <strong style={{ color: '#fff' }}>
@@ -86,70 +81,37 @@ export default function VeteransPage() {
           </div>
         </section>
 
-        {/* Accepted Plans */}
+        {/* What Veteran-Owned Actually Means */}
         <section className="section">
           <div className="container">
-            <span className="eyebrow">Accepted Military Insurance</span>
-            <h2 style={{ marginBottom: '12px' }}>Plans We Accept</h2>
+            <span className="eyebrow">What It Means Day-to-Day</span>
+            <h2 style={{ marginBottom: '12px' }}>What &ldquo;Veteran-Owned&rdquo; Looks Like in Practice</h2>
             <p className="section-intro" style={{ marginBottom: '48px' }}>
-              We are in-network or a covered provider for all major military dental programs.
-            </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px', maxWidth: '860px' }}>
-              {PLANS.map(plan => (
-                <div key={plan.name} className="insurance-item" style={{
-                  background: 'var(--color-surface)',
-                  border: '2px solid var(--color-border)',
-                  borderRadius: 'var(--radius-md)',
-                  padding: '20px 22px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '6px',
-                }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" strokeWidth="2.5" strokeLinecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    <strong style={{ color: 'var(--color-primary)', fontSize: '0.9rem' }}>{plan.name}</strong>
-                  </div>
-                  <p style={{ fontSize: '0.8rem', color: 'var(--color-neutral-mid)', margin: 0, paddingLeft: '26px' }}>{plan.note}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* How to Use Benefits */}
-        <section className="section section--slate">
-          <div className="container">
-            <span className="eyebrow">Step-by-Step Guide</span>
-            <h2 style={{ color: '#fff', marginBottom: '10px' }}>How to Use Your Military Benefits Here</h2>
-            <p style={{ color: 'rgba(255,255,255,0.65)', marginBottom: 0 }}>
-              Plain language. No confusing bureaucratic explanations.
+              A veteran-owned practice is not a theme. It is a set of operating principles that show up
+              in how the practice is run and how patients are treated.
             </p>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: '0',
-              maxWidth: '900px',
-              margin: '56px auto 0',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '20px',
             }}>
-              {STEPS.map((step, i, arr) => (
-                <div key={step.num} className="process-step" style={{ textAlign: 'center' }}>
-                  {i < arr.length - 1 && <div className="process-connector" />}
-                  <div className="process-icon-wrap">
-                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                  </div>
-                  <div className="process-num">{step.num}</div>
-                  <h3 className="process-title">{step.title}</h3>
-                  <p className="process-desc" style={{ maxWidth: '26ch', margin: '0 auto' }}>{step.desc}</p>
+              {VALUES.map(v => (
+                <div key={v.title} style={{
+                  background: 'var(--color-surface)',
+                  border: '1.5px solid var(--color-border)',
+                  borderRadius: 'var(--radius-md)',
+                  padding: '24px 26px',
+                }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" strokeWidth="2.5" strokeLinecap="round" style={{ marginBottom: '12px' }}><polyline points="20 6 9 17 4 12"/></svg>
+                  <h3 style={{ fontSize: '1rem', marginBottom: '8px', color: 'var(--color-text)' }}>{v.title}</h3>
+                  <p style={{ fontSize: '0.84rem', color: 'var(--color-neutral-mid)', lineHeight: 1.7, margin: 0 }}>{v.desc}</p>
                 </div>
               ))}
-            </div>
-            <div style={{ textAlign: 'center', marginTop: '48px' }}>
-              <a href="tel:+14067524545" className="btn btn-primary">Call Us. We&apos;ll Walk You Through It.</a>
             </div>
           </div>
         </section>
 
-        {/* DD Form 2813 */}
+        {/* DD Form 2813 — this is a legitimate service-based offering, not insurance */}
         <section className="section section--tinted">
           <div className="container" style={{ maxWidth: '760px' }}>
             <span className="eyebrow">Guard &amp; Reserve</span>
@@ -161,7 +123,7 @@ export default function VeteransPage() {
             </p>
             <p style={{ color: 'var(--color-neutral-mid)', fontSize: '1rem', marginBottom: '32px' }}>
               As a fellow Guard/Reserve member, Dr. Vanzant understands the timelines and documentation
-              requirements. We&apos;ll make it as fast and painless as possible.
+              requirements. We&apos;ll make it as fast and straightforward as possible.
             </p>
             <div className="inline-ctas">
               <a href="/contact" className="btn btn-primary">Schedule a Readiness Exam</a>
@@ -206,8 +168,8 @@ export default function VeteransPage() {
         <div className="cta-strip">
           <div className="cta-strip-inner">
             <div className="cta-strip-text">
-              <h2>You&apos;ve Served. Now Let Us Serve You.</h2>
-              <p>TRICARE, ADDP, and all military plans accepted. Same-day emergency appointments available. No runaround.</p>
+              <h2>Ready for a Practice That Gives You a Straight Answer?</h2>
+              <p>New patients welcome. Most major insurance accepted. Same-day emergency appointments available.</p>
             </div>
             <div className="cta-strip-actions">
               <a href="/contact" className="btn btn-primary">Book Appointment</a>

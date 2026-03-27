@@ -107,7 +107,7 @@ export default function ContactForm() {
             <option>Sedation Dentistry</option>
             <option>Teeth Whitening</option>
             <option>Crown or Bridge</option>
-            <option>Veterans / TRICARE Inquiry</option>
+            <option>Veterans &amp; Military Inquiry</option>
             <option>Other</option>
           </select>
         </div>
@@ -120,8 +120,7 @@ export default function ContactForm() {
             <option>MetLife</option>
             <option>Cigna</option>
             <option>Aetna</option>
-            <option>TRICARE / ADDP</option>
-            <option>United Concordia</option>
+
             <option>CareCredit</option>
             <option>Self-Pay / No Insurance</option>
             <option>Other</option>

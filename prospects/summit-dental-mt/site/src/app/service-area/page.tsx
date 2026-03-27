@@ -24,8 +24,8 @@ const COMMUNITIES = [
   {
     name: 'Columbia Falls, MT',
     tag: '~20 min from Kalispell',
-    note: 'Columbia Falls families choose Summit Dental for our family-friendly atmosphere, TRICARE acceptance, and same-day emergency appointments. Dr. Vanzant\'s veteran background resonates strongly with the military-connected community in Columbia Falls.',
-    services: ['Family Dentistry', 'TRICARE & Military Insurance', 'Emergency Care', 'Teeth Whitening'],
+    note: 'Columbia Falls families choose Summit Dental for our family-friendly atmosphere, genuine care, and same-day emergency appointments. Dr. Vanzant\'s veteran background and no-nonsense approach resonate with patients who value straight talk and honest dentistry.',
+    services: ['Family Dentistry', 'Emergency Care', 'Teeth Whitening', 'Dental Implants'],
   },
   {
     name: 'Bigfork, MT',
@@ -74,7 +74,7 @@ export default function ServiceAreaPage() {
             { label: '203 Business Center Loop, Suite C', sub: 'Kalispell, MT 59901' },
             { label: 'Tuesday – Friday', sub: '8:00 AM – 5:00 PM' },
             { label: '(406) 752-4545', sub: 'Call or leave a message' },
-            { label: 'TRICARE & Most Insurance', sub: 'Accepted — military families welcome' },
+            { label: 'Delta Dental, BCBS & More', sub: 'Most major insurance accepted' },
           ].map(t => (
             <div key={t.label} className="trust-strip-item">
               <div className="trust-strip-text">
@@ -157,7 +157,7 @@ export default function ServiceAreaPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginBottom: '36px' }}>
               {[
                 { quote: 'I drove from Whitefish and it was absolutely worth it. Dr. Vanzant was honest about what I actually needed — no upselling, no pressure. That\'s rare.', cite: '— Whitefish, MT Patient' },
-                { quote: 'As a veteran, finding a dentist who accepts TRICARE AND actually understands the military experience was everything. Summit Dental gets it.', cite: '— Columbia Falls, MT · USMC Veteran' },
+                { quote: 'As a veteran, finding a dentist who actually understands what it means to serve — and treats you with that same respect — was everything. Dr. Vanzant is the real deal.', cite: '— Columbia Falls, MT · USMC Veteran' },
                 { quote: 'I needed a same-day emergency appointment and they got me in within hours. From Polson. That\'s hard to find anywhere in the Valley.', cite: '— Polson, MT Patient' },
               ].map((t, i) => (
                 <div key={i} style={{
@@ -181,7 +181,7 @@ export default function ServiceAreaPage() {
           <div className="cta-strip-inner">
             <div className="cta-strip-text">
               <h2>Ready to Visit Summit Dental Group?</h2>
-              <p>New patients welcome from across the Flathead Valley. TRICARE and most insurance accepted. Same-day emergency care available.</p>
+              <p>New patients welcome from across the Flathead Valley. Most major insurance accepted. Same-day emergency care available.</p>
             </div>
             <div className="cta-strip-actions">
               <a href="/contact" className="btn btn-primary">Book Appointment</a>

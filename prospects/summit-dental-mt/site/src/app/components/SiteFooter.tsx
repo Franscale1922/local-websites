@@ -52,7 +52,7 @@ export default function SiteFooter() {
           />
           <p className="footer-tagline">
             Veteran-owned dental practice serving Kalispell and the Flathead Valley.
-            Accepting TRICARE, ADDP, and most major insurance plans.
+            Accepting Delta Dental, BCBS, MetLife, Cigna, Aetna & most major insurance plans.
           </p>
           <div className="footer-veteran-badge">
             ★ Veteran-Owned & Operated

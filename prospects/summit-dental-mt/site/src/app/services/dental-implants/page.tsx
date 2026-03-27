@@ -4,7 +4,7 @@ import SiteFooter from '../../components/SiteFooter';
 
 export const metadata: Metadata = {
   title: 'Dental Implants in Kalispell, MT | Summit Dental Group',
-  description: 'Dental implants that look and feel like natural teeth. Summit Dental Group provides single implants, bridges, and full-arch restoration in Kalispell, MT. TRICARE accepted.',
+  description: 'Dental implants that look and feel like natural teeth. Summit Dental Group provides single implants, bridges, and full-arch restoration in Kalispell, MT. Most insurance accepted.',
 };
 
 export default function DentalImplantsPage() {
@@ -88,7 +88,7 @@ export default function DentalImplantsPage() {
           <div className="cta-strip-inner">
             <div className="cta-strip-text">
               <h2>Ready to Replace That Missing Tooth?</h2>
-              <p>Schedule an implant consultation with Dr. Vanzant. TRICARE and most insurance accepted. CareCredit financing available.</p>
+              <p>Schedule an implant consultation with Dr. Vanzant. Most major insurance accepted. CareCredit financing available.</p>
             </div>
             <div className="cta-strip-actions">
               <a href="/contact" className="btn btn-primary">Book Implant Consultation</a>

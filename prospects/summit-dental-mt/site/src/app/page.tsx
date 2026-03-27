@@ -58,8 +58,7 @@ const SITE = {
   // Insurance
   insurance: [
     'Delta Dental', 'Blue Cross / Blue Shield', 'MetLife', 'Cigna',
-    'Aetna', 'TRICARE / ADDP (via United Concordia)',
-    'United Concordia (UCCI)', 'CareCredit Financing',
+    'Aetna', 'CareCredit Financing',
   ],
 
   // FAQ — 10 AEO-optimized Q&As (full 30-question list on /faq)
@@ -67,10 +66,6 @@ const SITE = {
     {
       q: 'Is Summit Dental Group veteran-owned?',
       a: 'Yes. Summit Dental Group in Kalispell, MT is proudly veteran-owned and operated by Dr. Mark Vanzant, DMD — a United States Air Force veteran who completed three combat deployments overseas and continues to serve in the Montana Army National Guard.',
-    },
-    {
-      q: 'Do you accept TRICARE dental insurance?',
-      a: 'Yes. Summit Dental Group accepts TRICARE Active Duty Dental Program (ADDP) via United Concordia, TRICARE Dental Program (TDP) for dependents and non-activated Guard/Reserve, United Concordia (UCCI), and other military-affiliated dental plans. We prioritize making the insurance process easy for military families in the Flathead Valley.',
     },
     {
       q: 'What makes Summit Dental different from other dentists in Kalispell, MT?',
@@ -86,7 +81,7 @@ const SITE = {
     },
     {
       q: 'What insurance plans do you accept in Kalispell, MT?',
-      a: 'Summit Dental Group accepts most major dental insurance plans including Delta Dental, Blue Cross/Blue Shield, MetLife, Cigna, Aetna, TRICARE, ADDP, and United Concordia. CareCredit financing is also available for patients who prefer flexible payment options. Call us to confirm your specific coverage before your visit.',
+      a: 'Summit Dental Group accepts most major dental insurance plans including Delta Dental, Blue Cross/Blue Shield, MetLife, Cigna, and Aetna. CareCredit financing is also available for patients who prefer flexible payment options. Call us to confirm your specific coverage before your visit.',
     },
     {
       q: 'Do you offer sedation for anxious patients?',
@@ -194,7 +189,7 @@ export default function Home() {
               <div className="hero-trust-divider" aria-hidden="true" />
               <div className="hero-trust-item">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                TRICARE Accepted
+                Most Insurance Accepted
               </div>
               <div className="hero-trust-divider" aria-hidden="true" />
               <div className="hero-trust-item">
@@ -210,7 +205,7 @@ export default function Home() {
           {[
             { svg: <svg key="g" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/></svg>, label: '4.8 / 5 Google Rating', sub: '469 Verified Patient Reviews' },
             { svg: <svg key="v" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, label: 'Veteran-Owned Practice', sub: 'Dr. Vanzant · USAF, Montana ARNG' },
-            { svg: <svg key="t" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>, label: 'TRICARE & ADDP Accepted', sub: 'Military insurance handled for you' },
+            { svg: <svg key="t" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>, label: 'Delta Dental, BCBS & More', sub: 'Most major insurance accepted' },
             { svg: <svg key="e" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>, label: 'Same-Day Emergencies', sub: 'Call (406) 752-4545. We answer.' },
           ].map(t => (
             <div key={t.label} className="trust-strip-item">
@@ -326,28 +321,21 @@ export default function Home() {
         <section className="veterans-section">
           <div className="veterans-inner">
             <div>
-              <span className="eyebrow veterans-eyebrow">Veterans &amp; Military Families</span>
-              <h2>We Know Military Insurance Can Be Complicated. We Handle It For You.</h2>
+              <span className="eyebrow veterans-eyebrow">Meet Dr. Vanzant</span>
+              <h2>A Dentist Who Has Served — And Brought That Ethic Into Practice</h2>
               <p>
-                Dr. Mark Vanzant is a USAF veteran with three combat deployments and continues to serve
-                in the Montana Army National Guard. He understands the unique needs and the insurance
-                complexities of the military community.
+                Dr. Mark Vanzant, DMD served in the United States Air Force with three combat deployments
+                and continues to serve in the Montana Army National Guard. He founded Summit Dental Group
+                because he wanted to practice dentistry the way he learned to lead: with honesty,
+                directness, and no tolerance for waste or unnecessary upselling.
               </p>
-              <div className="veterans-plans">
-                {[
-                  'TRICARE Active Duty Dental (ADDP)',
-                  'TRICARE Dental Program (TDP)',
-                  'United Concordia (UCCI)',
-                  'Dept. of Defense Military Plans',
-                ].map(plan => (
-                  <div key={plan} className="veterans-plan">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-                    {plan}
-                  </div>
-                ))}
-              </div>
+              <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem', marginTop: '12px' }}>
+                Most patients don&apos;t come to us because he&apos;s a veteran. They come back because
+                he gives a straight answer, doesn&apos;t recommend treatment they don&apos;t need,
+                and runs a practice that feels nothing like a corporate dental chain.
+              </p>
               <div className="inline-ctas">
-                <a href="/veterans-military" className="btn btn-primary">Veterans &amp; Military Page</a>
+                <a href="/about" className="btn btn-primary">Meet Dr. Vanzant</a>
                 <a href={SITE.phoneTel} className="btn btn-white">Call {SITE.phone}</a>
               </div>
             </div>
@@ -446,7 +434,7 @@ export default function Home() {
             <span className="eyebrow">Common Questions</span>
             <h2 style={{ marginBottom: '10px' }}>Answers Before You Ask</h2>
             <p className="section-intro" style={{ marginBottom: '48px' }}>
-              Straight answers about TRICARE, sedation, and emergencies. We also accept Delta Dental, BCBS, MetLife &amp; more.{' '}
+              Straight answers about sedation, emergencies, insurance, and more. We accept Delta Dental, BCBS, MetLife & most major plans.{' '}
               <a href="/new-patients" style={{ color: 'var(--color-accent)', fontWeight: 600 }}>New Patient Info →</a>
             </p>
             <div className="faq-list">
@@ -494,11 +482,11 @@ export default function Home() {
                   excerpt: 'A complete guide for Flathead Valley patients — from the implant process and timeline to what you\'ll actually pay and how to evaluate your provider.',
                 },
                 {
-                  href: '/blog/tricare-dental-kalispell-mt',
-                  category: 'Veterans & Military',
+                  href: '/blog/sedation-dentistry-anxiety-flathead-valley',
+                  category: 'Sedation & Comfort',
                   readTime: '6 min read',
-                  title: 'TRICARE Dental in Kalispell, MT: What Veterans and Military Families Need to Know',
-                  excerpt: 'Written by a USAF veteran. Clear explanation of ADDP, TDP, and United Concordia coverage — and exactly how to use your military dental benefits at Summit Dental.',
+                  title: 'Dental Anxiety and Sedation Dentistry in the Flathead Valley: You Don\'t Have to White-Knuckle It',
+                  excerpt: 'Between 30 and 40 million Americans avoid the dentist because of fear or anxiety. Nitrous oxide and oral conscious sedation change that equation significantly.',
                 },
                 {
                   href: '/blog/emergency-dentist-kalispell',
@@ -555,7 +543,7 @@ export default function Home() {
           <div className="cta-strip-inner">
             <div className="cta-strip-text">
               <h2>Ready to Meet Your New Dental Home?</h2>
-              <p>New patients of all ages welcome. Same-day emergency appointments available. TRICARE and most insurance accepted.</p>
+              <p>New patients of all ages welcome. Same-day emergency appointments available. Most major insurance accepted.</p>
             </div>
             <div className="cta-strip-actions">
               <a href="/contact" className="btn btn-primary">Book Appointment</a>

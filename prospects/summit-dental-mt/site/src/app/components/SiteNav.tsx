@@ -132,7 +132,7 @@ export default function SiteNav({ activePath, alwaysScrolled = false }: SiteNavP
             </a>
           </div>
           <div className="mobile-menu-footer">
-            <div>Veteran-Owned · TRICARE Accepted</div>
+            <div>Veteran-Owned · Most Insurance Accepted</div>
             <div>⭐ 4.8 / 5 | 469 Google Reviews</div>
             <div style={{ marginTop: '6px', opacity: 0.5, fontSize: '0.72rem' }}>203 Business Center Loop, Suite C · Kalispell, MT</div>
           </div>

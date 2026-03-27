@@ -5,7 +5,7 @@ import ContactForm from './ContactForm';
 
 export const metadata: Metadata = {
   title: 'Request an Appointment | Summit Dental Group Kalispell, MT',
-  description: 'Book an appointment with Summit Dental Group in Kalispell, MT. Call (406) 752-4545 or fill out our online form. TRICARE accepted. Same-day emergency care available.',
+  description: 'Book an appointment with Summit Dental Group in Kalispell, MT. Call (406) 752-4545 or fill out our online form. Most insurance accepted. Same-day emergency care available.',
 };
 
 export default function ContactPage() {

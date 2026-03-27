@@ -19,8 +19,7 @@ const FAQS = [
   {
     category: 'Insurance & Payment',
     items: [
-      { q: 'Do you accept TRICARE dental insurance?', a: 'Yes. We accept TRICARE Active Duty Dental Program (ADDP) via United Concordia, TRICARE Dental Program (TDP) for dependents and non-activated Guard/Reserve, United Concordia (UCCI), and other military-affiliated dental plans. Dr. Vanzant is a veteran and we prioritize making this process easy for military families.' },
-      { q: 'What insurance plans do you accept?', a: 'We accept most major dental insurance plans including Delta Dental, Blue Cross/Blue Shield, MetLife, Cigna, Aetna, and all TRICARE/military plans via United Concordia. Call us with your plan name and we\'ll confirm your coverage before your visit.' },
+      { q: 'What insurance plans do you accept?', a: 'We accept most major dental insurance plans including Delta Dental, Blue Cross/Blue Shield, MetLife, Cigna, and Aetna. Call us with your plan name and we\'ll confirm your coverage before your visit.' },
       { q: 'Do you offer financing or payment plans?', a: 'Yes. We accept CareCredit, which offers flexible financing options including interest-free periods. Our team will help you understand your insurance benefits and any out-of-pocket costs before treatment begins. No surprises.' },
       { q: 'What if I don\'t have dental insurance?', a: 'We welcome uninsured patients and will work with you on a payment plan or discuss CareCredit financing. We\'ll provide you with a clear cost estimate before any treatment starts.' },
     ],

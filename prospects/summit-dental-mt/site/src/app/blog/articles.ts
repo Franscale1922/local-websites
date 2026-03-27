@@ -143,56 +143,62 @@ export const ARTICLES: Article[] = [
     relatedSlugs: ['dental-implants-kalispell-mt', 'sedation-dentistry-anxiety-flathead-valley'],
   },
 
-  // ─── 3: TRICARE ──────────────────────────────────────────────────────────────
+  // ─── 3: Military Dental Guide ────────────────────────────────────────────────
   {
     slug: 'tricare-dental-kalispell-mt',
-    title: 'TRICARE Dental Benefits in Kalispell, MT: What Veterans and Military Families Need to Know',
-    description: 'Does Summit Dental Group accept TRICARE? A plain-language guide to TRICARE dental coverage, what\'s covered, and how military families in the Flathead Valley can use their benefits here.',
+    title: 'Military Dental Benefits in Montana: What Veterans Should Know Before Choosing a Dentist',
+    description: 'A practical guide for veterans and servicemembers in the Flathead Valley navigating military dental coverage, VA dental eligibility, and choosing the right civilian dentist.',
     category: 'Veterans & Military',
     categorySlug: 'veterans',
     readTime: 6,
     date: '2026-03-19',
     author: 'Dr. Mark Vanzant, DMD',
-    authorTitle: 'Owner & Lead Dentist, Summit Dental Group · USAF Veteran',
-    excerpt: 'Military dental insurance is complicated. As a USAF veteran with three deployments, I\'ve navigated this system from both sides. Here\'s what Flathead Valley veterans and military families need to know about using TRICARE at Summit Dental.',
+    authorTitle: 'Owner & Lead Dentist, Summit Dental Group \u00b7 USAF Veteran',
+    excerpt: 'Navigating military dental coverage as a veteran is genuinely complicated \u2014 active duty programs, VA eligibility rules, and transition to civilian insurance all work differently. Here is a plain-language breakdown so you can make an informed decision.',
     sections: [
       {
         paragraphs: [
-          'Military dental insurance is complicated — and I say that having lived it. I\'m a United States Air Force veteran, three combat deployments overseas, and I continue to serve in the Montana Army National Guard. Before I was a dentist, I was the patient trying to figure out what my coverage actually covered.',
-          'Summit Dental Group accepts all TRICARE dental programs. But "we accept TRICARE" is only the start. Which specific plan you\'re on, what the cost-share looks like, and what\'s actually covered all matter significantly. Here\'s a clear breakdown.',
+          'I\'m a United States Air Force veteran with three combat deployments and I currently serve in the Montana Army National Guard. I navigated military dental coverage from the patient side before I was ever a dentist. The system is not simple, and the misinformation around it is significant.',
+          'This guide covers the main programs veterans and servicemembers encounter, how VA dental eligibility actually works, and what to ask any civilian dentist before you book an appointment.',
         ],
       },
       {
-        heading: 'The TRICARE Dental Plans We Accept in Kalispell',
+        heading: 'Active Duty vs. Veteran Dental Coverage: A Critical Distinction',
         paragraphs: [
-          'TRICARE Active Duty Dental Program (ADDP): This plan covers active duty service members and is administered through United Concordia. Most preventive and basic restorative services are covered at 100%, and there is typically no annual maximum.',
-          'TRICARE Dental Program (TDP): This plan covers dependents of active duty members, plus National Guard and Reserve members and their families when not activated. Also administered through United Concordia. Coverage levels vary by service type, and there is an annual maximum.',
-          'United Concordia (UCCI): We participate as a network provider, which covers both ADDP and TDP claims and keeps your out-of-pocket costs lower than going out of network.',
-          'Department of Defense Military Plans: Other DOD-affiliated plans may also be accepted — call us with your plan information and we will verify your benefits before your appointment.',
+          'Active duty service members receive dental care through military treatment facilities (MTFs) at no cost. When an MTF cannot provide the needed care \u2014 due to location, specialty, or workload \u2014 active duty members may be referred to civilian providers through the TRICARE Active Duty Dental Program (ADDP), administered by United Concordia.',
+          'Veterans who have separated from service do not automatically retain TRICARE dental coverage. TRICARE ends at separation. The transition to civilian insurance is the responsibility of the separating member, and many veterans are caught off guard by this.',
+          'Reserve and National Guard members who are not on active orders occupy a middle ground: they may enroll in the TRICARE Dental Program (TDP) as voluntary enrollees, paying premiums, for coverage when not activated.',
         ],
       },
       {
-        heading: 'What TRICARE Dental Covers — and What It Does Not',
+        heading: 'VA Dental Benefits: Who Qualifies',
         paragraphs: [
-          'Preventive care — routine cleanings, X-rays, exams — is covered at 100% with no cost-share under most TRICARE plans, for both active duty members and TDP dependents.',
-          'Basic restorative services such as fillings and simple extractions carry a cost-share under TDP, typically 20%. Major restorative services — crowns, bridges, root canals — carry a higher cost-share, often 40% to 50%, with an annual maximum.',
-          'Dental implants are generally not covered under TRICARE dental plans unless the tooth loss was directly service-connected. If you believe that applies to your situation, work with the VA first — there may be a separate pathway for coverage.',
-          'Cosmetic procedures — whitening, veneers done purely for aesthetics — are not covered under any TRICARE plan.',
-          'Our front desk runs a full benefits verification for every military patient before the appointment so there are no surprises at checkout.',
+          'VA dental care is not available to all veterans \u2014 a common misconception. Eligibility is based on specific criteria, including: service-connected dental disability or conditions resulting from combat injuries, former prisoners of war with any dental condition, veterans receiving a 100% service-connected disability rating, and veterans who were homeless meeting certain conditions.',
+          'Veterans who do not meet these criteria are generally not eligible for VA dental services unless enrolled in the VA Dental Insurance Program (VADIP), which is a voluntary insurance plan offered at group rates through Delta Dental and MetLife.',
+          'If you believe you qualify for VA dental care, contact the nearest VA facility or visit va.gov/dental-care to verify your eligibility before assuming coverage.',
         ],
       },
       {
-        heading: 'ADDP vs. TDP: Where Military Families Get Confused',
+        heading: 'Guard and Reserve: What You Have and When',
         paragraphs: [
-          'Active duty service members and their dependents are often on different dental plans. Active duty members are covered under ADDP and typically receive care through military treatment facilities (MTFs) first — civilian providers like Summit Dental step in when MTF care isn\'t available. Dependents and non-activated Guard and Reserve members use TDP and can see any participating civilian dentist directly.',
-          'If you\'ve PCS\'d to the Flathead Valley and aren\'t sure which plan applies to your family, call us. We\'ll help you sort it out.',
+          'National Guard and Reserve members who are not on active orders may elect TRICARE Dental Program (TDP) coverage through United Concordia. TDP is a voluntary enrollment plan with monthly premiums \u2014 coverage is not automatic.',
+          'When Guard or Reserve members are activated to federal orders, their dental coverage changes to the active duty program. Understanding which program applies at any given time matters when scheduling civilian care.',
+          'DD Form 2813 \u2014 the dental readiness examination \u2014 is a separate matter. This is a documentation function that some civilian dentists, including Summit Dental Group, can perform for Guard and Reserve members preparing for deployment or annual training requirements.',
         ],
       },
       {
-        heading: 'Why Military Families Choose Summit Dental',
+        heading: 'What to Ask a Civilian Dentist Before Booking',
         paragraphs: [
-          'We\'re not a franchise or corporate dental chain. We\'re a small, privately-owned, veteran-operated practice. When you call asking about your ADDP benefits, you\'re talking to staff that handles these claims regularly — and a dentist who knows what it means to be a servicemember trying to navigate a system that wasn\'t built for simplicity.',
-          'Call us at (406) 752-4545 or request a new patient appointment online. We\'ll verify your benefits before you set foot in the door.',
+          'Before assuming any civilian practice accepts your specific military dental plan, verify directly. Plans change, network participation changes, and what a practice accepted last year may not apply today.',
+          'Three questions to ask when calling any dental office: Which specific military dental plans are you currently enrolled with as a network provider? Can you verify my benefits before my appointment? If my plan requires pre-authorization for certain procedures, do you handle that process with me?',
+          'Any competent civilian practice should be able to run a benefits verification before your first visit. If they cannot, or will not, that is worth noting.',
+        ],
+      },
+      {
+        heading: 'About Summit Dental Group',
+        paragraphs: [
+          'Summit Dental Group is a veteran-owned, privately run dental practice in Kalispell, MT. We accept most major civilian dental insurance plans including Delta Dental, Blue Cross/Blue Shield, MetLife, Cigna, and Aetna. We accept CareCredit for flexible financing.',
+          'For veterans or servicemembers with specific coverage questions, call us at (406) 752-4545 and we will help clarify what we can verify. We are at 203 Business Center Loop, Suite C, Kalispell, MT 59901.',
         ],
       },
     ],
@@ -343,7 +349,7 @@ export const ARTICLES: Article[] = [
       {
         heading: 'Insurance Plans We Accept in Kalispell',
         paragraphs: [
-          'Summit Dental Group accepts most major dental insurance plans — Delta Dental, Blue Cross Blue Shield, MetLife, Cigna, Aetna, United Concordia, and all TRICARE programs. We also work with patients using Medicaid-funded state programs.',
+          'Summit Dental Group accepts most major dental insurance plans — Delta Dental, Blue Cross Blue Shield, MetLife, Cigna, and Aetna. We also work with patients using Medicaid-funded state programs.',
           'If you\'re unsure whether we accept your plan, call (406) 752-4545. We verify benefits for free before your appointment and walk you through exactly what your plan covers and what you\'ll owe. We do this for every new patient.',
         ],
       },

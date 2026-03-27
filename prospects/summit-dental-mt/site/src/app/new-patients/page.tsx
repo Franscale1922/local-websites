@@ -82,7 +82,7 @@ export default function NewPatientsPage() {
               <a href="tel:+14067524545" className="btn btn-primary">Call to Verify Your Coverage</a>
             </div>
             <div className="insurance-list">
-              {['Delta Dental', 'Blue Cross / Blue Shield', 'MetLife', 'Cigna', 'Aetna', 'TRICARE / ADDP (via United Concordia)', 'United Concordia (UCCI)', 'CareCredit Financing'].map(plan => (
+              {['Delta Dental', 'Blue Cross / Blue Shield', 'MetLife', 'Cigna', 'Aetna', 'CareCredit Financing'].map(plan => (
                 <div key={plan} className="insurance-item">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><polyline points="20 6 9 17 4 12"/></svg>
                   {plan}
@@ -142,7 +142,7 @@ export default function NewPatientsPage() {
           <div className="cta-strip-inner">
             <div className="cta-strip-text">
               <h2>Ready to Book Your First Visit?</h2>
-              <p>New patients of all ages welcome. TRICARE and most insurance accepted. CareCredit available.</p>
+              <p>New patients of all ages welcome. Most major insurance accepted. CareCredit available.</p>
             </div>
             <div className="cta-strip-actions">
               <a href="/contact" className="btn btn-primary">Book Online</a>

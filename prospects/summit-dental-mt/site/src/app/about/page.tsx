@@ -71,7 +71,7 @@ export default function AboutPage() {
                   ))}
                 </div>
                 <div className="about-credentials">
-                  {['DMD, University of Florida', 'USAF Veteran', 'Montana ARNG', 'ADA Member', 'TRICARE Provider', 'ADDP Provider'].map(c => (
+                  {['DMD, University of Florida', 'USAF Veteran', 'Montana ARNG', 'ADA Member'].map(c => (
                     <span key={c} className="credential-badge">{c}</span>
                   ))}
                 </div>
@@ -177,7 +177,7 @@ export default function AboutPage() {
           <div className="cta-strip-inner">
             <div className="cta-strip-text">
               <h2>Ready to Experience the Difference?</h2>
-              <p>New patients welcome. TRICARE and most insurance accepted. Same-day emergencies available.</p>
+              <p>New patients welcome. Most major insurance accepted. Same-day emergencies available.</p>
             </div>
             <div className="cta-strip-actions">
               <a href="/contact" className="btn btn-primary">Book an Appointment</a>

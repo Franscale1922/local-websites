@@ -9,12 +9,12 @@ export const metadata: Metadata = {
     default: 'Summit Dental Group | Kalispell, MT: Veteran-Owned Family Dentist',
     template: '%s | Summit Dental Group',
   },
-  description: 'Veteran-owned dental practice in Kalispell, MT. Dr. Mark Vanzant, DMD: 4.8\u2605 Google rating, 469 reviews. Accepting TRICARE, ADDP & most insurance. Same-day emergency care.',
+  description: 'Veteran-owned dental practice in Kalispell, MT. Dr. Mark Vanzant, DMD: 4.8★ Google rating, 469 reviews. Accepting Delta Dental, BCBS, Aetna & most insurance. Same-day emergency care.',
   openGraph: {
     type: 'website',
     siteName: 'Summit Dental Group',
     title: 'Summit Dental Group | Kalispell, MT: Veteran-Owned Family Dentist',
-    description: 'Veteran-owned dental practice in Kalispell, MT. 4.8★ Google rating. TRICARE accepted. Same-day emergency care available.',
+    description: 'Veteran-owned dental practice in Kalispell, MT. 4.8★ Google rating. Delta Dental, BCBS & most insurance accepted. Same-day emergency care available.',
     url: '/',
     images: [
       {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Summit Dental Group | Kalispell, MT',
-    description: 'Veteran-owned dental practice in Kalispell, MT. 4.8★ Google rating, 469 reviews. TRICARE accepted.',
+    description: 'Veteran-owned dental practice in Kalispell, MT. 4.8★ Google rating, 469 reviews. Most major insurance accepted.',
     images: ['/images/hero-homepage.jpg'],
   },
   alternates: { canonical: '/' },
@@ -47,7 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@context": "https://schema.org",
               "@type": "Dentist",
               "name": "Summit Dental Group",
-              "description": "Veteran-owned dental practice serving Kalispell and the Flathead Valley. General, cosmetic, implant, and sedation dentistry. TRICARE and most insurance accepted.",
+              "description": "Veteran-owned dental practice serving Kalispell and the Flathead Valley. General, cosmetic, implant, and sedation dentistry. Most major insurance accepted.",
               "url": SITE_URL,
               "telephone": "+14067524545",
               "image": `${SITE_URL}/images/hero-homepage.jpg`,

@@ -267,7 +267,7 @@ export default async function ArticlePage(
           <div className="cta-strip-inner">
             <div className="cta-strip-text">
               <h2>Ready to Schedule an Appointment?</h2>
-              <p>New patients welcome. TRICARE and most insurance accepted. Same-day emergency care available.</p>
+              <p>New patients welcome. Most major insurance accepted. Same-day emergency care available.</p>
             </div>
             <div className="cta-strip-actions">
               <a href="/contact" className="btn btn-primary">Book Appointment</a>
