@@ -9,49 +9,155 @@
 
 ## Page Build Status
 
+### ✅ Core Pages (Done)
+
+| Page | Route | Status |
+|---|---|---|
+| Homepage | `/` | ✅ DONE — 5 YouTube embeds, logo slider, hero |
+| About Us | `/about-us` | ✅ DONE — YouTube + local video (about-2.mp4) |
+| Franchise Your Business | `/franchise-your-business` | ✅ DONE — Lead-gen form, client grid |
+| Services (index) | `/services` | ✅ DONE — 9 service cards with hover lift |
+| Our Clients | `/our-clients` | ✅ DONE — 50+ brand tiles |
+| Leadership | `/about-us/leadership` | ✅ DONE — 10 bio cards |
+
+### ✅ Services Sub-Pages (Done)
+
+| Page | Route | Status |
+|---|---|---|
+| Franchise Development | `/services/franchise-development` | ✅ DONE |
+| Franchise Sales | `/services/franchise-sales` | ✅ DONE |
+| Management & Support | `/services/management-support` | ✅ DONE |
+| Franchise Business Plan | `/services/franchise-business-plan` | ✅ DONE |
+| Franchise Business Plans | `/services/franchise-business-plans` | ✅ REDIRECT → /services/franchise-business-plan |
+| Efficiency Audit | `/services/efficiency-audit` | ✅ DONE |
+| Territory Mapping | `/services/franchise-territory-mapping` | ✅ DONE |
+| Bookkeeping Support | `/services/franchise-bookkeeping-support` | ✅ DONE |
+| Marketing Overview | `/services/marketing-your-franchise` | ✅ REDIRECT → /services |
+| SEO Services | `/services/marketing-your-franchise/seo` | ✅ DONE |
+| Outsourced Support | `/outsourced-franchise-support-services` | ✅ DONE |
+
+### ✅ FMS Digital Section (Done)
+
+| Page | Route | Status |
+|---|---|---|
+| FMS Digital | `/fms-digital` | ✅ DONE |
+| Lead Generation | `/fms-digital/lead-generation` | ✅ DONE |
+| Branding & Marketing | `/fms-digital/franchise-branding-services` | ✅ DONE |
+| Website Design | `/fms-digital/website-design` | ✅ DONE |
+| Success Stories | `/fms-digital/franchise-success-stories` | ✅ DONE |
+| Social Media | `/fms-digital/franchise-social-media-strategy` | ✅ DONE |
+| Tradeshows | `/fms-digital/franchise-tradeshows-lead-generation` | ✅ DONE |
+| Portfolio | `/our-clients/fmsdigital-portfolio` | ✅ DONE |
+
+### ✅ Learn Hub (Done)
+
+| Page | Route | Status |
+|---|---|---|
+| Learn (index) | `/learn` | ✅ DONE |
+| What is Franchising? | `/learn/what-is-franchising` | ✅ DONE |
+| Why Franchising? | `/learn/why-franchise` | ✅ DONE |
+| Why Franchising (alias) | `/learn/why-franchising` | ✅ REDIRECT → /learn/why-franchise |
+| Industry Facts | `/learn/franchise-industry-facts` | ✅ DONE |
+| Industry Facts (alias) | `/learn/industry-facts` | ✅ REDIRECT → /learn/franchise-industry-facts |
+| How-to Guides (index) | `/learn/how-to-guides` | ✅ DONE |
+| How to Start a Franchise | `/learn/how-to-guides/how-to-start-a-franchise` | ✅ DONE |
+| How to Write Ops Manual | `/learn/how-to-guides/how-to-write-a-franchise-operations-manual` | ✅ DONE |
+| How to Franchise Your Business | `/learn/how-to-franchise-your-business` | ✅ DONE |
+| Resources | `/learn/resources` | ✅ DONE |
+| State Guidelines | `/learn/state-guidelines` | ✅ DONE |
+| State Guidelines (alias) | `/learn/resources/state-guidelines` | ✅ REDIRECT → /learn/state-guidelines |
+| Franchising Guidelines (alias) | `/learn/resources/franchising-guidelines` | ✅ REDIRECT → /learn/resources |
+| FAQs | `/learn/faq` | ✅ DONE |
+| FAQs (alias) | `/learn/faqs` | ✅ REDIRECT → /learn/faq |
+| Webinars | `/webinars` | ✅ DONE |
+
+### ✅ Industries (Done)
+
+| Page | Route | Status |
+|---|---|---|
+| Industries (index) | `/industries` | ✅ DONE |
+| Health & Beauty | `/industries/health-beauty` | ✅ DONE |
+| Children | `/industries/children` | ✅ DONE |
+| Food & Beverage | `/industries/food-beverage` | ✅ DONE |
+| Retail | `/industries/retail` | ✅ DONE |
+| Real Estate | `/industries/real-estate` | ✅ DONE |
+| Services | `/industries/services` | ✅ DONE |
+| Automotive | `/industries/automotive` | ✅ DONE |
+| Home-Based | `/industries/home-based` | ✅ DONE |
+| Home-Based (alias) | `/industries/home-based-franchises` | ✅ REDIRECT → /industries/home-based |
+| Education | `/industries/education` | ✅ DONE |
+| Healthcare | `/industries/healthcare` | ✅ DONE |
+| Home Services | `/industries/home-services` | ✅ DONE |
+
+### ✅ Clients & Proof (Done)
+
+| Page | Route | Status |
+|---|---|---|
+| Our Clients | `/our-clients` | ✅ DONE |
+| Testimonials | `/our-clients/testimonials` | ✅ DONE |
+| Case Studies | `/case-studies` | ✅ DONE |
+
+### ✅ Lead Capture & Tools (Done)
+
+| Page | Route | Status |
+|---|---|---|
+| Franchise Feasibility Q | `/franchise-feasibility-questionnaire` | ✅ DONE — multi-step form |
+| Feasibility (alias) | `/feasibility-questionnaire` | ✅ DONE |
+| ROI Calculator | `/roi-calculator` | ✅ DONE — interactive 5-year model |
+| Franchise Readiness Assessment | `/franchise-readiness-assessment` | ✅ DONE — 10-question scored assessment |
+| Refer a Client | `/refer-a-client` | ✅ DONE |
+
+### ✅ About / Company (Done)
+
+| Page | Route | Status |
+|---|---|---|
+| About Us | `/about-us` | ✅ DONE |
+| About (alias) | `/about` | ✅ REDIRECT → /about-us |
+| Leadership | `/about-us/leadership` | ✅ DONE |
+| Meet the Team | `/meet-the-team` | ✅ DONE |
+| Team (alias) | `/team` | ✅ DONE |
+| Contact | `/contact` | ✅ DONE |
+| About-Us Contact | `/about-us/contact` | ✅ DONE |
+| Locations | `/locations` | ✅ DONE |
+| Events | `/event` | ✅ DONE |
+| News | `/news` | ✅ DONE |
+| Blog (canonical) | `/blog` | ✅ DONE — dynamic [slug] route |
+| Blog (alias) | `/about-us/blog` | ✅ REDIRECT → /blog |
+| Press & Media | `/insights-on-franchise-marketing-systems-press` | ✅ DONE |
+
+### 🔲 Remaining (Low Priority)
+
 | Page | Route | Status | Notes |
 |---|---|---|---|
-| Homepage | `/` | ✅ DONE | All 5 YouTube embeds wired |
-| About Us | `/about-us` | ✅ DONE | YouTube + local video (about-2.mp4) |
-| Franchise Your Business | `/franchise-your-business` | ✅ DONE | Lead-gen form, client grid, 3-column benefits |
-| Services | `/services` | ✅ DONE | 9 service cards with hover lift |
-| Our Clients | `/our-clients` | ✅ DONE | 50+ brand tiles roster |
-| Leadership | `/about-us/leadership` | ✅ DONE | 10 bio cards with initials avatars |
-| Franchise Development | `/services/franchise-development` | 🔲 TODO | Key sub-page |
-| Franchise Sales | `/services/franchise-sales` | 🔲 TODO | |
-| Management & Support | `/services/management-support` | 🔲 TODO | |
-| Franchise Business Plans | `/services/franchise-business-plans` | 🔲 TODO | |
-| Efficiency Audit | `/services/efficiency-audit` | 🔲 TODO | |
-| Territory Mapping | `/services/franchise-territory-mapping` | 🔲 TODO | |
-| Bookkeeping Support | `/services/franchise-bookkeeping-support` | 🔲 TODO | |
-| Outsourced Support | `/outsourced-franchise-support-services` | 🔲 TODO | |
-| Learn Hub | `/learn` | 🔲 TODO | |
-| What is Franchising? | `/learn/what-is-franchising` | 🔲 TODO | |
-| Why Franchising? | `/learn/why-franchising` | 🔲 TODO | |
-| Industry Facts | `/learn/industry-facts` | 🔲 TODO | |
-| How to Start a Franchise | `/learn/how-to-guides/how-to-start-a-franchise` | 🔲 TODO | |
-| FAQs | `/learn/faqs` | 🔲 TODO | |
-| Franchising Guidelines | `/learn/resources/franchising-guidelines` | 🔲 TODO | |
-| State Guidelines | `/learn/resources/state-guidelines` | 🔲 TODO | |
-| ROI Calculator | `/roi-calculator` | 🔲 TODO | Interactive calculator |
-| Feasibility Questionnaire | `/franchise-feasibility-questionnaire` | 🔲 TODO | Multi-step form |
-| FMS Digital | `/fms-digital` | 🔲 TODO | |
-| Lead Generation | `/fms-digital/lead-generation` | 🔲 TODO | |
-| Branding & Marketing | `/fms-digital/franchise-branding-services` | 🔲 TODO | |
-| Website Design | `/fms-digital/website-design` | 🔲 TODO | |
-| SEO & Advertising | `/services/marketing-your-franchise/seo` | 🔲 TODO | |
-| Social Media | `/fms-digital/franchise-social-media-strategy` | 🔲 TODO | |
-| Our Team | `/meet-the-team` | 🔲 TODO | Full team roster |
-| Contact | `/about-us/contact` | 🔲 TODO | Contact form page |
-| Locations | `/locations` | 🔲 TODO | US & international map |
-| Testimonials | `/our-clients/testimonials` | 🔲 TODO | |
-| Case Studies | `/case-studies` | 🔲 TODO | |
-| Blog | `/about-us/blog` | 🔲 TODO | WordPress → Next.js migration |
-| News | `/news` | 🔲 TODO | |
-| Industries (10 sub-pages) | `/industries/*` | 🔲 TODO | Health, Food, Children, etc. |
-| Events | `/event` | 🔲 TODO | |
-| FMS Sourcing | External → fmssourcing.com | N/A | External link |
-| Franchise Funding Solutions | External → franchisefundingsolutions.com | N/A | External link |
+| Digital Marketing Index | `/services/digital-marketing` | 🔲 Stub | Has page, needs content review |
+| Franchise Blog Posts | `/blog/[slug]` | 🔲 Partial | Dynamic template built, no real posts |
+
+---
+
+## SEO Architecture
+
+- **Root layout title template:** `'%s | FMS Franchise Marketing Systems'`
+- **Interactive pages** (ROI Calculator, Readiness Assessment): metadata in sibling `layout.tsx`
+- **Redirect pages**: no metadata (correct — redirects don't need it)
+- **All content pages**: unique `export const metadata` with title + description
+- **Total pages with metadata:** ~65 unique content pages + dynamic blog template
+
+---
+
+## Route Alias / Redirect Map
+
+| Incoming URL | Redirects To | Reason |
+|---|---|---|
+| `/about` | `/about-us` | Legacy duplicate |
+| `/about-us/blog` | `/blog` | Canonical URL consolidation |
+| `/learn/faqs` | `/learn/faq` | URL normalization |
+| `/learn/industry-facts` | `/learn/franchise-industry-facts` | URL normalization |
+| `/learn/why-franchising` | `/learn/why-franchise` | URL normalization |
+| `/learn/resources/state-guidelines` | `/learn/state-guidelines` | URL normalization |
+| `/learn/resources/franchising-guidelines` | `/learn/resources` | URL normalization |
+| `/services/franchise-business-plans` | `/services/franchise-business-plan` | URL normalization |
+| `/services/marketing-your-franchise` | `/services` | No standalone parent page |
+| `/industries/home-based-franchises` | `/industries/home-based` | URL normalization |
 
 ---
 
@@ -84,39 +190,51 @@
 | Heading Font | Montserrat (Google Fonts) |
 | Body Font | Source Sans 3 (Google Fonts) |
 
+All styles are **inline** — no Tailwind, no CSS modules. Every hover effect uses `onMouseEnter` / `onMouseLeave`. 'use client' pages that need metadata use a sibling `layout.tsx`.
+
 ---
 
 ## File Structure
 
 ```
 prospects/fms-franchise/
-├── BUILD-PLAN.md                  ← this file
+├── build-plan.md                  ← this file (updated 2026-03-31)
 ├── SESSION-PROMPT.md              ← LLM continuation prompt
 └── site/
     ├── public/
     │   ├── fms-logo.svg
     │   └── about-2.mp4            ← ⚠️ needs manual copy
     └── src/app/
-        ├── layout.tsx             ← global nav + footer
+        ├── layout.tsx             ← global nav + footer + title template
         ├── globals.css
         ├── page.tsx               ← homepage
         ├── components/
-        │   └── HomePageClient.tsx ← homepage client component
-        ├── about-us/
-        │   ├── page.tsx
-        │   ├── AboutPageClient.tsx
-        │   └── leadership/
-        │       ├── page.tsx
-        │       └── LeadershipClient.tsx
-        ├── franchise-your-business/
-        │   ├── page.tsx
-        │   └── FranchiseYourBusinessClient.tsx
-        ├── services/
-        │   ├── page.tsx
-        │   └── ServicesClient.tsx
-        └── our-clients/
-            ├── page.tsx
-            └── OurClientsClient.tsx
+        │   ├── HomePageClient.tsx
+        │   └── SiteNav.tsx
+        ├── about-us/              ✅ + /leadership, /contact, /blog (redirect)
+        ├── about/                 ✅ redirect → /about-us
+        ├── blog/                  ✅ index + [slug] dynamic route
+        ├── case-studies/          ✅
+        ├── contact/               ✅
+        ├── event/                 ✅
+        ├── feasibility-questionnaire/ ✅
+        ├── fms-digital/           ✅ + 6 sub-pages
+        ├── franchise-feasibility-questionnaire/ ✅
+        ├── franchise-readiness-assessment/ ✅ (layout.tsx handles metadata)
+        ├── franchise-your-business/ ✅
+        ├── industries/            ✅ + 12 sub-pages
+        ├── insights-on-franchise-marketing-systems-press/ ✅
+        ├── learn/                 ✅ + all sub-pages + redirects
+        ├── locations/             ✅
+        ├── meet-the-team/         ✅
+        ├── news/                  ✅
+        ├── our-clients/           ✅ + /testimonials, /fmsdigital-portfolio
+        ├── outsourced-franchise-support-services/ ✅
+        ├── refer-a-client/        ✅
+        ├── roi-calculator/        ✅ (layout.tsx handles metadata)
+        ├── services/              ✅ + 9 sub-pages + /marketing-your-franchise/seo
+        ├── team/                  ✅
+        └── webinars/              ✅
 ```
 
 ---
@@ -126,10 +244,15 @@ prospects/fms-franchise/
 | Date | Work Completed |
 |---|---|
 | 2026-03-31 | Initial build — Next.js 14 project scaffolded, global nav/footer, design system |
-| 2026-03-31 | Homepage built with all 5 YouTube video embeds wired (SWM3XFxTNcs, uLh_iITjQ6Q, E7AY_KrqePA, Y_OkkRZGOAo, GmiHv1yDbLw) |
-| 2026-03-31 | About Us page built with YouTube embed (2JgdVcRwv18) + local video slot (about-2.mp4) |
-| 2026-03-31 | Franchise Your Business, Services, Our Clients, Leadership pages built and verified |
+| 2026-03-31 | Homepage built with all 5 YouTube video embeds wired |
+| 2026-03-31 | About Us, Franchise Your Business, Services, Our Clients, Leadership built |
 | 2026-03-31 | GitHub push: 36 files, 5,958 insertions |
+| 2026-03-31 | 17 more pages added: SEO sub-page, how-to guides, industries/services, blog/[slug] dynamic template, event/news/press, 6 route aliases |
+| 2026-03-31 | /our-clients (upgraded), /testimonials, /case-studies, /fms-digital + sub-pages |
+| 2026-03-31 | /locations, /services/franchise-sales |
+| 2026-03-31 | /about-us/contact, /franchise-feasibility-questionnaire |
+| 2026-03-31 | Full SEO pass: layout.tsx metadata for 'use client' pages, /about redirect, /services/marketing-your-franchise redirect |
+| 2026-03-31 | **Final state: 76 pages built, all nav links resolve, SEO metadata on all content pages** |
 
 ---
 
@@ -139,4 +262,10 @@ prospects/fms-franchise/
 - Build command: `npm run build`
 - Output dir: `.next`
 - Run from: `prospects/fms-franchise/site`
-- Status: 🔲 Not yet deployed — pending core page completion
+- Status: 🔲 Not yet deployed — ready for `npm run build` validation then `vercel deploy --prod`
+
+### Pre-Deployment Checklist
+- [ ] Copy `About 2.mp4` to `public/about-2.mp4`
+- [ ] Run `npm run build` — confirm zero errors
+- [ ] `vercel deploy --prod` from `prospects/fms-franchise/site/`
+- [ ] Update this file with live Vercel URL

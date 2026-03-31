@@ -18,16 +18,29 @@ cd /Users/kelseystuart/local-websites/prospects/fms-franchise/site && npm run de
 
 ---
 
+## Current State (as of 2026-03-31)
+
+**76 pages are built.** All nav links resolve. SEO metadata is in place on all content pages. The site is ready for a production build and Vercel deployment.
+
+See `build-plan.md` for the complete page inventory and route alias map.
+
+---
+
 ## Pages Already Built — Do NOT Rebuild
 
-| Route | File | Status |
-|---|---|---|
-| `/` | `src/app/page.tsx` + `components/HomePageClient.tsx` | ✅ Done |
-| `/about-us` | `src/app/about-us/page.tsx` + `AboutPageClient.tsx` | ✅ Done |
-| `/about-us/leadership` | `src/app/about-us/leadership/page.tsx` + `LeadershipClient.tsx` | ✅ Done |
-| `/franchise-your-business` | `src/app/franchise-your-business/page.tsx` + `FranchiseYourBusinessClient.tsx` | ✅ Done |
-| `/services` | `src/app/services/page.tsx` + `ServicesClient.tsx` | ✅ Done |
-| `/our-clients` | `src/app/our-clients/page.tsx` + `OurClientsClient.tsx` | ✅ Done |
+All pages are built. Do not recreate any existing routes. Check `build-plan.md` for the full list.
+
+Key routes that are **redirects** (not content pages — this is correct):
+- `/about` → `/about-us`
+- `/about-us/blog` → `/blog`
+- `/learn/faqs` → `/learn/faq`
+- `/learn/industry-facts` → `/learn/franchise-industry-facts`
+- `/learn/why-franchising` → `/learn/why-franchise`
+- `/learn/resources/state-guidelines` → `/learn/state-guidelines`
+- `/learn/resources/franchising-guidelines` → `/learn/resources`
+- `/services/franchise-business-plans` → `/services/franchise-business-plan`
+- `/services/marketing-your-franchise` → `/services`
+- `/industries/home-based-franchises` → `/industries/home-based`
 
 ---
 
@@ -54,11 +67,12 @@ cd /Users/kelseystuart/local-websites/prospects/fms-franchise/site && npm run de
 
 ## Code Conventions
 
-1. Every page = a `page.tsx` (server component with `export const metadata`) + a `*Client.tsx` (client component with `'use client'` where needed, otherwise just a regular component)
-2. All navigation links use `import Link from 'next/link'`
-3. Hover effects are applied via `onMouseEnter` / `onMouseLeave` on the element's style object
-4. No external UI libraries — pure HTML/TSX + inline styles only
-5. YouTube embeds use `<iframe>` with `src="https://www.youtube.com/embed/VIDEO_ID"`, `allowFullScreen`, `width="100%"`, `height="100%"`, wrapped in an aspect-ratio container
+1. Every page = a `page.tsx` (server component with `export const metadata`) + optional `*Client.tsx` (client component with `'use client'` where needed)
+2. **Exception:** `'use client'` pages (ROI calculator, readiness assessment) use a sibling `layout.tsx` to export metadata — do not break this pattern
+3. All navigation links use `import Link from 'next/link'`
+4. Hover effects are applied via `onMouseEnter` / `onMouseLeave` on the element's style object
+5. No external UI libraries — pure HTML/TSX + inline styles only
+6. YouTube embeds use `<iframe>` with `src="https://www.youtube.com/embed/VIDEO_ID"`, `allowFullScreen`, `width="100%"`, `height="100%"`, wrapped in an aspect-ratio container
 
 ---
 
@@ -74,85 +88,14 @@ cd /Users/kelseystuart/local-websites/prospects/fms-franchise/site && npm run de
 | 6 | About Us | `2JgdVcRwv18` | Team Introduction |
 | 7 | About Us | Local `about-2.mp4` | ⚠️ Needs `public/about-2.mp4` |
 
-**If a new page needs a video embed**, ask the user:
-> "Give me the URL of the live fmsfranchise.com page that has the video and I'll return the YouTube URL."
-
 ---
 
-## Remaining Pages to Build (Priority Order)
+## What Remains (Low Priority)
 
-### 🔴 HIGH — Build First
-
-**1. `/services/franchise-development`**
-Scrape live URL: https://www.fmsfranchise.com/services/franchise-development/
-Full detail page for the core service. Includes: overview, step-by-step process, CTA.
-
-**2. `/about-us/contact`**
-Scrape live URL: https://www.fmsfranchise.com/about-us/contact/
-Contact form page (name, email, phone, message). Include address + hours.
-
-**3. `/franchise-feasibility-questionnaire`**
-Scrape live URL: https://www.fmsfranchise.com/franchise-feasibility-questionnaire/
-Multi-step lead qualification form. Critical for conversion.
-
-**4. `/locations`**
-Scrape live URL: https://www.fmsfranchise.com/locations/
-Map or grid of US and international FMS offices.
-
-### 🟡 MEDIUM — Service Sub-Pages
-
-Build each as a detail page following the same template as `/services/franchise-development`:
-- `/services/franchise-sales`
-- `/services/management-support`
-- `/services/marketing-your-franchise` 
-- `/services/franchise-business-plans`
-- `/services/efficiency-audit`
-- `/services/franchise-territory-mapping`
-- `/services/franchise-bookkeeping-support`
-- `/outsourced-franchise-support-services`
-
-For each: scrape `https://www.fmsfranchise.com/services/[slug]/` first.
-
-### 🟡 MEDIUM — Learn Hub
-
-Create an index page at `/learn` then sub-pages:
-- `/learn/what-is-franchising`
-- `/learn/why-franchising`
-- `/learn/industry-facts`
-- `/learn/faqs`
-- `/learn/how-to-guides/how-to-start-a-franchise`
-- `/learn/resources/franchising-guidelines`
-- `/learn/resources/state-guidelines`
-
-Scrape each from `https://www.fmsfranchise.com/learn/[slug]/`
-
-### 🟡 MEDIUM — FMS Digital Section
-
-- `/fms-digital` (index)
-- `/fms-digital/lead-generation`
-- `/fms-digital/franchise-branding-services`
-- `/fms-digital/website-design`
-- `/fms-digital/franchise-social-media-strategy`
-- `/fms-digital/franchise-reputation-management`
-
-### 🟢 LOWER — Blog Migration
-
-The FMS WordPress blog at `https://www.fmsfranchise.com/about-us/blog/` has ~50+ posts.
-Strategy:
-1. First build the blog index page at `/about-us/blog` with placeholder cards
-2. Create a dynamic route `[slug]/page.tsx` under `/about-us/blog/`
-3. Migrate top 10 posts by traffic manually as static TSX files
-4. Remaining posts: use a static JSON data file to drive blog card rendering
-
-### 🟢 LOWER — Other Pages
-
-- `/our-clients/testimonials` — video testimonial grid
-- `/case-studies` — case study cards
-- `/meet-the-team` — full 60+ person team roster (scrape `https://www.fmsfranchise.com/meet-the-team/`)
-- `/news` — press coverage / news feed
-- `/industries/*` — 10 industry sub-pages (Health & Wellness, Food & Beverage, Children's Education, etc.)
-- `/event` — events calendar
-- `/roi-calculator` — interactive revenue calculator (client-side math)
+1. **Copy `About 2.mp4`** → `/public/about-2.mp4` (manual step, user must do this)
+2. **Real blog posts** — `/blog/[slug]` dynamic template exists; populate with real articles if desired
+3. **`npm run build`** — run a production build to catch any TypeScript errors before Vercel deploy
+4. **`vercel deploy --prod`** — deploy from `prospects/fms-franchise/site/`
 
 ---
 
@@ -160,7 +103,7 @@ Strategy:
 
 1. Run `npm run build` from within `prospects/fms-franchise/site/` and confirm no build errors
 2. Deploy to Vercel: `vercel deploy --prod` from same directory
-3. Update `BUILD-PLAN.md` with the live URL
+3. Update `build-plan.md` with the live URL
 
 ---
 
