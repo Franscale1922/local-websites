@@ -117,3 +117,7 @@ Skagit County, Whatcom County, San Juan County, Island County, King County, Snoh
 - **Google Search Console set up:** No
 - **Google Analytics set up:** No
 - **Handoff doc sent:** No
+
+## Deploy
+- **Demo URL: https://premier-electrical-svc-demo.vercel.app
+- **Deployed:** 2026-03-27
