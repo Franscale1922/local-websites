@@ -108,11 +108,48 @@ const FAQS = [
       },
     ],
   },
+  {
+    category: 'Franchising vs. Alternatives',
+    questions: [
+      {
+        q: 'What is the difference between franchising and licensing?',
+        a: 'Franchising and licensing both allow third parties to use your brand and system, but they are legally and operationally very different. A franchise relationship grants the franchisee a comprehensive business system — brand, operations, training, support, and ongoing relationship — and is governed by the FTC Franchise Rule, which requires an FDD, registration in many states, and mandatory disclosure periods. Licensing grants permission to use intellectual property (a trademark, a process, a product) without the comprehensive system or the legal requirements. Franchising gives you far more control over brand standards and quality. Licensing is simpler but provides less protection.',
+      },
+      {
+        q: 'What are the biggest risks of franchising and how do I avoid them?',
+        a: 'The four most common failure modes for new franchisors are: 1) Going to market underprepared — building a franchise system before the core business is truly replicable results in struggling franchisees and brand damage. 2) Wrong franchisee selection — selling to anyone willing to buy destroys your system\'s reputation faster than anything else. 3) Undercapitalizing franchise development — building a franchise system is a multi-hundred-thousand dollar investment; treating it as a side project guarantees mediocre results. 4) Not having an active franchise sales program — creating an FDD and waiting for buyers to find you does not work. FMS addresses all four by combining honest feasibility assessment, structured development, and an active in-house franchise sales team.',
+      },
+      {
+        q: 'Can I do this myself without a franchise consultant?',
+        a: 'Legally, yes. Practically, it depends on your background. Most first-time franchisors who attempt to self-develop underestimate three things: the complexity of the FDD (which requires a franchise attorney regardless), the operational work involved in building a trainable system from scratch, and the challenge of finding and closing qualified franchisees. Self-developed systems typically take 30–50% longer to reach their first sale. The ROI calculation usually favors hiring experienced help — the additional capital invested in a full-service firm like FMS is typically recovered in 2–4 fewer months to first franchise fee.',
+      },
+    ],
+  },
 ];
 
 export default function FranchiseFaqPage() {
+  // Build FAQPage schema from FAQS data
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQS.flatMap(cat =>
+      cat.questions.map(item => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.a,
+        },
+      }))
+    ),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="page-hero">
         <div className="container">
           <div className="breadcrumb">

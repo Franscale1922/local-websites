@@ -267,6 +267,92 @@ export default function FranchiseYourBusinessClient() {
         </div>
       </section>
 
+      {/* ── Social Proof — Results that speak ── */}
+      <section style={{ padding: '64px 0', background: '#fff', borderBottom: '1px solid #f0f0f0' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+          <p style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', color: '#4a7c59', marginBottom: '12px', textAlign: 'center' }}>REAL CLIENT RESULTS</p>
+          <h2 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 800, fontSize: 'clamp(22px, 3vw, 34px)', color: '#1a3a1c', textAlign: 'center', marginBottom: '48px', lineHeight: 1.25 }}>
+            What happens when the right business meets the right system.
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '32px' }}>
+            {[
+              {
+                badge: '29 franchises sold — year one',
+                name: 'Kavish Sharma',
+                title: 'Founder, MF Gyros & Burgers',
+                quote: 'Working with Franchise Marketing Systems helped MF Gyros take the next step from a successful single location into a structured franchise brand. The FMS team understood our vision and built the foundation we needed for real expansion.',
+                outcomes: ['Clear franchise development strategy', 'Marketing assets to attract qualified partners', '29 franchises sold in the first year'],
+              },
+              {
+                badge: '13 franchises sold — year one',
+                name: 'Gary & Cathy Trentacosta',
+                title: 'Co-Owners, Bagel Hole',
+                quote: 'FMS structured our entire franchise program and gave us a clear strategy for expansion. The demand from qualified candidates exceeded our expectations.',
+                outcomes: ['Structured program built for scalable growth', 'Strong demand from qualified candidates', '13 franchises sold in the first year'],
+              },
+            ].map((item, i) => (
+              <div key={i} style={{ background: '#f8f8f6', borderRadius: '12px', padding: '36px', border: '1.5px solid #e8e8e4' }}>
+                <div style={{ background: '#35a84a', color: '#fff', fontSize: '12px', fontWeight: 700, fontFamily: 'Montserrat, sans-serif', padding: '4px 14px', borderRadius: '3px', display: 'inline-block', marginBottom: '20px', textTransform: 'uppercase', letterSpacing: '0.07em' }}>
+                  {item.badge}
+                </div>
+                <p style={{ fontFamily: 'Source Sans 3, sans-serif', fontSize: '16px', color: '#444', lineHeight: 1.75, fontStyle: 'italic', marginBottom: '24px' }}>
+                  &ldquo;{item.quote}&rdquo;
+                </p>
+                <div style={{ borderTop: '1px solid #e0e0e0', paddingTop: '16px', marginBottom: '20px' }}>
+                  {item.outcomes.map((o, j) => (
+                    <div key={j} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', marginBottom: '8px', fontSize: '14px', color: '#333' }}>
+                      <span style={{ color: '#35a84a', fontWeight: 900, flexShrink: 0 }}>✓</span>
+                      {o}
+                    </div>
+                  ))}
+                </div>
+                <p style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, color: '#2c4a2e', fontSize: '14px', marginBottom: '2px' }}>{item.name}</p>
+                <p style={{ fontSize: '12px', color: '#4a7c59', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em' }}>{item.title}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Objection Handling — Is this right for you? ── */}
+      <section style={{ padding: '64px 0', background: '#f8f8f6' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 24px' }}>
+          <p style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: '13px', letterSpacing: '2px', textTransform: 'uppercase', color: '#4a7c59', marginBottom: '12px', textAlign: 'center' }}>BEFORE YOU CALL</p>
+          <h2 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 800, fontSize: 'clamp(22px, 3vw, 32px)', color: '#1a3a1c', textAlign: 'center', marginBottom: '16px', lineHeight: 1.25 }}>
+            We understand why you might hesitate.
+          </h2>
+          <p style={{ fontFamily: 'Source Sans 3, sans-serif', fontSize: '17px', color: '#555', textAlign: 'center', maxWidth: '680px', margin: '0 auto 48px', lineHeight: 1.75 }}>
+            Every business owner considering franchising carries the same three fears. Here&apos;s how FMS addresses them directly.
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            {[
+              {
+                fear: '"What if I lose control of my brand?"',
+                answer: 'Franchising actually gives you more legal control over your brand than any other model. Your Franchise Agreement and FDD specify enforceable brand standards. Franchisees who violate them can lose their franchise rights. FMS builds your quality assurance process into the program from day one.',
+              },
+              {
+                fear: '"What if I pay for development and never sell a single franchise?"',
+                answer: 'This is a real risk — and we address it head-on. 67% of franchisors who fail to sell in year one tried to manage franchise sales themselves. FMS includes an active in-house franchise sales team in your engagement. We don\'t just build the system. We help you sell it.',
+              },
+              {
+                fear: '"What if my business isn\'t ready yet?"',
+                answer: 'We\'ll tell you honestly. Our free feasibility consultation is a genuine assessment — we evaluate your unit economics, replicability, and documentation quality. If you\'re not ready, we\'ll tell you what needs to change and when to come back. No hard sell.',
+              },
+            ].map((item, i) => (
+              <div key={i} style={{ background: '#fff', borderRadius: '10px', padding: '28px 32px', border: '1.5px solid #e8e8e4', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '28px', alignItems: 'start' }}>
+                <p style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: '16px', color: '#2c4a2e', lineHeight: 1.4, margin: 0, fontStyle: 'italic' }}>{item.fear}</p>
+                <p style={{ fontFamily: 'Source Sans 3, sans-serif', fontSize: '15px', color: '#555', lineHeight: 1.7, margin: 0 }}>{item.answer}</p>
+              </div>
+            ))}
+          </div>
+          <div style={{ textAlign: 'center', marginTop: '40px' }}>
+            <a href="#form" style={{ display: 'inline-block', background: '#2c4a2e', color: '#fff', padding: '16px 48px', borderRadius: '6px', fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: '15px', letterSpacing: '1px', textTransform: 'uppercase', textDecoration: 'none' }}>
+              Schedule My Free Consultation
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Client Work Showcase */}
       <section style={{ padding: '80px 0', background: '#f8f8f6' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>

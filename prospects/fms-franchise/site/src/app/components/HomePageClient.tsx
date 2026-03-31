@@ -160,7 +160,7 @@ export default function HomePageClient() {
             <div style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '999px', padding: '0.5rem 1.5rem', flexWrap: 'wrap' }}>
               {[
                 { num: 'Helped franchise', bold: '11,340+ units' },
-                { num: 'Developed', bold: '1,579 brands' },
+                { num: 'Developed', bold: '979 brands' },
                 { num: 'Guided', bold: '234 brands to successful exits, up to $350M' },
               ].map((item, i) => (
                 <span key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', padding: '0 0.75rem' }}>
@@ -175,14 +175,17 @@ export default function HomePageClient() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }} className="hero-grid">
             {/* Left — copy */}
             <div>
-              <h1 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 800, fontSize: 'clamp(1.9rem, 3.8vw, 3.1rem)', color: '#fff', lineHeight: 1.15, marginBottom: '1.25rem' }}>
-                At FMS, every member of the team is dedicated to maximizing the return on the investment you make with us – and that means selling franchises.
+              <h1 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 800, fontSize: 'clamp(1.9rem, 3.8vw, 3.1rem)', color: '#fff', lineHeight: 1.15, marginBottom: '1rem' }}>
+                You built a business that works. Now let&apos;s turn it into a system that runs in 50 locations.
               </h1>
+              <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.92rem', marginBottom: '1.25rem', fontStyle: 'italic', lineHeight: 1.6 }}>
+                For business owners with a proven model and at least one profitable location.
+              </p>
               <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.05rem', lineHeight: 1.75, marginBottom: '0.75rem' }}>
-                As pioneers of the end-to-end franchise development model, we&apos;ve sold the most &ldquo;first franchises&rdquo; worldwide.
+                As pioneers of the end-to-end franchise development model, FMS has franchised more first-time concepts than any other firm — handling development, marketing, and sales under one roof.
               </p>
               <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.05rem', lineHeight: 1.75, marginBottom: '1.5rem' }}>
-                From strategic planning and legal setup to high-impact marketing and in-house sales, our comprehensive approach empowers you to focus on your core business while we help drive franchise growth.
+                From strategic planning and legal setup to high-impact marketing and in-house franchise sales, we handle every phase so you can stay focused on running your business while we grow your brand.
               </p>
               <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.95rem', marginBottom: '0.5rem', fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}>
                 One franchise sale can create decades of ongoing value:

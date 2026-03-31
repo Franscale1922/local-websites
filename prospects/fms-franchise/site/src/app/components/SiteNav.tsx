@@ -8,21 +8,23 @@ import Image from 'next/image';
 const NAV = [
   {
     label: 'Services',
-    href: 'https://www.fmsfranchise.com/services/',
-    cols: 2,
+    href: '/services',
+    cols: 3,
     groups: [
       {
+        heading: 'Franchise Services',
+        parentHref: '/services',
         items: [
           { label: 'Franchise Development', href: '/services/franchise-development' },
           { label: 'Franchise Sales', href: '/services/franchise-sales' },
           { label: 'Management & Support', href: '/services/management-support' },
-          { label: 'FMS Sourcing', href: 'https://www.fmssourcing.com/', external: true },
-          { label: 'Franchise Funding Solutions', href: 'https://franchisefundingsolutions.com/', external: true },
           { label: 'Franchise Business Plan', href: '/services/franchise-business-plans' },
           { label: 'Efficiency Audit', href: '/services/efficiency-audit' },
           { label: 'Franchise Bookkeeping Support', href: '/services/franchise-bookkeeping-support' },
           { label: 'Franchise Territory Mapping', href: '/services/franchise-territory-mapping' },
           { label: 'Outsourced Franchise Support', href: '/outsourced-franchise-support-services' },
+          { label: 'FMS Sourcing', href: 'https://www.fmssourcing.com/', external: true },
+          { label: 'Franchise Funding Solutions', href: 'https://franchisefundingsolutions.com/', external: true },
         ],
       },
       {
@@ -39,6 +41,21 @@ const NAV = [
           { label: 'Home-based Franchises', href: '/industries/home-based-franchises' },
           { label: 'Education', href: '/industries/education' },
           { label: 'Healthcare', href: '/industries/healthcare' },
+        ],
+      },
+      {
+        heading: 'Digital Marketing',
+        parentHref: '/fms-digital',
+        items: [
+          { label: 'Digital Marketing Overview', href: '/fms-digital' },
+          { label: 'Lead Generation', href: '/fms-digital/lead-generation' },
+          { label: 'Branding & Marketing', href: '/fms-digital/franchise-branding-services' },
+          { label: 'Website Design', href: '/fms-digital/website-design' },
+          { label: 'SEO & Digital Advertising', href: '/services/marketing-your-franchise/seo' },
+          { label: 'Social Media Strategy', href: '/fms-digital/franchise-social-media-strategy' },
+          { label: 'Franchise Tradeshows', href: '/fms-digital/franchise-tradeshows-lead-generation' },
+          { label: 'Success Stories', href: '/fms-digital/franchise-success-stories' },
+          { label: 'Portfolio', href: '/our-clients/fmsdigital-portfolio' },
         ],
       },
     ],
@@ -60,27 +77,7 @@ const NAV = [
           { label: 'Franchise Your Business ROI Calculator', href: '/roi-calculator' },
           { label: 'Franchising Guidelines', href: '/learn/resources/franchising-guidelines' },
           { label: 'State Guidelines', href: '/learn/resources/state-guidelines' },
-          { label: 'Franchise Feasibility Questionnaire', href: '/franchise-feasibility-questionnaire' },
-        ],
-      },
-    ],
-  },
-  {
-    label: 'FMS Digital',
-    href: '/fms-digital',
-    cols: 1,
-    groups: [
-      {
-        items: [
-          { label: 'Overview', href: '/fms-digital' },
-          { label: 'Lead Generation', href: '/fms-digital/lead-generation' },
-          { label: 'Branding & Marketing', href: '/fms-digital/franchise-branding-services' },
-          { label: 'Website Design', href: '/fms-digital/website-design' },
-          { label: 'Success Stories', href: '/fms-digital/franchise-success-stories' },
-          { label: 'SEO and Digital Advertising', href: '/services/marketing-your-franchise/seo' },
-          { label: 'Social Media', href: '/fms-digital/franchise-social-media-strategy' },
-          { label: 'Tradeshows', href: '/fms-digital/franchise-tradeshows-lead-generation' },
-          { label: 'Portfolio', href: '/our-clients/fmsdigital-portfolio' },
+          { label: '★ Franchise Feasibility Questionnaire', href: '/franchise-feasibility-questionnaire' },
         ],
       },
     ],
@@ -114,11 +111,11 @@ const NAV = [
           { label: 'Blog', href: '/about-us/blog' },
           { label: 'News', href: '/news' },
           { label: 'Press & Media Coverage', href: '/insights-on-franchise-marketing-systems-press' },
+          { label: 'Locations', href: '/locations' },
         ],
       },
     ],
   },
-  { label: 'Locations', href: '/locations', cols: 0, groups: [] },
 ];
 
 export default function SiteNav() {
@@ -249,13 +246,15 @@ export default function SiteNav() {
                 {item.groups.length > 0 && openNav === item.label && (
                   <div
                     style={{
-                      position: 'absolute', top: '100%', left: 0,
+                      position: 'absolute', top: '100%',
+                      left: item.cols > 2 ? '-100px' : '0',
                       background: '#2d4135', border: '1px solid rgba(255,255,255,0.1)',
                       borderTop: '2px solid #35a84a',
                       borderRadius: '0 0 8px 8px',
                       padding: '0.75rem 0',
                       boxShadow: '0 8px 32px rgba(0,0,0,0.35)',
-                      zIndex: 999, minWidth: '200px',
+                      zIndex: 999,
+                      minWidth: item.cols > 2 ? '680px' : item.cols > 1 ? '440px' : '220px',
                       display: item.cols > 1 ? 'flex' : 'block',
                       gap: item.cols > 1 ? '0' : undefined,
                     }}
@@ -263,14 +262,15 @@ export default function SiteNav() {
                     {item.groups.map((group, gi) => (
                       <div key={gi} style={{
                         minWidth: item.cols > 1 ? '220px' : '220px',
+                        flex: item.cols > 1 ? '1' : undefined,
                         borderLeft: gi > 0 ? '1px solid rgba(255,255,255,0.08)' : 'none',
                         padding: '0.25rem 0',
                       }}>
-                        {group.heading && (
+                        {('heading' in group) && group.heading && (
                           <div style={{ padding: '0.35rem 1.1rem 0.35rem', fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#eebc4a', fontFamily: 'Montserrat, sans-serif' }}>
-                            {group.parentHref ? (
-                              <Link href={group.parentHref} style={{ color: '#eebc4a' }}>{group.heading}</Link>
-                            ) : group.heading}
+                            {('parentHref' in group) && group.parentHref ? (
+                              <Link href={group.parentHref as string} style={{ color: '#eebc4a' }}>{group.heading as string}</Link>
+                            ) : (group.heading as string)}
                           </div>
                         )}
                         {group.items.map((sub) => (
