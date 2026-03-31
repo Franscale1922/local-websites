@@ -105,7 +105,7 @@ export default function ContactClient() {
       {/* ── Form + Info ── */}
       <section style={{ background: '#f8f8f6', padding: '5rem 0' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }} className="contact-grid">
 
             {/* Left: Contact Form */}
             <div>
@@ -152,7 +152,7 @@ export default function ContactClient() {
                   </div>
 
                   {/* Row: Email + Phone */}
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }} className="contact-subgrid">
                     <div>
                       <label style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600, fontSize: '0.8rem', color: '#1a3a1c', display: 'block', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                         Email Address *
@@ -405,7 +405,8 @@ export default function ContactClient() {
 
       <style jsx global>{`
         @media (max-width: 768px) {
-          .contact-grid { grid-template-columns: 1fr !important; }
+          .contact-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+          .contact-subgrid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </div>

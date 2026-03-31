@@ -46,7 +46,8 @@ export default function FranchiseYourBusinessClient() {
             gridTemplateColumns: '1fr 1fr',
             gap: '60px',
             alignItems: 'center',
-          }}>
+          }} className="fyb-hero-grid">
+
             {/* Left: Copy */}
             <div>
               <p style={{
@@ -159,7 +160,7 @@ export default function FranchiseYourBusinessClient() {
                     marginBottom: '24px',
                   }}>Get your free franchise consultation today.</p>
                   <form onSubmit={handleSubmit}>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '16px' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '16px' }} className="fyb-name-row">
                       <div>
                         <label style={labelStyle}>First Name *</label>
                         <input
@@ -339,7 +340,7 @@ export default function FranchiseYourBusinessClient() {
                 answer: 'We\'ll tell you honestly. Our free feasibility consultation is a genuine assessment — we evaluate your unit economics, replicability, and documentation quality. If you\'re not ready, we\'ll tell you what needs to change and when to come back. No hard sell.',
               },
             ].map((item, i) => (
-              <div key={i} style={{ background: '#fff', borderRadius: '10px', padding: '28px 32px', border: '1.5px solid #e8e8e4', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '28px', alignItems: 'start' }}>
+              <div key={i} style={{ background: '#fff', borderRadius: '10px', padding: '28px 32px', border: '1.5px solid #e8e8e4', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '28px', alignItems: 'start' }} className="fyb-objection-row">
                 <p style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: '16px', color: '#2c4a2e', lineHeight: 1.4, margin: 0, fontStyle: 'italic' }}>{item.fear}</p>
                 <p style={{ fontFamily: 'Source Sans 3, sans-serif', fontSize: '15px', color: '#555', lineHeight: 1.7, margin: 0 }}>{item.answer}</p>
               </div>
@@ -421,7 +422,8 @@ export default function FranchiseYourBusinessClient() {
             display: 'grid',
             gridTemplateColumns: '1fr 1fr 1fr',
             gap: '40px',
-          }}>
+          }} className="fyb-biz-case">
+
             <div>
               <div style={{
                 width: '56px',
@@ -562,6 +564,19 @@ export default function FranchiseYourBusinessClient() {
           </p>
         </div>
       </section>
+      {/* ── Mobile responsive overrides for inline grids ── */}
+      <style jsx global>{`
+        @media (max-width: 768px) {
+          .fyb-hero-grid {
+            grid-template-columns: 1fr !important;
+            gap: 2rem !important;
+          }
+          .fyb-hero-grid > div:last-child { order: -1; }
+          .fyb-objection-row { grid-template-columns: 1fr !important; gap: 1rem !important; }
+          .fyb-biz-case { grid-template-columns: 1fr !important; }
+          .fyb-name-row { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </main>
   );
 }

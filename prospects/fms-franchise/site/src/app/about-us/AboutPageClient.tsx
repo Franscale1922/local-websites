@@ -204,15 +204,26 @@ export default function AboutPageClient() {
           </div>
         </div>
       </section>
-
       {/* Mobile grid override */}
       <style jsx global>{`
         @media (max-width: 768px) {
+          section > div > div[style*="grid-template-columns:1fr 1fr"],
           section > div > div[style*="grid-template-columns: 1fr 1fr"] {
             grid-template-columns: 1fr !important;
           }
+          section > div > div[style*="grid-template-columns:repeat(3, 1fr)"],
+          section > div > div[style*="grid-template-columns: repeat(3, 1fr)"] {
+            grid-template-columns: 1fr !important;
+          }
+          section > div > div[style*="grid-template-columns:repeat(4, 1fr)"],
           section > div > div[style*="grid-template-columns: repeat(4, 1fr)"] {
             grid-template-columns: 1fr 1fr !important;
+          }
+        }
+        @media (max-width: 480px) {
+          section > div > div[style*="grid-template-columns:repeat(4, 1fr)"],
+          section > div > div[style*="grid-template-columns: repeat(4, 1fr)"] {
+            grid-template-columns: 1fr !important;
           }
         }
       `}</style>

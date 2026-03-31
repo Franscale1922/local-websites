@@ -315,7 +315,7 @@ export default function HomePageClient() {
           {/* Video testimonials — with embed */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
             {TESTIMONIALS.filter(t => t.videoId).map((t, i) => (
-              <div key={t.id} className="reveal" style={{
+              <div key={t.id} className="reveal fms-testimonial-video-row" style={{
                 display: 'grid',
                 gridTemplateColumns: i % 2 === 0 ? '1fr 1fr' : '1fr 1fr',
                 gap: '3rem',

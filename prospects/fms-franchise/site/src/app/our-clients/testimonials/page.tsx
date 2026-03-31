@@ -150,7 +150,7 @@ export default function TestimonialsPage() {
         <div className="container">
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
             {TESTIMONIALS.map((t, i) => (
-              <div key={t.name} style={{ background: i % 2 === 0 ? '#f8f8f6' : '#fff', border: '1.5px solid #e0e8e2', borderRadius: '20px', overflow: 'hidden', display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '0' }}>
+              <div key={t.name} style={{ background: i % 2 === 0 ? '#f8f8f6' : '#fff', border: '1.5px solid #e0e8e2', borderRadius: '20px', overflow: 'hidden', display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '0' }} className="testimonial-card">
                 {/* Left panel */}
                 <div style={{ background: 'linear-gradient(135deg, #1a3a1c, #2c4a2e)', padding: '2.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                   <div>
@@ -224,6 +224,13 @@ export default function TestimonialsPage() {
           </div>
         </div>
       </section>
+      <style>{`
+        @media (max-width: 768px) {
+          .testimonial-card {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </>
   );
 }
