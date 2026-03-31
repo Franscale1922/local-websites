@@ -149,7 +149,7 @@ export default function ServicesIndustryPage() {
               { label: 'Retail', href: '/industries/retail' },
               { label: 'Real Estate', href: '/industries/real-estate' },
               { label: 'Automotive', href: '/industries/automotive' },
-              { label: 'Home-Based', href: '/industries/home-based' },
+              { label: 'Home-Based', href: '/industries/home-based-franchises' },
               { label: 'Education', href: '/industries/education' },
               { label: 'Healthcare', href: '/industries/healthcare' },
               { label: 'Home Services', href: '/industries/home-services' },

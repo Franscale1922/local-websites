@@ -72,7 +72,7 @@ const INDUSTRIES = [
   },
   {
     name: 'Home-Based',
-    slug: 'home-based',
+    slug: 'home-based-franchises',
     desc: 'Low-overhead, home-operated service concepts. B2C and B2B services that require minimal physical infrastructure — fastest to scale.',
     examples: 'Get Up & Go Kayak, RocketShelf',
     count: '50+',

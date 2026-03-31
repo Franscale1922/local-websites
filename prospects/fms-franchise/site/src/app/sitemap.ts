@@ -34,13 +34,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/services`, changeFrequency: 'monthly', priority: MEDIUM },
     { url: `${BASE_URL}/services/franchise-development`, changeFrequency: 'monthly', priority: HIGH },
     { url: `${BASE_URL}/services/franchise-sales`, changeFrequency: 'monthly', priority: HIGH },
-    { url: `${BASE_URL}/services/franchise-business-plan`, changeFrequency: 'monthly', priority: MEDIUM },
+    { url: `${BASE_URL}/services/franchise-business-plans`, changeFrequency: 'monthly', priority: MEDIUM },
     { url: `${BASE_URL}/services/franchise-territory-mapping`, changeFrequency: 'monthly', priority: MEDIUM },
     { url: `${BASE_URL}/services/management-support`, changeFrequency: 'monthly', priority: MEDIUM },
     { url: `${BASE_URL}/services/efficiency-audit`, changeFrequency: 'monthly', priority: MEDIUM },
     { url: `${BASE_URL}/services/franchise-bookkeeping-support`, changeFrequency: 'monthly', priority: MEDIUM },
+    { url: `${BASE_URL}/services/marketing-your-franchise`, changeFrequency: 'monthly', priority: MEDIUM },
     { url: `${BASE_URL}/services/marketing-your-franchise/seo`, changeFrequency: 'monthly', priority: MEDIUM },
     { url: `${BASE_URL}/outsourced-franchise-support-services`, changeFrequency: 'monthly', priority: MEDIUM },
+    { url: `${BASE_URL}/international`, changeFrequency: 'monthly', priority: MEDIUM },
 
     // ── FMS Digital ──
     { url: `${BASE_URL}/fms-digital`, changeFrequency: 'monthly', priority: MEDIUM },
