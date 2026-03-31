@@ -262,10 +262,13 @@ prospects/fms-franchise/
 - Build command: `npm run build`
 - Output dir: `.next`
 - Run from: `prospects/fms-franchise/site`
-- Status: 🔲 Not yet deployed — ready for `npm run build` validation then `vercel deploy --prod`
+- Status: ✅ **DEPLOYED TO PRODUCTION — 2026-03-31**
+- **Production URL:** https://site-ruby-five-98.vercel.app
+- **Inspect URL:** https://vercel.com/franscale1922s-projects/site/2u4K1txdBLDNgvj3hQjPNBa5t2X4
+- Vercel project: `franscale1922s-projects/site`
 
 ### Pre-Deployment Checklist
-- [ ] Copy `About 2.mp4` to `public/about-2.mp4`
-- [ ] Run `npm run build` — confirm zero errors
-- [ ] `vercel deploy --prod` from `prospects/fms-franchise/site/`
-- [ ] Update this file with live Vercel URL
+- [x] Run `npm run build` — 89 pages, zero errors ✅
+- [x] `vercel deploy --prod` from `prospects/fms-franchise/site/` ✅
+- [x] Live URL confirmed ✅
+- [ ] Copy `About 2.mp4` to `public/about-2.mp4` — file not found on disk, pending client asset

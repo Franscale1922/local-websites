@@ -19,5 +19,11 @@
     "@types/react-dom": "^18",
     "typescript": "^5",
     "vercel": "^50.35.0"
-  }
+  },
+  "browserslist": [
+    ">0.3%",
+    "last 2 versions",
+    "not dead",
+    "not op_mini all"
+  ]
 }
