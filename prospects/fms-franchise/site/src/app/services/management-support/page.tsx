@@ -2,8 +2,17 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Franchise Management & Support Services — FMS Franchise',
-  description: 'FMS provides ongoing franchise management and support: franchisee training, discovery days, brand standards compliance, and operational systems. 234 successful exits.',
+  title: 'Franchise Management & Support Services | FMS Franchise',
+  description: 'FMS provides ongoing franchise management and support: franchisee onboarding, training, discovery days, brand standards compliance, and operational systems. 234 successful exits.',
+  alternates: {
+    canonical: 'https://www.fmsfranchise.com/services/management-support',
+  },
+  openGraph: {
+    title: 'Franchise Management & Support Services | FMS Franchise',
+    description: 'Ongoing franchise management and support services: franchisee onboarding, training, discovery days, brand compliance, and advisory councils. 234 successful exits.',
+    url: 'https://www.fmsfranchise.com/services/management-support',
+    images: [{ url: '/icons/og-image.png', width: 1200, height: 630, alt: 'FMS Franchise Management and Support Services' }],
+  },
 };
 
 const SUPPORT_PILLARS = [

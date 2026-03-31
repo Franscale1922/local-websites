@@ -2,8 +2,17 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Franchise Development Services — Build Your Franchise System',
-  description: 'FMS Franchise Development covers feasibility analysis, FDD preparation, operations manuals, territory design, and full franchise launch support. 900+ brands developed.',
+  title: 'Franchise Development Services — Build Your Franchise System | FMS',
+  description: 'FMS builds complete franchise systems from feasibility study to first franchise sale. FDD preparation, operations manuals, territory design, and launch support. 900+ brands developed.',
+  alternates: {
+    canonical: 'https://www.fmsfranchise.com/services/franchise-development',
+  },
+  openGraph: {
+    title: 'Franchise Development Services | FMS Franchise Marketing Systems',
+    description: 'FMS builds complete franchise systems from feasibility study to first franchise sale. 900+ brands developed since 2009.',
+    url: 'https://www.fmsfranchise.com/services/franchise-development',
+    images: [{ url: '/icons/og-image.png', width: 1200, height: 630, alt: 'FMS Franchise Development Services' }],
+  },
 };
 
 const STEPS = [
@@ -45,9 +54,55 @@ const PROOF = [
   },
 ];
 
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://www.fmsfranchise.com/services/franchise-development#service',
+  name: 'Franchise Development',
+  serviceType: 'Franchise Development Consulting',
+  provider: {
+    '@type': 'Organization',
+    '@id': 'https://www.fmsfranchise.com/#organization',
+    name: 'Franchise Marketing Systems',
+  },
+  description: 'End-to-end franchise development services: franchise feasibility study, franchise model design, FDD preparation, operations manual development (400+ pages), franchisee training program, territory mapping, state registration, and franchise launch kit. 900+ brands developed since 2009.',
+  areaServed: { '@type': 'Country', name: 'United States' },
+  url: 'https://www.fmsfranchise.com/services/franchise-development',
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Franchise Development Services',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Franchise Feasibility Study' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Franchise Disclosure Document (FDD) Preparation' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Operations Manual Development' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Franchisee Training Program Design' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Franchise Territory Mapping' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Franchise State Registration' } },
+    ],
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.fmsfranchise.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.fmsfranchise.com/services' },
+    { '@type': 'ListItem', position: 3, name: 'Franchise Development' },
+  ],
+};
+
 export default function FranchiseDevelopmentPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Hero */}
       <div className="page-hero">
         <div className="container">

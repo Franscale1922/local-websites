@@ -2,8 +2,17 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Franchise Education Hub — Learn Everything About Franchising',
-  description: 'The FMS Franchise Learn Hub: what is franchising, why franchise your business, how to franchise, industry facts, state guidelines, and FAQs. Free resources.',
+  title: 'Franchise Education Hub — Learn Everything About Franchising | FMS',
+  description: 'The FMS Franchise Learn Hub: what is franchising, why franchise your business, how to franchise, industry facts, state guidelines, and FAQs. Free educational resources from 900+ brand experts.',
+  alternates: {
+    canonical: 'https://www.fmsfranchise.com/learn',
+  },
+  openGraph: {
+    title: 'Franchise Education Hub | FMS Franchise Marketing Systems',
+    description: 'Free franchise education resources: what is franchising, why franchise, how to franchise your business, industry facts, FAQs, and more.',
+    url: 'https://www.fmsfranchise.com/learn',
+    images: [{ url: '/icons/og-image.png', width: 1200, height: 630, alt: 'FMS Franchise Education Hub' }],
+  },
 };
 
 const LEARN_ARTICLES = [

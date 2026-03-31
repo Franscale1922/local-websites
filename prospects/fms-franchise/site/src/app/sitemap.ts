@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const BASE_URL = 'https://site-ruby-five-98.vercel.app';
+const BASE_URL = 'https://www.fmsfranchise.com';
 
 
 // Priority groups

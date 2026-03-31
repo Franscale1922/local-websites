@@ -2,13 +2,103 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'What Is Franchising? A Complete Guide for Business Owners',
-  description: 'Understand exactly how franchising works — the legal structure, the roles of franchisor and franchisee, and why franchising is one of the most proven business expansion models in history.',
+  title: 'What Is Franchising? Complete Guide for Business Owners | FMS',
+  description: 'Franchising is when a business owner licenses their brand, systems, and processes to independent operators who invest their own capital. Learn how franchising works, the FDD, and how money flows.',
+  alternates: {
+    canonical: 'https://www.fmsfranchise.com/learn/what-is-franchising',
+  },
+  openGraph: {
+    title: 'What Is Franchising? A Complete Guide for Business Owners | FMS',
+    description: 'Understand exactly how franchising works — the legal structure, franchisor/franchisee roles, and why it is one of the most proven business expansion models in history.',
+    url: 'https://www.fmsfranchise.com/learn/what-is-franchising',
+    images: [{ url: '/icons/og-image.png', width: 1200, height: 630, alt: 'What Is Franchising? FMS Guide' }],
+  },
+};
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'What Is Franchising? A Complete Guide for Business Owners',
+  description: 'A comprehensive guide to how franchising works: the legal structure, the roles of franchisor and franchisee, the FDD, and why franchising is one of the most proven business expansion models.',
+  url: 'https://www.fmsfranchise.com/learn/what-is-franchising',
+  publisher: {
+    '@type': 'Organization',
+    '@id': 'https://www.fmsfranchise.com/#organization',
+    name: 'Franchise Marketing Systems',
+  },
+  author: {
+    '@type': 'Organization',
+    name: 'Franchise Marketing Systems',
+    url: 'https://www.fmsfranchise.com',
+  },
+  about: { '@type': 'Thing', name: 'Franchising' },
+  inLanguage: 'en-US',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is franchising?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Franchising is a legal and commercial relationship where a business owner (franchisor) licenses their proven brand, systems, and processes to an independent investor (franchisee) who pays a franchise fee and ongoing royalties to operate under the franchisor’s brand.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is a Franchise Disclosure Document (FDD)?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The Franchise Disclosure Document (FDD) is a federally required legal document that must be provided to a prospective franchisee at least 14 days before signing any agreement. The FDD contains 23 required items covering the franchisor’s business history, all fees, territory rights, training obligations, and financial performance representations.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between franchising and licensing?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Franchising creates a comprehensive, ongoing business relationship including a complete operating system, training, support obligations, and quality control enforcement under FTC Franchise Rule. Licensing only grants permission to use intellectual property (a trademark or process) without the system, ongoing relationship, or legal compliance requirements.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do franchisors make money?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Franchisors earn revenue through initial franchise fees ($20,000–$50,000 per franchisee), ongoing royalties (4–9% of franchisee gross sales), marketing fund contributions (1–3% of gross sales), and renewal fees. Royalty income is recurring and scales with the number of franchise units.',
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.fmsfranchise.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Learn', item: 'https://www.fmsfranchise.com/learn' },
+    { '@type': 'ListItem', position: 3, name: 'What Is Franchising?' },
+  ],
 };
 
 export default function WhatIsFranchisingPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="page-hero">
         <div className="container">
           <div className="breadcrumb">

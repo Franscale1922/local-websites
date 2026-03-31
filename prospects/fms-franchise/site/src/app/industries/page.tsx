@@ -2,8 +2,17 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Industries We Franchise — FMS Franchise Consulting',
-  description: 'FMS has franchised businesses across every major industry: food & beverage, health & beauty, healthcare, home services, children, education, retail, automotive, real estate, and more.',
+  title: 'Industries We Franchise — 900+ Brands Across 10 Sectors | FMS',
+  description: 'FMS has franchised 900+ businesses across all major industries: food & beverage, health & beauty, healthcare, home services, children, education, retail, automotive, real estate, and more.',
+  alternates: {
+    canonical: 'https://www.fmsfranchise.com/industries',
+  },
+  openGraph: {
+    title: 'Industries We Franchise | FMS Franchise Marketing Systems',
+    description: 'FMS has franchised businesses in every major industry vertical. If you have a profitable, replicable business model, we have the playbook to franchise it.',
+    url: 'https://www.fmsfranchise.com/industries',
+    images: [{ url: '/icons/og-image.png', width: 1200, height: 630, alt: 'FMS Franchise Industries' }],
+  },
 };
 
 const INDUSTRIES = [

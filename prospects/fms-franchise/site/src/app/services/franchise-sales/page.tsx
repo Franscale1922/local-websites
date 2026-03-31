@@ -2,8 +2,17 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Expert Franchise Sales Company in USA | FMS Franchise',
-  description: "FMS's expert Franchise Sales Consultants will work with you on selling a dynamic & profitable franchise sales process to potential investors.",
+  title: 'Franchise Sales Services — Sell More Franchises, Better | FMS',
+  description: 'FMS franchise sales consultants use a qualification-first approach to attract the right franchisees. Strategic franchise sales for long-term system health. 11,340+ units sold.',
+  alternates: {
+    canonical: 'https://www.fmsfranchise.com/services/franchise-sales',
+  },
+  openGraph: {
+    title: 'Franchise Sales Services | FMS Franchise Marketing Systems',
+    description: 'Strategic franchise sales built for long-term system health. Qualification-first approach. 11,340+ franchise units sold since 2009.',
+    url: 'https://www.fmsfranchise.com/services/franchise-sales',
+    images: [{ url: '/icons/og-image.png', width: 1200, height: 630, alt: 'FMS Franchise Sales Services' }],
+  },
 };
 
 const SALES_OPTIONS = [
@@ -20,9 +29,60 @@ const FAQ = [
   { q: 'What makes FMS different from other franchise sales organizations?', a: 'FMS builds structured franchise sales services around long-term system health. Instead of focusing on volume, we prioritize buyer fit, qualification discipline, and strategic growth alignment to protect brand integrity and franchisee performance.' },
 ];
 
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://www.fmsfranchise.com/services/franchise-sales#service',
+  name: 'Franchise Sales',
+  serviceType: 'Franchise Sales Consulting',
+  provider: {
+    '@type': 'Organization',
+    '@id': 'https://www.fmsfranchise.com/#organization',
+    name: 'Franchise Marketing Systems',
+  },
+  description: 'Strategic franchise sales services: lead qualification, franchise sales process design, pipeline management, and long-term system growth planning. Qualification-first approach to protect brand integrity. 11,340+ franchise units sold.',
+  areaServed: { '@type': 'Country', name: 'United States' },
+  url: 'https://www.fmsfranchise.com/services/franchise-sales',
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.fmsfranchise.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.fmsfranchise.com/services' },
+    { '@type': 'ListItem', position: 3, name: 'Franchise Sales' },
+  ],
+};
+
 export default function FranchiseSalesPage() {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQ.map(item => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="page-hero">
         <div className="container">
           <div className="breadcrumb">

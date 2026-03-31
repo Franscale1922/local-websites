@@ -3,7 +3,16 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Franchise FAQs — 25 Questions Answered Honestly | FMS',
-  description: "The 25 most common questions business owners ask about franchising — answered honestly by FMS franchise consultants with 15+ years of experience and 979 brands franchised.",
+  description: 'The 25 most common questions business owners ask about franchising — answered honestly by FMS franchise consultants with 15+ years of experience and 979 brands franchised.',
+  alternates: {
+    canonical: 'https://www.fmsfranchise.com/learn/faq',
+  },
+  openGraph: {
+    title: 'Franchise FAQs — 25 Questions Answered Honestly | FMS',
+    description: 'Questions about franchising your business? FMS answers the 25 most common franchise questions honestly — including costs, timelines, risks, and what makes a business franchise-ready.',
+    url: 'https://www.fmsfranchise.com/learn/faq',
+    images: [{ url: '/icons/og-image.png', width: 1200, height: 630, alt: 'Franchise FAQs — FMS Franchise Marketing Systems' }],
+  },
 };
 
 const FAQS = [

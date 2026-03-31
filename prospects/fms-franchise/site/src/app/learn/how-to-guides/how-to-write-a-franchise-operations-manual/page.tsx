@@ -3,7 +3,45 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'How to Write a Franchise Operations Manual | FMS Guide',
-  description: 'A complete guide to writing a franchise operations manual — what it must contain, how to structure it, and how to make it actually useful for franchisees. From FMS — 900+ brands franchised.',
+  description: 'A complete guide to writing a franchise operations manual — what it must contain, the 8 core sections, writing best practices, and how to make it useful in the field. From FMS — 900+ brands developed.',
+  alternates: {
+    canonical: 'https://www.fmsfranchise.com/learn/how-to-guides/how-to-write-a-franchise-operations-manual',
+  },
+  openGraph: {
+    title: 'How to Write a Franchise Operations Manual | FMS Guide',
+    description: 'Complete guide to franchise operations manual writing: 8 core sections, best practices, and how to make it genuinely useful for franchisees in the field.',
+    url: 'https://www.fmsfranchise.com/learn/how-to-guides/how-to-write-a-franchise-operations-manual',
+    images: [{ url: '/icons/og-image.png', width: 1200, height: 630, alt: 'How to Write a Franchise Operations Manual — FMS Guide' }],
+  },
+};
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to Write a Franchise Operations Manual',
+  description: 'A step-by-step guide to creating a franchise operations manual that covers the 8 core sections required for a comprehensive, field-ready franchise system document.',
+  totalTime: 'P4M',
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Company Overview & Brand Standards', text: 'Document your mission, vision, values, brand identity guidelines (logo usage, colors, typography), customer service philosophy, and communication style.' },
+    { '@type': 'HowToStep', position: 2, name: 'Site Selection & Build-Out', text: 'Define approved demographics and site criteria, lease negotiation guidelines, build-out specifications and approved vendors, and pre-opening inspection checklist.' },
+    { '@type': 'HowToStep', position: 3, name: 'Equipment & Technology', text: 'List required equipment with specifications, technology system setup (POS, scheduling, CRM), vendor contacts and ordering procedures, and maintenance schedules.' },
+    { '@type': 'HowToStep', position: 4, name: 'Staffing & HR', text: 'Define hiring criteria and interview framework, onboarding procedures, training checklists by role, compensation ranges, and performance management process.' },
+    { '@type': 'HowToStep', position: 5, name: 'Operations Procedures', text: 'Document opening and closing procedures, daily/weekly/monthly checklists, quality control and inspection standards, customer complaint resolution, and event execution.' },
+    { '@type': 'HowToStep', position: 6, name: 'Financial Management', text: 'Cover accounting procedures and approved software, daily cash reconciliation, weekly and monthly reporting requirements, expense approval thresholds, and royalty reporting process.' },
+    { '@type': 'HowToStep', position: 7, name: 'Marketing & Local Promotion', text: 'Define approved local marketing activities, social media guidelines, local partnership guidelines, and a clear list of prohibited marketing activities.' },
+    { '@type': 'HowToStep', position: 8, name: 'Health, Safety & Compliance', text: 'Document health and safety standards, regulatory compliance requirements, incident reporting process, insurance requirements, and record-keeping requirements.' },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.fmsfranchise.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Learn', item: 'https://www.fmsfranchise.com/learn' },
+    { '@type': 'ListItem', position: 3, name: 'How-To Guides', item: 'https://www.fmsfranchise.com/learn/how-to-guides' },
+    { '@type': 'ListItem', position: 4, name: 'How to Write a Franchise Operations Manual' },
+  ],
 };
 
 const SECTIONS_LIST = [
@@ -20,6 +58,14 @@ const SECTIONS_LIST = [
 export default function HowToWriteOperationsManualPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* ── Hero ── */}
       <div className="page-hero">
         <div className="container">

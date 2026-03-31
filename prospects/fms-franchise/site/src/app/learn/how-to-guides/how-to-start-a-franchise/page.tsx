@@ -3,12 +3,58 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'How to Start a Franchise — Complete Step-by-Step Guide | FMS',
-  description: 'How to start a franchise from scratch: feasibility assessment, FDD preparation, operations manual, training programs, and franchise sales. A complete guide from FMS — 900+ brands franchised.',
+  description: 'How to start a franchise from scratch: feasibility assessment, legal documentation (FDD), operations manual, training programs, and franchise sales. A complete guide from FMS — 900+ brands franchised.',
+  alternates: {
+    canonical: 'https://www.fmsfranchise.com/learn/how-to-guides/how-to-start-a-franchise',
+  },
+  openGraph: {
+    title: 'How to Start a Franchise: Complete Step-by-Step Guide | FMS',
+    description: 'Everything you need to know about converting a successful business into a scalable franchise system. 8-step guide from FMS consultants with 25+ years of experience.',
+    url: 'https://www.fmsfranchise.com/learn/how-to-guides/how-to-start-a-franchise',
+    images: [{ url: '/icons/og-image.png', width: 1200, height: 630, alt: 'How to Start a Franchise — FMS Guide' }],
+  },
+};
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to Start a Franchise',
+  description: 'A complete 8-step guide to converting a successful business into a scalable franchise system, from feasibility through your first franchisee signing.',
+  totalTime: 'P24M',
+  step: [
+    { '@type': 'HowToStep', position: 1, name: 'Assess Franchise Feasibility', text: 'Evaluate whether your business model is ready to replicate: proven profitability across 2+ locations for 2+ years, systemizable operations, differentiated brand, and sufficient capital for development.' },
+    { '@type': 'HowToStep', position: 2, name: 'Design the Franchise Structure', text: 'Determine protected territory size, royalty rates (typically 4–8% of gross revenue), initial franchise fees ($25K–$50K), marketing fund contributions, and minimum performance standards.' },
+    { '@type': 'HowToStep', position: 3, name: 'Prepare Legal Documentation (FDD)', text: 'Work with a franchise attorney to prepare the Franchise Disclosure Document (FDD) containing 23 standardized items. Register the FDD in all applicable states (14 registration states require registration before offering franchises).' },
+    { '@type': 'HowToStep', position: 4, name: 'Build the Operations Manual', text: 'Create a comprehensive operations manual (300–500+ pages) covering every aspect of running your business — from opening procedures to customer service standards — in enough detail that a new franchisee can follow it successfully.' },
+    { '@type': 'HowToStep', position: 5, name: 'Develop the Training Program', text: 'Build an initial training program combining classroom instruction, hands-on operational training, and structured on-site opening support. Plan for ongoing training through regional meetings and annual conventions.' },
+    { '@type': 'HowToStep', position: 6, name: 'Launch Franchise Marketing & Sales', text: 'Set up franchise sales infrastructure: development website, franchise portal listings, broker relationships, and content marketing. The typical franchise sales cycle runs 90–150 days from inquiry to signed agreement.' },
+    { '@type': 'HowToStep', position: 7, name: 'Sign Your First Franchisee', text: 'Select your first franchisee carefully — structured interviews, financial verification, and reference checks. Your first 5 franchisees establish your system reputation for the next decade.' },
+    { '@type': 'HowToStep', position: 8, name: 'Build Ongoing Support Systems', text: 'Invest in franchisee support infrastructure: field operations consulting visits, performance benchmarking, franchisee advisory councils, intranet systems, and annual conventions.' },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.fmsfranchise.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Learn', item: 'https://www.fmsfranchise.com/learn' },
+    { '@type': 'ListItem', position: 3, name: 'How-To Guides', item: 'https://www.fmsfranchise.com/learn/how-to-guides' },
+    { '@type': 'ListItem', position: 4, name: 'How to Start a Franchise' },
+  ],
 };
 
 export default function HowToStartFranchisePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* ── Hero ── */}
       <div className="page-hero">
         <div className="container">

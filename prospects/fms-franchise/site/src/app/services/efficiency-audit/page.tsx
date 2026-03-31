@@ -2,8 +2,17 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Franchise Efficiency Audit — Operational Review for Franchisors',
+  title: 'Franchise Efficiency Audit — Operational Review for Franchisors | FMS',
   description: 'FMS conducts deep franchise efficiency audits to identify operational gaps, profitability issues, and replicability problems before they cost you franchisees.',
+  alternates: {
+    canonical: 'https://www.fmsfranchise.com/services/efficiency-audit',
+  },
+  openGraph: {
+    title: 'Franchise Efficiency Audit | FMS Franchise Marketing Systems',
+    description: 'Identify operational gaps, profitability issues, and replicability problems with a comprehensive FMS franchise efficiency audit.',
+    url: 'https://www.fmsfranchise.com/services/efficiency-audit',
+    images: [{ url: '/icons/og-image.png', width: 1200, height: 630, alt: 'FMS Franchise Efficiency Audit' }],
+  },
 };
 
 export default function EfficiencyAuditPage() {

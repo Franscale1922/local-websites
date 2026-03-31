@@ -2,13 +2,56 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Franchise Business Plan Services — Financial Planning for Franchisors',
-  description: 'FMS creates professional franchise business plans with financial projections, unit economics modeling, and investor-ready formatting. Built for franchisors.',
+  title: 'Franchise Business Plans — Financial Modeling for Franchisors | FMS',
+  description: 'FMS creates investor-ready franchise business plans with unit economics modeling, 5-year projections, and FDD-compatible financial disclosures. Built from 900+ real franchise systems.',
+  alternates: {
+    canonical: 'https://www.fmsfranchise.com/services/franchise-business-plans',
+  },
+  openGraph: {
+    title: 'Franchise Business Plans | FMS Franchise Marketing Systems',
+    description: 'Investor-ready franchise business plans with unit economics modeling and 5-year projections. Built from 900+ real franchise systems.',
+    url: 'https://www.fmsfranchise.com/services/franchise-business-plans',
+    images: [{ url: '/icons/og-image.png', width: 1200, height: 630, alt: 'FMS Franchise Business Plans' }],
+  },
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://www.fmsfranchise.com/services/franchise-business-plans#service',
+  name: 'Franchise Business Plans',
+  serviceType: 'Franchise Business Planning',
+  provider: {
+    '@type': 'Organization',
+    '@id': 'https://www.fmsfranchise.com/#organization',
+    name: 'Franchise Marketing Systems',
+  },
+  description: 'Professional franchise business plans with unit economics modeling, 5-year financial projections, market analysis, competitive landscape, and investor-ready formatting. FDD-compatible financial disclosures built from 900+ franchise system data.',
+  areaServed: { '@type': 'Country', name: 'United States' },
+  url: 'https://www.fmsfranchise.com/services/franchise-business-plans',
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.fmsfranchise.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.fmsfranchise.com/services' },
+    { '@type': 'ListItem', position: 3, name: 'Franchise Business Plans' },
+  ],
 };
 
 export default function FranchiseBusinessPlanPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="page-hero">
         <div className="container">
           <div className="breadcrumb">

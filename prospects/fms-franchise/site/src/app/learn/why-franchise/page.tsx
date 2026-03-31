@@ -2,13 +2,95 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Why Franchise Your Business? The Data-Driven Case for Franchising',
+  title: 'Why Franchise Your Business? The Data-Backed Case | FMS',
+  description: 'Franchise your business for faster growth, reduced capital requirements, owner-operator motivation, and 3x–6x higher exit multiples. Data from 979+ FMS clients since 2009.',
+  alternates: {
+    canonical: 'https://www.fmsfranchise.com/learn/why-franchise',
+  },
+  openGraph: {
+    title: 'Why Franchise Your Business? The Data-Backed Case | FMS',
+    description: 'The proven reasons to franchise: faster growth, reduced capital requirements, distributed risk, motivated owners, and higher exit multiples. From 979+ FMS clients.',
+    url: 'https://www.fmsfranchise.com/learn/why-franchise',
+    images: [{ url: '/icons/og-image.png', width: 1200, height: 630, alt: 'Why Franchise Your Business — FMS Guide' }],
+  },
+};
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Why Franchise Your Business? The Data-Driven Case for Franchising',
   description: 'The proven reasons to franchise your business: faster growth, reduced capital requirements, distributed risk, motivated owner-operators, and higher exit multiples. Data from 979+ FMS clients.',
+  url: 'https://www.fmsfranchise.com/learn/why-franchise',
+  publisher: {
+    '@type': 'Organization',
+    '@id': 'https://www.fmsfranchise.com/#organization',
+    name: 'Franchise Marketing Systems',
+  },
+  author: {
+    '@type': 'Organization',
+    name: 'Franchise Marketing Systems',
+    url: 'https://www.fmsfranchise.com',
+  },
+  about: { '@type': 'Thing', name: 'Franchising' },
+  inLanguage: 'en-US',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Why should I franchise my business instead of opening more locations myself?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Franchising lets your business grow using franchisees\u2019 own capital instead of yours. Each franchisee invests their own money to open and operate a location. Your risk is largely limited to the cost of developing the franchise system — typically far less than opening one additional company-owned location — while your brand expands to 25, 50, or 100 locations.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much more is a franchise system worth at exit than a single-location business?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Franchise systems command 3x–6x EBITDA multiples at exit, compared to lower multiples for single-location businesses. Recurring royalty income is valued similarly to SaaS subscription revenue — predictable and highly attractive to private equity buyers.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'When is franchising NOT the right choice?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Franchising is not the right choice if your business is not consistently profitable (under 12 months of documented profitability), if your operations depend entirely on your personal relationships or skills that cannot be systemized, or if your margins cannot support a 5–7% royalty structure that still lets franchisees earn a solid return.',
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.fmsfranchise.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Learn', item: 'https://www.fmsfranchise.com/learn' },
+    { '@type': 'ListItem', position: 3, name: 'Why Franchise Your Business?' },
+  ],
 };
 
 export default function WhyFranchisePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="page-hero">
         <div className="container">
           <div className="breadcrumb">

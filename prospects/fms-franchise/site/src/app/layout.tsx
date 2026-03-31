@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 // fonts are loaded via @import in globals.css
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://site-ruby-five-98.vercel.app'),
+  metadataBase: new URL('https://www.fmsfranchise.com'),
   title: {
     template: '%s | FMS Franchise Marketing Systems',
     default: 'Franchise Marketing Systems — Full-Service Franchise Consulting',
@@ -39,18 +39,24 @@ export const metadata: Metadata = {
   keywords: ['franchise consulting', 'franchise development', 'franchise marketing', 'how to franchise your business', 'franchise sales'],
 };
 
-const jsonLd = {
+const organizationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
+  '@type': ['Organization', 'ProfessionalService'],
+  '@id': 'https://www.fmsfranchise.com/#organization',
   name: 'Franchise Marketing Systems',
   alternateName: ['FMS Franchise', 'FMS'],
   url: 'https://www.fmsfranchise.com',
-  logo: 'https://www.fmsfranchise.com/wp-content/uploads/2021/08/FMS-logo.png',
+  logo: {
+    '@type': 'ImageObject',
+    url: 'https://www.fmsfranchise.com/wp-content/uploads/2021/08/FMS-logo.png',
+    width: 300,
+    height: 75,
+  },
   telephone: '+1-800-610-0292',
   email: 'info@FranchiseMarketingSystems.com',
   foundingDate: '2009',
   numberOfEmployees: { '@type': 'QuantitativeValue', value: 67 },
-  description: 'Full-service franchise consulting firm. 979+ brands franchised, 11,340 franchise units sold, 234 successful exits. Services: franchise development, franchise sales, management & support, digital marketing.',
+  description: 'Full-service franchise consulting firm specializing in franchise development, franchise sales, and franchise marketing. 979+ brands franchised, 11,340 franchise units sold, 234 successful exits since 2009.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '6110 McFarland Station Dr, Unit 105',
@@ -58,6 +64,33 @@ const jsonLd = {
     addressRegion: 'GA',
     postalCode: '30004',
     addressCountry: 'US',
+  },
+  areaServed: [
+    { '@type': 'Country', name: 'United States' },
+    { '@type': 'Country', name: 'Canada' },
+    'International',
+  ],
+  knowsAbout: [
+    'Franchise Development',
+    'Franchise Disclosure Document (FDD)',
+    'Franchise Sales',
+    'Franchise Marketing',
+    'How to Franchise a Business',
+    'Franchise Operations Manuals',
+    'Territory Mapping',
+    'Franchise Business Plans',
+    'International Franchising',
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Franchise Consulting Services',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Franchise Development', url: 'https://www.fmsfranchise.com/services/franchise-development' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Franchise Sales', url: 'https://www.fmsfranchise.com/services/franchise-sales' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Franchise Business Plans', url: 'https://www.fmsfranchise.com/services/franchise-business-plans' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Franchise Territory Mapping', url: 'https://www.fmsfranchise.com/services/franchise-territory-mapping' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Franchise Marketing', url: 'https://www.fmsfranchise.com/services/marketing-your-franchise' } },
+    ],
   },
   sameAs: [
     'https://twitter.com/FranchiseMkting',
@@ -68,13 +101,31 @@ const jsonLd = {
   ],
 };
 
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://www.fmsfranchise.com/#website',
+  name: 'FMS Franchise Marketing Systems',
+  url: 'https://www.fmsfranchise.com',
+  publisher: { '@id': 'https://www.fmsfranchise.com/#organization' },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: { '@type': 'EntryPoint', urlTemplate: 'https://www.fmsfranchise.com/?s={search_term_string}' },
+    'query-input': 'required name=search_term_string',
+  },
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
       <body>

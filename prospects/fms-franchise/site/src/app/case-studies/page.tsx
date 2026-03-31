@@ -3,10 +3,15 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Franchise Case Studies | FMS Franchise Client Success Stories',
-  description: 'Why FMS? Because franchise success requires strategy, not just paperwork. Read real FMS franchise case studies across food, home services, health, and more.',
+  description: 'Why FMS? Because franchise success requires strategy, not just paperwork. Read real FMS franchise case studies across food, home services, health, education, and more.',
+  alternates: {
+    canonical: 'https://www.fmsfranchise.com/case-studies',
+  },
   openGraph: {
-    title: 'Franchise Case Studies | FMS Franchise',
-    description: 'In-depth franchise case studies from FMS Franchise Marketing Systems — 700+ brands franchised.',
+    title: 'Franchise Case Studies | FMS Franchise Client Success Stories',
+    description: 'In-depth franchise case studies from FMS Franchise Marketing Systems — 900+ brands franchised across every major industry since 2009.',
+    url: 'https://www.fmsfranchise.com/case-studies',
+    images: [{ url: '/icons/og-image.png', width: 1200, height: 630, alt: 'FMS Franchise Case Studies' }],
   },
 };
 

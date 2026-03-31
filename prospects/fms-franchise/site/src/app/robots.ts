@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const SITE_URL = 'https://site-ruby-five-98.vercel.app';
+const SITE_URL = 'https://www.fmsfranchise.com';
 
 export default function robots(): MetadataRoute.Robots {
   return {

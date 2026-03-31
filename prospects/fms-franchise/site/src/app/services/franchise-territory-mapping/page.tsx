@@ -3,7 +3,16 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Franchise Territory Mapping Services | FMS Franchise',
-  description: 'FMS provides full-scope franchise territory mapping services in the US to plan, document, and appropriately structure franchise territories for scalable growth.',
+  description: 'FMS provides full-scope franchise territory mapping: GIS mapping, market analysis, legal documentation, and expansion planning. 900+ territories mapped. Based in Alpharetta, GA.',
+  alternates: {
+    canonical: 'https://www.fmsfranchise.com/services/franchise-territory-mapping',
+  },
+  openGraph: {
+    title: 'Franchise Territory Mapping Services | FMS Franchise',
+    description: 'Full-scope franchise territory mapping: GIS mapping, market analysis, legal documentation, and expansion planning. 900+ territories mapped.',
+    url: 'https://www.fmsfranchise.com/services/franchise-territory-mapping',
+    images: [{ url: '/icons/og-image.png', width: 1200, height: 630, alt: 'FMS Franchise Territory Mapping Services' }],
+  },
 };
 
 const WHAT_WE_DO = [

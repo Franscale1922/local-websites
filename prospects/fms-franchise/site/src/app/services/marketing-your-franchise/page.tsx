@@ -4,11 +4,14 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Marketing Your Franchise | Digital Marketing for Franchisors | FMS',
   description: 'Enhance your franchise model with expert digital marketing guidance from FMS. Strategic planning, franchise research, SEO, branding, and web design for franchise systems.',
+  alternates: {
+    canonical: 'https://www.fmsfranchise.com/services/marketing-your-franchise',
+  },
   openGraph: {
     title: 'Franchise Marketing Services | FMS Franchise',
     description: 'FMS provides comprehensive franchise marketing services — SEO, branding, lead generation, web design, and social media — built specifically for franchisors.',
-    url: 'https://www.fmsfranchise.com/services/marketing-your-franchise/',
-    images: [{ url: '/icons/og-image.png', width: 1200, height: 630 }],
+    url: 'https://www.fmsfranchise.com/services/marketing-your-franchise',
+    images: [{ url: '/icons/og-image.png', width: 1200, height: 630, alt: 'FMS Franchise Marketing Services' }],
   },
 };
 

@@ -2,8 +2,17 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Franchise Industry Facts & Statistics 2026 | FMS',
-  description: 'Current franchise industry data: market size, growth rates, top industries, franchisee success rates, and what the numbers mean for business owners considering franchising.',
+  title: 'Franchise Industry Facts & Statistics 2025–2026 | FMS',
+  description: 'Current franchise industry data: $825B GDP contribution, 8.9M employed, 3,500+ active brands, fastest-growing industries, franchisee success rates, and what the numbers mean for business owners.',
+  alternates: {
+    canonical: 'https://www.fmsfranchise.com/learn/franchise-industry-facts',
+  },
+  openGraph: {
+    title: 'Franchise Industry Facts & Statistics 2025–2026 | FMS',
+    description: 'Current franchise industry data: $825B GDP contribution, 8.9M employed, 3,500+ active brands. Data from IFA 2025 Franchise Business Outlook and FMS portfolio of 979+ brands.',
+    url: 'https://www.fmsfranchise.com/learn/franchise-industry-facts',
+    images: [{ url: '/icons/og-image.png', width: 1200, height: 630, alt: 'Franchise Industry Facts and Statistics 2025-2026' }],
+  },
 };
 
 export default function FranchiseIndustryFactsPage() {

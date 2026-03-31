@@ -2,13 +2,101 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'How to Franchise Your Business — Step-by-Step Guide | FMS',
-  description: 'A complete, honest step-by-step guide to franchising your business — from feasibility study through FDD preparation, operations manual, franchise sales, and first unit launch.',
+  title: 'How to Franchise Your Business: Step-by-Step Guide | FMS',
+  description: 'A complete step-by-step guide to franchising your business: feasibility study, FDD preparation, operations manual, training program, franchise sales, and first unit launch. From FMS — 900+ brands.',
+  alternates: {
+    canonical: 'https://www.fmsfranchise.com/learn/how-to-franchise-your-business',
+  },
+  openGraph: {
+    title: 'How to Franchise Your Business: Step-by-Step Guide | FMS',
+    description: 'From feasibility study to your first signed franchisee — the complete honest guide to franchising your business. Written by FMS consultants. 900+ brands developed.',
+    url: 'https://www.fmsfranchise.com/learn/how-to-franchise-your-business',
+    images: [{ url: '/icons/og-image.png', width: 1200, height: 630, alt: 'How to Franchise Your Business — FMS Step-by-Step Guide' }],
+  },
+};
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to Franchise Your Business',
+  description: 'A complete step-by-step guide to franchising your business from feasibility study through your first signed franchisee. Written by FMS franchise consultants with 900+ brands developed.',
+  totalTime: 'P18M',
+  supply: [],
+  tool: [],
+  step: [
+    {
+      '@type': 'HowToStep',
+      position: 1,
+      name: 'Franchise Feasibility Study & Strategy',
+      text: 'Conduct a professional assessment of your brand, operations, financials, and market opportunity. This phase answers whether franchising is viable, what your franchise fee and royalty structure should be, who your target franchisee is, and what territories to prioritize.',
+      url: 'https://www.fmsfranchise.com/learn/how-to-franchise-your-business#phase-1',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 2,
+      name: 'Operations Manual Development',
+      text: 'Build a comprehensive operations manual (200–400+ pages) that codifies your brand standards, processes, vendor relationships, customer service protocols, and every system that makes your business work. This enables franchisees to replicate your success.',
+      url: 'https://www.fmsfranchise.com/learn/how-to-franchise-your-business#phase-2',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 3,
+      name: 'Training Program Design',
+      text: 'Design a training program that covers initial training (in-person classroom), hands-on operational training, and ongoing skill development. Your training program must turn a new franchisee into a competent operator in 2–4 weeks.',
+      url: 'https://www.fmsfranchise.com/learn/how-to-franchise-your-business#phase-3',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 4,
+      name: 'Franchise Disclosure Document (FDD) Preparation',
+      text: 'Work with a franchise attorney to prepare the federally-required FDD containing 23 Items. Register the FDD in all applicable registration states (14 states require registration before you can offer or sell franchises). This typically takes 6–12 weeks.',
+      url: 'https://www.fmsfranchise.com/learn/how-to-franchise-your-business#phase-4',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 5,
+      name: 'Franchise Marketing & Sales Setup',
+      text: 'Set up your franchise sales platform: development website, lead generation campaigns, franchise sales portal, and discovery process. Define the sales process from first inquiry through signed agreement.',
+      url: 'https://www.fmsfranchise.com/learn/how-to-franchise-your-business#phase-5',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 6,
+      name: 'Franchise Sales — Qualifying & Closing',
+      text: 'Actively source prospective franchisees through portals, brokers, and direct outreach. Qualify candidates against your franchisee profile, manage the FDD disclosure and review period, and close signed franchise agreements.',
+      url: 'https://www.fmsfranchise.com/learn/how-to-franchise-your-business#phase-6',
+    },
+    {
+      '@type': 'HowToStep',
+      position: 7,
+      name: 'Launch, Support & Scale',
+      text: 'Support your franchisees\u2019 success with site selection assistance, pre-opening training, grand opening support, ongoing field visits, annual franchisee conferences, and brand standards compliance programs.',
+      url: 'https://www.fmsfranchise.com/learn/how-to-franchise-your-business#phase-7',
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.fmsfranchise.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Learn', item: 'https://www.fmsfranchise.com/learn' },
+    { '@type': 'ListItem', position: 3, name: 'How to Franchise Your Business' },
+  ],
 };
 
 export default function HowToFranchisePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="page-hero">
         <div className="container">
           <div className="breadcrumb">

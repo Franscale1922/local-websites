@@ -2,8 +2,17 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Franchise Bookkeeping & Accounting Services | FMS Franchise',
-  description: 'Expert franchise bookkeeping and accounting services: recording financial transactions, reconciling bank statements, reports, bills, and payroll for franchisors and franchisees.',
+  title: 'Franchise Bookkeeping & Accounting Support | FMS Franchise',
+  description: 'Expert franchise bookkeeping: royalty tracking, multi-unit financial reporting, payroll, accounts payable, and tax preparation support. Led by Karina Miranda with 12+ years franchise finance experience.',
+  alternates: {
+    canonical: 'https://www.fmsfranchise.com/services/franchise-bookkeeping-support',
+  },
+  openGraph: {
+    title: 'Franchise Bookkeeping & Accounting Support | FMS Franchise',
+    description: 'Expert franchise bookkeeping and accounting support: royalty tracking, multi-unit reporting, payroll, and tax preparation. 12+ years franchise-specific expertise.',
+    url: 'https://www.fmsfranchise.com/services/franchise-bookkeeping-support',
+    images: [{ url: '/icons/og-image.png', width: 1200, height: 630, alt: 'FMS Franchise Bookkeeping and Accounting Support' }],
+  },
 };
 
 const SERVICES = [
