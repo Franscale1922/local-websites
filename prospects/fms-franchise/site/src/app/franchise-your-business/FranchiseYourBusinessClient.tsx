@@ -99,14 +99,13 @@ export default function FranchiseYourBusinessClient() {
                     color: 'rgba(255,255,255,0.9)',
                   }}>
                     <span style={{
-                      display: 'inline-block',
+                      display: 'flex',
                       width: '22px',
                       height: '22px',
                       background: '#c8a84b',
                       borderRadius: '50%',
                       flexShrink: 0,
                       marginTop: '2px',
-                      display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       fontSize: '13px',

@@ -1,12 +1,21 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+interface ResourceItem {
+  title: string;
+  desc: string;
+  href: string;
+  cta: string;
+  highlight?: boolean;
+  external?: boolean;
+}
+
 export const metadata: Metadata = {
   title: 'Franchise Resources — Tools & Guides | FMS Franchise',
   description: 'Franchise resources, tools, and guides to help you evaluate, plan, and execute your franchise strategy. ROI calculator, state guidelines, feasibility tools, and more.',
 };
 
-const RESOURCES = [
+const RESOURCES: Array<{ category: string; icon: string; items: ResourceItem[] }> = [
   {
     category: 'Tools & Calculators',
     icon: '🧮',
