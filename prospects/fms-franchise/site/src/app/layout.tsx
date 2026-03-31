@@ -15,8 +15,27 @@ export const metadata: Metadata = {
     siteName: 'FMS Franchise Marketing Systems',
     type: 'website',
     locale: 'en_US',
+    images: [
+      {
+        url: '/icons/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'FMS Franchise Marketing Systems — Full-Service Franchise Consulting',
+      },
+    ],
   },
-  twitter: { card: 'summary_large_image' },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/icons/og-image.png'],
+  },
+  icons: {
+    icon: [
+      { url: '/icons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [{ url: '/icons/apple-touch-icon.png', sizes: '180x180' }],
+    shortcut: '/icons/favicon.ico',
+  },
   keywords: ['franchise consulting', 'franchise development', 'franchise marketing', 'how to franchise your business', 'franchise sales'],
 };
 

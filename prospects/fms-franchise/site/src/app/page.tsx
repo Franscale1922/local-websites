@@ -4,6 +4,12 @@ import HomePageClient from './components/HomePageClient';
 export const metadata: Metadata = {
   title: 'Franchise Your Business | Franchise Development Consulting | FMS',
   description: 'FMS helps proven business owners franchise their concept and scale with independent owner-operators. 979 brands franchised, 234 successful exits. Free feasibility assessment.',
+  openGraph: {
+    title: 'Franchise Your Business | FMS Franchise Marketing Systems',
+    description: 'The only full-service franchise consulting firm handling development, sales, and marketing under one roof. 979 brands franchised. Free feasibility assessment.',
+    url: 'https://site-ruby-five-98.vercel.app/',
+    images: [{ url: '/icons/og-image.png', width: 1200, height: 630, alt: 'FMS Franchise Marketing Systems' }],
+  },
 };
 
 export default function HomePage() {

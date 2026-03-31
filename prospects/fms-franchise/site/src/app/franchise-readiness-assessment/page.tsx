@@ -2,6 +2,9 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
+// This page is a fully interactive client-side quiz — disable static generation
+export const dynamic = 'force-dynamic';
+
 const QUESTIONS = [
   {
     id: 'profitability',

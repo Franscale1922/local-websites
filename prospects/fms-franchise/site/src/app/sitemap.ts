@@ -100,6 +100,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/about-us`, changeFrequency: 'monthly', priority: MEDIUM },
     { url: `${BASE_URL}/about-us/leadership`, changeFrequency: 'monthly', priority: LOW },
     { url: `${BASE_URL}/about-us/contact`, changeFrequency: 'monthly', priority: MEDIUM },
+    { url: `${BASE_URL}/about-us/blog`, changeFrequency: 'weekly', priority: LOW },
     { url: `${BASE_URL}/meet-the-team`, changeFrequency: 'monthly', priority: LOW },
     { url: `${BASE_URL}/locations`, changeFrequency: 'monthly', priority: MEDIUM },
     { url: `${BASE_URL}/event`, changeFrequency: 'weekly', priority: LOW },

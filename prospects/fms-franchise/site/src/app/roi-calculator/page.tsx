@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
+export const dynamic = 'force-dynamic';
+
 export default function ROICalculatorPage() {
   const [inputs, setInputs] = useState({
     franchiseFee: 35000,
