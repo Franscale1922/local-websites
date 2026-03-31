@@ -200,7 +200,7 @@ export default function Footer() {
           <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
             <Link href="/terms-conditions" style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.35)' }}>Terms & Conditions</Link>
             <Link href="/privacy-policy" style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.35)' }}>Privacy Policy</Link>
-            <Link href="/sitemap" style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.35)' }}>Sitemap</Link>
+            <Link href="/site-map" style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.35)' }}>Sitemap</Link>
           </div>
           <div style={{ display: 'flex', gap: '1rem' }}>
             <Link href="/franchise-feasibility-questionnaire" className="btn btn-gold btn-sm" style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.72rem' }}>GET STARTED &gt;</Link>
