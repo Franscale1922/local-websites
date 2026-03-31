@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 // fonts are loaded via @import in globals.css
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://site-ruby-five-98.vercel.app'),
   title: {
     template: '%s | FMS Franchise Marketing Systems',
     default: 'Franchise Marketing Systems — Full-Service Franchise Consulting',

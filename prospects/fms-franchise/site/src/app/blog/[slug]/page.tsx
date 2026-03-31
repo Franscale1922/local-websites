@@ -281,10 +281,13 @@ const POST_PREVIEWS: Record<string, { title: string; category: string; href: str
 };
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const isRealPost = !!POSTS[params.slug];
   const post = POSTS[params.slug] || getGenericPost(params.slug);
   return {
     title: `${post.title} | FMS Franchise Blog`,
     description: post.excerpt,
+    // Noindex fallback posts — they use generic 2-paragraph content, not real articles
+    robots: isRealPost ? undefined : { index: false, follow: true },
   };
 }
 

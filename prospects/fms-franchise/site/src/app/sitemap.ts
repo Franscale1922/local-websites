@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 
-const BASE_URL = 'https://fmsfranchise.com';
+const BASE_URL = 'https://site-ruby-five-98.vercel.app';
+
 
 // Priority groups
 const HIGH = 1.0;
@@ -78,28 +79,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/learn/how-to-guides/how-to-write-a-franchise-operations-manual`, changeFrequency: 'monthly', priority: MEDIUM },
     { url: `${BASE_URL}/webinars`, changeFrequency: 'weekly', priority: MEDIUM },
 
-    // ── Blog ──
+    // ── Blog (only posts with full content — fallback posts are noindexed) ──
     { url: `${BASE_URL}/blog`, changeFrequency: 'weekly', priority: MEDIUM },
     { url: `${BASE_URL}/blog/how-to-franchise-your-business-2025`, changeFrequency: 'monthly', priority: MEDIUM },
     { url: `${BASE_URL}/blog/mistakes-first-time-franchisors`, changeFrequency: 'monthly', priority: MEDIUM },
-    { url: `${BASE_URL}/blog/franchise-vs-licensing`, changeFrequency: 'monthly', priority: LOW },
     { url: `${BASE_URL}/blog/what-is-franchise-disclosure-document`, changeFrequency: 'monthly', priority: MEDIUM },
     { url: `${BASE_URL}/blog/cost-to-franchise-business`, changeFrequency: 'monthly', priority: MEDIUM },
-    { url: `${BASE_URL}/blog/franchise-registration-states`, changeFrequency: 'monthly', priority: LOW },
-    { url: `${BASE_URL}/blog/is-your-business-franchise-ready`, changeFrequency: 'monthly', priority: LOW },
-    { url: `${BASE_URL}/blog/franchise-royalty-structure`, changeFrequency: 'monthly', priority: LOW },
-    { url: `${BASE_URL}/blog/how-long-to-franchise-business`, changeFrequency: 'monthly', priority: LOW },
-    { url: `${BASE_URL}/blog/franchise-operations-manual`, changeFrequency: 'monthly', priority: LOW },
-    { url: `${BASE_URL}/blog/how-franchise-sales-work`, changeFrequency: 'monthly', priority: LOW },
-    { url: `${BASE_URL}/blog/franchise-feasibility-study`, changeFrequency: 'monthly', priority: LOW },
-    { url: `${BASE_URL}/blog/franchise-territory-design`, changeFrequency: 'monthly', priority: LOW },
-    { url: `${BASE_URL}/blog/franchise-broker-networks`, changeFrequency: 'monthly', priority: LOW },
-    { url: `${BASE_URL}/blog/home-services-franchise-growth`, changeFrequency: 'monthly', priority: LOW },
-    { url: `${BASE_URL}/blog/food-beverage-franchising-2025`, changeFrequency: 'monthly', priority: LOW },
-    { url: `${BASE_URL}/blog/how-to-write-franchise-disclosure-document`, changeFrequency: 'monthly', priority: LOW },
-    { url: `${BASE_URL}/blog/franchisee-training-programs`, changeFrequency: 'monthly', priority: LOW },
-    { url: `${BASE_URL}/blog/franchise-discovery-day`, changeFrequency: 'monthly', priority: LOW },
-    { url: `${BASE_URL}/blog/international-franchising-us-brands`, changeFrequency: 'monthly', priority: LOW },
+    { url: `${BASE_URL}/blog/franchise-discovery-day-guide-for-franchisors`, changeFrequency: 'monthly', priority: MEDIUM },
+    { url: `${BASE_URL}/blog/how-to-franchise-your-business-in-europe-successfully`, changeFrequency: 'monthly', priority: MEDIUM },
+    { url: `${BASE_URL}/blog/franchise-territory-mapping-best-practices-for-2025`, changeFrequency: 'monthly', priority: MEDIUM },
+    { url: `${BASE_URL}/blog/franchisee-onboarding-process-guide-for-growing-franchisors`, changeFrequency: 'monthly', priority: MEDIUM },
 
     // ── Clients ──
     { url: `${BASE_URL}/our-clients`, changeFrequency: 'monthly', priority: MEDIUM },

@@ -3,10 +3,10 @@ import LeadershipClient from './LeadershipClient';
 
 export const metadata: Metadata = {
   title: 'Our Leadership of Franchise Consultants | FMS Franchise',
-  description: "Meet FMS aka Franchise Marketing Systems' expert leadership team of Franchise Consultants who help you thrive your business.",
+  description: 'Meet the leadership team at Franchise Marketing Systems — senior franchise consultants with decades of experience developing, selling, and scaling franchise brands.',
   openGraph: {
     title: 'Our Leadership of Franchise Consultants | FMS Franchise',
-    description: "Meet FMS aka Franchise Marketing Systems' expert leadership team of Franchise Consultants who help you thrive your business.",
+    description: 'Senior franchise consultants with decades of experience developing and scaling franchise brands.',
   },
 };
 
