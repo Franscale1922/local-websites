@@ -3,8 +3,8 @@ import Link from 'next/link';
 import AboutPageClient from './AboutPageClient';
 
 export const metadata: Metadata = {
-  title: 'Learn More About Franchise Marketing Systems | FMS Franchise',
-  description: 'Franchise Marketing Systems is a franchise marketing firm with professional franchise consultants. Contact us at 800-610-0292 to learn how we can help.',
+  title: 'About FMS Franchise — 900+ Brands Franchised Since 2009 | FMS',
+  description: 'FMS Franchise Marketing Systems is the only full-service franchise development, sales, and marketing firm under one roof. 67-person team. 900+ brands franchised. Founded 2009.',
 };
 
 export default function AboutPage() {
