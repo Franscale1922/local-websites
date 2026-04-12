@@ -1,6 +1,7 @@
 'use client';
-import { useState, useMemo, useRef } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import { motors, getMotorsBySeries, getHPDisplay } from '../../data/motors';
@@ -8,9 +9,17 @@ import { motors, getMotorsBySeries, getHPDisplay } from '../../data/motors';
 type SeriesFilter = 'all' | 'CDV' | 'DV' | 'DVA';
 
 export default function ProductsPage() {
+  const searchParams = useSearchParams();
   const [series, setSeries] = useState<SeriesFilter>('all');
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState(searchParams.get('q') ?? '');
   const motorGridRef = useRef<HTMLDivElement>(null);
+
+  // Scroll to grid on mount if ?q= is set
+  useEffect(() => {
+    if (searchParams.get('q')) {
+      setTimeout(() => motorGridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
+    }
+  }, []);
 
   const handleSeriesSelect = (s: SeriesFilter) => {
     setSeries(s);
@@ -52,20 +61,80 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* Series Overview Cards */}
+      {/* ── HERO SEARCH BANNER ── */}
+      <section style={{background:'var(--navy)', padding:'32px 0', borderBottom:'4px solid var(--crimson)'}}>
+        <div className="container">
+          <div style={{display:'grid', gridTemplateColumns:'1fr auto', gap:'24px', alignItems:'center'}}>
+            <div>
+              <div style={{fontSize:'0.7rem', fontWeight:700, letterSpacing:'0.16em', textTransform:'uppercase', color:'rgba(255,255,255,0.5)', marginBottom:'6px'}}>
+                Model Search
+              </div>
+              <div style={{fontSize:'1rem', fontWeight:700, color:'white'}}>
+                Know your model number? Type it below — DVA, DV6-118, DV10...
+              </div>
+            </div>
+            <div style={{display:'flex', gap:'8px', flexWrap:'wrap'}}>
+              {['DV6', 'DVA', 'DV10', 'DV20', 'CDV'].map(s => (
+                <button
+                  key={s}
+                  onClick={() => { setSearch(s); motorGridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}
+                  style={{
+                    background:'rgba(255,255,255,0.1)', border:'1px solid rgba(255,255,255,0.2)',
+                    borderRadius:'100px', padding:'5px 13px',
+                    fontSize:'0.76rem', fontWeight:700, color:'rgba(255,255,255,0.8)',
+                    cursor:'pointer', fontFamily:'var(--font-mono, monospace)',
+                    transition:'all 0.15s',
+                  }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = 'var(--crimson)'; (e.currentTarget as HTMLButtonElement).style.borderColor = 'var(--crimson)'; (e.currentTarget as HTMLButtonElement).style.color = 'white'; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = 'rgba(255,255,255,0.1)'; (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(255,255,255,0.2)'; (e.currentTarget as HTMLButtonElement).style.color = 'rgba(255,255,255,0.8)'; }}
+                >
+                  {s}
+                </button>
+              ))}
+            </div>
+          </div>
+          <form
+            style={{display:'flex', gap:'10px', marginTop:'16px'}}
+            onSubmit={e => { e.preventDefault(); motorGridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}
+          >
+            <div style={{flex:1, display:'flex', alignItems:'center', gap:'10px', background:'white', borderRadius:'8px', padding:'12px 16px'}}>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--steel)" strokeWidth="2.2" strokeLinecap="round" style={{flexShrink:0}}>
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <input
+                type="text"
+                placeholder="Type a model number — e.g. DV6-191, DVA, DV10-336..."
+                value={search}
+                onChange={e => setSearch(e.target.value)}
+                style={{border:'none', outline:'none', flex:1, fontSize:'0.95rem', fontWeight:500, color:'var(--text-primary)', background:'transparent', fontFamily:'var(--font-mono, monospace)'}}
+                autoComplete="off"
+              />
+              {search && (
+                <button type="button" onClick={() => setSearch('')} style={{background:'none', border:'none', cursor:'pointer', color:'var(--steel)', display:'flex', alignItems:'center', padding:'0 4px'}}>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                  </svg>
+                </button>
+              )}
+            </div>
+            <button type="submit" className="btn btn-primary">
+              Search
+            </button>
+          </form>
+          {search && (
+            <div style={{marginTop:'10px', fontSize:'0.82rem', color:'rgba(255,255,255,0.55)'}}>
+              {filtered.length} motor{filtered.length !== 1 ? 's' : ''} match &ldquo;{search}&rdquo;
+              {filtered.length === 0 && <span> — <a href="/contact" style={{color:'rgba(255,140,100,0.9)', fontWeight:600}}>Contact an engineer for custom options →</a></span>}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Series Overview Cards — DV first (highest margin), DVA, CDV */}
       <section className="section section--tinted">
         <div className="container">
           <div style={{display:'grid', gridTemplateColumns:'repeat(3, 1fr)', gap:'20px', marginBottom:'0'}}>
             {[
-              {
-                series: 'CDV',
-                name: 'CDV Series',
-                desc: 'Bi-directional vane air motors. Face-mount design. Available in CDVB4 (3.5" dia) and CDV06 (6" dia) frames. From 1/4 HP at 6,200 RPM to high-torque configurations.',
-                count: counts.cdv,
-                badge: 'series-badge--cdv',
-                icon: '/icons/icon-cdv-series.png',
-                alt: 'CDV series bidirectional vane air motor',
-              },
               {
                 series: 'DV',
                 name: 'DV Series',
@@ -74,6 +143,7 @@ export default function ProductsPage() {
                 badge: 'series-badge--dv',
                 icon: '/icons/icon-dv-series.png',
                 alt: 'DV series high-output vane air motor',
+                featured: true,
               },
               {
                 series: 'DVA',
@@ -83,14 +153,34 @@ export default function ProductsPage() {
                 badge: 'series-badge--dva',
                 icon: '/icons/icon-dva-series.png',
                 alt: 'DVA series dual-speed vane air motor',
+                featured: false,
+              },
+              {
+                series: 'CDV',
+                name: 'CDV Series',
+                desc: 'Bi-directional vane air motors. Face-mount design. Available in CDVB4 (3.5" dia) and CDV06 (6" dia) frames. From 1/4 HP at 6,200 RPM to high-torque configurations.',
+                count: counts.cdv,
+                badge: 'series-badge--cdv',
+                icon: '/icons/icon-cdv-series.png',
+                alt: 'CDV series bidirectional vane air motor',
+                featured: false,
               },
             ].map(s => (
               <div
                 key={s.series}
                 className="product-card"
-                style={{cursor:'pointer'}}
+                style={{cursor:'pointer', position:'relative', ...(s.featured ? {border:'1.5px solid var(--crimson)'} : {})}}
                 onClick={() => handleSeriesSelect(s.series as SeriesFilter)}
               >
+                {s.featured && (
+                  <span style={{
+                    position:'absolute', top:'16px', right:'16px',
+                    fontSize:'0.62rem', fontWeight:800, letterSpacing:'0.12em',
+                    textTransform:'uppercase', color:'white',
+                    background:'var(--crimson)', borderRadius:'100px',
+                    padding:'3px 9px',
+                  }}>Featured</span>
+                )}
                 <div style={{display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:'20px'}}>
                   <div className="product-card-icon">
                     <img src={s.icon} alt={s.alt} className="product-card-icon-img" />

@@ -272,6 +272,158 @@ p  { max-width: 70ch; line-height: 1.7; }
   gap: 20px;
 }
 
+/* ── NAV SEARCH BUTTON ───────────────────────────────────── */
+.nav-search-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 100px;
+  background: var(--bg-light);
+  color: var(--steel);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--t-fast);
+  white-space: nowrap;
+}
+.nav-search-btn:hover {
+  border-color: var(--crimson);
+  color: var(--crimson);
+  background: white;
+}
+
+/* ── NAV SEARCH OVERLAY ──────────────────────────────────── */
+.nav-search-overlay {
+  position: fixed;
+  top: var(--nav-height);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(700px, calc(100vw - 48px));
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 80px rgba(10,15,30,0.22), 0 0 0 1px rgba(0,0,0,0.06);
+  z-index: 9999;
+  overflow: hidden;
+  animation: search-drop 0.18s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes search-drop {
+  from { opacity: 0; transform: translateX(-50%) translateY(-8px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.nav-search-form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: transparent;
+}
+.nav-search-input::placeholder { color: var(--steel-light); }
+
+.nav-search-clear {
+  background: var(--bg-light);
+  border: none;
+  border-radius: 50%;
+  width: 26px; height: 26px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  color: var(--steel);
+  transition: background var(--t-fast);
+  flex-shrink: 0;
+}
+.nav-search-clear:hover { background: var(--border); }
+
+.nav-search-results {
+  list-style: none;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.nav-search-result {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--t-fast);
+}
+.nav-search-result:hover { background: var(--bg-light); }
+
+.nav-search-result-model {
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 0.9rem;
+  font-family: var(--font-mono, 'Courier New', monospace);
+  letter-spacing: 0.02em;
+}
+
+.nav-search-result-hp {
+  font-size: 0.78rem;
+  color: var(--steel);
+  margin-left: 4px;
+}
+
+.nav-search-all {
+  border-top: 1px solid var(--border) !important;
+  color: var(--crimson) !important;
+  font-weight: 700 !important;
+  font-size: 0.84rem !important;
+  justify-content: center;
+}
+
+.nav-search-empty {
+  padding: 20px;
+  text-align: center;
+  color: var(--steel);
+  font-size: 0.88rem;
+}
+
+.nav-search-hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px;
+  font-size: 0.78rem;
+  color: var(--steel-light);
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.nav-search-suggest {
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 3px 10px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  font-family: var(--font-mono, 'Courier New', monospace);
+  color: var(--navy);
+  cursor: pointer;
+  transition: all var(--t-fast);
+}
+.nav-search-suggest:hover {
+  background: var(--crimson);
+  border-color: var(--crimson);
+  color: white;
+}
+
 /* ── HAMBURGER BUTTON (PSI) ───────────────────────────────── */
 .psi-hamburger {
   display: none;

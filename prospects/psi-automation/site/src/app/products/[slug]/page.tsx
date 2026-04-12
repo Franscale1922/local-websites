@@ -314,6 +314,89 @@ export default function MotorDetailPage({ params }: Props) {
         </div>
       </section>
 
+      {/* ── OFTEN ORDERED WITH ── */}
+      <section className="section section--tinted">
+        <div className="container">
+          <div className="eyebrow">Accessories</div>
+          <h2 style={{marginBottom:'8px'}}>Often Ordered With This Motor</h2>
+          <p style={{color:'var(--steel)', marginBottom:'40px'}}>
+            Complete your installation with PSI-recommended air system accessories.
+          </p>
+          <div style={{display:'grid', gridTemplateColumns:'repeat(3, 1fr)', gap:'20px'}}>
+            {[
+              {
+                title: 'Air Filters',
+                desc: 'Inline particulate and coalescing filters. Protects vane life and seals. Recommended for any compressed air system driving a PSI motor.',
+                cta: 'Request a Quote',
+                href: '/contact?accessory=air-filter',
+                available: true,
+                icon: '🔵',
+              },
+              {
+                title: 'Lubricators',
+                desc: 'Adjustable oil mist lubricators for inline air line delivery. Ensures consistent vane lubrication in continuous-duty and high-cycle applications.',
+                cta: 'Request a Quote',
+                href: '/contact?accessory=lubricator',
+                available: true,
+                icon: '🟡',
+              },
+              {
+                title: 'Safety Silencers',
+                desc: 'Exhaust noise silencers for OSHA compliance in industrial environments. PSI-engineered for direct motor exhaust port mounting.',
+                cta: 'Contact for Availability',
+                href: '/contact?accessory=safety-silencer',
+                available: false,
+                icon: '🔴',
+              },
+            ].map(acc => (
+              <div key={acc.title} style={{
+                background: 'white',
+                border: '1.5px solid var(--border)',
+                borderRadius: '14px',
+                padding: '28px 24px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '12px',
+                transition: 'box-shadow 0.2s, transform 0.2s',
+              }}
+                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = '0 8px 32px rgba(0,0,0,0.1)'; (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-3px)'; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = 'none'; (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; }}
+              >
+                <div style={{display:'flex', alignItems:'center', justifyContent:'space-between'}}>
+                  <h3 style={{fontSize:'1rem', color:'var(--navy)', margin:0}}>{acc.title}</h3>
+                  {!acc.available && (
+                    <span style={{fontSize:'0.65rem', fontWeight:700, letterSpacing:'0.1em', textTransform:'uppercase', color:'var(--steel)', background:'var(--bg-light)', border:'1px solid var(--border)', borderRadius:'100px', padding:'3px 9px', whiteSpace:'nowrap'}}>
+                      Contact for Avail.
+                    </span>
+                  )}
+                </div>
+                <p style={{fontSize:'0.85rem', color:'var(--steel)', lineHeight:1.65, margin:0, maxWidth:'none'}}>{acc.desc}</p>
+                <Link
+                  href={acc.href}
+                  style={{
+                    marginTop: 'auto',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    fontSize: '0.82rem',
+                    fontWeight: 700,
+                    color: acc.available ? 'var(--crimson)' : 'var(--steel)',
+                    textDecoration: 'none',
+                    paddingTop: '8px',
+                    borderTop: '1px solid var(--border)',
+                  }}
+                >
+                  {acc.cta} →
+                </Link>
+              </div>
+            ))}
+          </div>
+          <p style={{fontSize:'0.78rem', color:'var(--steel-light)', marginTop:'20px', textAlign:'center'}}>
+            Need a complete air system spec? <Link href="/contact" style={{color:'var(--crimson)', fontWeight:600}}>Talk to an engineer</Link> — we can spec filters, lubricators, and silencers for your exact motor and installation.
+          </p>
+        </div>
+      </section>
+
       <Footer />
     </>
   );

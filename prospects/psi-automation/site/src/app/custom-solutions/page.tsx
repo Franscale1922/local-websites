@@ -84,12 +84,13 @@ function RFQForm() {
 }
 
 const CUSTOM_CAPABILITIES = [
-  { icon: '/icons/icon-shaft-config.png', alt: 'Custom shaft configurations', title: 'Modified Shaft Configurations', desc: 'Non-standard shaft diameters, lengths, keyways, splines, and thread forms. If you can draw it, we can manufacture it.' },
-  { icon: '/icons/icon-mounting-flange.png', alt: 'Custom mounting flanges', title: 'Custom Mounting Flanges', desc: 'SAE, metric, and proprietary bolt patterns. We match your existing hardware footprint — no adapter plates required.' },
-  { icon: '/icons/icon-gear-ratio.png', alt: 'Modified gear ratios', title: 'Modified Gear Ratios', desc: 'Need 1,200 RPM instead of 6,200? We offer integrated gearbox options to hit your exact output speed without sacrificing torque.' },
-  { icon: '/icons/icon-extreme-temp.png', alt: 'Extreme temperature options', title: 'Extreme Temperature Options', desc: 'Standard motors operate from -40°F to +250°F. We offer high-temperature vane materials and seal compounds for even more demanding applications.' },
-  { icon: '/icons/icon-oil-free.png', alt: 'Oil-free clean environment motor', title: 'Oil-Free / Clean Environments', desc: 'Semiconductor, food processing, and clean-room compatible configurations. No lubricant injection to your air supply.' },
-  { icon: '/icons/icon-high-cycle.png', alt: 'High-cycle continuous duty motor', title: 'High-Cycle / Continuous Duty', desc: 'Motors designed specifically for millions of cycles or 24/7 continuous operation. Different vane materials and bearing specifications.' },
+  { icon: '/icons/icon-shaft-config.png', alt: 'Custom shaft configurations', title: 'Modified Shaft Configurations', desc: 'Non-standard shaft diameters, lengths, keyways, splines, and thread forms. If you can draw it, we can manufacture it.', isNew: false },
+  { icon: '/icons/icon-mounting-flange.png', alt: 'Custom mounting flanges', title: 'Custom Mounting Flanges', desc: 'SAE, metric, and proprietary bolt patterns. We match your existing hardware footprint — no adapter plates required.', isNew: false },
+  { icon: '/icons/icon-gear-ratio.png', alt: 'Modified gear ratios', title: 'Modified Gear Ratios', desc: 'Need 1,200 RPM instead of 6,200? We offer integrated gearbox options to hit your exact output speed without sacrificing torque.', isNew: false },
+  { icon: '/icons/icon-extreme-temp.png', alt: 'Extreme temperature options', title: 'Extreme Temperature Options', desc: 'Standard motors operate from -40°F to +250°F. We offer high-temperature vane materials and seal compounds for even more demanding applications.', isNew: false },
+  { icon: '/icons/icon-oil-free.png', alt: 'Oil-free clean environment motor', title: 'Oil-Free / Clean Environments', desc: 'Semiconductor, food processing, and clean-room compatible configurations. No lubricant injection to your air supply.', isNew: false },
+  { icon: '/icons/icon-high-cycle.png', alt: 'High-cycle continuous duty motor', title: 'High-Cycle / Continuous Duty', desc: 'Motors designed specifically for millions of cycles or 24/7 continuous operation. Different vane materials and bearing specifications.', isNew: false },
+  { icon: '/icons/icon-shaft-config.png', alt: 'Integral brake air motors', title: 'Integral Brakes', desc: 'PSI can build integral braking directly into the motor — allowing you to hold a load or stop a load without external braking hardware. Available on select DV and DVA series configurations. Ask about your application.', isNew: true },
 ];
 
 export default function CustomSolutionsPage() {
@@ -122,7 +123,16 @@ export default function CustomSolutionsPage() {
           </div>
           <div className="why-grid">
             {CUSTOM_CAPABILITIES.map(c => (
-              <div key={c.title} className="why-card">
+              <div key={c.title} className="why-card" style={c.isNew ? {border:'1.5px solid var(--crimson)', position:'relative', overflow:'hidden'} : {}}>
+                {c.isNew && (
+                  <span style={{
+                    position:'absolute', top:'16px', right:'16px',
+                    fontSize:'0.62rem', fontWeight:800, letterSpacing:'0.12em',
+                    textTransform:'uppercase', color:'white',
+                    background:'var(--crimson)', borderRadius:'100px',
+                    padding:'3px 9px',
+                  }}>New</span>
+                )}
                 <div className="why-card-icon">
                   <img src={c.icon} alt={c.alt} className="why-card-icon-img" />
                 </div>
