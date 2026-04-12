@@ -1,5 +1,5 @@
 'use client';
-import { useState, useMemo, useRef, useEffect } from 'react';
+import { useState, useMemo, useRef, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import Nav from '../components/Nav';
@@ -8,7 +8,8 @@ import { motors, getMotorsBySeries, getHPDisplay } from '../../data/motors';
 
 type SeriesFilter = 'all' | 'CDV' | 'DV' | 'DVA' | 'DVAR';
 
-export default function ProductsPage() {
+// Inner component — uses useSearchParams, must be inside <Suspense>
+function ProductsInner() {
   const searchParams = useSearchParams();
   const [series, setSeries] = useState<SeriesFilter>('all');
   const [search, setSearch] = useState(searchParams.get('q') ?? '');
@@ -324,5 +325,14 @@ export default function ProductsPage() {
 
       <Footer />
     </>
+  );
+}
+
+// Suspense wrapper — required by Next.js 14 when using useSearchParams
+export default function ProductsPage() {
+  return (
+    <Suspense fallback={null}>
+      <ProductsInner />
+    </Suspense>
   );
 }
