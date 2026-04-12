@@ -1,106 +1,98 @@
-/**
- * ABOUT PAGE
- * /about
- *
- * Full about page — team, story, awards, credentials, philosophy.
- * Replace all [PLACEHOLDERS] with real content.
- */
+import Link from 'next/link';
+import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 export const metadata = {
-  title: 'About | [Business Name] — [City, State]',
-  description: '[Business Name] — [One sentence about years, service, differentiator]. Licensed & insured. Serving [area] since [year].',
+  title: 'About PSI Automation | 35 Years Engineering Vane Air Motors — Sandpoint Idaho',
+  description: 'PSI Automation (formerly Pneumatic Systems Inc.) has manufactured custom vane air motors in Sandpoint, Idaho for 35+ years. Read our story.',
 };
-
-const PHONE = '(XXX) XXX-XXXX';
-const PHONE_TEL = 'tel:+1XXXXXXXXXX';
-const ABOUT_IMAGE = 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80';
-
-const STATS = [
-  { num: 'XX+', label: 'Years in Business' },
-  { num: 'XXX+', label: 'Projects Completed' },
-  { num: 'X.X', label: 'Google Rating' },
-  { num: 'A+', label: 'BBB Rating' },
-];
-
-const CREDENTIALS = ['Licensed', 'Bonded', 'Insured', 'A+ BBB'];
-
-const VALUES = [
-  {
-    icon: '✅',
-    title: '[Core Value 1]',
-    desc: '[One to two sentences about this value in practice, specific to how this business operates.]',
-  },
-  {
-    icon: '🤝',
-    title: '[Core Value 2]',
-    desc: '[One to two sentences about this value.]',
-  },
-  {
-    icon: '🛡️',
-    title: '[Core Value 3]',
-    desc: '[One to two sentences about this value.]',
-  },
-];
 
 export default function AboutPage() {
   return (
-    <main>
-      {/* PAGE HERO */}
+    <>
+      <Nav />
+
+      {/* Hero */}
       <section className="page-hero">
         <div className="container">
-          <span className="eyebrow">Who We Are</span>
-          <h1>[Punchy About Headline — e.g. "Built on Reputation. Backed by Experience."]</h1>
-          <p className="page-hero-sub">[One or two sentences — founding story, mission, or key differentiator.]</p>
+          <Link href="/" className="breadcrumb">← Home <span>/ About</span></Link>
+          <div className="eyebrow eyebrow--light">Our Story</div>
+          <h1>Built on 35 Years of Engineering What Nobody Else Would</h1>
+          <p className="page-hero-sub">
+            Pneumatic Systems, Inc. was founded in Sandpoint, Idaho to solve a specific problem: diesel engine air starters needed more power than available motors could deliver. We built our own. The rest followed.
+          </p>
         </div>
       </section>
 
-      {/* STORY */}
+      {/* History + stats — light background */}
       <section className="section">
         <div className="container">
           <div className="about-grid">
-            <div className="about-img-wrap">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={ABOUT_IMAGE} alt="[Business name] team at work" />
-              <div className="award-badge">
-                <div className="award-badge-year">[Award year(s)]</div>
-                <div className="award-badge-title">[Award Name]</div>
-                <div className="award-badge-sub">[Location / Org]</div>
-              </div>
+            {/* Left — narrative */}
+            <div>
+              <div className="eyebrow">Company History</div>
+              <h2>From Diesel Starters to&nbsp;Custom OEM Solutions</h2>
+              <p style={{marginTop:'20px', color:'var(--steel)', fontSize:'1rem', lineHeight:1.75}}>
+                PSI Automation was founded under the name Pneumatic Systems, Inc. with a singular focus: build the air motor that didn&apos;t exist yet. The first product line was diesel engine air starters for marine and industrial applications — environments that demanded reliability over everything else.
+              </p>
+              <p style={{marginTop:'16px', color:'var(--steel)', fontSize:'1rem', lineHeight:1.75}}>
+                Over 35 years, the product line grew from starters to a full portfolio of vane air motors spanning 1/4 HP to 70 HP. The 70 HP capability remains the industry ceiling for vane technology — where every other manufacturer stops, we operate routinely.
+              </p>
+              <p style={{marginTop:'16px', color:'var(--steel)', fontSize:'1rem', lineHeight:1.75}}>
+                Today, PSI Automation serves OEM and MRO customers across aerospace, automotive, chemical, mining, and petroleum extraction. No minimum order. No off-the-shelf constraint. Engineers available directly — no sales layer.
+              </p>
             </div>
-            <div className="about-text">
-              <span className="eyebrow">Our Story</span>
-              <h2>[Story Headline — e.g. "Nearly Six Decades of Combined Experience."]</h2>
-              <p>[Paragraph 1 — founding story, years in business, who started it and why.]</p>
-              <p>[Paragraph 2 — what the team looks like today, what makes them different.]</p>
-              <p>[Paragraph 3 — community ties, awards, reputation, customer interaction philosophy.]</p>
-              <div className="about-stats">
-                {STATS.map((s) => (
-                  <div key={s.label} className="about-stat">
-                    <div className="about-stat-num">{s.num}</div>
+
+            {/* Right — stats + location */}
+            <div>
+              <div className="about-stats-grid">
+                {[
+                  { value:'35+', label:'Years in Business' },
+                  { value:'70 HP', label:'Maximum Output' },
+                  { value:'0', label:'Minimum Order Qty' },
+                  { value:'81', label:'Standard Configs' },
+                ].map(s => (
+                  <div key={s.label} className="about-stat-cell">
+                    <div className="about-stat-val">{s.value}</div>
                     <div className="about-stat-label">{s.label}</div>
                   </div>
                 ))}
               </div>
-              <div className="about-credentials">
-                {CREDENTIALS.map((c) => (
-                  <span key={c} className="credential-badge">{c}</span>
-                ))}
+
+              <div className="about-location">
+                <div style={{fontSize:'0.65rem', fontWeight:700, letterSpacing:'0.12em', textTransform:'uppercase', color:'var(--crimson)', marginBottom:'10px'}}>Headquarters</div>
+                <p style={{fontSize:'0.9rem', color:'var(--steel)', lineHeight:1.7, maxWidth:'none', margin:0}}>
+                  3717 Omni Park Taxiway<br/>
+                  Sandpoint, ID 83864<br/>
+                  <span style={{color:'var(--steel-light)', fontSize:'0.82rem'}}>Mailing: PO Box 1487, Sandpoint, ID 83864</span>
+                </p>
+                <div style={{marginTop:'16px', display:'flex', flexDirection:'column', gap:'8px'}}>
+                  <a href="tel:8003923602" style={{color:'var(--crimson)', fontWeight:700, fontSize:'1rem', textDecoration:'none'}}>800-392-3602 (Toll Free)</a>
+                  <a href="mailto:sales@psiautomation.com" style={{color:'var(--steel)', fontSize:'0.88rem', textDecoration:'none'}}>sales@psiautomation.com</a>
+                </div>
               </div>
-              <a href="/contact" className="btn btn-primary">Get a Free Estimate →</a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CORE VALUES */}
+      {/* Philosophy — tinted background for clean white card contrast */}
       <section className="section section--tinted">
         <div className="container">
-          <span className="eyebrow">How We Work</span>
-          <h2>[Values Headline — e.g. "Three Things We Don&apos;t Compromise On."]</h2>
-          <div className="why-grid" style={{ marginTop: '48px' }}>
-            {VALUES.map((v) => (
+          <div className="section-head">
+            <div className="eyebrow">Our Philosophy</div>
+            <h2>Why Engineers Come to PSI Automation</h2>
+          </div>
+          <div className="why-grid">
+            {[
+              { icon:'/icons/icon-field-serviceable.png', alt:'Field serviceable motor', title:'Field-Serviceable by Design', desc:"Every PSI motor can be serviced in the field without returning to the factory. Our maintenance manual trains your technicians to rebuild in hours, not weeks. This is not an accident — it's a design requirement." },
+              { icon:'/icons/icon-no-minimum.png', alt:'No minimum order custom motor', title:'No Minimum Order', desc:"We manufacture custom configurations for single-unit quantities. This eliminates the single most common obstacle for engineers who know exactly what they need but can't justify 100-unit tooling runs." },
+              { icon:'/icons/icon-engineer-phone.png', alt:'Engineer answering the phone', title:'Engineers Answer the Phone', desc:"When you call PSI Automation, you speak with an engineer who works on motors daily. Not a sales coordinator. Not a routing system. A person who can answer your technical question right now." },
+            ].map(v => (
               <div key={v.title} className="why-card">
-                <div className="why-number">{v.icon}</div>
+                <div className="why-card-icon">
+                  <img src={v.icon} alt={v.alt} className="why-card-icon-img" />
+                </div>
                 <h3>{v.title}</h3>
                 <p>{v.desc}</p>
               </div>
@@ -109,19 +101,22 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <div className="cta-strip">
-        <div className="cta-strip-inner">
-          <div className="cta-strip-text">
-            <h2>Ready to work with us?</h2>
-            <p>Free estimates. We pick up the phone. We show up when we say we will.</p>
-          </div>
-          <div className="cta-strip-actions">
-            <a href="/contact" className="btn btn-primary">Get a Free Estimate</a>
-            <a href={PHONE_TEL} className="btn btn-ghost-light">Call {PHONE}</a>
+      {/* CTA — navy instead of a second red block */}
+      <section style={{background:'var(--navy)', padding:'var(--section-pad)'}}>
+        <div className="container">
+          <div style={{textAlign:'center', maxWidth:'640px', margin:'0 auto'}}>
+            <div className="eyebrow eyebrow--light" style={{justifyContent:'center'}}>Ready to Work With Us?</div>
+            <h2 style={{color:'white', marginBottom:'16px'}}>Your Inquiry Goes Directly to an Engineer</h2>
+            <p style={{color:'rgba(255,255,255,0.65)', marginBottom:'36px', fontSize:'1rem'}}>No minimum order. No sales process. Just a direct line to engineers who build motors.</p>
+            <div className="btn-group" style={{justifyContent:'center'}}>
+              <Link href="/contact" className="btn btn-primary btn-lg">Talk to an Engineer →</Link>
+              <a href="tel:8003923602" className="btn btn-ghost btn-lg">800-392-3602</a>
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+      </section>
+
+      <Footer />
+    </>
   );
 }
