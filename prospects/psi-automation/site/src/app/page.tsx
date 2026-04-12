@@ -1,222 +1,359 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
+import Nav from './components/Nav';
+import Footer from './components/Footer';
 
-const SITE = {
-  logoIcon: '🦷',
-  logoName: 'Flathead Valley Dental',
-  navLinks: [{ label: 'Services', href: '#services' }, { label: 'About', href: '#about' }, { label: 'Reviews', href: '#reviews' }],
-  heroImage: 'https://images.unsplash.com/photo-1629909615957-f8c19a00da68?w=1600&q=85',
-  heroH1: 'Air Motors Built to Work Hard',
-  heroSub: "We manufacture rugged, custom air motors from Montana. Thirty-five years of engineering behind every unit we ship.'s a low bar in this industry. We cleared it anyway. Modern care, friendly team, same-day appointments most weeks.",
-  heroCTA1: 'Size Your Motor',
-  heroCTA2: 'Talk to Engineering',
-  trustStats: [{ number: '2,800+', label: 'Patients Served' }, { number: '18 yrs', label: 'In Practice' }, { number: '4.9★', label: 'Google Rating' }],
-  servicesLabel: 'What We Do',
-  servicesTitle: 'Complete Care Under One Roof',
-  servicesSub: "From routine cleanings to full restorations. We don't send our patients elsewhere if we don't have to.",
-  services: [
-    { icon: '🦷', title: 'General Dentistry', desc: 'Cleanings, exams, fillings, extractions. Your home base for dental health.' },
-    { icon: '✨', title: 'Cosmetic Dentistry', desc: 'Whitening, veneers, bonding. We make smiles people are proud to show.' },
-    { icon: '🔧', title: 'Restorative Care', desc: 'Crowns, bridges, implants, dentures. We restore what time or accidents take away.' },
-    { icon: '👶', title: 'Children\'s Dentistry', desc: "We're good with kids. We've spent 18 years proving it." },
-    { icon: '😴', title: 'Sedation Options', desc: 'For those who need a little extra help relaxing. No judgment whatsoever.' },
-    { icon: '🚨', title: 'Emergency Care', desc: 'Toothache? Broken tooth? Call us. We\'ll get you in same day when possible.' },
-  ],
-  credentials: ['✓ Board Certified', '✓ Accepting New Patients', '✓ Most Insurance Accepted', '✓ Flexible Payment Plans'],
-  aboutLabel: 'Our Practice',
-  aboutTitle: 'Montana-Made Air Motors Since 1989',
-  aboutP1: "We started PSI Automation because we saw too many air motors fail when the job got hard. So we built better ones. For thirty-five years, we\'ve designed and manufactured air motors right here in Montana for industries that can\'t afford downtime.'re proud of that.",
-  aboutP2: "We\'re not a catalog company. Every motor we sell, we can customize. Our engineers work directly with you to match the motor to your application.",
-  aboutImage: 'https://images.unsplash.com/photo-1588776814546-1ffbb0f2a6c8?w=900&q=80',
-  aboutCredentials: ['General Dentist', 'AACD Member', 'Invisalign Provider'],
-  reviews: [
-    { stars: 5, text: '"I have genuine dental anxiety. Went 8 years without going. My first visit here completely changed that. They\'re patient, kind, and don\'t make you feel bad about the gap."', name: 'Nicole W.', detail: 'Kalispell, MT', initial: 'N' },
-    { stars: 5, text: '"Dr. [Name] explained everything before doing it. That alone was worth changing dentists for. Very professional and shockingly painless."', name: 'David M.', detail: 'Whitefish, MT', initial: 'D' },
-    { stars: 5, text: '"My kids actually ask to come back. If you know kids and dentists, you know that\'s a miracle."', name: 'Rachel T.', detail: 'Columbia Falls, MT', initial: 'R' },
-  ],
-  ctaTitle: "New Patients Welcome. Always.",
-  ctaSub: "We keep room in our schedule for new patients every week. Call or request online — we usually get back to you the same day.",
-  ctaBtn1: 'Book Online',
-  ctaBtn2: 'Call to Schedule',
-  phone: '800-392-3602 (toll-free)',
-  email: 'sales@psiautomation.com',
-  address: '3717 Omni Park Taxiway, Sandpoint, ID 83864 (PO Box 1487)',
-  footerTagline: 'Custom air motors engineered for the job.',
-  year: new Date().getFullYear(),
-};
+function RFQForm({ dark = false }: { dark?: boolean }) {
+  const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [values, setValues] = useState({ name: '', company: '', email: '', application: '' });
+  const cls = dark ? 'contact-form-card' : 'hero-card';
+
+  const validate = () => {
+    const errs: Record<string, string> = {};
+    if (!values.name.trim()) errs.name = 'Required';
+    if (!values.email.trim()) errs.email = 'Required';
+    else if (!/^[^@]+@[^@]+\.[^@]+$/.test(values.email)) errs.email = 'Enter a valid email';
+    if (!values.application.trim()) errs.application = 'Please describe your requirement';
+    return errs;
+  };
+
+  const handleSubmit = () => {
+    const errs = validate();
+    if (Object.keys(errs).length) { setErrors(errs); return; }
+    setSubmitted(true);
+  };
+
+  const field = (key: keyof typeof values) => ({
+    value: values[key],
+    onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setValues(v => ({ ...v, [key]: e.target.value }));
+      if (errors[key]) setErrors(er => ({ ...er, [key]: '' }));
+    },
+    style: errors[key] ? { borderColor: 'var(--crimson)' } as React.CSSProperties : undefined,
+  });
+
+  const errMsg = (key: string) => errors[key] ? (
+    <span style={{ fontSize: '0.72rem', color: 'var(--crimson)', marginTop: '3px', display: 'block' }}>{errors[key]}</span>
+  ) : null;
+
+  return submitted ? (
+    <div className={cls}>
+      <div className="rfq-success">✓ Message received — an engineer will be in touch within 1 business day.</div>
+    </div>
+  ) : (
+    <div className={cls}>
+      <h3 style={dark ? {color:'white'} : {}}>Talk to an Application Engineer</h3>
+      <p className="hero-card-sub" style={dark ? {color:'rgba(255,255,255,0.55)'} : {}}>Usually responds same business day.</p>
+      <div className="form-field">
+        <label>Name *</label>
+        <input type="text" placeholder="Jane Smith" {...field('name')} />
+        {errMsg('name')}
+      </div>
+      <div className="form-field">
+        <label>Company</label>
+        <input type="text" placeholder="Acme Industries" value={values.company} onChange={e => setValues(v => ({...v, company: e.target.value}))} />
+      </div>
+      <div className="form-field">
+        <label>Email *</label>
+        <input type="email" placeholder="jane@company.com" {...field('email')} />
+        {errMsg('email')}
+      </div>
+      <div className="form-field">
+        <label>Application / Requirement *</label>
+        <textarea placeholder="Describe your motor requirement — HP range, environment, torque target, mounting type..." value={values.application} onChange={field('application').onChange} style={{minHeight:'80px', ...(errors.application ? {borderColor:'var(--crimson)'} : {})}} />
+        {errMsg('application')}
+      </div>
+      <button
+        className="btn btn-primary"
+        style={{width:'100%', justifyContent:'center'}}
+        onClick={handleSubmit}
+      >
+        Send to Engineering Team →
+      </button>
+      <p className="hero-card-note" style={dark ? {color:'rgba(255,255,255,0.4)'} : {}}>
+        Or call us directly: <a href="tel:8003923602" style={dark ? {color:'rgba(255,255,255,0.7)'} : {}}><strong>800-392-3602</strong></a>
+      </p>
+    </div>
+  );
+}
+
+const INDUSTRIES = [
+  { icon: '/icons/icon-aerospace.png', label: 'Aerospace', href: '/applications/aerospace', desc: 'Power-to-weight critical applications', alt: 'Aerospace fighter jet illustration' },
+  { icon: '/icons/icon-automotive.png', label: 'Automotive', href: '/applications/automotive', desc: 'High-cycle continuous operation', alt: 'Automotive engine chassis illustration' },
+  { icon: '/icons/icon-chemical.png', label: 'Chemical', href: '/applications/chemical', desc: 'Explosion-proof, oil-free options', alt: 'Chemical processing plant illustration' },
+  { icon: '/icons/icon-mining.png', label: 'Mining', href: '/applications/mining', desc: 'Field-serviceable, ATEX-ready', alt: 'Mining tunnel boring machine illustration' },
+  { icon: '/icons/icon-petroleum.png', label: 'Petroleum', href: '/applications/petroleum', desc: '70 HP for drilling & extraction', alt: 'Oil pump jack illustration' },
+];
+
+const PRODUCTS = [
+  { icon: '/icons/icon-vane-motor.png', title: 'Vane Air Motors', desc: 'CDV, DV, and DVA series — 1/4 to 70 HP. Custom gear ratios, shafts, and mounting. No minimum order.', href: '/products', alt: 'Vane air motor cross-section' },
+  { icon: '/icons/icon-custom-solutions.png', title: 'Custom Solutions', desc: "Can't find what you need in our catalog? We engineer custom motors for your exact specification.", href: '/custom-solutions', alt: 'Custom engineering blueprint' },
+  { icon: '/icons/icon-control-systems.png', title: 'Control Systems', desc: 'Valves, regulators, and pneumatic control components to complete your air system.', href: '/products/control-systems', alt: 'Pneumatic control panel' },
+  { icon: '/icons/icon-safety-silencer.png', title: 'Safety Silencers', desc: 'NASA-cited exhaust silencers for noise and hearing protection in demanding environments.', href: '/products/safety-silencers', alt: 'Industrial safety silencer' },
+];
+
+const PILLARS = [
+  { value: '70 HP', label: 'Maximum Output', desc: 'The industry ceiling for vane technology — where competitors stop, we operate. Our DV62 series produces 70 HP and 40,000 ft-lb torque.' },
+  { value: '0', label: 'Minimum Order Qty', desc: 'Need one custom motor? We build it. No minimum quantity — ever. This eliminates the #1 objection engineers hear from their procurement teams.' },
+  { value: '35+', label: 'Years Manufacturing', desc: 'Founded as Pneumatic Systems, Inc. in Sandpoint, Idaho. Built on diesel engine starter heritage — designed for shock, vibration, and extreme environments.' },
+  { value: '∞', label: 'Field-Serviceable', desc: 'Every PSI motor is designed to be serviced in the field without returning to the factory. No downtime waiting for shipment.' },
+];
+
+const WHY_AIR = [
+  { icon: '/icons/icon-overheating.png', alt: 'Electric motor overheating vs safe air motor', title: 'Zero Overheating Risk', desc: "Electric motors fail when overloaded or stalled — they overheat and burn out. Air motors stall safely and restart immediately. No thermal protection, no VFDs, no downtime." },
+  { icon: '/icons/icon-explosion-proof.png', alt: 'ATEX explosion-proof certification', title: 'Inherently Explosion-Proof', desc: 'No electrical sparks — air motors are intrinsically safe for use in classified hazardous locations (chemical, petroleum, mining) without special expensive enclosures.' },
+  { icon: '/icons/icon-power-to-weight.png', alt: 'Air motor vs electric motor power to weight comparison', title: 'Higher Power-to-Weight', desc: 'Air motors produce more torque per pound than equivalent electric motors. In aerospace and mobile equipment, every pound matters.' },
+];
+
+function useReveal() {
+  const ref = useRef<HTMLElement | null>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('revealed');
+          observer.unobserve(e.target);
+        }
+      }),
+      { threshold: 0.1 }
+    );
+    el.querySelectorAll('.reveal').forEach(t => observer.observe(t));
+    return () => observer.disconnect();
+  }, []);
+  return ref;
+}
 
 export default function Home() {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const h = () => setScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', h, { passive: true });
-    return () => window.removeEventListener('scroll', h);
-  }, []);
-
+  const revealRef = useReveal();
   return (
-    <>
-      <nav className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
-        <div className="nav-logo">
-          <div className="nav-logo-icon">{SITE.logoIcon}</div>
-          {SITE.logoName}
-        </div>
-        <ul className="nav-links">
-          {SITE.navLinks.map(l => <li key={l.label}><a href={l.href}>{l.label}</a></li>)}
-          <li><a href="#contact" className="nav-book">Book Now</a></li>
-        </ul>
-      </nav>
+    <div ref={revealRef as React.RefObject<HTMLDivElement>}>
+      <Nav />
 
+      {/* ── HERO ── */}
       <section className="hero" id="home">
-        <img src={SITE.heroImage} alt="Modern dental practice" className="hero-bg" />
+        <img src="/hero-motor.png" alt="PSI Automation custom vane air motor" className="hero-bg" />
         <div className="hero-overlay" />
-        <div className="hero-grid">
-          <div>
-            <h1>{SITE.heroH1}</h1>
-            <p className="hero-sub">{SITE.heroSub}</p>
-            <div className="hero-ctas">
-              <a href="#contact" className="btn btn-primary">{SITE.heroCTA1}</a>
-              <a href="#services" className="btn btn-ghost-light">{SITE.heroCTA2}</a>
+        <div className="hero-content">
+          <div className="hero-grid">
+            <div>
+              <div className="eyebrow eyebrow--light">Custom Pneumatic Vane Air Motors</div>
+              <h1>When Electric Motors Can&apos;t Survive Your Environment, <em>We Build What Can.</em></h1>
+              <p className="hero-sub">
+                Custom vane air motors, 1/4 to 70 HP. Field-serviceable. No minimum order. Talk to an engineer today.
+                Built in Sandpoint, Idaho for 35+ years.
+              </p>
+              <div className="btn-group hero-ctas">
+                <Link href="/engineering" className="btn btn-primary btn-lg">Size Your Motor →</Link>
+                <Link href="/contact" className="btn btn-ghost btn-lg">Talk to an Engineer</Link>
+              </div>
+              <div className="hero-stats">
+                {[
+                  { value: '1/4–70', label: 'Horsepower Range' },
+                  { value: '35+', label: 'Years Manufacturing' },
+                  { value: '0', label: 'Minimum Order Qty' },
+                  { value: '81+', label: 'Standard Models' },
+                ].map(s => (
+                  <div key={s.label}>
+                    <div className="hero-stat-value tabular">{s.value}</div>
+                    <div className="hero-stat-label">{s.label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="hero-trust">
-              {SITE.trustStats.map(s => (
-                <div key={s.label} className="trust-item">
-                  <div className="trust-number">{s.number}</div>
-                  <div className="trust-label">{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="hero-card">
-            <h3>Request an Appointment</h3>
-            <p className="hero-card-sub">Usually confirmed same day.</p>
-            <div className="hero-card-field"><label>Your Name</label><input type="text" placeholder="Jane Smith" /></div>
-            <div className="hero-card-field"><label>Phone</label><input type="tel" placeholder="(406) 555-0000" /></div>
-            <div className="hero-card-field">
-              <label>Best Time to Reach You</label>
-              <select><option>Morning (8am–12pm)</option><option>Afternoon (12pm–5pm)</option><option>Either</option></select>
-            </div>
-            <a href={`tel:${SITE.phone}`} className="btn btn-primary">Call to Book: {SITE.phone}</a>
-            <p className="hero-card-note">Or call us directly. We pick up.</p>
+            <RFQForm />
           </div>
         </div>
       </section>
 
-      <div className="trust-strip container" style={{ margin: '0 auto', padding: '0 24px' }}>
-        {SITE.credentials.map(c => (
-          <div key={c} className="credential-item">
-            <div className="credential-text">{c}</div>
-          </div>
-        ))}
+      {/* ── AUDIENCE ICONS ── */}
+      <div className="audience-section">
+        <div className="audience-grid">
+          {INDUSTRIES.map(ind => (
+            <Link key={ind.label} href={ind.href} className="audience-item">
+              <div className="audience-icon-wrap">
+                <img src={ind.icon} alt={ind.alt} className="audience-icon-img" />
+              </div>
+              <div className="audience-label">{ind.label}</div>
+            </Link>
+          ))}
+        </div>
       </div>
 
-      <section className="section" id="services">
-        <div className="container">
-          <span className="eyebrow">{SITE.servicesLabel}</span>
-          <h2 style={{ marginBottom: '12px' }}>{SITE.servicesTitle}</h2>
-          <p className="section-subtitle" style={{ marginBottom: '56px' }}>{SITE.servicesSub}</p>
-          <div className="services-grid">
-            {SITE.services.map(s => (
-              <div key={s.title} className="service-card">
-                <div className="service-icon">{s.icon}</div>
-                <h3>{s.title}</h3>
-                <p>{s.desc}</p>
+      {/* ── TRUST STRIP ── */}
+      <div className="trust-strip">
+        <div className="trust-strip-inner">
+          {[
+            { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>, text: '35+ Years Manufacturing' },
+            { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>, text: '1/4 to 70 HP Range' },
+            { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>, text: 'Custom — No Minimums' },
+            { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>, text: 'Field-Serviceable Design' },
+            { icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>, text: 'Sandpoint, Idaho USA' },
+          ].map((item, i, arr) => (
+            <div key={item.text} style={{display:'flex',alignItems:'center',gap:'24px'}}>
+              <div className="trust-item">
+                <span className="trust-icon">{item.icon}</span>
+                <span className="trust-text">{item.text}</span>
               </div>
+              {i < arr.length - 1 && <div className="trust-divider" />}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── WHAT WE BUILD ── */}
+      <section className="section">
+        <div className="container">
+          <div className="reveal section-head">
+            <div className="eyebrow">Product Lines</div>
+            <h2>Built for the Application<br />Not the Catalog</h2>
+            <p>Our vane air motors run where electric motors can&apos;t — in hazardous atmospheres, extreme temperatures, and continuous-duty environments. Every unit is configurable for your exact requirement.</p>
+          </div>
+          <div className="products-grid">
+            {PRODUCTS.map(p => (
+              <Link key={p.title} href={p.href} className="product-card">
+                <div className="product-card-icon">
+                  <img src={p.icon} alt={p.alt} className="product-card-icon-img" />
+                </div>
+                <h3>{p.title}</h3>
+                <p>{p.desc}</p>
+                <div className="product-card-arrow">View Details →</div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section section--tinted" id="about">
+
+      {/* ── SIZE YOUR MOTOR CTA BLOCK ── */}
+      <section className="section section--tinted">
         <div className="container">
-          <div className="about-grid">
-            <div className="about-img-wrap">
-              <img src={SITE.aboutImage} alt="Our team" style={{ width: '100%', height: '520px', objectFit: 'cover' }} />
+          <div style={{display:'grid', gridTemplateColumns:'1fr auto', gap:'60px', alignItems:'center'}}>
+            <div>
+              <div className="eyebrow">Motor Selection Tool</div>
+              <h2>Know Your Torque Requirement?<br/>Find the Right Motor in Minutes.</h2>
+              <p style={{marginTop:'16px', fontSize:'1.05rem', color:'var(--steel)'}}>
+                Filter by HP range, torque, and operating pressure. Every standard motor model with full spec tables — or talk to our engineers if your application needs something custom.
+              </p>
             </div>
-            <div className="about-text">
-              <span className="eyebrow">{SITE.aboutLabel}</span>
-              <h2>{SITE.aboutTitle}</h2>
-              <p>{SITE.aboutP1}</p>
-              <p>{SITE.aboutP2}</p>
-              <div className="about-credentials">
-                {SITE.aboutCredentials.map(c => <span key={c} className="credential-badge">{c}</span>)}
-              </div>
-              <a href="#contact" className="btn btn-primary">{SITE.heroCTA1} →</a>
+            <div style={{display:'flex', flexDirection:'column', gap:'12px', flexShrink:0}}>
+              <Link href="/engineering" className="btn btn-primary btn-lg">Size Your Motor →</Link>
+              <Link href="/contact" className="btn btn-secondary">Talk to an Engineer</Link>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section" id="reviews">
+      {/* ── WHY AIR MOTORS VS ELECTRIC ── */}
+      <section className="section section--navy">
         <div className="container">
-          <span className="eyebrow">Patient Stories</span>
-          <h2 style={{ marginBottom: 0 }}>What Our Patients Say</h2>
-          <div className="reviews-grid">
-            {SITE.reviews.map(r => (
-              <div key={r.name} className="review-card">
-                <div className="review-stars">{'★'.repeat(r.stars)}</div>
-                <p className="review-text">{r.text}</p>
-                <div className="review-author">
-                  <div className="review-avatar">{r.initial}</div>
-                  <div><div className="review-name">{r.name}</div><div className="review-detail">{r.detail}</div></div>
+          <div className="reveal section-head">
+            <div className="eyebrow eyebrow--light">Technical Advantages</div>
+            <h2 style={{color:'white'}}>Why Air Motors Outperform Electric in Demanding Environments</h2>
+            <p style={{color:'rgba(255,255,255,0.65)', marginTop:'16px'}}>
+              Three critical advantages that determine which technology belongs in your application.
+            </p>
+          </div>
+          <div className="why-grid">
+            {WHY_AIR.map(w => (
+              <div key={w.title} className="why-card">
+                <div className="why-card-icon">
+                  <img src={w.icon} alt={w.alt} className="why-card-icon-img" />
+                </div>
+                <h3>{w.title}</h3>
+                <p>{w.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div style={{marginTop:'40px', textAlign:'center'}}>
+            <Link href="/resources/why-air-motors" className="btn btn-ghost">Full Technical Comparison →</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── WHY PSI — 4 PILLARS ── */}
+      <section className="section">
+        <div className="container">
+          <div className="reveal section-head" style={{marginBottom:'48px'}}>
+            <div className="eyebrow">Our Differentiators</div>
+            <h2>What No Other Vane Motor Manufacturer Can Say</h2>
+          </div>
+        </div>
+        <div className="pillars-grid">
+          {PILLARS.map(p => (
+            <div key={p.label} className="pillar">
+              <div className="pillar-number tabular">{p.value}</div>
+              <h3>{p.label}</h3>
+              <p>{p.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── RESOURCES PREVIEW ── */}
+      <section className="section section--tinted">
+        <div className="container">
+          <div className="reveal section-head">
+            <div className="eyebrow">Technical Resources</div>
+            <h2>Everything an Engineer Needs to Specify</h2>
+          </div>
+          <div className="resources-grid">
+            {[
+              { type: 'Motor Selection', title: 'Full Motor Catalog', desc: 'All 81 standard models with complete spec tables — torque, HP, air consumption, weight. Filter by series or operating requirement.', href: '/products' },
+              { type: 'Technical Guide', title: 'Why Air Motors vs Electric', desc: 'Detailed comparison: stall behavior, thermal protection, explosion-proof operation, power-to-weight ratios, and maintenance requirements.', href: '/resources/why-air-motors' },
+              { type: 'CAD / Drawings', title: '2D & 3D CAD Files', desc: 'Download STEP, IGES, and DWG files for our standard motor series via our 3DPublisher catalog.', href: '/resources' },
+            ].map(r => (
+              <Link key={r.title} href={r.href} className="resource-card">
+                <div className="resource-card-type">{r.type}</div>
+                <h3>{r.title}</h3>
+                <p>{r.desc}</p>
+                <div className="resource-card-arrow">Access Resource →</div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FOOTER CTA / CONTACT ── */}
+      <section className="cta-band">
+        <div className="container">
+          <div className="cta-band-grid">
+            <div>
+              <div className="eyebrow eyebrow--light">Talk to an Application Engineer</div>
+              <h2 style={{color:'white'}}>Your Application Is Specific. Our Engineering Response Will Be Too.</h2>
+              <p className="cta-band-sub">
+                We don&apos;t sell from a catalog — we engineer from your requirement. Tell us what you need and an application engineer responds directly. No sales funnel, no waiting room.
+              </p>
+              <div className="contact-info">
+                <div className="contact-info-item">
+                  <span className="contact-info-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.03z"/></svg>
+                  </span>
+                  <a href="tel:8003923602" style={{color:'white', fontWeight:700}}>800-392-3602 (Toll Free)</a>
+                </div>
+                <div className="contact-info-item">
+                  <span className="contact-info-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </span>
+                  <a href="mailto:sales@psiautomation.com" style={{color:'white'}}>sales@psiautomation.com</a>
+                </div>
+                <div className="contact-info-item">
+                  <span className="contact-info-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </span>
+                  <span style={{color:'rgba(255,255,255,0.7)'}}>3717 Omni Park Taxiway, Sandpoint, ID 83864</span>
                 </div>
               </div>
-            ))}
+            </div>
+            <RFQForm dark />
           </div>
         </div>
       </section>
 
-      <section className="section section--navy" id="contact">
-        <div className="container">
-          <div className="cta-grid">
-            <div className="cta-text">
-              <span className="eyebrow" style={{ color: 'rgba(255,255,255,0.6)' }}>Get Started</span>
-              <h2>{SITE.ctaTitle}</h2>
-              <p>{SITE.ctaSub}</p>
-              <div className="btn-group">
-                <a href={`tel:${SITE.phone}`} className="btn btn-primary">{SITE.ctaBtn1}</a>
-                <a href={`tel:${SITE.phone}`} className="btn btn-ghost-light">{SITE.ctaBtn2}</a>
-              </div>
-            </div>
-            <div className="cta-card">
-              <div className="cta-card-title">Call or Text</div>
-              <div className="cta-card-phone"><a href={`tel:${SITE.phone}`} style={{ color: '#fff' }}>{SITE.phone}</a></div>
-              <div style={{ marginTop: '24px' }}>
-                <div className="cta-card-title">Address</div>
-                <div className="cta-card-info">{SITE.address}</div>
-              </div>
-              <div style={{ marginTop: '24px' }}>
-                <div className="cta-card-title">Hours</div>
-                <div className="cta-card-info">Mon–Fri: 8am – 5pm</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer className="footer">
-        <div className="footer-inner">
-          <div>
-            <div className="footer-brand-name">{SITE.logoName}</div>
-            <p className="footer-tagline">{SITE.footerTagline}</p>
-          </div>
-          <div className="footer-col">
-            <h4>Services</h4>
-            <ul>{SITE.services.slice(0, 4).map(s => <li key={s.title}><a href="#services">{s.title}</a></li>)}</ul>
-          </div>
-          <div className="footer-col">
-            <h4>Contact</h4>
-            <ul>
-              <li>{SITE.address}</li>
-              <li><a href={`tel:${SITE.phone}`}>{SITE.phone}</a></li>
-              <li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
-            </ul>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <span>© {SITE.year} {SITE.logoName}</span>
-          <span><a href={`tel:${SITE.phone}`}>{SITE.phone}</a></span>
-        </div>
-      </footer>
-    </>
+      <Footer />
+    </div>
   );
 }
