@@ -1,9 +1,186 @@
 'use client';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
+import { motors, getHPDisplay } from '../data/motors';
 
+// ── HERO MODEL SEARCH ──────────────────────────────────────────────────────────
+function HeroModelSearch() {
+  const [query, setQuery] = useState('');
+  const router = useRouter();
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const results = useMemo(() => {
+    if (!query || query.length < 2) return [];
+    const q = query.toLowerCase().replace(/[-\s]/g, '');
+    return motors
+      .filter(m => m.model.toLowerCase().replace(/[-\s]/g, '').includes(q))
+      .slice(0, 6);
+  }, [query]);
+
+  const handleSelect = (slug: string) => router.push(`/products/${slug}`);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (results.length === 1) handleSelect(results[0].slug);
+    else if (query) router.push(`/products?q=${encodeURIComponent(query)}`);
+  };
+
+  const QUICK = ['DV6', 'DV10', 'DVA', 'DV20', 'CDV'];
+
+  return (
+    <div className="hero-card">
+      {/* Header */}
+      <div style={{ marginBottom: '16px' }}>
+        <div style={{ fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--crimson)', marginBottom: '4px' }}>
+          Quick Model Search
+        </div>
+        <h3 style={{ fontSize: '1.2rem', color: 'var(--navy)', marginBottom: '4px', lineHeight: 1.2 }}>
+          Know Your Model Number?
+        </h3>
+        <p className="hero-card-sub">
+          Type a series or model — e.g. DVA, DV6-118 — and go straight to specs.
+        </p>
+      </div>
+
+      {/* Search form */}
+      <form onSubmit={handleSubmit} style={{ position: 'relative' }}>
+        <div style={{
+          display: 'flex', alignItems: 'center', gap: '10px',
+          border: '2px solid var(--border)', borderRadius: '8px',
+          padding: '10px 14px', background: 'white',
+          transition: 'border-color 0.15s',
+        }}
+          onFocus={() => {}}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--steel)" strokeWidth="2.2" strokeLinecap="round" style={{ flexShrink: 0 }}>
+            <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+          <input
+            ref={inputRef}
+            type="text"
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+            placeholder="DVA, DV6-118, DV10..."
+            style={{
+              border: 'none', outline: 'none', flex: 1,
+              fontSize: '0.95rem', fontWeight: 600, color: 'var(--navy)',
+              fontFamily: 'var(--font-mono, "Courier New", monospace)',
+              background: 'transparent',
+            }}
+            autoComplete="off"
+            spellCheck={false}
+            id="hero-model-search"
+            aria-label="Search motor model number"
+          />
+          {query && (
+            <button type="button" onClick={() => setQuery('')}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--steel)', display: 'flex', alignItems: 'center', padding: '0 2px' }}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+          )}
+        </div>
+
+        {/* Live results dropdown */}
+        {results.length > 0 && (
+          <div style={{
+            position: 'absolute', top: 'calc(100% + 4px)', left: 0, right: 0,
+            background: 'white', border: '1.5px solid var(--border)',
+            borderRadius: '10px', boxShadow: '0 12px 40px rgba(0,0,0,0.14)',
+            zIndex: 50, overflow: 'hidden',
+          }}>
+            {results.map(m => (
+              <button
+                key={m.slug}
+                type="button"
+                onClick={() => handleSelect(m.slug)}
+                style={{
+                  width: '100%', display: 'flex', alignItems: 'center', gap: '10px',
+                  padding: '10px 14px', background: 'none', border: 'none',
+                  cursor: 'pointer', textAlign: 'left', transition: 'background 0.12s',
+                  borderBottom: '1px solid var(--border)',
+                }}
+                onMouseEnter={e => (e.currentTarget.style.background = 'var(--bg-light)')}
+                onMouseLeave={e => (e.currentTarget.style.background = 'none')}
+              >
+                <span className={`series-badge series-badge--${m.series.toLowerCase()}`} style={{ fontSize: '0.62rem', padding: '2px 7px', flexShrink: 0 }}>
+                  {m.series}
+                </span>
+                <span style={{ fontWeight: 700, color: 'var(--navy)', fontSize: '0.88rem', fontFamily: 'var(--font-mono, monospace)', flex: 1 }}>
+                  {m.model}
+                </span>
+                <span style={{ fontSize: '0.76rem', color: 'var(--steel)', whiteSpace: 'nowrap' }}>
+                  {getHPDisplay(m.hp)}
+                  {m.torque.psi80.maxSpeed > 0 ? ` · ${m.torque.psi80.maxSpeed.toLocaleString()} RPM` : ''}
+                </span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--steel-light)" strokeWidth="2" strokeLinecap="round" style={{ flexShrink: 0 }}>
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+            ))}
+            {query.length >= 2 && (
+              <button
+                type="button"
+                onClick={() => router.push(`/products?q=${encodeURIComponent(query)}`)}
+                style={{ width: '100%', padding: '10px 14px', background: 'none', border: 'none', cursor: 'pointer', fontSize: '0.8rem', fontWeight: 700, color: 'var(--crimson)', textAlign: 'center' }}
+              >
+                View all results for &ldquo;{query}&rdquo; →
+              </button>
+            )}
+          </div>
+        )}
+
+        {/* No results */}
+        {query.length >= 2 && results.length === 0 && (
+          <div style={{
+            position: 'absolute', top: 'calc(100% + 4px)', left: 0, right: 0,
+            background: 'white', border: '1.5px solid var(--border)',
+            borderRadius: '10px', padding: '16px 14px', zIndex: 50,
+            fontSize: '0.84rem', color: 'var(--steel)', textAlign: 'center',
+          }}>
+            No standard model matches &ldquo;{query}&rdquo;.{' '}
+            <Link href="/contact" style={{ color: 'var(--crimson)', fontWeight: 700 }}>Ask an engineer →</Link>
+          </div>
+        )}
+      </form>
+
+      {/* Quick chips */}
+      <div style={{ marginTop: '12px', display: 'flex', gap: '6px', flexWrap: 'wrap', alignItems: 'center' }}>
+        <span style={{ fontSize: '0.72rem', color: 'var(--steel-light)', marginRight: '2px' }}>Quick:</span>
+        {QUICK.map(s => (
+          <button key={s} type="button" onClick={() => { setQuery(s); inputRef.current?.focus(); }}
+            style={{
+              background: 'var(--bg-light)', border: '1px solid var(--border)',
+              borderRadius: '100px', padding: '3px 10px',
+              fontSize: '0.72rem', fontWeight: 700, color: 'var(--navy)',
+              cursor: 'pointer', fontFamily: 'var(--font-mono, monospace)',
+              transition: 'all 0.12s',
+            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = 'var(--crimson)'; (e.currentTarget as HTMLButtonElement).style.color = 'white'; (e.currentTarget as HTMLButtonElement).style.borderColor = 'var(--crimson)'; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = 'var(--bg-light)'; (e.currentTarget as HTMLButtonElement).style.color = 'var(--navy)'; (e.currentTarget as HTMLButtonElement).style.borderColor = 'var(--border)'; }}
+          >
+            {s}
+          </button>
+        ))}
+      </div>
+
+      <div style={{ marginTop: '16px', paddingTop: '14px', borderTop: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Link href="/products" style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--steel)', textDecoration: 'none' }}>
+          Browse all {motors.length} models →
+        </Link>
+        <a href="tel:8003923602" style={{ fontSize: '0.78rem', color: 'var(--steel)', textDecoration: 'none', fontWeight: 600 }}>
+          📞 800-392-3602
+        </a>
+      </div>
+    </div>
+  );
+}
+
+// ── RFQ FORM (used in footer CTA band only) ────────────────────────────────────
 function RFQForm({ dark = false }: { dark?: boolean }) {
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -65,11 +242,7 @@ function RFQForm({ dark = false }: { dark?: boolean }) {
         <textarea placeholder="Describe your motor requirement — HP range, environment, torque target, mounting type..." value={values.application} onChange={field('application').onChange} style={{minHeight:'80px', ...(errors.application ? {borderColor:'var(--crimson)'} : {})}} />
         {errMsg('application')}
       </div>
-      <button
-        className="btn btn-primary"
-        style={{width:'100%', justifyContent:'center'}}
-        onClick={handleSubmit}
-      >
+      <button className="btn btn-primary" style={{width:'100%', justifyContent:'center'}} onClick={handleSubmit}>
         Send to Engineering Team →
       </button>
       <p className="hero-card-note" style={dark ? {color:'rgba(255,255,255,0.4)'} : {}}>
@@ -164,7 +337,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <RFQForm />
+              <HeroModelSearch />
           </div>
         </div>
       </section>
