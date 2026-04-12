@@ -1638,9 +1638,10 @@ p  { max-width: 70ch; line-height: 1.7; }
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
-.series-badge--cdv { background: #EDF2FF; color: #3B5BDB; }
-.series-badge--dv  { background: #E4F9F5; color: #087F5B; }
-.series-badge--dva { background: #FFF4E6; color: #D9480F; }
+.series-badge--cdv  { background: #EDF2FF; color: #3B5BDB; }
+.series-badge--dv   { background: #E4F9F5; color: #087F5B; }
+.series-badge--dva  { background: #FFF4E6; color: #D9480F; }
+.series-badge--dvar { background: #F3F0FF; color: #7048E8; }
 
 /* ── MISC ─────────────────────────────────────────────────── */
 .divider { height: 1px; background: var(--border); margin: 0; }

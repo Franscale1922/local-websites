@@ -6,7 +6,7 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import { motors, getMotorsBySeries, getHPDisplay } from '../../data/motors';
 
-type SeriesFilter = 'all' | 'CDV' | 'DV' | 'DVA';
+type SeriesFilter = 'all' | 'CDV' | 'DV' | 'DVA' | 'DVAR';
 
 export default function ProductsPage() {
   const searchParams = useSearchParams();
@@ -40,6 +40,7 @@ export default function ProductsPage() {
     cdv: motors.filter(m => m.series === 'CDV').length,
     dv: motors.filter(m => m.series === 'DV').length,
     dva: motors.filter(m => m.series === 'DVA').length,
+    dvar: motors.filter(m => m.series === 'DVAR').length,
   };
 
   return (
@@ -206,9 +207,10 @@ export default function ProductsPage() {
               <label>Series</label>
               <select value={series} onChange={e => setSeries(e.target.value as SeriesFilter)}>
                 <option value="all">All Series ({motors.length})</option>
-                <option value="CDV">CDV — Bi-directional ({counts.cdv})</option>
                 <option value="DV">DV — High output ({counts.dv})</option>
                 <option value="DVA">DVA — Dual speed ({counts.dva})</option>
+                <option value="DVAR">DVAR — Reversing dual speed ({counts.dvar})</option>
+                <option value="CDV">CDV — Bi-directional ({counts.cdv})</option>
               </select>
             </div>
             <div className="filter-field">

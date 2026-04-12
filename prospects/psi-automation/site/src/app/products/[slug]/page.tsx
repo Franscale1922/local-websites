@@ -5,8 +5,9 @@ import Link from 'next/link';
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
 import { motors, getMotorBySlug, getHPDisplay } from '../../../data/motors';
+import type { MotorVariant } from '../../../data/motors';
 
-// Shared engineering drawing used for all motors (demo)
+// Shared engineering drawing used for motors without a real schematic
 const DEMO_DRAWING = '/motor-drawing.png';
 
 interface Props { params: { slug: string } }
@@ -15,10 +16,14 @@ export default function MotorDetailPage({ params }: Props) {
   const motor = getMotorBySlug(params.slug);
   if (!motor) notFound();
 
-  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxOpen, setLightboxOpen]     = useState(false);
+  const [selectedVariant, setSelectedVariant] = useState<MotorVariant | null>(
+    motor.variants ? motor.variants[0] : null
+  );
 
   const hp = getHPDisplay(motor.hp);
-  const drawing = DEMO_DRAWING;
+  // Use the selected variant's schematic if available, else the motor default, else demo
+  const drawing = selectedVariant?.schematicImage ?? motor.schematicImage ?? DEMO_DRAWING;
 
   const psiRows = [
     { psi: 80, data: motor.torque.psi80 },
@@ -261,6 +266,52 @@ export default function MotorDetailPage({ params }: Props) {
                   Dimensional reference — for demo purposes
                 </div>
               </div>
+
+              {/* Variant selector — shown only when variants exist */}
+              {motor.variants && motor.variants.length > 1 && (
+                <div style={{background:'white', border:'1.5px solid var(--border)', borderRadius:'var(--radius-md)', padding:'20px'}}>
+                  <div style={{fontSize:'0.7rem', fontWeight:700, letterSpacing:'0.14em', textTransform:'uppercase', color:'var(--steel)', marginBottom:'14px'}}>
+                    Available Configurations
+                  </div>
+                  <div style={{display:'flex', flexDirection:'column', gap:'6px'}}>
+                    {motor.variants.map(v => (
+                      <button
+                        key={v.partSuffix || 'std'}
+                        onClick={() => setSelectedVariant(v)}
+                        style={{
+                          display:'flex', alignItems:'flex-start', gap:'10px',
+                          padding:'10px 12px',
+                          background: selectedVariant?.partSuffix === v.partSuffix ? 'var(--bg-light)' : 'transparent',
+                          border: selectedVariant?.partSuffix === v.partSuffix ? '1.5px solid var(--crimson)' : '1.5px solid var(--border)',
+                          borderRadius:'8px',
+                          cursor:'pointer',
+                          textAlign:'left',
+                          transition:'all 0.15s',
+                        }}
+                      >
+                        <div style={{
+                          width:'8px', height:'8px', borderRadius:'50%', flexShrink:0, marginTop:'5px',
+                          background: selectedVariant?.partSuffix === v.partSuffix ? 'var(--crimson)' : 'var(--border)',
+                          transition:'background 0.15s',
+                        }} />
+                        <div>
+                          <div style={{fontWeight:700, fontSize:'0.82rem', color:'var(--navy)', fontFamily:'var(--font-mono, monospace)'}}>
+                            {v.label}
+                          </div>
+                          {v.notes && (
+                            <div style={{fontSize:'0.74rem', color:'var(--steel)', marginTop:'2px', lineHeight:1.4}}>
+                              {v.notes}
+                            </div>
+                          )}
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                  <p style={{fontSize:'0.72rem', color:'var(--steel-light)', marginTop:'12px', lineHeight:1.5, maxWidth:'none'}}>
+                    Select a configuration above to view its engineering drawing. All variants share the same torque/speed specs — shaft and flange only.
+                  </p>
+                </div>
+              )}
 
               {/* Key specs */}
               <div style={{background:'var(--bg-light)', borderRadius:'var(--radius-md)', padding:'24px'}}>
