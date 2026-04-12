@@ -24,6 +24,16 @@ description: Clones the niche master template for a specific prospect by generat
 
 ## Instructions
 
+### Step 0 — PROTECTION CHECK (MANDATORY — run first, always)
+```bash
+# Before doing ANYTHING else, check for .agentprotect
+ls prospects/[slug]/.agentprotect 2>/dev/null && echo "PROTECTED" || echo "OK"
+```
+**If the file exists:** STOP immediately. Do not proceed. This prospect has a custom-built site.
+Tell the user: "This prospect is protected by .agentprotect — edit files directly in `prospects/[slug]/site/src/` and read DEVELOPMENT_NOTES.md for context."
+
+**If the file does not exist:** continue to Step 1.
+
 ### Step 1 — Validate prerequisites
 ```bash
 # Confirm research.md exists and is filled out

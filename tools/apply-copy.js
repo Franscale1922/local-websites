@@ -212,6 +212,30 @@ function run() {
     process.exit(1);
   }
 
+  // ── PROTECTION CHECK ─────────────────────────────────────────────────────────
+  // If .agentprotect exists, this prospect has a custom-built site that must
+  // not be overwritten by template cloning. Abort immediately.
+  const protectFile = join(PROSPECT_DIR, '.agentprotect');
+  if (existsSync(protectFile)) {
+    console.error('');
+    console.error('╔══════════════════════════════════════════════════════════════╗');
+    console.error('║  ⛔  PROTECTED PROSPECT — ABORTING                          ║');
+    console.error('╠══════════════════════════════════════════════════════════════╣');
+    console.error(`║  prospects/${SLUG}/ is protected by .agentprotect         `);
+    console.error('║                                                              ║');
+    console.error('║  This site was custom-built and cannot be overwritten by     ║');
+    console.error('║  apply-copy.js or the clone-site skill.                      ║');
+    console.error('║                                                              ║');
+    console.error('║  To continue development, edit files directly in:           ║');
+    console.error(`║    prospects/${SLUG}/site/src/                             `);
+    console.error('║                                                              ║');
+    console.error('║  See DEVELOPMENT_NOTES.md for roadmap and context.          ║');
+    console.error('╚══════════════════════════════════════════════════════════════╝');
+    console.error('');
+    process.exit(1);
+  }
+  // ─────────────────────────────────────────────────────────────────────────────
+
   const copyPath = join(PROSPECT_DIR, 'generated-copy.json');
   const researchPath = join(PROSPECT_DIR, 'research.md');
 

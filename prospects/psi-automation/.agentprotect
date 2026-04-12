@@ -1,0 +1,28 @@
+# .agentprotect
+# ─────────────────────────────────────────────────────────────
+# THIS FILE PREVENTS apply-copy.js AND clone-site SKILL FROM
+# OVERWRITING THIS PROSPECT DIRECTORY.
+#
+# PSI Automation is NOT a template-generated site.
+# It has been manually developed with custom architecture:
+#   - Custom data model (src/data/motors.ts)
+#   - Custom component library (Nav, ProductCards, MotorDetail)
+#   - Multi-series product catalog (CDV, DV, DVA, DVAR)
+#   - Predictive model search (Nav + Products page)
+#   - Per-motor variant configuration display
+#   - "Often Ordered With" accessories system
+#   - Custom Solutions with Integral Brakes
+#
+# DO NOT RUN: node tools/apply-copy.js --slug psi-automation
+# DO NOT RUN: clone-site skill against this directory
+#
+# To continue development on this site, edit files directly in:
+#   /prospects/psi-automation/site/src/
+#
+# See: prospects/psi-automation/DEVELOPMENT_NOTES.md for roadmap
+# ─────────────────────────────────────────────────────────────
+
+PROTECTED_SINCE=2026-04-12
+REASON=custom_industrial_site
+TEMPLATE=none
+CONTACT=kelsey
